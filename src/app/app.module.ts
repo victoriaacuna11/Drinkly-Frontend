@@ -12,6 +12,7 @@ import { DrinksFilterComponent } from './components/drinks/drinks-filter/drinks-
 
 
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     ListComponent,
     BarsListComponent,
     DrinksListComponent,
-    DrinksFilterComponent
+    DrinksFilterComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
