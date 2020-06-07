@@ -13,8 +13,7 @@ const routes: Routes = [
 
   { path: "bars", component: BarsListComponent },
   { path: "drinks", component: DrinksListComponent },
-  { path: "drinks/filter", component: DrinksFilterComponent },
-  { path: "drinks/filter2", component: FilterParentComponent },
+  { path: "drinks/filter", component: FilterParentComponent },
 
   {path: 'prueba', component: PruebaComponent},
   {path: 'add-prueba', component: PruebaNewComponent},
