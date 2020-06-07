@@ -13,6 +13,7 @@ import { Router } from '@angular/router';
 export class PruebaNewComponent implements OnInit {
   form : FormGroup;
   
+  
   constructor(
     private _builder : FormBuilder, private prueba : PruebaService, private route: Router
   ) { 

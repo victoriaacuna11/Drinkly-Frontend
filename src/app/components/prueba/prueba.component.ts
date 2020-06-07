@@ -26,9 +26,9 @@ export class PruebaComponent implements OnInit {
     this.route.navigate(['add-prueba']);
   }
 
-  editUser(user: userP){
-    user.editable=true;
-    console.log(user.editable)
+  editUser(id){
+    // console.log(id);
+    this.route.navigate(['prueba/update/', id]);
   }
 
   deleteUser(id){

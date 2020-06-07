@@ -13,6 +13,9 @@ import { PruebaComponent } from './components/prueba/prueba.component';
 import { PruebaNewComponent } from './components/prueba-new/prueba-new.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PruebaEditComponent } from './components/prueba-edit/prueba-edit.component';
+import { AdminHeaderComponent } from './components/admin/admin-header/admin-header.component';
+import { AddIngredientComponent } from './components/admin/ingredient/add-ingredient/add-ingredient.component';
+import { ListIngredientComponent } from './components/admin/ingredient/list-ingredient/list-ingredient.component';
 
 
 @NgModule({
@@ -26,7 +29,10 @@ import { PruebaEditComponent } from './components/prueba-edit/prueba-edit.compon
     DrinksFilterComponent,
     PruebaComponent,
     PruebaNewComponent,
-    PruebaEditComponent
+    PruebaEditComponent,
+    AdminHeaderComponent,
+    AddIngredientComponent,
+    ListIngredientComponent
   ],
   imports: [
     BrowserModule,

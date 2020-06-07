@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import {userP} from '../models/user-p';
-import { map } from 'rxjs/operators';
-import { Observable, throwError } from 'rxjs';
-import { catchError, retry } from 'rxjs/operators';
+
  
 @Injectable({
   providedIn: 'root'
@@ -31,5 +29,14 @@ export class PruebaService {
   deleteUser(id){
     console.log(id);
     return this._http.delete(this._urldelete+id);
+  }
+
+  getUser(id){
+    // console.log(id);
+    return this._http.get(this._url+id);
+  }
+
+  updateUser(user : userP){
+    return this._http.put(this._url+'update/'+user._id, user);
   }
 }
