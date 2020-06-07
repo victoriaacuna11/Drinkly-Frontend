@@ -1,0 +1,28 @@
+<div class="bg-black h-16">
+  <img
+    src="assets/images/Drinkly-2.png"
+    alt="logo_drinkly"
+    class="object-scale-down h-16 mx-auto"
+  />
+</div>
+<div
+  style="background-image: url('assets/images/404bg.jpg');"
+  class="my-6 pt-24 pb-64 bg-cover bg-blue-700 m-auto max-w-5xl self-center flex items-center rounded-lg shadow"
+>
+  <div
+    class="p-10 ml-20 shadow-2xl rounded-lg items-center"
+    style="background-color: white;"
+  >
+    <h1 class="font-serif subpixel-antialiased text-xl text-black">
+      <h1 class="text-4xl">Error 404:</h1>
+      Ups! Parece que esta ruta no existe...
+    </h1>
+    <button
+      [routerLink]="'/drinks'"
+      class="ml-20 mt-5 font-serif subpixel-antialiased text-xl bg-orange-500 hover:bg-orange-600 text-black px-2 rounded-md"
+    >
+      Volver al inicio
+    </button>
+  </div>
+</div>
+<app-footer></app-footer>
