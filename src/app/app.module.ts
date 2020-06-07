@@ -13,6 +13,8 @@ import { PruebaComponent } from './components/prueba/prueba.component';
 import { PruebaNewComponent } from './components/prueba-new/prueba-new.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PruebaEditComponent } from './components/prueba-edit/prueba-edit.component';
+import { FilterChildComponent } from './components/drinks/filter-child/filter-child.component';
+import { FilterParentComponent } from './components/drinks/filter-parent/filter-parent.component';
 
 
 @NgModule({
@@ -26,7 +28,9 @@ import { PruebaEditComponent } from './components/prueba-edit/prueba-edit.compon
     DrinksFilterComponent,
     PruebaComponent,
     PruebaNewComponent,
-    PruebaEditComponent
+    PruebaEditComponent,
+    FilterChildComponent,
+    FilterParentComponent
   ],
   imports: [
     BrowserModule,

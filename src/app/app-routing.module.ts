@@ -7,12 +7,14 @@ import {DrinksFilterComponent} from './components/drinks/drinks-filter/drinks-fi
 import {PruebaComponent} from './components/prueba/prueba.component';
 import {PruebaNewComponent} from './components/prueba-new/prueba-new.component';
 import {PruebaEditComponent} from './components/prueba-edit/prueba-edit.component';
+import { FilterParentComponent } from './components/drinks/filter-parent/filter-parent.component';
 
 const routes: Routes = [
 
   { path: "bars", component: BarsListComponent },
   { path: "drinks", component: DrinksListComponent },
   { path: "drinks/filter", component: DrinksFilterComponent },
+  { path: "drinks/filter2", component: FilterParentComponent },
 
   {path: 'prueba', component: PruebaComponent},
   {path: 'add-prueba', component: PruebaNewComponent},

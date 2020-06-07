@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-drinks-filter',
-  templateUrl: './drinks-filter.component.html',
-  styleUrls: ['./drinks-filter.component.scss']
+  selector: 'app-filter-parent',
+  templateUrl: './filter-parent.component.html',
+  styleUrls: ['./filter-parent.component.scss']
 })
-export class DrinksFilterComponent implements OnInit {
+export class FilterParentComponent implements OnInit {
+
 
   licores=[
     {name:'Ron',
@@ -148,7 +149,7 @@ export class DrinksFilterComponent implements OnInit {
   ]
 
 
-
+  
   licor_hidden=true;
   bebida_hidden=true;
   fruta_hidden=true;
@@ -157,18 +158,23 @@ export class DrinksFilterComponent implements OnInit {
 
   filter=[];
 
-status=false;
 
   constructor() { }
 
   ngOnInit() {
+
+//A CADA CHILD SE LE TIENE QUE PASAR EL ARREGLO CON LA CATEGORIA QUE NECESITA
+//HAY QUE AÑADIRLE LA PROPIEDAD DE STYLE A CADA UNO DE LOS INGREDIENTES
+//EL CHECK DE SI EXISTE SE DEBERIA HACER ACA EN VERDAD
+
   }
 
-  select(object:any){
+  add_to_filter(object:any){
 
-    object.style=!object.style;
+
+    //ACA SE AÑADE EL ID 
     
-    if(object.style==false){
+    if(object.style==true){
       this.filter.push(object.name)
 
     }else{
@@ -181,6 +187,8 @@ status=false;
       }
     }
     console.log(this.filter);
+
+
   }
 
 }
