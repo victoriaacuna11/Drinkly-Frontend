@@ -1,20 +1,12 @@
-<<<<<<< HEAD
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import {BarsListComponent} from './components/bars/bars-list/bars-list.component';
-import {DrinksListComponent} from './components/drinks/drinks-list/drinks-list.component';
-import {DrinksFilterComponent} from './components/drinks/drinks-filter/drinks-filter.component';
-import {AddIngredientComponent} from './components/admin/ingredient/add-ingredient/add-ingredient.component';
-import {ListIngredientComponent} from './components/admin/ingredient/list-ingredient/list-ingredient.component';
-import {EditIngredientComponent} from './components/admin/ingredient/edit-ingredient/edit-ingredient.component';
-=======
+
+import { ListIngredientComponent } from './components/admin/ingredient/list-ingredient/list-ingredient.component';
+import { EditIngredientComponent } from './components/admin/ingredient/edit-ingredient/edit-ingredient.component';
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { BarsListComponent } from "./components/bars/bars-list/bars-list.component";
 import { DrinksListComponent } from "./components/drinks/drinks-list/drinks-list.component";
 import { DrinksFilterComponent } from "./components/drinks/drinks-filter/drinks-filter.component";
 import { AddIngredientComponent } from "./components/admin/ingredient/add-ingredient/add-ingredient.component";
->>>>>>> 2e5ab18da85241a7847712b7a9212e7e79352746
 
 import { PruebaComponent } from "./components/prueba/prueba.component";
 import { PruebaNewComponent } from "./components/prueba-new/prueba-new.component";
@@ -46,4 +38,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
