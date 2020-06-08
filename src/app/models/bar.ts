@@ -18,5 +18,5 @@ export class Bar {
   associate: boolean;
   available: boolean;
   cost: number;
-  menu: item;
+  menu: item[];
 }
