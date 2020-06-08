@@ -47,6 +47,7 @@ export class RegisterComponent implements OnInit {
       birthday: this.form.value.birthday,
       available: true,
       favorites: [],
+      isAdmin: false,
     };
 
     console.log(user);

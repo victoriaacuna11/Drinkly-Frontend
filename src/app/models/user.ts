@@ -8,4 +8,5 @@ export class user {
   user_name: String;
   birthday: Date;
   favorites: String[];
+  isAdmin: Boolean;
 }

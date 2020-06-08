@@ -1,3 +1,4 @@
+import { AdminAuthGuard } from "./guards/adminAuth.guard";
 import { ProfileComponent } from "./components/profile/profile.component";
 import { LoginComponent } from "./components/login/login.component";
 import { RegisterComponent } from "./components/register/register.component";
@@ -29,7 +30,11 @@ const routes: Routes = [
   { path: "profile", component: ProfileComponent, canActivate: [AuthGuard] },
 
   // ADMIN'S ROUTES
-  { path: "admin/ingredient/add", component: AddIngredientComponent },
+  {
+    path: "admin/ingredient/add",
+    component: AddIngredientComponent,
+    canActivate: [AdminAuthGuard],
+  },
 
   // RUTAS DE PRUEBA
   { path: "prueba", component: PruebaComponent },

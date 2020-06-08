@@ -77,4 +77,16 @@ export class AuthService {
       return !helper.isTokenExpired(localStorage.id_token);
     }
   }
+
+  isAdmin() {
+    this.user = JSON.parse(localStorage.getItem("user"));
+    console.log(this.user.isAdmin);
+    if (this.user.isAdmin) {
+      console.log("Puedes pasar administrador.");
+      return true;
+    } else {
+      console.log("Debes ser administrador.");
+      return false;
+    }
+  }
 }
