@@ -1,0 +1,25 @@
+
+    <!-- CHILD -->
+
+    <div class=" grid gap-4 md:gap-8 grid-cols-3 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 transition ease-in duration-300" 
+            >
+        <div *ngFor="let item of ingredients" >
+            <div class="w-24  md:w-40 "  (click)="select(item)">
+                <div 
+                [ngClass]="item.style? 'boder shadow rounded-lg p-3  flex items-center flex-col ease-in duration-300': 'boder shadow rounded-lg p-3  flex items-center flex-col bg-orange-300 transition ease-in duration-300'"
+                >
+                    <div style="  background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    position: relative; "
+                    [style.backgroundImage]="'url('+ item.pic +')'"
+                    class=" w-20 h-20 mb-2 md:h-32 md:w-24 md:mb-4 border shadow rounded-full ">
+                    </div>
+
+                    <p class=" text-sm "> {{item.name}} </p>
+                </div>
+            </div>
+        </div>  
+
+    </div>
+    <!-- CHILD -->
