@@ -53,7 +53,7 @@ const routes: Routes = [
   {
     path: "admin/bar/add",
     component: AddBarComponent,
-    canActivate: [AdminAuthGuard]
+    // canActivate: [AdminAuthGuard]
   },
 
 
