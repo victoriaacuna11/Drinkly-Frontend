@@ -1,1 +1,15 @@
-<p>profile works!</p>
+<app-header></app-header>
+
+<div *ngIf="user">
+  <h3 class="text-xl">Bienvenido/a, {{ user.f_name }}!</h3>
+  <div class="py-10 items-center">
+    <button
+      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+      (click)="getOut()"
+    >
+      Logout
+    </button>
+  </div>
+</div>
+
+<app-footer></app-footer>

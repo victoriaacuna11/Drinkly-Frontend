@@ -16,8 +16,6 @@ export class RegisterComponent implements OnInit {
   email: String;
   user_name: String;
   birthday: Date;
-  available: boolean;
-  favorites: String[];
   form: FormGroup;
   dataRegister: any = {};
 

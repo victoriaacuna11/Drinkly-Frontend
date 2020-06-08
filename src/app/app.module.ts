@@ -1,3 +1,4 @@
+import { AuthGuard } from "./guards/auth.guard";
 import { AuthService } from "./services/auth.service";
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
@@ -50,7 +51,7 @@ import { ValidateService } from "./services/validate.service";
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [ValidateService, AuthService],
+  providers: [ValidateService, AuthService, AuthGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

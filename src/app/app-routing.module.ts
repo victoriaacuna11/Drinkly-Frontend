@@ -12,6 +12,7 @@ import { PruebaComponent } from "./components/prueba/prueba.component";
 import { PruebaNewComponent } from "./components/prueba-new/prueba-new.component";
 import { PruebaEditComponent } from "./components/prueba-edit/prueba-edit.component";
 import { NotFoundComponent } from "./components/not-found/not-found.component";
+import { AuthGuard } from "./guards/auth.guard";
 
 const routes: Routes = [
   // USERS' ROUTES
@@ -21,7 +22,7 @@ const routes: Routes = [
   { path: "drinks/filter", component: DrinksFilterComponent },
   { path: "register", component: RegisterComponent },
   { path: "login", component: LoginComponent },
-  { path: "profile", component: ProfileComponent },
+  { path: "profile", component: ProfileComponent, canActivate: [AuthGuard] },
 
   // ADMIN'S ROUTES
   { path: "admin/ingredient/add", component: AddIngredientComponent },
