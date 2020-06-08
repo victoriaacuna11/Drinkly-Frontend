@@ -1,3 +1,4 @@
+import { AuthService } from "./services/auth.service";
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { AppRoutingModule } from "./app-routing.module";
@@ -17,6 +18,10 @@ import { AdminHeaderComponent } from "./components/admin/admin-header/admin-head
 import { AddIngredientComponent } from "./components/admin/ingredient/add-ingredient/add-ingredient.component";
 import { ListIngredientComponent } from "./components/admin/ingredient/list-ingredient/list-ingredient.component";
 import { NotFoundComponent } from "./components/not-found/not-found.component";
+import { LoginComponent } from "./components/login/login.component";
+import { RegisterComponent } from "./components/register/register.component";
+import { ProfileComponent } from "./components/profile/profile.component";
+import { ValidateService } from "./services/validate.service";
 
 @NgModule({
   declarations: [
@@ -34,6 +39,9 @@ import { NotFoundComponent } from "./components/not-found/not-found.component";
     AddIngredientComponent,
     ListIngredientComponent,
     NotFoundComponent,
+    LoginComponent,
+    RegisterComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,7 +50,7 @@ import { NotFoundComponent } from "./components/not-found/not-found.component";
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [ValidateService, AuthService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

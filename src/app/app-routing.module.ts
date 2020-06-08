@@ -1,3 +1,6 @@
+import { ProfileComponent } from "./components/profile/profile.component";
+import { LoginComponent } from "./components/login/login.component";
+import { RegisterComponent } from "./components/register/register.component";
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { BarsListComponent } from "./components/bars/bars-list/bars-list.component";
@@ -16,6 +19,9 @@ const routes: Routes = [
   { path: "bars", component: BarsListComponent },
   { path: "drinks", component: DrinksListComponent },
   { path: "drinks/filter", component: DrinksFilterComponent },
+  { path: "register", component: RegisterComponent },
+  { path: "login", component: LoginComponent },
+  { path: "profile", component: ProfileComponent },
 
   // ADMIN'S ROUTES
   { path: "admin/ingredient/add", component: AddIngredientComponent },
