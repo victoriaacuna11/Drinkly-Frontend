@@ -26,6 +26,7 @@ import { ProfileComponent } from "./components/profile/profile.component";
 import { ValidateService } from "./services/validate.service";
 import { EditIngredientComponent } from "./components/admin/ingredient/edit-ingredient/edit-ingredient.component";
 import { AddBarComponent } from './components/admin/bar/add-bar/add-bar.component';
+import { RequiredFieldComponent } from './components/admin/required-field/required-field.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { AddBarComponent } from './components/admin/bar/add-bar/add-bar.componen
     RegisterComponent,
     ProfileComponent,
     AddBarComponent,
+    RequiredFieldComponent,
   ],
   imports: [
     BrowserModule,
