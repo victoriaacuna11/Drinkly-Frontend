@@ -17,7 +17,7 @@ export class AddBarComponent implements OnInit {
   form: FormGroup;
   bar: Bar;
   zones: zone[];
-  loading:Boolean=true;
+  loading: Boolean = true;
 
   constructor(private _builder: FormBuilder, private route: Router, private zoneService: ZoneService) {
     this.form = this._builder.group({
@@ -36,6 +36,9 @@ export class AddBarComponent implements OnInit {
       photo: [''],
       main_image: [''],
       associate: [''],
+      phone: this._builder.array([
+        this.addPhoneGroup()
+      ])
     })
   }
 
@@ -43,15 +46,22 @@ export class AddBarComponent implements OnInit {
     this.getZones();
   }
 
-  getZones(){
-    this.zoneService.getZones().subscribe((res:any) => {
-      this.zones = [... res.data];
-      console.log(this.zones);
-      this.loading=false;
+  addPhoneGroup() {
+    return this._builder.group({
+      phone: ['']
     })
   }
 
-  createBar(){
+
+  getZones() {
+    this.zoneService.getZones().subscribe((res: any) => {
+      this.zones = [...res.data];
+      console.log(this.zones);
+      this.loading = false;
+    })
+  }
+
+  createBar() {
     console.log(this.form.value.associate);
 
     const bar: Bar = {
@@ -59,7 +69,7 @@ export class AddBarComponent implements OnInit {
       working_hours: this.form.value.working_hours,
       rating: this.form.value.rating,
       cost: this.form.value.cost,
-      twitter:  this.form.value.twitter,
+      twitter: this.form.value.twitter,
       instagram: this.form.value.instagram,
       facebook: this.form.value.facebook,
       email: this.form.value.email,
@@ -79,8 +89,8 @@ export class AddBarComponent implements OnInit {
     console.log(bar);
   }
 
-  
-  selectMainImage(event){
-    this.mainImage= event.target.files[0];
+
+  selectMainImage(event) {
+    this.mainImage = event.target.files[0];
   }
 }
