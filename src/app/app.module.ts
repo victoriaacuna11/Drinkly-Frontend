@@ -25,6 +25,7 @@ import { RegisterComponent } from "./components/register/register.component";
 import { ProfileComponent } from "./components/profile/profile.component";
 import { ValidateService } from "./services/validate.service";
 import { EditIngredientComponent } from "./components/admin/ingredient/edit-ingredient/edit-ingredient.component";
+import { AddBarComponent } from './components/admin/bar/add-bar/add-bar.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { EditIngredientComponent } from "./components/admin/ingredient/edit-ingr
     LoginComponent,
     RegisterComponent,
     ProfileComponent,
+    AddBarComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,4 +59,4 @@ import { EditIngredientComponent } from "./components/admin/ingredient/edit-ingr
   providers: [ValidateService, AuthService, AuthGuard, AdminAuthGuard],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

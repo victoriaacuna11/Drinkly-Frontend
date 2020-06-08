@@ -11,12 +11,14 @@ import { BarsListComponent } from "./components/bars/bars-list/bars-list.compone
 import { DrinksListComponent } from "./components/drinks/drinks-list/drinks-list.component";
 import { DrinksFilterComponent } from "./components/drinks/drinks-filter/drinks-filter.component";
 import { AddIngredientComponent } from "./components/admin/ingredient/add-ingredient/add-ingredient.component";
+import { AddBarComponent } from './components/admin/bar/add-bar/add-bar.component';
 
 import { PruebaComponent } from "./components/prueba/prueba.component";
 import { PruebaNewComponent } from "./components/prueba-new/prueba-new.component";
 import { PruebaEditComponent } from "./components/prueba-edit/prueba-edit.component";
 import { NotFoundComponent } from "./components/not-found/not-found.component";
 import { AuthGuard } from "./guards/auth.guard";
+import { from } from 'rxjs';
 
 const routes: Routes = [
   // USERS' ROUTES
@@ -48,6 +50,13 @@ const routes: Routes = [
     component: EditIngredientComponent,
     canActivate: [AdminAuthGuard],
   },
+  {
+    path: "admin/bar/add",
+    component: AddBarComponent,
+    canActivate: [AdminAuthGuard]
+  },
+
+
 
   // RUTAS DE PRUEBA
   { path: "prueba", component: PruebaComponent },
@@ -62,4 +71,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
