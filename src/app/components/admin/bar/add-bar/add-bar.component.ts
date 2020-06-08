@@ -52,6 +52,8 @@ export class AddBarComponent implements OnInit {
   }
 
   createBar(){
+    console.log(this.form.value.associate);
+
     const bar: Bar = {
       name: this.form.value.name,
       working_hours: this.form.value.working_hours,
@@ -67,7 +69,7 @@ export class AddBarComponent implements OnInit {
       available: true,
       views: 0,
 
-      associate: true,
+      associate: this.form.value.associate,
       main_image: '',
       pictures: [],
       phone: [],
