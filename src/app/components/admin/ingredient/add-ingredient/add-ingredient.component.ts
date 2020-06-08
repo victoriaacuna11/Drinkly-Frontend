@@ -56,6 +56,12 @@ export class AddIngredientComponent implements OnInit {
     formdata.append("name", ingredient.name as any);
     formdata.append("category", ingredient.category as any);
     formdata.append("available", ingredient.available as any);
-    this.service.createIngredient(formdata);
+    this.service.createIngredient(formdata).subscribe((res) => {
+      this.route.navigate(["admin/ingredient"]);
+    });
+  }
+
+  goBack() {
+    this.route.navigate(["admin/ingredient"]);
   }
 }

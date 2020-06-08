@@ -2,6 +2,9 @@ import { AdminAuthGuard } from "./guards/adminAuth.guard";
 import { ProfileComponent } from "./components/profile/profile.component";
 import { LoginComponent } from "./components/login/login.component";
 import { RegisterComponent } from "./components/register/register.component";
+
+import { ListIngredientComponent } from "./components/admin/ingredient/list-ingredient/list-ingredient.component";
+import { EditIngredientComponent } from "./components/admin/ingredient/edit-ingredient/edit-ingredient.component";
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { BarsListComponent } from "./components/bars/bars-list/bars-list.component";
@@ -33,6 +36,16 @@ const routes: Routes = [
   {
     path: "admin/ingredient/add",
     component: AddIngredientComponent,
+    canActivate: [AdminAuthGuard],
+  },
+  {
+    path: "admin/ingredient",
+    component: ListIngredientComponent,
+    canActivate: [AdminAuthGuard],
+  },
+  {
+    path: "admin/ingredient/edit/:id",
+    component: EditIngredientComponent,
     canActivate: [AdminAuthGuard],
   },
 
