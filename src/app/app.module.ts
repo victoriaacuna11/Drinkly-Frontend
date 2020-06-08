@@ -16,6 +16,7 @@ import { PruebaEditComponent } from './components/prueba-edit/prueba-edit.compon
 import { AdminHeaderComponent } from './components/admin/admin-header/admin-header.component';
 import { AddIngredientComponent } from './components/admin/ingredient/add-ingredient/add-ingredient.component';
 import { ListIngredientComponent } from './components/admin/ingredient/list-ingredient/list-ingredient.component';
+import { EditIngredientComponent } from './components/admin/ingredient/edit-ingredient/edit-ingredient.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { ListIngredientComponent } from './components/admin/ingredient/list-ingr
     PruebaEditComponent,
     AdminHeaderComponent,
     AddIngredientComponent,
-    ListIngredientComponent
+    ListIngredientComponent,
+    EditIngredientComponent
   ],
   imports: [
     BrowserModule,
