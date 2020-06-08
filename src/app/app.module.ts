@@ -19,6 +19,7 @@ import { AddIngredientComponent } from "./components/admin/ingredient/add-ingred
 import { ListIngredientComponent } from "./components/admin/ingredient/list-ingredient/list-ingredient.component";
 import { NotFoundComponent } from "./components/not-found/not-found.component";
 import { EditIngredientComponent } from './components/admin/ingredient/edit-ingredient/edit-ingredient.component';
+import { AddBarComponent } from './components/admin/bar/add-bar/add-bar.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { EditIngredientComponent } from './components/admin/ingredient/edit-ingr
     ListIngredientComponent,
     EditIngredientComponent,
     NotFoundComponent,
+    AddBarComponent,
   ],
   imports: [
     BrowserModule,
