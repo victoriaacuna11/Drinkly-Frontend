@@ -35,6 +35,8 @@ const routes: Routes = [
   { path: "prueba", component: PruebaComponent },
   { path: "add-prueba", component: PruebaNewComponent },
   { path: "prueba/update/:id", component: PruebaEditComponent },
+
+  //Ruta no encontrada
   { path: "**", component: NotFoundComponent },
 ];
 
