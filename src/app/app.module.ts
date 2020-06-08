@@ -1,5 +1,4 @@
 
-import { EditIngredientComponent } from './components/admin/ingredient/edit-ingredient/edit-ingredient.component';
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { AppRoutingModule } from "./app-routing.module";
@@ -19,6 +18,7 @@ import { AdminHeaderComponent } from "./components/admin/admin-header/admin-head
 import { AddIngredientComponent } from "./components/admin/ingredient/add-ingredient/add-ingredient.component";
 import { ListIngredientComponent } from "./components/admin/ingredient/list-ingredient/list-ingredient.component";
 import { NotFoundComponent } from "./components/not-found/not-found.component";
+import { EditIngredientComponent } from './components/admin/ingredient/edit-ingredient/edit-ingredient.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +36,7 @@ import { NotFoundComponent } from "./components/not-found/not-found.component";
     AddIngredientComponent,
     ListIngredientComponent,
     EditIngredientComponent,
-    NotFoundComponent
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
