@@ -39,12 +39,17 @@ import { BarsListComponent } from './components/bars/bars-list/bars-list.compone
 import { DrinksListComponent } from './components/drinks/drinks-list/drinks-list.component';
 import { DrinksFilterComponent } from './components/drinks/drinks-filter/drinks-filter.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+<<<<<<< HEAD
 import { PruebaComponent } from './components/prueba/prueba.component';
 import { PruebaNewComponent } from './components/prueba-new/prueba-new.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PruebaEditComponent } from './components/prueba-edit/prueba-edit.component';
 import { FilterChildComponent } from './components/drinks/filter-child/filter-child.component';
 import { FilterParentComponent } from './components/drinks/filter-parent/filter-parent.component';
+=======
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+>>>>>>> sidebar
 
 >>>>>>> fix_filter
 
@@ -57,6 +62,7 @@ import { FilterParentComponent } from './components/drinks/filter-parent/filter-
     BarsListComponent,
     DrinksListComponent,
     DrinksFilterComponent,
+<<<<<<< HEAD
     PruebaComponent,
     PruebaNewComponent,
     PruebaEditComponent,
@@ -74,6 +80,10 @@ import { FilterParentComponent } from './components/drinks/filter-parent/filter-
     FilterChildComponent,
     FilterParentComponent
 >>>>>>> fix_filter
+=======
+    NotFoundComponent,
+    SidebarComponent
+>>>>>>> sidebar
   ],
   imports: [
     BrowserModule,
