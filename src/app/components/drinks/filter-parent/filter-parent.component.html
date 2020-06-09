@@ -1,33 +1,31 @@
-
-
-<div class="w-full flex flex-col items-center  mt-10  lg:inline  lg:bg-black" >
-    <h1 class=" text-2xl  lg:text-4xl  font-bold  md:text-3xl  lg:mt-16 lg:ml-16 ">Selecciona tus ingredientes</h1>
+<div class="w-full flex flex-col items-center  mt-10  lg:inline  lg:bg-black"
+  style="font-family: 'Open Sans', sans-serif;">
+  <h1 class=" text-2xl  lg:text-4xl  font-bold  md:text-3xl  lg:mt-16 lg:ml-40 ">Selecciona tus ingredientes</h1>
 </div>
 
 
 <!-- LICORES -->
 
-<div class="w-full flex items-center flex-col mt-16" >
-    <div class="flex flex-row items-center cursor-pointer" (click)="licor_hidden=!licor_hidden" > 
-        <h1 class="text-xl md:text-2xl lg:text-3xl mr-3"  >Licores</h1>
-        <img src="https://imageog.flaticon.com/icons/png/512/25/25623.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF" 
-        class="h-3 md:h-4 rounded-full shadow-sm cursor-pointer hover:shadow" 
-        *ngIf="licor_hidden">  
-        <img src="https://imageog.flaticon.com/icons/png/512/61/61032.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF" 
-        class="h-3 md:h-4 rounded-full shadow-sm cursor-pointer hover:shadow" 
-        *ngIf="!licor_hidden"> 
-    </div>
+<div class="w-full flex items-center flex-col mt-16" style="font-family: 'Open Sans', sans-serif;">
+  <div class="flex flex-row items-center cursor-pointer" (click)="licor_hidden=!licor_hidden">
+    <h1 class="text-xl md:text-2xl lg:text-3xl mr-3">Licores</h1>
+    <img
+      src="https://imageog.flaticon.com/icons/png/512/25/25623.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF"
+      class="h-3 md:h-4 rounded-full shadow-sm cursor-pointer hover:shadow" *ngIf="licor_hidden">
+    <img
+      src="https://imageog.flaticon.com/icons/png/512/61/61032.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF"
+      class="h-3 md:h-4 rounded-full shadow-sm cursor-pointer hover:shadow" *ngIf="!licor_hidden">
+  </div>
 </div>
 
-<div class="w-full flex flex-col items-center pb-10 pt-10"  *ngIf="!licor_hidden">
+<div class="w-full flex flex-col items-center pb-10 pt-10" *ngIf="!licor_hidden">
 
-    <app-filter-child [ingredients]="licores" (add)="add_to_filter($event)" >
+  <app-filter-child [ingredients]="licores" (add)="add_to_filter($event)">
 
-    </app-filter-child>
-    <img src="https://imageog.flaticon.com/icons/png/512/61/61032.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF"  
-    class="h-3  mt-4 md:h-4 rounded-full shadow-sm cursor-pointer hover:shadow" 
-    *ngIf="!licor_hidden"
-    (click)="licor_hidden=!licor_hidden"> 
+  </app-filter-child>
+  <img src="https://imageog.flaticon.com/icons/png/512/61/61032.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF"
+    class="h-3  mt-4 md:h-4 rounded-full shadow-sm cursor-pointer hover:shadow" *ngIf="!licor_hidden"
+    (click)="licor_hidden=!licor_hidden">
 
 
 </div>
@@ -36,27 +34,26 @@
 
 <!-- BEBIDAS -->
 
-<div class="w-full flex items-center flex-col mt-16" >
-    <div class="flex flex-row items-center cursor-pointer" (click)="bebida_hidden=!bebida_hidden" > 
-        <h1 class="text-xl md:text-2xl lg:text-3xl mr-3"  >Bebidas</h1>
-        <img src="https://imageog.flaticon.com/icons/png/512/25/25623.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF" 
-        class="h-3 md:h-4 rounded-full shadow-sm cursor-pointer hover:shadow" 
-        *ngIf="bebida_hidden">  
-        <img src="https://imageog.flaticon.com/icons/png/512/61/61032.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF"  
-        class="h-3 md:h-4 rounded-full shadow-sm cursor-pointer hover:shadow" 
-        *ngIf="!bebida_hidden"> 
-    </div>
+<div class="w-full flex items-center flex-col mt-16" style="font-family: 'Open Sans', sans-serif;">
+  <div class="flex flex-row items-center cursor-pointer" (click)="bebida_hidden=!bebida_hidden">
+    <h1 class="text-xl md:text-2xl lg:text-3xl mr-3">Bebidas</h1>
+    <img
+      src="https://imageog.flaticon.com/icons/png/512/25/25623.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF"
+      class="h-3 md:h-4 rounded-full shadow-sm cursor-pointer hover:shadow" *ngIf="bebida_hidden">
+    <img
+      src="https://imageog.flaticon.com/icons/png/512/61/61032.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF"
+      class="h-3 md:h-4 rounded-full shadow-sm cursor-pointer hover:shadow" *ngIf="!bebida_hidden">
+  </div>
 </div>
 
-<div class="w-full flex flex-col items-center pb-10 "  *ngIf="!bebida_hidden">
+<div class="w-full flex flex-col items-center pb-10 pt-10" *ngIf="!bebida_hidden">
 
-    <app-filter-child [ingredients]="bebidas" (add)="add_to_filter($event)" >
+  <app-filter-child [ingredients]="bebidas" (add)="add_to_filter($event)">
 
-    </app-filter-child>
-    <img src="https://imageog.flaticon.com/icons/png/512/61/61032.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF"  
-    class="h-3 mt-4 md:h-4 rounded-full shadow-sm cursor-pointer hover:shadow" 
-    *ngIf="!bebida_hidden"
-    (click)="bebida_hidden=!bebida_hidden"> 
+  </app-filter-child>
+  <img src="https://imageog.flaticon.com/icons/png/512/61/61032.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF"
+    class="h-3 mt-4 md:h-4 rounded-full shadow-sm cursor-pointer hover:shadow" *ngIf="!bebida_hidden"
+    (click)="bebida_hidden=!bebida_hidden">
 
 </div>
 
@@ -64,27 +61,26 @@
 
 <!-- FRUTAS -->
 
-<div class="w-full flex items-center flex-col mt-16" >
-    <div class="flex flex-row items-center cursor-pointer" (click)="fruta_hidden=!fruta_hidden" > 
-        <h1 class="text-xl md:text-2xl lg:text-3xl mr-3"  >Frutas</h1>
-        <img src="https://imageog.flaticon.com/icons/png/512/25/25623.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF" 
-        class="h-3 md:h-4 rounded-full shadow-sm cursor-pointer hover:shadow" 
-        *ngIf="fruta_hidden">  
-        <img src="https://imageog.flaticon.com/icons/png/512/61/61032.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF"  
-        class="h-3 md:h-4 rounded-full shadow-sm cursor-pointer hover:shadow" 
-         *ngIf="!fruta_hidden"> 
-    </div>
+<div class="w-full flex items-center flex-col mt-16" style="font-family: 'Open Sans', sans-serif;">
+  <div class="flex flex-row items-center cursor-pointer" (click)="fruta_hidden=!fruta_hidden">
+    <h1 class="text-xl md:text-2xl lg:text-3xl mr-3">Frutas</h1>
+    <img
+      src="https://imageog.flaticon.com/icons/png/512/25/25623.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF"
+      class="h-3 md:h-4 rounded-full shadow-sm cursor-pointer hover:shadow" *ngIf="fruta_hidden">
+    <img
+      src="https://imageog.flaticon.com/icons/png/512/61/61032.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF"
+      class="h-3 md:h-4 rounded-full shadow-sm cursor-pointer hover:shadow" *ngIf="!fruta_hidden">
+  </div>
 </div>
 
-<div class="w-full flex flex-col items-center pb-10 "  *ngIf="!fruta_hidden">
+<div class="w-full flex flex-col items-center pb-10 pt-10 " *ngIf="!fruta_hidden">
 
-    <app-filter-child [ingredients]="frutas" (add)="add_to_filter($event)" >
+  <app-filter-child [ingredients]="frutas" (add)="add_to_filter($event)">
 
-    </app-filter-child>
-    <img src="https://imageog.flaticon.com/icons/png/512/61/61032.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF"  
-    class="h-3 mt-4 md:h-4 rounded-full shadow-sm cursor-pointer hover:shadow" 
-    *ngIf="!fruta_hidden"
-    (click)="fruta_hidden=!fruta_hidden">  
+  </app-filter-child>
+  <img src="https://imageog.flaticon.com/icons/png/512/61/61032.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF"
+    class="h-3 mt-4 md:h-4 rounded-full shadow-sm cursor-pointer hover:shadow" *ngIf="!fruta_hidden"
+    (click)="fruta_hidden=!fruta_hidden">
 
 
 </div>
@@ -93,27 +89,26 @@
 
 <!-- HIERBAS -->
 
-<div class="w-full flex items-center flex-col mt-16" >
-    <div class="flex flex-row items-center cursor-pointer" (click)="hierba_hidden=!hierba_hidden" > 
-        <h1 class="text-xl md:text-2xl lg:text-3xl mr-3"  >Hierbas</h1>
-        <img src="https://imageog.flaticon.com/icons/png/512/25/25623.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF" 
-        class="h-3 md:h-4 rounded-full shadow-sm cursor-pointer hover:shadow" 
-        *ngIf="hierba_hidden">  
-        <img src="https://imageog.flaticon.com/icons/png/512/61/61032.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF"  
-        class="h-3 md:h-4 rounded-full shadow-sm cursor-pointer hover:shadow" 
-        *ngIf="!hierba_hidden"> 
-    </div>
+<div class="w-full flex items-center flex-col mt-16" style="font-family: 'Open Sans', sans-serif;">
+  <div class="flex flex-row items-center cursor-pointer" (click)="hierba_hidden=!hierba_hidden">
+    <h1 class="text-xl md:text-2xl lg:text-3xl mr-3">Hierbas</h1>
+    <img
+      src="https://imageog.flaticon.com/icons/png/512/25/25623.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF"
+      class="h-3 md:h-4 rounded-full shadow-sm cursor-pointer hover:shadow" *ngIf="hierba_hidden">
+    <img
+      src="https://imageog.flaticon.com/icons/png/512/61/61032.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF"
+      class="h-3 md:h-4 rounded-full shadow-sm cursor-pointer hover:shadow" *ngIf="!hierba_hidden">
+  </div>
 </div>
 
-<div class="w-full flex flex-col items-center pb-10 "  *ngIf="!hierba_hidden">
+<div class="w-full flex flex-col items-center pb-10 pt-10" *ngIf="!hierba_hidden">
 
-    <app-filter-child [ingredients]="hierbas" (add)="add_to_filter($event)" >
+  <app-filter-child [ingredients]="hierbas" (add)="add_to_filter($event)">
 
-    </app-filter-child>
-    <img src="https://imageog.flaticon.com/icons/png/512/61/61032.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF"  
-    class="h-3 mt-4  md:h-4 rounded-full shadow-sm cursor-pointer hover:shadow " 
-    *ngIf="!hierba_hidden"
-    (click)="hierba_hidden=!hierba_hidden"> 
+  </app-filter-child>
+  <img src="https://imageog.flaticon.com/icons/png/512/61/61032.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF"
+    class="h-3 mt-4  md:h-4 rounded-full shadow-sm cursor-pointer hover:shadow " *ngIf="!hierba_hidden"
+    (click)="hierba_hidden=!hierba_hidden">
 
 
 </div>
@@ -122,12 +117,10 @@
 
 
 
-<div class="w-full flex items-center flex-col h-32 mt-20">
-    <button class="bg-orange-500 transition duration-500 ease-in-out text-md  
+<div class="w-full flex items-center flex-col h-32 mt-20" style="font-family: 'Open Sans', sans-serif;">
+  <button class="bg-orange-500 transition duration-500 ease-in-out text-md  
                     md:text-xl px-1 py-1  text-white font-bold md:py-2 md:px-2 rounded-full
                     hover:bg-orange-700">
-       <p class="p-1 pl-10 pr-10">Buscar Recetas</p> 
-    </button>
+    <p class="p-1 pl-10 pr-10">Buscar Recetas</p>
+  </button>
 </div>
-
-

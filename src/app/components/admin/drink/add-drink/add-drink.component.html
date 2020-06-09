@@ -1,7 +1,7 @@
 <app-admin-header></app-admin-header>
 <div class="h-20 w-full flex justify-center items-center" style="font-family: 'Open Sans', sans-serif;">
   <div>
-    <h2 class="text-4xl">CREA UN INGREDIENTE</h2>
+    <h2 class="text-4xl">CREA UN TRAGO</h2>
   </div>
 </div>
 <div class="w-full flex justify-center items-center h-full">
@@ -16,18 +16,58 @@
       <div class="md:w-4/5">
         <input formControlName="name"
           class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
-          id="inline-full-name" type="text" placeholder="Ej. Ron">
+          id="inline-full-name" type="text" placeholder="Ej. Margarita">
       </div>
     </div>
 
     <div class="md:flex md:items-center mb-6">
       <div class="md:w-1/5">
         <label class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
-          Categoría
+          Descripción
+        </label>
+      </div>
+      <div class="md:w-4/5">
+        <input formControlName="description"
+          class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
+          id="inline-full-name" type="text" placeholder="">
+      </div>
+    </div>
+
+    <div class="md:flex md:items-center mb-6">
+      <div class="md:w-1/5">
+        <label class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+          Receta
+        </label>
+      </div>
+      <div class="md:w-4/5">
+        <input formControlName="recipe"
+          class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
+          id="inline-full-name" type="text" placeholder="">
+      </div>
+    </div>
+
+    <div class="md:flex md:items-center mb-6">
+      <div class="md:w-1/5">
+        <label class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+          Creador
+        </label>
+      </div>
+      <div class="md:w-4/5">
+        <input formControlName="owner_name"
+          class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
+          id="inline-full-name" type="text" placeholder="Ej. USERNAME">
+      </div>
+    </div>
+
+
+    <div class="md:flex md:items-center mb-6">
+      <div class="md:w-1/5">
+        <label class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+          Rol
         </label>
       </div>
       <div class="md:w-4/5 relative">
-        <select formControlName="category"
+        <select formControlName="owner_rol"
           class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
           id="grid-state">
           <option [value]="item" *ngFor="let item of categories">{{item}}</option>
@@ -39,10 +79,12 @@
       </div>
     </div>
 
+
+
     <div class="md:flex md:items-center mb-6">
       <div class="md:w-1/5">
         <label class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
-          Ícono
+          Foto
         </label>
       </div>
       <div class="md:w-4/5">
@@ -76,7 +118,3 @@
 
   </form>
 </div>
-
-
-
-<app-footer></app-footer>
