@@ -13,6 +13,7 @@ import { DrinksFilterComponent } from './components/drinks/drinks-filter/drinks-
 
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     BarsListComponent,
     DrinksListComponent,
     DrinksFilterComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,

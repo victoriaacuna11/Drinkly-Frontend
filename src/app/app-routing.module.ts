@@ -4,6 +4,7 @@ import { BarsListComponent } from "./components/bars/bars-list/bars-list.compone
 import { DrinksListComponent } from "./components/drinks/drinks-list/drinks-list.component";
 import { DrinksFilterComponent } from "./components/drinks/drinks-filter/drinks-filter.component";
 import { NotFoundComponent } from "./components/not-found/not-found.component";
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 const routes: Routes = [
   { path: "bars", component: BarsListComponent },
