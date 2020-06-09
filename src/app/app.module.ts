@@ -28,6 +28,13 @@ import { EditIngredientComponent } from "./components/admin/ingredient/edit-ingr
 import { AddBarComponent } from './components/admin/bar/add-bar/add-bar.component';
 import { RequiredFieldComponent } from './components/admin/required-field/required-field.component';
 
+// Cloudinary module
+import {CloudinaryModule, CloudinaryConfiguration, provideCloudinary} from '@cloudinary/angular-5.x';
+import * as cloudinary from 'cloudinary-core';
+import { FileUploadModule } from 'ng2-file-upload';
+import {CloudinarySettings} from './settings';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,6 +57,9 @@ import { RequiredFieldComponent } from './components/admin/required-field/requir
     ProfileComponent,
     AddBarComponent,
     RequiredFieldComponent,
+    
+
+
   ],
   imports: [
     BrowserModule,
@@ -57,6 +67,8 @@ import { RequiredFieldComponent } from './components/admin/required-field/requir
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    CloudinaryModule.forRoot(cloudinary, CloudinarySettings),
+    FileUploadModule,
   ],
   providers: [ValidateService, AuthService, AuthGuard, AdminAuthGuard],
   bootstrap: [AppComponent],
