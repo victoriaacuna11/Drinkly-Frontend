@@ -9,38 +9,36 @@ import { RegisterComponent } from "./components/register/register.component";
 import { ProfileComponent } from "./components/profile/profile.component";
 import { ValidateService } from "./services/validate.service";
 import { EditIngredientComponent } from "./components/admin/ingredient/edit-ingredient/edit-ingredient.component";
-import { AddBarComponent } from './components/admin/bar/add-bar/add-bar.component';
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { AdminHeaderComponent } from './components/admin/admin-header/admin-header.component';
-import { HeaderComponent } from './components/header/header.component';
-import { ListComponent } from './components/list/list.component';
-import { BarsListComponent } from './components/bars/bars-list/bars-list.component';
-import { DrinksListComponent } from './components/drinks/drinks-list/drinks-list.component';
-import { DrinksFilterComponent } from './components/drinks/drinks-filter/drinks-filter.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { PruebaComponent } from './components/prueba/prueba.component';
-import { PruebaNewComponent } from './components/prueba-new/prueba-new.component';
-import { HttpClientModule } from '@angular/common/http';
-import { PruebaEditComponent } from './components/prueba-edit/prueba-edit.component';
-import { FilterChildComponent } from './components/drinks/filter-child/filter-child.component';
-import { FilterParentComponent } from './components/drinks/filter-parent/filter-parent.component';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { RequiredFieldComponent } from './components/admin/required-field/required-field.component';
-import { FileUploadFirestorageModule } from 'file-upload-firestorage';
+import { AddBarComponent } from "./components/admin/bar/add-bar/add-bar.component";
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
+import { FooterComponent } from "./components/footer/footer.component";
+import { AdminHeaderComponent } from "./components/admin/admin-header/admin-header.component";
+import { HeaderComponent } from "./components/header/header.component";
+import { ListComponent } from "./components/list/list.component";
+import { BarsListComponent } from "./components/bars/bars-list/bars-list.component";
+import { DrinksListComponent } from "./components/drinks/drinks-list/drinks-list.component";
+import { DrinksFilterComponent } from "./components/drinks/drinks-filter/drinks-filter.component";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { PruebaComponent } from "./components/prueba/prueba.component";
+import { PruebaNewComponent } from "./components/prueba-new/prueba-new.component";
+import { HttpClientModule } from "@angular/common/http";
+import { PruebaEditComponent } from "./components/prueba-edit/prueba-edit.component";
+import { FilterChildComponent } from "./components/drinks/filter-child/filter-child.component";
+import { FilterParentComponent } from "./components/drinks/filter-parent/filter-parent.component";
+import { SidebarComponent } from "./components/sidebar/sidebar.component";
+import { RequiredFieldComponent } from "./components/admin/required-field/required-field.component";
+import { FileUploadFirestorageModule } from "file-upload-firestorage";
 
-import { AngularFireModule } from '@angular/fire';
+import { AngularFireModule } from "@angular/fire";
 
-// Cloudinary module
-import { CloudinaryModule, CloudinaryConfiguration, provideCloudinary } from '@cloudinary/angular-5.x';
-import * as cloudinary from 'cloudinary-core';
-import { FileUploadModule } from 'ng2-file-upload';
-import { CloudinarySettings } from './settings';
-import { environment } from 'src/environments/environment';
+import { environment } from "src/environments/environment";
 
+import { ListDrinkComponent } from "./components/admin/drink/list-drink/list-drink.component";
+import { AddDrinkComponent } from "./components/admin/drink/add-drink/add-drink.component";
+import { EditDrinkComponent } from "./components/admin/drink/edit-drink/edit-drink.component";
 
 @NgModule({
   declarations: [
@@ -69,8 +67,9 @@ import { environment } from 'src/environments/environment';
     SidebarComponent,
     RequiredFieldComponent,
 
-
-
+    ListDrinkComponent,
+    AddDrinkComponent,
+    EditDrinkComponent,
   ],
   imports: [
     BrowserModule,
@@ -78,8 +77,6 @@ import { environment } from 'src/environments/environment';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    CloudinaryModule.forRoot(cloudinary, CloudinarySettings),
-    FileUploadModule,
     AngularFireModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     FileUploadFirestorageModule,
@@ -87,4 +84,4 @@ import { environment } from 'src/environments/environment';
   providers: [ValidateService, AuthService, AuthGuard, AdminAuthGuard],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

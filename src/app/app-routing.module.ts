@@ -21,6 +21,9 @@ import { AuthGuard } from "./guards/auth.guard";
 import { from } from "rxjs";
 
 import { FilterParentComponent } from "./components/drinks/filter-parent/filter-parent.component";
+import { ListDrinkComponent } from "./components/admin/drink/list-drink/list-drink.component";
+import { AddDrinkComponent } from "./components/admin/drink/add-drink/add-drink.component";
+import { EditDrinkComponent } from "./components/admin/drink/edit-drink/edit-drink.component";
 
 
 
@@ -31,7 +34,7 @@ const routes: Routes = [
   { path: "drinks", component: DrinksListComponent, canActivate: [AuthGuard] },
   {
     path: "drinks/filter",
-    component: DrinksFilterComponent,
+    component: FilterParentComponent,
     canActivate: [AuthGuard],
   },
   { path: "register", component: RegisterComponent },
@@ -57,6 +60,21 @@ const routes: Routes = [
   {
     path: "admin/bar/add",
     component: AddBarComponent,
+    // canActivate: [AdminAuthGuard]
+  },
+  {
+    path: "admin/drink",
+    component: ListDrinkComponent,
+    // canActivate: [AdminAuthGuard]
+  },
+  {
+    path: "admin/drink/add",
+    component: AddDrinkComponent,
+    // canActivate: [AdminAuthGuard]
+  },
+  {
+    path: "admin/drink/edit/:id",
+    component: EditDrinkComponent,
     // canActivate: [AdminAuthGuard]
   },
 
