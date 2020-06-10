@@ -3,6 +3,7 @@ import { IngredientService } from "src/app/services/ingredient.service";
 import { ingredient } from "./../../../../models/ingredient";
 import { FormGroup, FormBuilder } from "@angular/forms";
 import { Router } from "@angular/router";
+import { CategoriesService } from 'src/app/services/categories.service';
 
 @Component({
   selector: "app-add-ingredient",
@@ -10,24 +11,16 @@ import { Router } from "@angular/router";
   styleUrls: ["./add-ingredient.component.scss"],
 })
 export class AddIngredientComponent implements OnInit {
+
   selectedFile: File = null;
-  categories: String[] = [
-    "Amargos",
-    "Cervezas",
-    "Destilados",
-    "Especias",
-    "Frutas",
-    "Hierbas",
-    "Licores",
-    "Sirope",
-    "Vinos y champañas",
-    "Otros",
-  ];
+  categories: String[] = null;
   form: FormGroup;
+  
   constructor(
     private service: IngredientService,
     private _builder: FormBuilder,
-    private route: Router
+    private route: Router,
+    private categoryService: CategoriesService
   ) {
     this.form = this._builder.group({
       name: [""],
@@ -36,7 +29,9 @@ export class AddIngredientComponent implements OnInit {
     });
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.categories=this.categoryService.getCategories();
+  }
 
   onSelectedFile(event) {
     this.selectedFile = event.target.files[0];
@@ -56,6 +51,7 @@ export class AddIngredientComponent implements OnInit {
     formdata.append("name", ingredient.name as any);
     formdata.append("category", ingredient.category as any);
     formdata.append("available", ingredient.available as any);
+
     this.service.createIngredient(formdata).subscribe((res) => {
       this.route.navigate(["admin/ingredient"]);
     });

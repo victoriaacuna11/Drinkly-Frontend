@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "drinkly-unimet"
+  },
+  "targets": {
+    "drinkly-unimet": {
+      "hosting": {
+        "drinkly": [
+          "drinkly-unimet"
+        ]
+      }
+    }
+  }
+}
