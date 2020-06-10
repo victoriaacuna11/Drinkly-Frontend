@@ -9,7 +9,7 @@ import { DrinkService } from 'src/app/services/drink.service';
 export class DrinksListComponent implements OnInit {
 
   drinks: object[];
-  loading:Boolean=true;
+  loading: Boolean = true;
   // object[] = [
   //   {
   //     title: "APPLETINI",
@@ -32,18 +32,18 @@ export class DrinksListComponent implements OnInit {
   //     main_image: "assets/images/martinigreen 2.png",
   //   },
   // ];
-  
+
   constructor(private service: DrinkService) { }
 
   ngOnInit() {
     this.getDrinks();
   }
 
-  getDrinks(){
-    this.service.getBars().subscribe((res:any) => {
-      this.drinks=[...res.data];
+  getDrinks() {
+    this.service.getDrinks().subscribe((res: any) => {
+      this.drinks = [...res.data];
       console.log(this.drinks);
-      this.loading=false;
+      this.loading = false;
     })
   }
 }
