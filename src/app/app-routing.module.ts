@@ -29,7 +29,10 @@ import { FilterParentComponent } from "./components/drinks/filter-parent/filter-
 const routes: Routes = [
   // USERS' ROUTES
 
-  { path: "bars", component: BarsListComponent, canActivate: [AuthGuard] },
+  {
+    path: "bars", component: BarsListComponent,
+    canActivate: [AuthGuard]
+  },
   { path: "drinks", component: DrinksListComponent, canActivate: [AuthGuard] },
   {
     path: "drinks/filter",
