@@ -12,6 +12,7 @@ import { DrinksListComponent } from "./components/drinks/drinks-list/drinks-list
 import { DrinksFilterComponent } from "./components/drinks/drinks-filter/drinks-filter.component";
 import { AddIngredientComponent } from "./components/admin/ingredient/add-ingredient/add-ingredient.component";
 import { AddBarComponent } from "./components/admin/bar/add-bar/add-bar.component";
+import { JuegosComponent } from "./components/juegos/juegos.component";
 
 import { PruebaComponent } from "./components/prueba/prueba.component";
 import { PruebaNewComponent } from "./components/prueba-new/prueba-new.component";
@@ -81,6 +82,7 @@ const routes: Routes = [
   { path: "bars", component: BarsListComponent },
   { path: "drinks", component: DrinksListComponent },
   { path: "drinks/filter", component: FilterParentComponent },
+  { path: "juegos", component: JuegosComponent },
 
   // RUTAS DE PRUEBA
   { path: "prueba", component: PruebaComponent },
@@ -95,4 +97,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

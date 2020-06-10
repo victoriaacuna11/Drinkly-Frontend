@@ -39,6 +39,7 @@ import { environment } from "src/environments/environment";
 import { ListDrinkComponent } from "./components/admin/drink/list-drink/list-drink.component";
 import { AddDrinkComponent } from "./components/admin/drink/add-drink/add-drink.component";
 import { EditDrinkComponent } from "./components/admin/drink/edit-drink/edit-drink.component";
+import { JuegosComponent } from './components/juegos/juegos.component';
 
 @NgModule({
   declarations: [
@@ -70,6 +71,7 @@ import { EditDrinkComponent } from "./components/admin/drink/edit-drink/edit-dri
     ListDrinkComponent,
     AddDrinkComponent,
     EditDrinkComponent,
+    JuegosComponent,
   ],
   imports: [
     BrowserModule,
