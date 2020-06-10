@@ -21,7 +21,7 @@ import { ListComponent } from './components/list/list.component';
 import { BarsListComponent } from './components/bars/bars-list/bars-list.component';
 import { DrinksListComponent } from './components/drinks/drinks-list/drinks-list.component';
 import { DrinksFilterComponent } from './components/drinks/drinks-filter/drinks-filter.component';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PruebaComponent } from './components/prueba/prueba.component';
 import { PruebaNewComponent } from './components/prueba-new/prueba-new.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -29,6 +29,18 @@ import { PruebaEditComponent } from './components/prueba-edit/prueba-edit.compon
 import { FilterChildComponent } from './components/drinks/filter-child/filter-child.component';
 import { FilterParentComponent } from './components/drinks/filter-parent/filter-parent.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { RequiredFieldComponent } from './components/admin/required-field/required-field.component';
+import { FileUploadFirestorageModule } from 'file-upload-firestorage';
+
+import { AngularFireModule } from '@angular/fire';
+
+// Cloudinary module
+import { CloudinaryModule, CloudinaryConfiguration, provideCloudinary } from '@cloudinary/angular-5.x';
+import * as cloudinary from 'cloudinary-core';
+import { FileUploadModule } from 'ng2-file-upload';
+import { CloudinarySettings } from './settings';
+import { environment } from 'src/environments/environment';
+
 
 @NgModule({
   declarations: [
@@ -55,6 +67,10 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     FilterParentComponent,
     NotFoundComponent,
     SidebarComponent,
+    RequiredFieldComponent,
+
+
+
   ],
   imports: [
     BrowserModule,
@@ -62,6 +78,11 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    CloudinaryModule.forRoot(cloudinary, CloudinarySettings),
+    FileUploadModule,
+    AngularFireModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    FileUploadFirestorageModule,
   ],
   providers: [ValidateService, AuthService, AuthGuard, AdminAuthGuard],
   bootstrap: [AppComponent],
