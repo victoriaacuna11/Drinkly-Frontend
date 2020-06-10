@@ -49,7 +49,7 @@ const routes: Routes = [
   {
     path: "admin/ingredient/add",
     component: AddIngredientComponent,
-    canActivate: [AdminAuthGuard],
+    // canActivate: [AdminAuthGuard],
   },
   {
     path: "admin/ingredient",

@@ -40,15 +40,21 @@
   >
   <a
     *ngIf="isAdmin"
-    href="#"
+    href="/admin/bar"
     class="text-white block py-2 px-5 pr-20 mr-5 hover:bg-orange-500 no-underline"
     >Admin - Bares</a
   >
   <a
     *ngIf="isAdmin"
-    href="#"
+    href="/admin/drink"
     class="text-white block py-2 px-5 pr-20 mr-5 hover:bg-orange-500 no-underline"
     >Admin - Tragos</a
+  >
+  <a
+    *ngIf="isAdmin"
+    href="/admin/ingredient"
+    class="text-white block py-2 px-5 pr-20 mr-5 hover:bg-orange-500 no-underline"
+    >Admin - Ingredientes</a
   >
   <div
     *ngIf="isLogged"
