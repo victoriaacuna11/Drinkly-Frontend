@@ -6,7 +6,6 @@ import { zone } from 'src/app/models/zone';
 import { ZoneService } from 'src/app/services/zone.service';
 import { BarService } from 'src/app/services/bar.service';
 import { AngularFireStorage } from '@angular/fire/storage';
-import { AlertService } from 'src/app/services/alert.service';
 
 
 
@@ -22,14 +21,14 @@ export class AddBarComponent implements OnInit {
   bar: Bar;
   zones: zone[];
   loading: Boolean = true;
-  photo: String[] = ['null']; 
+  photo: String[] = ['null'];
   main_image: String = null;
-  phone: String[] =[];
+  phone: String[] = [];
 
 
 
   constructor(private _builder: FormBuilder, private route: Router, private zoneService: ZoneService,
-    private service: BarService, private storage: AngularFireStorage, private alertService: AlertService
+    private service: BarService, private storage: AngularFireStorage,
   ) {
     this.form = this._builder.group({
       name: ['', Validators.required],
@@ -63,16 +62,16 @@ export class AddBarComponent implements OnInit {
   }
 
   uploadEnRes(event) {
-    this.main_image=event.thumbnail;
+    this.main_image = event.thumbnail;
   }
 
-  changeImage(url){
+  changeImage(url) {
     return this.storage.storage.refFromURL(url).delete().then(res => {
-      this.main_image=null;
+      this.main_image = null;
     })
   }
 
-  uploadPhoto(event, index){
+  uploadPhoto(event, index) {
 
     const newURL = event.thumbnail;
     this.photo.push(newURL);
@@ -83,26 +82,26 @@ export class AddBarComponent implements OnInit {
   }
 
 
-  deletePhoto(url, index){
+  deletePhoto(url, index) {
 
-    if(this.photo.length==1 && this.photo[0]!='null'){
+    if (this.photo.length == 1 && this.photo[0] != 'null') {
       this.storage.storage.refFromURL(url).delete().then(res => {
-        this.photo[index]='null';
+        this.photo[index] = 'null';
         console.log(this.photo);
       });
     } else {
 
-      if(this.photo.length==1 && this.photo[0]=='null'){
+      if (this.photo.length == 1 && this.photo[0] == 'null') {
         console.log('No se puede eliminar');
       } else {
-        this.photo.splice(index,1);
-        if(this.photo[index]!='null'){
+        this.photo.splice(index, 1);
+        if (this.photo[index] != 'null') {
           this.storage.storage.refFromURL(url).delete().then(res => {
             console.log(this.photo);
           })
         }
       }
-      
+
     }
 
   }
@@ -172,20 +171,20 @@ export class AddBarComponent implements OnInit {
 
   createBar() {
     let photos: String[] = [];
-    this.photo.forEach( item => {
-      if(item!='null'){
+    this.photo.forEach(item => {
+      if (item != 'null') {
         photos.push(item);
       }
     });
-    let phones : String[] = [];
+    let phones: String[] = [];
     this.form.value.phone.forEach(item => {
       phones.push(item.phone);
     })
 
     // VALIDA SI SE INTRODUJERON LAS IMÁGENES NECESARIAS (EL FORM YA ESTÁ VALIDADO).
-    if(this.main_image!=null && photos!=null){
+    if (this.main_image != null && photos != null) {
 
-      
+
       const bar: Bar = {
         name: this.form.value.name,
         working_hours: this.form.value.working_hours,
@@ -211,7 +210,7 @@ export class AddBarComponent implements OnInit {
         console.log('BAR HAS BEEN CREATED')
       })
     } else {
-        const response = alert('Debe introducir al menos una imagen tanto en el apartado de ícono como en el de fotos');
+      const response = alert('Debe introducir al menos una imagen tanto en el apartado de ícono como en el de fotos');
     }
   }
 
