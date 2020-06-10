@@ -36,7 +36,6 @@ export class AuthService {
     this.loadToken();
     headers = headers.append("Authorization", this.authToken);
     headers = headers.append("Content-Type", "application/json");
-    console.log(this.authToken);
     return this.http.get("http://localhost:5000/api/user/profile", {
       headers: headers,
     });
@@ -80,13 +79,18 @@ export class AuthService {
 
   isAdmin() {
     this.user = JSON.parse(localStorage.getItem("user"));
-    console.log(this.user.isAdmin);
-    if (this.user.isAdmin) {
-      console.log("Puedes pasar administrador.");
-      return true;
-    } else {
-      console.log("Debes ser administrador.");
+
+    if (this.user === null) {
       return false;
+    } else {
+      console.log(this.user.isAdmin);
+      if (this.user.isAdmin) {
+        console.log("Puedes pasar administrador.");
+        return true;
+      } else {
+        console.log("Debes ser administrador.");
+        return false;
+      }
     }
   }
 }

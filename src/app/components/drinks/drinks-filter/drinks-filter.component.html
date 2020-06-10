@@ -1,170 +1,249 @@
 <app-header></app-header>
 
-<div class="w-full" >
-    <h1 class="text-4xl  font-bold mt-8  sm:mt-4  sm:ml-4 md:mt-6 md:nl-16 lg:mt-8 lg:ml-28 xl:mt-10 xl:ml-32">Selecciona tus ingredientes</h1>
+<div class="w-full">
+  <h1
+    class="text-4xl font-bold mt-8 sm:mt-4 sm:ml-4 md:mt-6 md:nl-16 lg:mt-8 lg:ml-28 xl:mt-10 xl:ml-32"
+  >
+    Selecciona tus ingredientes
+  </h1>
 </div>
-
 
 <!-- ESTO TECNICAMENTE PUEDE SER UN SOLO COMPONENTE PERO NO ME IBA A PONER CON ESO CON TIEMPO LIMITADO -->
 
-<div class="w-full flex items-center flex-col mt-10" >
-    <div class="flex flex-row items-center" (click)="licor_hidden=!licor_hidden" > 
-        <h1 class="text-3xl mr-3"  >Licores</h1>
-        <img src="https://imageog.flaticon.com/icons/png/512/25/25623.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF" class="h-4" *ngIf="licor_hidden">  
-        <img src="https://imageog.flaticon.com/icons/png/512/61/61032.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF"  class="h-4" *ngIf="!licor_hidden"> 
-    </div>
+<div class="w-full flex items-center flex-col mt-10">
+  <div
+    class="flex flex-row items-center"
+    (click)="licor_hidden = !licor_hidden"
+  >
+    <h1 class="text-3xl mr-3">Licores</h1>
+    <img
+      src="https://imageog.flaticon.com/icons/png/512/25/25623.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF"
+      class="h-4"
+      *ngIf="licor_hidden"
+    />
+    <img
+      src="https://imageog.flaticon.com/icons/png/512/61/61032.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF"
+      class="h-4"
+      *ngIf="!licor_hidden"
+    />
+  </div>
 </div>
 
 <div class="w-full flex flex-col items-center p-10">
+  <!-- CHILD -->
 
-    <!-- CHILD -->
+  <div
+    class="grid gap-8 grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 transition ease-in duration-300"
+    *ngIf="!licor_hidden"
+  >
+    <div *ngFor="let item of licores">
+      <div class="w-40" (click)="select(item)" *ngIf="item.category == 'Licor'">
+        <div
+          [ngClass]="
+            item.style
+              ? 'boder shadow rounded-lg p-3  flex items-center flex-col ease-in duration-300'
+              : 'boder shadow rounded-lg p-3  flex items-center flex-col bg-orange-300 transition ease-in duration-300'
+          "
+        >
+          <div
+            style="
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: cover;
+              position: relative;
+            "
+            [style.backgroundImage]="'url(' + item.pic + ')'"
+            class="h-32 w-24 mb-4 border shadow rounded-full"
+          ></div>
 
-    <div class=" grid gap-8 grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 transition ease-in duration-300" 
-            *ngIf="!licor_hidden">
-        <div *ngFor="let item of licores" >
-            <div class="w-40"  (click)="select(item)" *ngIf="item.category=='Licor'">
-                <div 
-                [ngClass]="item.style? 'boder shadow rounded-lg p-3  flex items-center flex-col ease-in duration-300': 'boder shadow rounded-lg p-3  flex items-center flex-col bg-orange-300 transition ease-in duration-300'"
-                >
-                    <div style="  background-position: center;
-                    background-repeat: no-repeat;
-                    background-size: cover;
-                    position: relative; "
-                    [style.backgroundImage]="'url('+ item.pic +')'"
-                    class="h-32 w-24 mb-4 border shadow rounded-full ">
-                    </div>
-
-                    <p> {{item.name}} </p>
-                </div>
-            </div>
-        </div>  
-
+          <p>{{ item.name }}</p>
+        </div>
+      </div>
     </div>
-    <!-- CHILD -->
-
-
-
+  </div>
+  <!-- CHILD -->
 </div>
 
 <!---------------------------------------------------------------------------------------------------------------------------->
 
-
 <!-- ESTO TECNICAMENTE PUEDE SER UN SOLO COMPONENTE PERO NO ME IBA A PONER CON ESO CON TIEMPO LIMITADO -->
-<div class="w-full flex items-center flex-col mt-5" >
-    <div class="flex flex-row items-center" (click)="bebida_hidden=!bebida_hidden" > 
-        <h1 class="text-3xl mr-3"  >Bebidas</h1>
-        <img src="https://imageog.flaticon.com/icons/png/512/25/25623.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF" class="h-4" *ngIf="bebida_hidden">  
-        <img src="https://imageog.flaticon.com/icons/png/512/61/61032.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF"  class="h-4" *ngIf="!bebida_hidden"> 
-    </div>
+<div class="w-full flex items-center flex-col mt-5">
+  <div
+    class="flex flex-row items-center"
+    (click)="bebida_hidden = !bebida_hidden"
+  >
+    <h1 class="text-3xl mr-3">Bebidas</h1>
+    <img
+      src="https://imageog.flaticon.com/icons/png/512/25/25623.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF"
+      class="h-4"
+      *ngIf="bebida_hidden"
+    />
+    <img
+      src="https://imageog.flaticon.com/icons/png/512/61/61032.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF"
+      class="h-4"
+      *ngIf="!bebida_hidden"
+    />
+  </div>
 </div>
 
 <div class="w-full flex flex-col items-center p-10">
-   <div class=" grid gap-8 grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 transition ease-in duration-300" 
-            *ngIf="!bebida_hidden">
-        
+  <div
+    class="grid gap-8 grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 transition ease-in duration-300"
+    *ngIf="!bebida_hidden"
+  >
+    <div *ngFor="let item of bebidas">
+      <div
+        class="w-40"
+        (click)="select(item)"
+        *ngIf="item.category == 'Bebida'"
+      >
+        <div
+          [ngClass]="
+            item.style
+              ? 'boder shadow rounded-lg p-3  flex items-center flex-col ease-in duration-300'
+              : 'boder shadow rounded-lg p-3  flex items-center flex-col bg-orange-300 transition ease-in duration-300'
+          "
+        >
+          <div
+            style="
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: cover;
+              position: relative;
+            "
+            [style.backgroundImage]="'url(' + item.pic + ')'"
+            class="h-32 w-24 mb-4 border shadow rounded-full"
+          ></div>
 
-        <div *ngFor="let item of bebidas" >
-            <div class="w-40"  (click)="select(item)" *ngIf="item.category=='Bebida'">
-                <div 
-                [ngClass]="item.style? 'boder shadow rounded-lg p-3  flex items-center flex-col ease-in duration-300': 'boder shadow rounded-lg p-3  flex items-center flex-col bg-orange-300 transition ease-in duration-300'"
-                >
-                    <div style="  background-position: center;
-                    background-repeat: no-repeat;
-                    background-size: cover;
-                    position: relative; "
-                    [style.backgroundImage]="'url('+ item.pic +')'"
-                    class="h-32 w-24 mb-4 border shadow rounded-full ">
-                    </div>
-
-                    <p> {{item.name}} </p>
-                </div>
-            </div>
-        </div>  
-
+          <p>{{ item.name }}</p>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
 <!---------------------------------------------------------------------------------------------------------------------------->
 
-
 <!-- ESTO TECNICAMENTE PUEDE SER UN SOLO COMPONENTE PERO NO ME IBA A PONER CON ESO CON TIEMPO LIMITADO -->
-<div class="w-full flex items-center flex-col mt-5" >
-    <div class="flex flex-row items-center" (click)="fruta_hidden=!fruta_hidden" > 
-        <h1 class="text-3xl mr-3"  >Frutas</h1>
-        <img src="https://imageog.flaticon.com/icons/png/512/25/25623.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF" class="h-4" *ngIf="fruta_hidden">  
-        <img src="https://imageog.flaticon.com/icons/png/512/61/61032.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF"  class="h-4" *ngIf="!fruta_hidden"> 
-    </div>
+<div class="w-full flex items-center flex-col mt-5">
+  <div
+    class="flex flex-row items-center"
+    (click)="fruta_hidden = !fruta_hidden"
+  >
+    <h1 class="text-3xl mr-3">Frutas</h1>
+    <img
+      src="https://imageog.flaticon.com/icons/png/512/25/25623.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF"
+      class="h-4"
+      *ngIf="fruta_hidden"
+    />
+    <img
+      src="https://imageog.flaticon.com/icons/png/512/61/61032.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF"
+      class="h-4"
+      *ngIf="!fruta_hidden"
+    />
+  </div>
 </div>
 
 <div class="w-full flex flex-col items-center p-10">
-    <div class=" grid gap-8 grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 transition ease-in duration-300" 
-            *ngIf="!fruta_hidden">
-        
+  <div
+    class="grid gap-8 grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 transition ease-in duration-300"
+    *ngIf="!fruta_hidden"
+  >
+    <div *ngFor="let item of frutas">
+      <div class="w-40" (click)="select(item)" *ngIf="item.category == 'Fruta'">
+        <div
+          [ngClass]="
+            item.style
+              ? 'boder shadow rounded-lg p-3  flex items-center flex-col ease-in duration-300'
+              : 'boder shadow rounded-lg p-3  flex items-center flex-col bg-orange-300 transition ease-in duration-300'
+          "
+        >
+          <div
+            style="
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: cover;
+              position: relative;
+            "
+            [style.backgroundImage]="'url(' + item.pic + ')'"
+            class="h-32 w-24 mb-4 border shadow rounded-full"
+          ></div>
 
-        <div *ngFor="let item of frutas" >
-            <div class="w-40"  (click)="select(item)" *ngIf="item.category=='Fruta'">
-                <div 
-                [ngClass]="item.style? 'boder shadow rounded-lg p-3  flex items-center flex-col ease-in duration-300': 'boder shadow rounded-lg p-3  flex items-center flex-col bg-orange-300 transition ease-in duration-300'"
-                >
-                    <div style="  background-position: center;
-                    background-repeat: no-repeat;
-                    background-size: cover;
-                    position: relative; "
-                    [style.backgroundImage]="'url('+ item.pic +')'"
-                    class="h-32 w-24 mb-4 border shadow rounded-full ">
-                    </div>
-
-                    <p> {{item.name}} </p>
-                </div>
-            </div>
-        </div>  
-
+          <p>{{ item.name }}</p>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
 <!---------------------------------------------------------------------------------------------------------------------------->
 
-
 <!-- ESTO TECNICAMENTE PUEDE SER UN SOLO COMPONENTE PERO NO ME IBA A PONER CON ESO CON TIEMPO LIMITADO -->
-<div class="w-full flex items-center flex-col mt-5" >
-    <div class="flex flex-row items-center" (click)="hierba_hidden=!hierba_hidden" > 
-        <h1 class="text-3xl mr-3"  >Hierba</h1>
-        <img src="https://imageog.flaticon.com/icons/png/512/25/25623.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF" class="h-4" *ngIf="hierba_hidden">  
-        <img src="https://imageog.flaticon.com/icons/png/512/61/61032.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF"  class="h-4" *ngIf="!hierba_hidden"> 
-    </div>
+<div class="w-full flex items-center flex-col mt-5">
+  <div
+    class="flex flex-row items-center"
+    (click)="hierba_hidden = !hierba_hidden"
+  >
+    <h1 class="text-3xl mr-3">Hierba</h1>
+    <img
+      src="https://imageog.flaticon.com/icons/png/512/25/25623.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF"
+      class="h-4"
+      *ngIf="hierba_hidden"
+    />
+    <img
+      src="https://imageog.flaticon.com/icons/png/512/61/61032.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF"
+      class="h-4"
+      *ngIf="!hierba_hidden"
+    />
+  </div>
 </div>
 
 <div class="w-full flex flex-col items-center p-10">
-    <div class=" grid gap-8 grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 transition ease-in duration-300" 
-            *ngIf="!hierba_hidden">
-        
+  <div
+    class="grid gap-8 grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 transition ease-in duration-300"
+    *ngIf="!hierba_hidden"
+  >
+    <div *ngFor="let item of hierbas">
+      <div
+        class="w-40"
+        (click)="select(item)"
+        *ngIf="item.category == 'Hierba'"
+      >
+        <div
+          [ngClass]="
+            item.style
+              ? 'boder shadow rounded-lg p-3  flex items-center flex-col ease-in duration-300'
+              : 'boder shadow rounded-lg p-3  flex items-center flex-col bg-orange-300 transition ease-in duration-300'
+          "
+        >
+          <div
+            style="
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: cover;
+              position: relative;
+            "
+            [style.backgroundImage]="'url(' + item.pic + ')'"
+            class="h-32 w-24 mb-4 border shadow rounded-full"
+          ></div>
 
-        <div *ngFor="let item of hierbas" >
-            <div class="w-40"  (click)="select(item)" *ngIf="item.category=='Hierba'">
-                <div 
-                [ngClass]="item.style? 'boder shadow rounded-lg p-3  flex items-center flex-col ease-in duration-300': 'boder shadow rounded-lg p-3  flex items-center flex-col bg-orange-300 transition ease-in duration-300'"
-                >
-                    <div style="  background-position: center;
-                    background-repeat: no-repeat;
-                    background-size: cover;
-                    position: relative; "
-                    [style.backgroundImage]="'url('+ item.pic +')'"
-                    class="h-32 w-24 mb-4 border shadow rounded-full ">
-                    </div>
-
-                    <p> {{item.name}} </p>
-                </div>
-            </div>
-        </div>  
-
+          <p>{{ item.name }}</p>
+        </div>
+      </div>
     </div>
-    <img src="https://imageog.flaticon.com/icons/png/512/61/61032.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF"  class="h-4" *ngIf="!hierba_hidden"> 
-
+  </div>
+  <img
+    src="https://imageog.flaticon.com/icons/png/512/61/61032.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF"
+    class="h-4"
+    *ngIf="!hierba_hidden"
+  />
 </div>
 <!---------------------------------------------------------------------------------------------------------------------------->
 
 <div class="w-full flex items-center flex-col h-32 mt-10">
-    <button class="bg-orange-500 text-xl  hover:bg-orange-700 text-white font-bold py-2 px-4 rounded-full">
-       <p class="p-1 pl-10 pr-10">Buscar Recetas</p> 
-    </button>
+  <button
+    class="bg-orange-500 text-xl hover:bg-orange-700 text-white font-bold py-2 px-4 rounded-full"
+  >
+    <p class="p-1 pl-10 pr-10">Buscar Recetas</p>
+  </button>
 </div>
 
 <app-footer></app-footer>

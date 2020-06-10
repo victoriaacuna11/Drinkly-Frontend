@@ -1,19 +1,61 @@
 <div class="">
-    <button (click)="isOpen = !isOpen" class="text-orange-500 hover:text-white mt-5 ml-8">
-        <svg class="fill-current h-5 w-5">
-            <path *ngIf="isOpen"
-                d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z" />
-            <path *ngIf="!isOpen"
-                d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z" />
-        </svg>
-    </button>
+  <button
+    (click)="isOpen = !isOpen"
+    class="text-orange-500 hover:text-white mt-5 ml-8 outline-none"
+  >
+    <svg class="fill-current h-5 w-5 outline-none">
+      <path
+        class="outline-none"
+        *ngIf="isOpen"
+        d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"
+      />
+      <path
+        class="outline-none"
+        *ngIf="!isOpen"
+        d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
+      />
+    </svg>
+  </button>
 </div>
 <div *ngIf="isOpen" class="px-8 py-4 ml-5">
-    <a href="/drinks/filter" class="text-white block py-2 px-5 pr-20 mr-5 hover:bg-orange-500">Recetas</a>
-    <a href="#" class="text-white block py-2 px-5 pr-20 mr-5 hover:bg-orange-500">Juegos</a>
-    <a href="/bars" class="text-white block py-2 px-5 pr-20 mr-5 hover:bg-orange-500">Bares</a>
-    <a *ngIf="!isAdmin" href="#" class="text-white block py-2 px-5 pr-20 mr-5 hover:bg-orange-500">Admin - Bares</a>
-    <a *ngIf="!isAdmin" href="#" class="text-white block py-2 px-5 pr-20 mr-5 hover:bg-orange-500">Admin - Tragos</a>
-    <a href="/login" class="block py-2 px-5 pr-20 mr-5 hover:bg-white"> <img src="assets/images/login.png" alt="login"
-            class="h-6 w-6"> </a>
+  <a
+    href="/drinks/filter"
+    class="text-white block py-2 px-5 pr-20 mr-5 hover:bg-orange-500 no-underline"
+    >Arma tu trago</a
+  >
+  <a
+    href="#"
+    class="text-white block py-2 px-5 pr-20 mr-5 hover:bg-orange-500 no-underline"
+    >Juegos</a
+  >
+  <a
+    href="/bars"
+    class="text-white block py-2 px-5 pr-20 mr-5 hover:bg-orange-500 no-underline"
+    >Bares</a
+  >
+  <a
+    href="/profile"
+    class="text-white block py-2 px-5 pr-20 mr-5 hover:bg-orange-500 no-underline"
+    >Tu perfil</a
+  >
+  <a
+    *ngIf="isAdmin"
+    href="#"
+    class="text-white block py-2 px-5 pr-20 mr-5 hover:bg-orange-500 no-underline"
+    >Admin - Bares</a
+  >
+  <a
+    *ngIf="isAdmin"
+    href="#"
+    class="text-white block py-2 px-5 pr-20 mr-5 hover:bg-orange-500 no-underline"
+    >Admin - Tragos</a
+  >
+  <div
+    *ngIf="isLogged"
+    (click)="getOut()"
+    style="cursor: pointer;"
+    class="block py-2 px-5 pr-20 mr-5 hover:bg-white"
+  >
+    <img src="assets/images/login.png" alt="login" class="h-6 w-6" />
+  </div>
 </div>

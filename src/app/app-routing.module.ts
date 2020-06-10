@@ -25,8 +25,6 @@ import { ListDrinkComponent } from "./components/admin/drink/list-drink/list-dri
 import { AddDrinkComponent } from "./components/admin/drink/add-drink/add-drink.component";
 import { EditDrinkComponent } from "./components/admin/drink/edit-drink/edit-drink.component";
 
-
-
 const routes: Routes = [
   // USERS' ROUTES
 
@@ -77,10 +75,6 @@ const routes: Routes = [
     component: EditDrinkComponent,
     // canActivate: [AdminAuthGuard]
   },
-
-  { path: "bars", component: BarsListComponent },
-  { path: "drinks", component: DrinksListComponent },
-  { path: "drinks/filter", component: FilterParentComponent },
 
   // RUTAS DE PRUEBA
   { path: "prueba", component: PruebaComponent },
