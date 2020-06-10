@@ -1,0 +1,212 @@
+<app-admin-header></app-admin-header>
+<div *ngIf="!loading" class="pb-32">
+  <div
+    class="h-20 w-full flex justify-center items-center"
+    style="font-family: 'Open Sans', sans-serif;"
+  >
+    <div>
+      <h2 class="text-4xl">EDITA UN TRAGO</h2>
+    </div>
+  </div>
+  <div class="w-full flex justify-center items-center h-full">
+    <form
+      [formGroup]="form"
+      class="w-2/4 content-center"
+      encType="multipart/form-data"
+    >
+      <div class="md:flex md:items-center mb-6">
+        <div class="md:w-1/5">
+          <label
+            class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+            for="inline-full-name"
+          >
+            Nombre
+          </label>
+        </div>
+        <div class="md:w-4/5">
+          <input
+            formControlName="name"
+            class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
+            id="inline-full-name"
+            type="text"
+            placeholder="Ej. Margarita"
+          />
+        </div>
+      </div>
+
+      <div class="md:flex md:items-center mb-6">
+        <div class="md:w-1/5">
+          <label
+            class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+            for="inline-full-name"
+          >
+            Descripción
+          </label>
+        </div>
+        <div class="md:w-4/5">
+          <input
+            formControlName="description"
+            class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
+            id="inline-full-name"
+            type="text"
+            placeholder=""
+          />
+        </div>
+      </div>
+
+      <div class="md:flex md:items-center mb-6">
+        <div class="md:w-1/5">
+          <label
+            class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+            for="inline-full-name"
+          >
+            Receta
+          </label>
+        </div>
+        <div class="md:w-4/5">
+          <input
+            formControlName="recipe"
+            class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
+            id="inline-full-name"
+            type="text"
+            placeholder=""
+          />
+        </div>
+      </div>
+
+      <div class="md:flex md:items-center mb-6">
+        <div class="md:w-1/5">
+          <label
+            class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+            for="inline-full-name"
+          >
+            Creador
+          </label>
+        </div>
+        <div class="md:w-4/5">
+          <input
+            formControlName="owner_name"
+            class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
+            id="inline-full-name"
+            type="text"
+            placeholder="Ej. USERNAME"
+          />
+        </div>
+      </div>
+
+      <div class="md:flex md:items-center mb-6">
+        <div class="md:w-1/5">
+          <label
+            class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+            for="inline-full-name"
+          >
+            Rol
+          </label>
+        </div>
+        <div class="md:w-4/5 relative">
+          <select
+            formControlName="owner_rol"
+            class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
+            id="grid-state"
+          >
+            <option [value]="carajo" *ngFor="let item of categories">{{
+              item
+            }}</option>
+          </select>
+          <div
+            class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
+          >
+            <svg
+              class="fill-current h-4 w-4"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+            >
+              <path
+                d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="md:flex md:items-center mb-6">
+        <div class="md:w-1/5">
+          <label
+            class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+            for="inline-full-name"
+          >
+            Foto
+          </label>
+        </div>
+        <div class="md:w-4/5">
+          <div class="flex items-center justify-center bg-grey-lighter">
+            <label
+              class="w-full flex justify-center h-full items-center px-4 py-3 pr-8 bg-gray-200 rounded-lg shadow-lg tracking-wide border border-blue cursor-pointer hover:bg-orange-500 hover:text-white"
+            >
+              <span class="mt-2 text-base leading-normal"
+                >Selecciona un archivo</span
+              >
+              <input
+                formControlName="pictures"
+                type="file"
+                class="hidden"
+                (change)="onSelectedFile($event)"
+              />
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="md:flex md:items-center mb-6">
+        <div class="md:w-1/5">
+          <label
+            class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+            for="inline-full-name"
+          >
+            Ingredientes
+          </label>
+        </div>
+        <div *ngIf="!loading" class="md:flex md:items-center mb-6">
+          <div
+            class="md:flex md:items-center mb-6"
+            *ngFor="let item of ingredient_arr; let i = index"
+          >
+            <label class="md:w-2/3 block text-gray-500 font-bold">
+              <input
+                class="mr-2 leading-tight"
+                type="checkbox"
+                (change)="getSelect(item)"
+                [checked]="ingSelector(item)"
+              />
+              <span class="text-sm">
+                {{ item.name }}
+              </span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="md:flex md:items-center mb-6">
+        <div class="md:w-1/3"></div>
+        <div class="flex space-x-4 justify-end md:w-2/3">
+          <button
+            (click)="editIngredient()"
+            class="md:w-1/4 shadow bg-green-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+            type="button"
+          >
+            Guardar
+          </button>
+          <button
+            (click)="goBack()"
+            class="md:w-1/4 shadow bg-orange-500 hover:bg-orange-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+            type="button"
+          >
+            Regresar
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<app-footer></app-footer>
