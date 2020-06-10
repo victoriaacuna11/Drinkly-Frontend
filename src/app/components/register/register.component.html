@@ -103,17 +103,25 @@
         <input
           formControlName="birthday"
           class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
-          id="inline-full-name"
+          name="x"
+          [(ngModel)]="x"
           type="text"
-          placeholder="YYYY-MM-DD"
+          [bsConfig]="dpConfig"
+          bsDatepicker
+          placement="right"
+          readonly
           required
+          isAdult
         />
         <span
           class="text-red-500"
           *ngIf="form.get('birthday').touched || form.get('birthday').dirty"
         >
-          <span *ngIf="form.get('birthday').errors">
+          <span *ngIf="form.get('birthday').errors?.required">
             Este campo es obligatorio.
+          </span>
+          <span *ngIf="form.get('birthday').errors?.underAge">
+            Lo sentimos! Regresa cuando seas mayor de edad.
           </span>
         </span>
       </div>

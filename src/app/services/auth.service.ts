@@ -36,7 +36,6 @@ export class AuthService {
     this.loadToken();
     headers = headers.append("Authorization", this.authToken);
     headers = headers.append("Content-Type", "application/json");
-    console.log(this.authToken);
     return this.http.get("http://localhost:5000/api/user/profile", {
       headers: headers,
     });

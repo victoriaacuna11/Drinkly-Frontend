@@ -25,6 +25,9 @@ import { RegisterComponent } from "./components/register/register.component";
 import { ProfileComponent } from "./components/profile/profile.component";
 import { ValidateService } from "./services/validate.service";
 import { EditIngredientComponent } from "./components/admin/ingredient/edit-ingredient/edit-ingredient.component";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { BsDatepickerModule } from "ngx-bootstrap/datepicker";
+import { AgeValidatorDirective } from "./Directives/isAdult.directive";
 
 @NgModule({
   declarations: [
@@ -46,6 +49,7 @@ import { EditIngredientComponent } from "./components/admin/ingredient/edit-ingr
     LoginComponent,
     RegisterComponent,
     ProfileComponent,
+    AgeValidatorDirective,
   ],
   imports: [
     BrowserModule,
@@ -53,6 +57,8 @@ import { EditIngredientComponent } from "./components/admin/ingredient/edit-ingr
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    BsDatepickerModule.forRoot(),
   ],
   providers: [ValidateService, AuthService, AuthGuard, AdminAuthGuard],
   bootstrap: [AppComponent],

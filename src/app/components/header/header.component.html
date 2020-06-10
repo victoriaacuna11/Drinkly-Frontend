@@ -11,7 +11,6 @@
     background-image: url(assets/images/banner_drinkly.jpg);
     background-size: cover;
   "
-  
 >
   <div class="w-full flex justify-center items-center h-full">
     <div *ngIf="hasSearchBar" class="pt-2 relative mx-auto text-black w-44">
@@ -19,7 +18,7 @@
         class="bg-white h-10 px-5 pr-20 rounded-full text-sm focus:outline-none"
         type="search"
         name="search"
-        placeholder="Busca por {{searchBarContent}}"
+        placeholder="Busca por {{ searchBarContent }}"
       />
       <button
         type="submit"
