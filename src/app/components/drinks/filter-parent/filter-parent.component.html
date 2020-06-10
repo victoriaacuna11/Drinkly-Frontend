@@ -152,10 +152,7 @@
   </div>
 </div>
 
-<div
-  class="w-full flex flex-col items-center pb-10 pt-10"
-  *ngIf="!hierba_hidden"
->
+<div class="w-full flex flex-col items-center pb-10" *ngIf="!hierba_hidden">
   <app-filter-child [ingredients]="hierbas" (add)="add_to_filter($event)">
   </app-filter-child>
   <img
@@ -173,7 +170,7 @@
   style="font-family: 'Open Sans', sans-serif;"
 >
   <button
-    class="bg-orange-500 transition duration-500 ease-in-out text-md md:text-xl px-1 py-1 text-white font-bold md:py-2 md:px-2 rounded-full hover:bg-orange-700"
+    class="pb-48 bg-orange-500 transition duration-500 ease-in-out text-md md:text-xl px-1 py-1 text-white font-bold md:py-2 md:px-2 rounded-full hover:bg-orange-700"
   >
     <p class="p-1 pl-10 pr-10">Buscar Recetas</p>
   </button>

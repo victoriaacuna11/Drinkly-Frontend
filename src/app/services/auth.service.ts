@@ -42,8 +42,9 @@ export class AuthService {
   }
 
   //si el login fue exitoso, esta función guarda el usuario y su token en local storage
-  storeData(token, user) {
+  storeData(token, user, expiresIn) {
     localStorage.setItem("id_token", token);
+    localStorage.setItem("expiresIn", expiresIn);
     localStorage.setItem("user", JSON.stringify(user));
     this.authToken = token;
     this.user = user;

@@ -41,7 +41,8 @@ export class LoginComponent implements OnInit {
       if (this.dataRegister.success) {
         this.auth_svc.storeData(
           this.dataRegister.token,
-          this.dataRegister.user
+          this.dataRegister.user,
+          this.dataRegister.expiresIn
         );
         console.log("Bienvenido!");
         this.router.navigate(["profile"]);
