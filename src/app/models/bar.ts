@@ -2,11 +2,11 @@ import { item } from './itemMenu';
 
 export class Bar {
   name: string;
-  main_image: string;
+  main_image: String;
   address: string;
   zone: string;
   working_hours: string;
-  pictures: string[];
+  pictures: String[];
   rating: number;
   phone: String[];
   description: string;

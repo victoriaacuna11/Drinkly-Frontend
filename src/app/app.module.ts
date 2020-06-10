@@ -27,12 +27,16 @@ import { ValidateService } from "./services/validate.service";
 import { EditIngredientComponent } from "./components/admin/ingredient/edit-ingredient/edit-ingredient.component";
 import { AddBarComponent } from './components/admin/bar/add-bar/add-bar.component';
 import { RequiredFieldComponent } from './components/admin/required-field/required-field.component';
+import { FileUploadFirestorageModule } from 'file-upload-firestorage';
+
+import { AngularFireModule } from '@angular/fire';
 
 // Cloudinary module
-import {CloudinaryModule, CloudinaryConfiguration, provideCloudinary} from '@cloudinary/angular-5.x';
+import { CloudinaryModule, CloudinaryConfiguration, provideCloudinary } from '@cloudinary/angular-5.x';
 import * as cloudinary from 'cloudinary-core';
 import { FileUploadModule } from 'ng2-file-upload';
-import {CloudinarySettings} from './settings';
+import { CloudinarySettings } from './settings';
+import { environment } from 'src/environments/environment';
 
 
 @NgModule({
@@ -57,7 +61,7 @@ import {CloudinarySettings} from './settings';
     ProfileComponent,
     AddBarComponent,
     RequiredFieldComponent,
-    
+
 
 
   ],
@@ -69,6 +73,9 @@ import {CloudinarySettings} from './settings';
     HttpClientModule,
     CloudinaryModule.forRoot(cloudinary, CloudinarySettings),
     FileUploadModule,
+    AngularFireModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    FileUploadFirestorageModule,
   ],
   providers: [ValidateService, AuthService, AuthGuard, AdminAuthGuard],
   bootstrap: [AppComponent],

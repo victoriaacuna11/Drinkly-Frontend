@@ -21,10 +21,8 @@ export class BarService {
     return this._http.get(this._url + id);
   }
 
-  createBar(file) {
-    console.log(this._url+"add");
-    console.log(file);
-    return this._http.post(this._url+"add", file);
+  createBar(bar) {
+    return this._http.post(this._url+"add", bar);
   }
 
 }

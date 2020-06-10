@@ -5,9 +5,9 @@ import { Bar } from 'src/app/models/bar';
 import { zone } from 'src/app/models/zone';
 import { ZoneService } from 'src/app/services/zone.service';
 import { BarService } from 'src/app/services/bar.service';
-// import { FileUploader, FileUploaderOptions, ParsedResponseHeaders } from 'ng2-file-upload';
-// import { Cloudinary } from '@cloudinary/angular-5.x';
-import { HttpClient } from '@angular/common/http';
+import { AngularFireStorage } from '@angular/fire/storage';
+import { AlertService } from 'src/app/services/alert.service';
+
 
 
 @Component({
@@ -17,26 +17,20 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AddBarComponent implements OnInit {
 
-  // @Input()
-  // responses: Array<any>;
-  // private hasBaseDropZoneOver: boolean = false;
-  // private uploader: FileUploader;
-  // private title: string;
-
-
-  mainImage: File = null;
+  // mainImage: File = null;
   form: FormGroup;
   bar: Bar;
   zones: zone[];
   loading: Boolean = true;
-  photos : File[];
+  photo: String[] = ['null']; 
+  main_image: String = null;
+  phone: String[] =[];
 
-  constructor(private _builder: FormBuilder, private route: Router, private zoneService: ZoneService, 
-    private service: BarService, private _http: HttpClient
-    // private cloudinary: Cloudinary,
-    // private zone: NgZone,
-    // private http: HttpClient
-    ) {
+
+
+  constructor(private _builder: FormBuilder, private route: Router, private zoneService: ZoneService,
+    private service: BarService, private storage: AngularFireStorage, private alertService: AlertService
+  ) {
     this.form = this._builder.group({
       name: ['', Validators.required],
       working_hours: ['', Validators.required],
@@ -49,72 +43,83 @@ export class AddBarComponent implements OnInit {
       description: ['', Validators.required],
       address: ['', Validators.required],
       zone: ['', Validators.required],
-      photo: ['', Validators.required],
-      main_image: ['', Validators.required],
       associate: false,
       phone: this._builder.array([
         this.addPhoneGroup()
       ]),
       menu: this._builder.array([
         this.addMenuGroup()
-      ])
+      ]),
+      // photo: this._builder.array([
+      //   this.addPhotoGroup()
+      // ])
     });
 
-    // this.responses = [];
-    // this.title = '';
-
-    
   }
+
 
   ngOnInit() {
     this.getZones();
-    
-    // const uploaderOptions: FileUploaderOptions = {
-    //   url: `https://api.cloudinary.com/v1_1/dj63a52qb/image/upload`,
-    //   // Upload files automatically upon addition to upload queue
-    //   autoUpload: true,
-    //   // Use xhrTransport in favor of iframeTransport
-    //   isHTML5: true,
-    //   // Calculate progress independently for each uploaded file
-    //   removeAfterUpload: true,
-    //   // XHR request headers
-    //   headers: [
-    //     {
-    //       name: 'X-Requested-With',
-    //       value: 'XMLHttpRequest'
-    //     }
-    //   ]
-    // };
-
-    // this.uploader = new FileUploader(uploaderOptions);
-    // console.log(this.uploader.options);
-
-    // this.uploader.onBuildItemForm = (fileItem: any, formdata: FormData): any => {
-    //   // Add Cloudinary unsigned upload preset to the upload form
-    //   formdata.append('upload_preset', 'ml_default');
-
-    //   // Add file to upload
-    //   formdata.append('file', fileItem);
-
-    //   // Use default "withCredentials" value for CORS requests
-    //   fileItem.withCredentials = false;
-    //   return { fileItem, formdata };
-    // };
-  
   }
 
-  // fileOverBase(e: any): void {
-  //   this.hasBaseDropZoneOver = e;
-  // }
+  uploadEnRes(event) {
+    this.main_image=event.thumbnail;
+  }
 
-  
+  changeImage(url){
+    return this.storage.storage.refFromURL(url).delete().then(res => {
+      this.main_image=null;
+    })
+  }
+
+  uploadPhoto(event, index){
+
+    const newURL = event.thumbnail;
+    this.photo.push(newURL);
+    this.photo.splice(index, 1);
+    console.log(this.photo);
+
+    ;
+  }
+
+
+  deletePhoto(url, index){
+
+    if(this.photo.length==1 && this.photo[0]!='null'){
+      this.storage.storage.refFromURL(url).delete().then(res => {
+        this.photo[index]='null';
+        console.log(this.photo);
+      });
+    } else {
+
+      if(this.photo.length==1 && this.photo[0]=='null'){
+        console.log('No se puede eliminar');
+      } else {
+        this.photo.splice(index,1);
+        if(this.photo[index]!='null'){
+          this.storage.storage.refFromURL(url).delete().then(res => {
+            console.log(this.photo);
+          })
+        }
+      }
+      
+    }
+
+  }
+
   addPhoneGroup() {
     return this._builder.group({
       phone: ['', Validators.required]
     })
   }
 
-  addMenuGroup(){
+  addPhotoGroup() {
+    return this._builder.group({
+      url: [null]
+    })
+  }
+
+  addMenuGroup() {
     return this._builder.group({
       name: ['', Validators.required],
       price: ['0,00', Validators.compose([Validators.required, Validators.min(0.01)])],
@@ -122,29 +127,40 @@ export class AddBarComponent implements OnInit {
     })
   }
 
-  get PhoneArray(){
+  get PhoneArray() {
     return <FormArray>this.form.get('phone');
   }
 
-  get MenuArray(){
+  get MenuArray() {
     return <FormArray>this.form.get('menu');
   }
 
-  addPhone(){
+  // get PhotoArray() {
+  //   return <FormArray>this.form.get('photo');
+  // }
+
+  addPhone() {
     this.PhoneArray.push(this.addPhoneGroup());
   }
 
-  deletePhone(index){
+  deletePhone(index) {
     this.PhoneArray.removeAt(index);
   }
 
-  addMenu(){
+  addMenu() {
     this.MenuArray.push(this.addMenuGroup());
   }
 
-  deleteMenu(index){
+  deleteMenu(index) {
     this.MenuArray.removeAt(index);
   }
+
+  addPhoto() {
+    this.photo.push('null');
+    console.log(this.photo);
+    console.log(this.photo.length);
+  }
+
 
   getZones() {
     this.zoneService.getZones().subscribe((res: any) => {
@@ -155,51 +171,50 @@ export class AddBarComponent implements OnInit {
   }
 
   createBar() {
-    
+    let photos: String[] = [];
+    this.photo.forEach( item => {
+      if(item!='null'){
+        photos.push(item);
+      }
+    });
+    let phones : String[] = [];
+    this.form.value.phone.forEach(item => {
+      phones.push(item.phone);
+    })
 
-    const bar: Bar = {
-      name: this.form.value.name,
-      working_hours: this.form.value.working_hours,
-      rating: this.form.value.rating,
-      cost: this.form.value.cost,
-      twitter: this.form.value.twitter,
-      instagram: this.form.value.instagram,
-      facebook: this.form.value.facebook,
-      email: this.form.value.email,
-      description: this.form.value.description,
-      zone: this.form.value.zone,
-      address: this.form.value.address,
-      available: true,
-      views: 0,
-      associate: this.form.value.associate,
-      menu: this.form.value.menu,
-      phone: this.form.value.phone,
+    // VALIDA SI SE INTRODUJERON LAS IMÁGENES NECESARIAS (EL FORM YA ESTÁ VALIDADO).
+    if(this.main_image!=null && photos!=null){
 
-      main_image: '',
-      pictures: [],
+      
+      const bar: Bar = {
+        name: this.form.value.name,
+        working_hours: this.form.value.working_hours,
+        rating: Math.round(this.form.value.rating),
+        cost: Math.round(this.form.value.cost),
+        twitter: this.form.value.twitter,
+        instagram: this.form.value.instagram,
+        facebook: this.form.value.facebook,
+        email: this.form.value.email,
+        description: this.form.value.description,
+        zone: this.form.value.zone,
+        address: this.form.value.address,
+        available: true,
+        views: 0,
+        associate: this.form.value.associate,
+        menu: this.form.value.menu,
+        phone: phones,
+        main_image: this.main_image,
+        pictures: photos,
+      }
 
+      this.service.createBar(bar).subscribe(res => {
+        console.log('BAR HAS BEEN CREATED')
+      })
+    } else {
+        const response = alert('Debe introducir al menos una imagen tanto en el apartado de ícono como en el de fotos');
     }
-
-    // console.log(this.listaImagenes);
-    // let formdata = new FormData();
-    // formdata.append("photo", this.photos as any);
-    // console.log(formdata);
-    // console.log(this.photos);
-    // this.service.createBar(this.photos).subscribe( res => {
-    //   console.log('weno');
-    // })
-
-
-    // [disabled]="form.invalid"
   }
 
-  selectMainImage(event) {
-    this.mainImage = event.target.files[0];
-  }
-
-  selectPhotos(event) {
-    this.photos = event.target.files;
-  }
 }
 
 
