@@ -8,6 +8,8 @@ import { JwtHelperService } from "@auth0/angular-jwt";
 export class AuthService {
   authToken: any;
   user: any;
+  aux2: any;
+  admin: Boolean = false;
 
   constructor(private http: HttpClient) {}
 
@@ -41,13 +43,24 @@ export class AuthService {
     });
   }
 
+  //esto me trae el valor que saco de la ruta isAdmin, que está protegida y solo se puede acceder con el token.
+  getAdmin() {
+    let headers: HttpHeaders = new HttpHeaders();
+    this.loadToken();
+    headers = headers.append("Authorization", this.authToken);
+    headers = headers.append("Content-Type", "application/json");
+    return this.http.get("http://localhost:5000/api/user/isAdmin", {
+      headers: headers,
+    });
+  }
+
   //si el login fue exitoso, esta función guarda el usuario y su token en local storage
-  storeData(token, user, expiresIn) {
+  storeData(token, expiresIn) {
     localStorage.setItem("id_token", token);
     localStorage.setItem("expiresIn", expiresIn);
-    localStorage.setItem("user", JSON.stringify(user));
+    //localStorage.setItem("user", JSON.stringify(user));
     this.authToken = token;
-    this.user = user;
+    //this.user = user;
   }
 
   //Borra lo que hay en local storage y nuestras variables
@@ -78,20 +91,19 @@ export class AuthService {
     }
   }
 
-  isAdmin() {
-    this.user = JSON.parse(localStorage.getItem("user"));
-
-    if (this.user === null) {
-      return false;
-    } else {
-      console.log(this.user.isAdmin);
-      if (this.user.isAdmin) {
-        console.log("Puedes pasar administrador.");
+  //ver si es administrador
+  isAdministrator() {
+    this.getAdmin().subscribe(
+      (isAdmin) => {
+        this.aux2 = isAdmin;
+        this.admin = this.aux2.isAdmin;
+        console.log("entro admin: " + this.admin);
         return true;
-      } else {
-        console.log("Debes ser administrador.");
+      },
+      (err) => {
+        console.log(err);
         return false;
       }
-    }
+    );
   }
 }

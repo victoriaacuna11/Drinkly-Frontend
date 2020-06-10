@@ -9,14 +9,18 @@ import { Component, OnInit } from "@angular/core";
 })
 export class ProfileComponent implements OnInit {
   aux: any = {};
+  aux2: any = {};
   user: Object;
+  admin: Boolean = false;
   userLoading: Boolean;
 
   constructor(private router: Router, private auth_svc: AuthService) {}
 
   ngOnInit() {
     this.userLoading = true;
+
     this.getProfile();
+    this.auth_svc.getAdmin();
   }
 
   getOut() {

@@ -6,8 +6,10 @@ import { Injectable } from "@angular/core";
 export class AdminAuthGuard implements CanActivate {
   constructor(private auth_svc: AuthService, private router: Router) {}
 
-  canActivate() {
-    if (this.auth_svc.isAdmin()) {
+  async canActivate() {
+    let x = await this.auth_svc.getAdmin().toPromise();
+
+    if (x) {
       return true;
     } else {
       this.router.navigateByUrl("/profile");
