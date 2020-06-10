@@ -33,7 +33,7 @@ export class EditDrinkComponent implements OnInit {
       description: "",
       recipe: "",
       owner_name: "",
-      owner_rol: "",
+      owner_rol: [""],
       ingredients: [],
       pictures: "",
     });
@@ -46,18 +46,28 @@ export class EditDrinkComponent implements OnInit {
   getDrink() {
     const id = this.routeSV.snapshot.paramMap.get("id");
     console.log(id);
-    this.getIngredients();
+
     this.drink_service.getDrink(id).subscribe((res: any) => {
       this.drink = { ...res.data };
 
+      //GET INGREDIENTS
+      this.ing_service.getIngredients().subscribe((res: any) => {
+        this.ingredient_arr = [...res.data];
+
+        //this.loading = false;
+      });
+      //----------------------------
+
+      this.drink_ingredients = this.drink.ingredients;
+
       console.log(this.drink);
-      this.drink2 = this.drink;
 
       this.form = this._builder.group({
         name: this.drink.name,
         description: this.drink.description,
         recipe: this.drink.recipe,
         owner_name: this.drink.owner.name,
+        owner_rol: this.drink.owner.category,
 
         //dos cosas que no tocamos
         //ingredients se hace despues
@@ -79,6 +89,29 @@ export class EditDrinkComponent implements OnInit {
     });
   }
 
+  getSelect(object: any) {
+    var is_in = false;
+
+    for (let index = 0; index < this.drink_ingredients.length; index++) {
+      if (object._id == this.drink_ingredients[index]) {
+        is_in = true;
+        index = this.drink_ingredients.length;
+      }
+    }
+
+    if (!is_in) {
+      this.drink_ingredients.push(object._id);
+    } else {
+      for (let index = 0; index < this.drink_ingredients.length; index++) {
+        if (object._id == this.drink_ingredients[index]) {
+          this.drink_ingredients.splice(index, 1);
+        }
+      }
+    }
+
+    console.log(this.drink_ingredients);
+  }
+
   ingSelector(object: any) {
     var is_in = true;
 
@@ -90,8 +123,6 @@ export class EditDrinkComponent implements OnInit {
 
     return is_in;
   }
-
-  getSelect(object: any) {}
 
   editIngredient() {}
 
