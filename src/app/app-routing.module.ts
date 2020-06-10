@@ -13,7 +13,7 @@ import { DrinksFilterComponent } from "./components/drinks/drinks-filter/drinks-
 import { AddIngredientComponent } from "./components/admin/ingredient/add-ingredient/add-ingredient.component";
 import { AddBarComponent } from "./components/admin/bar/add-bar/add-bar.component";
 import { ListBarComponent } from "./components/admin/bar/list-bar/list-bar.component";
-import {EditBarComponent} from './components/admin/bar/edit-bar/edit-bar.component';
+import { EditBarComponent } from './components/admin/bar/edit-bar/edit-bar.component';
 
 import { PruebaComponent } from "./components/prueba/prueba.component";
 import { PruebaNewComponent } from "./components/prueba-new/prueba-new.component";
@@ -70,10 +70,10 @@ const routes: Routes = [
   {
     path: "admin/bar/edit/:id",
     component: EditBarComponent,
-    // canActivate: [AdminAuthGuard]
+    canActivate: [AdminAuthGuard]
   },
 
-  
+
 
 
   // RUTAS DE PRUEBA
@@ -89,4 +89,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
