@@ -16,7 +16,6 @@ import { AngularFireStorage } from '@angular/fire/storage';
 })
 export class AddBarComponent implements OnInit {
 
-  // mainImage: File = null;
   form: FormGroup;
   bar: Bar;
   zones: zone[];
@@ -49,9 +48,6 @@ export class AddBarComponent implements OnInit {
       menu: this._builder.array([
         this.addMenuGroup()
       ]),
-      // photo: this._builder.array([
-      //   this.addPhotoGroup()
-      // ])
     });
 
   }
@@ -94,12 +90,13 @@ export class AddBarComponent implements OnInit {
       if (this.photo.length == 1 && this.photo[0] == 'null') {
         console.log('No se puede eliminar');
       } else {
-        this.photo.splice(index, 1);
+        
         if (this.photo[index] != 'null') {
           this.storage.storage.refFromURL(url).delete().then(res => {
             console.log(this.photo);
           })
         }
+        this.photo.splice(index, 1);
       }
 
     }
@@ -112,11 +109,11 @@ export class AddBarComponent implements OnInit {
     })
   }
 
-  addPhotoGroup() {
-    return this._builder.group({
-      url: [null]
-    })
-  }
+  // addPhotoGroup() {
+  //   return this._builder.group({
+  //     url: [null]
+  //   })
+  // }
 
   addMenuGroup() {
     return this._builder.group({
@@ -186,6 +183,7 @@ export class AddBarComponent implements OnInit {
 
 
       const bar: Bar = {
+        _id: '',
         name: this.form.value.name,
         working_hours: this.form.value.working_hours,
         rating: Math.round(this.form.value.rating),
@@ -207,12 +205,17 @@ export class AddBarComponent implements OnInit {
       }
 
       this.service.createBar(bar).subscribe(res => {
-        console.log('BAR HAS BEEN CREATED')
+        this.route.navigate(["admin/bar"]);
       })
     } else {
       const response = alert('Debe introducir al menos una imagen tanto en el apartado de ícono como en el de fotos');
     }
   }
+
+  goBack(){
+    this.route.navigate(["admin/bar"]);
+  }
+
 
 }
 

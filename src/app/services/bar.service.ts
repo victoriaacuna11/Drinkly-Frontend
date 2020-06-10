@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Bar } from '../models/bar';
 
 @Injectable({
   providedIn: 'root'
@@ -24,5 +25,12 @@ export class BarService {
   createBar(bar) {
     return this._http.post(this._url+"add", bar);
   }
+
+  updateBar(bar){
+    console.log(bar);
+    return this._http.put(this._url+'update/'+bar._id, bar);
+  }
+
+  
 
 }

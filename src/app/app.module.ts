@@ -31,15 +31,10 @@ import { FilterParentComponent } from './components/drinks/filter-parent/filter-
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { RequiredFieldComponent } from './components/admin/required-field/required-field.component';
 import { FileUploadFirestorageModule } from 'file-upload-firestorage';
-
 import { AngularFireModule } from '@angular/fire';
-
-// Cloudinary module
-import { CloudinaryModule, CloudinaryConfiguration, provideCloudinary } from '@cloudinary/angular-5.x';
-import * as cloudinary from 'cloudinary-core';
-import { FileUploadModule } from 'ng2-file-upload';
-import { CloudinarySettings } from './settings';
 import { environment } from 'src/environments/environment';
+import { ListBarComponent } from './components/admin/bar/list-bar/list-bar.component';
+import { EditBarComponent } from './components/admin/bar/edit-bar/edit-bar.component';
 
 
 @NgModule({
@@ -68,6 +63,8 @@ import { environment } from 'src/environments/environment';
     NotFoundComponent,
     SidebarComponent,
     RequiredFieldComponent,
+    ListBarComponent,
+    EditBarComponent,
 
 
 
@@ -78,8 +75,6 @@ import { environment } from 'src/environments/environment';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    CloudinaryModule.forRoot(cloudinary, CloudinarySettings),
-    FileUploadModule,
     AngularFireModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     FileUploadFirestorageModule,

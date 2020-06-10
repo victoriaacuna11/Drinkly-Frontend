@@ -12,6 +12,8 @@ import { DrinksListComponent } from "./components/drinks/drinks-list/drinks-list
 import { DrinksFilterComponent } from "./components/drinks/drinks-filter/drinks-filter.component";
 import { AddIngredientComponent } from "./components/admin/ingredient/add-ingredient/add-ingredient.component";
 import { AddBarComponent } from "./components/admin/bar/add-bar/add-bar.component";
+import { ListBarComponent } from "./components/admin/bar/list-bar/list-bar.component";
+import {EditBarComponent} from './components/admin/bar/edit-bar/edit-bar.component';
 
 import { PruebaComponent } from "./components/prueba/prueba.component";
 import { PruebaNewComponent } from "./components/prueba-new/prueba-new.component";
@@ -34,6 +36,7 @@ const routes: Routes = [
     component: DrinksFilterComponent,
     canActivate: [AuthGuard],
   },
+
   { path: "register", component: RegisterComponent },
   { path: "login", component: LoginComponent },
   { path: "profile", component: ProfileComponent, canActivate: [AuthGuard] },
@@ -57,12 +60,21 @@ const routes: Routes = [
   {
     path: "admin/bar/add",
     component: AddBarComponent,
+    canActivate: [AdminAuthGuard]
+  },
+  {
+    path: "admin/bar",
+    component: ListBarComponent,
+    canActivate: [AdminAuthGuard]
+  },
+  {
+    path: "admin/bar/edit/:id",
+    component: EditBarComponent,
     // canActivate: [AdminAuthGuard]
   },
 
-  { path: "bars", component: BarsListComponent },
-  { path: "drinks", component: DrinksListComponent },
-  { path: "drinks/filter", component: FilterParentComponent },
+  
+
 
   // RUTAS DE PRUEBA
   { path: "prueba", component: PruebaComponent },
