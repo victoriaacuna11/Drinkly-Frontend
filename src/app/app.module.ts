@@ -84,4 +84,4 @@ import { EditDrinkComponent } from "./components/admin/drink/edit-drink/edit-dri
   providers: [ValidateService, AuthService, AuthGuard, AdminAuthGuard],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

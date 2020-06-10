@@ -23,6 +23,7 @@
     "@auth0/angular-jwt": "^4.2.0",
     "@cloudinary/angular-5.x": "^1.2.2",
     "angular2-jwt": "^0.2.3",
+    "angularfire": "^2.3.0",
     "cloudinary-core": "^2.8.2",
     "file-upload-firestorage": "^0.2.0",
     "firebase": ">= 5.5.7 <8",
