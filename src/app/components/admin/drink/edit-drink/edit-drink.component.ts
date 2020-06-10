@@ -3,7 +3,7 @@ import { DrinkService } from "src/app/services/drink.service";
 import { IngredientService } from "src/app/services/ingredient.service";
 import { drink } from "./../../../../models/drink";
 import { ingredient } from "./../../../../models/ingredient";
-import { FormGroup, FormBuilder } from "@angular/forms";
+import { FormGroup, FormBuilder, Validator } from "@angular/forms";
 import { Router, ActivatedRoute } from "@angular/router";
 
 @Component({
@@ -18,6 +18,7 @@ export class EditDrinkComponent implements OnInit {
   drink_ingredients = [];
   form: FormGroup;
   drink: drink;
+  drink2: drink;
   loading: boolean = true;
 
   constructor(
@@ -28,11 +29,11 @@ export class EditDrinkComponent implements OnInit {
     private drink_service: DrinkService
   ) {
     this.form = this._builder.group({
-      name: [""],
-      description: [""],
-      recipe: [""],
-      owner_name: [""],
-      owner_rol: [""],
+      name: "",
+      description: "",
+      recipe: "",
+      owner_name: "",
+      owner_rol: "",
       ingredients: [],
       pictures: "",
     });
@@ -49,20 +50,23 @@ export class EditDrinkComponent implements OnInit {
     this.drink_service.getDrink(id).subscribe((res: any) => {
       this.drink = { ...res.data };
 
+      console.log(this.drink);
+      this.drink2 = this.drink;
+
       this.form = this._builder.group({
         name: this.drink.name,
         description: this.drink.description,
         recipe: this.drink.recipe,
         owner_name: this.drink.owner.name,
-        owner_rol: this.drink.owner.category,
 
         //dos cosas que no tocamos
+        //ingredients se hace despues
         ingredients: [],
-        pictures: "",
+        pictures: this.drink.pictures,
       });
 
+      console.log(this.drink);
       //Mierda de los checkbox
-
       this.loading = false;
     });
   }
@@ -70,6 +74,7 @@ export class EditDrinkComponent implements OnInit {
   getIngredients() {
     this.ing_service.getIngredients().subscribe((res: any) => {
       this.ingredient_arr = [...res.data];
+
       //this.loading = false;
     });
   }
