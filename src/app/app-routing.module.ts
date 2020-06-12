@@ -50,7 +50,7 @@ const routes: Routes = [
   {
     path: "admin/ingredient/add",
     component: AddIngredientComponent,
-    // canActivate: [AdminAuthGuard],
+    canActivate: [AdminAuthGuard],
   },
   {
     path: "admin/ingredient",
@@ -81,17 +81,17 @@ const routes: Routes = [
   {
     path: "admin/drink",
     component: ListDrinkComponent,
-    // canActivate: [AdminAuthGuard]
+    canActivate: [AdminAuthGuard]
   },
   {
     path: "admin/drink/add",
     component: AddDrinkComponent,
-    // canActivate: [AdminAuthGuard]
+    canActivate: [AdminAuthGuard]
   },
   {
     path: "admin/drink/edit/:id",
     component: EditDrinkComponent,
-    // canActivate: [AdminAuthGuard]
+    canActivate: [AdminAuthGuard]
   },
 
   // RUTAS DE PRUEBA
