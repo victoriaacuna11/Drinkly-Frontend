@@ -7,7 +7,7 @@ import { drink } from "../models/drink";
 })
 export class DrinkService {
   _url = "http://localhost:5000/api/drink/";
-  constructor(private _http: HttpClient) {}
+  constructor(private _http: HttpClient) { }
 
   createDrink(file) {
     return this._http.post(this._url + "add/", file);

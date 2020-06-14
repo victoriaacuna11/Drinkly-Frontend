@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Bar } from 'src/app/models/bar';
+import { BarService } from 'src/app/services/bar.service';
+import { ZoneService } from 'src/app/services/zone.service';
+import { zone } from 'src/app/models/zone';
 
 @Component({
   selector: 'app-bars-list',
@@ -6,32 +10,53 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./bars-list.component.scss']
 })
 export class BarsListComponent implements OnInit {
-  bars: object[] = [
-    {
-      title: "Bar360",
-      subtitle: "Altamira",
-      main_image: "assets/images/restaurantbarcaracasAFP 1.png",
-    },
-    {
-      title: "Bar360",
-      subtitle: "Altamira",
-      main_image: "assets/images/restaurantbarcaracasAFP 1.png",
-    },
-    {
-      title: "Bar360",
-      subtitle: "Altamira",
-      main_image: "assets/images/restaurantbarcaracasAFP 1.png",
-    },
-    {
-      title: "Bar360",
-      subtitle: "Altamira",
-      main_image: "assets/images/restaurantbarcaracasAFP 1.png",
-    },
-  ];
 
-  constructor() { }
+  bars: Bar[];
+  loading: Boolean=true;
+  zones:zone[];
+  // object[] = [
+  //   {
+  //     title: "Bar360",
+  //     subtitle: "Altamira",
+  //     main_image: "assets/images/restaurantbarcaracasAFP 1.png",
+  //   },
+  //   {
+  //     title: "Bar360",
+  //     subtitle: "Altamira",
+  //     main_image: "assets/images/restaurantbarcaracasAFP 1.png",
+  //   },
+  //   {
+  //     title: "Bar360",
+  //     subtitle: "Altamira",
+  //     main_image: "assets/images/restaurantbarcaracasAFP 1.png",
+  //   },
+  //   {
+  //     title: "Bar360",
+  //     subtitle: "Altamira",
+  //     main_image: "assets/images/restaurantbarcaracasAFP 1.png",
+  //   },
+  // ];
+
+  constructor(private service: BarService, private zoneService: ZoneService) { }
 
   ngOnInit() {
+    this.getZones();
   }
+
+  getBars(){
+    this.service.getBars().subscribe((res:any) => {
+      this.bars=[...res.data];
+      this.loading=false;
+      
+    })
+  }
+
+  getZones(){
+    this.zoneService.getZones().subscribe((res:any) => {
+      this.zones = [...res.data];
+      this.getBars();
+    })
+  }
+  
 
 }

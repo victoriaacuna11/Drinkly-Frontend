@@ -10,25 +10,32 @@ import { Component, OnInit } from "@angular/core";
 export class ProfileComponent implements OnInit {
   aux: any = {};
   user: Object;
+  userLoading: Boolean;
 
   constructor(private router: Router, private auth_svc: AuthService) {}
 
   ngOnInit() {
-    this.auth_svc.getProfile().subscribe(
-      (profile) => {
-        this.aux = profile;
-        this.user = this.aux.user;
-      },
-      (err) => {
-        console.log(err);
-        return false;
-      }
-    );
+    this.userLoading = true;
+    this.getProfile();
   }
 
   getOut() {
     this.auth_svc.logout();
     console.log("Cerraste sesión");
     this.router.navigateByUrl("/login");
+  }
+
+  getProfile() {
+    this.auth_svc.getProfile().subscribe(
+      (profile) => {
+        this.aux = profile;
+        this.user = this.aux.user;
+        this.userLoading = false;
+      },
+      (err) => {
+        console.log(err);
+        return false;
+      }
+    );
   }
 }

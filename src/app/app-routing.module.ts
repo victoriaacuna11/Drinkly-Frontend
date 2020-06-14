@@ -13,6 +13,8 @@ import { DrinksFilterComponent } from "./components/drinks/drinks-filter/drinks-
 import { AddIngredientComponent } from "./components/admin/ingredient/add-ingredient/add-ingredient.component";
 import { AddBarComponent } from "./components/admin/bar/add-bar/add-bar.component";
 import { JuegosComponent } from "./components/juegos/juegos.component";
+import { ListBarComponent } from "./components/admin/bar/list-bar/list-bar.component";
+import { EditBarComponent } from './components/admin/bar/edit-bar/edit-bar.component';
 
 import { PruebaComponent } from "./components/prueba/prueba.component";
 import { PruebaNewComponent } from "./components/prueba-new/prueba-new.component";
@@ -26,18 +28,20 @@ import { ListDrinkComponent } from "./components/admin/drink/list-drink/list-dri
 import { AddDrinkComponent } from "./components/admin/drink/add-drink/add-drink.component";
 import { EditDrinkComponent } from "./components/admin/drink/edit-drink/edit-drink.component";
 
-
-
 const routes: Routes = [
   // USERS' ROUTES
 
-  { path: "bars", component: BarsListComponent, canActivate: [AuthGuard] },
+  {
+    path: "bars", component: BarsListComponent,
+    canActivate: [AuthGuard]
+  },
   { path: "drinks", component: DrinksListComponent, canActivate: [AuthGuard] },
   {
     path: "drinks/filter",
     component: FilterParentComponent,
     canActivate: [AuthGuard],
   },
+
   { path: "register", component: RegisterComponent },
   { path: "login", component: LoginComponent },
   { path: "profile", component: ProfileComponent, canActivate: [AuthGuard] },
@@ -46,7 +50,7 @@ const routes: Routes = [
   {
     path: "admin/ingredient/add",
     component: AddIngredientComponent,
-    canActivate: [AdminAuthGuard],
+    // canActivate: [AdminAuthGuard],
   },
   {
     path: "admin/ingredient",
@@ -61,8 +65,20 @@ const routes: Routes = [
   {
     path: "admin/bar/add",
     component: AddBarComponent,
-    // canActivate: [AdminAuthGuard]
+    canActivate: [AdminAuthGuard]
   },
+  {
+    path: "admin/bar",
+    component: ListBarComponent,
+    canActivate: [AdminAuthGuard]
+  },
+  {
+    path: "admin/bar/edit/:id",
+    component: EditBarComponent,
+    canActivate: [AdminAuthGuard]
+  },
+
+
   {
     path: "admin/drink",
     component: ListDrinkComponent,

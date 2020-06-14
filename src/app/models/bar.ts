@@ -19,4 +19,5 @@ export class Bar {
   available: boolean;
   cost: number;
   menu: item[];
+  _id: String;
 }

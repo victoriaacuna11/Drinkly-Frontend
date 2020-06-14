@@ -6,7 +6,7 @@ export class user {
   l_name: String;
   email: String;
   user_name: String;
-  birthday: Date;
+  birthday: any;
   favorites: String[];
   isAdmin: Boolean;
 }

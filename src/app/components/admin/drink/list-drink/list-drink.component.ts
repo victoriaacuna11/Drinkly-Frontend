@@ -55,4 +55,8 @@ export class ListDrinkComponent implements OnInit {
   editDrink(id) {
     this.route.navigate(["admin/drink/edit/", id]);
   }
+
+  create(){
+    this.route.navigate(["admin/drink/add"]);
+  }
 }

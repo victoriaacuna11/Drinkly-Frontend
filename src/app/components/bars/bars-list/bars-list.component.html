@@ -1,3 +1,5 @@
 <app-header [hasSearchBar]="true" [searchBarContent]="'zona'"></app-header>
-<app-list [barOrDrink]="bars"></app-list>
+<div *ngIf="!loading">
+<app-list [barOrDrink]="bars" [zones]="zones"></app-list>
+<div>
 <app-footer></app-footer>

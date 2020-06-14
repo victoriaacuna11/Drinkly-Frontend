@@ -1,14 +1,16 @@
 <app-header></app-header>
 
-<div *ngIf="user">
-  <h3 class="text-xl">Bienvenido/a, {{ user.f_name }}!</h3>
-  <div class="py-10 items-center">
-    <button
-      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-      (click)="getOut()"
-    >
-      Logout
-    </button>
+<div *ngIf="!userLoading" class="pb-25">
+  <div *ngIf="user" class="p-40">
+    <h3 class="text-4xl">Bienvenido/a, {{ user.f_name }}!</h3>
+    <div class="py-10 items-center">
+      <button
+        class="shadow bg-orange-500 hover:bg-orange-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+        (click)="getOut()"
+      >
+        Logout
+      </button>
+    </div>
   </div>
 </div>
 

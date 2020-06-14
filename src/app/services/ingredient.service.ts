@@ -9,8 +9,8 @@ export class IngredientService {
   _url = "http://localhost:5000/api/ingredient/";
   constructor(private _http: HttpClient) {}
 
-  createIngredient(file) {
-    return this._http.post(this._url + "add/", file);
+  createIngredient(item) {
+    return this._http.post(this._url + "add/", item);
   }
 
   updateIngredientPhoto(file, id) {

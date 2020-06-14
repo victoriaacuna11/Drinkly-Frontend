@@ -13,6 +13,7 @@ import { AngularFireStorage } from "@angular/fire/storage";
   styleUrls: ["./add-bar.component.scss"],
 })
 export class AddBarComponent implements OnInit {
+
   // mainImage: File = null;
   form: FormGroup;
   bar: Bar;
@@ -56,11 +57,12 @@ export class AddBarComponent implements OnInit {
       address: ["", Validators.required],
       zone: ["", Validators.required],
       associate: false,
-      phone: this._builder.array([this.addPhoneGroup()]),
-      menu: this._builder.array([this.addMenuGroup()]),
-      // photo: this._builder.array([
-      //   this.addPhotoGroup()
-      // ])
+      phone: this._builder.array([
+        this.addPhoneGroup()
+      ]),
+      menu: this._builder.array([
+        this.addMenuGroup()
+      ]),
     });
   }
 
@@ -101,14 +103,22 @@ export class AddBarComponent implements OnInit {
       if (this.photo.length == 1 && this.photo[0] == "null") {
         console.log("No se puede eliminar");
       } else {
-        this.photo.splice(index, 1);
-        if (this.photo[index] != "null") {
-          this.storage.storage
-            .refFromURL(url)
-            .delete()
-            .then((res) => {
-              console.log(this.photo);
-            });
+
+        if (this.photo[index] != 'null') {
+          this.storage.storage.refFromURL(url).delete().then(res => {
+            console.log(this.photo);
+          })
+          this.photo.splice(index, 1);
+
+          // if (this.photo[index] != "null") {
+          //   this.storage.storage
+          //     .refFromURL(url)
+          //     .delete()
+          //     .then((res) => {
+          //       console.log(this.photo);
+          //     });
+          // }
+          // this.photo.splice(index, 1);
         }
       }
     }
@@ -120,11 +130,11 @@ export class AddBarComponent implements OnInit {
     });
   }
 
-  addPhotoGroup() {
-    return this._builder.group({
-      url: [null],
-    });
-  }
+  // addPhotoGroup() {
+  //   return this._builder.group({
+  //     url: [null]
+  //   })
+  // }
 
   addMenuGroup() {
     return this._builder.group({
@@ -194,6 +204,7 @@ export class AddBarComponent implements OnInit {
     // VALIDA SI SE INTRODUJERON LAS IMÁGENES NECESARIAS (EL FORM YA ESTÁ VALIDADO).
     if (this.main_image != null && photos != null) {
       const bar: Bar = {
+        _id: '',
         name: this.form.value.name,
         working_hours: this.form.value.working_hours,
         rating: Math.round(this.form.value.rating),
@@ -214,13 +225,19 @@ export class AddBarComponent implements OnInit {
         pictures: photos,
       };
 
-      this.service.createBar(bar).subscribe((res) => {
-        console.log("BAR HAS BEEN CREATED");
-      });
+      this.service.createBar(bar).subscribe(res => {
+        this.route.navigate(["admin/bar"]);
+      })
     } else {
       const response = alert(
         "Debe introducir al menos una imagen tanto en el apartado de ícono como en el de fotos"
       );
     }
   }
+
+  goBack() {
+    this.route.navigate(["admin/bar"]);
+  }
+
+
 }

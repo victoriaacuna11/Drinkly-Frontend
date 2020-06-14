@@ -60,4 +60,8 @@ export class ListIngredientComponent implements OnInit {
   editIngredient(id) {
     this.route.navigate(["admin/ingredient/edit/", id]);
   }
+
+  create(){
+    this.route.navigate(["admin/ingredient/add"]);
+  }
 }
