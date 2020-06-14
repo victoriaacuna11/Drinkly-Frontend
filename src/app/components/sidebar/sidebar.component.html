@@ -1,9 +1,9 @@
 <div class="">
-  <button (click)="isOpen = !isOpen" class="text-orange-500 hover:text-white mt-10 ml-10 outline-none">
-    <svg class="fill-current h-5 w-5 outline-none">
-      <path class="outline-none" *ngIf="isOpen"
+  <button (click)="isOpen = !isOpen" class="text-orange-500 hover:text-white mt-4 ml-4 outline-none">
+    <svg class="fill-current h-10 w-10 outline-none">
+      <path *ngIf="isOpen"
         d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z" />
-      <path class="outline-none" *ngIf="!isOpen"
+      <path *ngIf="!isOpen"
         d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z" />
     </svg>
   </button>
