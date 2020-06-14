@@ -14,7 +14,7 @@ import { AddIngredientComponent } from "./components/admin/ingredient/add-ingred
 import { AddBarComponent } from "./components/admin/bar/add-bar/add-bar.component";
 import { JuegosComponent } from "./components/juegos/juegos.component";
 import { ListBarComponent } from "./components/admin/bar/list-bar/list-bar.component";
-import { EditBarComponent } from './components/admin/bar/edit-bar/edit-bar.component';
+import { EditBarComponent } from "./components/admin/bar/edit-bar/edit-bar.component";
 
 import { PruebaComponent } from "./components/prueba/prueba.component";
 import { PruebaNewComponent } from "./components/prueba-new/prueba-new.component";
@@ -32,8 +32,9 @@ const routes: Routes = [
   // USERS' ROUTES
 
   {
-    path: "bars", component: BarsListComponent,
-    canActivate: [AuthGuard]
+    path: "bars",
+    component: BarsListComponent,
+    canActivate: [AuthGuard],
   },
   { path: "drinks", component: DrinksListComponent, canActivate: [AuthGuard] },
   {
@@ -50,7 +51,7 @@ const routes: Routes = [
   {
     path: "admin/ingredient/add",
     component: AddIngredientComponent,
-    // canActivate: [AdminAuthGuard],
+    canActivate: [AdminAuthGuard],
   },
   {
     path: "admin/ingredient",
@@ -65,34 +66,33 @@ const routes: Routes = [
   {
     path: "admin/bar/add",
     component: AddBarComponent,
-    canActivate: [AdminAuthGuard]
+    canActivate: [AdminAuthGuard],
   },
   {
     path: "admin/bar",
     component: ListBarComponent,
-    canActivate: [AdminAuthGuard]
+    canActivate: [AdminAuthGuard],
   },
   {
     path: "admin/bar/edit/:id",
     component: EditBarComponent,
-    canActivate: [AdminAuthGuard]
+    canActivate: [AdminAuthGuard],
   },
-
 
   {
     path: "admin/drink",
     component: ListDrinkComponent,
-    // canActivate: [AdminAuthGuard]
+    canActivate: [AdminAuthGuard]
   },
   {
     path: "admin/drink/add",
     component: AddDrinkComponent,
-    // canActivate: [AdminAuthGuard]
+    canActivate: [AdminAuthGuard]
   },
   {
     path: "admin/drink/edit/:id",
     component: EditDrinkComponent,
-    // canActivate: [AdminAuthGuard]
+    canActivate: [AdminAuthGuard]
   },
 
   { path: "bars", component: BarsListComponent },
@@ -113,4 +113,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

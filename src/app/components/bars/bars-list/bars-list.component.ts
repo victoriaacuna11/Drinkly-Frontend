@@ -14,28 +14,7 @@ export class BarsListComponent implements OnInit {
   bars: Bar[];
   loading: Boolean=true;
   zones:zone[];
-  // object[] = [
-  //   {
-  //     title: "Bar360",
-  //     subtitle: "Altamira",
-  //     main_image: "assets/images/restaurantbarcaracasAFP 1.png",
-  //   },
-  //   {
-  //     title: "Bar360",
-  //     subtitle: "Altamira",
-  //     main_image: "assets/images/restaurantbarcaracasAFP 1.png",
-  //   },
-  //   {
-  //     title: "Bar360",
-  //     subtitle: "Altamira",
-  //     main_image: "assets/images/restaurantbarcaracasAFP 1.png",
-  //   },
-  //   {
-  //     title: "Bar360",
-  //     subtitle: "Altamira",
-  //     main_image: "assets/images/restaurantbarcaracasAFP 1.png",
-  //   },
-  // ];
+  
 
   constructor(private service: BarService, private zoneService: ZoneService) { }
 

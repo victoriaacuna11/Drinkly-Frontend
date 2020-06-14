@@ -152,10 +152,7 @@
   </div>
 </div>
 
-<div
-  class="w-full flex flex-col items-center pb-10 pt-10"
-  *ngIf="!hierba_hidden"
->
+<div class="w-full flex flex-col items-center pb-10" *ngIf="!hierba_hidden">
   <app-filter-child [ingredients]="hierbas" (add)="add_to_filter($event)">
   </app-filter-child>
   <img

@@ -8,19 +8,21 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./sidebar.component.scss"],
 })
 export class SidebarComponent implements OnInit {
-  isOpen: boolean = false;
-  isAdmin: boolean;
-  isLogged: boolean;
-
   constructor(private auth_svc: AuthService, private router: Router) {}
 
-  ngOnInit() {
-    // if (this.auth_svc.isAdmin() === null) {
-    //   this.isAdmin === false;
-    // } else {
-    this.isAdmin = this.auth_svc.isAdmin();
-    this.isLogged = this.auth_svc.loggedIn();
-    // }
+  isOpen: boolean = false;
+  isAdmin: any;
+  isLogged: Boolean = true;
+
+  async ngOnInit() {
+    if (!this.auth_svc.loggedIn()) {
+      this.isAdmin = false;
+      this.isLogged = false;
+    } else {
+      this.isLogged = true;
+      let x = await this.auth_svc.getAdmin().toPromise();
+      this.isAdmin = x;
+    }
   }
 
   getOut() {
