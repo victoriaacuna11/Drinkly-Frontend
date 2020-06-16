@@ -72,8 +72,12 @@ export class RegisterComponent implements OnInit {
     this.auth_svc.registerUser(user).subscribe((data) => {
       this.dataRegister = data;
       if (this.dataRegister.success) {
+        this.auth_svc.storeData(
+          this.dataRegister.token,
+          this.dataRegister.expiresIn
+        );
         console.log("Te acabas de registrar.");
-        this.router.navigate(["/login"]);
+        this.router.navigate(["/profile"]);
       } else {
         console.log("Algo salió mal.");
         this.router.navigate(["/register"]);
