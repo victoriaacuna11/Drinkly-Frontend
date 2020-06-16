@@ -66,6 +66,9 @@ import { EditDrinkComponent } from "./components/admin/drink/edit-drink/edit-dri
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { BsDatepickerModule } from "ngx-bootstrap/datepicker";
 import { AgeValidatorDirective } from "./Directives/isAdult.directive";
+import { AddUserComponent } from './components/admin/user/add-user/add-user.component';
+import { EditUserComponent } from './components/admin/user/edit-user/edit-user.component';
+import { ListUserComponent } from './components/admin/user/list-user/list-user.component';
 
 @NgModule({
   declarations: [
@@ -99,6 +102,9 @@ import { AgeValidatorDirective } from "./Directives/isAdult.directive";
     AddDrinkComponent,
     EditDrinkComponent,
     AgeValidatorDirective,
+    AddUserComponent,
+    EditUserComponent,
+    ListUserComponent,
   ],
   imports: [
     BrowserModule,

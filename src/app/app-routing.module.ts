@@ -1,3 +1,4 @@
+import { ListUserComponent } from './components/admin/user/list-user/list-user.component';
 import { AdminAuthGuard } from "./guards/adminAuth.guard";
 import { ProfileComponent } from "./components/profile/profile.component";
 import { LoginComponent } from "./components/login/login.component";
@@ -93,6 +94,13 @@ const routes: Routes = [
     component: EditDrinkComponent,
     // canActivate: [AdminAuthGuard]
   },
+
+  {
+    path: "admin/user",
+    component: ListUserComponent,
+    // canActivate: [AdminAuthGuard]
+  },
+  
 
   // RUTAS DE PRUEBA
   { path: "prueba", component: PruebaComponent },

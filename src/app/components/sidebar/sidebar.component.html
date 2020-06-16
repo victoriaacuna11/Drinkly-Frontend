@@ -56,6 +56,12 @@
     class="text-white block py-2 px-5 pr-20 mr-5 hover:bg-orange-500 no-underline"
     >Admin - Ingredientes</a
   >
+  <a
+  *ngIf="isAdmin"
+  href="/admin/user"
+  class="text-white block py-2 px-5 pr-20 mr-5 hover:bg-orange-500 no-underline"
+    >Admin - Usuario</a
+  >
   <div
     *ngIf="isLogged"
     (click)="getOut()"
