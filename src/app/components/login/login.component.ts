@@ -47,6 +47,11 @@ export class LoginComponent implements OnInit {
         console.log("Bienvenido!");
         this.router.navigate(["profile"]);
       } else {
+        var element = document.getElementById("al");
+        element.style.display = "block";
+        setTimeout(function() {
+          element.style.display = "none";
+        }, 6000);        
         console.log("Hubo un error:" + this.dataRegister.msg);
         this.router.navigate(["login"]);
       }
