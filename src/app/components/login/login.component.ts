@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
     this.auth_svc.authenticateUser(c_user).subscribe((data) => {
       this.dataRegister = data;
       console.log(this.dataRegister);
-      if (this.dataRegister.success) {
+      if (this.dataRegister.success && this.dataRegister.user.available) {
         this.auth_svc.storeData(
           this.dataRegister.token,
           //this.dataRegister.user,
@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit {
         element.style.display = "block";
         setTimeout(function() {
           element.style.display = "none";
-        }, 6000);        
+        }, 10000);        
         console.log("Hubo un error:" + this.dataRegister.msg);
         this.router.navigate(["login"]);
       }
