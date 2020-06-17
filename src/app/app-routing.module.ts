@@ -1,6 +1,6 @@
 import { ListUserComponent } from './components/admin/user/list-user/list-user.component';
 import { AdminAuthGuard } from "./guards/adminAuth.guard";
-import { ProfileComponent } from "./components/profile/profile.component";
+import { ProfileComponent } from "./components/profile-page/profile/profile.component";
 import { LoginComponent } from "./components/login/login.component";
 import { RegisterComponent } from "./components/register/register.component";
 
@@ -27,6 +27,7 @@ import { FilterParentComponent } from "./components/drinks/filter-parent/filter-
 import { ListDrinkComponent } from "./components/admin/drink/list-drink/list-drink.component";
 import { AddDrinkComponent } from "./components/admin/drink/add-drink/add-drink.component";
 import { EditDrinkComponent } from "./components/admin/drink/edit-drink/edit-drink.component";
+import { EditUserComponent } from './components/profile-page/edit-user/edit-user.component';
 
 const routes: Routes = [
   // USERS' ROUTES
@@ -46,6 +47,8 @@ const routes: Routes = [
   { path: "register", component: RegisterComponent },
   { path: "login", component: LoginComponent },
   { path: "profile", component: ProfileComponent, canActivate: [AuthGuard] },
+  { path: "edit-user/:id", component: EditUserComponent, canActivate: [AuthGuard] },
+  
 
   // ADMIN'S ROUTES
   {

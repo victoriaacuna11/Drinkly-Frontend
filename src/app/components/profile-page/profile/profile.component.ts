@@ -1,5 +1,5 @@
 import { AuthService } from "src/app/services/auth.service";
-import { Router } from "@angular/router";
+import { Router, RouterLink } from "@angular/router";
 import { Component, OnInit } from "@angular/core";
 
 @Component({
@@ -41,5 +41,9 @@ export class ProfileComponent implements OnInit {
         return false;
       }
     );
+  }
+
+  goEdit(id){
+    this.router.navigate(['edit-user', id]);
   }
 }

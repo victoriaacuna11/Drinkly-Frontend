@@ -24,4 +24,8 @@ export class UserService {
   updateUser(user: user) {
     return this._http.put(this._url + "update/" + user._id, user);
   }
+
+  updatePassword(user: user){
+    return this._http.put(this._url + "updateP/" + user._id, user);
+  }
 }

@@ -6,7 +6,7 @@ import { ListIngredientComponent } from "./components/admin/ingredient/list-ingr
 import { NotFoundComponent } from "./components/not-found/not-found.component";
 import { LoginComponent } from "./components/login/login.component";
 import { RegisterComponent } from "./components/register/register.component";
-import { ProfileComponent } from "./components/profile/profile.component";
+import { ProfileComponent } from "./components/profile-page/profile/profile.component";
 import { ValidateService } from "./services/validate.service";
 import { EditIngredientComponent } from "./components/admin/ingredient/edit-ingredient/edit-ingredient.component";
 // import { AddBarComponent } from './components/admin/bar/add-bar/add-bar.component';
@@ -66,9 +66,8 @@ import { EditDrinkComponent } from "./components/admin/drink/edit-drink/edit-dri
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { BsDatepickerModule } from "ngx-bootstrap/datepicker";
 import { AgeValidatorDirective } from "./Directives/isAdult.directive";
-import { AddUserComponent } from './components/admin/user/add-user/add-user.component';
-import { EditUserComponent } from './components/admin/user/edit-user/edit-user.component';
 import { ListUserComponent } from './components/admin/user/list-user/list-user.component';
+import { EditUserComponent } from './components/profile-page/edit-user/edit-user.component';
 
 @NgModule({
   declarations: [
@@ -102,9 +101,8 @@ import { ListUserComponent } from './components/admin/user/list-user/list-user.c
     AddDrinkComponent,
     EditDrinkComponent,
     AgeValidatorDirective,
-    AddUserComponent,
-    EditUserComponent,
     ListUserComponent,
+    EditUserComponent,
   ],
   imports: [
     BrowserModule,

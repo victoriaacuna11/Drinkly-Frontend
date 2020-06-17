@@ -54,6 +54,15 @@ export class AuthService {
     });
   }
 
+  getPassword(){
+    let headers: HttpHeaders = new HttpHeaders();
+    this.loadToken();
+    headers = headers.append("Authorization", this.authToken);
+    return this.http.get("http://localhost:5000/api/user/updateP", {
+      headers: headers, responseType: 'text'
+    });
+  }
+
   //si el login fue exitoso, esta función guarda el usuario y su token en local storage
   storeData(token, expiresIn) {
     localStorage.setItem("id_token", token);
