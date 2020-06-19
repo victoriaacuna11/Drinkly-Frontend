@@ -90,20 +90,27 @@ export class AddDrinkComponent implements OnInit {
 
   addDrink() {
     // console.log(this.selectedFile);
-    const drink: drink = {
-      name: this.form.value.name,
-      description: this.form.value.description,
-      recipe: this.form.value.recipe,
-      owner: {
-        name: this.form.value.owner_name,
-        category: this.form.value.owner_rol,
-      },
-      ingredients: this.drink_ingredients,
-      pictures: this.main_image,
-      _id: "",
-      available: true,
-      views: 0,
-    };
+    if(this.main_image!=null){
+      const drink: drink = {
+        name: this.form.value.name,
+        description: this.form.value.description,
+        recipe: this.form.value.recipe,
+        owner: {
+          name: this.form.value.owner_name,
+          category: this.form.value.owner_rol,
+        },
+        ingredients: this.drink_ingredients,
+        pictures: this.main_image,
+        _id: "",
+        available: true,
+        views: 0,
+      };
+    } else {
+      const response = alert(
+        "Debe introducir una imagen como ícono."
+      );
+    }
+    
 
     // hay que crear el puto bar
 

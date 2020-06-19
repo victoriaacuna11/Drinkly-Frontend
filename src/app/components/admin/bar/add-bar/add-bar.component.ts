@@ -109,16 +109,6 @@ export class AddBarComponent implements OnInit {
             console.log(this.photo);
           })
           this.photo.splice(index, 1);
-
-          // if (this.photo[index] != "null") {
-          //   this.storage.storage
-          //     .refFromURL(url)
-          //     .delete()
-          //     .then((res) => {
-          //       console.log(this.photo);
-          //     });
-          // }
-          // this.photo.splice(index, 1);
         }
       }
     }

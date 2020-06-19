@@ -67,6 +67,12 @@ import { JuegosComponent } from './components/juegos/juegos.component';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { BsDatepickerModule } from "ngx-bootstrap/datepicker";
 import { AgeValidatorDirective } from "./Directives/isAdult.directive";
+import { AddZoneComponent } from './components/admin/zone/add-zone/add-zone.component';
+import { EditZoneComponent } from './components/admin/zone/edit-zone/edit-zone.component';
+import { ListZoneComponent } from './components/admin/zone/list-zone/list-zone.component';
+import { AddGameComponent } from './components/admin/game/add-game/add-game.component';
+import { EditGameComponent } from './components/admin/game/edit-game/edit-game.component';
+import { ListGameComponent } from './components/admin/game/list-game/list-game.component';
 
 @NgModule({
   declarations: [
@@ -101,6 +107,12 @@ import { AgeValidatorDirective } from "./Directives/isAdult.directive";
     EditDrinkComponent,
     JuegosComponent,
     AgeValidatorDirective,
+    AddZoneComponent,
+    EditZoneComponent,
+    ListZoneComponent,
+    AddGameComponent,
+    EditGameComponent,
+    ListGameComponent,
   ],
   imports: [
     BrowserModule,

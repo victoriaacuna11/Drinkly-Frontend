@@ -18,7 +18,7 @@ export class EditBarComponent implements OnInit {
   bar: Bar= new Bar();
   loading:Boolean=true;
   form: FormGroup;
-  pictures: String[];
+  pictures: String[]=[];
   main_image: String;
   phone: String[] = [];
   zones: zone[];
@@ -44,20 +44,20 @@ export class EditBarComponent implements OnInit {
     }
 
   ngOnInit() {
-    console.log('Hi');
     this.getZones();
     
   }
 
   getBar(id){
     this.service.getBar(id).subscribe((res:any) => {
-      // console.log(res.data);
+      
       this.bar={...res.data};
       this.id=id;
-      console.log(this.bar);
-      // console.log(this.bar.menu);
-
-      this.pictures=this.bar.pictures;
+      this.bar.pictures.forEach(element => {
+        this.pictures.push(element);
+        
+      });
+      // this.pictures=this.bar.pictures;
       this.main_image=this.bar.main_image;
       if(this.pictures==null){
         this.pictures=['null']
@@ -65,8 +65,6 @@ export class EditBarComponent implements OnInit {
       if(this.main_image==null){
         this.main_image='null'
       }
-
-      // console.log(this.main_image);
 
       this.form = this._builder.group({
         name: [this.bar.name, Validators.required],
@@ -174,8 +172,9 @@ export class EditBarComponent implements OnInit {
 
   addPhoto() {
     this.pictures.push('null');
-    console.log(this.pictures);
-    console.log(this.pictures.length);
+    console.log(this.bar.pictures);
+    // console.log(this.pictures);
+    // console.log(this.pictures.length);
   }
 
   deletePhoto(url, index) {
@@ -260,7 +259,40 @@ export class EditBarComponent implements OnInit {
   }
 
   goBack(){
-    this.route.navigate(['admin/bar']);
+    console.log(this.pictures);
+    console.log(this.bar.pictures);
+    
+    
+    if(this.main_image==null || this.main_image!=this.bar.main_image){
+      const response = alert(
+        "Ya borró la ícono anterior. Por favor, tiene que subir uno y guardar el cambio."
+      );
+    } else {
+      if(this.pictures==null || this.bar.pictures==null){
+        const response = alert(
+          "Ya borró algunas de las imágenes anteriores. Por favor, tiene que subir unas y guardar el cambio."
+        );
+      } else {
+        let canGoBack = true;
+        if(this.bar.pictures.length==this.pictures.length){
+          for (let i = 0; i < this.bar.pictures.length; i++) {
+            if(this.bar.pictures[i]!=this.pictures[i]){
+              canGoBack=false;
+            }    
+          }
+        } else {
+          canGoBack=false;
+        }
+        if(canGoBack){
+          this.route.navigate(['admin/bar']);
+        } else {
+          const response = alert(
+            "Ya borró algunas de las imágenes anteriores o agregó nuevas. Por favor, no podemos volver atrás sin que guardae el cambio."
+          );
+        }
+      }
+    }
+    
   }
 
   uploadEnRes(event) {
@@ -272,7 +304,7 @@ export class EditBarComponent implements OnInit {
     const newURL = event.thumbnail;
     this.pictures.push(newURL);
     this.pictures.splice(index, 1);
-    console.log(this.pictures);
+    console.log(this.bar.pictures);
 
     ;
   }
