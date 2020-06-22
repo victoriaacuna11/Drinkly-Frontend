@@ -16,9 +16,7 @@ import { JuegosComponent } from "./components/juegos/juegos.component";
 import { ListBarComponent } from "./components/admin/bar/list-bar/list-bar.component";
 import { EditBarComponent } from "./components/admin/bar/edit-bar/edit-bar.component";
 
-import { PruebaComponent } from "./components/prueba/prueba.component";
-import { PruebaNewComponent } from "./components/prueba-new/prueba-new.component";
-import { PruebaEditComponent } from "./components/prueba-edit/prueba-edit.component";
+
 import { NotFoundComponent } from "./components/not-found/not-found.component";
 import { AuthGuard } from "./guards/auth.guard";
 import { from } from "rxjs";
@@ -136,10 +134,6 @@ const routes: Routes = [
 
   
 
-  // RUTAS DE PRUEBA
-  { path: "prueba", component: PruebaComponent },
-  { path: "add-prueba", component: PruebaNewComponent },
-  { path: "prueba/update/:id", component: PruebaEditComponent },
 
   //Ruta no encontrada
   { path: "**", component: NotFoundComponent },

@@ -10,7 +10,8 @@ import { Component, OnInit } from "@angular/core";
 export class ProfileComponent implements OnInit {
   aux: any = {};
   aux2: any = {};
-  user: Object;
+  user: any;
+  // user: Object;
   admin: Boolean = false;
   userLoading: Boolean;
 
