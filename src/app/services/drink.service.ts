@@ -33,4 +33,8 @@ export class DrinkService {
   updateDrink(drink: drink) {
     return this._http.put(this._url + "update/" + drink._id, drink);
   }
+
+  filteredDrink(filter){
+    return this._http.get(this._url+filter,)
+  }
 }
