@@ -33,6 +33,7 @@ import {ListZoneComponent} from './components/admin/zone/list-zone/list-zone.com
 import {ListGameComponent} from './components/admin/game/list-game/list-game.component';
 import {EditGameComponent} from './components/admin/game/edit-game/edit-game.component';
 import {AddGameComponent} from './components/admin/game/add-game/add-game.component';
+import { ShowFilterComponent } from './components/drinks/show-filter/show-filter.component';
 
 const routes: Routes = [
   // USERS' ROUTES
@@ -46,6 +47,11 @@ const routes: Routes = [
   {
     path: "drinks/filter",
     component: FilterParentComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: "drinks/filtered_drinks/:filter",
+    component: ShowFilterComponent,
     canActivate: [AuthGuard],
   },
 

@@ -18,6 +18,7 @@ export class AddDrinkComponent implements OnInit {
   ingredient_arr: ingredient[] = [];
   drink_ingredients = [];
   main_image: String = null;
+  drink_created:drink;
 
   form: FormGroup;
   constructor(
@@ -91,7 +92,7 @@ export class AddDrinkComponent implements OnInit {
   addDrink() {
     // console.log(this.selectedFile);
     if(this.main_image!=null){
-      const drink: drink = {
+      this.drink_created = {
         name: this.form.value.name,
         description: this.form.value.description,
         recipe: this.form.value.recipe,
@@ -114,8 +115,8 @@ export class AddDrinkComponent implements OnInit {
 
     // hay que crear el puto bar
 
-    console.log(drink);
-    this.service.createDrink(drink).subscribe((res) => {
+    console.log(this.drink_created);
+    this.service.createDrink(this.drink_created).subscribe((res) => {
       this.route.navigate(["admin/drink"]);
     });
   }
