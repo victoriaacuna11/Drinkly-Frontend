@@ -6,7 +6,8 @@ import { drink } from "../models/drink";
   providedIn: "root",
 })
 export class DrinkService {
-  _url = "http://localhost:5000/api/drink/";
+  // _url = "http://localhost:5000/api/drink/";
+  _url = 'https://drinklyapi.herokuapp.com/api/drink/';
   constructor(private _http: HttpClient) { }
 
   createDrink(file) {
