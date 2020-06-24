@@ -20,6 +20,7 @@ export class EditDrinkComponent implements OnInit {
   drink: drink;
   drink2: drink;
   loading: boolean = true;
+  
 
   constructor(
     private ing_service: IngredientService,
@@ -40,11 +41,14 @@ export class EditDrinkComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log('prueba')
     this.getDrink();
   }
 
   getDrink() {
+    
     const id = this.routeSV.snapshot.paramMap.get("id");
+
     console.log(id);
 
     this.drink_service.getDrink(id).subscribe((res: any) => {
@@ -61,6 +65,7 @@ export class EditDrinkComponent implements OnInit {
       this.drink_ingredients = this.drink.ingredients;
 
       console.log(this.drink);
+      console.log(this.ingredient_arr)
 
       this.form = this._builder.group({
         name: this.drink.name,

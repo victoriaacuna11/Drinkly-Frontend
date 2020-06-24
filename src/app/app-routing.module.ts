@@ -16,9 +16,7 @@ import { JuegosComponent } from "./components/juegos/juegos.component";
 import { ListBarComponent } from "./components/admin/bar/list-bar/list-bar.component";
 import { EditBarComponent } from "./components/admin/bar/edit-bar/edit-bar.component";
 
-import { PruebaComponent } from "./components/prueba/prueba.component";
-import { PruebaNewComponent } from "./components/prueba-new/prueba-new.component";
-import { PruebaEditComponent } from "./components/prueba-edit/prueba-edit.component";
+
 import { NotFoundComponent } from "./components/not-found/not-found.component";
 import { AuthGuard } from "./guards/auth.guard";
 import { from } from "rxjs";
@@ -27,6 +25,13 @@ import { FilterParentComponent } from "./components/drinks/filter-parent/filter-
 import { ListDrinkComponent } from "./components/admin/drink/list-drink/list-drink.component";
 import { AddDrinkComponent } from "./components/admin/drink/add-drink/add-drink.component";
 import { EditDrinkComponent } from "./components/admin/drink/edit-drink/edit-drink.component";
+import {AddZoneComponent} from './components/admin/zone/add-zone/add-zone.component';
+import {EditZoneComponent} from './components/admin/zone/edit-zone/edit-zone.component';
+import {ListZoneComponent} from './components/admin/zone/list-zone/list-zone.component';
+import {ListGameComponent} from './components/admin/game/list-game/list-game.component';
+import {EditGameComponent} from './components/admin/game/edit-game/edit-game.component';
+import {AddGameComponent} from './components/admin/game/add-game/add-game.component';
+import { ShowFilterComponent } from './components/drinks/show-filter/show-filter.component';
 
 const routes: Routes = [
   // USERS' ROUTES
@@ -43,10 +48,17 @@ const routes: Routes = [
     component: FilterParentComponent,
     canActivate: [AuthGuard]
   },
+  {
+    path: "drinks/filtered_drinks/:filter",
+    component: ShowFilterComponent,
+    canActivate: [AuthGuard],
+  },
 
   { path: "register", component: RegisterComponent },
   { path: "login", component: LoginComponent },
   { path: "profile", component: ProfileComponent, canActivate: [AuthGuard] },
+
+  { path: "juegos", component: JuegosComponent },
 
   // ADMIN'S ROUTES
   {
@@ -96,16 +108,40 @@ const routes: Routes = [
     component: EditDrinkComponent,
     canActivate: [AdminAuthGuard]
   },
+  {
+    path: "admin/zone",
+    component: ListZoneComponent,
+    canActivate: [AdminAuthGuard]
+  },
+  {
+    path: "admin/zone/add",
+    component: AddZoneComponent,
+    canActivate: [AdminAuthGuard]
+  },
+  {
+    path: "admin/zone/edit/:id",
+    component: EditZoneComponent,
+    canActivate: [AdminAuthGuard]
+  },
+  {
+    path: "admin/game",
+    component: ListGameComponent,
+    canActivate: [AdminAuthGuard]
+  },
+  {
+    path: "admin/game/add",
+    component: AddGameComponent,
+    canActivate: [AdminAuthGuard]
+  },
+  {
+    path: "admin/game/edit/:id",
+    component: EditGameComponent,
+    canActivate: [AdminAuthGuard]
+  },
 
-  { path: "bars", component: BarsListComponent },
-  { path: "drinks", component: DrinksListComponent },
-  { path: "drinks/filter", component: FilterParentComponent },
-  { path: "juegos", component: JuegosComponent },
 
-  // RUTAS DE PRUEBA
-  { path: "prueba", component: PruebaComponent },
-  { path: "add-prueba", component: PruebaNewComponent },
-  { path: "prueba/update/:id", component: PruebaEditComponent },
+  
+
 
   //Ruta no encontrada
   { path: "**", component: NotFoundComponent },

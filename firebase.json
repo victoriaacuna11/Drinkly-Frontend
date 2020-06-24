@@ -2,10 +2,10 @@
   "functions": {
     "predeploy": [
       "npm --prefix \"$RESOURCE_DIR\" run lint"
-    ]
+    ],
+    "source": "functions"
   },
   "hosting": {
-    "target": "drinkly",
     "public": "dist/drinkly",
     "ignore": [
       "firebase.json",
