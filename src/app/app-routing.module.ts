@@ -1,3 +1,4 @@
+import { DetailBarComponent } from './components/bars/detail-bar/detail-bar.component';
 import { ListUserComponent } from './components/admin/user/list-user/list-user.component';
 import { AdminAuthGuard } from "./guards/adminAuth.guard";
 import { ProfileComponent } from "./components/profile-page/profile/profile.component";
@@ -6,8 +7,8 @@ import { RegisterComponent } from "./components/register/register.component";
 
 import { ListIngredientComponent } from "./components/admin/ingredient/list-ingredient/list-ingredient.component";
 import { EditIngredientComponent } from "./components/admin/ingredient/edit-ingredient/edit-ingredient.component";
-import { NgModule } from "@angular/core";
-import { Routes, RouterModule } from "@angular/router";
+import { NgModule, InjectionToken } from "@angular/core";
+import { Routes, RouterModule, ActivatedRouteSnapshot } from "@angular/router";
 import { BarsListComponent } from "./components/bars/bars-list/bars-list.component";
 import { DrinksListComponent } from "./components/drinks/drinks-list/drinks-list.component";
 import { DrinksFilterComponent } from "./components/drinks/drinks-filter/drinks-filter.component";
@@ -29,6 +30,8 @@ import { AddDrinkComponent } from "./components/admin/drink/add-drink/add-drink.
 import { EditDrinkComponent } from "./components/admin/drink/edit-drink/edit-drink.component";
 import { EditUserComponent } from './components/profile-page/edit-user/edit-user.component';
 
+const externalUrlProvider = new InjectionToken('externalUrlRedirectResolver');
+
 const routes: Routes = [
   // USERS' ROUTES
 
@@ -37,6 +40,7 @@ const routes: Routes = [
     component: BarsListComponent,
     canActivate: [AuthGuard],
   },
+  { path: "bar/:id", component: DetailBarComponent, canActivate: [AuthGuard]},
   { path: "drinks", component: DrinksListComponent, canActivate: [AuthGuard] },
   {
     path: "drinks/filter",
@@ -48,6 +52,12 @@ const routes: Routes = [
   { path: "login", component: LoginComponent },
   { path: "profile", component: ProfileComponent, canActivate: [AuthGuard] },
   { path: "edit-user/:id", component: EditUserComponent, canActivate: [AuthGuard] },
+  {
+    path: 'externalRedirect',
+    canActivate: [externalUrlProvider],
+    // We need a component here because we cannot define the route otherwise
+    component: NotFoundComponent,
+  },
   
 
   // ADMIN'S ROUTES
@@ -117,5 +127,15 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
+  providers: [
+    {
+        provide: externalUrlProvider,
+        useValue: (route: ActivatedRouteSnapshot) => {
+            
+            const externalUrl = route.paramMap.get('externalUrl');
+            window.open(externalUrl, '_self');
+        },
+    },
+  ]
 })
 export class AppRoutingModule {}
