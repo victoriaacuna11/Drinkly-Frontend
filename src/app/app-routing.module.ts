@@ -32,6 +32,9 @@ import {ListGameComponent} from './components/admin/game/list-game/list-game.com
 import {EditGameComponent} from './components/admin/game/edit-game/edit-game.component';
 import {AddGameComponent} from './components/admin/game/add-game/add-game.component';
 import { ShowFilterComponent } from './components/drinks/show-filter/show-filter.component';
+import { ListAdComponent } from './components/admin/ad/list-ad/list-ad.component';
+import { AddAdComponent } from './components/admin/ad/add-ad/add-ad.component';
+import { EditAdComponent } from './components/admin/ad/edit-ad/edit-ad.component';
 
 const routes: Routes = [
   // USERS' ROUTES
@@ -134,6 +137,21 @@ const routes: Routes = [
   {
     path: "admin/game/edit/:id",
     component: EditGameComponent,
+    canActivate: [AdminAuthGuard]
+  },
+  {
+    path: "admin/ad",
+    component: ListAdComponent,
+    canActivate: [AdminAuthGuard]
+  },
+  {
+    path: "admin/ad/add",
+    component: AddAdComponent,
+    canActivate: [AdminAuthGuard]
+  },
+  {
+    path: "admin/ad/edit/:id",
+    component: EditAdComponent,
     canActivate: [AdminAuthGuard]
   },
 

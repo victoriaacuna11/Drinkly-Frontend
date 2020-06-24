@@ -27,7 +27,7 @@ class="mt-10 md:mt-20"
       >
           <div
             class="flex flex-row items-center cursor-pointer"
-            (click)="item.hidden = !item.hidden"
+            (click)="openCategory(item.category)"
           >
             <h1 class="text-3xl md:text-4xl  mr-3"> {{item.category}} </h1>
             <img

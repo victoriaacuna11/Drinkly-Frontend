@@ -31,7 +31,7 @@ export class ShowFilterComponent implements OnInit {
   }
   getFilteredDrinks() {
     this.service.filteredDrink(this.aux).subscribe((res: any) => {
-      this.drinks = [...res.data];
+      this.drinks = res.data;
       this.loading = false;
       this.filter=this.aux.split(',')
       console.log(this.drinks)

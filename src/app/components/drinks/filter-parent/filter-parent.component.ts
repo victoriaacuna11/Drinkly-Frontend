@@ -108,5 +108,19 @@ export class FilterParentComponent implements OnInit {
     this.router.navigate(["drinks/filtered_drinks/", filter]);
   }
 
+  openCategory(item:any){
+
+    for (let index = 0; index < this.list.length; index++) {
+      
+      if(item==this.list[index].category){
+        this.list[index].hidden=false
+      }else{
+        this.list[index].hidden=true
+      }
+      
+    }
+
+  }
+
 
 }

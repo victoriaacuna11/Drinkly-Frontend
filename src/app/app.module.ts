@@ -71,6 +71,9 @@ import { AddGameComponent } from './components/admin/game/add-game/add-game.comp
 import { EditGameComponent } from './components/admin/game/edit-game/edit-game.component';
 import { ListGameComponent } from './components/admin/game/list-game/list-game.component';
 import { ShowFilterComponent } from './components/drinks/show-filter/show-filter.component';
+import { ListAdComponent } from './components/admin/ad/list-ad/list-ad.component';
+import { AddAdComponent } from './components/admin/ad/add-ad/add-ad.component';
+import { EditAdComponent } from './components/admin/ad/edit-ad/edit-ad.component';
 
 @NgModule({
   declarations: [
@@ -109,6 +112,9 @@ import { ShowFilterComponent } from './components/drinks/show-filter/show-filter
     EditGameComponent,
     ListGameComponent,
     ShowFilterComponent,
+    ListAdComponent,
+    AddAdComponent,
+    EditAdComponent,
   ],
   imports: [
     BrowserModule,
