@@ -31,8 +31,14 @@ import {ListZoneComponent} from './components/admin/zone/list-zone/list-zone.com
 import {ListGameComponent} from './components/admin/game/list-game/list-game.component';
 import {EditGameComponent} from './components/admin/game/edit-game/edit-game.component';
 import {AddGameComponent} from './components/admin/game/add-game/add-game.component';
+import {NavbarComponent} from './components/navbar/navbar.component';
 
 const routes: Routes = [
+
+   {
+    path: "navbar",
+    component: NavbarComponent,
+   },
   // USERS' ROUTES
 
   {

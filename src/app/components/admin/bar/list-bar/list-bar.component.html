@@ -1,89 +1,96 @@
-<app-admin-header></app-admin-header>
+<div class="flex w-full">
+  <app-navbar></app-navbar>
+  <div class="pl-64 w-full">
+    <div class="w-full">
+      <app-admin-header></app-admin-header>
 
-<div
-  class="h-20 w-full flex justify-center items-center"
-  style="font-family: 'Open Sans', sans-serif;"
->
-  <div><h2 class="text-4xl">LISTA DE BARES</h2></div>
-</div>
+      <div
+        class="h-20 w-full flex justify-center items-center"
+        style="font-family: 'Open Sans', sans-serif;"
+      >
+        <div><h2 class="text-4xl">LISTA DE BARES</h2></div>
+      </div>
 
-<div *ngIf="!loading">
-  <div class="w-full flex justify-center items-center h-full">
-    <div class="w-2/4 content-center">
-      <div class="md:flex md:items-center mb-6">
-        <div class="md:w-1/5"></div>
-        <div class="md:w-2/5"></div>
-        <div class="md:w-3/5">
-          <div class="flex space-x-4 justify-end md:w-full">
-            <button
-              (click)="create()"
-              class="md:w-1/3 shadow bg-green-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-              type="button"
-            >
-              Crear
-            </button>
+      <div *ngIf="!loading">
+        <div class="w-full flex justify-center items-center h-full">
+          <div class="w-2/4 content-center">
+            <div class="md:flex md:items-center mb-6">
+              <div class="md:w-1/5"></div>
+              <div class="md:w-2/5"></div>
+              <div class="md:w-3/5">
+                <div class="flex space-x-4 justify-end md:w-full">
+                  <button
+                    (click)="create()"
+                    class="md:w-1/3 shadow bg-green-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                    type="button"
+                  >
+                    Crear
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
 
-  <div
-    *ngFor="let item of bars"
-    class="w-full flex justify-center items-center h-full"
-  >
-    <div class="w-2/4 content-center">
-      <div class="md:flex md:items-center mb-6">
-        <div class="md:w-1/5">
-          <label
-            class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-            for="inline-full-name"
-          >
-            {{ item.name }}
-          </label>
-        </div>
+        <div
+          *ngFor="let item of bars"
+          class="w-full flex justify-center items-center h-full"
+        >
+          <div class="w-2/4 content-center">
+            <div class="md:flex md:items-center mb-6">
+              <div class="md:w-1/5">
+                <label
+                  class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+                  for="inline-full-name"
+                >
+                  {{ item.name }}
+                </label>
+              </div>
 
-        <div class="md:w-2/5">
-          <label
-            class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-            for="inline-full-name"
-          >
-            {{ isAssociated(item.associate) }}
-          </label>
-        </div>
+              <div class="md:w-2/5">
+                <label
+                  class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+                  for="inline-full-name"
+                >
+                  {{ isAssociated(item.associate) }}
+                </label>
+              </div>
 
-        <div class="md:w-3/5">
-          <div class="flex space-x-4 justify-end md:w-full">
-            <button
-              (click)="edit(item._id)"
-              class="md:w-1/3 shadow bg-orange-500 hover:bg-orange-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-              type="button"
-            >
-              Editar
-            </button>
-            <button
-              *ngIf="item.available"
-              (click)="inhabilitate(item)"
-              class="md:w-1/3 shadow bg-red-500 hover:bg-red-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-              type="button"
-            >
-              Eliminar
-            </button>
-            <button
-              (click)="delete(item._id)"
-              class="hidden md:w-1/3 shadow bg-red-500 hover:bg-red-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-              type="button"
-            >
-              Eliminar
-            </button>
-            <button
-              *ngIf="!item.available"
-              (click)="inhabilitate(item)"
-              class="md:w-1/3 shadow bg-gray-500 hover:bg-gray-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-              type="button"
-            >
-              Recuperar
-            </button>
+              <div class="md:w-3/5">
+                <div class="flex space-x-4 justify-end md:w-full">
+                  <button
+                    (click)="edit(item._id)"
+                    class="md:w-1/3 shadow bg-orange-500 hover:bg-orange-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                    type="button"
+                  >
+                    Editar
+                  </button>
+                  <button
+                    *ngIf="item.available"
+                    (click)="inhabilitate(item)"
+                    class="md:w-1/3 shadow bg-red-500 hover:bg-red-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                    type="button"
+                  >
+                    Eliminar
+                  </button>
+                  <button
+                    (click)="delete(item._id)"
+                    class="hidden md:w-1/3 shadow bg-red-500 hover:bg-red-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                    type="button"
+                  >
+                    Eliminar
+                  </button>
+                  <button
+                    *ngIf="!item.available"
+                    (click)="inhabilitate(item)"
+                    class="md:w-1/3 shadow bg-gray-500 hover:bg-gray-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                    type="button"
+                  >
+                    Recuperar
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -91,3 +98,4 @@
   </div>
 </div>
 <app-footer></app-footer>
+

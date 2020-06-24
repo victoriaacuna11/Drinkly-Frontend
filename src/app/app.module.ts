@@ -70,6 +70,7 @@ import { ListZoneComponent } from './components/admin/zone/list-zone/list-zone.c
 import { AddGameComponent } from './components/admin/game/add-game/add-game.component';
 import { EditGameComponent } from './components/admin/game/edit-game/edit-game.component';
 import { ListGameComponent } from './components/admin/game/list-game/list-game.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -107,6 +108,7 @@ import { ListGameComponent } from './components/admin/game/list-game/list-game.c
     AddGameComponent,
     EditGameComponent,
     ListGameComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,

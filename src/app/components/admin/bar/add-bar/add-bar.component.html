@@ -4,663 +4,669 @@
   }
 </style>
 
-<app-admin-header></app-admin-header>
-
-<div *ngIf="!loading">
-  <div
-    class="h-20 w-full flex justify-center items-center"
-    style="font-family: 'Open Sans', sans-serif;"
-  >
-    <div><h2 class="text-4xl">CREA UN BAR</h2></div>
-  </div>
-  <div class="w-full flex justify-center items-center h-full">
-    <form
-      [formGroup]="form"
-      class="w-2/4 content-center"
-      encType="multipart/form-data"
-    >
-      <div class="width-full">
-        <div class="md:flex md:items-center mb-6">
-          <div class="md:w-1/5">
-            <label
-              class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-              for="inline-full-name"
-            >
-              Nombre
-            </label>
-          </div>
-          <div class="md:w-4/5">
-            <input
-              formControlName="name"
-              class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
-              id="inline-full-name"
-              type="text"
-              placeholder="Ej. Bar 360"
-            />
-          </div>
-        </div>
-        <app-required-field
-          [text]="'Este campo es requerido.'"
-          *ngIf="form.get('name').invalid && form.get('name').touched"
-        ></app-required-field>
-      </div>
-
-      <div class="width-full">
-        <div class="md:flex md:items-center mb-6">
-          <div class="md:w-1/5">
-            <label
-              class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-              for="inline-full-name"
-            >
-              Horario de trabajo
-            </label>
-          </div>
-          <div class="md:w-4/5">
-            <input
-              formControlName="working_hours"
-              class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
-              id="inline-full-name"
-              type="text"
-              placeholder="Ej. Abiertos de 9pm a 4 am."
-            />
-          </div>
-        </div>
-        <app-required-field
-          [text]="'Este campo es requerido.'"
-          *ngIf="
-            form.get('working_hours').invalid &&
-            form.get('working_hours').touched
-          "
-        ></app-required-field>
-      </div>
-
-      <div class="width-full">
-        <div class="md:flex md:items-center mb-6">
-          <div class="md:w-1/5">
-            <label
-              class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-              for="inline-full-name"
-            >
-              Rating (1-5)
-            </label>
-          </div>
-          <div class="md:w-4/5">
-            <input
-              formControlName="rating"
-              class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
-              id="inline-full-name"
-              type="number"
-              step="1"
-            />
-          </div>
-        </div>
-        <app-required-field
-          [text]="'Este campo es requerido. (Valores entre 1 y 5)'"
-          *ngIf="form.get('rating').invalid && form.get('rating').touched"
-        ></app-required-field>
-      </div>
-
-      <div class="width-full">
-        <div class="md:flex md:items-center mb-6">
-          <div class="md:w-1/5">
-            <label
-              class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-              for="inline-full-name"
-            >
-              Costo promedio (1-5)
-            </label>
-          </div>
-          <div class="md:w-4/5">
-            <input
-              formControlName="cost"
-              class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
-              id="inline-full-name"
-              type="number"
-              min="1"
-              max="5"
-            />
-          </div>
-        </div>
-        <app-required-field
-          [text]="'Este campo es requerido. (Valores entre 1 y 5)'"
-          *ngIf="form.get('cost').invalid && form.get('cost').touched"
-        ></app-required-field>
-      </div>
-
-      <div class="width-full">
-        <div class="md:flex md:items-center mb-6">
-          <div class="md:w-1/5">
-            <label
-              class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-              for="inline-full-name"
-            >
-              Twitter (Link de la cuenta)
-            </label>
-          </div>
-          <div class="md:w-4/5">
-            <input
-              formControlName="twitter"
-              class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
-              id="inline-full-name"
-              type="text"
-              placeholder="Ej. http://twitter.com/usuario"
-            />
-          </div>
-        </div>
-      </div>
-
-      <div class="md:flex md:items-center mb-6">
-        <div class="md:w-1/5">
-          <label
-            class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-            for="inline-full-name"
-          >
-            Facebook (Link de la cuenta)
-          </label>
-        </div>
-        <div class="md:w-4/5">
-          <input
-            formControlName="facebook"
-            class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
-            id="inline-full-name"
-            type="text"
-            placeholder="Ej. http://facebook.com/usuario"
-          />
-        </div>
-      </div>
-
-      <div class="md:flex md:items-center mb-6">
-        <div class="md:w-1/5">
-          <label
-            class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-            for="inline-full-name"
-          >
-            Instagram (Link de la cuenta)
-          </label>
-        </div>
-        <div class="md:w-4/5">
-          <input
-            formControlName="instagram"
-            class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
-            id="inline-full-name"
-            type="text"
-            placeholder="Ej. http://instagram.com/usuario"
-          />
-        </div>
-      </div>
-
-      <div class="width-full">
-        <div class="md:flex md:items-center mb-6">
-          <div class="md:w-1/5">
-            <label
-              class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-              for="inline-full-name"
-            >
-              Email
-            </label>
-          </div>
-          <div class="md:w-4/5">
-            <input
-              formControlName="email"
-              class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
-              id="inline-full-name"
-              type="email"
-              placeholder="Ej. usuario@gmail.com"
-            />
-          </div>
-        </div>
-        <app-required-field
-          [text]="'Este campo es requerido y debe ser un correo'"
-          *ngIf="form.get('email').invalid && form.get('email').touched"
-        ></app-required-field>
-      </div>
-
-      <div class="width-full">
-        <div class="md:flex md:items-center mb-6">
-          <div class="md:w-1/5">
-            <label
-              class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-              for="inline-full-name"
-            >
-              Descripción
-            </label>
-          </div>
-          <div class="md:w-4/5">
-            <input
-              formControlName="description"
-              class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
-              id="inline-full-name"
-              type="text"
-              placeholder="Ej. Bar360 es un lugar agradable donde puedes relajarte mientars disfrutas de la buena música..."
-            />
-          </div>
-        </div>
-        <app-required-field
-          [text]="'Este campo es requerido.'"
-          *ngIf="
-            form.get('description').invalid && form.get('description').touched
-          "
-        ></app-required-field>
-      </div>
-
-      <div class="width-full">
-        <div class="md:flex md:items-center mb-6">
-          <div class="md:w-1/5">
-            <label
-              class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-              for="inline-full-name"
-            >
-              Zona
-            </label>
-          </div>
-          <div class="md:w-4/5 relative">
-            <select
-              formControlName="zone"
-              class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
-              id="grid-state"
-            >
-              <ng-container *ngFor="let item of zones">
-                <option [value]="item._id" *ngIf="item.available">{{
-                  item.name
-                }}</option>
-              </ng-container>
-            </select>
-            <div
-              class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
-            >
-              <svg
-                class="fill-current h-4 w-4"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
-                />
-              </svg>
-            </div>
-          </div>
-        </div>
-        <app-required-field
-          [text]="'Este campo es requerido.'"
-          *ngIf="form.get('zone').invalid && form.get('zone').touched"
-        ></app-required-field>
-      </div>
-
-      <div class="width-full">
-        <div class="md:flex md:items-center mb-6">
-          <div class="md:w-1/5">
-            <label
-              class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-              for="inline-full-name"
-            >
-              Dirección
-            </label>
-          </div>
-          <div class="md:w-4/5">
-            <input
-              formControlName="address"
-              class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
-              id="inline-full-name"
-              type="text"
-              placeholder="Ej. Calle 7, Av. 5"
-            />
-          </div>
-        </div>
-        <app-required-field
-          [text]="'Este campo es requerido.'"
-          *ngIf="form.get('address').invalid && form.get('address').touched"
-        ></app-required-field>
-      </div>
-
-      <div class="md:flex md:items-center mb-6">
-        <div class="md:w-1/5">
-          <label
-            class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-            for="inline-full-name"
-          >
-            ¿Es socio?
-          </label>
-        </div>
-        <label class="custom-label flex">
-          <div
-            class="bg-white shadow w-6 h-6 p-1 flex justify-center items-center mr-2"
-          >
-            <input formControlName="associate" type="checkbox" class="hidden" />
-            <svg
-              class="hidden w-4 h-4 text-green-600 pointer-events-none"
-              viewBox="0 0 172 172"
-            >
-              <g
-                fill="none"
-                stroke-width="none"
-                stroke-miterlimit="10"
-                font-family="none"
-                font-weight="none"
-                font-size="none"
-                text-anchor="none"
-                style="mix-blend-mode: normal;"
-              >
-                <path d="M0 172V0h172v172z" />
-                <path
-                  d="M145.433 37.933L64.5 118.8658 33.7337 88.0996l-10.134 10.1341L64.5 139.1341l91.067-91.067z"
-                  fill="currentColor"
-                  stroke-width="1"
-                />
-              </g>
-            </svg>
-          </div>
-          <span class="select-none"></span>
-        </label>
-      </div>
-
-      <div formArrayName="phone" class="width-full">
+<div class="flex w-full">
+  <app-navbar></app-navbar>
+  <div class="pl-64 w-full">
+    <div class="w-full">
+      <app-admin-header></app-admin-header>
+      <div *ngIf="!loading">
         <div
-          *ngFor="let group of PhoneArray.controls; let i = index"
-          [formGroupName]="i"
-          class="width-full"
+          class="h-20 w-full flex justify-center items-center"
+          style="font-family: 'Open Sans', sans-serif;"
         >
-          <div class="md:flex md:items-center mb-6">
-            <div class="md:w-1/5">
-              <label
-                class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-                for="inline-full-name"
-              >
-                Número de teléfono
-              </label>
-            </div>
-            <div class="md:w-2/5">
-              <input
-                formControlName="phone"
-                class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
-                id="inline-full-name"
-                type="text"
-                placeholder="Ej. 02123451234"
-              />
-            </div>
-            <div class="flex space-x-4 justify-end md:w-2/5">
-              <button
-                (click)="addPhone()"
-                class="md:w-1/3 shadow bg-gray-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-                type="button"
-              >
-                +
-              </button>
-              <button
-                *ngIf="i != 0"
-                (click)="deletePhone(i)"
-                class="md:w-1/3 shadow bg-gray-500 hover:bg-red-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-                type="button"
-              >
-                -
-              </button>
-            </div>
-          </div>
-          <app-required-field
-            *ngIf="group.controls.phone.invalid && group.controls.phone.touched"
-            [text]="'Este campo es requerido.'"
-          ></app-required-field>
+          <div><h2 class="text-4xl">CREA UN BAR</h2></div>
         </div>
-      </div>
-
-      <div class="md:items-center mb-6">
-        <div class="md:w-full">
-          <label
-            style="font-family: 'Open Sans', sans-serif;"
-            class="block text-black-500 font-bold md:text-center mb-1 md:mb-0 pr-4"
-            for="inline-full-name"
+        <div class="w-full flex justify-center items-center h-full">
+          <form
+            [formGroup]="form"
+            class="w-2/4 content-center"
+            encType="multipart/form-data"
           >
-            Menú
-          </label>
-        </div>
-        <div class="md:w-full">
-          <label
-            style="font-family: 'Open Sans', sans-serif;"
-            class="block text-black-500 font-bold md:text-center mb-1 md:mb-0 pr-4"
-            for="inline-full-name"
-          >
-            Tragos disponibles en el bar
-          </label>
-        </div>
-      </div>
-
-      <div formArrayName="menu" class="width-full">
-        <div
-          *ngFor="let group of MenuArray.controls; let i = index"
-          [formGroupName]="i"
-          class="md:items-center mb-6"
-        >
-          <div class="md:flex md:items-center mb-6">
-            <div class="md:w-1/5">
-              <label
-                class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-                for="inline-full-name"
-              >
-                Nombre del trago
-              </label>
-            </div>
-            <div class="md:w-4/5">
-              <input
-                formControlName="name"
-                class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
-                id="inline-full-name"
-                type="text"
-                placeholder="Ej. Mojito"
-              />
-            </div>
-          </div>
-          <app-required-field
-            *ngIf="group.controls.name.invalid && group.controls.name.touched"
-            [text]="'Este campo es requerido.'"
-          ></app-required-field>
-
-          <div class="md:flex md:items-center mb-6">
-            <div class="md:w-1/5">
-              <label
-                class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-                for="inline-full-name"
-              >
-                Precio
-              </label>
-            </div>
-            <div class="md:w-4/5">
-              <input
-                formControlName="price"
-                class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
-                id="inline-full-name"
-                type="number"
-                min="0.01"
-                step="0.01"
-              />
-            </div>
-          </div>
-          <app-required-field
-            *ngIf="group.controls.price.invalid && group.controls.price.touched"
-            [text]="'Este campo es requerido. (Solo números positivos)'"
-          ></app-required-field>
-
-          <div class="md:flex md:items-center mb-6">
-            <div class="md:w-1/5">
-              <label
-                class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-                for="inline-full-name"
-              >
-                Descripción
-              </label>
-            </div>
-            <div class="md:w-4/5">
-              <input
-                formControlName="description"
-                class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
-                id="inline-full-name"
-                type="text"
-                placeholder="Ej. Cóctel muy refrescante que no sabe mucho a alcohol."
-              />
-            </div>
-          </div>
-          <div class="md:flex md:items-center mb-6 ">
-                <div class="md:w-1/3"></div>
-                    <div class="flex space-x-4 justify-end md:w-2/3">
-                      <button  (click)="addMenu()" class="md:w-1/4 shadow bg-gray-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">
-                        +
-                      </button>
-                      <button (click)="deleteMenu(i)" *ngIf="i>0" class="md:w-1/4 shadow bg-gray-500 hover:bg-red-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">
-                        -
-                      </button>
+            <div class="width-full">
+              <div class="md:flex md:items-center mb-6">
+                <div class="md:w-1/5">
+                  <label
+                    class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+                    for="inline-full-name"
+                  >
+                    Nombre
+                  </label>
                 </div>
-            </div>
-        </div>
-      </div>
-
-      <div class="md:items-center mb-6">
-        <div class="md:w-full">
-          <label
-            style="font-family: 'Open Sans', sans-serif;"
-            class="block text-black-500 font-bold md:text-center mb-1 md:mb-0 pr-4"
-            for="inline-full-name"
-          >
-            Galería
-          </label>
-        </div>
-        <div class="md:w-full">
-          <label
-            style="font-family: 'Open Sans', sans-serif;"
-            class="block text-black-500 font-bold md:text-center mb-1 md:mb-0 pr-4"
-            for="inline-full-name"
-          >
-            Por favor, esperar a que aparezcan las fotos. Esto indicará que
-            fueron cargadas con éxito.
-          </label>
-        </div>
-      </div>
-
-      <div class="md:flex md:items-center mb-6">
-        <div class="md:w-1/5">
-          <label
-            class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-            for="inline-full-name"
-          >
-            Ícono
-          </label>
-        </div>
-        <div class="md:w-4/5">
-          <div
-            *ngIf="!this.main_image"
-            class="flex items-center justify-center bg-grey-lighter"
-          >
-            <label
-              class="w-full flex justify-center h-full items-center px-4 py-3 pr-8 bg-gray-200 rounded-lg shadow-lg tracking-wide border border-blue cursor-pointer hover:bg-orange-500 hover:text-white"
-            >
-              <span class="mt-2 text-base leading-normal"
-                >Selecciona un archivo</span
-              >
-              <lib-file-upload-firestorage
-                storagePath="bar"
-                (res)="uploadEnRes($event)"
-                class="hidden"
-              >
-              </lib-file-upload-firestorage>
-            </label>
-          </div>
-
-          <div *ngIf="this.main_image" class="width-full bg-grey-lighter">
-            <div class="width-2/3 flex items-center justify-center">
-              <img [src]="this.main_image" class="h-24" />
-            </div>
-            <div class="flex space-x-4 justify-end w-full">
-              <button
-                (click)="changeImage(this.main_image)"
-                class="md:w-1/5 shadow bg-gray-500 hover:bg-orange-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-                type="button"
-              >
-                Cambiar
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="width-full">
-        <div *ngFor="let group of photo; let i = index" class="width-full">
-          <div class="md:flex md:items-center mb-6">
-            <div class="md:w-1/5">
-              <label
-                class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-                for="inline-full-name"
-              >
-                Foto
-              </label>
+                <div class="md:w-4/5">
+                  <input
+                    formControlName="name"
+                    class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
+                    id="inline-full-name"
+                    type="text"
+                    placeholder="Ej. Bar 360"
+                  />
+                </div>
+              </div>
+              <app-required-field
+                [text]="'Este campo es requerido.'"
+                *ngIf="form.get('name').invalid && form.get('name').touched"
+              ></app-required-field>
             </div>
 
-            <div class="md:w-4/5">
-              <div
-                *ngIf="group == 'null'"
-                class="flex items-center justify-center bg-grey-lighter"
-              >
+            <div class="width-full">
+              <div class="md:flex md:items-center mb-6">
+                <div class="md:w-1/5">
+                  <label
+                    class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+                    for="inline-full-name"
+                  >
+                    Horario de trabajo
+                  </label>
+                </div>
+                <div class="md:w-4/5">
+                  <input
+                    formControlName="working_hours"
+                    class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
+                    id="inline-full-name"
+                    type="text"
+                    placeholder="Ej. Abiertos de 9pm a 4 am."
+                  />
+                </div>
+              </div>
+              <app-required-field
+                [text]="'Este campo es requerido.'"
+                *ngIf="
+                  form.get('working_hours').invalid &&
+                  form.get('working_hours').touched
+                "
+              ></app-required-field>
+            </div>
+
+            <div class="width-full">
+              <div class="md:flex md:items-center mb-6">
+                <div class="md:w-1/5">
+                  <label
+                    class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+                    for="inline-full-name"
+                  >
+                    Rating (1-5)
+                  </label>
+                </div>
+                <div class="md:w-4/5">
+                  <input
+                    formControlName="rating"
+                    class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
+                    id="inline-full-name"
+                    type="number"
+                    step="1"
+                  />
+                </div>
+              </div>
+              <app-required-field
+                [text]="'Este campo es requerido. (Valores entre 1 y 5)'"
+                *ngIf="form.get('rating').invalid && form.get('rating').touched"
+              ></app-required-field>
+            </div>
+
+            <div class="width-full">
+              <div class="md:flex md:items-center mb-6">
+                <div class="md:w-1/5">
+                  <label
+                    class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+                    for="inline-full-name"
+                  >
+                    Costo promedio (1-5)
+                  </label>
+                </div>
+                <div class="md:w-4/5">
+                  <input
+                    formControlName="cost"
+                    class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
+                    id="inline-full-name"
+                    type="number"
+                    min="1"
+                    max="5"
+                  />
+                </div>
+              </div>
+              <app-required-field
+                [text]="'Este campo es requerido. (Valores entre 1 y 5)'"
+                *ngIf="form.get('cost').invalid && form.get('cost').touched"
+              ></app-required-field>
+            </div>
+
+            <div class="width-full">
+              <div class="md:flex md:items-center mb-6">
+                <div class="md:w-1/5">
+                  <label
+                    class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+                    for="inline-full-name"
+                  >
+                    Twitter (Link de la cuenta)
+                  </label>
+                </div>
+                <div class="md:w-4/5">
+                  <input
+                    formControlName="twitter"
+                    class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
+                    id="inline-full-name"
+                    type="text"
+                    placeholder="Ej. http://twitter.com/usuario"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="md:flex md:items-center mb-6">
+              <div class="md:w-1/5">
                 <label
-                  class="w-full flex justify-center h-full items-center px-4 py-3 pr-8 bg-gray-200 rounded-lg shadow-lg tracking-wide border border-blue cursor-pointer hover:bg-orange-500 hover:text-white"
+                  class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+                  for="inline-full-name"
                 >
-                  <span class="mt-2 text-base leading-normal"
-                    >Selecciona un archivo</span
-                  >
-                  <lib-file-upload-firestorage
-                    storagePath="bar"
-                    (res)="uploadPhoto($event, i)"
-                    class="hidden"
-                  >
-                  </lib-file-upload-firestorage>
+                  Facebook (Link de la cuenta)
                 </label>
               </div>
+              <div class="md:w-4/5">
+                <input
+                  formControlName="facebook"
+                  class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
+                  id="inline-full-name"
+                  type="text"
+                  placeholder="Ej. http://facebook.com/usuario"
+                />
+              </div>
+            </div>
 
-              <div *ngIf="group != 'null'" class="width-full bg-grey-lighter">
-                <div class="width-2/3 flex items-center justify-center">
-                  <img [src]="group" class="h-24" />
+            <div class="md:flex md:items-center mb-6">
+              <div class="md:w-1/5">
+                <label
+                  class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+                  for="inline-full-name"
+                >
+                  Instagram (Link de la cuenta)
+                </label>
+              </div>
+              <div class="md:w-4/5">
+                <input
+                  formControlName="instagram"
+                  class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
+                  id="inline-full-name"
+                  type="text"
+                  placeholder="Ej. http://instagram.com/usuario"
+                />
+              </div>
+            </div>
+
+            <div class="width-full">
+              <div class="md:flex md:items-center mb-6">
+                <div class="md:w-1/5">
+                  <label
+                    class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+                    for="inline-full-name"
+                  >
+                    Email
+                  </label>
+                </div>
+                <div class="md:w-4/5">
+                  <input
+                    formControlName="email"
+                    class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
+                    id="inline-full-name"
+                    type="email"
+                    placeholder="Ej. usuario@gmail.com"
+                  />
                 </div>
               </div>
+              <app-required-field
+                [text]="'Este campo es requerido y debe ser un correo'"
+                *ngIf="form.get('email').invalid && form.get('email').touched"
+              ></app-required-field>
+            </div>
 
-              <div class="flex space-x-4 justify-end md:w-full">
+            <div class="width-full">
+              <div class="md:flex md:items-center mb-6">
+                <div class="md:w-1/5">
+                  <label
+                    class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+                    for="inline-full-name"
+                  >
+                    Descripción
+                  </label>
+                </div>
+                <div class="md:w-4/5">
+                  <input
+                    formControlName="description"
+                    class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
+                    id="inline-full-name"
+                    type="text"
+                    placeholder="Ej. Bar360 es un lugar agradable donde puedes relajarte mientars disfrutas de la buena música..."
+                  />
+                </div>
+              </div>
+              <app-required-field
+                [text]="'Este campo es requerido.'"
+                *ngIf="
+                  form.get('description').invalid && form.get('description').touched
+                "
+              ></app-required-field>
+            </div>
+
+            <div class="width-full">
+              <div class="md:flex md:items-center mb-6">
+                <div class="md:w-1/5">
+                  <label
+                    class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+                    for="inline-full-name"
+                  >
+                    Zona
+                  </label>
+                </div>
+                <div class="md:w-4/5 relative">
+                  <select
+                    formControlName="zone"
+                    class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
+                    id="grid-state"
+                  >
+                    <ng-container *ngFor="let item of zones">
+                      <option [value]="item._id" *ngIf="item.available">{{
+                        item.name
+                      }}</option>
+                    </ng-container>
+                  </select>
+                  <div
+                    class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
+                  >
+                    <svg
+                      class="fill-current h-4 w-4"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <app-required-field
+                [text]="'Este campo es requerido.'"
+                *ngIf="form.get('zone').invalid && form.get('zone').touched"
+              ></app-required-field>
+            </div>
+
+            <div class="width-full">
+              <div class="md:flex md:items-center mb-6">
+                <div class="md:w-1/5">
+                  <label
+                    class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+                    for="inline-full-name"
+                  >
+                    Dirección
+                  </label>
+                </div>
+                <div class="md:w-4/5">
+                  <input
+                    formControlName="address"
+                    class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
+                    id="inline-full-name"
+                    type="text"
+                    placeholder="Ej. Calle 7, Av. 5"
+                  />
+                </div>
+              </div>
+              <app-required-field
+                [text]="'Este campo es requerido.'"
+                *ngIf="form.get('address').invalid && form.get('address').touched"
+              ></app-required-field>
+            </div>
+
+            <div class="md:flex md:items-center mb-6">
+              <div class="md:w-1/5">
+                <label
+                  class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+                  for="inline-full-name"
+                >
+                  ¿Es socio?
+                </label>
+              </div>
+              <label class="custom-label flex">
+                <div
+                  class="bg-white shadow w-6 h-6 p-1 flex justify-center items-center mr-2"
+                >
+                  <input formControlName="associate" type="checkbox" class="hidden" />
+                  <svg
+                    class="hidden w-4 h-4 text-green-600 pointer-events-none"
+                    viewBox="0 0 172 172"
+                  >
+                    <g
+                      fill="none"
+                      stroke-width="none"
+                      stroke-miterlimit="10"
+                      font-family="none"
+                      font-weight="none"
+                      font-size="none"
+                      text-anchor="none"
+                      style="mix-blend-mode: normal;"
+                    >
+                      <path d="M0 172V0h172v172z" />
+                      <path
+                        d="M145.433 37.933L64.5 118.8658 33.7337 88.0996l-10.134 10.1341L64.5 139.1341l91.067-91.067z"
+                        fill="currentColor"
+                        stroke-width="1"
+                      />
+                    </g>
+                  </svg>
+                </div>
+                <span class="select-none"></span>
+              </label>
+            </div>
+
+            <div formArrayName="phone" class="width-full">
+              <div
+                *ngFor="let group of PhoneArray.controls; let i = index"
+                [formGroupName]="i"
+                class="width-full"
+              >
+                <div class="md:flex md:items-center mb-6">
+                  <div class="md:w-1/5">
+                    <label
+                      class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+                      for="inline-full-name"
+                    >
+                      Número de teléfono
+                    </label>
+                  </div>
+                  <div class="md:w-2/5">
+                    <input
+                      formControlName="phone"
+                      class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
+                      id="inline-full-name"
+                      type="text"
+                      placeholder="Ej. 02123451234"
+                    />
+                  </div>
+                  <div class="flex space-x-4 justify-end md:w-2/5">
+                    <button
+                      (click)="addPhone()"
+                      class="md:w-1/3 shadow bg-gray-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                      type="button"
+                    >
+                      +
+                    </button>
+                    <button
+                      *ngIf="i != 0"
+                      (click)="deletePhone(i)"
+                      class="md:w-1/3 shadow bg-gray-500 hover:bg-red-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                      type="button"
+                    >
+                      -
+                    </button>
+                  </div>
+                </div>
+                <app-required-field
+                  *ngIf="group.controls.phone.invalid && group.controls.phone.touched"
+                  [text]="'Este campo es requerido.'"
+                ></app-required-field>
+              </div>
+            </div>
+
+            <div class="md:items-center mb-6">
+              <div class="md:w-full">
+                <label
+                  style="font-family: 'Open Sans', sans-serif;"
+                  class="block text-black-500 font-bold md:text-center mb-1 md:mb-0 pr-4"
+                  for="inline-full-name"
+                >
+                  Menú
+                </label>
+              </div>
+              <div class="md:w-full">
+                <label
+                  style="font-family: 'Open Sans', sans-serif;"
+                  class="block text-black-500 font-bold md:text-center mb-1 md:mb-0 pr-4"
+                  for="inline-full-name"
+                >
+                  Tragos disponibles en el bar
+                </label>
+              </div>
+            </div>
+
+            <div formArrayName="menu" class="width-full">
+              <div
+                *ngFor="let group of MenuArray.controls; let i = index"
+                [formGroupName]="i"
+                class="md:items-center mb-6"
+              >
+                <div class="md:flex md:items-center mb-6">
+                  <div class="md:w-1/5">
+                    <label
+                      class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+                      for="inline-full-name"
+                    >
+                      Nombre del trago
+                    </label>
+                  </div>
+                  <div class="md:w-4/5">
+                    <input
+                      formControlName="name"
+                      class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
+                      id="inline-full-name"
+                      type="text"
+                      placeholder="Ej. Mojito"
+                    />
+                  </div>
+                </div>
+                <app-required-field
+                  *ngIf="group.controls.name.invalid && group.controls.name.touched"
+                  [text]="'Este campo es requerido.'"
+                ></app-required-field>
+
+                <div class="md:flex md:items-center mb-6">
+                  <div class="md:w-1/5">
+                    <label
+                      class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+                      for="inline-full-name"
+                    >
+                      Precio
+                    </label>
+                  </div>
+                  <div class="md:w-4/5">
+                    <input
+                      formControlName="price"
+                      class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
+                      id="inline-full-name"
+                      type="number"
+                      min="0.01"
+                      step="0.01"
+                    />
+                  </div>
+                </div>
+                <app-required-field
+                  *ngIf="group.controls.price.invalid && group.controls.price.touched"
+                  [text]="'Este campo es requerido. (Solo números positivos)'"
+                ></app-required-field>
+
+                <div class="md:flex md:items-center mb-6">
+                  <div class="md:w-1/5">
+                    <label
+                      class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+                      for="inline-full-name"
+                    >
+                      Descripción
+                    </label>
+                  </div>
+                  <div class="md:w-4/5">
+                    <input
+                      formControlName="description"
+                      class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
+                      id="inline-full-name"
+                      type="text"
+                      placeholder="Ej. Cóctel muy refrescante que no sabe mucho a alcohol."
+                    />
+                  </div>
+                </div>
+                <div class="md:flex md:items-center mb-6 ">
+                      <div class="md:w-1/3"></div>
+                          <div class="flex space-x-4 justify-end md:w-2/3">
+                            <button  (click)="addMenu()" class="md:w-1/4 shadow bg-gray-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">
+                              +
+                            </button>
+                            <button (click)="deleteMenu(i)" *ngIf="i>0" class="md:w-1/4 shadow bg-gray-500 hover:bg-red-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">
+                              -
+                            </button>
+                      </div>
+                  </div>
+              </div>
+            </div>
+
+            <div class="md:items-center mb-6">
+              <div class="md:w-full">
+                <label
+                  style="font-family: 'Open Sans', sans-serif;"
+                  class="block text-black-500 font-bold md:text-center mb-1 md:mb-0 pr-4"
+                  for="inline-full-name"
+                >
+                  Galería
+                </label>
+              </div>
+              <div class="md:w-full">
+                <label
+                  style="font-family: 'Open Sans', sans-serif;"
+                  class="block text-black-500 font-bold md:text-center mb-1 md:mb-0 pr-4"
+                  for="inline-full-name"
+                >
+                  Por favor, esperar a que aparezcan las fotos. Esto indicará que
+                  fueron cargadas con éxito.
+                </label>
+              </div>
+            </div>
+
+            <div class="md:flex md:items-center mb-6">
+              <div class="md:w-1/5">
+                <label
+                  class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+                  for="inline-full-name"
+                >
+                  Ícono
+                </label>
+              </div>
+              <div class="md:w-4/5">
+                <div
+                  *ngIf="!this.main_image"
+                  class="flex items-center justify-center bg-grey-lighter"
+                >
+                  <label
+                    class="w-full flex justify-center h-full items-center px-4 py-3 pr-8 bg-gray-200 rounded-lg shadow-lg tracking-wide border border-blue cursor-pointer hover:bg-orange-500 hover:text-white"
+                  >
+                    <span class="mt-2 text-base leading-normal"
+                      >Selecciona un archivo</span
+                    >
+                    <lib-file-upload-firestorage
+                      storagePath="bar"
+                      (res)="uploadEnRes($event)"
+                      class="hidden"
+                    >
+                    </lib-file-upload-firestorage>
+                  </label>
+                </div>
+
+                <div *ngIf="this.main_image" class="width-full bg-grey-lighter">
+                  <div class="width-2/3 flex items-center justify-center">
+                    <img [src]="this.main_image" class="h-24" />
+                  </div>
+                  <div class="flex space-x-4 justify-end w-full">
+                    <button
+                      (click)="changeImage(this.main_image)"
+                      class="md:w-1/5 shadow bg-gray-500 hover:bg-orange-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                      type="button"
+                    >
+                      Cambiar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="width-full">
+              <div *ngFor="let group of photo; let i = index" class="width-full">
+                <div class="md:flex md:items-center mb-6">
+                  <div class="md:w-1/5">
+                    <label
+                      class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+                      for="inline-full-name"
+                    >
+                      Foto
+                    </label>
+                  </div>
+
+                  <div class="md:w-4/5">
+                    <div
+                      *ngIf="group == 'null'"
+                      class="flex items-center justify-center bg-grey-lighter"
+                    >
+                      <label
+                        class="w-full flex justify-center h-full items-center px-4 py-3 pr-8 bg-gray-200 rounded-lg shadow-lg tracking-wide border border-blue cursor-pointer hover:bg-orange-500 hover:text-white"
+                      >
+                        <span class="mt-2 text-base leading-normal"
+                          >Selecciona un archivo</span
+                        >
+                        <lib-file-upload-firestorage
+                          storagePath="bar"
+                          (res)="uploadPhoto($event, i)"
+                          class="hidden"
+                        >
+                        </lib-file-upload-firestorage>
+                      </label>
+                    </div>
+
+                    <div *ngIf="group != 'null'" class="width-full bg-grey-lighter">
+                      <div class="width-2/3 flex items-center justify-center">
+                        <img [src]="group" class="h-24" />
+                      </div>
+                    </div>
+
+                    <div class="flex space-x-4 justify-end md:w-full">
+                      <button
+                        *ngIf="i < 6"
+                        (click)="addPhoto()"
+                        class="md:w-1/4 shadow bg-gray-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                        type="button"
+                      >
+                        +
+                      </button>
+                      <button
+                        (click)="deletePhoto(group, i)"
+                        class="md:w-1/4 shadow bg-gray-500 hover:bg-red-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                        type="button"
+                      >
+                        -
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="md:flex md:items-center mb-6">
+              <div class="md:w-1/3"></div>
+              <div class="flex space-x-4 justify-end md:w-2/3">
                 <button
-                  *ngIf="i < 6"
-                  (click)="addPhoto()"
-                  class="md:w-1/4 shadow bg-gray-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                  [disabled]="form.invalid"
+                  (click)="createBar()"
+                  class="md:w-1/4 shadow bg-green-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
                   type="button"
                 >
-                  +
+                  Crear
                 </button>
                 <button
-                  (click)="deletePhoto(group, i)"
-                  class="md:w-1/4 shadow bg-gray-500 hover:bg-red-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                  (click)="goBack()"
+                  class="md:w-1/4 shadow bg-orange-500 hover:bg-orange-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
                   type="button"
                 >
-                  -
+                  Regresar
                 </button>
               </div>
             </div>
-          </div>
+          </form>
         </div>
       </div>
-
-      <div class="md:flex md:items-center mb-6">
-        <div class="md:w-1/3"></div>
-        <div class="flex space-x-4 justify-end md:w-2/3">
-          <button
-            [disabled]="form.invalid"
-            (click)="createBar()"
-            class="md:w-1/4 shadow bg-green-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-            type="button"
-          >
-            Crear
-          </button>
-          <button
-            (click)="goBack()"
-            class="md:w-1/4 shadow bg-orange-500 hover:bg-orange-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-            type="button"
-          >
-            Regresar
-          </button>
-        </div>
-      </div>
-    </form>
+    </div>
   </div>
 </div>
-
 <app-footer></app-footer>
+

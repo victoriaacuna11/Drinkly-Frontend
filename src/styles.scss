@@ -10,6 +10,9 @@
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 
+ html {
+  box-sizing: border-box;
+} 
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap");
 
 html {
