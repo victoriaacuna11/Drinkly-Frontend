@@ -1,4 +1,7 @@
 import { Component, OnInit } from "@angular/core";
+import { ingredient } from "src/app/models/ingredient";
+import { IngredientService } from "src/app/services/ingredient.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-drinks-filter",
@@ -232,6 +235,8 @@ export class DrinksFilterComponent implements OnInit {
     },
   ];
 
+  ingredients:ingredient[];
+
   licor_hidden = true;
   bebida_hidden = true;
   fruta_hidden = true;
@@ -240,10 +245,14 @@ export class DrinksFilterComponent implements OnInit {
   filter = [];
 
   status = false;
+  loading=true
 
-  constructor() {}
+  constructor(private service: IngredientService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getIngredients();
+    console.log('oninnit')
+  }
 
   select(object: any) {
     object.style = !object.style;
@@ -258,5 +267,16 @@ export class DrinksFilterComponent implements OnInit {
       }
     }
     console.log(this.filter);
+  
+  }
+
+
+  getIngredients() {
+    this.service.getIngredients().subscribe((res: any) => {
+      this.ingredients = [...res.data];
+      this.loading = false;
+      console.log(this.ingredients);
+    });
+    
   }
 }

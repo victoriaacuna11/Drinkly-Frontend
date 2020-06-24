@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { ingredient } from "src/app/models/ingredient";
 import { IngredientService } from "src/app/services/ingredient.service";
 import { Router, ActivatedRoute } from "@angular/router";
-import { FormGroup, FormBuilder } from "@angular/forms";
+import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { CategoriesService } from "src/app/services/categories.service";
 import { AngularFireStorage } from '@angular/fire/storage';
 
@@ -28,8 +28,8 @@ export class EditIngredientComponent implements OnInit {
     private storage: AngularFireStorage
   ) {
     this.form = this._builder.group({
-      name: [""],
-      category: [""],
+      name: ["", Validators.required],
+      category: ["", Validators.required],
     });
   }
 
@@ -44,8 +44,8 @@ export class EditIngredientComponent implements OnInit {
       this.ingredient = { ...res.data };
       this.main_image=this.ingredient.photo;
       this.form = this._builder.group({
-        name: this.ingredient.name,
-        category: this.ingredient.category
+        name: [this.ingredient.name, Validators.required],
+        category: [this.ingredient.category, Validators.required]
       });
       this.loading = false;
     });
@@ -56,7 +56,7 @@ export class EditIngredientComponent implements OnInit {
   // }
 
   editIngredient() {
-    console.log(this.main_image)
+    
     var ingredient: ingredient = {
       name: this.form.value.name,
       category: this.form.value.category,
@@ -66,17 +66,27 @@ export class EditIngredientComponent implements OnInit {
     };
     console.log(ingredient);
     console.log(this.ingredient.photo);
-    // console.log(this.selectedFile);
 
     if (this.main_image != null) {
       console.log(ingredient);
       this.service.updateIngredient(ingredient).subscribe((res) => {
         this.route.navigate(["admin/ingredient"]);
       });
-    } 
+    } else {
+      const response = alert(
+        "No ha subido ninguna imagen. Por favor, suba una."
+      );
+    }
   }
   goBack() {
-    this.route.navigate(["admin/ingredient"]);
+    if(this.main_image==null || this.main_image!=this.ingredient.photo){
+      const response = alert(
+        "Ya borró la imagen. Por favor, tiene que subir una y guardar el cambio."
+      );
+    } else {
+      this.route.navigate(["admin/ingredient"]);
+    }
+    
   }
 
   uploadEnRes(event) {

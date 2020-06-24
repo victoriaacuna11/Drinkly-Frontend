@@ -49,10 +49,7 @@ import { BarsListComponent } from "./components/bars/bars-list/bars-list.compone
 import { DrinksListComponent } from "./components/drinks/drinks-list/drinks-list.component";
 import { DrinksFilterComponent } from "./components/drinks/drinks-filter/drinks-filter.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { PruebaComponent } from "./components/prueba/prueba.component";
-import { PruebaNewComponent } from "./components/prueba-new/prueba-new.component";
 import { HttpClientModule } from "@angular/common/http";
-import { PruebaEditComponent } from "./components/prueba-edit/prueba-edit.component";
 import { FilterChildComponent } from "./components/drinks/filter-child/filter-child.component";
 import { FilterParentComponent } from "./components/drinks/filter-parent/filter-parent.component";
 import { SidebarComponent } from "./components/sidebar/sidebar.component";
@@ -63,11 +60,19 @@ import { environment } from "src/environments/environment";
 import { ListDrinkComponent } from "./components/admin/drink/list-drink/list-drink.component";
 import { AddDrinkComponent } from "./components/admin/drink/add-drink/add-drink.component";
 import { EditDrinkComponent } from "./components/admin/drink/edit-drink/edit-drink.component";
+import { JuegosComponent } from './components/juegos/juegos.component';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { BsDatepickerModule } from "ngx-bootstrap/datepicker";
 import { AgeValidatorDirective } from "./Directives/isAdult.directive";
 import { ListUserComponent } from './components/admin/user/list-user/list-user.component';
 import { EditUserComponent } from './components/profile-page/edit-user/edit-user.component';
+import { AddZoneComponent } from './components/admin/zone/add-zone/add-zone.component';
+import { EditZoneComponent } from './components/admin/zone/edit-zone/edit-zone.component';
+import { ListZoneComponent } from './components/admin/zone/list-zone/list-zone.component';
+import { AddGameComponent } from './components/admin/game/add-game/add-game.component';
+import { EditGameComponent } from './components/admin/game/edit-game/edit-game.component';
+import { ListGameComponent } from './components/admin/game/list-game/list-game.component';
+import { ShowFilterComponent } from './components/drinks/show-filter/show-filter.component';
 
 @NgModule({
   declarations: [
@@ -78,9 +83,6 @@ import { EditUserComponent } from './components/profile-page/edit-user/edit-user
     BarsListComponent,
     DrinksListComponent,
     DrinksFilterComponent,
-    PruebaComponent,
-    PruebaNewComponent,
-    PruebaEditComponent,
     AdminHeaderComponent,
     AddIngredientComponent,
     ListIngredientComponent,
@@ -100,9 +102,17 @@ import { EditUserComponent } from './components/profile-page/edit-user/edit-user
     ListDrinkComponent,
     AddDrinkComponent,
     EditDrinkComponent,
+    JuegosComponent,
     AgeValidatorDirective,
     ListUserComponent,
     EditUserComponent,
+    AddZoneComponent,
+    EditZoneComponent,
+    ListZoneComponent,
+    AddGameComponent,
+    EditGameComponent,
+    ListGameComponent,
+    ShowFilterComponent,
   ],
   imports: [
     BrowserModule,

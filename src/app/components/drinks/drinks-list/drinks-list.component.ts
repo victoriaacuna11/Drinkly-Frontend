@@ -10,28 +10,7 @@ export class DrinksListComponent implements OnInit {
 
   drinks: object[];
   loading: Boolean = true;
-  // object[] = [
-  //   {
-  //     title: "APPLETINI",
-  //     subtitle: "Por Wilfredo Machado",
-  //     main_image: "assets/images/martinigreen 2.png",
-  //   },
-  //   {
-  //     title: "APPLETINI",
-  //     subtitle: "Por Wilfredo Machado",
-  //     main_image: "assets/images/martinigreen 2.png",
-  //   },
-  //   {
-  //     title: "APPLETINI",
-  //     subtitle: "Por Wilfredo Machado",
-  //     main_image: "assets/images/martinigreen 2.png",
-  //   },
-  //   {
-  //     title: "APPLETINI",
-  //     subtitle: "Por Wilfredo Machado",
-  //     main_image: "assets/images/martinigreen 2.png",
-  //   },
-  // ];
+  
 
   constructor(private service: DrinkService) { }
 

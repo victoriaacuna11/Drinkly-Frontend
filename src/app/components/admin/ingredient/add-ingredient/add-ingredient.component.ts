@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { IngredientService } from "src/app/services/ingredient.service";
 import { ingredient } from "./../../../../models/ingredient";
-import { FormGroup, FormBuilder } from "@angular/forms";
+import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { CategoriesService } from 'src/app/services/categories.service';
 import { AngularFireStorage } from "@angular/fire/storage";
@@ -26,8 +26,8 @@ export class AddIngredientComponent implements OnInit {
     private storage: AngularFireStorage
   ) {
     this.form = this._builder.group({
-      name: [""],
-      category: [""],
+      name: ["", Validators.required],
+      category: ["", Validators.required],
     });
   }
 
@@ -35,29 +35,26 @@ export class AddIngredientComponent implements OnInit {
     this.categories=this.categoryService.getCategories();
   }
 
-  // onSelectedFile(event) {
-  //   this.selectedFile = event.target.files[0];
-  // }
 
   addIngredient() {
-    // console.log(this.selectedFile);
-    const ingredient: ingredient = {
-      name: this.form.value.name,
-      category: this.form.value.category,
-      photo: this.main_image,
-      _id: "",
-      available: true,
-    };
-    // console.log(ingredient);
-    // let formdata = new FormData();
-    // formdata.append("image", this.selectedFile as any);
-    // formdata.append("name", ingredient.name as any);
-    // formdata.append("category", ingredient.category as any);
-    // formdata.append("available", ingredient.available as any);
-    console.log(ingredient);
-    this.service.createIngredient(ingredient).subscribe((res) => {
-      this.route.navigate(["admin/ingredient"]);
-    });
+    if(this.main_image!=null){
+      const ingredient: ingredient = {
+        name: this.form.value.name,
+        category: this.form.value.category,
+        photo: this.main_image,
+        _id: "",
+        available: true,
+      };
+      console.log(ingredient);
+      this.service.createIngredient(ingredient).subscribe((res) => {
+        this.route.navigate(["admin/ingredient"]);
+      });
+    } else {
+      const response = alert(
+        "No ha subido ninguna imagen. Por favor, suba una."
+      );
+    }
+    
   }
 
   goBack() {

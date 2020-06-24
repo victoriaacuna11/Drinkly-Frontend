@@ -109,7 +109,7 @@
             class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
             id="grid-state"
           >
-            <option [value]="carajo" *ngFor="let item of categories">{{
+            <option [value]="'carajo'" *ngFor="let item of categories">{{
               item
             }}</option>
           </select>
@@ -150,7 +150,7 @@
                 formControlName="pictures"
                 type="file"
                 class="hidden"
-                (change)="onSelectedFile($event)"
+                
               />
             </label>
           </div>

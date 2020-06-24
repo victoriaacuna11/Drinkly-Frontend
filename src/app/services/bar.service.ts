@@ -7,7 +7,8 @@ import { Bar } from '../models/bar';
 })
 export class BarService {
 
-  _url = "http://localhost:5000/api/bar/";
+  // _url = "http://localhost:5000/api/bar/";
+  _url = 'https://drinklyapi.herokuapp.com/api/bar/'
   constructor(private _http: HttpClient) { }
 
   deleteBar(id) {

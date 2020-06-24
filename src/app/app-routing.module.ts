@@ -13,12 +13,11 @@ import { DrinksListComponent } from "./components/drinks/drinks-list/drinks-list
 import { DrinksFilterComponent } from "./components/drinks/drinks-filter/drinks-filter.component";
 import { AddIngredientComponent } from "./components/admin/ingredient/add-ingredient/add-ingredient.component";
 import { AddBarComponent } from "./components/admin/bar/add-bar/add-bar.component";
+import { JuegosComponent } from "./components/juegos/juegos.component";
 import { ListBarComponent } from "./components/admin/bar/list-bar/list-bar.component";
 import { EditBarComponent } from "./components/admin/bar/edit-bar/edit-bar.component";
 
-import { PruebaComponent } from "./components/prueba/prueba.component";
-import { PruebaNewComponent } from "./components/prueba-new/prueba-new.component";
-import { PruebaEditComponent } from "./components/prueba-edit/prueba-edit.component";
+
 import { NotFoundComponent } from "./components/not-found/not-found.component";
 import { AuthGuard } from "./guards/auth.guard";
 import { from } from "rxjs";
@@ -28,6 +27,13 @@ import { ListDrinkComponent } from "./components/admin/drink/list-drink/list-dri
 import { AddDrinkComponent } from "./components/admin/drink/add-drink/add-drink.component";
 import { EditDrinkComponent } from "./components/admin/drink/edit-drink/edit-drink.component";
 import { EditUserComponent } from './components/profile-page/edit-user/edit-user.component';
+import {AddZoneComponent} from './components/admin/zone/add-zone/add-zone.component';
+import {EditZoneComponent} from './components/admin/zone/edit-zone/edit-zone.component';
+import {ListZoneComponent} from './components/admin/zone/list-zone/list-zone.component';
+import {ListGameComponent} from './components/admin/game/list-game/list-game.component';
+import {EditGameComponent} from './components/admin/game/edit-game/edit-game.component';
+import {AddGameComponent} from './components/admin/game/add-game/add-game.component';
+import { ShowFilterComponent } from './components/drinks/show-filter/show-filter.component';
 
 const routes: Routes = [
   // USERS' ROUTES
@@ -35,12 +41,18 @@ const routes: Routes = [
   {
     path: "bars",
     component: BarsListComponent,
-    canActivate: [AuthGuard],
+    canActivate: [AuthGuard]
   },
-  { path: "drinks", component: DrinksListComponent, canActivate: [AuthGuard] },
+  { path: "drinks", component: DrinksListComponent, canActivate: [AuthGuard]},
+  
   {
     path: "drinks/filter",
     component: FilterParentComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: "drinks/filtered_drinks/:filter",
+    component: ShowFilterComponent,
     canActivate: [AuthGuard],
   },
 
@@ -50,11 +62,13 @@ const routes: Routes = [
   { path: "edit-user/:id", component: EditUserComponent, canActivate: [AuthGuard] },
   
 
+  { path: "juegos", component: JuegosComponent },
+
   // ADMIN'S ROUTES
   {
     path: "admin/ingredient/add",
     component: AddIngredientComponent,
-    // canActivate: [AdminAuthGuard],
+    canActivate: [AdminAuthGuard]
   },
   {
     path: "admin/ingredient",
@@ -75,6 +89,7 @@ const routes: Routes = [
     path: "admin/bar",
     component: ListBarComponent,
     canActivate: [AdminAuthGuard],
+
   },
   {
     path: "admin/bar/edit/:id",
@@ -85,30 +100,57 @@ const routes: Routes = [
   {
     path: "admin/drink",
     component: ListDrinkComponent,
-    // canActivate: [AdminAuthGuard]
+    canActivate: [AdminAuthGuard],
   },
   {
     path: "admin/drink/add",
     component: AddDrinkComponent,
-    // canActivate: [AdminAuthGuard]
+    canActivate: [AdminAuthGuard]
   },
   {
     path: "admin/drink/edit/:id",
     component: EditDrinkComponent,
-    // canActivate: [AdminAuthGuard]
+    canActivate: [AdminAuthGuard]
   },
+  {
+    path: "admin/zone",
+    component: ListZoneComponent,
+    canActivate: [AdminAuthGuard]
+  },
+  {
+    path: "admin/zone/add",
+    component: AddZoneComponent,
+    canActivate: [AdminAuthGuard]
+  },
+  {
+    path: "admin/zone/edit/:id",
+    component: EditZoneComponent,
+    canActivate: [AdminAuthGuard]
+  },
+  {
+    path: "admin/game",
+    component: ListGameComponent,
+    canActivate: [AdminAuthGuard]
+  },
+  {
+    path: "admin/game/add",
+    component: AddGameComponent,
+    canActivate: [AdminAuthGuard]
+  },
+  {
+    path: "admin/game/edit/:id",
+    component: EditGameComponent,
+    canActivate: [AdminAuthGuard]
+  },
+
+
+  
 
   {
     path: "admin/user",
     component: ListUserComponent,
     // canActivate: [AdminAuthGuard]
   },
-  
-
-  // RUTAS DE PRUEBA
-  { path: "prueba", component: PruebaComponent },
-  { path: "add-prueba", component: PruebaNewComponent },
-  { path: "prueba/update/:id", component: PruebaEditComponent },
 
   //Ruta no encontrada
   { path: "**", component: NotFoundComponent },
