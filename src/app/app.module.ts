@@ -68,7 +68,6 @@ import { BsDatepickerModule } from "ngx-bootstrap/datepicker";
 import { AgeValidatorDirective } from "./Directives/isAdult.directive";
 import { ListUserComponent } from './components/admin/user/list-user/list-user.component';
 import { EditUserComponent } from './components/profile-page/edit-user/edit-user.component';
-import { TestBarComponent } from './components/test-bar/test-bar.component';
 import { DetailBarComponent } from './components/bars/detail-bar/detail-bar.component';
 import { ExternalUrlDirective } from './Directives/external-url.directive';
 
@@ -106,7 +105,6 @@ import { ExternalUrlDirective } from './Directives/external-url.directive';
     AgeValidatorDirective,
     ListUserComponent,
     EditUserComponent,
-    TestBarComponent,
     DetailBarComponent,
     ExternalUrlDirective,
   ],
