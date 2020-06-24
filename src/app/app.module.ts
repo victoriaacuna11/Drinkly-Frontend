@@ -73,6 +73,8 @@ import { AddGameComponent } from './components/admin/game/add-game/add-game.comp
 import { EditGameComponent } from './components/admin/game/edit-game/edit-game.component';
 import { ListGameComponent } from './components/admin/game/list-game/list-game.component';
 import { ShowFilterComponent } from './components/drinks/show-filter/show-filter.component';
+import { DetailBarComponent } from './components/bars/detail-bar/detail-bar.component';
+import { ExternalUrlDirective } from './Directives/external-url.directive';
 
 @NgModule({
   declarations: [
@@ -113,6 +115,8 @@ import { ShowFilterComponent } from './components/drinks/show-filter/show-filter
     EditGameComponent,
     ListGameComponent,
     ShowFilterComponent,
+    DetailBarComponent,
+    ExternalUrlDirective,
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit, Input } from '@angular/core';
 import {Bar} from './../../models/bar';
 import { ZoneService } from 'src/app/services/zone.service';
@@ -13,7 +14,7 @@ export class ListComponent implements OnInit {
   @Input() barOrDrink: object[];
   @Input() zones: zone[];
 
-  constructor(private zoneService: ZoneService) { }
+  constructor(private zoneService: ZoneService, private route: Router) { }
 
   ngOnInit() {
     
@@ -33,6 +34,10 @@ export class ListComponent implements OnInit {
     return name
  
    }
+
+   detail(id){
+    this.route.navigate(['bar/', id]);
+  }
 
    
 }
