@@ -34,13 +34,14 @@ const routes: Routes = [
   {
     path: "bars",
     component: BarsListComponent,
-    canActivate: [AuthGuard],
+    canActivate: [AuthGuard]
   },
-  { path: "drinks", component: DrinksListComponent, canActivate: [AuthGuard] },
+  { path: "drinks", component: DrinksListComponent, canActivate: [AuthGuard]},
+  
   {
     path: "drinks/filter",
     component: FilterParentComponent,
-    canActivate: [AuthGuard],
+    canActivate: [AuthGuard]
   },
 
   { path: "register", component: RegisterComponent },
@@ -51,7 +52,7 @@ const routes: Routes = [
   {
     path: "admin/ingredient/add",
     component: AddIngredientComponent,
-    canActivate: [AdminAuthGuard],
+    canActivate: [AdminAuthGuard]
   },
   {
     path: "admin/ingredient",
@@ -72,6 +73,7 @@ const routes: Routes = [
     path: "admin/bar",
     component: ListBarComponent,
     canActivate: [AdminAuthGuard],
+
   },
   {
     path: "admin/bar/edit/:id",
@@ -82,7 +84,7 @@ const routes: Routes = [
   {
     path: "admin/drink",
     component: ListDrinkComponent,
-    canActivate: [AdminAuthGuard]
+    canActivate: [AdminAuthGuard],
   },
   {
     path: "admin/drink/add",

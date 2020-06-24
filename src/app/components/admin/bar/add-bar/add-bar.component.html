@@ -377,7 +377,7 @@
                 placeholder="Ej. 02123451234"
               />
             </div>
-            <div class="flex space-x-4 justify-end md:w-2/5">
+            <div class="flex space-x-4 justify-end md:w-2/5 py-2">
               <button
                 (click)="addPhone()"
                 class="md:w-1/3 shadow bg-gray-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
@@ -533,7 +533,7 @@
         </div>
       </div>
 
-      <div class="md:flex md:items-center mb-6">
+      <div class="md:flex mb-6">
         <div class="md:w-1/5">
           <label
             class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
@@ -547,10 +547,13 @@
             *ngIf="!this.main_image"
             class="flex items-center justify-center bg-grey-lighter"
           >
+            <label class="justify-center font-normal text-base sm:text-lg md:text-xl">
+              <span>Ningun archivo seleccionado</span>
+            </label>
             <label
-              class="w-full flex justify-center h-full items-center px-4 py-3 pr-8 bg-gray-200 rounded-lg shadow-lg tracking-wide border border-blue cursor-pointer hover:bg-orange-500 hover:text-white"
+              class="justify-center bg-grey-lighter w-full flex items-center h-full px-4 py-3 pr-8 bg-gray-200 rounded-lg shadow-lg tracking-wide border border-blue cursor-pointer hover:bg-orange-400 hover:text-white"
             >
-              <span class="mt-2 text-base leading-normal"
+              <span class=" text-base leading-normal"
                 >Selecciona un archivo</span
               >
               <lib-file-upload-firestorage
@@ -581,7 +584,7 @@
 
       <div class="width-full">
         <div *ngFor="let group of photo; let i = index" class="width-full">
-          <div class="md:flex md:items-center mb-6">
+          <div class="md:flex mb-6">
             <div class="md:w-1/5">
               <label
                 class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
@@ -596,10 +599,13 @@
                 *ngIf="group == 'null'"
                 class="flex items-center justify-center bg-grey-lighter"
               >
+                <label class="justify-center font-normal text-base sm:text-lg md:text-xl">
+                  <span>Ningun archivo seleccionado</span>
+                </label>
                 <label
-                  class="w-full flex justify-center h-full items-center px-4 py-3 pr-8 bg-gray-200 rounded-lg shadow-lg tracking-wide border border-blue cursor-pointer hover:bg-orange-500 hover:text-white"
+                  class="justify-center bg-grey-lighter w-full flex items-center h-full px-4 py-3 pr-8 bg-gray-200 rounded-lg shadow-lg tracking-wide border border-blue cursor-pointer hover:bg-orange-400 hover:text-white"
                 >
-                  <span class="mt-2 text-base leading-normal"
+                  <span class=" text-base leading-normal"
                     >Selecciona un archivo</span
                   >
                   <lib-file-upload-firestorage
@@ -621,14 +627,14 @@
                 <button
                   *ngIf="i < 6"
                   (click)="addPhoto()"
-                  class="md:w-1/4 shadow bg-gray-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                  class="md:w-1/5 shadow bg-gray-500 hover:bg-orange-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
                   type="button"
                 >
                   +
                 </button>
                 <button
                   (click)="deletePhoto(group, i)"
-                  class="md:w-1/4 shadow bg-gray-500 hover:bg-red-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                  class="md:w-1/5 shadow bg-gray-500 hover:bg-orange-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
                   type="button"
                 >
                   -
@@ -640,12 +646,12 @@
       </div>
 
       <div class="md:flex md:items-center mb-6">
-        <div class="md:w-1/3"></div>
+        <div class="md:w-1/2"></div>
         <div class="flex space-x-4 justify-end md:w-2/3">
           <button
             [disabled]="form.invalid"
             (click)="createBar()"
-            class="md:w-1/4 shadow bg-green-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+            class="text-lg md:text-2xl md:w-1/4 shadow bg-green-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
             type="button"
           >
             Crear
