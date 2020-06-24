@@ -7,8 +7,8 @@ import { game } from '../models/game';
 })
 export class GameService {
 
-  // _url='http://localhost:5000/api/game/';
-  _url = 'https://drinklyapi.herokuapp.com/api/game/';
+  _url='http://localhost:5000/api/game/';
+  // _url = 'https://drinklyapi.herokuapp.com/api/game/';
 
   constructor(
     private _http: HttpClient

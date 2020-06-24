@@ -75,6 +75,7 @@ import { ListGameComponent } from './components/admin/game/list-game/list-game.c
 import { ShowFilterComponent } from './components/drinks/show-filter/show-filter.component';
 import { DetailBarComponent } from './components/bars/detail-bar/detail-bar.component';
 import { ExternalUrlDirective } from './Directives/external-url.directive';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -117,6 +118,7 @@ import { ExternalUrlDirective } from './Directives/external-url.directive';
     ShowFilterComponent,
     DetailBarComponent,
     ExternalUrlDirective,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,

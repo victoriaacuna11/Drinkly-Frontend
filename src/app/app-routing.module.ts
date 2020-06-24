@@ -37,8 +37,14 @@ import {AddGameComponent} from './components/admin/game/add-game/add-game.compon
 import { ShowFilterComponent } from './components/drinks/show-filter/show-filter.component';
 
 const externalUrlProvider = new InjectionToken('externalUrlRedirectResolver');
+import {NavbarComponent} from './components/navbar/navbar.component';
 
 const routes: Routes = [
+
+   {
+    path: "navbar",
+    component: NavbarComponent,
+   },
   // USERS' ROUTES
 
   {
