@@ -27,7 +27,7 @@ class="mt-10 md:mt-20"
       >
           <div
             class="flex flex-row items-center cursor-pointer"
-            (click)="openCategory(item.category)"
+            (click)="openCategory(item)"
           >
             <h1 class="text-3xl md:text-4xl  mr-3"> {{item.category}} </h1>
             <img
@@ -62,9 +62,38 @@ class="mt-10 md:mt-20"
 
 
 <!---------------------------------------------------------------------------------------------------------------------->
+<div class="w-full flex flex-col items-center pb-10 pt-10 mt-8" 
+style="font-family: 'Open Sans', sans-serif;"
+*ngIf="show_ing()"
+>
+  <h1 class="text-2xl mb-10">Ingredientes Seleccionados</h1>
+  <div class=" grid gap-4 md:gap-6 grid-cols-3   transition ease-in duration-300"  >
+    <div *ngFor="let item of filter" >
+      <div class="w-32  md:w-48 ">
+        <div 
+        class=" boder shadow rounded-lg p-3  flex items-center flex-col ease-in duration-300 hover:bg-orange-200"
+        >
+            <div style="  background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative; "
+            [style.backgroundImage]="'url('+ item.pic +')'"
+            class=" w-24 bg-white h-24 mb-2 md:h-40 md:w-32 md:mb-4 border shadow rounded-full ">
+            </div>
 
+            <p class=" text-md  text-center"> {{item.name}} </p>
+        </div>
+      </div>
+    </div>  
+  </div>
+  <h1 class="text-xl mt-5">Haz click para eliminar ingredientes</h1>
+</div>
+
+
+<!---------------------------------------------------------------------------------------------------------------------->
 <div
-  class="w-full flex items-center flex-col h-32 mt-20"
+  
+  [ngClass]="show_ing()? 'w-full flex items-center flex-col h-32 mt-6' : 'w-full flex items-center flex-col h-32 mt-20' "
   style="font-family: 'Open Sans', sans-serif;"
 >
   <button

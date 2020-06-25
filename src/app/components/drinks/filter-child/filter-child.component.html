@@ -6,7 +6,7 @@
         <div *ngFor="let item of ingredients" >
             <div class="w-32  md:w-48 "  (click)="select(item)">
                 <div 
-                [ngClass]="item.style? 'boder shadow rounded-lg p-3  flex items-center flex-col ease-in duration-300': 'boder shadow rounded-lg p-3  flex items-center flex-col bg-orange-300 transition ease-in duration-300'"
+                [ngClass]="item.style? 'boder shadow rounded-lg p-3  flex items-center flex-col ease-in duration-300 hover:bg-orange-200': 'boder shadow rounded-lg p-3  flex items-center flex-col bg-orange-300 transition ease-in duration-300 hover:bg-orange-400'"
                 >
                     <div style="  background-position: center;
                     background-repeat: no-repeat;
@@ -16,7 +16,7 @@
                     class=" w-24 bg-white h-24 mb-2 md:h-40 md:w-32 md:mb-4 border shadow rounded-full ">
                     </div>
 
-                    <p class=" text-md "> {{item.name}} </p>
+                    <p class=" text-md text-center"> {{item.name}} </p>
                 </div>
             </div>
         </div>  
