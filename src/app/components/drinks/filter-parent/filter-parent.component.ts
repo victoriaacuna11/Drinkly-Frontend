@@ -31,24 +31,36 @@ export class FilterParentComponent implements OnInit {
   }
 
   add_to_filter(object:any){
-
-
-    //ACA SE AÑADE EL ID 
-    
     if(object.style==true){
       this.filter.push(object)
-
     }else{
       for (let index = 0; index < this.filter.length; index++) {
-
         if(object.id==this.filter[index].id){
           this.filter.splice(index,1)
         }
-        
       }
     }
-    console.log(this.filter);
 
+    console.log(this.filter);
+  }
+
+  ing_check_off(object:any){
+    for (let x = 0; x < this.list.length; x++) {
+      for (let y = 0; y < this.list[x].ing.length; y++) {
+        if(this.list[x].ing[y].id==object.id){
+          this.list[x].ing[y].style=true
+        }  
+
+      }
+            
+    }
+    for (let index = 0; index < this.filter.length; index++) {
+        if(this.filter[index].id==object.id){
+          this.filter.splice(index,1)
+        }      
+    }
+
+    console.log(this.filter)
 
   }
   

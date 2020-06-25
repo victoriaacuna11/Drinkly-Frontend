@@ -61,7 +61,8 @@ class="mt-10 md:mt-20"
 </div>
 
 
-<!---------------------------------------------------------------------------------------------------------------------->
+<!-----------------INGREDIENTES SELECCIONADOS----------------------------------------------------------------------------------------------------->
+
 <div class="w-full flex flex-col items-center pb-10 pt-10 mt-8" 
 style="font-family: 'Open Sans', sans-serif;"
 *ngIf="show_ing()"
@@ -69,7 +70,7 @@ style="font-family: 'Open Sans', sans-serif;"
   <h1 class="text-2xl mb-10">Ingredientes Seleccionados</h1>
   <div class=" grid gap-4 md:gap-6 grid-cols-3   transition ease-in duration-300"  >
     <div *ngFor="let item of filter" >
-      <div class="w-32  md:w-48 ">
+      <div class="w-32  md:w-48 " (click)="ing_check_off(item)">
         <div 
         class=" boder shadow rounded-lg p-3  flex items-center flex-col ease-in duration-300 hover:bg-orange-200"
         >
