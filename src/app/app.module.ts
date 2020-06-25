@@ -76,6 +76,8 @@ import { ShowFilterComponent } from './components/drinks/show-filter/show-filter
 import { DetailBarComponent } from './components/bars/detail-bar/detail-bar.component';
 import { ExternalUrlDirective } from './Directives/external-url.directive';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { RecipeComponent } from './components/recipe/recipe.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -119,6 +121,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     DetailBarComponent,
     ExternalUrlDirective,
     NavbarComponent,
+    RecipeComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
