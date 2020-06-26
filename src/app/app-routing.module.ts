@@ -19,6 +19,7 @@ import { ListBarComponent } from "./components/admin/bar/list-bar/list-bar.compo
 import { EditBarComponent } from "./components/admin/bar/edit-bar/edit-bar.component";
 import { RecipeComponent } from "./components/recipe/recipe.component";
 import { HomeComponent } from "./components/home/home.component";
+import { AdminHomeComponent} from "./components/admin/admin-home/admin-home.component";
 
 
 import { NotFoundComponent } from "./components/not-found/not-found.component";
@@ -54,10 +55,9 @@ const routes: Routes = [
     component: BarsListComponent,
     canActivate: [AuthGuard]
   },
-  { path: "drinks", component: DrinksListComponent, canActivate: [AuthGuard]},
+  { path: "drinks", component: DrinksListComponent},
   
   { path: "bar/:id", component: DetailBarComponent, canActivate: [AuthGuard]},
-  { path: "drinks", component: DrinksListComponent, canActivate: [AuthGuard] },
   {
     path: "drinks/filter",
     component: FilterParentComponent,
@@ -85,6 +85,9 @@ const routes: Routes = [
   { path: "juegos", component: JuegosComponent },
 
   // ADMIN'S ROUTES
+  { path: "admin-home", 
+    component: AdminHomeComponent, 
+    canActivate: [AdminAuthGuard]},
   {
     path: "admin/ingredient/add",
     component: AddIngredientComponent,

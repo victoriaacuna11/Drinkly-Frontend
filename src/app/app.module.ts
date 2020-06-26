@@ -78,6 +78,7 @@ import { ExternalUrlDirective } from './Directives/external-url.directive';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { RecipeComponent } from './components/recipe/recipe.component';
 import { HomeComponent } from './components/home/home.component';
+import { AdminHomeComponent } from './components/admin/admin-home/admin-home.component';
 
 @NgModule({
   declarations: [
@@ -123,6 +124,7 @@ import { HomeComponent } from './components/home/home.component';
     NavbarComponent,
     RecipeComponent,
     HomeComponent,
+    AdminHomeComponent,
   ],
   imports: [
     BrowserModule,
