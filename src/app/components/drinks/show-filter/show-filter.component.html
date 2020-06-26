@@ -4,13 +4,13 @@
     <div class="w-full">
       <app-header [hasSearchBar]="true" [searchBarContent]="'trago'"></app-header>
       <div class="w-full">        
-          <div  *ngIf="!loading" class="flex flex-wrap -mx-2 pb-12">
+          <div  *ngIf="!loading" class="flex flex-wrap md:flex-no-wrap sm:flex-no-wrap -mx-2 pb-12 pt-16 pr-16 pl-16">
             <div
               *ngFor="let x of drinks"
               class="w-1/4 px-2 rounded overflow-hidden my-2 border shadow rounded-lg"
             >
               <img
-                class="w-full pl-16 pr-32 pt-16"
+                class="w-full h-full"
                 src="{{ x.pictures }}"
                 alt="Sunset in the mountains"
               />
