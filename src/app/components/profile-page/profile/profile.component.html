@@ -1,23 +1,34 @@
-<app-header></app-header>
-
-<div *ngIf="!userLoading">
-  <div *ngIf="user" class="p-40">
-    <h3 class="text-4xl">Bienvenido/a, {{ user.f_name }}!</h3>
-    <div class="py-10 items-center">
-      <button
-        class="shadow bg-orange-500 hover:bg-orange-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-        (click)="getOut()"
-      >
-        Logout
-      </button>
-      <button
-      class="shadow bg-orange-500 hover:bg-orange-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-      (click)="goEdit(aux.user._id)"
-    >
-      Editar perfil
-    </button>
-    </div>
+<div class="flex w-full">
+  <app-navbar></app-navbar>
+  <div class="pl-64 w-full">
+      <div class="w-full">
+          <app-header></app-header>
+          <div class="w-full">
+            <div *ngIf="!userLoading">
+              <div *ngIf="user" class="p-40">
+                <h3 class="text-4xl">Bienvenido/a, {{ user.f_name }}!</h3>
+                <div class="py-10 items-center">
+                  <button
+                    class="shadow bg-orange-500 hover:bg-orange-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                    (click)="getOut()"
+                  >
+                    Logout
+                  </button>
+                  <button
+                  class="shadow bg-orange-500 hover:bg-orange-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                  (click)="goEdit(aux.user._id)"
+                >
+                  Editar perfil
+                </button>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
   </div>
 </div>
-
 <app-footer></app-footer>
+
+
+
+
