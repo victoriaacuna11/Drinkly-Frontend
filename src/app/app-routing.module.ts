@@ -210,7 +210,7 @@ const routes: Routes = [
         useValue: (route: ActivatedRouteSnapshot) => {
             
             const externalUrl = route.paramMap.get('externalUrl');
-            window.open(externalUrl, '_self');
+            window.open(externalUrl, '_blank');
         },
     },
   ]
