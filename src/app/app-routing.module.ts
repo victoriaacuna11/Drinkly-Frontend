@@ -184,7 +184,7 @@ const routes: Routes = [
   {
     path: "admin/user",
     component: ListUserComponent,
-    // canActivate: [AdminAuthGuard]
+    canActivate: [AdminAuthGuard]
   },
 
   //Ruta no encontrada
