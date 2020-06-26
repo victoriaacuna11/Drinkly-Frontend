@@ -32,6 +32,10 @@ body {
   overflow-x: hidden;
 }
 
+.move{
+  transition: all .5s;
+}
+
 /**
    * Render the `main` element consistently in IE.
    */

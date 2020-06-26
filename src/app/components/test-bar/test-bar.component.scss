@@ -66,14 +66,16 @@ label #btn, label #cancel{
 
 label #btn{
     z-index: 6000;
-    left: 1rem;
+    // left: 1rem;
     top: 1rem;
     color: orange;
+    transition: all .5s ease;
 }
 
 label #cancel{
+    position: fixed;
     z-index: 6000;
-    left: -13rem;
+    // left: -13rem;
     top: 1rem;
     color: orange;
     transition: all .5s ease;
@@ -85,17 +87,17 @@ label #cancel{
 
 // #check:checked ~ label #btn{
 //     left: 12rem;
-//     opacity: 0;
-//     pointer-events: none;
+    // opacity: 0;
+    // pointer-events: none;
 // }
 
-#check:checked ~ label #cancel{
-    left: 13rem;
-}
+// #check:checked ~ label #cancel{
+//     left: 13rem;
+// }
 
-.move{
-    transition: all .5s;
-}
+// .move{
+//     transition: all .5s;
+// }
 
 // #check:checked ~ .move{
 //     margin-left: 16rem;

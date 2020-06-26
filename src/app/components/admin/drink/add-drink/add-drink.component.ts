@@ -19,6 +19,8 @@ export class AddDrinkComponent implements OnInit {
   drink_ingredients = [];
   main_image: String = null;
   drink_created:drink;
+  sidebar: Boolean;
+
 
   form: FormGroup;
   constructor(
@@ -123,5 +125,9 @@ export class AddDrinkComponent implements OnInit {
 
   goBack() {
     this.route.navigate(["admin/drink"]);
+  }
+
+  getMessage($event){
+    this.sidebar = $event;
   }
 }

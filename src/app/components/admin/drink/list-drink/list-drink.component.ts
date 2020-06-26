@@ -12,6 +12,7 @@ export class ListDrinkComponent implements OnInit {
   loading: Boolean = true;
   drinks: drink[];
   drinkSelected: drink;
+  sidebar: Boolean;
 
   constructor(private service: DrinkService, private route: Router) {}
 
@@ -58,5 +59,9 @@ export class ListDrinkComponent implements OnInit {
 
   create(){
     this.route.navigate(["admin/drink/add"]);
+  }
+
+  getMessage($event){
+    this.sidebar = $event;
   }
 }

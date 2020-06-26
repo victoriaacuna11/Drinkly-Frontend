@@ -18,6 +18,8 @@ export class DetailBarComponent implements OnInit {
   images: String[];
   loading: Boolean=true;
 
+  sidebar: Boolean;
+
 
   constructor(private svc: BarService, private route: Router, 
     private routeSV: ActivatedRoute, private zoneService: ZoneService) { }
@@ -42,6 +44,10 @@ export class DetailBarComponent implements OnInit {
       this.zone={...res.data};
       this.loading = false;
     })
+  }
+
+  getMessage($event){
+    this.sidebar = $event;
   }
   
 

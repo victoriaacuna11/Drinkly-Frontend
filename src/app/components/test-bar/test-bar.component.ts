@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 
@@ -13,6 +13,9 @@ export class TestBarComponent implements OnInit {
   isAdmin: any;
   isLogged: Boolean = true;
   sidebar_left: Boolean = false;
+  btn =true;
+  cancel = true;
+  @Output() message= new EventEmitter<Boolean>();
 
   constructor(private auth_svc: AuthService, private router: Router) { }
 
@@ -32,10 +35,11 @@ export class TestBarComponent implements OnInit {
     this.router.navigateByUrl("/login");
   }
 
- makeChange(event){
-  if(event.target.checked){
-    this.sidebar_left = !this.sidebar_left;
-  }
+ makeChange(){
+
+  this.sidebar_left = !this.sidebar_left;   
+  this.message.emit(this.sidebar_left)
+     
  }
 
 }

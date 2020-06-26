@@ -20,6 +20,7 @@ export class EditDrinkComponent implements OnInit {
   drink: drink;
   drink2: drink;
   loading: boolean = true;
+  sidebar:Boolean;
   
 
   constructor(
@@ -133,5 +134,9 @@ export class EditDrinkComponent implements OnInit {
 
   goBack() {
     this.route.navigate(["admin/drink"]);
+  }
+
+  getMessage($event){
+    this.sidebar = $event;
   }
 }
