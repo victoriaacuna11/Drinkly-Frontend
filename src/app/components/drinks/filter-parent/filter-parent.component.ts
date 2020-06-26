@@ -31,24 +31,36 @@ export class FilterParentComponent implements OnInit {
   }
 
   add_to_filter(object:any){
-
-
-    //ACA SE AÑADE EL ID 
-    
     if(object.style==true){
-      this.filter.push(object.id)
-
+      this.filter.push(object)
     }else{
       for (let index = 0; index < this.filter.length; index++) {
-
-        if(object.id==this.filter[index]){
+        if(object.id==this.filter[index].id){
           this.filter.splice(index,1)
         }
-        
       }
     }
-    console.log(this.filter);
 
+    console.log(this.filter);
+  }
+
+  ing_check_off(object:any){
+    for (let x = 0; x < this.list.length; x++) {
+      for (let y = 0; y < this.list[x].ing.length; y++) {
+        if(this.list[x].ing[y].id==object.id){
+          this.list[x].ing[y].style=true
+        }  
+
+      }
+            
+    }
+    for (let index = 0; index < this.filter.length; index++) {
+        if(this.filter[index].id==object.id){
+          this.filter.splice(index,1)
+        }      
+    }
+
+    console.log(this.filter)
 
   }
   
@@ -91,21 +103,44 @@ export class FilterParentComponent implements OnInit {
     console.log(this.list)
   }
 
-
   ingExist(item:any){
     if(item.length!=0){
       return true
     }else{
-
       false
     }
   }
 
   filter_drink(){
     //transformamos en una variable
-    let filter=this.filter.toString()
+    let filter_id=[];
+    for (let index = 0; index < this.filter.length; index++) {
+        filter_id.push(this.filter[index].id)
+    }
+    let filter=filter_id.toString()
 
     this.router.navigate(["drinks/filtered_drinks/", filter]);
+  }
+
+  openCategory(item:any){
+    for (let index = 0; index < this.list.length; index++) { 
+      if(item.category==this.list[index].category){
+        if(this.list[index].hidden==false){
+          this.list[index].hidden=true
+        }else{
+          this.list[index].hidden=false
+        }
+      }else{
+        this.list[index].hidden=true
+      } 
+    }
+  }
+  show_ing(){
+    if(this.filter.length!=0){
+      return true
+    }else{
+      return false
+    }
   }
 
 

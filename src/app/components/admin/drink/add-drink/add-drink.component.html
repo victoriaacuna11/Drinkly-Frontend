@@ -31,6 +31,10 @@
           placeholder="Ej. Margarita"
         />
       </div>
+      <app-required-field
+            [text]="'Este campo es requerido.'"
+            *ngIf="form.get('name').invalid && form.get('name').touched"
+        ></app-required-field>
     </div>
 
     <div class="md:flex md:items-center mb-6">
@@ -51,6 +55,10 @@
           placeholder=""
         />
       </div>
+      <app-required-field
+            [text]="'Este campo es requerido.'"
+            *ngIf="form.get('description').invalid && form.get('description').touched"
+        ></app-required-field>
     </div>
 
     <div class="md:flex md:items-center mb-6">
@@ -71,6 +79,10 @@
           placeholder=""
         />
       </div>
+      <app-required-field
+            [text]="'Este campo es requerido.'"
+            *ngIf="form.get('recipe').invalid && form.get('recipe').touched"
+        ></app-required-field>
     </div>
 
     <div class="md:flex md:items-center mb-6">
@@ -91,6 +103,10 @@
           placeholder="Ej. USERNAME"
         />
       </div>
+       <app-required-field
+            [text]="'Este campo es requerido.'"
+            *ngIf="form.get('owner_name').invalid && form.get('owner_name').touched"
+        ></app-required-field>
     </div>
 
     <div class="md:flex md:items-center mb-6">
@@ -126,6 +142,10 @@
           </svg>
         </div>
       </div>
+      <app-required-field
+            [text]="'Este campo es requerido.'"
+            *ngIf="form.get('owner_rol').invalid && form.get('owner_rol').touched"
+        ></app-required-field>
     </div>
 
     <div class="md:flex md:items-center mb-6">
@@ -202,6 +222,10 @@
           </span>
         </label>
       </div>
+      <app-required-field
+            [text]="'Por favor seleccione almenos un ingrediente.'"
+            *ngIf="mas_de_uno()"
+        ></app-required-field>
     </div>
 
     <div class="md:flex md:items-center mb-6">

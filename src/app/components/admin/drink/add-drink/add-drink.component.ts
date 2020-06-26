@@ -3,7 +3,7 @@ import { DrinkService } from "src/app/services/drink.service";
 import { IngredientService } from "src/app/services/ingredient.service";
 import { drink } from "./../../../../models/drink";
 import { ingredient } from "./../../../../models/ingredient";
-import { FormGroup, FormBuilder } from "@angular/forms";
+import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { AngularFireStorage } from "@angular/fire/storage";
 
@@ -29,11 +29,11 @@ export class AddDrinkComponent implements OnInit {
     private storage: AngularFireStorage
   ) {
     this.form = this._builder.group({
-      name: [""],
-      description: [""],
-      recipe: [""],
-      owner_name: [""],
-      owner_rol: [""],
+      name: ["",Validators.required],
+      description: ["",Validators.required],
+      recipe: ["",Validators.required],
+      owner_name: ["",Validators.required],
+      owner_rol: ["",Validators.required],
       ingredients: [],
       pictures: "",
     });
@@ -119,6 +119,15 @@ export class AddDrinkComponent implements OnInit {
     this.service.createDrink(this.drink_created).subscribe((res) => {
       this.route.navigate(["admin/drink"]);
     });
+  }
+
+  mas_de_uno(){
+    
+    if(this.drink_ingredients.length!=0){
+      return false
+    }else{
+      return true
+    }
   }
 
   goBack() {

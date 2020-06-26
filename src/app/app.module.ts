@@ -76,6 +76,9 @@ import { ShowFilterComponent } from './components/drinks/show-filter/show-filter
 import { DetailBarComponent } from './components/bars/detail-bar/detail-bar.component';
 import { ExternalUrlDirective } from './Directives/external-url.directive';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { ListAdComponent } from './components/admin/ad/list-ad/list-ad.component';
+import { AddAdComponent } from './components/admin/ad/add-ad/add-ad.component';
+import { EditAdComponent } from './components/admin/ad/edit-ad/edit-ad.component';
 
 @NgModule({
   declarations: [
@@ -119,6 +122,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     DetailBarComponent,
     ExternalUrlDirective,
     NavbarComponent,
+    ListAdComponent,
+    AddAdComponent,
+    EditAdComponent,
   ],
   imports: [
     BrowserModule,

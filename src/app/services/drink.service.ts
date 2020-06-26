@@ -35,6 +35,6 @@ export class DrinkService {
   }
 
   filteredDrink(filter){
-    return this._http.get(this._url+filter,)
+    return this._http.get(this._url+"filter/"+filter,)
   }
 }
