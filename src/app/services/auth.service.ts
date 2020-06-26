@@ -73,7 +73,10 @@ export class AuthService {
     let headers: HttpHeaders = new HttpHeaders();
     this.loadToken();
     headers = headers.append("Authorization", this.authToken);
-    return this.http.get("http://localhost:5000/api/user/updateP", {
+    // return this.http.get("http://localhost:5000/api/user/updateP", {
+    //   headers: headers, responseType: 'text'
+    // });
+    return this.http.get(this._url + 'updateP', {
       headers: headers, responseType: 'text'
     });
   }
