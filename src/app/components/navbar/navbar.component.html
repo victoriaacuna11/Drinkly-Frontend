@@ -105,7 +105,11 @@
             <div *ngIf="isLogged" (click)="getOut()" class="text-white">
                 <a class="hover:text-white">Tu perfil</a>
             </div>
+            <div *ngIf="!isLogged" class="text-white">
+                <a href="/login" class="hover:text-white">Entrar</a>
+            </div>
         </div>
+        
         
         
 

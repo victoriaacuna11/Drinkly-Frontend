@@ -58,9 +58,15 @@ const routes: Routes = [
     component: BarsListComponent,
     canActivate: [AuthGuard]
   },
-  { path: "drinks", component: DrinksListComponent},
-  
-  { path: "bar/:id", component: DetailBarComponent, canActivate: [AuthGuard]},
+  { 
+    path: "drinks", 
+    component: DrinksListComponent,
+    canActivate: [AuthGuard]
+  },
+  { 
+    path: "bar/:id", 
+    component: DetailBarComponent, 
+    canActivate: [AuthGuard]},
   {
     path: "drinks/filter",
     component: FilterParentComponent,

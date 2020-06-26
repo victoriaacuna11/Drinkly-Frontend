@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin-home.component.scss']
 })
 export class AdminHomeComponent implements OnInit {
-
+  //CAMBIAR A TRUE
+  loading: Boolean = false;
   constructor() { }
 
   ngOnInit() {

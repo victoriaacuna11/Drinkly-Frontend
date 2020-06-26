@@ -10,8 +10,8 @@ export class AuthService {
   user: any;
   aux2: any;
   admin: Boolean = false;
-  // _url = 'https://drinklyapi.herokuapp.com/api/user/';
-  _url = 'http://localhost:5000/api/user/';
+  _url = 'https://drinklyapi.herokuapp.com/api/user/';
+  // _url = 'http://localhost:5000/api/user/';
 
   constructor(private http: HttpClient) {}
 
