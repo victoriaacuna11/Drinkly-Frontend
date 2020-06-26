@@ -41,7 +41,6 @@ import { ShowFilterComponent } from './components/drinks/show-filter/show-filter
 import { ListAdComponent } from './components/admin/ad/list-ad/list-ad.component';
 import { AddAdComponent } from './components/admin/ad/add-ad/add-ad.component';
 import { EditAdComponent } from './components/admin/ad/edit-ad/edit-ad.component';
-
 const externalUrlProvider = new InjectionToken('externalUrlRedirectResolver');
 import {NavbarComponent} from './components/navbar/navbar.component';
 
@@ -51,6 +50,7 @@ const routes: Routes = [
     path: "navbar",
     component: NavbarComponent,
    },
+
   // USERS' ROUTES
 
   {
@@ -58,9 +58,15 @@ const routes: Routes = [
     component: BarsListComponent,
     canActivate: [AuthGuard]
   },
-  { path: "drinks", component: DrinksListComponent},
-  
-  { path: "bar/:id", component: DetailBarComponent, canActivate: [AuthGuard]},
+  { 
+    path: "drinks", 
+    component: DrinksListComponent,
+    canActivate: [AuthGuard]
+  },
+  { 
+    path: "bar/:id", 
+    component: DetailBarComponent, 
+    canActivate: [AuthGuard]},
   {
     path: "drinks/filter",
     component: FilterParentComponent,
@@ -88,7 +94,7 @@ const routes: Routes = [
   { path: "juegos", component: JuegosComponent },
 
   // ADMIN'S ROUTES
-  { path: "admin-home", 
+  { path: "admin", 
     component: AdminHomeComponent, 
     canActivate: [AdminAuthGuard]},
   {
@@ -184,8 +190,6 @@ const routes: Routes = [
     canActivate: [AdminAuthGuard]
   },
 
-
-  
 
   {
     path: "admin/user",

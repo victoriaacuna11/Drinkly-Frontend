@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DrinkService } from 'src/app/services/drink.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-drinks-list',
@@ -12,7 +13,7 @@ export class DrinksListComponent implements OnInit {
   loading: Boolean = true;
   
 
-  constructor(private service: DrinkService) { }
+  constructor(private service: DrinkService, private route: Router) { }
 
   ngOnInit() {
     this.getDrinks();
@@ -24,5 +25,9 @@ export class DrinksListComponent implements OnInit {
       console.log(this.drinks);
       this.loading = false;
     })
+  }
+
+  goToFilter(){
+    this.route.navigate(['drinks/filter/']);
   }
 }

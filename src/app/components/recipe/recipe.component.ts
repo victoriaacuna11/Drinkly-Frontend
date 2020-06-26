@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./recipe.component.scss']
 })
 export class RecipeComponent implements OnInit {
-
+  // CAMBIAR A TRUE
+  loading: Boolean=false;
   constructor() { }
 
   ngOnInit() {

@@ -7,8 +7,8 @@ import { zone } from '../models/zone';
 })
 export class ZoneService {
 
-  // _url = 'https://drinklyapi.herokuapp.com/api/zone';
-  _url = 'http://localhost:5000/api/zone/';
+  _url = 'https://drinklyapi.herokuapp.com/api/zone/';
+  // _url = 'http://localhost:5000/api/zone/';
   constructor(private _http: HttpClient) { }
 
   getZones() {
@@ -27,6 +27,7 @@ export class ZoneService {
 
   getZone(id){
     // console.log(id);
+    console.log(this._url)
     return this._http.get(this._url+id);
   }
 
