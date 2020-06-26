@@ -83,11 +83,11 @@ label #cancel{
 //     left: 0;
 // }
 
-#check:checked ~ label #btn{
-    left: 12rem;
-    opacity: 0;
-    pointer-events: none;
-}
+// #check:checked ~ label #btn{
+//     left: 12rem;
+//     opacity: 0;
+//     pointer-events: none;
+// }
 
 #check:checked ~ label #cancel{
     left: 13rem;
@@ -97,6 +97,6 @@ label #cancel{
     transition: all .5s;
 }
 
-#check:checked ~ .move{
-    margin-left: 16rem;
-}
+// #check:checked ~ .move{
+//     margin-left: 16rem;
+// }
