@@ -24,6 +24,7 @@ export class EditDrinkComponent implements OnInit {
   loading: boolean = true;
   main_image: String;
 
+  sidebar:Boolean;
   
 
   constructor(
@@ -195,5 +196,9 @@ export class EditDrinkComponent implements OnInit {
     } else {
       this.route.navigate(["admin/drink"]);
     }
+  }
+
+  getMessage($event){
+    this.sidebar = $event;
   }
 }

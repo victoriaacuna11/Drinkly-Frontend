@@ -1,0 +1,7 @@
+.move{
+    transition: all .5s;
+  }
+  
+  #check:checked ~ .move{
+    margin-left: 16rem;
+  }

@@ -82,6 +82,7 @@ import { EditAdComponent } from './components/admin/ad/edit-ad/edit-ad.component
 import { RecipeComponent } from './components/recipe/recipe.component';
 import { HomeComponent } from './components/home/home.component';
 import { AdminHomeComponent } from './components/admin/admin-home/admin-home.component';
+import { TestBarComponent } from './components/test-bar/test-bar.component';
 
 @NgModule({
   declarations: [
@@ -131,6 +132,7 @@ import { AdminHomeComponent } from './components/admin/admin-home/admin-home.com
     RecipeComponent,
     HomeComponent,
     AdminHomeComponent,
+    TestBarComponent,
   ],
   imports: [
     BrowserModule,
