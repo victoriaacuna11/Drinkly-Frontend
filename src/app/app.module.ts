@@ -79,6 +79,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { ListAdComponent } from './components/admin/ad/list-ad/list-ad.component';
 import { AddAdComponent } from './components/admin/ad/add-ad/add-ad.component';
 import { EditAdComponent } from './components/admin/ad/edit-ad/edit-ad.component';
+import { RecipeComponent } from './components/recipe/recipe.component';
+import { HomeComponent } from './components/home/home.component';
+import { AdminHomeComponent } from './components/admin/admin-home/admin-home.component';
 
 @NgModule({
   declarations: [
@@ -125,6 +128,9 @@ import { EditAdComponent } from './components/admin/ad/edit-ad/edit-ad.component
     ListAdComponent,
     AddAdComponent,
     EditAdComponent,
+    RecipeComponent,
+    HomeComponent,
+    AdminHomeComponent,
   ],
   imports: [
     BrowserModule,

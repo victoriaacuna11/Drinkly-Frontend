@@ -1,0 +1,89 @@
+<div class="flex w-full">
+    <app-navbar></app-navbar>
+    <div class="pl-64 w-full">
+        <div class="w-full">
+            <app-header></app-header>
+            <div class="w-full">
+                <div class="text-5xl font-bold pl-16 pt-8">Bienvenido Administrador</div>
+                <div class="flex flex-wrap mb-4 px-16 py-8">
+                    <div *ngIf="!loading" class="max-w-lg h-auto my-6 p-3 pb-6 mt-12 bg-cover  m-auto self-center  shadow">
+                        <div class="flex text-4xl font-bold py-2 px-4">Bares</div>
+                        <a href="admin/bar">
+                            <button class="w-full bg-orange-400 hover:bg-orange-600 text-white font-bold py-2 px-32 rounded">
+                                Ver bares disponibles
+                            </button>    
+                        </a> 
+                        <div class="h-4"></div>
+                        <a href="admin/bar/add">
+                            <button class="w-full bg-orange-400 hover:bg-orange-600 text-white font-bold py-2 px-32 rounded">
+                                Agregar nuevo bar
+                            </button>    
+                        </a> 
+                    </div> 
+                    <!--  -->
+                    <div *ngIf="!loading" class="max-w-lg h-auto my-6 p-3 pb-6 mt-12 bg-cover  m-auto self-center  shadow">
+                        <div class="flex text-4xl font-bold py-2 px-4">Recetas</div>
+                        <a href="admin/drink">
+                            <button class="w-full bg-orange-400 hover:bg-orange-600 text-white font-bold py-2 px-32 rounded">
+                                Ver recetas
+                            </button>    
+                        </a> 
+                        <div class="h-4"></div>
+                        <a href="admin/drink/add">
+                            <button class="w-full bg-orange-400 hover:bg-orange-600 text-white font-bold py-2 px-32 rounded">
+                                Agregar receta
+                            </button>    
+                        </a>
+                    </div>  
+                     <!--  -->
+                     <div *ngIf="!loading" class="max-w-lg h-auto my-6 p-3 pb-6 mt-12 bg-cover  m-auto self-center  shadow">
+                        <div class="flex text-4xl font-bold py-2 px-4">Ingredientes</div>
+                        <a href="admin/ingredient">
+                            <button class="w-full bg-orange-400 hover:bg-orange-600 text-white font-bold py-2 px-32 rounded">
+                                Ver ingredientes
+                            </button>    
+                        </a> 
+                        <div class="h-4"></div>
+                        <a href="admin/ingredient/add">
+                            <button class="w-full bg-orange-400 hover:bg-orange-600 text-white font-bold py-2 px-32 rounded">
+                                Agregar ingrediente
+                            </button>    
+                        </a>
+                    </div>
+                    <!--  -->
+                    <div *ngIf="!loading" class="max-w-lg h-auto my-6 p-3 pb-6 mt-12 bg-cover  m-auto self-center  shadow">
+                        <div class="flex text-4xl font-bold py-2 px-4">Zonas</div>
+                        <a href="admin/zone">
+                            <button class="w-full bg-orange-400 hover:bg-orange-600 text-white font-bold py-2 px-32 rounded">
+                                Ver zonas 
+                            </button>    
+                        </a> 
+                        <div class="h-4"></div>
+                        <a href="admin/zone/add">
+                            <button class="w-full bg-orange-400 hover:bg-orange-600 text-white font-bold py-2 px-32 rounded">
+                                Agregar zona
+                            </button>    
+                        </a>
+                    </div>
+                    <!--  -->
+                    <div *ngIf="!loading" class="max-w-lg h-auto my-6 p-3 pb-6 mt-12 bg-cover  m-auto self-center  shadow">
+                        <div class="flex text-4xl font-bold py-2 px-4">Juegos</div>
+                        <a href="admin/game">
+                            <button class="w-full bg-orange-400 hover:bg-orange-600 text-white font-bold py-2 px-32 rounded">
+                                Ver juegos
+                            </button>    
+                        </a> 
+                        <div class="h-4"></div>
+                        <a href="admin/game/add">
+                            <button class="w-full bg-orange-400 hover:bg-orange-600 text-white font-bold py-2 px-32 rounded">
+                                Agregar juego
+                            </button>    
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

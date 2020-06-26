@@ -24,6 +24,7 @@
     "@cloudinary/angular-5.x": "^1.2.2",
     "angular2-jwt": "^0.2.3",
     "angularfire": "^2.3.0",
+    "bcrypt": "^5.0.0",
     "bcryptjs": "^2.4.3",
     "bootstrap": "^3.4.1",
     "cloudinary-core": "^2.8.2",
