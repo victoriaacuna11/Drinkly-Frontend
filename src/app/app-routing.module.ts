@@ -1,3 +1,4 @@
+import { TestBarComponent } from './components/test-bar/test-bar.component';
 import { DetailBarComponent } from './components/bars/detail-bar/detail-bar.component';
 import { ListUserComponent } from './components/admin/user/list-user/list-user.component';
 import { AdminAuthGuard } from "./guards/adminAuth.guard";
@@ -168,6 +169,8 @@ const routes: Routes = [
     component: ListUserComponent,
     // canActivate: [AdminAuthGuard]
   },
+
+  {path: "prueba/barra", component: TestBarComponent},
 
   //Ruta no encontrada
   { path: "**", component: NotFoundComponent },

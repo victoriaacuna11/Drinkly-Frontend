@@ -1,0 +1,102 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none; 
+    color:white;
+}
+
+.sidebar{
+    position: fixed;
+    // left:-16rem;
+    width: 16rem;
+    height: 100%;
+    background-color: black;
+    transition: all .5s ease;
+    // z-index: 5000;
+
+    header {
+        text-align: center;
+        line-height: 6rem;
+        user-select: none;
+    }
+
+    ul li{
+        padding-bottom: 2.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        a{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+        }
+
+        img{
+            padding: 0.5rem;
+            transition: .4s;  
+        }
+
+        :hover{
+            padding: 0 ;
+        }
+    }
+}
+
+label{
+    position: absolute;
+}
+
+#check{
+    display: none;
+}
+
+label #btn, label #cancel{
+    position: absolute;
+    cursor: pointer;
+    background-color: black;
+    border-radius: 3px;
+}
+
+label #btn{
+    z-index: 6000;
+    left: 1rem;
+    top: 1rem;
+    color: orange;
+}
+
+label #cancel{
+    z-index: 6000;
+    left: -13rem;
+    top: 1rem;
+    color: orange;
+    transition: all .5s ease;
+}
+
+// #check:checked ~ .sidebar{
+//     left: 0;
+// }
+
+#check:checked ~ label #btn{
+    left: 12rem;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#check:checked ~ label #cancel{
+    left: 13rem;
+}
+
+.move{
+    transition: all .5s;
+}
+
+#check:checked ~ .move{
+    margin-left: 16rem;
+}

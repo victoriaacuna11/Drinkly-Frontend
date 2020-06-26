@@ -1,0 +1,31 @@
+
+<input type="checkbox" (change)="makeChange($event)" class="h-10 w-10" id="check">
+<label for="check"> 
+    <svg class="fill-current h-10 w-10 outline-none" id="cancel">
+        <path
+        d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z" />
+    </svg>  
+    <svg class="fill-current h-10 w-10 outline-none" id="btn">
+        <path
+        d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z" />
+    </svg> 
+</label>
+<div [ngStyle]="{'left.rem': !sidebar_left? '-16' : '0'}" class="sidebar">
+    <header class="text-4xl text-white ">Drinkly</header>
+
+    <ul>
+        <li><a href="/drinks"><img src="assets/images/coctel.png" class="h-16">Tragos</a></li>
+        <li><a href="/bars" ><img src="assets/images/bar.png" class="h-16">Bares</a></li>
+        <li><a href="/profile"><img src="assets/images/game.png" class="h-16">Juegos</a></li>
+        <li><a href="/profile"><img src="assets/images/promotion.png" class="h-16">Promociones</a></li>
+        <li><a href="/profile"><img src="assets/images/post.png" class="h-16">Publica</a></li>
+        <li *ngIf="isAdmin"><a href="/profile"><img src="assets/images/settings.png" class="h-16">Administrar</a></li>
+        <li *ngIf="isLogged"><a href="/profile"><img src="assets/images/user.png" class="h-16">Tu Perfil</a></li>
+    </ul>
+
+</div>
+
+<div class="move">   
+    <app-header></app-header>
+    <app-footer></app-footer>
+</div>
