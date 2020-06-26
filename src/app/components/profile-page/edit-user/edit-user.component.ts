@@ -107,6 +107,7 @@ export class EditUserComponent implements OnInit {
 
     if (true) {
       this.service.updateUser(user).subscribe((res) => {
+        this.auth_svc.logout();
         this.route.navigate(["login"]);
       });
     } 
