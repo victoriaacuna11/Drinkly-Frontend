@@ -12,6 +12,7 @@ export class ListGameComponent implements OnInit {
 
   games: game[];
   loading:Boolean=true;
+  sidebar: Boolean;
 
   constructor(
     private service: GameService,
@@ -50,6 +51,10 @@ export class ListGameComponent implements OnInit {
 
   create(){
     this.route.navigate(["admin/game/add"]);
+  }
+
+  getMessage($event){
+    this.sidebar = $event;
   }
 
 }

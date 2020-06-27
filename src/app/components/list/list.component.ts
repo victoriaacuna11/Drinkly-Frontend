@@ -13,6 +13,7 @@ export class ListComponent implements OnInit {
 
   @Input() barOrDrink: object[];
   @Input() zones: zone[];
+  sidebar: Boolean;
 
   constructor(private zoneService: ZoneService, private route: Router) { }
 
@@ -39,5 +40,8 @@ export class ListComponent implements OnInit {
     this.route.navigate(['bar/', id]);
   }
 
+  getMessage($event){
+    this.sidebar = $event;
+  }
    
 }

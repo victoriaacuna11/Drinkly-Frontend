@@ -1,15 +1,11 @@
-<div class="flex w-full">
-  <app-navbar></app-navbar>
-  <div class="pl-64 w-full">
-      <div class="w-full">
-          <div class="w-full">
-            <div class="flex bg-black">
-              <img
-                src="assets/images/Drinkly-2.png"
-                alt="logo_drinkly"
-                class="object-scale-down h-16 mx-auto"
-              />
-            </div>
+<app-test-bar (message)="getMessage($event)"></app-test-bar> 
+
+<div [ngStyle]="{'margin-left.rem': !sidebar? '0': '16'}" class="move">
+
+  <div class="flex bg-black">
+    <a href="/bars"><img src="assets/images/Drinkly-2.png" alt="logo_drinkly"
+        class="object-scale-down h-16 mx-auto ml-8" /></a>
+  </div>
             <div
               style="background-image: url('assets/images/404bg.jpg');"
               class="my-6 pt-24 pb-64 mt-48 bg-cover bg-blue-700 m-auto max-w-5xl self-center flex items-center rounded-lg shadow"
@@ -30,8 +26,5 @@
                 </button>
               </div>
             </div>              
-          </div>
-      </div>
-  </div>
-</div>
 <app-footer></app-footer>
+</div>

@@ -15,6 +15,7 @@ export class FilterParentComponent implements OnInit {
   filter=[];
   ingredients:ingredient[];
   list=[];
+  sidebar: Boolean;
 
   constructor(private ing_service:IngredientService,private router:Router,private cat_service:CategoriesService) { }
 
@@ -141,6 +142,10 @@ export class FilterParentComponent implements OnInit {
     }else{
       return false
     }
+  }
+
+  getMessage($event){
+    this.sidebar = $event;
   }
 
 

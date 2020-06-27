@@ -12,6 +12,7 @@ export class ListBarComponent implements OnInit {
   
   loading: Boolean = true;
   bars: Bar[];
+  sidebar: Boolean;
   constructor(private service: BarService, private route: Router) { }
 
   ngOnInit() {
@@ -53,5 +54,9 @@ export class ListBarComponent implements OnInit {
 
   create(){
     this.route.navigate(["admin/bar/add"]);
+  }
+
+  getMessage($event){
+    this.sidebar = $event;
   }
 }

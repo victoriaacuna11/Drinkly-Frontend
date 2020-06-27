@@ -20,6 +20,7 @@ export class TestBarComponent implements OnInit {
   constructor(private auth_svc: AuthService, private router: Router) { }
 
   async ngOnInit() {
+
     if (!this.auth_svc.loggedIn()) {
       this.isAdmin = false;
       this.isLogged = false;

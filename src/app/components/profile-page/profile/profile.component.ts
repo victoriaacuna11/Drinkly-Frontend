@@ -14,6 +14,7 @@ export class ProfileComponent implements OnInit {
   // user: Object;
   admin: Boolean = false;
   userLoading: Boolean;
+  sidebar: Boolean;
 
   constructor(private router: Router, private auth_svc: AuthService) {}
 
@@ -46,5 +47,9 @@ export class ProfileComponent implements OnInit {
 
   goEdit(id){
     this.router.navigate(['edit-user', id]);
+  }
+
+  getMessage($event){
+    this.sidebar = $event;
   }
 }

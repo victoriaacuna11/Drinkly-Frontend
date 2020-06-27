@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class ListZoneComponent implements OnInit {
   zones: zone[];
   loading:Boolean=true;
+  sidebar: Boolean;
   constructor(
     private service: ZoneService,
     private route: Router,
@@ -48,6 +49,10 @@ export class ListZoneComponent implements OnInit {
 
   create(){
     this.route.navigate(["admin/zone/add"]);
+  }
+
+  getMessage($event){
+    this.sidebar = $event;
   }
 
 }

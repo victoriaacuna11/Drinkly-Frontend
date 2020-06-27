@@ -17,6 +17,7 @@ export class AddIngredientComponent implements OnInit {
   categories: String[] = null;
   form: FormGroup;
   main_image: String=null;
+  sidebar: Boolean;
   
   constructor(
     private service: IngredientService,
@@ -72,5 +73,9 @@ export class AddIngredientComponent implements OnInit {
       .then((res) => {
         this.main_image = null;
       });
+  }
+
+  getMessage($event){
+    this.sidebar = $event;
   }
 }

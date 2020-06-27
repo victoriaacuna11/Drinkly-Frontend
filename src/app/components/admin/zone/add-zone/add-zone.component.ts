@@ -12,6 +12,7 @@ import { ZoneService } from 'src/app/services/zone.service';
 export class AddZoneComponent implements OnInit {
 
   form: FormGroup;
+  sidebar: Boolean;
 
   constructor(
     private _builder: FormBuilder,
@@ -40,5 +41,9 @@ export class AddZoneComponent implements OnInit {
 
   goBack() {
     this.route.navigate(["admin/zone"]);
+  }
+
+  getMessage($event){
+    this.sidebar = $event;
   }
 }

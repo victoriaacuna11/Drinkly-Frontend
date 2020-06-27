@@ -14,6 +14,7 @@ export class EditZoneComponent implements OnInit {
   loading: Boolean = true;
   zone: zone;
   form: FormGroup;
+  sidebar: Boolean;
 
   constructor(
     private service: ZoneService,
@@ -54,6 +55,10 @@ export class EditZoneComponent implements OnInit {
   }
   goBack() {
     this.route.navigate(["admin/zone"]);
+  }
+
+  getMessage($event){
+    this.sidebar = $event;
   }
 
 }

@@ -22,6 +22,7 @@ export class AddBarComponent implements OnInit {
   photo: String[] = ["null"];
   main_image: String = null;
   phone: String[] = [];
+  sidebar: Boolean;
 
   constructor(
     private _builder: FormBuilder,
@@ -227,6 +228,10 @@ export class AddBarComponent implements OnInit {
 
   goBack() {
     this.route.navigate(["admin/bar"]);
+  }
+
+  getMessage($event){
+    this.sidebar = $event;
   }
 
 

@@ -10,6 +10,7 @@ import { drink } from 'src/app/models/drink';
 })
 export class ShowFilterComponent implements OnInit {
 
+  sidebar: Boolean;
   constructor(
     private service: DrinkService,
     private route: Router,
@@ -37,6 +38,10 @@ export class ShowFilterComponent implements OnInit {
       console.log(this.drinks)
     });
     
+  }
+
+  getMessage($event){
+    this.sidebar = $event;
   }
 
 }

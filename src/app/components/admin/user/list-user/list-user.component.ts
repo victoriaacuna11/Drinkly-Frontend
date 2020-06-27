@@ -13,6 +13,7 @@ export class ListUserComponent implements OnInit {
   loading: Boolean = true;
   users: user[];
   userSelected: user;
+  sidebar: Boolean;
 
   constructor(private service: UserService, private route: Router) {}
 
@@ -80,6 +81,10 @@ export class ListUserComponent implements OnInit {
           this.getUsers();
         });
     });
+  }
+
+  getMessage($event){
+    this.sidebar = $event;
   }
 
 }

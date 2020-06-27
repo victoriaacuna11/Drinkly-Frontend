@@ -11,6 +11,7 @@ export class DrinksListComponent implements OnInit {
 
   drinks: object[];
   loading: Boolean = true;
+  sidebar: Boolean;
   
 
   constructor(private service: DrinkService, private route: Router) { }
@@ -29,5 +30,9 @@ export class DrinksListComponent implements OnInit {
 
   goToFilter(){
     this.route.navigate(['drinks/filter/']);
+  }
+
+  getMessage($event){
+    this.sidebar = $event;
   }
 }

@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JuegosComponent implements OnInit {
 
+  sidebar: Boolean;
   tridentisOpen: boolean = false;
   chupisisOpen: boolean = false;
   vorisOpen: boolean = false;
@@ -38,6 +39,10 @@ export class JuegosComponent implements OnInit {
 
   elegirReto() {
     this.reto = this.retos[Math.floor(Math.random() * this.retos.length)]
+  }
+
+  getMessage($event){
+    this.sidebar = $event;
   }
 
 }

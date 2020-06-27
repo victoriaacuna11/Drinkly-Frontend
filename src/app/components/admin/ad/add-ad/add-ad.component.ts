@@ -15,6 +15,7 @@ export class AddAdComponent implements OnInit {
   selectedFile: File = null;
   form: FormGroup;
   main_image: String=null;
+  sidebar: Boolean;
 
 
   constructor(
@@ -68,6 +69,9 @@ export class AddAdComponent implements OnInit {
       });
   }
 
+  getMessage($event){
+    this.sidebar = $event;
+  }
 
 
 

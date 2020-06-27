@@ -16,6 +16,7 @@ export class EditGameComponent implements OnInit {
   loading: Boolean=true;
   form: FormGroup;
   main_image: String= null;
+  sidebar: Boolean;
   
   constructor(
     private service: GameService,
@@ -128,6 +129,10 @@ export class EditGameComponent implements OnInit {
       this.route.navigate(["admin/game"]);
     }
     
+  }
+
+  getMessage($event){
+    this.sidebar = $event;
   }
 
 }

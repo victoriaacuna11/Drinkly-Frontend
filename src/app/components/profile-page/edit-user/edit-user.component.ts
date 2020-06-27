@@ -21,6 +21,7 @@ export class EditUserComponent implements OnInit {
   categories: String[];
   changingP = false;
   formP : FormGroup;
+  sidebar: Boolean;
 
   constructor(
     private service: UserService,
@@ -136,6 +137,10 @@ export class EditUserComponent implements OnInit {
       }, 6000);
       
     }
+  }
+
+  getMessage($event){
+    this.sidebar = $event;
   }
 
 

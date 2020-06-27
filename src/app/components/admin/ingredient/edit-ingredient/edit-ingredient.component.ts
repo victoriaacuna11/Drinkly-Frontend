@@ -18,6 +18,7 @@ export class EditIngredientComponent implements OnInit {
   main_image: String;
   // selectedFile: File = null;
   categories: String[];
+  sidebar:Boolean;
 
   constructor(
     private service: IngredientService,
@@ -100,5 +101,9 @@ export class EditIngredientComponent implements OnInit {
       .then((res) => {
         this.main_image = null;
       });
+  }
+
+  getMessage($event){
+    this.sidebar = $event;
   }
 }

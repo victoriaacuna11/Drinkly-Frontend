@@ -12,6 +12,7 @@ export class ListIngredientComponent implements OnInit {
   loading: Boolean = true;
   ingredients: ingredient[];
   ingredientSelected: ingredient;
+  sidebar: Boolean;
 
   constructor(private service: IngredientService, private route: Router) {}
 
@@ -63,5 +64,9 @@ export class ListIngredientComponent implements OnInit {
 
   create(){
     this.route.navigate(["admin/ingredient/add"]);
+  }
+
+  getMessage($event){
+    this.sidebar = $event;
   }
 }

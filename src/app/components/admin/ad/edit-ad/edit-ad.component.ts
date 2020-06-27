@@ -14,6 +14,7 @@ export class EditAdComponent implements OnInit {
   ad: advertisement;
   form: FormGroup;
   main_image: String;
+  sidebar: Boolean;
   // selectedFile: File = null;
 
   constructor(
@@ -93,6 +94,10 @@ export class EditAdComponent implements OnInit {
       .then((res) => {
         this.main_image = null;
       });
+  }
+
+  getMessage($event){
+    this.sidebar = $event;
   }
 
 }

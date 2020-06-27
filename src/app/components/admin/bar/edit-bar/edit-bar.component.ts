@@ -23,6 +23,7 @@ export class EditBarComponent implements OnInit {
   phone: String[] = [];
   zones: zone[];
   id: String;
+  sidebar: Boolean;
 
   constructor(private service: BarService, private zoneService:ZoneService, private route: Router, 
     private routeSV: ActivatedRoute,private _builder: FormBuilder, private storage: AngularFireStorage,) { 
@@ -307,5 +308,9 @@ export class EditBarComponent implements OnInit {
     console.log(this.bar.pictures);
 
     ;
+  }
+
+  getMessage($event){
+    this.sidebar = $event;
   }
 }

@@ -16,6 +16,7 @@ export class AddGameComponent implements OnInit {
   game: game;
   main_image: String = null;
   rules: String[] = [];
+  sidebar: Boolean;
 
   constructor(
     private _builder: FormBuilder,
@@ -96,6 +97,10 @@ export class AddGameComponent implements OnInit {
 
   goBack() {
     this.route.navigate(["admin/game"]);
+  }
+
+  getMessage($event){
+    this.sidebar = $event;
   }
 
   

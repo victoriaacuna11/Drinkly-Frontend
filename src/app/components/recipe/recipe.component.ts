@@ -8,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 export class RecipeComponent implements OnInit {
   // CAMBIAR A TRUE
   loading: Boolean=false;
+  sidebar: Boolean;
   constructor() { }
 
   ngOnInit() {
+  }
+  
+  getMessage($event){
+    this.sidebar = $event;
   }
 
 }

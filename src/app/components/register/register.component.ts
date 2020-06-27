@@ -23,6 +23,7 @@ export class RegisterComponent implements OnInit {
   x: Date;
   options = { day: "2-digit", month: "2-digit", year: "numeric" };
   finalDate: Date;
+  sidebar: Boolean;
 
   constructor(
     private _builder: FormBuilder,
@@ -83,5 +84,9 @@ export class RegisterComponent implements OnInit {
         this.router.navigate(["/register"]);
       }
     });
+  }
+
+  getMessage($event){
+    this.sidebar = $event;
   }
 }

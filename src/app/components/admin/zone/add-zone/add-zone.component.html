@@ -1,8 +1,8 @@
-<div class="flex w-full">
-  <app-navbar></app-navbar>
-  <div class="pl-64 w-full">
-    <div class="w-full">
-      <app-admin-header></app-admin-header>
+<app-test-bar (message)="getMessage($event)"></app-test-bar> 
+
+<div [ngStyle]="{'margin-left.rem': !sidebar? '0': '16'}" class="move">
+
+  <app-admin-header></app-admin-header>
       <div
         class="h-20 w-full flex justify-center items-center"
         style="font-family: 'Open Sans', sans-serif;"
@@ -65,9 +65,6 @@
           </div>
         </form>
       </div>
+      <app-footer></app-footer>
     </div>
-  </div>
-</div>
-
-<app-footer></app-footer>
 

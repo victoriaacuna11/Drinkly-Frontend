@@ -12,6 +12,7 @@ export class ListAdComponent implements OnInit {
   loading=true;
   ads:advertisement[];
   adSelected:advertisement;
+  sidebar: Boolean;
 
   constructor(private service: AdvertisementService, private route: Router) { }
 
@@ -59,6 +60,10 @@ export class ListAdComponent implements OnInit {
 
   create(){
     this.route.navigate(["admin/ad/add"]);
+  }
+
+  getMessage($event){
+    this.sidebar = $event;
   }
 
 }

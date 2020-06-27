@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
   password: String;
   form: FormGroup;
   dataRegister: any = {};
+  sidebar: Boolean;
 
   constructor(
     private _builder: FormBuilder,
@@ -56,5 +57,9 @@ export class LoginComponent implements OnInit {
         this.router.navigate(["login"]);
       }
     });
+  }
+
+  getMessage($event){
+    this.sidebar = $event;
   }
 }
