@@ -84,7 +84,7 @@ export class FilterParentComponent implements OnInit {
 
       for (let y = 0; y < this.ingredients.length; y++) {
 
-        if(this.categories[x]===this.ingredients[y].category){
+        if(this.categories[x]===this.ingredients[y].category && this.ingredients[y].available==true){
           let k={
             'id':this.ingredients[y]._id,
             'name':this.ingredients[y].name,
@@ -114,6 +114,10 @@ export class FilterParentComponent implements OnInit {
 
   filter_drink(){
     //transformamos en una variable
+
+    if(this.filter.length!=0){
+
+    
     let filter_id=[];
     for (let index = 0; index < this.filter.length; index++) {
         filter_id.push(this.filter[index].id)
@@ -121,6 +125,12 @@ export class FilterParentComponent implements OnInit {
     let filter=filter_id.toString()
 
     this.router.navigate(["drinks/filtered_drinks/", filter]);
+
+    }else{
+      const response = alert(
+        "Seleccione por lo menos un ingrediente por el que quiera filtrar"
+      );
+    }
   }
 
   openCategory(item:any){

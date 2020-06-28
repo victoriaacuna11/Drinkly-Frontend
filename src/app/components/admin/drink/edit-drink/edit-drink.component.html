@@ -176,17 +176,19 @@
               class="md:flex md:items-center mb-6"
               *ngFor="let item of ingredient_arr; let i = index"
             >
-              <label class="md:w-2/3 block text-gray-500 font-bold">
-                <input
-                  class="mr-2 leading-tight"
-                  type="checkbox"
-                  (change)="getSelect(item)"
-                  [checked]="ingSelector(item)"
-                />
-                <span class="text-sm">
-                  {{ item.name }}
-                </span>
-              </label>
+              <div *ngIf=item.available>
+                <label class="md:w-2/3 block text-gray-500 font-bold">
+                  <input
+                    class="mr-2 leading-tight"
+                    type="checkbox"
+                    (change)="getSelect(item)"
+                    [checked]="ingSelector(item)"
+                  />
+                  <span class="text-sm">
+                    {{ item.name }}
+                  </span>
+                </label>
+              </div>
             </div>
           </div>
         </div>

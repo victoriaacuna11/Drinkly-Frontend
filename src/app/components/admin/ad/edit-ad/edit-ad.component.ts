@@ -62,10 +62,20 @@ export class EditAdComponent implements OnInit {
     console.log(this.ad.promo_img);
 
     if (this.main_image != null) {
-      console.log(adver);
-      this.service.updateAd(adver).subscribe((res) => {
-        this.route.navigate(["admin/ingredient"]);
-      });
+      if(!this.form.invalid){
+
+        console.log(adver);
+        this.service.updateAd(adver).subscribe((res) => {
+          this.route.navigate(["admin/ingredient"]);
+        });
+      }else{
+
+        const response = alert(
+          "No puede dejar campos vacios al editar una publicidad. Por favor revise"
+        );
+      }
+        
+
     } else {
       const response = alert(
         "No ha subido ninguna imagen. Por favor, suba una."
