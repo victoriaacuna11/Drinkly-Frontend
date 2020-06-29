@@ -6,8 +6,8 @@ import { user } from "../models/user";
   providedIn: "root",
 })
 export class UserService {
-  _url = "http://localhost:5000/api/user/";
-  // _url = "https://drinklyapi.herokuapp.com/api/user/";
+  // _url = "http://localhost:5000/api/user/";
+  _url = "https://drinklyapi.herokuapp.com/api/user/";
 
   constructor(private _http: HttpClient) {}
 

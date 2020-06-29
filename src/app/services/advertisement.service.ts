@@ -6,8 +6,8 @@ import { advertisement } from "../models/advertisement";
   providedIn: 'root'
 })
 export class AdvertisementService {
-  //_url = "https://drinklyapi.herokuapp.com/api/adver/";
-  _url = "http://localhost:5000/api/adver/";
+  _url = "https://drinklyapi.herokuapp.com/api/adver/";
+  // _url = "http://localhost:5000/api/adver/";
 
 
   constructor(private _http:HttpClient) { }
