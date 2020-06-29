@@ -22,6 +22,7 @@ export class EditUserComponent implements OnInit {
   changingP = false;
   formP : FormGroup;
   sidebar: Boolean;
+  err: string;
 
   constructor(
     private service: UserService,
@@ -84,8 +85,24 @@ export class EditUserComponent implements OnInit {
 
     if (true) {
       console.log(user);
-      this.service.updateUser(user).subscribe((res) => {
-        this.route.navigate(["profile"]);
+      this.service.updateUser(user).subscribe((res:any) => {
+        if(res.success){
+          console.log(res);
+          this.route.navigate(["profile"]);
+        }else{
+          this.err='';
+          for(let i of res.msg) {
+            this.err += i + "\n";
+          }
+          console.log(this.err)       
+          var element = document.getElementById("alRepeted");
+          element.style.display = "block";
+          setTimeout(function() {
+            element.style.display = "none";
+          }, 6000);
+
+        }
+
       });
     } 
   }

@@ -2,7 +2,7 @@ import { Router } from "@angular/router";
 import { AuthService } from "./../../services/auth.service";
 import { user } from "./../../models/user";
 import { Component, OnInit } from "@angular/core";
-import { FormGroup, FormBuilder, Validators } from "@angular/forms";
+import { FormGroup, FormBuilder, Validators, AbstractControl } from "@angular/forms";
 import { BsDatepickerConfig } from "ngx-bootstrap/datepicker";
 
 @Component({
@@ -24,6 +24,7 @@ export class RegisterComponent implements OnInit {
   options = { day: "2-digit", month: "2-digit", year: "numeric" };
   finalDate: Date;
   sidebar: Boolean;
+  err='';
 
   constructor(
     private _builder: FormBuilder,
@@ -80,8 +81,16 @@ export class RegisterComponent implements OnInit {
         console.log("Te acabas de registrar.");
         this.router.navigate(["/profile"]);
       } else {
-        console.log("Algo salió mal.");
-        this.router.navigate(["/register"]);
+        this.err='';
+        for(let i of this.dataRegister.msg) {
+          this.err += i + "\n";
+        }
+        console.log(this.err)       
+        var element = document.getElementById("al");
+        element.style.display = "block";
+        setTimeout(function() {
+          element.style.display = "none";
+        }, 6000);
       }
     });
   }
@@ -89,4 +98,5 @@ export class RegisterComponent implements OnInit {
   getMessage($event){
     this.sidebar = $event;
   }
+
 }

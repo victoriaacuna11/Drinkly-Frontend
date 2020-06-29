@@ -10,8 +10,8 @@ export class AuthService {
   user: any;
   aux2: any;
   admin: Boolean = false;
-  _url = 'https://drinklyapi.herokuapp.com/api/user/';
-  // _url = 'http://localhost:5000/api/user/';
+  // _url = 'https://drinklyapi.herokuapp.com/api/user/';
+  _url = 'http://localhost:5000/api/user/';
 
   constructor(private http: HttpClient) {}
 
@@ -19,12 +19,12 @@ export class AuthService {
   registerUser(user) {
     let headers: HttpHeaders = new HttpHeaders();
     headers = headers.append("Content-Type", "application/json");
-    // return this.http.post("http://localhost:5000/api/user/register", user, {
-    //   headers: headers,
-    // });
-    return this.http.post(this._url+'register', user, {
+    return this.http.post("http://localhost:5000/api/user/register", user, {
       headers: headers,
-    })
+    });
+    // return this.http.post(this._url+'register', user, {
+    //   headers: headers,
+    // })
   }
 
   //Se usa en el login, este lleva a la ruta de autenticación en el backend en donde se encuentra toda la lógica de comparar
@@ -32,12 +32,12 @@ export class AuthService {
   authenticateUser(user) {
     let headers: HttpHeaders = new HttpHeaders();
     headers = headers.append("Content-Type", "application/json");
-    // return this.http.post("http://localhost:5000/api/user/authenticate", user, {
-    //   headers: headers,
-    // });
-    return this.http.post(this._url+'authenticate', user, {
+    return this.http.post("http://localhost:5000/api/user/authenticate", user, {
       headers: headers,
-    })
+    });
+    // return this.http.post(this._url+'authenticate', user, {
+    //   headers: headers,
+    // })
   }
 
   //esto me trae el perfil que saco de la ruta profile, que está protegida y solo se puede acceder con el token.
@@ -46,12 +46,12 @@ export class AuthService {
     this.loadToken();
     headers = headers.append("Authorization", this.authToken);
     headers = headers.append("Content-Type", "application/json");
-    // return this.http.get("http://localhost:5000/api/user/profile", {
-    //   headers: headers,
-    // });
-    return this.http.get(this._url+'profile', {
+    return this.http.get("http://localhost:5000/api/user/profile", {
       headers: headers,
-    })
+    });
+    // return this.http.get(this._url+'profile', {
+    //   headers: headers,
+    // })
     
   }
 
@@ -61,24 +61,24 @@ export class AuthService {
     this.loadToken();
     headers = headers.append("Authorization", this.authToken);
     headers = headers.append("Content-Type", "application/json");
-    // return this.http.get("http://localhost:5000/api/user/isAdmin", {
-    //   headers: headers,
-    // });
-    return this.http.get(this._url+'isAdmin', {
+    return this.http.get("http://localhost:5000/api/user/isAdmin", {
       headers: headers,
-    })
+    });
+    // return this.http.get(this._url+'isAdmin', {
+    //   headers: headers,
+    // })
   }
 
   getPassword(){
     let headers: HttpHeaders = new HttpHeaders();
     this.loadToken();
     headers = headers.append("Authorization", this.authToken);
-    // return this.http.get("http://localhost:5000/api/user/updateP", {
-    //   headers: headers, responseType: 'text'
-    // });
-    return this.http.get(this._url + 'updateP', {
+    return this.http.get("http://localhost:5000/api/user/updateP", {
       headers: headers, responseType: 'text'
     });
+    // return this.http.get(this._url + 'updateP', {
+    //   headers: headers, responseType: 'text'
+    // });
   }
 
   //si el login fue exitoso, esta función guarda el usuario y su token en local storage

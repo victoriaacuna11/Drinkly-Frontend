@@ -208,9 +208,16 @@
           
             </form>
           </div>
+
           
-             
+          <div id="alRepeted" style="display: none;" class="px-5 pt-12 pb-12">
+            <div class="bg-red-100 border border-red-300 text-red-700 pl-4 pr-8 py-3 rounded relative" role="alert">
+                <strong class="font-bold">Error! </strong>
+                <span class="block sm:inline">{{err}}</span>
+              </div>
+        </div>
           
+                     
           <form [formGroup]="formP" class="w-2/4 content-center mx-auto pt-12">
               <div class="md:flex md:items-center mb-6">
           
@@ -307,7 +314,7 @@
               </div>
           </form>
           
-          <div id="al" style="display: none;" class="px-5 pt-12">
+          <div id="al" style="display: none;" class="px-5 pt-12 pb-12">
               <div class="bg-red-100 border border-red-300 text-red-700 pl-4 pr-8 py-3 rounded relative" role="alert">
                   <strong class="font-bold">Error! </strong>
                   <span class="block sm:inline">Contraseña incorrecta.</span>
