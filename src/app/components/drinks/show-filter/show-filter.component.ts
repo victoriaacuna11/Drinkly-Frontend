@@ -19,7 +19,8 @@ export class ShowFilterComponent implements OnInit {
 
   filter;
   aux;
-  drinks:drink[];
+  drinks:drink[]=[];
+  drinksA:drink[]=[];
   loading=true
 
   ngOnInit() {
@@ -33,6 +34,11 @@ export class ShowFilterComponent implements OnInit {
   getFilteredDrinks() {
     this.service.filteredDrink(this.aux).subscribe((res: any) => {
       this.drinks = res.data;
+      this.drinks.forEach(i =>{
+        if(i.available){
+          this.drinksA.push(i);
+        }
+      })
       this.loading = false;
       this.filter=this.aux.split(',')
       console.log(this.drinks)
