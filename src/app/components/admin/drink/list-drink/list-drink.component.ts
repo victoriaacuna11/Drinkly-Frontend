@@ -24,6 +24,7 @@ export class ListDrinkComponent implements OnInit {
     this.service.getDrinks().subscribe((res: any) => {
       this.drinks = [...res.data];
       this.loading = false;
+      console.log(this.drinks)
     });
   }
 
@@ -54,6 +55,7 @@ export class ListDrinkComponent implements OnInit {
   }
 
   editDrink(id) {
+    
     this.route.navigate(["admin/drink/edit/", id]);
   }
 

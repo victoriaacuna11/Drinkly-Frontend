@@ -44,7 +44,6 @@ import { AppComponent } from "./app.component";
 import { FooterComponent } from "./components/footer/footer.component";
 import { AdminHeaderComponent } from "./components/admin/admin-header/admin-header.component";
 import { HeaderComponent } from "./components/header/header.component";
-import { ListComponent } from "./components/list/list.component";
 import { BarsListComponent } from "./components/bars/bars-list/bars-list.component";
 import { DrinksListComponent } from "./components/drinks/drinks-list/drinks-list.component";
 import { DrinksFilterComponent } from "./components/drinks/drinks-filter/drinks-filter.component";
@@ -83,13 +82,13 @@ import { RecipeComponent } from './components/recipe/recipe.component';
 import { HomeComponent } from './components/home/home.component';
 import { AdminHomeComponent } from './components/admin/admin-home/admin-home.component';
 import { TestBarComponent } from './components/test-bar/test-bar.component';
+import { AiudaComponent } from './aiuda/aiuda.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
     HeaderComponent,
-    ListComponent,
     BarsListComponent,
     DrinksListComponent,
     DrinksFilterComponent,
@@ -133,6 +132,7 @@ import { TestBarComponent } from './components/test-bar/test-bar.component';
     HomeComponent,
     AdminHomeComponent,
     TestBarComponent,
+    AiudaComponent,
   ],
   imports: [
     BrowserModule,

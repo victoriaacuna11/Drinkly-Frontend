@@ -59,7 +59,7 @@ export class EditDrinkComponent implements OnInit {
 
     this.drink_service.getDrink(id).subscribe((res: any) => {
       this.drink = { ...res.data };
-
+      console.log(this.drink);
       //GET INGREDIENTS
       this.ing_service.getIngredients().subscribe((res: any) => {
         this.ingredient_arr = [...res.data];

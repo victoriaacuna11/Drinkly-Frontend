@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DrinkService } from 'src/app/services/drink.service';
 import { Router } from '@angular/router';
+import { drink } from 'src/app/models/drink';
 
 @Component({
   selector: 'app-drinks-list',
@@ -9,9 +10,10 @@ import { Router } from '@angular/router';
 })
 export class DrinksListComponent implements OnInit {
 
-  drinks: object[];
+  drinks: drink[];
   loading: Boolean = true;
   sidebar: Boolean;
+  drinksA: drink[] =[];
   
 
   constructor(private service: DrinkService, private route: Router) { }
@@ -24,6 +26,11 @@ export class DrinksListComponent implements OnInit {
     this.service.getDrinks().subscribe((res: any) => {
       this.drinks = [...res.data];
       console.log(this.drinks);
+      this.drinks.forEach(i => {
+        if(i.available){
+          this.drinksA.push(i);
+        }
+      })
       this.loading = false;
     })
   }
