@@ -18,28 +18,38 @@
       class="w-2/4 content-center"
       encType="multipart/form-data"
     >
-      <div class="md:flex md:items-center mb-6">
-        <div class="md:w-1/5">
-          <label
-            class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-            for="inline-full-name"
-          >
-            Nombre
-          </label>
+
+      <div class="width-full">
+        <div class="md:flex md:items-center mb-6">
+            <div class="md:w-1/5">
+            <label
+              class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+              for="inline-full-name"
+            >
+              Nombre
+            </label>
+          </div>
+          <div class="md:w-4/5">
+            <input
+              formControlName="name"
+              class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
+              id="inline-full-name"
+              type="text"
+              placeholder="Ej. Margarita"
+            />
+          </div>
         </div>
-        <div class="md:w-4/5">
-          <input
-            formControlName="name"
-            class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
-            id="inline-full-name"
-            type="text"
-            placeholder="Ej. Margarita"
-          />
-        </div>
+        <app-required-field
+                    [text]="'Este campo es requerido.'"
+                    *ngIf="form.get('name').invalid && form.get('name').touched"
+                ></app-required-field>
       </div>
 
-      <div class="md:flex md:items-center mb-6">
-        <div class="md:w-1/5">
+
+
+      <div class="width-full">
+        <div class="md:flex md:items-center mb-6">
+            <div class="md:w-1/5">
           <label
             class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
             for="inline-full-name"
@@ -56,10 +66,16 @@
             placeholder=""
           />
         </div>
+        </div>
+        <app-required-field
+                    [text]="'Este campo es requerido.'"
+                    *ngIf="form.get('description').invalid && form.get('description').touched"
+                ></app-required-field>
       </div>
 
-      <div class="md:flex md:items-center mb-6">
-        <div class="md:w-1/5">
+      <div class="width-full">
+        <div class="md:flex md:items-center mb-6">
+            <div class="md:w-1/5">
           <label
             class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
             for="inline-full-name"
@@ -76,10 +92,16 @@
             placeholder=""
           />
         </div>
+        </div>
+        <app-required-field
+                    [text]="'Este campo es requerido.'"
+                    *ngIf="form.get('recipe').invalid && form.get('recipe').touched"
+                ></app-required-field>
       </div>
 
-      <div class="md:flex md:items-center mb-6">
-        <div class="md:w-1/5">
+      <div class="width-full">
+        <div class="md:flex md:items-center mb-6">
+            <div class="md:w-1/5">
           <label
             class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
             for="inline-full-name"
@@ -96,10 +118,16 @@
             placeholder="Ej. USERNAME"
           />
         </div>
+        </div>
+        <app-required-field
+                    [text]="'Este campo es requerido.'"
+                    *ngIf="form.get('owner_name').invalid && form.get('owner_name').touched"
+                ></app-required-field>
       </div>
 
-      <div class="md:flex md:items-center mb-6">
-        <div class="md:w-1/5">
+      <div class="width-full">
+        <div class="md:flex md:items-center mb-6">
+            <div class="md:w-1/5">
           <label
             class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
             for="inline-full-name"
@@ -131,59 +159,85 @@
             </svg>
           </div>
         </div>
+        </div>
+        <app-required-field
+                    [text]="'Este campo es requerido.'"
+                    *ngIf="form.get('owner_rol').invalid && form.get('owner_rol').touched"
+                ></app-required-field>
       </div>
 
-      <div class="md:flex md:items-center mb-6">
-        <div class="md:w-1/5">
-          <label
-            class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-            for="inline-full-name"
-          >
-            Foto
-          </label>
-        </div>
-        <div class="md:w-4/5">
-          <div
-            *ngIf="!this.main_image"
-            class="flex items-center justify-center bg-grey-lighter"
-          >
-            <label class="justify-center font-normal text-base sm:text-lg md:text-xl">
-              <span>Ningun archivo seleccionado</span>
-            </label>
-            <label
-              class="w-full flex justify-center h-full items-center px-4 py-3 pr-8 bg-gray-200 rounded-lg shadow-lg tracking-wide border border-blue cursor-pointer hover:bg-orange-400 hover:text-white"
-            >
-              <span class="text-base leading-normal"
-                >Selecciona un archivo</span
-              >
-              <lib-file-upload-firestorage
-                storagePath="drink"
-                (res)="uploadEnRes($event)"
-                class="hidden"
-              >
-              </lib-file-upload-firestorage>
-            </label>
-          </div>
 
-          <div *ngIf="this.main_image" class="width-full bg-grey-lighter">
-            <div class="width-2/3 flex items-center justify-center">
-              <img [src]="this.main_image" class="h-24" />
-            </div>
-            <div class="flex space-x-4 justify-center w-full">
-              <button
-                (click)="changeImage(this.main_image)"
-                class="md:w-1/5 shadow bg-gray-500 hover:bg-orange-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-                type="button"
-              >
-                Cambiar
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+            <div class="md:items-center mb-6">
+                <div class="md:w-full">
+                  <label
+                    style="font-family: 'Open Sans', sans-serif;"
+                    class="block text-black-500 font-bold md:text-center mb-1 md:mb-0 pr-4"
+                    for="inline-full-name"
+                  >
+                    Foto Trago
+                  </label>
+                </div>
+                <div class="md:w-full">
+                  <label
+                    style="font-family: 'Open Sans', sans-serif;"
+                    class="block text-black-500 font-bold md:text-center mb-1 md:mb-0 pr-4"
+                    for="inline-full-name"
+                  >
+                    Por favor, esperar a que aparezcan las fotos. Esto indicará que
+                    fueron cargadas con éxito.
+                  </label>
+                </div>
+              </div>
 
-      <div class="md:flex md:items-center mb-6">
-        <div class="md:w-1/5">
+            <div class="md:flex md:items-center mb-6">
+                <div class="md:w-1/5">
+                  <label
+                    class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+                    for="inline-full-name"
+                  >
+                    Foto
+                  </label>
+                </div>
+                <div class="md:w-4/5">
+                  <div
+                    *ngIf="!this.main_image"
+                    class="flex items-center justify-center bg-grey-lighter"
+                  >
+                    <label
+                      class="w-full flex justify-center h-full items-center px-4 py-3 pr-8 bg-gray-200 rounded-lg shadow-lg tracking-wide border border-blue cursor-pointer hover:bg-orange-500 hover:text-white"
+                    >
+                      <span class="mt-2 text-base leading-normal"
+                        >Selecciona un archivo</span
+                      >
+                      <lib-file-upload-firestorage
+                        storagePath="drink"
+                        (res)="uploadEnRes($event)"
+                        class="hidden"
+                      >
+                      </lib-file-upload-firestorage>
+                    </label>
+                  </div>
+
+                  <div *ngIf="this.main_image" class="width-full bg-grey-lighter">
+                    <div class="width-2/3 flex items-center justify-center">
+                      <img [src]="this.main_image" class="h-24" />
+                    </div>
+                    <div class="flex space-x-4 justify-end w-full">
+                      <button
+                        (click)="changeImage(this.main_image)"
+                        class="md:w-1/5 shadow bg-gray-500 hover:bg-orange-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                        type="button"
+                      >
+                        Cambiar
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+      <div class="width-full">
+        <div class="md:flex md:items-center mb-6">
+            <div class="md:w-1/5">
           <label
             class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
             for="inline-full-name"
@@ -209,6 +263,11 @@
             </label>
           </div>
         </div>
+        </div>
+        <app-required-field
+                    [text]="'Este campo es requerido.'"
+                    *ngIf="mas_de_uno()"
+                ></app-required-field>
       </div>
 
       <div class="md:flex md:items-center mb-6">

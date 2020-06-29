@@ -23,7 +23,7 @@ export class DrinkService {
   }
 
   getDrink(id) {
-    return this._http.get(this._url + 'get/'+id);
+    return this._http.get(this._url +id);
   }
 
   deleteDrink(id) {
@@ -35,6 +35,6 @@ export class DrinkService {
   }
 
   filteredDrink(filter){
-    return this._http.get(this._url+"filter/"+filter,)
+    return this._http.get(this._url+"filter_drink/"+filter);
   }
 }

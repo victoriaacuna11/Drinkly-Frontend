@@ -89,7 +89,7 @@ export class AddDrinkComponent implements OnInit {
     });
   }
 
-  addIngredient() {}
+  
 
   addDrink() {
     // console.log(this.selectedFile);
