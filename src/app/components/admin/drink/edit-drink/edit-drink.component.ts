@@ -153,10 +153,22 @@ export class EditDrinkComponent implements OnInit {
     ;
 
     if (this.main_image != null) {
+      if(this.form.invalid){
+        const response = alert(
+          "Asegurese de rellenar correctamente todos los campos antes de continuar."
+        );
+      }else if(this.drink_ingredients.length==0){
+        const response = alert(
+          "Para continuar debe añadir por lo menos un ingrediente a la receta"
+        );
+      }else{
+
+     
       console.log(d);
       this.drink_service.updateDrink(d).subscribe((res) => {
         this.route.navigate(["admin/drink"]);
       });
+    }
     } else {
       const response = alert(
         "No ha subido ninguna imagen. Por favor, suba una."

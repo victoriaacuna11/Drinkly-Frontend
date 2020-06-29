@@ -34,16 +34,31 @@ export class AddAdComponent implements OnInit {
   
   addAd() {
     if(this.main_image!=null){
-      const ad: advertisement = {
-        promo_img: this.main_image,
-        client:this.form.value.client,
-        _id: "",
-        available: true,
-      };
-      console.log(ad);
-      this.service.createAd(ad).subscribe((res) => {
-        this.route.navigate(["admin/ad"]);
-      });
+
+      if(!this.form.invalid){
+
+      
+        const ad: advertisement = {
+          promo_img: this.main_image,
+          client:this.form.value.client,
+          _id: "",
+          available: true,
+        };
+        console.log(ad);
+        this.service.createAd(ad).subscribe((res) => {
+          this.route.navigate(["admin/ad"]);
+        });
+
+      }else{
+
+        const response = alert(
+          "Por favor asegurese de rellenar todos los campos antes de añadir la publicidad"
+          
+        );
+
+      }
+
+
     } else {
       const response = alert(
         "No ha subido ninguna imagen. Por favor, suba una."

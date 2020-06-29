@@ -94,20 +94,43 @@ export class AddDrinkComponent implements OnInit {
   addDrink() {
     // console.log(this.selectedFile);
     if(this.main_image!=null){
-      this.drink_created = {
-        name: this.form.value.name,
-        description: this.form.value.description,
-        recipe: this.form.value.recipe,
-        owner: {
-          name: this.form.value.owner_name,
-          category: this.form.value.owner_rol,
-        },
-        ingredients: this.drink_ingredients,
-        pictures: this.main_image,
-        _id: "",
-        available: true,
-        views: 0,
-      };
+
+          if(this.form.invalid){
+            const response = alert(
+              "Asegurese de rellenar correctamente todos los campos antes de continuar."
+            );
+          }else if(this.drink_ingredients.length==0){
+            const response = alert(
+              "Para continuar debe añadir por lo menos un ingrediente a la receta"
+            );
+          }else{
+
+          
+
+          
+            this.drink_created = {
+              name: this.form.value.name,
+              description: this.form.value.description,
+              recipe: this.form.value.recipe,
+              owner: {
+                name: this.form.value.owner_name,
+                category: this.form.value.owner_rol,
+              },
+              ingredients: this.drink_ingredients,
+              pictures: this.main_image,
+              _id: "",
+              available: true,
+              views: 0,
+            };
+
+            console.log(this.drink_created);
+            this.service.createDrink(this.drink_created).subscribe((res) => {
+              this.route.navigate(["admin/drink"]);
+            });
+
+        
+          }
+      
     } else {
       const response = alert(
         "Debe introducir una imagen como ícono."
@@ -117,10 +140,7 @@ export class AddDrinkComponent implements OnInit {
 
     // hay que crear el puto bar
 
-    console.log(this.drink_created);
-    this.service.createDrink(this.drink_created).subscribe((res) => {
-      this.route.navigate(["admin/drink"]);
-    });
+    
   }
 
   mas_de_uno(){
