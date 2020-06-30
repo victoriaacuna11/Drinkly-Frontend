@@ -57,6 +57,7 @@ import { HomeComponent } from './components/home/home.component';
 import { AdminHomeComponent } from './components/admin/admin-home/admin-home.component';
 import { TestBarComponent } from './components/test-bar/test-bar.component';
 import { PostDrinkComponent } from './components/post-drink/post-drink.component';
+import { LoaderComponent } from './components/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -107,6 +108,7 @@ import { PostDrinkComponent } from './components/post-drink/post-drink.component
     AdminHomeComponent,
     TestBarComponent,
     PostDrinkComponent,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,

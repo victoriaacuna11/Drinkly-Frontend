@@ -9,7 +9,9 @@
 <app-test-bar (message)="getMessage($event)"></app-test-bar>
 <div [ngStyle]="{'margin-left.rem': !sidebar? '0': '16'}" class="move">
     <app-header></app-header>
-
+    <div *ngIf="loading">
+        <app-loader></app-loader>
+    </div>
 
     <div *ngIf="!loading"> 
         <div *ngIf="!sending && !sent" class="w-full min-h-full content-center">  
