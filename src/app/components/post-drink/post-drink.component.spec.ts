@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AiudaComponent } from './aiuda.component';
+import { PostDrinkComponent } from './post-drink.component';
 
-describe('AiudaComponent', () => {
-  let component: AiudaComponent;
-  let fixture: ComponentFixture<AiudaComponent>;
+describe('PostDrinkComponent', () => {
+  let component: PostDrinkComponent;
+  let fixture: ComponentFixture<PostDrinkComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AiudaComponent ]
+      declarations: [ PostDrinkComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AiudaComponent);
+    fixture = TestBed.createComponent(PostDrinkComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

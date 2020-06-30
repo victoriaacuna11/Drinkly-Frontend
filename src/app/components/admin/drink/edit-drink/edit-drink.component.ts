@@ -146,7 +146,7 @@ export class EditDrinkComponent implements OnInit {
         ingredients: this.drink_ingredients,
         pictures: this.main_image,
         _id: this.drink._id,
-        available: true,
+        available: this.drink.available,
         views: 0,
     };
     console.log(d);
