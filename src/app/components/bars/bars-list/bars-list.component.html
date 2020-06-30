@@ -3,32 +3,42 @@
 <div [ngStyle]="{'margin-left.rem': !sidebar? '0': '16'}" class="move">
 
   <app-admin-header></app-admin-header>
-            <div *ngIf="!loading" class="flex flex-wrap md:flex-no-wrap sm:flex-wrap -mx-2 pb-12 pt-16 px-32 overflow-hidden">
-              <div
-                *ngFor="let x of barsAv" class="w-1/3 px-8 rounded sm:p-8 md:p-8 my-2 overflow-hidden"
-              >
-                  <img
-                    *ngIf="x.available"
-                    class="w-full object-scale-down cursor-pointer"
-                    src="{{ x.main_image }}"
-                    alt="Sunset in the mountains"
-                    (click)="detail(x._id)"
-                  />
-                  <div *ngIf="x.available" class="sm:px-6 sm:pl-0 md:px-6 md:pl-0">
-                    <div
-                      class="bg-white rounded-full px-3 py-1 text-sm font-semibold text-black text-xl mr-2 hover: text-black"
-                      (click)="detail(x._id)"
-                    >
-                      {{ x.name }}
-                    </div>
-                    <div
-                      class="bg-white rounded-full px-3 py-1 text-sm text-grey-darker mr-2"
-                    >
-                      {{ getZone(x.location.zone) }}
-                    </div>
-                </div>
-              </div>
+
+  <div class="w-full" *ngIf="!loading">
+
+   
+
+        <div class="w-full flex flex-col items-center mb-20 mt-10">
+
+        <div class="bar_card">
+
+
+          <div class="rounded overflow-hidden border-2 shadow-lg   hover:border-solid hover:border-orange-500 hover:border-opacity-75   transition ease-in duration-200" 
+           *ngFor="let item of barsAv"
+           
+           >
+            <div class="bar_img"
+            style="  background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    position: relative; "
+                    [style.backgroundImage]="'url('+ item.main_image +')'">
+
             </div>
+            <div class="px-6 py-4">
+              <div class="font-bold text-xl md:text-2xl mb-2"> <h1>{{ item.name }} </h1> </div>
+              <p class="text-gray-700 text-lg mb-1">
+                {{ getZone(item.location.zone) }}
+              
+            </div>
+        </div>
+
+        </div>
+
+      </div>
+    </div>
+  
+
 
 <app-footer></app-footer>
 </div>
