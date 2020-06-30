@@ -44,6 +44,7 @@ import { AddAdComponent } from './components/admin/ad/add-ad/add-ad.component';
 import { EditAdComponent } from './components/admin/ad/edit-ad/edit-ad.component';
 const externalUrlProvider = new InjectionToken('externalUrlRedirectResolver');
 import {NavbarComponent} from './components/navbar/navbar.component';
+import {PostDrinkComponent} from './components/post-drink/post-drink.component';
 
 const routes: Routes = [
 
@@ -78,6 +79,12 @@ const routes: Routes = [
     component: ShowFilterComponent,
     canActivate: [AuthGuard],
   },
+  {
+    path: "post-drink",
+    component: PostDrinkComponent,
+    canActivate: [AuthGuard],
+  },
+
 
   { path: "register", component: RegisterComponent },
   { path: "login", component: LoginComponent },
