@@ -8,10 +8,8 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./profile.component.scss"],
 })
 export class ProfileComponent implements OnInit {
-  aux: any = {};
-  aux2: any = {};
+ 
   user: any;
-  // user: Object;
   admin: Boolean = false;
   userLoading: Boolean;
   sidebar: Boolean;
@@ -22,7 +20,6 @@ export class ProfileComponent implements OnInit {
     this.userLoading = true;
 
     this.getProfile();
-    this.auth_svc.getAdmin();
   }
 
   getOut() {
@@ -33,9 +30,8 @@ export class ProfileComponent implements OnInit {
 
   getProfile() {
     this.auth_svc.getProfile().subscribe(
-      (profile) => {
-        this.aux = profile;
-        this.user = this.aux.user;
+      (profile:any) => {
+        this.user = profile.user;
         this.userLoading = false;
       },
       (err) => {

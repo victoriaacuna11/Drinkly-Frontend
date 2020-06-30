@@ -7,13 +7,15 @@ export class AdminAuthGuard implements CanActivate {
   constructor(private auth_svc: AuthService, private router: Router) {}
 
   async canActivate() {
-    let x = await this.auth_svc.getAdmin().toPromise();
 
-    if (x) {
-      return true;
-    } else {
-      this.router.navigateByUrl("/profile");
-      return false;
+    if(this.auth_svc.loggedIn()){
+      let x = await this.auth_svc.getAdmin().toPromise();
+      if (x) {
+        return true;
+      } 
     }
+    this.router.navigateByUrl("/profile");
+    return false;
+
   }
 }
