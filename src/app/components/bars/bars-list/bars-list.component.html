@@ -17,7 +17,7 @@
            *ngFor="let item of barsAv"
            
            >
-            <div class="bar_img"
+            <div (click)="detail(item._id)" class="bar_img"
             style="  background-position: center;
                     background-repeat: no-repeat;
                     background-size: cover;
@@ -25,7 +25,7 @@
                     [style.backgroundImage]="'url('+ item.main_image +')'">
 
             </div>
-            <div class="px-6 py-4">
+            <div (click)="detail(item._id)" class="px-6 py-4">
               <div class="font-bold text-xl md:text-2xl mb-2"> <h1>{{ item.name }} </h1> </div>
               <p class="text-gray-700 text-lg mb-1">
                 {{ getZone(item.location.zone) }}
