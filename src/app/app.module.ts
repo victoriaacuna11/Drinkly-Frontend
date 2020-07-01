@@ -82,7 +82,8 @@ import { RecipeComponent } from './components/recipe/recipe.component';
 import { HomeComponent } from './components/home/home.component';
 import { AdminHomeComponent } from './components/admin/admin-home/admin-home.component';
 import { TestBarComponent } from './components/test-bar/test-bar.component';
-import { AiudaComponent } from './aiuda/aiuda.component';
+import { FilterPipe } from './pipes/filter.pipe';
+import { clickedOutDirective } from './Directives/dropdown.directive';
 
 @NgModule({
   declarations: [
@@ -132,7 +133,8 @@ import { AiudaComponent } from './aiuda/aiuda.component';
     HomeComponent,
     AdminHomeComponent,
     TestBarComponent,
-    AiudaComponent,
+    FilterPipe,
+    clickedOutDirective
   ],
   imports: [
     BrowserModule,

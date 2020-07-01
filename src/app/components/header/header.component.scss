@@ -1,0 +1,50 @@
+.drop{
+    position: absolute;
+    z-index: 30000;
+    max-height: 300px;
+    background: white;
+    // margin-top: 4.7rem;
+    // margin-right: 50%;
+    width: 20rem;
+    margin-left: 2rem;
+    overflow-y: auto;
+}
+
+.d{
+    font-family: sans-serif;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    cursor: pointer;
+
+}
+
+.d2{
+    width: 16rem;
+
+}
+
+#coolB {
+    display: inline-block;
+    position: relative;
+    padding-bottom: 3px;
+    margin-right: 10px;
+  }
+  #coolB:last-child {
+    margin-right: 0;
+  }
+  
+  #coolB:after {
+    content: '';
+    display: block;
+    margin: auto;
+    height: 2px;
+    width: 0px;
+    background: transparent;
+    transition: width .5s ease, background-color .5s ease;
+  }
+  #coolB:hover:after {
+    width: 100%;
+    background: orange;
+  }
+
