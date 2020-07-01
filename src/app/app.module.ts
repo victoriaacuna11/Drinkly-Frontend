@@ -58,6 +58,9 @@ import { AdminHomeComponent } from './components/admin/admin-home/admin-home.com
 import { TestBarComponent } from './components/test-bar/test-bar.component';
 import { PostDrinkComponent } from './components/post-drink/post-drink.component';
 import { LoaderComponent } from './components/loader/loader.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 @NgModule({
   declarations: [
@@ -121,6 +124,10 @@ import { LoaderComponent } from './components/loader/loader.component';
     FileUploadFirestorageModule,
     BrowserAnimationsModule,
     BsDatepickerModule.forRoot(),
+    MatFormFieldModule,
+    MatInputModule,
+    MatAutocompleteModule
+    
   ],
   providers: [AuthService, AuthGuard, AdminAuthGuard],
   bootstrap: [AppComponent],

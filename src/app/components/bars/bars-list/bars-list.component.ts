@@ -55,6 +55,7 @@ export class BarsListComponent implements OnInit {
           this.barsAv.push(item);
         }
       })
+      console.log(this.barsAv)
       this.loading=false;
     })
   }

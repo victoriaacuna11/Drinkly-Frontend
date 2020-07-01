@@ -3,35 +3,48 @@
 <div [ngStyle]="{'margin-left.rem': !sidebar? '0': '16'}" class="move">
 
   <app-admin-header></app-admin-header>     
-          <div  *ngIf="!loading" class="flex flex-wrap md:flex-no-wrap sm:flex-wrap -mx-2 pb-12 pt-16 px-32 overflow-hidden">
-            <div
-              *ngFor="let x of drinksA"
-              class="w-1/3 px-8 rounded sm:p-8 md:p-8 my-2 overflow-hidden  rounded-lg"
-            >
-              <img
-                class="w-full object-scale-down cursor-pointer"
-                src="{{ x.pictures }}"
-                alt="Sunset in the mountains"
-              />
-              <div class="sm:px-6 sm:pl-0 md:px-6 md:pl-0">
-                <div
-                  class="bg-white rounded-full px-3 py-1  font-semibold text-black text-xl mr-2"
-                >
-                  {{ x.name }}
+          <div class="w-full" *ngIf="!loading">
+
+            
+        <div class="w-full flex flex-col items-center mb-20 mt-10">
+
+        <div class="drink_card">
+
+
+          <div class="rounded overflow-hidden border-2 shadow-lg   hover:border-solid hover:border-orange-500 hover:border-opacity-75   transition ease-in duration-200" 
+           *ngFor="let item of drinksA"
+           
+           >
+            <div class="drink_img"
+            style="  background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    position: relative; "
+                    [style.backgroundImage]="'url('+ item.pictures +')'">
+
+                  <div class="w-10 h-10 rounded-full  opacity-75 bg-white m-2 hover:bg-orange-300 transition ease-in duration-300">
+                    <div class="  rounded-full ">
+                      <img  class="p-1" src="https://i.ya-webdesign.com/images/5-star-icon-png-5.png" alt="">
+                  </div>
                 </div>
-                <div
-                  class="bg-white rounded-full px-3 py-1 text-sm text-grey-darker mr-2"
-                >
-                  {{ x.owner.name }}
-                </div>
-                <div
-                  class="bg-white rounded-full px-3 py-1 text-sm text-grey-darker mr-2"
-                >
-                  {{ x.owner.category }}
-                </div>
-              </div>
+                <!-- CAMBIAR A ORANGE CON CLICK -->
+
             </div>
-          </div>
+            <div class="px-6 py-4">
+              <div class="font-bold text-xl md:text-2xl mb-2"> <h1>{{ item.name }} </h1> </div>
+              <p class="text-gray-700 text-lg mb-1">
+                Autor: {{ item.owner.name }}
+              </p>
+              <p class="text-gray-700 text-lg">
+                {{ item.owner.category }}
+              </p>
+            </div>
+        </div>
+
+        </div>
+
+      </div>
+    </div>
 
 <app-footer></app-footer>
 </div>

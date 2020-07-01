@@ -10,16 +10,20 @@ import { drink } from 'src/app/models/drink';
 })
 export class DrinksListComponent implements OnInit {
 
-  drinks: drink[];
+  drinks: drink[]=[];
   loading: Boolean = true;
   sidebar: Boolean;
   drinksA: drink[] =[];
+  aux;
   
 
   constructor(private service: DrinkService, private route: Router) { }
 
   ngOnInit() {
     this.getDrinks();
+    
+      
+    
   }
 
   getDrinks() {
@@ -31,6 +35,7 @@ export class DrinksListComponent implements OnInit {
           this.drinksA.push(i);
         }
       })
+      
       this.loading = false;
     })
   }
