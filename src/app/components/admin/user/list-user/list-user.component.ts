@@ -87,4 +87,8 @@ export class ListUserComponent implements OnInit {
     this.sidebar = $event;
   }
 
+  goBack(){
+    this.route.navigate(["admin"]);
+  }
+
 }
