@@ -3,79 +3,98 @@
 <div [ngStyle]="{'margin-left.rem': !sidebar? '0': '16'}" class="move">
 
   <app-admin-header></app-admin-header>
+  <div *ngIf="loading">
+    <app-loader></app-loader>
+  </div>
+  <div *ngIf="!loading" style="font-family: 'Open Sans', sans-serif;">
 
-        <div
-        class="h-20 w-full flex justify-center items-center"
-        style="font-family: 'Open Sans', sans-serif;"
-      >
-        <div><h2 class="text-4xl">LISTA DE USUARIOS</h2></div>
+    <div
+      class="h-20 w-full flex justify-center items-center"
+      style="font-family: 'Open Sans', sans-serif;"
+    >
+      <div><h2 class="text-4xl">LISTA DE USUARIOS</h2></div>
+    </div>
+
+    <div class="w-full  flex justify-center items-center h-full">
+      <div class="w-2/3 md:3/4 lg:w-2/4 content-center">
+        <div class="w-full flex justify-center mb-6">
+              <button
+                (click)="goBack()"
+                class="w-2/3 shadow bg-orange-500 hover:bg-orange-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                type="button"
+              >
+                Regresar
+              </button>
+        </div>
       </div>
+    </div>
       
-      <div *ngIf="!loading">
-        <div
-          *ngFor="let u of users"
-          class="w-full flex justify-center items-center h-full"
-        >
-          <div class="w-2/4 content-center">
-            <div class="md:flex md:items-center mb-6">
-              <div class="md:w-2/5">
-                <label
-                  class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-                  for="inline-full-name"
-                >
-                  {{ u.f_name }} {{u.l_name}}
-                </label>
-              </div>
-      
-              <div class="md:w-3/5">
-                <div class="flex space-x-4 justify-end md:w-full">
-                  <button
-                    *ngIf="u.isAdmin"
-                    (click)="takeAdmin(u._id)"
-                    class="md:w-1/3 shadow bg-orange-500 hover:bg-orange-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-                    type="button"
-                  >
-                      Admin
-                  </button>
-                  <button
-                  *ngIf="!u.isAdmin"
-                  (click)="giveAdmin(u._id)"
-                  class="md:w-1/3 shadow bg-orange-500 hover:bg-orange-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+    <div>
+      <div
+        *ngFor="let u of users"
+        class="w-full flex justify-center items-center h-full"
+      >
+        <div class="w-2/3 md:3/4 lg:w-2/4 content-center">
+          <div class="sm:flex sm:items-center mb-6">
+            <div class="w-full flex justify-center sm:justify-end lg:justify-center sm:w-2/5 sm:text-left">
+              <label
+                class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+                for="inline-full-name"
+              >
+                {{ u.f_name }} {{u.l_name}}
+              </label>
+            </div>
+    
+            <div class="w-full sm:w-3/5">
+              <div class="flex space-x-2 justify-center sm:justify-end w-full">
+                <button
+                  *ngIf="u.isAdmin"
+                  (click)="takeAdmin(u._id)"
+                  class="w-2/5 sm:w-1/3 shadow bg-green-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
                   type="button"
                 >
-                    User
+                    Admin
                 </button>
-                  <button
-                    *ngIf="u.available"
-                    (click)="inhabilitateUser(u._id)"
-                    class="md:w-1/3 shadow bg-red-500 hover:bg-red-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-                    type="button"
-                  >
-                    Eliminar
-                  </button>
-                  <button
-                    (click)="deleteUser(u._id)"
-                    class="hidden md:w-1/3 shadow bg-red-500 hover:bg-red-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-                    type="button"
-                  >
-                    Eliminar
-                  </button>
-                  <button
-                    *ngIf="!u.available"
-                    (click)="habilitateUser(u._id)"
-                    class="md:w-1/3 shadow bg-gray-500 hover:bg-gray-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-                    type="button"
-                  >
-                    Recuperar
-                  </button>
-                </div>
+                <button
+                *ngIf="!u.isAdmin"
+                (click)="giveAdmin(u._id)"
+                class="w-2/5 sm:w-1/3 shadow bg-gray-500 hover:bg-gray-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                type="button"
+              >
+                  User
+              </button>
+                <button
+                  *ngIf="u.available"
+                  (click)="inhabilitateUser(u._id)"
+                  class="w-2/5 sm:w-1/3 shadow bg-red-500 hover:bg-red-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                  type="button"
+                >
+                  Eliminar
+                </button>
+                <button
+                  (click)="deleteUser(u._id)"
+                  class="hidden w-2/5 sm:w-1/3 shadow bg-red-500 hover:bg-red-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                  type="button"
+                >
+                  Eliminar
+                </button>
+                <button
+                  *ngIf="!u.available"
+                  (click)="habilitateUser(u._id)"
+                  class="w-2/5 sm:w-1/3 shadow bg-gray-500 hover:bg-gray-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                  type="button"
+                >
+                  Recuperar
+                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <app-footer></app-footer>
     </div>
+  </div>
+  <app-footer></app-footer>
+</div>
 
 
 

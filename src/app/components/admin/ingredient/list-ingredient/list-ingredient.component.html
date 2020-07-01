@@ -3,6 +3,11 @@
 <div [ngStyle]="{'margin-left.rem': !sidebar? '0': '16'}" class="move">
 
   <app-admin-header></app-admin-header>
+
+  <div *ngIf="loading">
+    <app-loader></app-loader>
+  </div>
+  <div *ngIf="!loading" style="font-family: 'Open Sans', sans-serif;">
       <div
         class="h-20 w-full flex justify-center items-center"
         style="font-family: 'Open Sans', sans-serif;"
@@ -10,22 +15,37 @@
         <div><h2 class="text-4xl font-bold">LISTA DE INGREDIENTES</h2></div>
       </div>
 
-      <div class="w-full flex justify-center items-center h-full pb-10 pt-4">
-        <button (click)="create()"
-          class="md:w-1/3 shadow bg-green-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-          type="button">
-          Crear
-        </button>
-      </div>
+      <div class="w-full flex justify-center items-center h-full">
+          <div class="w-2/3 md:w-4/5 lg:w-2/4 content-center pb-4">
+            <div class="w-full flex justify-center mb-6">
+                  <button
+                    (click)="create()"
+                    class="w-2/3 shadow bg-green-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                    type="button"
+                  >
+                    Crear
+                  </button>
+            </div>
+            <div class="w-full flex justify-center mb-6">
+                  <button
+                    (click)="goBack()"
+                    class="w-2/3 shadow bg-orange-500 hover:bg-orange-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                    type="button"
+                  >
+                    Regresar
+                  </button>
+            </div>
+          </div>
+        </div>
 
-      <div *ngIf="!loading">
+      <div>
         <div
           *ngFor="let ing of ingredients"
           class="w-full flex justify-center items-center h-full"
         >
-          <div class="w-2/4 content-center">
-            <div class="md:flex md:items-center mb-6">
-              <div class="md:w-1/5">
+          <div class="w-2/3 md:w-4/5 lg:w-2/4 content-center">
+            <div class="sm:flex sm:items-center mb-6">
+              <div class="w-full flex justify-center sm:justify-end lg:justify-center sm:w-2/5 sm:text-left">
                 <label
                   class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
                   for="inline-full-name"
@@ -34,7 +54,7 @@
                 </label>
               </div>
 
-              <div class="md:w-2/5">
+              <div class="invisible h-0 w-0 md:visible md:h-auto md:w-2/5">
                 <label
                   class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
                   for="inline-full-name"
@@ -43,11 +63,11 @@
                 </label>
               </div>
 
-              <div class="md:w-3/5">
-                <div class="flex space-x-4 justify-end md:w-full">
+              <div class="w-full md:w-3/5">
+                <div class="flex space-x-2 justify-center sm:justify-end w-full">
                   <button
                     (click)="editIngredient(ing._id)"
-                    class="md:w-1/3 shadow bg-orange-500 hover:bg-orange-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                    class="w-2/5 shadow bg-orange-500 hover:bg-orange-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
                     type="button"
                   >
                     Editar
@@ -55,14 +75,14 @@
                   <button
                     *ngIf="ing.available"
                     (click)="inhabilitateIngredient(ing._id)"
-                    class="md:w-1/3 shadow bg-red-500 hover:bg-red-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                    class="w-2/5 shadow bg-red-500 hover:bg-red-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
                     type="button"
                   >
                     Eliminar
                   </button>
                   <button
                     (click)="deleteIngredient(ing._id)"
-                    class="hidden md:w-1/3 shadow bg-red-500 hover:bg-red-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                    class="hidden w-2/5 shadow bg-red-500 hover:bg-red-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
                     type="button"
                   >
                     Eliminar
@@ -70,7 +90,7 @@
                   <button
                     *ngIf="!ing.available"
                     (click)="habilitateIngredient(ing._id)"
-                    class="md:w-1/3 shadow bg-gray-500 hover:bg-gray-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                    class="w-2/5  shadow bg-gray-500 hover:bg-gray-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
                     type="button"
                   >
                     Recuperar
@@ -80,6 +100,7 @@
             </div>
           </div>
         </div>
+      </div>
       </div>
       <app-footer></app-footer>
     </div>
