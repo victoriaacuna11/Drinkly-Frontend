@@ -66,4 +66,9 @@ export class ListDrinkComponent implements OnInit {
   getMessage($event){
     this.sidebar = $event;
   }
+
+  goBack(){
+    this.route.navigate(["admin"]);
+  }
+
 }
