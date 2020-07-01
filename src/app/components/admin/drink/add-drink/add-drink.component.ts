@@ -34,6 +34,7 @@ export class AddDrinkComponent implements OnInit {
   control:FormControl=new FormControl;
 
   createIngredient:Boolean=false;
+  loading:Boolean=true;
 
 
   form: FormGroup;
@@ -140,7 +141,7 @@ export class AddDrinkComponent implements OnInit {
           startWith(''),
           map(val=> this.filter(val))
         )
-      
+      this.loading=false;
       //this.loading = false;
     });
   }
