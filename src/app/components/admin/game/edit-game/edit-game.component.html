@@ -3,215 +3,219 @@
 <div [ngStyle]="{'margin-left.rem': !sidebar? '0': '16'}" class="move">
 
   <app-admin-header></app-admin-header>
-        <div
-          *ngIf="!loading"
-          class="h-20 w-full flex justify-center items-center"
-          style="font-family: 'Open Sans', sans-serif;"
-        >
-          <div><h2 class="text-4xl">EDITA UN JUEGO</h2></div>
-        </div>
-        <div class="w-full flex justify-center items-center h-full">
-          <form
-            [formGroup]="form"
-            class="w-2/4 content-center"
-            encType="multipart/form-data"
-          >
-            <div class="width-full">
-              <div class="md:flex md:items-center mb-6">
-                <div class="md:w-1/5">
-                  <label
-                    class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-                    for="inline-full-name"
-                  >
-                    Nombre
-                  </label>
-                </div>
-                <div class="md:w-4/5">
-                  <input
-                    formControlName="name"
-                    class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
-                    id="inline-full-name"
-                    type="text"
-                    placeholder="Ej. Cultura Chupística"
-                  />
-                </div>
-              </div>
-              <app-required-field
-                [text]="'Este campo es requerido.'"
-                *ngIf="form.get('name').invalid && form.get('name').touched"
-              ></app-required-field>
-            </div>
-
-            <div class="width-full">
-              <div class="md:flex md:items-center mb-6">
-                <div class="md:w-1/5">
-                  <label
-                    class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-                    for="inline-full-name"
-                  >
-                    Descripción
-                  </label>
-                </div>
-                <div class="md:w-4/5">
-                  <input
-                    formControlName="description"
-                    class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
-                    id="inline-full-name"
-                    type="text"
-                    placeholder="Ej. Cultura Chupística es un juego ideal para pasar el rato con los amigos..."
-                  />
-                </div>
-              </div>
-              <app-required-field
-                [text]="'Este campo es requerido.'"
-                *ngIf="
-                  form.get('description').invalid && form.get('description').touched
-                "
-              ></app-required-field>
-            </div>
-
-            <div formArrayName="rules" class="width-full">
-              <div
-                *ngFor="let group of RulesArray.controls; let i = index"
-                [formGroupName]="i"
-                class="width-full"
+  <div *ngIf="loading">
+      <app-loader></app-loader>
+  </div>
+  <div *ngIf="!loading" style="font-family: 'Open Sans', sans-serif;">
+    <div
+      *ngIf="!loading"
+      class="h-20 w-full flex justify-center items-center"
+      style="font-family: 'Open Sans', sans-serif;"
+    >
+      <div><h2 class="text-4xl">EDITA UN JUEGO</h2></div>
+    </div>
+    <div class="w-full flex justify-center items-center h-full">
+      <form
+        [formGroup]="form"
+        class="w-2/3 md:w-2/4 content-center"
+        encType="multipart/form-data"
+      >
+        <div class="width-full">
+          <div class="lg:flex lg:items-center mb-6">
+            <div class="md:w-full lg:w-1/5">
+              <label
+                class="block text-black-500 font-bold lg:text-right mb-1 md:mb-0 pr-4"
+                for="inline-full-name"
               >
-                <div class="md:flex md:items-center mb-6">
-                  <div class="md:w-1/5">
-                    <label
-                      class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-                      for="inline-full-name"
-                    >
-                      Regla
-                    </label>
-                  </div>
-                  <div class="md:w-2/5">
-                    <input
-                      formControlName="rule"
-                      class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
-                      id="inline-full-name"
-                      type="text"
-                      placeholder="Ej. Mínimo tres jugadores."
-                    />
-                  </div>
-                  <div class="flex space-x-4 justify-end md:w-2/5">
-                    <button
-                      (click)="addRule()"
-                      class="md:w-1/3 shadow bg-gray-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-                      type="button"
-                    >
-                      +
-                    </button>
-                    <button
-                      *ngIf="i != 0"
-                      (click)="deleteRule(i)"
-                      class="md:w-1/3 shadow bg-gray-500 hover:bg-red-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-                      type="button"
-                    >
-                      -
-                    </button>
-                  </div>
-                </div>
-                <app-required-field
-                  *ngIf="group.controls.rule.invalid && group.controls.rule.touched"
-                  [text]="'Este campo es requerido.'"
-                ></app-required-field>
-              </div>
+                Nombre
+              </label>
             </div>
-
-            
-
-            <div class="md:items-center mb-6">
-              <div class="md:w-full">
-                <label
-                  style="font-family: 'Open Sans', sans-serif;"
-                  class="block text-black-500 font-bold md:text-center mb-1 md:mb-0 pr-4"
-                  for="inline-full-name"
-                >
-                  Galería
-                </label>
-              </div>
-              <div class="md:w-full">
-                <label
-                  style="font-family: 'Open Sans', sans-serif;"
-                  class="block text-black-500 font-bold md:text-center mb-1 md:mb-0 pr-4"
-                  for="inline-full-name"
-                >
-                  Por favor, esperar a que aparezcan las fotos. Esto indicará que
-                  fueron cargadas con éxito.
-                </label>
-              </div>
+            <div class="md:w-full lg:w-4/5">
+              <input
+                formControlName="name"
+                class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
+                id="inline-full-name"
+                type="text"
+                placeholder="Ej. Cultura Chupística"
+              />
             </div>
-
-            <div class="md:flex md:items-center mb-6">
-              <div class="md:w-1/5">
-                <label
-                  class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-                  for="inline-full-name"
-                >
-                  Ícono
-                </label>
-              </div>
-              <div class="md:w-4/5">
-                <div
-                  *ngIf="!this.main_image"
-                  class="flex items-center justify-center bg-grey-lighter"
-                >
-                  <label
-                    class="w-full flex justify-center h-full items-center px-4 py-3 pr-8 bg-gray-200 rounded-lg shadow-lg tracking-wide border border-blue cursor-pointer hover:bg-orange-500 hover:text-white"
-                  >
-                    <span class="mt-2 text-base leading-normal"
-                      >Selecciona un archivo</span
-                    >
-                    <lib-file-upload-firestorage
-                      storagePath="game"
-                      (res)="uploadEnRes($event)"
-                      class="hidden"
-                    >
-                    </lib-file-upload-firestorage>
-                  </label>
-                </div>
-
-                <div *ngIf="this.main_image" class="width-full bg-grey-lighter">
-                  <div class="width-2/3 flex items-center justify-center">
-                    <img [src]="this.main_image" class="h-24" />
-                  </div>
-                  <div class="flex space-x-4 justify-end w-full">
-                    <button
-                      (click)="changeImage(this.main_image)"
-                      class="md:w-1/5 shadow bg-gray-500 hover:bg-orange-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-                      type="button"
-                    >
-                      Cambiar
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            
-
-            <div class="md:flex md:items-center mb-6">
-              <div class="md:w-1/3"></div>
-              <div class="flex space-x-4 justify-end md:w-2/3">
-                <button
-                  [disabled]="form.invalid"
-                  (click)="update()"
-                  class="md:w-1/4 shadow bg-green-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-                  type="button"
-                >
-                  Guardar
-                </button>
-                <button
-                  (click)="goBack()"
-                  class="md:w-1/4 shadow bg-orange-500 hover:bg-orange-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-                  type="button"
-                >
-                  Regresar
-                </button>
-              </div>
-            </div>
-          </form>
+          </div>
+          <app-required-field
+            [text]="'Este campo es requerido.'"
+            *ngIf="form.get('name').invalid && form.get('name').touched"
+          ></app-required-field>
         </div>
-        <app-footer></app-footer>
-      </div>
+
+        <div class="width-full">
+          <div class="lg:flex lg:items-center mb-6">
+            <div class="md:w-full lg:w-1/5">
+              <label
+                class="block text-black-500 font-bold lg:text-right mb-1 md:mb-0 pr-4"
+                for="inline-full-name"
+              >
+                Descripción
+              </label>
+            </div>
+            <div class="md:w-full lg:w-4/5">
+              <input
+                formControlName="description"
+                class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
+                id="inline-full-name"
+                type="text"
+                placeholder="Ej. Cultura Chupística es un juego ideal para pasar el rato con los amigos..."
+              />
+            </div>
+          </div>
+          <app-required-field
+            [text]="'Este campo es requerido.'"
+            *ngIf="
+              form.get('description').invalid && form.get('description').touched
+            "
+          ></app-required-field>
+        </div>
+
+        <div formArrayName="rules" class="width-full">
+          <div
+            *ngFor="let group of RulesArray.controls; let i = index"
+            [formGroupName]="i"
+            class="width-full"
+          >
+            <div class="lg:flex lg:items-center mb-6">
+              <div class="md:w-full lg:w-1/6">
+                <label
+                  class="block text-black-500 font-bold lg:text-right mb-1 md:mb-0 pr-4"
+                  for="inline-full-name"
+                >
+                  Regla
+                </label>
+              </div>
+              <div class="md:w-full lg:w-3/6">
+                <input
+                  formControlName="rule"
+                  class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
+                  id="inline-full-name"
+                  type="text"
+                  placeholder="Ej. Mínimo tres jugadores."
+                />
+              </div>
+              <div class="pt-4 flex space-x-4 justify-end md:w-full lg:w-2/6">
+                <button
+                  (click)="addRule()"
+                  class="w-1/3 sm:w-1/4 lg:w-1/ shadow bg-gray-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                  type="button"
+                >
+                  +
+                </button>
+                <button
+                  *ngIf="i != 0"
+                  (click)="deleteRule(i)"
+                  class="w-1/3 sm:w-1/4 lg:w-1/ shadow bg-gray-500 hover:bg-red-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                  type="button"
+                >
+                  -
+                </button>
+              </div>
+            </div>
+            <app-required-field
+              *ngIf="group.controls.rule.invalid && group.controls.rule.touched"
+              [text]="'Este campo es requerido.'"
+            ></app-required-field>
+          </div>
+        </div>
+
+        
+
+        <div class="md:items-center mb-6">
+          <div class="md:w-full">
+            <label
+              style="font-family: 'Open Sans', sans-serif;"
+              class="block text-black-500 font-bold text-center mb-1 md:mb-0 pr-4"
+              for="inline-full-name"
+            >
+              Galería
+            </label>
+          </div>
+          <div class="md:w-full">
+            <label
+              style="font-family: 'Open Sans', sans-serif;"
+              class="block text-black-500 font-bold text-center mb-1 md:mb-0 pr-4"
+              for="inline-full-name"
+            >
+              Por favor, esperar a que aparezcan las fotos. Esto indicará que
+              fueron cargadas con éxito.
+            </label>
+          </div>
+        </div>
+
+        <div class="lg:flex lg:items-center mb-6">
+          <div class="md:w-full lg:w-1/5">
+            <label
+              class="block text-black-500 font-bold lg:text-right mb-1 md:mb-0 pr-4"
+              for="inline-full-name"
+            >
+              Ícono
+            </label>
+          </div>
+          <div class="md:w-full lg:w-4/5">
+            <div
+              *ngIf="!this.main_image"
+              class="flex items-center justify-center bg-grey-lighter"
+            >
+              <label
+                class="w-full flex justify-center h-full items-center px-4 py-3 pr-8 bg-gray-200 rounded-lg shadow-lg tracking-wide border border-blue cursor-pointer hover:bg-orange-500 hover:text-white"
+              >
+                <span class="mt-2 text-base leading-normal"
+                  >Selecciona un archivo</span
+                >
+                <lib-file-upload-firestorage
+                  storagePath="game"
+                  (res)="uploadEnRes($event)"
+                  class="hidden"
+                >
+                </lib-file-upload-firestorage>
+              </label>
+            </div>
+
+            <div *ngIf="this.main_image" class="width-full bg-grey-lighter">
+              <div class="width-2/3 flex items-center justify-center">
+                <img [src]="this.main_image" class="h-24" />
+              </div>
+              <div class="pt-4 flex space-x-4 justify-end w-full">
+                <button
+                  (click)="changeImage(this.main_image)"
+                  class="w-1/3 sm:w-1/4 shadow bg-gray-500 hover:bg-orange-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                  type="button"
+                >
+                  Cambiar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+
+        <div class="md:flex md:items-center mb-6">
+          <div class="flex space-x-4 justify-end md:w-full">
+            <button
+              [disabled]="form.invalid"
+              (click)="update()"
+              class="w-1/3 sm:w-1/4 shadow bg-green-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+              type="button"
+            >
+              Guardar
+            </button>
+            <button
+              (click)="goBack()"
+              class="w-1/3 sm:w-1/4 shadow bg-orange-500 hover:bg-orange-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+              type="button"
+            >
+              Regresar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+    </div>
+    <app-footer></app-footer>
+  </div>
