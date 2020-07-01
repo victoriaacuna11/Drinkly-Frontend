@@ -79,6 +79,9 @@ const routes: Routes = [
     canActivate: [AuthGuard],
   },
 
+  { path: "drink/:id", component: RecipeComponent,
+    canActivate: [AuthGuard]},
+
   { path: "register", component: RegisterComponent },
   { path: "login", component: LoginComponent },
   { path: "profile", component: ProfileComponent, canActivate: [AuthGuard] },
@@ -91,8 +94,9 @@ const routes: Routes = [
   },
   
   { path: "home", component: HomeComponent },
-  { path: "recetas", component: RecipeComponent },
-  { path: "games", component: JuegosComponent },
+
+  { path: "games", component: JuegosComponent,
+    canActivate: [AuthGuard]},
 
   // ADMIN'S ROUTES
   { path: "admin", 
