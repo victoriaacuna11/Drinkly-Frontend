@@ -83,6 +83,9 @@ import { HomeComponent } from './components/home/home.component';
 import { AdminHomeComponent } from './components/admin/admin-home/admin-home.component';
 import { TestBarComponent } from './components/test-bar/test-bar.component';
 import { AiudaComponent } from './aiuda/aiuda.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 @NgModule({
   declarations: [
@@ -145,6 +148,10 @@ import { AiudaComponent } from './aiuda/aiuda.component';
     FileUploadFirestorageModule,
     BrowserAnimationsModule,
     BsDatepickerModule.forRoot(),
+    MatFormFieldModule,
+    MatInputModule,
+    MatAutocompleteModule
+    
   ],
   providers: [ValidateService, AuthService, AuthGuard, AdminAuthGuard],
   bootstrap: [AppComponent],

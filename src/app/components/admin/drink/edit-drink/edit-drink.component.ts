@@ -3,9 +3,10 @@ import { DrinkService } from "src/app/services/drink.service";
 import { IngredientService } from "src/app/services/ingredient.service";
 import { drink } from "./../../../../models/drink";
 import { ingredient } from "./../../../../models/ingredient";
-import { FormGroup, FormBuilder, Validator, Validators } from "@angular/forms";
+import { FormGroup, FormBuilder, Validator, Validators, FormArray } from "@angular/forms";
 import { Router, ActivatedRoute } from "@angular/router";
 import { AngularFireStorage } from '@angular/fire/storage';
+import { CategoriesService } from 'src/app/services/categories.service';
 
 
 @Component({
@@ -16,13 +17,19 @@ import { AngularFireStorage } from '@angular/fire/storage';
 export class EditDrinkComponent implements OnInit {
   selectedFile: File = null;
   categories: String[] = ["User", "Bartender"];
+  categories_ing: String[] = [];
   ingredient_arr: ingredient[] = [];
+  ingredient_arr_aux: ingredient[] = [];
   drink_ingredients = [];
   form: FormGroup;
+  form_ing:FormGroup;
   drink: drink;
   drink2: drink;
   loading: boolean = true;
   main_image: String;
+  main_image_ing: String;
+  autocomplete:String[]=[];
+
 
   sidebar:Boolean;
   
@@ -33,7 +40,9 @@ export class EditDrinkComponent implements OnInit {
     private routeSV: ActivatedRoute,
     private _builder: FormBuilder,
     private drink_service: DrinkService,
-    private storage: AngularFireStorage
+    private storage: AngularFireStorage,
+    private categoryService: CategoriesService,
+
   ) {
     this.form = this._builder.group({
       name: ["",Validators.required],
@@ -41,14 +50,22 @@ export class EditDrinkComponent implements OnInit {
       recipe: ["",Validators.required],
       owner_name: ["",Validators.required],
       owner_rol: ["",Validators.required],
-      ingredients: [],
+      ingredients: this._builder.array([
+        this.addIngGroup()
+      ]),
       pictures: "",
+    });
+    this.form_ing= this._builder.group({
+      name_ing: ["", Validators.required],
+      category_ing: ["", Validators.required],
     });
   }
 
   ngOnInit() {
     console.log('prueba')
     this.getDrink();
+    this.categories_ing=this.categoryService.getCategories();
+
   }
 
   getDrink() {
@@ -62,11 +79,22 @@ export class EditDrinkComponent implements OnInit {
       console.log(this.drink);
       //GET INGREDIENTS
       this.ing_service.getIngredients().subscribe((res: any) => {
-        this.ingredient_arr = [...res.data];
+        this.ingredient_arr_aux = [...res.data];
+        this.ingredient_arr_aux.forEach(i =>{
+          if(i.available){
+            this.ingredient_arr.push(i);
+          }
+        })
+        
         //this.loading = false;
-      });
-      //----------------------------
-      this.drink_ingredients = this.drink.ingredients;
+        this.autocomplete=[]
+
+        for (let index = 0; index < this.ingredient_arr.length; index++) {
+          this.autocomplete.push(this.ingredient_arr[index].name)
+        }
+        console.log(this.autocomplete)
+
+        this.drink_ingredients = this.drink.ingredients;
 
       console.log(this.drink);
       this.main_image=this.drink.pictures
@@ -79,22 +107,54 @@ export class EditDrinkComponent implements OnInit {
         owner_rol:[this.drink.owner.category,Validators.required],
         //dos cosas que no tocamos
         //ingredients se hace despues
-        ingredients: [],
+        ingredients: this._builder.array([
+        
+        ]),
         pictures:"",
       });
+
+
+      this.drink.ingredients.forEach(item => {
+
+        console.log(item)
+        let ingr:String="";
+        console.log(this.ingredient_arr)
+        for (let x = 0; x < this.ingredient_arr.length; x++) {
+          console.log(item===this.ingredient_arr[x]._id)
+          if(item===this.ingredient_arr[x]._id){
+            ingr=this.ingredient_arr[x].name
+          }
+        }
+        console.log(ingr)
+        this.IngArray.push(this.addIngGroupWithValue(ingr));
+
+      });
+
+      //console.log(this.drink.ingredients)
 
       //this.form.controls['owner_rol'].setValue(this.drink.owner.category, {onlySelf: true});
 
       console.log(this.drink);
       //Mierda de los checkbox
       this.loading = false;
+      });
+      //----------------------------
+      
     });
   }
+
+  addIngGroupWithValue(ing) {
+    return this._builder.group({
+      ingredients: [ing, Validators.required]
+    })
+  }
+
 
   getIngredients() {
     this.ing_service.getIngredients().subscribe((res: any) => {
       this.ingredient_arr = [...res.data];
       //this.loading = false;
+      
     });
   }
 
@@ -133,7 +193,35 @@ export class EditDrinkComponent implements OnInit {
     return is_in;
   }
 
+  is_valid(){
+    let valid=true
+    let aux_name=[]
+    for (let index = 0; index < this.ingredient_arr.length; index++) {
+      aux_name.push(this.ingredient_arr[index].name)
+    }
+    console.log(aux_name)
+      for (let r = 0; r < this.form.value.ingredients.length; r++) {    
+        if(!aux_name.includes(this.form.value.ingredients[r].ingredients)){
+          valid=false
+        }
+      }
+      return valid
+  }
+
   editDrink() {
+
+    let ing:String[]=[];
+            this.form.value.ingredients.forEach((item) => {
+              console.log(item.ingredients)
+              for (let index = 0; index < this.ingredient_arr.length; index++) {
+                if(item.ingredients==this.ingredient_arr[index].name){
+                  ing.push(this.ingredient_arr[index]._id)
+                  console.log(ing)
+                }
+                
+              }
+
+            });
     
     var d: drink = {
       name: this.form.value.name,
@@ -143,7 +231,7 @@ export class EditDrinkComponent implements OnInit {
           name: this.form.value.owner_name,
           category: this.form.value.owner_rol,
         },
-        ingredients: this.drink_ingredients,
+        ingredients: ing,
         pictures: this.main_image,
         _id: this.drink._id,
         available: true,
@@ -157,9 +245,9 @@ export class EditDrinkComponent implements OnInit {
         const response = alert(
           "Asegurese de rellenar correctamente todos los campos antes de continuar."
         );
-      }else if(this.drink_ingredients.length==0){
+      }else if(!this.is_valid()){
         const response = alert(
-          "Para continuar debe añadir por lo menos un ingrediente a la receta"
+          "Por favor seleccione ingredientes existentes usando el autocompletado"
         );
       }else{
 
@@ -213,4 +301,140 @@ export class EditDrinkComponent implements OnInit {
   getMessage($event){
     this.sidebar = $event;
   }
+
+  
+  change(i){
+
+    this.autocomplete=[]
+      for (let index = 0; index < this.ingredient_arr.length; index++) {
+        this.autocomplete.push(this.ingredient_arr[index].name)
+        
+      }
+    
+
+    let nuevo =[];
+
+
+    for (let index = 0; index < this.autocomplete.length; index++) {
+      let auto=this.autocomplete[index].toLowerCase()
+      
+      if(auto.includes(this.form.value.ingredients[i].ingredients.toLowerCase())){
+        nuevo.push(this.autocomplete[index])
+      }
+      
+    }
+
+    
+
+    this.autocomplete=nuevo
+    if(this.form.value.ingredients[i].ingredients.length==0){
+      this.autocomplete=[]
+      for (let index = 0; index < this.ingredient_arr.length; index++) {
+        this.autocomplete.push(this.ingredient_arr[index].name)
+        
+      }
+    }
+
+  }
+
+  clicked(i){
+
+    this.autocomplete=[]
+      for (let index = 0; index < this.ingredient_arr.length; index++) {
+        this.autocomplete.push(this.ingredient_arr[index].name)
+        
+      }
+
+    if(this.form.value.ingredients[i].ingredients===""){
+      this.autocomplete=[]
+      for (let index = 0; index < this.ingredient_arr.length; index++) {
+        this.autocomplete.push(this.ingredient_arr[index].name)
+      }
+    }else{
+
+      let nuevo =[];
+    for (let index = 0; index < this.autocomplete.length; index++) {
+      let auto=this.autocomplete[index].toLowerCase()
+      
+      if(auto.includes(this.form.value.ingredients[i].ingredients.toLowerCase())){
+        nuevo.push(this.autocomplete[index])
+      }
+    }
+    this.autocomplete=nuevo
+    }
+  }
+
+  
+  addIngGroup() {
+    return this._builder.group({
+      ingredients: ["", Validators.required],
+    });
+  }
+  addIng() {
+    this.IngArray.push(this.addIngGroup());
+  }
+  deleteIng(index) {
+    this.IngArray.removeAt(index);
+  }
+  get IngArray() {
+    return <FormArray>this.form.get("ingredients");
+  }
+
+  
+  uploadEnRes_ing(event) {
+    this.main_image_ing = event.thumbnail;
+  }
+
+  changeImage_ing(url) {
+    return this.storage.storage
+      .refFromURL(url)
+      .delete()
+      .then((res) => {
+        this.main_image_ing = null;
+      });
+  }
+
+  addIngredient(){
+    
+    if(this.main_image_ing!=null){
+      let ing: ingredient = {
+        name: this.form_ing.value.name_ing,
+        category: this.form_ing.value.category_ing,
+        photo: this.main_image_ing,
+        _id: "",
+        available: true,
+      };
+      console.log(ing)
+      this.ing_service.createIngredient(ing).subscribe((res) => {
+        this.getIngredients2()
+        this.form_ing.value.name_ing=""
+        this.form_ing.value.category_ing=""
+        this.main_image_ing=null 
+      });
+    } else {
+      const response = alert(
+        "No ha subido ninguna imagen. Por favor, suba una."
+      );
+    }
+    
+  }
+  
+  getIngredients2() {
+    this.ing_service.getIngredients().subscribe((res: any) => {
+      this.ingredient_arr_aux = [...res.data];
+      this.ingredient_arr_aux.forEach(i =>{
+        if(i.available){
+          this.ingredient_arr.push(i);
+        }
+      })
+      this.autocomplete=[]
+      for (let index = 0; index < this.ingredient_arr.length; index++) {
+        this.autocomplete.push(this.ingredient_arr[index].name)
+      }
+      //this.loading = false;
+    });
+  }
+
+
+
 }
