@@ -4,6 +4,10 @@
 <div [ngStyle]="{'margin-left.rem': !sidebar? '0': '16'}" class="move">
 
   <app-admin-header></app-admin-header>
+  <div *ngIf="loading">
+    <app-loader></app-loader>
+  </div>
+  <div *ngIf="!loading">
         
                     <div
               class="w-full flex flex-col items-center mt-10 md:mt-24 "
@@ -109,6 +113,7 @@
               >
                 <p class="py-3 px-10  ">Buscar Recetas</p>
               </button>
+            </div>
             </div>
 
 

@@ -29,6 +29,10 @@ export class DrinksListComponent implements OnInit {
     
   }
 
+  detail(id){
+    this.route.navigate(['drink/', id]);
+  }
+
   getDrinks() {
     
     this.service.getDrinks().subscribe((res: any) => {
