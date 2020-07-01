@@ -6,8 +6,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class SendMailService {
 
-  // _url = 'https://drinklyapi.herokuapp.com/api/sendmail/';
-  _url = 'http://localhost:5000/api/sendmail/';
+  _url = 'https://drinklyapi.herokuapp.com/api/sendmail/';
+  // _url = 'http://localhost:5000/api/sendmail/';
 
   constructor(
     private _http: HttpClient
