@@ -4,7 +4,7 @@
 
   <app-admin-header></app-admin-header>
                 <div>
-                    <div *ngIf="!loading" style="max-width: 90%"
+                    <div *ngIf="!load" style="max-width: 90%"
                     class="my-6 p-3 pb-6 mt-12 bg-cover  m-auto self-center  shadow">
                         <div class="md:flex self-center py-8 px-8 sm:px-16 md:px-48">
                             <img class="object-cover h-auto max-w-3xl px-16 py-16" src="{{receta.pictures}}" alt="mojito">
@@ -13,9 +13,6 @@
                                 <div class="text-normal sm:text-3xl md:text-3xl pt-4">Ingredientes</div>
                                 <div class="px-4 py-4">
                                     <div *ngFor="let x of receta.ingredients">
-                                        <div>
-                                            {{x}}
-                                        </div>
                                         <div class="font-light"> {{x}} </div>    
                                     </div>
                                 </div>

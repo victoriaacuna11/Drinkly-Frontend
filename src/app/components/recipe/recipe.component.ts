@@ -12,11 +12,11 @@ import { ingredient } from "src/app/models/ingredient";
   styleUrls: ['./recipe.component.scss']
 })
 export class RecipeComponent implements OnInit {
-  // CAMBIAR A TRUE
-  loading: Boolean=false;
+  load: Boolean = true;
   sidebar: Boolean;
   receta: drink;
   ingredients: String[];
+  ingreAux: ingredient;
 
 
   constructor(private service: DrinkService, private route: Router, 
@@ -24,17 +24,20 @@ export class RecipeComponent implements OnInit {
 
   ngOnInit() {
     this.getReceta();
+    this.load = false;
   }
 
   getIngredients() {
     var i: number;
-    for(i=0; i<=this.receta.ingredients.length; i++){
+    for(i=0; i<this.receta.ingredients.length; i++){
       this.service_ing.getIngredient(this.receta.ingredients[i]).subscribe( (r:any) => {
-        this.receta.ingredients[i] = {...r.data.name};
+        this.ingreAux = {...r.data};
+        this.receta.ingredients[i] = this.ingreAux.name;
         console.log(this.receta.ingredients[i]);
+        console.log(this.load)
       })
     }
-    
+    console.log(this.load)
   }
 
   getMessage($event){
@@ -45,9 +48,9 @@ export class RecipeComponent implements OnInit {
     const id = this.rout.snapshot.paramMap.get('id');
     this.service.getDrink(id).subscribe( (r:any) => {
       this.receta = {...r.data};
-      console.log(this.receta);
+      this.getIngredients()
     })
-    this.getIngredients()
+    
   }
 
 }
