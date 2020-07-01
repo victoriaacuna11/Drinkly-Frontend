@@ -3,6 +3,9 @@
 <div [ngStyle]="{'margin-left.rem': !sidebar? '0': '16'}" class="move">
 
   <app-admin-header></app-admin-header>
+  <div *ngIf="userLoading">
+    <app-loader></app-loader>
+  </div>
             <div *ngIf="!userLoading">
               <div *ngIf="user" class="p-40">
                 <h3 class="text-4xl">Bienvenido/a, {{ user.f_name }}!</h3>

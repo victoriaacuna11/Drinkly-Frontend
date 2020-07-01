@@ -3,6 +3,10 @@
 <div [ngStyle]="{'margin-left.rem': !sidebar? '0': '16'}" class="move">
 
   <app-admin-header></app-admin-header>
+  <div *ngIf="loading">
+    <app-loader></app-loader>
+  </div>
+  <div *ngIf="!loading">
             <div
             class="h-20 w-full flex justify-center items-center pt-16"
             style="font-family: 'Open Sans', sans-serif;"
@@ -320,6 +324,7 @@
                   <span class="block sm:inline">Contraseña incorrecta.</span>
                 </div>
           </div>
+  </div>
 <app-footer></app-footer>
 </div>
  

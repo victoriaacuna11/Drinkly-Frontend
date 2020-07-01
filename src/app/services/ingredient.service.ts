@@ -6,8 +6,8 @@ import { ingredient } from "../models/ingredient";
   providedIn: "root",
 })
 export class IngredientService {
-  // _url = "https://drinklyapi.herokuapp.com/api/ingredient/"
-  _url = "http://localhost:5000/api/ingredient/";
+  _url = "https://drinklyapi.herokuapp.com/api/ingredient/"
+  // _url = "http://localhost:5000/api/ingredient/";
   constructor(private _http: HttpClient) {}
 
   createIngredient(item) {
