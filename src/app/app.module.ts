@@ -61,6 +61,8 @@ import { LoaderComponent } from './components/loader/loader.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { FilterPipe } from './pipes/filter.pipe';
+import { clickedOutDirective } from './Directives/dropdown.directive';
 
 @NgModule({
   declarations: [
@@ -112,6 +114,8 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
     TestBarComponent,
     PostDrinkComponent,
     LoaderComponent,
+    FilterPipe,
+    clickedOutDirective
   ],
   imports: [
     BrowserModule,

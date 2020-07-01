@@ -1,3 +1,4 @@
+import { SharedService } from './../../../services/shared.service';
 import { Component, OnInit } from '@angular/core';
 import { DrinkService } from 'src/app/services/drink.service';
 import { Router } from '@angular/router';
@@ -15,11 +16,13 @@ export class DrinksListComponent implements OnInit {
   sidebar: Boolean;
   drinksA: drink[] =[];
   aux;
+  filterPost: string = "qlqsa";
   
 
-  constructor(private service: DrinkService, private route: Router) { }
+  constructor(private service: DrinkService, private route: Router, private data: SharedService) { }
 
   ngOnInit() {
+    this.data.currentMsg.subscribe(m => this.filterPost = m)
     this.getDrinks();
     
       
@@ -27,6 +30,7 @@ export class DrinksListComponent implements OnInit {
   }
 
   getDrinks() {
+    
     this.service.getDrinks().subscribe((res: any) => {
       this.drinks = [...res.data];
       console.log(this.drinks);
@@ -47,4 +51,5 @@ export class DrinksListComponent implements OnInit {
   getMessage($event){
     this.sidebar = $event;
   }
+
 }
