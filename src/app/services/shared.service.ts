@@ -12,7 +12,6 @@ export class SharedService {
   constructor() { }
 
   changeMsg(m: string){
-    console.log('Hello from service:' + m)
     this.messageSource.next(m)
   }
 }

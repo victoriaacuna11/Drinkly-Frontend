@@ -16,19 +16,6 @@ export class DrinksListComponent implements OnInit {
   sidebar: Boolean;
   drinksA: drink[] =[];
   filterPost: string = "qlqsa";
-  tragosa = [
-    {name: 'old fashioned'},
-    {name: 'mojito'},
-    {name: 'sidecar'},
-    {name: 'white lady'},
-    {name: 'daiquiri'},
-    {name: 'margarita'},
-    {name: 'grasshoper'},
-    {name: 'godfather'},
-    {name: 'martini'},
-    {name: 'whisky sour'},
-    {name: 'negroni'},
-  ]
   
 
   constructor(private service: DrinkService, private route: Router, private data: SharedService) { }
@@ -60,7 +47,4 @@ export class DrinksListComponent implements OnInit {
     this.sidebar = $event;
   }
 
-  getFilter($event){
-    this.filterPost = $event;
-  }
 }

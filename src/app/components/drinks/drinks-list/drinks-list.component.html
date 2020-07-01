@@ -4,6 +4,7 @@
 <div [ngStyle]="{'margin-left.rem': !sidebar? '0': '16'}" class="move">
 
   <app-header hasSearchBar=true searchBarContent='nombre...' [arr]="drinksA" ></app-header>
+  
         <div class="pt-12 pb-12 flex justify-center">
           <button
                   (click)="goToFilter()"
@@ -13,13 +14,14 @@
                   Seleccionar ingredientes
           </button>
         </div>        
-          <div  *ngIf="!loading" class="flex flex-wrap md:flex-wrap sm:flex-wrap -mx-2 pb-12 pt-16 px-32 overflow-hidden">
+          <div id="test" *ngIf="!loading" class="flex flex-wrap md:flex-wrap sm:flex-wrap -mx-2 pb-12 pt-16 px-32 overflow-hidden">
             <div
               *ngFor="let x of drinksA | filter: filterPost"
               class="w-1/3 px-8 rounded sm:p-8 md:p-8 my-2 overflow-hidden"
             >
               <img
-                class="w-full object-scale-down cursor-pointer"
+              style="height: 80%;"
+                class="w-full object-cover cursor-pointer"
                 src="{{ x.pictures }}"
                 alt="Sunset in the mountains"
               />
@@ -35,6 +37,11 @@
                   {{ x.owner.name }}
                 </div>
               </div>
+            </div>
+            <div style="font-family: 'Open Sans', sans-serif; width: 30%; font-size: medium;" *ngIf="(drinksA | filter: filterPost)?.length==0"
+             class="m-auto">
+             <img class="w-full" src="../../../../assets/images/emptyGlass2.jpg" alt="noSeEncontró">
+              <p style="padding-left: 2.5rem;">No se encontró ese trago...</p>
             </div>
           </div>
 
