@@ -6,6 +6,10 @@
 <div [ngStyle]="{'margin-left.rem': !sidebar? '0': '16'}" class="move">
 
   <app-admin-header></app-admin-header>
+  <div *ngIf="loading">
+      <app-loader></app-loader>
+  </div>
+  <div *ngIf="!loading" style="font-family: 'Open Sans', sans-serif;">
   <div
     class="h-20 w-full flex justify-center items-center"
     style="font-family: 'Open Sans', sans-serif;"
@@ -14,24 +18,24 @@
       <h2 class="text-4xl">CREA UN TRAGO</h2>
     </div>
   </div>
-  <div class="w-full flex justify-center items-center h-full" *ngIf="!loading">
+  <div class="w-full flex justify-center items-center h-full" *ngIf="!loading && !createIngredient">
     <form
       [formGroup]="form"
-      class="w-2/4 content-center"
+      class="w-2/3 lg:w-2/4 content-center"
       encType="multipart/form-data"
     >
 
       <div class="width-full">
-        <div class="md:flex md:items-center mb-6">
-            <div class="md:w-1/5">
+        <div class="lg:flex lg:items-center mb-6">
+            <div class="md:w-full lg:w-1/5">
             <label
-              class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+              class="block text-black-500 font-bold lg:text-right mb-1 md:mb-0 pr-4"
               for="inline-full-name"
             >
               Nombre
             </label>
           </div>
-          <div class="md:w-4/5">
+          <div class="md:w-full lg:w-4/5">
             <input
               formControlName="name"
               class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
@@ -50,16 +54,16 @@
 
 
       <div class="width-full">
-        <div class="md:flex md:items-center mb-6">
-            <div class="md:w-1/5">
+        <div class="lg:flex lg:items-center mb-6">
+            <div class="md:w-full lg:w-1/5">
           <label
-            class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+            class="block text-black-500 font-bold lg:text-right mb-1 md:mb-0 pr-4"
             for="inline-full-name"
           >
             Descripción
           </label>
         </div>
-        <div class="md:w-4/5">
+        <div class="md:w-full lg:w-4/5">
           <input
             formControlName="description"
             class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
@@ -76,16 +80,16 @@
       </div>
 
       <div class="width-full">
-        <div class="md:flex md:items-center mb-6">
-            <div class="md:w-1/5">
+        <div class="lg:flex lg:items-center mb-6">
+            <div class="md:w-full lg:w-1/5">
           <label
-            class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+            class="block text-black-500 font-bold lg:text-right mb-1 md:mb-0 pr-4"
             for="inline-full-name"
           >
             Receta
           </label>
         </div>
-        <div class="md:w-4/5">
+        <div class="md:w-full lg:w-4/5">
           <input
             formControlName="recipe"
             class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
@@ -102,16 +106,16 @@
       </div>
 
       <div class="width-full">
-        <div class="md:flex md:items-center mb-6">
-            <div class="md:w-1/5">
+        <div class="lg:flex lg:items-center mb-6">
+            <div class="md:w-full lg:w-1/5">
           <label
-            class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+            class="block text-black-500 font-bold lg:text-right mb-1 md:mb-0 pr-4"
             for="inline-full-name"
           >
             Creador
           </label>
         </div>
-        <div class="md:w-4/5">
+        <div class="md:w-full lg:w-4/5">
           <input
             formControlName="owner_name"
             class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
@@ -128,16 +132,16 @@
       </div>
 
       <div class="width-full">
-        <div class="md:flex md:items-center mb-6">
-            <div class="md:w-1/5">
+        <div class="lg:flex lg:items-center mb-6">
+            <div class="md:w-full lg:w-1/5">
           <label
-            class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+            class="block text-black-500 font-bold lg:text-right mb-1 md:mb-0 pr-4"
             for="inline-full-name"
           >
             Rol
           </label>
         </div>
-        <div class="md:w-4/5 relative">
+        <div class="md:w-full lg:w-4/5 relative">
           <select
             formControlName="owner_rol"
             class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
@@ -170,19 +174,19 @@
 
 
             <div class="md:items-center mb-6">
-                <div class="md:w-full">
+                <div class="w-full">
                   <label
                     style="font-family: 'Open Sans', sans-serif;"
-                    class="block text-black-500 font-bold md:text-center mb-1 md:mb-0 pr-4"
+                    class="block text-black-500 font-bold text-center mb-1 md:mb-0 pr-4"
                     for="inline-full-name"
                   >
-                    Foto Trago
+                    Galería
                   </label>
                 </div>
-                <div class="md:w-full">
+                <div class="w-full">
                   <label
                     style="font-family: 'Open Sans', sans-serif;"
-                    class="block text-black-500 font-bold md:text-center mb-1 md:mb-0 pr-4"
+                    class="block text-black-500 font-bold text-center mb-1 md:mb-0 pr-4"
                     for="inline-full-name"
                   >
                     Por favor, esperar a que aparezcan las fotos. Esto indicará que
@@ -191,16 +195,16 @@
                 </div>
               </div>
 
-            <div class="md:flex md:items-center mb-6">
-                <div class="md:w-1/5">
+            <div class="lg:flex lg:items-center mb-6">
+                <div class="md:w-full lg:w-1/5">
                   <label
-                    class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+                    class="block text-black-500 font-bold lg:text-right mb-1 md:mb-0 pr-4"
                     for="inline-full-name"
                   >
                     Foto
                   </label>
                 </div>
-                <div class="md:w-4/5">
+                <div class="md:w-full lg:w-4/5">
                   <div
                     *ngIf="!this.main_image"
                     class="flex items-center justify-center bg-grey-lighter"
@@ -244,16 +248,16 @@
                   [formGroupName]="i"
                   class="width-full"
                 >
-                  <div class="md:flex md:items-center mb-6">
-                    <div class="md:w-1/5">
+                  <div class="lg:flex lg:items-center mb-6">
+                    <div class="md:w-full lg:w-1/5">
                       <label
-                        class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+                        class="block text-black-500 font-bold lg:text-right mb-1 md:mb-0 pr-4"
                         for="inline-full-name"
                       >
                         Ingrediente
                       </label>
                     </div>
-                    <div class="md:w-2/5">
+                    <div class="md:w-full lg:w-2/5">
                         
                         <input
                         matInput
@@ -275,10 +279,10 @@
                        
                        
                     </div>
-                    <div class="flex space-x-4 justify-end md:w-2/5">
+                    <div class="pt-4 flex space-x-4 justify-end md:w-full lg:pt-0 lg:w-2/5">
                       <button
                         (click)="addIng()"
-                        class="md:w-1/3 shadow bg-gray-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                        class="w-1/3 sm:w-1/4 lg:w-1/3 shadow bg-gray-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
                         type="button"
                       >
                         +
@@ -286,7 +290,7 @@
                       <button
                         *ngIf="i != 0"
                         (click)="deleteIng(i)"
-                        class="md:w-1/3 shadow bg-gray-500 hover:bg-red-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                        class="w-1/3 sm:w-1/4 lg:w-1/3 shadow bg-gray-500 hover:bg-red-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
                         type="button"
                       >
                         -
@@ -298,21 +302,29 @@
                     [text]="'Este campo es requerido.'"
                   ></app-required-field>
                 </div>
+                <div class="pt-4 pb-4 flex space-x-4 justify-end md:w-full lg:pt-0 w-full">
+                  <button
+                    (click)="addNewIng()"
+                    class="w-1/3 sm:w-1/4  shadow bg-gray-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                    type="button"
+                  >
+                    Añadir
+                  </button>
+                </div>
               </div>
 
-      <div class="md:flex md:items-center mb-6">
-        <div class="md:w-1/3"></div>
-        <div class="flex space-x-4 justify-end md:w-2/3">
+      <div class="lg:flex lg:items-center mb-6">
+        <div class="flex space-x-4 justify-end md:w-full">
           <button
             (click)="addDrink()"
-            class="md:w-1/4 shadow bg-green-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+            class="w-1/3 sm:w-1/4 shadow bg-green-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
             type="button"
           >
             Crear
           </button>
           <button
             (click)="goBack()"
-            class="md:w-1/4 shadow bg-orange-500 hover:bg-orange-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+            class="w-1/3 sm:w-1/4 shadow bg-orange-500 hover:bg-orange-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
             type="button"
           >
             Regresar
@@ -325,32 +337,34 @@
 
 
   <!----CREA UN INGREDIENTE---->
-
+  
+  
   <div
         class="h-20 w-full flex justify-center items-center"
         style="font-family: 'Open Sans', sans-serif;"
+        *ngIf="!loading && createIngredient"
       >
         <div>
           <h2 class="text-xl sm:text-4xl">CREA UN INGREDIENTE</h2>
         </div>
       </div>
-      <div class="w-full flex justify-center items-center h-full">
+      <div class="w-full flex justify-center items-center h-full" style="font-family: 'Open Sans', sans-serif;" *ngIf="!loading && createIngredient">
         <form
           [formGroup]="form_ing"
-          class="w-2/4 content-center"
+          class="w-2/3 lg:w-2/4 content-center"
           encType="multipart/form-data"
         >
         <div class="width-full">
-          <div class="md:flex md:items-center mb-6">
-            <div class="md:w-1/5">
+          <div class="lg:flex lg:items-center mb-6">
+            <div class="md:w-full lg:w-1/5">
               <label
-                class="text-lg sm:text-2xl block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+                class="text-lg sm:text-2xl block text-black-500 font-bold lg:text-right mb-1 md:mb-0 pr-4"
                 for="inline-full-name"
               >
                 Nombre
               </label>
             </div>
-            <div class="md:w-4/5">
+            <div class="md:w-full lg:w-4/5">
               <input
                 formControlName="name_ing"
                 class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
@@ -367,16 +381,16 @@
           </div>
 
           <div class="width-full">
-          <div class="md:flex md:items-center mb-6">
-            <div class="md:w-1/5">
+          <div class="lg:flex lg:items-center mb-6">
+            <div class="md:w-full lg:w-1/5">
               <label
-                class="text-lg sm:text-2xl block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+                class="text-lg sm:text-2xl block text-black-500 font-bold lg:text-right mb-1 md:mb-0 pr-4"
                 for="inline-full-name"
               >
                 Categoría
               </label>
             </div>
-            <div class="md:w-4/5 relative">
+            <div class="md:w-full lg:w-4/5 relative">
               <select
                 formControlName="category_ing"
                 class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
@@ -408,7 +422,7 @@
           </div>
 
           <div class="md:items-center mb-6">
-              <div class="md:w-full">
+              <div class="w-full">
                 <label
                   style="font-family: 'Open Sans', sans-serif;"
                   class="block text-black-500 font-bold md:text-center mb-1 md:mb-0 pr-4"
@@ -417,7 +431,7 @@
                   Galería
                 </label>
               </div>
-              <div class="md:w-full">
+              <div class="mw-full">
                 <label
                   style="font-family: 'Open Sans', sans-serif;"
                   class="block text-black-500 font-bold md:text-center mb-1 md:mb-0 pr-4"
@@ -429,23 +443,21 @@
               </div>
             </div>
 
-          <div class="md:flex mb-6">
-              <div class="md:w-1/5">
+          <div class="lg:flex lg:items-center mb-6">
+              <div class="md:w-full lg:w-1/5">
                 <label
-                  class="text-lg sm:text-2xl block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+                  class="text-lg sm:text-2xl block text-black-500 font-bold lg:text-right mb-1 md:mb-0 pr-4"
                   for="inline-full-name"
                 >
                   Ícono
                 </label>
               </div>
-              <div class="md:w-4/5">
+              <div class="md:w-full lg:w-4/5">
                 <div
                   *ngIf="!this.main_image_ing"
                   class="md:flex items-center"
                 >
-                  <label class="justify-center font-normal text-base sm:text-lg md:text-xl">
-                    <span>Ningun archivo seleccionado</span>
-                  </label>
+                  
                   <label
                     class="justify-center bg-grey-lighter w-full flex items-center h-full px-4 py-3 pr-8 bg-gray-200 rounded-lg shadow-lg tracking-wide border border-blue cursor-pointer hover:bg-orange-400 hover:text-white"
                   >
@@ -465,10 +477,10 @@
                   <div class="width-2/3 flex items-center justify-center">
                     <img [src]="this.main_image_ing" class="h-24" />
                   </div>
-                  <div class="flex space-x-4 justify-center w-full">
+                  <div class="pt-4 flex space-x-4 justify-end w-full">
                     <button
                       (click)="changeImage_ing(this.main_image_ing)"
-                      class="md:w-1/5 shadow bg-gray-500 hover:bg-orange-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                      class="w-1/3 sm:w-1/4 shadow bg-gray-500 hover:bg-orange-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
                       type="button"
                     >
                       Cambiar
@@ -479,15 +491,21 @@
             </div>
 
           <div class="md:flex md:items-center mb-6">
-            <div class="md:w-1/3"></div>
-            <div class="flex space-x-4 justify-center sm:justify-end md:justify-end md:w-2/3">
+            <div class="flex space-x-4 justify-end md:w-full">
               <button
                 [disabled]="form_ing.invalid"
                 (click)="addIngredient()"
-                class="text-lg md:text-2xl md:w-1/4 shadow bg-green-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                class="text-2xl w-1/3 sm:w-1/4 shadow bg-green-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
                 type="button"
               >
                 Crear
+              </button>
+              <button
+                (click)="notAddIng()"
+                class="text-2xl w-1/3 sm:w-1/4 shadow bg-orange-500 hover:bg-orange-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                type="button"
+              >
+                Regresar
               </button>
               
             </div>
@@ -498,8 +516,7 @@
 
 
 
-
-    <app-footer></app-footer>
+  <app-footer></app-footer>
 
 </div>
 

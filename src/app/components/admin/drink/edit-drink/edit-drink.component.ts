@@ -30,6 +30,8 @@ export class EditDrinkComponent implements OnInit {
   main_image_ing: String;
   autocomplete:String[]=[];
 
+  createIngredient:Boolean=false;
+
 
   sidebar:Boolean;
   
@@ -410,6 +412,7 @@ export class EditDrinkComponent implements OnInit {
         this.form_ing.value.name_ing=""
         this.form_ing.value.category_ing=""
         this.main_image_ing=null 
+        this.createIngredient=false;
       });
     } else {
       const response = alert(
@@ -433,6 +436,16 @@ export class EditDrinkComponent implements OnInit {
       }
       //this.loading = false;
     });
+  }
+
+  addNewIng(){
+    this.createIngredient=true;
+    console.log(this.createIngredient);
+    console.log(this.loading);
+  }
+
+  notAddIng(){
+    this.createIngredient=false;
   }
 
 

@@ -33,6 +33,8 @@ export class AddDrinkComponent implements OnInit {
   autocompleteaux:Observable<String[]>;
   control:FormControl=new FormControl;
 
+  createIngredient:Boolean=false;
+
 
   form: FormGroup;
   form_ing:FormGroup;
@@ -333,15 +335,24 @@ export class AddDrinkComponent implements OnInit {
         this.form_ing.value.name_ing=""
         this.form_ing.value.category_ing=""
         this.main_image_ing=null 
+        this.createIngredient=false;
       });
+
     } else {
       const response = alert(
         "No ha subido ninguna imagen. Por favor, suba una."
       );
     }
-    
+
   }
 
+  addNewIng(){
+    this.createIngredient=true;
+  }
+
+  notAddIng(){
+    this.createIngredient=false;
+  }
   }
  
 
