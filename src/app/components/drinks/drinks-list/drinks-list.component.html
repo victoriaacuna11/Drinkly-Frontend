@@ -51,8 +51,13 @@
         <div style="font-family: 'Open Sans', sans-serif; width: 30%; font-size: medium;" *ngIf="(drinksA | filter: filterPost)?.length==0"
         class="m-auto"
         >
-          <div style="width: 85%; margin-left: 2.5rem;">
-            <img src="../../../../assets/images/emptyGlass2.jpg" alt="noSeEncontró">
+          <div style="height: 20rem;
+          width: 85%; margin-left: 2.5rem; 
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-image: url(assets/images/emptyGlass2.jpg);"
+          >
           </div>
           <p style="padding-left: 5rem;">No se encontró ese trago...</p>
         </div>
