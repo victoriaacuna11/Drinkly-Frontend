@@ -1,5 +1,6 @@
+
+
 <div class="flex bg-black top-0">
-  <!-- <app-sidebar></app-sidebar> -->
   <a href="/bars"
     ><img
       src="assets/images/Drinkly-2.png"
@@ -17,17 +18,31 @@
   <div class="w-full flex justify-center items-center h-full">
     <div *ngIf="hasSearchBar" class="pt-2 relative mx-auto text-black w-44">
       <input
-        class="bg-white h-10 px-5 pr-20 rounded-full text-sm focus:outline-none"
-        type="search"
-        name="search"
+        autocomplete="off"
+        style="width: 25rem; font-size: 1.4rem;"
+        class="bg-white h-12 px-5 pr-20 rounded-full focus:outline-none"
+        type="text"
+        name="filterPost"
+        id="search"
         placeholder="Busca por {{ searchBarContent }}"
+        [(ngModel)]="filterPost"
+        (ngModelChange)="makeChange()"
+        (keydown.enter)="pressEnter()"
       />
       <button
         type="submit"
+        disabled
         class="absolute right-0 top-0 mt-5 mr-6 focus:outline-none"
       >
         <img src="assets/images/lupa.png" alt="lupita" class="h-4 w-4" />
       </button>
+
+      <div clickedOut (clickOutside)="showDrop()" *ngIf="touched" class="drop">
+        <div id="coolB" (click)="newMessage(i.name)"  class="d" *ngFor="let i of arr | filter: filterPost">
+          <div class="d2">{{i.name}}</div>
+        </div>       
+      </div>
     </div>
   </div>
-</div>
+</div> 
+
