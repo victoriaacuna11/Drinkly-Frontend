@@ -1,3 +1,4 @@
+import { passwordValidator } from './../../Directives/password.directive';
 import { Router } from "@angular/router";
 import { AuthService } from "./../../services/auth.service";
 import { user } from "./../../models/user";
@@ -40,7 +41,12 @@ export class RegisterComponent implements OnInit {
       }
     );
     this.form = this._builder.group({
-      password: ["", Validators.required],
+      password: ["", [Validators.required, 
+        passwordValidator.patternValidator(/\d/, {hasNum: true}),
+        passwordValidator.patternValidator(/[A-Z]/, {hasUpper: true}),
+        passwordValidator.patternValidator(/[a-z]/, {hasLower: true}),
+        Validators.minLength(8)
+      ]],
       f_name: ["", Validators.required],
       l_name: ["", Validators.required],
       email: ["", [Validators.email, Validators.required]],

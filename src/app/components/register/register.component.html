@@ -235,9 +235,21 @@
                     class="text-red-500"
                     *ngIf="form.get('password').touched || form.get('password').dirty"
                   >
-                    <span *ngIf="form.get('password').errors">
+                    <div *ngIf="form.get('password').errors?.required">
                       Este campo es obligatorio.
-                    </span>
+                    </div>
+                    <div *ngIf="form.get('password').hasError('hasNum')">
+                      La contraseña debe tener al menos un número.
+                    </div>
+                    <div *ngIf="form.get('password').hasError('hasUpper')">
+                      La contraseña debe tener una mayúscula.
+                    </div>
+                    <div *ngIf="form.get('password').hasError('hasLower')">
+                      La contraseña debe tener al menos una minúscula.
+                    </div>
+                    <div *ngIf="form.get('password').errors?.minlength">
+                      La contraseña debe tener al menos 8 caracteres.
+                    </div>
                   </span>
                 </div>
               </div>
