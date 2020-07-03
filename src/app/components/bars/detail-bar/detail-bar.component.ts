@@ -50,8 +50,6 @@ export class DetailBarComponent implements OnInit {
   getMessage($event){
     if(screen.width>640){
       this.sidebar = $event;
-    }else{
-      console.log("Hola puta")
     }
   }
   

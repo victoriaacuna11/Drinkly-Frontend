@@ -44,8 +44,11 @@ export class BarsListComponent implements OnInit {
   }
 
   getMessage($event){
-    this.sidebar = $event;
+    if(screen.width>640){
+      this.sidebar = $event;
+    }
   }
+
   getBars(){
     this.service.getBars().subscribe((res:any) => {
       this.bars=[...res.data];

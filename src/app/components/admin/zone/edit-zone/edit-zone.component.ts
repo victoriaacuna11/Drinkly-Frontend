@@ -58,7 +58,9 @@ export class EditZoneComponent implements OnInit {
   }
 
   getMessage($event){
-    this.sidebar = $event;
+    if(screen.width>640){
+      this.sidebar = $event;
+    }
   }
 
 }
