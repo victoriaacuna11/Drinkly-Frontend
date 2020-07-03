@@ -81,6 +81,93 @@ label #cancel{
     transition: all .5s ease;
 }
 
+@media (min-width: 640px){
+    #barComputer{
+        display: block;
+    }
+    #barPhone{
+        display: none;
+    }
+}
+
+@media (max-width: 640px){
+    #barPhone{
+        display: block;
+    }
+    #barComputer{
+        display: none;
+    }
+
+    .sidebar{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color: #000000, $alpha: 0.9);;
+        transition: all .5s ease;
+        z-index: 90000;
+
+        header {
+            text-align: center;
+            line-height: 6rem;
+            user-select: none;
+        }
+
+        ul li{
+            padding-bottom: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            a{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                box-sizing: border-box;
+            }
+
+            img{
+                padding: 0.5rem;
+                transition: .4s;  
+            }
+
+            :hover{
+                padding: 0 ;
+            }
+        }
+    }
+    label{
+        position: absolute;
+    }
+    
+    #check{
+        display: none;
+    }
+    
+    label #btn, label #cancel{
+        position: absolute;
+        cursor: pointer;
+        background-color: black;
+        border-radius: 3px;
+    }
+    
+    label #btn{
+        z-index: 91000;
+        top: 1rem;
+        color: orange;
+        transition: all .5s ease;
+    }
+    
+    label #cancel{
+        position: fixed;
+        z-index: 91000;
+        top: 1rem;
+        color: orange;
+        transition: all .5s ease;
+    }
+
+}
+
 // #check:checked ~ .sidebar{
 //     left: 0;
 // }

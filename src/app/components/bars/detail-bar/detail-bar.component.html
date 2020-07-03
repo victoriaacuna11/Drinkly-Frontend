@@ -1,7 +1,9 @@
 
 <app-test-bar (message)="getMessage($event)"></app-test-bar> 
 
-<div [ngStyle]="{'margin-left.rem': !sidebar? '0': '16'}" class="move">
+<div id="container"
+style="margin-left: 0;"
+ [ngStyle]="{'margin-left.rem': !sidebar? '0': '16'}" class="move">
 
   <app-header></app-header>
  

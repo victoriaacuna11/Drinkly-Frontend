@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { BarService } from 'src/app/services/bar.service';
 import { Bar } from 'src/app/models/bar';
 import { Component, OnInit } from '@angular/core';
+import { CommentStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-detail-bar',
@@ -47,7 +48,11 @@ export class DetailBarComponent implements OnInit {
   }
 
   getMessage($event){
-    this.sidebar = $event;
+    if(screen.width>640){
+      this.sidebar = $event;
+    }else{
+      console.log("Hola puta")
+    }
   }
   
 
