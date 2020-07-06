@@ -9,17 +9,66 @@
   </div>
   <div *ngIf="!loading">
         
-                    <div
+            <div
               class="w-full flex flex-col items-center mt-10 md:mt-24 "
               style="font-family: 'Open Sans', sans-serif;"
             >
               <h1 class="text-4xl  font-bold md:text-5xl ">
-                Selecciona tus ingredientes
+                Busca tus ingredientes
               </h1>
             </div>
 
 
+                  <!---------------------------------------------------------------------------------------------------------------------->
 
+
+                  <div class="w-full flex flex-col items-center pb-10 pt-10 mt-4" 
+                  style="font-family: 'Open Sans', sans-serif;"
+                  >
+                      <input
+                      class="transition ease-in duration-300 bg-gray-200 mb-6 md:mb-12 appearance-none border-2 border-gray-200 rounded w-8/12 md:w-4/12 py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500 "
+                      id="inline-full-name"
+                      type="text"
+                      placeholder="Ej. Fresa"
+                      [(ngModel)]="search_bar" 
+                      (ngModelChange)="search_ing()"
+                      />
+
+                      <div class=" grid gap-4 md:gap-8 grid-cols-3 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 transition ease-in duration-300" 
+                              style="font-family: 'Open Sans', sans-serif;" >
+                          <div *ngFor="let item of temp_i_s" >
+                              <div class="w-32  md:w-48 "  (click)="search_add_to_filter(item)">
+                                  <div 
+                                  [ngClass]="item.style? 'boder shadow rounded-lg p-3  flex items-center flex-col ease-in duration-300 hover:bg-orange-200': 'boder shadow rounded-lg p-3  flex items-center flex-col bg-orange-300 transition ease-in duration-300 hover:bg-orange-400'"
+                                  >
+                                      <div style="  background-position: center;
+                                      background-repeat: no-repeat;
+                                      background-size: cover;
+                                      position: relative; "
+                                      [style.backgroundImage]="'url('+ item.pic +')'"
+                                      class=" w-24 bg-white h-24 mb-2 md:h-40 md:w-32 md:mb-4 border shadow rounded-full ">
+                                      </div>
+                  
+                                      <p class=" text-md text-center"> {{item.name}} </p>
+                                  </div>
+                              </div>
+                          </div>  
+                      </div>
+                  </div>
+                  <!---------------------------------------------------------------------------------------------------------------------->
+
+
+
+
+
+            <div
+              class="w-full flex flex-col items-center mt-10 md:mt-24 "
+              style="font-family: 'Open Sans', sans-serif;"
+            >
+              <h1 class="text-4xl  font-bold md:text-5xl ">
+                Seleccionar por categoria
+              </h1>
+            </div>
 
 
             <div *ngIf="!loading" 

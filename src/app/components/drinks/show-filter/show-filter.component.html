@@ -6,48 +6,277 @@
   <div *ngIf="loading">
     <app-loader></app-loader>
   </div>    
-        <div class="w-full" *ngIf="!loading">
+
+    <div class="w-full" *ngIf="!loading">
 
           
-      <div class="w-full flex flex-col items-center mb-20 mt-10">
-
-      <div class="drink_card">
-
-
-        <div class="rounded overflow-hidden border-2 shadow-lg   hover:border-solid hover:border-orange-500 hover:border-opacity-75   transition ease-in duration-200" 
-          *ngFor="let item of drinksA"
+        <div class="w-full flex flex-col items-center mb-20 mt-10" *ngIf="!filter_again">
           
-          >
-          <div class="drink_img"
-          style="  background-position: center;
+
+
+        <div
+        class="w-full flex flex-col items-center mt-8 md:mt-20  "
+        style="font-family: 'Open Sans', sans-serif;"
+        >
+          <h1 class="text-4xl  font-bold md:text-5xl "> Ingredientes seleccionados </h1>
+        </div>
+
+  <!---------------------------------------------------------------------------------------------------------------------->
+
+
+      <div class="w-full flex flex-col items-center pb-10 pt-10 mt-8" 
+      style="font-family: 'Open Sans', sans-serif;"
+      >
+        <div class=" grid gap-4 md:gap-6 grid-cols-3 md:grid-cols-4 lg:grid-cols-5   transition ease-in duration-300"  >
+          <div *ngFor="let item of ing_filter" >
+            <div class="w-32  md:w-48 ">
+              <div 
+              class=" boder shadow rounded-lg p-3  flex items-center flex-col ease-in duration-300 hover:bg-orange-200"
+              >
+                  <div style="  background-position: center;
                   background-repeat: no-repeat;
                   background-size: cover;
                   position: relative; "
-                  [style.backgroundImage]="'url('+ item.pictures +')'">
-
-                <div class="w-10 h-10 rounded-full  opacity-75 bg-white m-2 hover:bg-orange-300 transition ease-in duration-300">
-                  <div class="  rounded-full ">
-                    <img  class="p-1" src="https://i.ya-webdesign.com/images/5-star-icon-png-5.png" alt="">
-                </div>
+                  [style.backgroundImage]="'url('+ item.photo +')'"
+                  class=" w-24 bg-white h-24 mb-2 md:h-40 md:w-32 md:mb-4 border shadow rounded-full ">
+                  </div>
+                  <p class=" text-md  text-center"> {{item.name}} </p>
               </div>
-              <!-- CAMBIAR A ORANGE CON CLICK -->
+            </div>
+          </div>  
+        </div>
+          <button
+          class="bg-orange-500 transition duration-500 ease-in-out text-md md:text-2xl px-1 py-1 text-white font-bold md:py-1 md:px-2 rounded hover:bg-orange-700 mt-5 md:mt-10"
+          (click)="filter_again=!filter_again"         
+          >
+            <p class="py-3 px-10  ">Seguir Filtrando</p>
+          </button>
+      </div>
+      <!---------------------------------------------------------------------------------------------------------------------->
+
+            
+
+
+
+          <div
+          class="w-full flex flex-col items-center mt-10 md:mt-24 mb-10 md:mb-24"
+          style="font-family: 'Open Sans', sans-serif;"
+          >
+            <h1 class="text-4xl  font-bold md:text-5xl "> Tragos fitrados </h1>
+          </div>
+
+          <div class="drink_card">
+
+
+            <div class="rounded overflow-hidden border-2 shadow-lg   hover:border-solid hover:border-orange-500 hover:border-opacity-75   transition ease-in duration-200" 
+              *ngFor="let item of drinksA"
+              
+              >
+              <div class="drink_img"
+              style="  background-position: center;
+                      background-repeat: no-repeat;
+                      background-size: cover;
+                      position: relative; "
+                      [style.backgroundImage]="'url('+ item.pictures +')'"
+                      (click)="detail(item._id)">
+
+                    <div (click)="detail(item._id)" class="w-10 h-10 rounded-full  opacity-75 bg-white m-2 hover:bg-orange-300 transition ease-in duration-300">
+                      <div class="  rounded-full ">
+                        <img  class="p-1" src="https://i.ya-webdesign.com/images/5-star-icon-png-5.png" alt="">
+                    </div>
+                  </div>
+                  <!-- CAMBIAR A ORANGE CON CLICK -->
+
+              </div>
+              <div class="px-6 py-4" (click)="detail(item._id)">
+                <div class="font-bold text-xl md:text-2xl mb-2"> <h1>{{ item.name }} </h1> </div>
+                <p class="text-gray-700 text-lg mb-1">
+                  Autor: {{ item.owner.name }}
+                </p>
+                <p class="text-gray-700 text-lg">
+                  {{ item.owner.category }}
+                </p>
+              </div>
+          </div>
 
           </div>
-          <div class="px-6 py-4">
-            <div class="font-bold text-xl md:text-2xl mb-2"> <h1>{{ item.name }} </h1> </div>
-            <p class="text-gray-700 text-lg mb-1">
-              Autor: {{ item.owner.name }}
-            </p>
-            <p class="text-gray-700 text-lg">
-              {{ item.owner.category }}
-            </p>
-          </div>
-      </div>
 
-      </div>
+        </div>
 
-    </div>
-  </div>
+        <!--------------------FILTER AGAIN------------------------------------------------------------------------------------------------>
+
+        <div *ngIf="filter_again" class="w-full flex flex-col items-center mb-20 mt-10">
+          <div
+              class="w-full flex flex-col items-center mt-5 md:mt-16 "
+              style="font-family: 'Open Sans', sans-serif;"
+            >
+
+
+              <h1 class="text-4xl  font-bold md:text-5xl ">
+                Busca tus ingredientes
+              </h1>
+            </div>
+
+
+                  <!---------------------------------------------------------------------------------------------------------------------->
+
+
+                  <div class="w-full flex flex-col items-center pb-10 pt-10 mt-4" 
+                  style="font-family: 'Open Sans', sans-serif;"
+                  >
+                      <input
+                      class="transition ease-in duration-300 bg-gray-200 mb-6 md:mb-12 appearance-none border-2 border-gray-200 rounded w-8/12 md:w-4/12 py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500 "
+                      id="inline-full-name"
+                      type="text"
+                      placeholder="Ej. Fresa"
+                      [(ngModel)]="search_bar" 
+                      (ngModelChange)="search_ing()"
+                      />
+
+                      <div class=" grid gap-4 md:gap-8 grid-cols-3 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 transition ease-in duration-300" 
+                              style="font-family: 'Open Sans', sans-serif;" >
+                          <div *ngFor="let item of temp_i_s" >
+                              <div class="w-32  md:w-48 "  (click)="search_add_to_filter(item)">
+                                  <div 
+                                  [ngClass]="item.style? 'boder shadow rounded-lg p-3  flex items-center flex-col ease-in duration-300 hover:bg-orange-200': 'boder shadow rounded-lg p-3  flex items-center flex-col bg-orange-300 transition ease-in duration-300 hover:bg-orange-400'"
+                                  >
+                                      <div style="  background-position: center;
+                                      background-repeat: no-repeat;
+                                      background-size: cover;
+                                      position: relative; "
+                                      [style.backgroundImage]="'url('+ item.pic +')'"
+                                      class=" w-24 bg-white h-24 mb-2 md:h-40 md:w-32 md:mb-4 border shadow rounded-full ">
+                                      </div>
+                  
+                                      <p class=" text-md text-center"> {{item.name}} </p>
+                                  </div>
+                              </div>
+                          </div>  
+                      </div>
+                  </div>
+                  <!---------------------------------------------------------------------------------------------------------------------->
+
+
+
+
+
+            <div
+              class="w-full flex flex-col items-center mt-10 md:mt-24 "
+              style="font-family: 'Open Sans', sans-serif;"
+            >
+              <h1 class="text-4xl  font-bold md:text-5xl ">
+                Seleccionar por categoria
+              </h1>
+            </div>
+
+
+            <div  
+            class="mt-10 md:mt-20"
+            >
+
+              <div *ngFor="let item of list">
+
+                <div *ngIf="ingExist(item.ing)">
+
+                  <div
+                    class="w-full flex items-center flex-col mt-16"
+                    style="font-family: 'Open Sans', sans-serif;"
+
+                  >
+                      <div
+                        class="flex flex-row items-center cursor-pointer"
+                        (click)="openCategory(item)"
+                      >
+                        <h1 class="text-3xl md:text-4xl  mr-3"> {{item.category}} </h1>
+                        <img
+                          src="https://imageog.flaticon.com/icons/png/512/25/25623.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF"
+                          class="h-3 md:h-4 rounded-full shadow-sm cursor-pointer hover:shadow"
+                          *ngIf="item.hidden"
+                        />
+                        <img
+                          src="https://imageog.flaticon.com/icons/png/512/61/61032.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF"
+                          class="h-4 md:h-5 rounded-full shadow-sm cursor-pointer hover:shadow"
+                          *ngIf="!item.hidden"
+                        />
+                      </div>
+                    </div>
+
+                    <div
+                      class="w-full flex flex-col items-center pb-10 pt-10"
+                      *ngIf="!item.hidden"
+                    >
+                      <app-filter-child [ingredients]="item.ing" (add)="add_to_filter($event)">
+                      </app-filter-child>
+                      <img
+                        src="https://imageog.flaticon.com/icons/png/512/61/61032.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF"
+                        class="h-4 mt-6  md:mt-10 md:h-5 rounded-full shadow-sm cursor-pointer hover:shadow"
+                        *ngIf="!item.hidden"
+                        (click)="item.hidden = !item.hidden"
+                      />
+                    </div>
+                  </div>
+              </div>
+            </div>
+
+
+            <!-----------------INGREDIENTES SELECCIONADOS----------------------------------------------------------------------------------------------------->
+
+            <div class="w-full flex flex-col items-center pb-10 pt-10 mt-8" 
+            style="font-family: 'Open Sans', sans-serif;"
+            *ngIf="show_ing()"
+            >
+              <h1 class="text-2xl mb-10">Ingredientes Seleccionados</h1>
+              <div class=" grid gap-4 md:gap-6 grid-cols-3   transition ease-in duration-300"  >
+                <div *ngFor="let item of filter" >
+                  <div class="w-32  md:w-48 " (click)="ing_check_off(item)">
+                    <div 
+                    class=" boder shadow rounded-lg p-3  flex items-center flex-col ease-in duration-300 hover:bg-orange-200"
+                    >
+                        <div style="  background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        position: relative; "
+                        [style.backgroundImage]="'url('+ item.pic +')'"
+                        class=" w-24 bg-white h-24 mb-2 md:h-40 md:w-32 md:mb-4 border shadow rounded-full ">
+                        </div>
+
+                        <p class=" text-md  text-center"> {{item.name}} </p>
+                    </div>
+                  </div>
+                </div>  
+              </div>
+              <h1 class="text-xl mt-5">Haz click para eliminar ingredientes</h1>
+            </div>
+
+
+            <!---------------------------------------------------------------------------------------------------------------------->
+            <div
+              
+              [ngClass]="show_ing()? 'w-full flex items-center flex-col h-32 mt-6' : 'w-full flex items-center flex-col h-32 mt-20' "
+              style="font-family: 'Open Sans', sans-serif;"
+            >
+              <button
+                class="bg-orange-500 transition duration-500 ease-in-out text-md md:text-2xl px-1 py-1 text-white font-bold md:py-1 md:px-2 rounded hover:bg-orange-700"
+                (click)="filter_drink()"
+              >
+                <p class="py-3 px-10  ">Buscar Recetas</p>
+              </button>
+            </div>
+             <div
+              class="w-full flex items-center flex-col h-32 mt-6"
+              style="font-family: 'Open Sans', sans-serif;"
+            >
+              <button
+                class="bg-orange-500 transition duration-500 ease-in-out text-md md:text-2xl px-1 py-1 text-white font-bold md:py-1 md:px-2 rounded hover:bg-orange-700"
+                (click)="filter_again=!filter_again"
+              >
+                <p class="py-3 px-10  ">Volver tragos filtrados</p>
+              </button>
+            </div>
+            
+            </div>
+        </div>
+
 
   <app-footer></app-footer>
 </div>

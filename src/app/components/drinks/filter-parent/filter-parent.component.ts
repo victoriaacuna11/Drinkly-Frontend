@@ -3,6 +3,7 @@ import { ingredient } from "src/app/models/ingredient";
 import { IngredientService } from "src/app/services/ingredient.service";
 import { CategoriesService } from "src/app/services/categories.service";
 import { Router } from "@angular/router";
+import { style } from '@angular/animations';
 
 @Component({
   selector: 'app-filter-parent',
@@ -13,9 +14,13 @@ export class FilterParentComponent implements OnInit {
   categories;
   loading=true
   filter=[];
-  ingredients:ingredient[];
+  ingredients:ingredient[]=[];
+  ingredientsA:ingredient[]=[];
+  ing_search=[];
+  temp_i_s=[];
   list=[];
   sidebar: Boolean;
+  search_bar=""
 
   constructor(private ing_service:IngredientService,private router:Router,private cat_service:CategoriesService) { }
 
@@ -31,6 +36,39 @@ export class FilterParentComponent implements OnInit {
     
   }
 
+  search_add_to_filter(object:any){
+
+    if(object.style==true){
+      this.filter.push(object)
+    }else{
+      for (let index = 0; index < this.filter.length; index++) {
+        if(object.id==this.filter[index].id){
+          this.filter.splice(index,1)
+        }
+      }
+    }
+    console.log(this.filter);
+    object.style=!object.style
+
+    //sacar de otro filtro
+
+    for (let x = 0; x < this.list.length; x++) {
+        if(this.list[x].category==object.category){
+          console.log(object.category)
+          for (let y = 0; y < this.list[x].ing.length; y++) {
+            if(this.list[x].ing[y].id==object.id){
+              console.log(object.name)
+              this.list[x].ing[y].style=object.style
+              y=this.list[x].ing.length
+            }
+          }
+          x=this.list.length
+        }      
+    }
+
+
+  }
+
   add_to_filter(object:any){
     if(object.style==true){
       this.filter.push(object)
@@ -43,6 +81,18 @@ export class FilterParentComponent implements OnInit {
     }
 
     console.log(this.filter);
+
+    //sacar del otro filtro
+
+    for (let index = 0; index < this.ing_search.length; index++) {
+      if(this.ing_search[index].id==object.id){
+        this.ing_search[index].style=!object.style
+        index=this.ing_search.length
+      }
+      
+    }
+
+
   }
 
   ing_check_off(object:any){
@@ -55,6 +105,15 @@ export class FilterParentComponent implements OnInit {
       }
             
     }
+
+    //deseleccionar en ing searxh
+    for (let index = 0; index < this.ing_search.length; index++) {
+      if(object.id==this.ing_search[index].id){
+        this.ing_search[index].style=true
+      }
+    }
+
+
     for (let index = 0; index < this.filter.length; index++) {
         if(this.filter[index].id==object.id){
           this.filter.splice(index,1)
@@ -67,13 +126,32 @@ export class FilterParentComponent implements OnInit {
   
   getIngredients() {
     this.ing_service.getIngredients().subscribe((res: any) => {
-      this.ingredients = [...res.data];
-      this.loading = false;
+      this.ingredientsA = [...res.data];
+      this.ingredientsA.forEach(i=>{
+        if(i.available==true){
+          this.ingredients.push(i)
+        }
+      })
       console.log(this.ingredients);
       this.organizeIngredients()
+      this.addStyleIng()
+      this.loading = false;
 
     });
     
+  }
+
+  addStyleIng(){
+    this.ingredients.forEach(i=>{
+      let ing={
+        'id':i._id,
+        'name':i.name,
+        'pic':i.photo,
+        'category':i.category,
+        'style':true
+      }
+      this.ing_search.push(ing)
+    })
   }
 
   organizeIngredients(){
@@ -159,6 +237,46 @@ export class FilterParentComponent implements OnInit {
       this.sidebar = $event;
     }
   }
+
+  is_search(object:any){
+
+    let aux=object.toLowerCase()
+
+    if(aux.includes(this.search_bar.toLowerCase())){
+      return true
+    }else{
+      return false
+    }
+    
+
+
+  }
+
+  search_ing(){
+
+    this.temp_i_s=[]
+    
+    if(this.search_bar==""){
+
+    }else{ 
+
+    
+    
+    for (let index = 0; index < this.ing_search.length; index++) {
+        
+      let aux_ing=this.ing_search[index].name.toLowerCase()
+      if(aux_ing.includes(this.search_bar.toLowerCase())){
+
+        let aux= this.ing_search[0]
+        this.temp_i_s.push(this.ing_search[index])
+
+
+      }
+      
+    }
+
+  }
+}
 
 
 }

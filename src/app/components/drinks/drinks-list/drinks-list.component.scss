@@ -9,13 +9,13 @@
 /* Medium (md) */
 @media (min-width: 768px) { 
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    width: 90%;
-    gap: 2.5rem;
+    width: 95%;
+    gap: 2rem;
  }
 /* Large (lg) */
-@media (min-width: 1024px) { 
+@media (min-width: 1400px) { 
     
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     width: 75%;
     gap: 2.5rem;
  }
@@ -35,11 +35,12 @@
     margin-bottom: 1rem;
   /* Medium (md) */
   @media (min-width: 768px) { 
-      
+    height: 25rem;
+
    }
   /* Large (lg) */
   @media (min-width: 1024px) { 
-      
+    height: 25rem;
       
   }
   
