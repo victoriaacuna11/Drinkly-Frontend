@@ -23,6 +23,7 @@ export class AddBarComponent implements OnInit {
   main_image: String = null;
   phone: String[] = [];
   sidebar: Boolean;
+  updating:Boolean=false;
 
   constructor(
     private _builder: FormBuilder,
@@ -194,6 +195,7 @@ export class AddBarComponent implements OnInit {
 
     // VALIDA SI SE INTRODUJERON LAS IMÁGENES NECESARIAS (EL FORM YA ESTÁ VALIDADO).
     if (this.main_image != null && photos != null) {
+      this.updating=true;
       const bar: Bar = {
         _id: '',
         name: this.form.value.name,

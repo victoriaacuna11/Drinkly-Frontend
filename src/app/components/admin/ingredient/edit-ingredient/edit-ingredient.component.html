@@ -6,7 +6,7 @@
   <div *ngIf="loading">
       <app-loader></app-loader>
   </div>
-  <div *ngIf="!loading" style="font-family: 'Open Sans', sans-serif;"> 
+  <div *ngIf="!loading && !updating" style="font-family: 'Open Sans', sans-serif;"> 
 
   
     <div
@@ -177,6 +177,9 @@
         </div>
       </form>
     </div>
+  </div>
+  <div *ngIf="!loading && updating">
+      <app-uploading-loader [text]="'Guardando los cambios...'"></app-uploading-loader>
   </div>
   <app-footer></app-footer>
 </div>

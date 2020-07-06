@@ -13,6 +13,7 @@ export class AddZoneComponent implements OnInit {
 
   form: FormGroup;
   sidebar: Boolean;
+  updating:Boolean=false;
 
   constructor(
     private _builder: FormBuilder,
@@ -28,6 +29,7 @@ export class AddZoneComponent implements OnInit {
   }
 
   add() {
+    this.updating=true;
     const zone: zone = {
       name: this.form.value.name,
       available: true,

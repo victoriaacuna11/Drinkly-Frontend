@@ -4,7 +4,7 @@
 
   <app-admin-header></app-admin-header>
   
-  <div  style="font-family: 'Open Sans', sans-serif;"> 
+  <div  *ngIf="!updating" style="font-family: 'Open Sans', sans-serif;"> 
     <div
       class="h-20 w-full flex justify-center items-center"
       style="font-family: 'Open Sans', sans-serif;"
@@ -175,6 +175,9 @@
         </div>
       </form>
       </div>
+  </div>
+  <div *ngIf="updating">
+      <app-uploading-loader [text]="'Creando el ingrediente...'"></app-uploading-loader>
   </div>
   <app-footer></app-footer>
 </div>

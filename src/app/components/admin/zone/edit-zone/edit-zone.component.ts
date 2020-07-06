@@ -15,6 +15,7 @@ export class EditZoneComponent implements OnInit {
   zone: zone;
   form: FormGroup;
   sidebar: Boolean;
+  updating:Boolean=false;
 
   constructor(
     private service: ZoneService,
@@ -35,6 +36,7 @@ export class EditZoneComponent implements OnInit {
     const id = this.routeSV.snapshot.paramMap.get("id");
     this.service.getZone(id).subscribe( (res:any) => {
       this.zone = {...res.data};
+      console.log(this.zone);
       this.form = this._builder.group({
         name: [this.zone.name, Validators.required]
       });
@@ -43,11 +45,14 @@ export class EditZoneComponent implements OnInit {
   }
 
   edit(){
+
+    this.updating=true;
     var zone: zone = {
       name: this.form.value.name,
       _id: this.zone._id,
       available: this.zone.available,
     };
+    console.log(zone);
     this.service.updateZone(zone).subscribe((res) => {
       this.route.navigate(["admin/zone"]);
     });

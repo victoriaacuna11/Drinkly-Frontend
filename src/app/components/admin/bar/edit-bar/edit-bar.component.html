@@ -12,7 +12,7 @@
       <app-loader></app-loader>
   </div>
 
-    <div *ngIf="!loading" style="font-family: 'Open Sans', sans-serif;">
+    <div *ngIf="!loading && !updating" style="font-family: 'Open Sans', sans-serif;">
         <div class="h-20 w-full flex justify-center items-center" style="font-family: 'Open Sans', sans-serif;">
         <div><h2 class="text-4xl">EDITA UN BAR</h2></div>
         </div>
@@ -381,6 +381,9 @@
                 </div>
             </form>
         </div>
+    </div>
+    <div *ngIf="!loading && updating">
+        <app-uploading-loader [text]="'Guardando los cambios...'"></app-uploading-loader>
     </div>
     <app-footer></app-footer>
 </div>

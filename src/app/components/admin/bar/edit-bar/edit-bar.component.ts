@@ -24,6 +24,7 @@ export class EditBarComponent implements OnInit {
   zones: zone[];
   id: String;
   sidebar: Boolean;
+  updating:Boolean=false;
 
   constructor(private service: BarService, private zoneService:ZoneService, private route: Router, 
     private routeSV: ActivatedRoute,private _builder: FormBuilder, private storage: AngularFireStorage,) { 
@@ -220,7 +221,7 @@ export class EditBarComponent implements OnInit {
 
     // VALIDA SI SE INTRODUJERON LAS IMÁGENES NECESARIAS (EL FORM YA ESTÁ VALIDADO).
     if (this.main_image != null && photos != null) {
-
+      this.updating=true;
       const sm = {
         insta: this.form.value.instagram,
         twitter: this.form.value.twitter,

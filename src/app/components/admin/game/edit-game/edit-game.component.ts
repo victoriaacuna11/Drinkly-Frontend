@@ -17,6 +17,7 @@ export class EditGameComponent implements OnInit {
   form: FormGroup;
   main_image: String= null;
   sidebar: Boolean;
+  updating:Boolean=false;
   
   constructor(
     private service: GameService,
@@ -98,6 +99,7 @@ export class EditGameComponent implements OnInit {
   update(){
 
     if(this.main_image!=null){
+      this.updating=true;
       let rules : String[]=[];
       this.form.value.rules.forEach((item) => {
         rules.push(item.rule);

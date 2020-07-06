@@ -11,7 +11,7 @@
   <div *ngIf="loading">
       <app-loader></app-loader>
   </div>
-  <div *ngIf="!loading" style="font-family: 'Open Sans', sans-serif;">
+  <div *ngIf="!loading && !updating" style="font-family: 'Open Sans', sans-serif;">
     <div
       class="h-20 w-full flex justify-center items-center"
       style="font-family: 'Open Sans', sans-serif;"
@@ -662,6 +662,9 @@
         </div>
       </form>
     </div>
+  </div>
+  <div *ngIf="!loading && updating">
+    <app-uploading-loader [text]="'Creando el bar...'"></app-uploading-loader>
   </div>
   <app-footer></app-footer>
 </div>

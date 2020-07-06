@@ -16,6 +16,7 @@ export class AddAdComponent implements OnInit {
   form: FormGroup;
   main_image: String=null;
   sidebar: Boolean;
+  updating:Boolean=false;
 
 
   constructor(
@@ -33,10 +34,11 @@ export class AddAdComponent implements OnInit {
   }
   
   addAd() {
+    
     if(this.main_image!=null){
 
       if(!this.form.invalid){
-
+        this.updating=true;
       
         const ad: advertisement = {
           promo_img: this.main_image,

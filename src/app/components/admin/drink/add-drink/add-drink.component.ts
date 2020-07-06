@@ -36,6 +36,9 @@ export class AddDrinkComponent implements OnInit {
   createIngredient:Boolean=false;
   loading:Boolean=true;
 
+  updating:Boolean=false;
+  updatingIng:Boolean=false;
+
 
   form: FormGroup;
   form_ing:FormGroup;
@@ -142,6 +145,7 @@ export class AddDrinkComponent implements OnInit {
           map(val=> this.filter(val))
         )
       this.loading=false;
+      this.updatingIng=false;
       //this.loading = false;
     });
   }
@@ -186,6 +190,7 @@ export class AddDrinkComponent implements OnInit {
             );
 
           }else{ 
+            this.updating=true;
             let ing:String[]=[];
             this.form.value.ingredients.forEach((item) => {
               console.log(item.ingredients)
@@ -325,6 +330,7 @@ export class AddDrinkComponent implements OnInit {
   addIngredient(){
     
     if(this.main_image_ing!=null){
+      this.updatingIng=true;
       let ing: ingredient = {
         name: this.form_ing.value.name_ing,
         category: this.form_ing.value.category_ing,
@@ -351,6 +357,10 @@ export class AddDrinkComponent implements OnInit {
 
   addNewIng(){
     this.createIngredient=true;
+    console.log('Updating: '+ this.updating);
+    console.log('UpdatingIng: '+ this.updatingIng);
+    console.log('createIng: '+ this.createIngredient);
+    console.log('loading:' + this.loading)
   }
 
   notAddIng(){

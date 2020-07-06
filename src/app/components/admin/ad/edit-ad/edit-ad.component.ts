@@ -15,7 +15,7 @@ export class EditAdComponent implements OnInit {
   form: FormGroup;
   main_image: String;
   sidebar: Boolean;
-  // selectedFile: File = null;
+  updating:Boolean=false;
 
   constructor(
     private service: AdvertisementService,
@@ -63,15 +63,15 @@ export class EditAdComponent implements OnInit {
 
     if (this.main_image != null) {
       if(!this.form.invalid){
-
+        this.updating=true;
         console.log(adver);
         this.service.updateAd(adver).subscribe((res) => {
-          this.route.navigate(["admin/ingredient"]);
+          this.route.navigate(["admin/ad"]);
         });
       }else{
 
         const response = alert(
-          "No puede dejar campos vacios al editar una publicidad. Por favor revise"
+          "No puede dejar campos vacíos al editar una publicidad. Por favor, revise"
         );
       }
         

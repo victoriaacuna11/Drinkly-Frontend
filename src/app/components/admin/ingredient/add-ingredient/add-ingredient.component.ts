@@ -18,6 +18,7 @@ export class AddIngredientComponent implements OnInit {
   form: FormGroup;
   main_image: String=null;
   sidebar: Boolean;
+  updating:Boolean=false;
   
   constructor(
     private service: IngredientService,
@@ -39,6 +40,7 @@ export class AddIngredientComponent implements OnInit {
 
   addIngredient() {
     if(this.main_image!=null){
+      this.updating=true;
       const ingredient: ingredient = {
         name: this.form.value.name,
         category: this.form.value.category,

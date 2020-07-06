@@ -16,7 +16,7 @@ export class EditIngredientComponent implements OnInit {
   ingredient: ingredient;
   form: FormGroup;
   main_image: String;
-  // selectedFile: File = null;
+  updating:Boolean=false;
   categories: String[];
   sidebar:Boolean;
 
@@ -69,6 +69,7 @@ export class EditIngredientComponent implements OnInit {
     console.log(this.ingredient.photo);
 
     if (this.main_image != null) {
+      this.updating=true;
       console.log(ingredient);
       this.service.updateIngredient(ingredient).subscribe((res) => {
         this.route.navigate(["admin/ingredient"]);
