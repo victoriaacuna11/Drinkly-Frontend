@@ -11,6 +11,7 @@ import { Component, OnInit } from '@angular/core';
 export class ListUserComponent implements OnInit {
 
   loading: Boolean = true;
+  updating: Boolean = false;
   users: user[];
   userSelected: user;
   sidebar: Boolean;
@@ -25,6 +26,7 @@ export class ListUserComponent implements OnInit {
     this.service.getUsers().subscribe((res: any) => {
       this.users = [...res.data];
       this.loading = false;
+      this.updating=false;
     });
     console.log(this.users);
   }
@@ -36,6 +38,7 @@ export class ListUserComponent implements OnInit {
   }
 
   giveAdmin(id){
+    this.updating=true;
     this.service.getUser(id).subscribe((res: any) => {
       this.userSelected = { ...res.data };
       this.userSelected.isAdmin = true;
@@ -48,6 +51,7 @@ export class ListUserComponent implements OnInit {
   }
 
   takeAdmin(id){
+    this.updating=true;
     this.service.getUser(id).subscribe((res: any) => {
       this.userSelected = { ...res.data };
       this.userSelected.isAdmin = false;
@@ -60,6 +64,7 @@ export class ListUserComponent implements OnInit {
   }
 
   inhabilitateUser(id) {
+    this.updating=true;
     this.service.getUser(id).subscribe((res: any) => {
       this.userSelected = { ...res.data };
       this.userSelected.available = false;
@@ -72,6 +77,7 @@ export class ListUserComponent implements OnInit {
   }
 
   habilitateUser(id) {
+    this.updating=true;
     this.service.getUser(id).subscribe((res: any) => {
       this.userSelected = { ...res.data };
       this.userSelected.available = true;

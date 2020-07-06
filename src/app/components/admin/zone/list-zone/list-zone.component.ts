@@ -12,6 +12,7 @@ export class ListZoneComponent implements OnInit {
   zones: zone[];
   loading:Boolean=true;
   sidebar: Boolean;
+  updating:Boolean=false;
   constructor(
     private service: ZoneService,
     private route: Router,
@@ -25,6 +26,7 @@ export class ListZoneComponent implements OnInit {
     this.service.getZones().subscribe((res:any) => {
       this.zones=[...res.data];
       this.loading=false;
+      this.updating=false;
     })
   }
 
@@ -35,6 +37,7 @@ export class ListZoneComponent implements OnInit {
   }
 
   inhabilitate(zone:zone) {
+    this.updating=true;
     let newZone = zone;
     newZone.available=!zone.available;
     this.service.updateZone(newZone).subscribe(res => {

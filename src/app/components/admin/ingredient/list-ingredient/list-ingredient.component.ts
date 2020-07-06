@@ -13,6 +13,7 @@ export class ListIngredientComponent implements OnInit {
   ingredients: ingredient[];
   ingredientSelected: ingredient;
   sidebar: Boolean;
+  updating:Boolean=false;
 
   constructor(private service: IngredientService, private route: Router) {}
 
@@ -24,6 +25,7 @@ export class ListIngredientComponent implements OnInit {
     this.service.getIngredients().subscribe((res: any) => {
       this.ingredients = [...res.data];
       this.loading = false;
+      this.updating=false;
     });
     console.log(this.ingredients);
   }
@@ -35,6 +37,7 @@ export class ListIngredientComponent implements OnInit {
   }
 
   inhabilitateIngredient(id) {
+    this.updating=true;
     this.service.getIngredient(id).subscribe((res: any) => {
       this.ingredientSelected = { ...res.data };
       this.ingredientSelected.available = false;
@@ -47,6 +50,7 @@ export class ListIngredientComponent implements OnInit {
   }
 
   habilitateIngredient(id) {
+    this.updating=true;
     this.service.getIngredient(id).subscribe((res: any) => {
       this.ingredientSelected = { ...res.data };
       this.ingredientSelected.available = true;

@@ -7,7 +7,7 @@
   <div *ngIf="loading">
     <app-loader></app-loader>
   </div>
-  <div *ngIf="!loading" style="font-family: 'Open Sans', sans-serif;">
+  <div *ngIf="!loading && !updating" style="font-family: 'Open Sans', sans-serif;">
     <div class="h-20 w-full flex justify-center items-center" style="font-family: 'Open Sans', sans-serif;">
       <div>
         <h2 class="text-4xl">LISTA DE TRAGOS</h2>
@@ -57,7 +57,7 @@
                 <button *ngIf="d.available" (click)="inhabilitateDrink(d._id)"
                   class="w-2/5 md:w-1/3 shadow bg-red-500 hover:bg-red-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
                   type="button">
-                  Eliminar
+                  Deshabilitar
                 </button>
                 <button (click)="deleteDrink(d._id)"
                   class="hidden w-2/5 md:w-1/3 shadow bg-red-500 hover:bg-red-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
@@ -67,7 +67,7 @@
                 <button *ngIf="!d.available" (click)="habilitateDrink(d._id)"
                   class="w-2/5 md:w-1/3 shadow bg-gray-500 hover:bg-gray-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
                   type="button">
-                  Recuperar
+                  Habilitar
                 </button>
               </div>
             </div>
@@ -76,7 +76,9 @@
       </div>
       
   </div>
-
+  </div>
+  <div *ngIf="!loading && updating">
+    <app-uploading-loader [text]="'Guardando cambios...'"></app-uploading-loader>
+  </div>
   <app-footer></app-footer>
-
 </div>

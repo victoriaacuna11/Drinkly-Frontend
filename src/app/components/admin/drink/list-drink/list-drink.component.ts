@@ -13,6 +13,7 @@ export class ListDrinkComponent implements OnInit {
   drinks: drink[];
   drinkSelected: drink;
   sidebar: Boolean;
+  updating:Boolean=false;
 
   constructor(private service: DrinkService, private route: Router) {}
 
@@ -24,6 +25,7 @@ export class ListDrinkComponent implements OnInit {
     this.service.getDrinks().subscribe((res: any) => {
       this.drinks = [...res.data];
       this.loading = false;
+      this.updating=false;
       console.log(this.drinks)
     });
   }
@@ -35,6 +37,7 @@ export class ListDrinkComponent implements OnInit {
   }
 
   inhabilitateDrink(id) {
+    this.updating=true;
     this.service.getDrink(id).subscribe((res: any) => {
       this.drinkSelected = { ...res.data };
       this.drinkSelected.available = false;
@@ -45,6 +48,7 @@ export class ListDrinkComponent implements OnInit {
   }
 
   habilitateDrink(id) {
+    this.updating=true;
     this.service.getDrink(id).subscribe((res: any) => {
       this.drinkSelected = { ...res.data };
       this.drinkSelected.available = true;

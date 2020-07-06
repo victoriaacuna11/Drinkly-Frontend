@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class ListBarComponent implements OnInit {
   
   loading: Boolean = true;
+  updating:Boolean=false;
   bars: Bar[];
   sidebar: Boolean;
   constructor(private service: BarService, private route: Router) { }
@@ -23,6 +24,7 @@ export class ListBarComponent implements OnInit {
     this.service.getBars().subscribe((res:any) => {
       this.bars= [... res.data];
       this.loading=false;
+      this.updating=false;
     })
   }
 
@@ -35,6 +37,7 @@ export class ListBarComponent implements OnInit {
   }
 
   inhabilitate(bar: Bar){
+    this.updating=true;
     let newBar: Bar = bar;
     newBar.available=!bar.available;
     this.service.updateBar(newBar).subscribe(res => {

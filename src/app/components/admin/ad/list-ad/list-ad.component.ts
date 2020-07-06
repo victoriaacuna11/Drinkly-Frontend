@@ -13,6 +13,7 @@ export class ListAdComponent implements OnInit {
   ads:advertisement[];
   adSelected:advertisement;
   sidebar: Boolean;
+  updating:Boolean=false;
 
   constructor(private service: AdvertisementService, private route: Router) { }
 
@@ -25,6 +26,7 @@ export class ListAdComponent implements OnInit {
     this.service.getAds().subscribe((res: any) => {
       this.ads = [...res.data];
       this.loading = false;
+      this.updating=false;
     });
   }
 
@@ -35,6 +37,7 @@ export class ListAdComponent implements OnInit {
   }
 
   inhabilitateAd(id) {
+    this.updating=true;
     this.service.getAd(id).subscribe((res: any) => {
       this.adSelected = { ...res.data };
       this.adSelected.available = false;
@@ -45,6 +48,7 @@ export class ListAdComponent implements OnInit {
   }
 
   habilitateAd(id) {
+    this.updating=true;
     this.service.getAd(id).subscribe((res: any) => {
       this.adSelected = { ...res.data };
       this.adSelected.available = true;
