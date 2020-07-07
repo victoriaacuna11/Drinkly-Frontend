@@ -142,8 +142,6 @@ export class EditDrinkComponent implements OnInit {
       //Mierda de los checkbox
       this.loading = false;
       });
-      //----------------------------
-      
     });
   }
 
@@ -414,8 +412,10 @@ export class EditDrinkComponent implements OnInit {
       console.log(ing)
       this.ing_service.createIngredient(ing).subscribe((res) => {
         this.getIngredients2()
-        this.form_ing.value.name_ing=""
-        this.form_ing.value.category_ing=""
+        this.form_ing= this._builder.group({
+          name_ing: ["", Validators.required],
+          category_ing: ["", Validators.required],
+        });
         this.main_image_ing=null 
         this.createIngredient=false;
       });
@@ -428,6 +428,8 @@ export class EditDrinkComponent implements OnInit {
   }
   
   getIngredients2() {
+    this.ingredient_arr_aux=[];
+    this.ingredient_arr=[];
     this.ing_service.getIngredients().subscribe((res: any) => {
       this.ingredient_arr_aux = [...res.data];
       this.ingredient_arr_aux.forEach(i =>{

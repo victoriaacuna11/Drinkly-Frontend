@@ -126,6 +126,8 @@ export class AddDrinkComponent implements OnInit {
   }
 
   getIngredients() {
+    this.ingredient_arr=[];
+    this.ingredient_arr_aux=[];
     this.service_ing.getIngredients().subscribe((res: any) => {
       this.ingredient_arr_aux = [...res.data];
       this.ingredient_arr_aux.forEach(i =>{
@@ -341,8 +343,10 @@ export class AddDrinkComponent implements OnInit {
       console.log(ing)
       this.service_ing.createIngredient(ing).subscribe((res) => {
         this.getIngredients()
-        this.form_ing.value.name_ing=""
-        this.form_ing.value.category_ing=""
+        this.form_ing= this._builder.group({
+          name_ing: ["", Validators.required],
+          category_ing: ["", Validators.required],
+        });
         this.main_image_ing=null 
         this.createIngredient=false;
       });
@@ -357,10 +361,6 @@ export class AddDrinkComponent implements OnInit {
 
   addNewIng(){
     this.createIngredient=true;
-    console.log('Updating: '+ this.updating);
-    console.log('UpdatingIng: '+ this.updatingIng);
-    console.log('createIng: '+ this.createIngredient);
-    console.log('loading:' + this.loading)
   }
 
   notAddIng(){
