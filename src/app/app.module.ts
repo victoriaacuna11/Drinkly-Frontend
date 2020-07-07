@@ -64,6 +64,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { FilterPipe } from './pipes/filter.pipe';
 import { clickedOutDirective } from './Directives/dropdown.directive';
 import { UploadingLoaderComponent } from './components/uploading-loader/uploading-loader.component';
+import { PostBusinessComponent } from './components/post-business/post-business.component';
 
 @NgModule({
   declarations: [
@@ -117,7 +118,8 @@ import { UploadingLoaderComponent } from './components/uploading-loader/uploadin
     LoaderComponent,
     FilterPipe,
     clickedOutDirective,
-    UploadingLoaderComponent
+    UploadingLoaderComponent,
+    PostBusinessComponent
   ],
   imports: [
     BrowserModule,
