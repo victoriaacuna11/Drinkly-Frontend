@@ -110,8 +110,9 @@ export class AddBarComponent implements OnInit {
           this.storage.storage.refFromURL(url).delete().then(res => {
             console.log(this.photo);
           })
-          this.photo.splice(index, 1);
+          
         }
+        this.photo.splice(index, 1);
       }
     }
   }
@@ -192,9 +193,10 @@ export class AddBarComponent implements OnInit {
     this.form.value.phone.forEach((item) => {
       phones.push(item.phone);
     });
+    
 
     // VALIDA SI SE INTRODUJERON LAS IMÁGENES NECESARIAS (EL FORM YA ESTÁ VALIDADO).
-    if (this.main_image != null && photos != null) {
+    if (this.main_image != null && photos != null && photos.length>0) {
       this.updating=true;
       const bar: Bar = {
         _id: '',

@@ -426,26 +426,6 @@
               </button>
             </div>
           </div>
-        <!--
-        <div class="lg:flex lg:items-center mb-6">
-          <div class="flex space-x-4 justify-end md:w-full">
-            <button
-              (click)="editDrink()"
-              class="w-1/3 sm:w-1/4 shadow bg-green-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-              type="button"
-            >
-              Guardar
-            </button>
-            <button
-              (click)="goBack()"
-              class="w-1/3 sm:w-1/4 shadow bg-orange-500 hover:bg-orange-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-              type="button"
-            >
-              Regresar
-            </button>
-          </div>
-        </div>
-        -->
       </form>
     </div>
   </div>
@@ -536,26 +516,26 @@
         </div>
 
         <div class="md:items-center mb-6">
-            <div class="w-full">
-              <label
-                style="font-family: 'Open Sans', sans-serif;"
-                class="block text-black-500 font-bold text-center mb-1 md:mb-0 pr-4"
-                for="inline-full-name"
-              >
-                Galería
-              </label>
-            </div>
-            <div class="w-full">
-              <label
-                style="font-family: 'Open Sans', sans-serif;"
-                class="block text-black-500 font-bold text-center mb-1 md:mb-0 pr-4"
-                for="inline-full-name"
-              >
-                Por favor, esperar a que aparezcan las fotos. Esto indicará que
-                fueron cargadas con éxito.
-              </label>
-            </div>
+          <div class="w-full">
+            <label
+              style="font-family: 'Open Sans', sans-serif;"
+              class="block md:text-2xl text-black-500 font-bold text-center mb-1 md:mb-0 pr-4"
+              for="inline-full-name"
+            >
+              Galería
+            </label>
           </div>
+          <div class="w-full">
+            <label
+              style="font-family: 'Open Sans', sans-serif;"
+              class="text-lg md:text-xl block text-black-500 font-bold text-center mb-1 md:mb-0 pr-4"
+              for="inline-full-name"
+            >
+              Por favor, esperar a que aparezcan las fotos. Esto indicará que
+              fueron cargadas con éxito.
+            </label>
+          </div>
+        </div>
 
         <div class="lg:flex lg:items-center mb-6">
             <div class="md:w-full lg:w-1/5">
@@ -590,7 +570,7 @@
                 <div class="width-2/3 flex items-center justify-center">
                   <img [src]="this.main_image_ing" class="h-24" />
                 </div>
-                <div class="pt-4 flex space-x-4 justify-end w-full">
+                <div class="pt-4 flex space-x-4 justify-center w-full">
                   <button
                     (click)="changeImage_ing(this.main_image_ing)"
                     class="w-1/3 sm:w-1/4 shadow bg-gray-500 hover:bg-orange-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
@@ -604,7 +584,7 @@
           </div>
 
         <div class="md:flex md:items-center mb-6">
-          <div class="flex space-x-4 justify-end md:w-full">
+          <div class="flex space-x-4 justify-center md:w-full">
             <button
               [disabled]="form_ing.invalid"
               (click)="addIngredient()"

@@ -220,7 +220,7 @@ export class EditBarComponent implements OnInit {
     })
 
     // VALIDA SI SE INTRODUJERON LAS IMÁGENES NECESARIAS (EL FORM YA ESTÁ VALIDADO).
-    if (this.main_image != null && photos != null) {
+    if (this.main_image != null && photos != null && photos.length>0) {
       this.updating=true;
       const sm = {
         insta: this.form.value.instagram,

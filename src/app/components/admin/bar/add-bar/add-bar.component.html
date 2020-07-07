@@ -357,292 +357,246 @@
             <span class="select-none"></span>
           </label>
         </div>
-
-        <div formArrayName="phone" class="width-full">
-          <div
-            *ngFor="let group of PhoneArray.controls; let i = index"
-            [formGroupName]="i"
-            class="width-full"
-          >
-            <div class="lg:flex lg:items-center mb-6">
-              <div class="md:w-full lg:w-1/5">
-                <label
-                  class="block text-black-500 font-boldlg mb-1 md:mb-0 pr-4"
-                  for="inline-full-name"
-                >
-                  Número de teléfono
-                </label>
-              </div>
-              <div class="md:w-full lg:w-2/5">
-                <input
-                  formControlName="phone"
-                  class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
-                  id="inline-full-name"
-                  type="text"
-                  placeholder="Ej. 02123451234"
-                />
-              </div>
-              <div class="pt-4 flex space-x-4 justify-end md:w-full lg:w-2/5">
-                <button
-                  (click)="addPhone()"
-                  class="w-1/3 sm:w-1/4 lg:w-1/3 shadow bg-gray-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-                  type="button"
-                >
-                  +
-                </button>
-                <button
-                  *ngIf="i != 0"
-                  (click)="deletePhone(i)"
-                  class="w-1/3 sm:w-1/4 lg:w-1/3 shadow bg-gray-500 hover:bg-red-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-                  type="button"
-                >
-                  -
-                </button>
-              </div>
-            </div>
-            <app-required-field
-              *ngIf="group.controls.phone.invalid && group.controls.phone.touched"
-              [text]="'Este campo es requerido.'"
-            ></app-required-field>
-          </div>
-        </div>
-
-        <div class="mb-6">
+        <div class="md:items-center mb-6">
           <div class="w-full">
-            <label
+              <label
               style="font-family: 'Open Sans', sans-serif;"
-              class="block text-black-500 font-bold text-center mb-1 md:mb-0 pr-4"
+              class="block md:text-2xl text-black-500 font-bold text-center mb-1 md:mb-0 pr-4"
               for="inline-full-name"
-            >
+              >
+              Números de contacto
+              </label>
+          </div>
+          <div class="w-full">
+              <label
+              style="font-family: 'Open Sans', sans-serif;"
+              class="text-lg md:text-xl block text-black-500 font-bold text-center mb-1 md:mb-0 pr-4"
+              for="inline-full-name"
+              >
+              Añade los números de teléfono
+              </label>
+          </div>
+      </div>
+      
+      <div formArrayName="phone" class="width-full">
+          <div *ngFor="let group of PhoneArray.controls; let i = index;" [formGroupName]="i" class="width-full">
+              <div class="lg:flex lg:items-center mb-6">
+                  <div class="w-full lg:w-1/5">
+                  <label
+                      class="block text-black-500 font-bold lg:text-right mb-1 md:mb-6 pr-4"
+                      for="inline-full-name"
+                  >
+                      Teléfono
+                  </label>
+                  </div>
+                  <div class="w-full flex mb-6">
+                  <div class="w-4/5">
+                      <input formControlName="phone" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500" type="text" placeholder="Ej. 02123451234">
+                  </div>
+                  <div class="pt-0 flex space-x-4 justify-end  w-1/5">
+                      <button
+                      *ngIf="i != 0"
+                      (click)="deletePhone(i)"
+                      class="w-3/4  shadow bg-gray-500 hover:bg-red-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                      type="button"
+                      >
+                      -
+                      </button>
+                  </div>
+              </div>
+          </div>
+          <app-required-field *ngIf="group.controls.phone.invalid && group.controls.phone.touched" [text]="'Este campo es requerido.'"></app-required-field>
+          </div> 
+          <div class="pt-0 pb-4 flex space-x-4 justify-center md:w-full">
+              <button
+              (click)="addPhone()"
+              class="md:w-1/4 w-1/2 shadow bg-gray-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+              type="button"
+              >
+              Añadir otro
+              </button>
+          </div>
+      </div>
+
+      <div class="pt-4 md:items-center mb-6">
+          <div class="w-full">
+              <label
+              style="font-family: 'Open Sans', sans-serif;"
+              class="block md:text-2xl text-black-500 font-bold text-center mb-1 md:mb-0 pr-4"
+              for="inline-full-name"
+              >
               Menú
-            </label>
+              </label>
           </div>
           <div class="w-full">
-            <label
+              <label
               style="font-family: 'Open Sans', sans-serif;"
-              class="block text-black-500 font-bold text-center mb-1 md:mb-0 pr-4"
+              class="text-lg md:text-xl block text-black-500 font-bold text-center mb-1 md:mb-0 pr-4"
               for="inline-full-name"
-            >
-              Tragos disponibles en el bar
-            </label>
+              >
+              Añade los tragos disponibles en el bar
+              </label>
           </div>
-        </div>
+      </div>
 
-        <div formArrayName="menu" class="width-full">
-          <div
-            *ngFor="let group of MenuArray.controls; let i = index"
-            [formGroupName]="i"
-            class="mb-6"
-          >
-            <div class="lg:flex lg:items-center mb-6">
-              <div class="md:w-full lg:w-1/5">
-                <label
-                  class="block text-black-500 font-boldlg mb-1 md:mb-0 pr-4"
-                  for="inline-full-name"
-                >
-                  Nombre del trago
-                </label>
+      <div formArrayName="menu" class="width-full">
+          <div *ngFor="let group of MenuArray.controls; let i = index;" [formGroupName]="i" class=" mb-6">
+              
+              <div class="lg:flex lg:items-center mb-6">
+                  <div class="md:w-full lg:w-1/5">
+                      <label class="block text-black-500 font-bollgmd:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                          Nombre del trago
+                      </label>
+                  </div>
+                  <div class="md:w-full lg:w-4/5">
+                      <input formControlName="name" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500" id="inline-full-name" type="text" placeholder="Ej. Mojito">
+                  </div>
               </div>
-              <div class="md:w-full lg:w-4/5">
-                <input
-                  formControlName="name"
-                  class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
-                  id="inline-full-name"
-                  type="text"
-                  placeholder="Ej. Mojito"
-                />
-              </div>
-            </div>
-            <app-required-field
-              *ngIf="group.controls.name.invalid && group.controls.name.touched"
-              [text]="'Este campo es requerido.'"
-            ></app-required-field>
+              <app-required-field *ngIf="group.controls.name.invalid && group.controls.name.touched" [text]="'Este campo es requerido.'"></app-required-field>
 
-            <div class="lg:flex lg:items-center mb-6">
-              <div class="md:w-full lg:w-1/5">
-                <label
-                  class="block text-black-500 font-boldlg mb-1 md:mb-0 pr-4"
-                  for="inline-full-name"
-                >
-                  Precio
-                </label>
+              <div class="lg:flex lg:items-center mb-6">
+                  <div class="md:w-full lg:w-1/5">
+                      <label class="block text-black-500 font-bollgmd:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                          Precio
+                      </label>
+                  </div>
+                  <div class="md:w-full lg:w-4/5">
+                      <input formControlName="price" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500" id="inline-full-name" type="number" min="0.01" step="0.01">
+                  </div>
               </div>
-              <div class="md:w-full lg:w-4/5">
-                <input
-                  formControlName="price"
-                  class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
-                  id="inline-full-name"
-                  type="number"
-                  min="0.01"
-                  step="0.01"
-                />
-              </div>
-            </div>
-            <app-required-field
-              *ngIf="group.controls.price.invalid && group.controls.price.touched"
-              [text]="'Este campo es requerido. (Solo números positivos)'"
-            ></app-required-field>
+              <app-required-field *ngIf="group.controls.price.invalid && group.controls.price.touched" [text]="'Este campo es requerido. (Solo números positivos)'"></app-required-field>
 
-            <div class="lg:flex lg:items-center mb-6">
-              <div class="md:w-full lg:w-1/5">
-                <label
-                  class="block text-black-500 font-boldlg mb-1 md:mb-0 pr-4"
-                  for="inline-full-name"
-                >
-                  Descripción
-                </label>
+              <div class="lg:flex lg:items-center mb-6">
+                  <div class="md:w-full lg:w-1/5">
+                      <label class="block text-black-500 font-bollgmd:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                          Descripción
+                      </label>
+                  </div>
+                  <div class="md:w-full lg:w-4/5">
+                      <input formControlName="description" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500" id="inline-full-name" type="text" placeholder="Ej. Cóctel muy refrescante que no sabe mucho a alcohol.">
+                  </div>
               </div>
-              <div class="md:w-full lg:w-4/5">
-                <input
-                  formControlName="description"
-                  class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
-                  id="inline-full-name"
-                  type="text"
-                  placeholder="Ej. Cóctel muy refrescante que no sabe mucho a alcohol."
-                />
+              <div class="lg:flex lg:items-center mb-6">
+                  <div class="md:w-1/3"></div>
+                  <div class="flex space-x-4 justify-end w-full">
+                      <button (click)="deleteMenu(i)" *ngIf="i>0" class="w-1/3 sm:w-1/4 shadow bg-gray-500 hover:bg-red-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">
+                          -
+                      </button>
+                  </div>
               </div>
-            </div>
-            <div class="flex space-x-4 justify-end w-full">
-              <button  (click)="addMenu()" class="w-1/3 sm:w-1/4 md:w-1/4 shadow bg-gray-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">
-                +
-              </button>
-              <button (click)="deleteMenu(i)" *ngIf="i>0" class="w-1/3 sm:w-1/4 shadow bg-gray-500 hover:bg-red-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">
-                -
+          </div> 
+          <div class="pt-0 pb-4 flex space-x-4 justify-center md:w-full">
+              <button
+              (click)="addMenu()"
+              class="md:w-1/4 w-1/2 shadow bg-gray-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+              type="button"
+              >
+              Añadir otro
               </button>
           </div>
-          </div>
-        </div>
+      </div>
 
-        <div class="mb-6">
-          <div class="md:w-full">
-            <label
+      <div class="pt-4 md:items-center mb-6">
+          <div class="w-full">
+              <label
               style="font-family: 'Open Sans', sans-serif;"
-              class="block text-black-500 font-bold text-center mb-1 md:mb-0 pr-4"
+              class="block md:text-2xl text-black-500 font-bold text-center mb-1 md:mb-0 pr-4"
               for="inline-full-name"
-            >
+              >
               Galería
-            </label>
+              </label>
           </div>
           <div class="w-full">
-            <label
+              <label
               style="font-family: 'Open Sans', sans-serif;"
-              class="block text-black-500 font-bold text-center mb-1 md:mb-0 pr-4"
+              class="text-lg md:text-xl block text-black-500 font-bold text-center mb-1 md:mb-0 pr-4"
               for="inline-full-name"
-            >
-              Por favor, esperar a que aparezcan las fotos. Esto indicará que
-              fueron cargadas con éxito.
-            </label>
+              >
+              Por favor, esperar a que aparezcan las fotos. Esto indicará que fueron cargadas con éxito.
+              </label>
           </div>
-        </div>
+      </div>
 
-        <div class="lg:flex lg:items-center mb-6">
+
+
+      <div class="lg:flex lg:items-center mb-6">
           <div class="md:w-full lg:w-1/5">
-            <label
-              class="block text-black-500 font-bold lg:text-right mb-1 md:mb-0 pr-4"
-              for="inline-full-name"
-            >
+          <label class="block text-black-500 font-bold lg:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
               Ícono
-            </label>
+          </label>
           </div>
           <div class="md:w-full lg:w-4/5">
-            <div
-              *ngIf="!this.main_image"
-              class="flex items-center justify-center bg-grey-lighter"
-            >
-              <label
-                class="w-full flex justify-center h-full items-center px-4 py-3 pr-8 bg-gray-200 rounded-lg shadow-lg tracking-wide border border-blue cursor-pointer hover:bg-orange-500 hover:text-white"
-              >
-                <span class="mt-2 text-base leading-normal"
-                  >Selecciona un archivo</span
-                >
-                <lib-file-upload-firestorage
-                  storagePath="bar"
-                  (res)="uploadEnRes($event)"
-                  class="hidden"
-                >
-                </lib-file-upload-firestorage>
-              </label>
-            </div>
 
-            <div *ngIf="this.main_image" class="width-full bg-grey-lighter">
-              <div class="width-2/3 flex items-center justify-center">
-                <img [src]="this.main_image" class="h-24" />
-              </div>
-              <div class="pt-4 flex space-x-4 justify-end w-full">
-                <button
-                  (click)="changeImage(this.main_image)"
-                  class="w-1/3 sm:w-1/4 shadow bg-gray-500 hover:bg-orange-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-                  type="button"
-                >
-                  Cambiar
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="width-full">
-          <div *ngFor="let group of photo; let i = index" class="width-full">
-            <div class="lg:flex lg:items-center mb-6">
-              <div class="md:w-full lg:w-1/5">
-                <label
-                  class="block text-black-500 font-boldlg mb-1 md:mb-0 pr-4"
-                  for="inline-full-name"
-                >
-                  Foto
-                </label>
-              </div>
-
-              <div class="md:w-full lg:w-4/5">
-                <div
-                  *ngIf="group == 'null'"
-                  class="flex items-center justify-center bg-grey-lighter"
-                >
-                  <label
-                    class="w-full flex justify-center h-full items-center px-4 py-3 pr-8 bg-gray-200 rounded-lg shadow-lg tracking-wide border border-blue cursor-pointer hover:bg-orange-500 hover:text-white"
-                  >
-                    <span class="mt-2 text-base leading-normal"
-                      >Selecciona un archivo</span
-                    >
-                    <lib-file-upload-firestorage
-                      storagePath="bar"
-                      (res)="uploadPhoto($event, i)"
-                      class="hidden"
-                    >
-                    </lib-file-upload-firestorage>
+              <div *ngIf="!this.main_image" class="flex items-center justify-center bg-grey-lighter">
+                  <label class="w-full flex justify-center h-full items-center px-4 py-3 pr-8 bg-gray-200 rounded-lg shadow-lg tracking-wide  border border-blue cursor-pointer hover:bg-orange-500 hover:text-white">   
+                      <span class="mt-2 text-base leading-normal">Selecciona un archivo</span>
+                      <lib-file-upload-firestorage storagePath="bar" (res)="uploadEnRes($event)" class="hidden">
+                      </lib-file-upload-firestorage>
                   </label>
-                </div>
-
-                <div *ngIf="group != 'null'" class="width-full bg-grey-lighter">
-                  <div class="width-2/3 flex items-center justify-center">
-                    <img [src]="group" class="h-24" />
-                  </div>
-                </div>
-
-                <div class="pt-4 flex space-x-4 justify-end w-full">
-                  <button
-                    *ngIf="i < 6"
-                    (click)="addPhoto()"
-                    class="w-1/3 sm:w-1/4 md:w-1/4 shadow bg-gray-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-                    type="button"
-                  >
-                    +
-                  </button>
-                  <button
-                    (click)="deletePhoto(group, i)"
-                    class="w-1/3 sm:w-1/4 md:w-1/4 shadow bg-gray-500 hover:bg-red-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-                    type="button"
-                  >
-                    -
-                  </button>
-                </div>
               </div>
-            </div>
-          </div>
-        </div>
 
+              <div *ngIf="this.main_image" class="width-full bg-grey-lighter">
+                  <div class="width-2/3 flex items-center justify-center">
+                      <img [src]="this.main_image" class="h-24">
+                  </div>
+                  <div class="pt-4 flex space-x-4 justify-center w-full">
+                      <button  (click)="changeImage(this.main_image)" class="w-1/3 sm:w-1/4 shadow bg-gray-500 hover:bg-orange-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">
+                          Cambiar
+                      </button>
+                  </div>
+              </div>
+
+          </div>
+      </div>
+
+      <div class="width-full">
+          <div *ngFor="let group of photo; let i = index;" class="width-full">
+              <div class="lg:flex lg:items-center mb-6">
+
+                  <div class="md:w-full lg:w-1/5">
+                      <label class="block text-black-500 font-bollgmd:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                          Foto
+                      </label>
+                  </div>
+
+                  <div class="md:w-full lg:w-4/5">
+
+                      <div *ngIf="group=='null'" class="flex items-center justify-center bg-grey-lighter">
+                          <label class="w-full flex justify-center h-full items-center px-4 py-3 pr-8 bg-gray-200 rounded-lg shadow-lg tracking-wide  border border-blue cursor-pointer hover:bg-orange-500 hover:text-white">   
+                              <span class="mt-2 text-base leading-normal">Selecciona un archivo</span>
+                              <lib-file-upload-firestorage storagePath="bar" (res)="uploadPhoto($event, i)" class="hidden">
+                              </lib-file-upload-firestorage>
+                          </label>
+                      </div>
+
+                      <div *ngIf="group!='null'" class="width-full bg-grey-lighter">
+                          <div class="width-2/3 flex items-center justify-center">
+                              <img [src]="group" class="h-24">
+                          </div>
+                      </div>
+
+                      <div class="pt-4 flex space-x-4 justify-center w-full">
+                          <button (click)="deletePhoto(group, i)" class="sm:w-1/4 w-1/3 shadow bg-gray-500 hover:bg-red-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">
+                              -
+                          </button>
+                      </div>
+
+                  </div>
+              </div>
+              
+          </div> 
+          <div class="pt-0 pb-4 flex space-x-4 justify-center md:w-full">
+              <button
+              (click)="addPhoto()"
+              class="md:w-1/4 w-1/2 shadow bg-gray-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+              type="button"
+              >
+              Añadir otra
+              </button>
+          </div>
+      </div>
         <div class="md:flex md:items-center mb-6">
-          <div class="flex space-x-4 justify-end md:w-full">
+          <div class="flex space-x-4 justify-center md:w-full">
             <button
               [disabled]="form.invalid"
               (click)="createBar()"
