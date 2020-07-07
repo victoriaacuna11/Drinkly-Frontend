@@ -43,9 +43,9 @@
           *ngFor="let ing of ingredients"
           class="w-full flex justify-center items-center h-full"
         >
-          <div class="w-2/3 md:w-4/5 lg:w-2/4 content-center">
+          <div class="w-2/3 md:w-4/5 lg:w-3/5 content-center">
             <div class="sm:flex sm:items-center mb-6">
-              <div class="w-full flex justify-center sm:justify-end lg:justify-center sm:w-2/5 sm:text-left">
+              <div class="w-full flex justify-center sm:justify-end lg:justify-center sm:w-2/5 sm:text-right">
                 <label
                   class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
                   for="inline-full-name"
@@ -64,7 +64,7 @@
               </div>
 
               <div class="w-full md:w-3/5">
-                <div class="flex space-x-2 justify-center sm:justify-end w-full">
+                <div class="text-xl sm:text-lg md:text-xl flex space-x-2 justify-center sm:justify-end w-full">
                   <button
                     (click)="editIngredient(ing._id)"
                     class="w-2/5 shadow bg-orange-500 hover:bg-orange-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"

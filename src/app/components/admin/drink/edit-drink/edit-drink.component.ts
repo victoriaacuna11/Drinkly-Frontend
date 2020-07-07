@@ -31,6 +31,8 @@ export class EditDrinkComponent implements OnInit {
   autocomplete:String[]=[];
 
   createIngredient:Boolean=false;
+  updating:Boolean=false;
+  updatingIng:Boolean=false;
 
 
   sidebar:Boolean;
@@ -253,7 +255,7 @@ export class EditDrinkComponent implements OnInit {
         );
       }else{
 
-     
+      this.updating=true;
       console.log(d);
       this.drink_service.updateDrink(d).subscribe((res) => {
         this.route.navigate(["admin/drink"]);
@@ -401,6 +403,7 @@ export class EditDrinkComponent implements OnInit {
   addIngredient(){
     
     if(this.main_image_ing!=null){
+      this.updatingIng=true;
       let ing: ingredient = {
         name: this.form_ing.value.name_ing,
         category: this.form_ing.value.category_ing,
@@ -436,7 +439,8 @@ export class EditDrinkComponent implements OnInit {
       for (let index = 0; index < this.ingredient_arr.length; index++) {
         this.autocomplete.push(this.ingredient_arr[index].name)
       }
-      //this.loading = false;
+      this.updatingIng=false;
+      this.loading = false;
     });
   }
 
