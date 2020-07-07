@@ -1,6 +1,6 @@
 
 
-<div class="flex bg-black top-0">
+<div class="flex bg-black fixed top-0 w-full z-10">
   <a href="/bars"
     ><img
       src="assets/images/Drinkly-2.png"
@@ -15,6 +15,7 @@
     background-size: cover;
   "
 >
+
   <div class="w-full flex justify-center items-center h-full">
     <div *ngIf="hasSearchBar" class="pt-2 relative mx-auto text-black w-44">
       <input
@@ -30,19 +31,24 @@
         (keydown.enter)="pressEnter()"
       />
       <button
-        type="submit"
-        disabled
-        class="absolute right-0 top-0 mt-5 mr-6 focus:outline-none"
+        id="search2"
+        (click)="showDropForFilteringOp()"
+        class="absolute right-0 top-0 mt-4 mr-4 focus:outline-none"
       >
-        <img src="assets/images/lupa.png" alt="lupita" class="h-4 w-4" />
+      <img *ngIf="hasFilter" class="h-8 rounded cursor-pointer" src="assets/images/filtro.png" alt="filterimg">
       </button>
 
       <div clickedOut (clickOutside)="showDrop()" *ngIf="touched" class="drop">
-        <div id="coolB" (click)="newMessage(i.name)"  class="d" *ngFor="let i of arr | filter: filterPost">
+        <div id="coolB" (click)="newMessage(i.name)"  class="d" *ngFor="let i of arr | filter: filterPost: isDefault">
           <div class="d2">{{i.name}}</div>
-        </div>       
+        </div>
       </div>
-    </div>
+
+      <div *ngIf="filteringOptions" class="drop">
+        <div id="coolB" (click)="sendChangedFilter(i)" class="d" *ngFor="let i of filterOp">
+          <div class="d2">{{i}}</div>
+        </div>
+      </div>
   </div>
 </div> 
 

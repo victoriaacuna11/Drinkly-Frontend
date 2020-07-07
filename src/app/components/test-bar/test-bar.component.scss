@@ -16,6 +16,7 @@ a {
     height: 100%;
     background-color: black;
     transition: all .5s ease;
+    // overflow-y: scroll;
     // z-index: 5000;
 
     header {
@@ -50,7 +51,8 @@ a {
 }
 
 label{
-    position: absolute;
+    position: fixed;
+    z-index: 20;
 }
 
 #check{
@@ -104,7 +106,8 @@ label #cancel{
         height: 100%;
         background-color: rgba($color: #000000, $alpha: 0.9);;
         transition: all .5s ease;
-        z-index: 90000;
+        z-index: 19;
+        // overflow-y: scroll;
 
         header {
             text-align: center;
@@ -137,7 +140,8 @@ label #cancel{
         }
     }
     label{
-        position: absolute;
+        position: fixed;
+        z-index: 20;
     }
     
     #check{
@@ -145,7 +149,7 @@ label #cancel{
     }
     
     label #btn, label #cancel{
-        position: absolute;
+        position: fixed;
         cursor: pointer;
         background-color: black;
         border-radius: 3px;
