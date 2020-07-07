@@ -84,6 +84,11 @@ export class BarsListComponent implements OnInit {
     }else 
       this.defaultFilt = false;
   }
+
+  goBack(){
+    //vete a home
+    this.route.navigate([""])
+  }
   
 
 }

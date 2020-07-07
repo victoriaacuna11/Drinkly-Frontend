@@ -278,5 +278,9 @@ export class FilterParentComponent implements OnInit {
   }
 }
 
+goBack(){
+  this.router.navigate(['drinks/'])
+}
+
 
 }

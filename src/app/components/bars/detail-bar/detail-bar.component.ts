@@ -52,6 +52,9 @@ export class DetailBarComponent implements OnInit {
       this.sidebar = $event;
     }
   }
+  goBack(){
+    this.route.navigate(["bars/"])
+  }
   
 
 }

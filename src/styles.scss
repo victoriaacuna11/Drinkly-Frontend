@@ -19,6 +19,34 @@ html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
 }
+.back_btn{
+  position: fixed;
+  bottom: 5rem;
+  right: 1rem;
+  border-radius: 100%;
+  background-color: orange;
+  height: 3.5rem;
+  width: 3.5rem;
+  box-shadow: 1px 1px 7px #868585;
+
+  @media (min-width: 768px) { 
+    height: 4rem;
+    width: 4rem;
+    bottom: 6.5rem;
+    right: 1.5rem;
+   
+
+   }
+  /* Large (lg) */
+  @media (min-width: 1024px) { 
+    height: 4rem;
+    width: 4rem;
+    bottom: 7rem;
+    right: 4rem;
+  }
+
+
+}
 
 /* Sections
      ========================================================================== */
