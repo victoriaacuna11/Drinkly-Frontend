@@ -81,8 +81,9 @@
                       (click)="detail(item._id)">
 
                       <button (click)="fav($event, item._id)" 
-                      [ngClass]="is_fav(item._id)? ' rounded-full w-10 h-10 rounded-full  opacity-75 bg-orange-500 m-2 hover:bg-orange-400 transition ease-in duration-300':'rounded-full w-10 h-10 rounded-full  opacity-75 bg-white m-2 hover:bg-orange-300 transition ease-in duration-300' " >
-                          <img  class="p-1" src="https://i.ya-webdesign.com/images/5-star-icon-png-5.png" alt="">
+                        class="rounded-full w-10 h-10 rounded-full  opacity-75 bg-white m-2 hover:bg-orange-300 transition ease-in duration-300" >
+                          <img  class="p-1" src="https://image.flaticon.com/icons/svg/1828/1828970.svg" alt="" *ngIf="!is_fav(item._id)">
+                          <img  class="p-1" src="https://image.flaticon.com/icons/svg/1828/1828614.svg" alt="" *ngIf="is_fav(item._id)">
                       </button>
                   <!-- CAMBIAR A ORANGE CON CLICK -->
 

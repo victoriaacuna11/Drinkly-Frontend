@@ -21,6 +21,7 @@ export class DrinksListComponent implements OnInit {
   aux;
   filterPost: string = "qlqsa";
   user:user;
+  fav_img="Favorite"
   
 
   constructor(private service: DrinkService, 
