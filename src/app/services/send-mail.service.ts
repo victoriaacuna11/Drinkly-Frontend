@@ -22,4 +22,12 @@ export class SendMailService {
     postRecipe(data:any){
       return this._http.post(this._url+'recipe', data);
     }
+
+    postBusiness(data:any){
+      return this._http.post(this._url + 'business', data);
+    }
+
+    sendEmailUserBusiness(data: any){
+      return this._http.post(this._url + 'user/business', data);
+    }
 }
