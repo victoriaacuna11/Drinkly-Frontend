@@ -5,6 +5,7 @@ import { GameService } from 'src/app/services/game.service';
 import { Router } from '@angular/router';
 import { Variable } from '@angular/compiler/src/render3/r3_ast';
 import { FormGroup, FormBuilder, FormArray, Validators } from "@angular/forms";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @Component({
   selector: 'app-juegos',
@@ -72,7 +73,7 @@ export class JuegosComponent implements OnInit {
   verdad: string;
   reto: string;
 
-  constructor(private service: GameService, private route: Router, private _builder: FormBuilder) { 
+  constructor(private service: GameService, private route: Router, private _builder: FormBuilder, ) { 
     this.form = this._builder.group({
       jug: [""]
     })
