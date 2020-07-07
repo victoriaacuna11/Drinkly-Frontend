@@ -1,12 +1,117 @@
-<div class="flex w-full">
-    <app-navbar></app-navbar>
-    <div class="pl-64 w-full">
-        <div class="w-full">
-            <app-header></app-header>
-            <div class="w-full">
+<app-test-bar (message)="getMessage($event)"></app-test-bar> 
 
+<div [ngStyle]="{'margin-left.rem': !sidebar? '0': '16'}" class="move">
+    <app-header></app-header>
+
+    <div *ngIf="loading">
+        <app-loader></app-loader>
+    </div>
+    <div *ngIf="!loading" class="h-full w-full">
+        <div class="h-full w-full px-16 py-16">
+            <!-- PREPARALO TU MISMO -->
+            <div class="h-full w-full">
+                <div class="flex justify-center">
+                    <svg class="fill-current text-gray-200" width="746" height="4" viewBox="0 0 746 4" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <rect width="746" height="4" rx="2" />
+                    </svg>
+                </div>
+                <div class="px-64 py-4 text-4xl font-semibold">PREPARALO TU MISMO</div>
+                <!-- DRINK CARDS -->
+                <div class="w-full flex flex-col items-center mb-20 mt-10">
+                    <div class="drink_card">
+                      <div id="test" class="rounded overflow-hidden border-2 shadow-lg   hover:border-solid hover:border-orange-500 hover:border-opacity-75   transition ease-in duration-200" 
+                      *ngFor="let item of drinksA"   
+                      >
+                       <div class="drink_img"
+                        style="  background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        position: relative; "
+                        [style.backgroundImage]="'url('+ item.pictures +')'"
+                        (click)="detail(item._id)"
+                        >
+              
+                          <div (click)="detail(item._id)" class="w-10 h-10 rounded-full  opacity-75 bg-white m-2 hover:bg-orange-300 transition ease-in duration-300">
+                            <div class="  rounded-full ">
+                              <img  class="p-1" src="https://i.ya-webdesign.com/images/5-star-icon-png-5.png" alt="">
+                            </div>
+                          </div>
+                          <!-- CAMBIAR A ORANGE CON CLICK -->
+                        </div>
+                       
+                        <div (click)="detail(item._id)" class="px-6 py-4">
+                          <div class="font-bold text-xl md:text-2xl mb-2"> <h1>{{ item.name }} </h1> </div>
+                            <p class="text-gray-700 text-lg mb-1">
+                              Autor: {{ item.owner.name }}
+                            </p>
+                            <p class="text-gray-700 text-lg">
+                              {{ item.owner.category }}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                
+                <!-- FIN DRINK CARDS -->
+                <div class="flex justify-center pb-16 ">
+                    <a href="/drinks" class="hover:no-underline">
+                        <div class="no-underline py-1 px-8 bg-orange-400 hover:bg-orange-500 text-white rounded">Ver más
+                        </div>
+                    </a>
+                </div>
+    
             </div>
+            <!-- FIN DE PREPARALO TU MISMO -->
+            <!-- BARES DE CARACAS -->
+            <div>
+                <div class="flex justify-center">
+                    <svg class="fill-current text-gray-200" width="746" height="4" viewBox="0 0 746 4" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <rect width="746" height="4" rx="2" />
+                    </svg>
+                </div>
+                <div class="px-64 py-4 text-4xl font-semibold">DISFRUTA DE CARACAS</div>
+                <!-- BAR CARDS -->
+                <div class="w-full flex flex-col items-center mb-20 mt-10">
+
+                    <div class="bar_card">
+            
+            
+                      <div class="rounded overflow-hidden border-2 shadow-lg   hover:border-solid hover:border-orange-500 hover:border-opacity-75   transition ease-in duration-200" 
+                       *ngFor="let item of barsAv"
+                       
+                       >
+                        <div (click)="detail(item._id)" class="bar_img"
+                        style="  background-position: center;
+                                background-repeat: no-repeat;
+                                background-size: cover;
+                                position: relative; "
+                                [style.backgroundImage]="'url('+ item.main_image +')'">
+            
+                        </div>
+                        <div (click)="detail(item._id)" class="px-6 py-4">
+                          <div class="font-bold text-xl md:text-2xl mb-2"> <h1>{{ item.name }} </h1> </div>
+                          <p class="text-gray-700 text-lg mb-1">
+                            {{ getZone(item.location.zone) }}
+                          
+                        </div>
+                    </div>
+            
+                    </div>
+            
+                  </div>
+                <!-- FIN BAR CARDS -->
+                <div class="flex justify-center pb-8 ">
+                    <a href="/drinks" class="hover:no-underline">
+                        <div class="no-underline py-1 px-8 bg-orange-400 hover:bg-orange-500 text-white rounded">Ver más
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!-- FIN BARES DE CARACAS -->
         </div>
     </div>
+
+    <app-footer></app-footer>    
 </div>
-<app-footer></app-footer>
