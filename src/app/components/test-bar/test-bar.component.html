@@ -12,17 +12,17 @@
         </svg> 
     </label>
     <div [ngStyle]="{'left.rem': !sidebar_left? '-16' : '0'}" class="sidebar overflow-y-scroll sm:overflow-y-auto">
-        <header class="text-4xl text-white ">Drinkly</header>
+        <header class="text-4xl text-white h-16"></header>
 
         <ul>
             <li><a href="/drinks"><img src="assets/images/coctel.png" class="h-16">Tragos</a></li>
             <li><a href="/bars" ><img src="assets/images/bar.png" class="h-16">Bares</a></li>
             <li><a href="/games"><img src="assets/images/game.png" class="h-16">Juegos</a></li>
-            <li><a href="/profile"><img src="assets/images/promotion.png" class="h-16">Promociones</a></li>
             <li><a href="/post-drink"><img src="assets/images/post.png" class="h-16">Publica</a></li>
+            <li><a href="/drinkly-team"><img src="assets/images/gettoknowus.png" class="h-16">Concócenos</a></li>
             <li *ngIf="isAdmin"><a href="/admin"><img src="assets/images/settings.png" class="h-16">Administrar</a></li>
             <li *ngIf="isLogged"><a href="/profile"><img src="assets/images/user.png" class="h-16">Tu Perfil</a></li>
-            <li *ngIf="!isLogged"><a href="/login"><img src="assets/images/user.png" class="h-16">Entrar</a></li>
+            <li *ngIf="!isLogged"><a href="/login"><img src="assets/images/login_.png" class="h-16">Entrar</a></li>
         </ul>
 
     </div>
@@ -42,17 +42,17 @@
         </svg> 
     </label>
     <div [ngStyle]="{'left.vw': !sidebar_left? '-100' : '0'}" class="sidebar overflow-y-scroll sm:overflow-y-auto">
-        <header class="text-4xl text-white ">Drinkly</header>
+        <header class="text-4xl text-white h-16"></header>
 
         <ul>
             <li><a href="/drinks"><img src="assets/images/coctel.png" class="h-16">Tragos</a></li>
             <li><a href="/bars" ><img src="assets/images/bar.png" class="h-16">Bares</a></li>
             <li><a href="/games"><img src="assets/images/game.png" class="h-16">Juegos</a></li>
-            <li><a href="/profile"><img src="assets/images/promotion.png" class="h-16">Promociones</a></li>
             <li><a href="/post-drink"><img src="assets/images/post.png" class="h-16">Publica</a></li>
+            <li><a href="/drinkly-team"><img src="assets/images/gettoknowus.png" class="h-16">Concócenos</a></li>
             <li *ngIf="isAdmin"><a href="/admin"><img src="assets/images/settings.png" class="h-16">Administrar</a></li>
             <li *ngIf="isLogged"><a href="/profile"><img src="assets/images/user.png" class="h-16">Tu Perfil</a></li>
-            <li *ngIf="!isLogged"><a href="/login"><img src="assets/images/user.png" class="h-16">Entrar</a></li>
+            <li *ngIf="!isLogged"><a href="/login"><img src="assets/images/login_.png" class="h-16">Entrar</a></li>
         </ul>
 
     </div>

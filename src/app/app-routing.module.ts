@@ -45,6 +45,7 @@ import { EditAdComponent } from './components/admin/ad/edit-ad/edit-ad.component
 const externalUrlProvider = new InjectionToken('externalUrlRedirectResolver');
 import {PostDrinkComponent} from './components/post-drink/post-drink.component';
 import {PostBusinessComponent} from './components/post-business/post-business.component';
+import {DrinklyTeamComponent} from './components/drinkly-team/drinkly-team.component';
 
 const routes: Routes = [
 
@@ -87,6 +88,11 @@ const routes: Routes = [
     canActivate: [AuthGuard],
   },
 
+  {
+    path: "drinkly-team",
+    component: DrinklyTeamComponent,
+    canActivate: [AuthGuard],
+  },
 
   { path: "drink/:id", component: RecipeComponent,
     canActivate: [AuthGuard]},
