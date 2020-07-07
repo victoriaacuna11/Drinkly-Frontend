@@ -41,7 +41,7 @@ export class ProfileComponent implements OnInit {
       (profile:any) => {
         this.user = profile.user;
         this.getDrinks();
-        this.userLoading = false;
+        
       },
       (err) => {
         console.log(err);
@@ -70,6 +70,7 @@ export class ProfileComponent implements OnInit {
           this.drinksA.push(i);
         }
       })
+      this.userLoading = false;
       
     })
   }
