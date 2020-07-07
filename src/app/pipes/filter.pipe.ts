@@ -12,10 +12,10 @@ export class FilterPipe implements PipeTransform {
   }
 
   transform(value: any, arg: string, defaultFilt?:Boolean, zones?:Function): any {
-    console.log(arg)
-    console.log(zones)
-    console.log(value)
-    console.log("es filtro por default: "+defaultFilt)
+    // console.log(arg)
+    // console.log(zones)
+    // console.log(value)
+    // console.log("es filtro por default: "+defaultFilt)
 
     const resultPosts = [];
     if(defaultFilt){
@@ -27,7 +27,7 @@ export class FilterPipe implements PipeTransform {
           if(zones[i]._id==post.location.zone){
             found = true;
             name = zones[i].name.toString();
-            console.log("aaaaahhhhhh"+ post.location.zone + " " + name)
+            // console.log("aaaaahhhhhh"+ post.location.zone + " " + name)
             if(name.toLowerCase().indexOf(arg.toLowerCase())>-1){
               resultPosts.push(post)
             }
