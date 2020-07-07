@@ -43,15 +43,12 @@ import { ListAdComponent } from './components/admin/ad/list-ad/list-ad.component
 import { AddAdComponent } from './components/admin/ad/add-ad/add-ad.component';
 import { EditAdComponent } from './components/admin/ad/edit-ad/edit-ad.component';
 const externalUrlProvider = new InjectionToken('externalUrlRedirectResolver');
-import {NavbarComponent} from './components/navbar/navbar.component';
 import {PostDrinkComponent} from './components/post-drink/post-drink.component';
+import {PostBusinessComponent} from './components/post-business/post-business.component';
 
 const routes: Routes = [
 
-   {
-    path: "navbar",
-    component: NavbarComponent,
-   },
+   
 
   // USERS' ROUTES
 
@@ -82,6 +79,11 @@ const routes: Routes = [
   {
     path: "post-drink",
     component: PostDrinkComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: "post-your-business",
+    component: PostBusinessComponent,
     canActivate: [AuthGuard],
   },
 

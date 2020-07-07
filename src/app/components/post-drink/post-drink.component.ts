@@ -72,11 +72,6 @@ export class PostDrinkComponent implements OnInit {
   }
 
   postRecipe(){
-    // console.log(this.form.value.recipe);
-    // let a = {
-    //   a: this.form.value.recipe.replace(/\n/ig, '\n'),
-    //   b: true}
-    // console.log(a.a);
     this.sending=true;
     console.log(this.form.value.recipe)
     let ingredients: String [] = [];
