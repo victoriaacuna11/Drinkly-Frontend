@@ -26,6 +26,8 @@
         <div id="test" class="rounded overflow-hidden border-2 shadow-lg   hover:border-solid hover:border-orange-500 hover:border-opacity-75   transition ease-in duration-200" 
         *ngFor="let item of drinksA | filter: filterPost"   
         >
+        
+
          <div class="drink_img"
           style="  background-position: center;
           background-repeat: no-repeat;
@@ -35,11 +37,12 @@
           (click)="detail(item._id)"
           >
 
-            <div (click)="detail(item._id)" class="w-10 h-10 rounded-full  opacity-75 bg-white m-2 hover:bg-orange-300 transition ease-in duration-300">
-              <div class="  rounded-full ">
-                <img  class="p-1" src="https://i.ya-webdesign.com/images/5-star-icon-png-5.png" alt="">
-              </div>
-            </div>
+          <button (click)="fav($event, item._id)" 
+          [ngClass]="is_fav(item._id)? ' rounded-full w-10 h-10 rounded-full  opacity-75 bg-orange-500 m-2 hover:bg-orange-400 transition ease-in duration-300':'rounded-full w-10 h-10 rounded-full  opacity-75 bg-white m-2 hover:bg-orange-300 transition ease-in duration-300' " >
+              <img  class="p-1" src="https://i.ya-webdesign.com/images/5-star-icon-png-5.png" alt="">
+          </button>
+
+            
             <!-- CAMBIAR A ORANGE CON CLICK -->
           </div>
          
