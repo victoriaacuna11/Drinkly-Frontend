@@ -72,7 +72,13 @@ export class PostDrinkComponent implements OnInit {
   }
 
   postRecipe(){
+    // console.log(this.form.value.recipe);
+    // let a = {
+    //   a: this.form.value.recipe.replace(/\n/ig, '\n'),
+    //   b: true}
+    // console.log(a.a);
     this.sending=true;
+    console.log(this.form.value.recipe)
     let ingredients: String [] = [];
     this.form.value.ingredients.forEach(element => {
       ingredients.push(element.ingredient);
@@ -100,7 +106,8 @@ export class PostDrinkComponent implements OnInit {
   }
 
   keepPosting(){
-    this.route.navigate(["post-drink"]);
+    // this.route.navigate(["post-drink"]);
+    window.location.reload()
   }
 
   goHome(){
