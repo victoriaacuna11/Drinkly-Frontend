@@ -127,5 +127,9 @@ export class DrinksListComponent implements OnInit {
       this.sidebar = $event;
     }
   }
+  goBack(){
+    //vete al home
+    this.route.navigate(['']);
+  }
 
 }

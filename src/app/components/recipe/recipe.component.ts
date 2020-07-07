@@ -6,6 +6,8 @@ import { drink } from 'src/app/models/drink';
 import { IngredientService } from "src/app/services/ingredient.service";
 import { ingredient } from "src/app/models/ingredient";
 import { database } from 'firebase';
+import {Location} from '@angular/common';
+
 
 @Component({
   selector: 'app-recipe',
@@ -22,7 +24,8 @@ export class RecipeComponent implements OnInit {
 
 
   constructor(private service: DrinkService, private route: Router, 
-    private rout: ActivatedRoute, private service_ing: IngredientService,) { }
+    private rout: ActivatedRoute, private service_ing: IngredientService,
+    private _location:Location) { }
 
   ngOnInit() {
     this.getReceta();
@@ -80,6 +83,10 @@ export class RecipeComponent implements OnInit {
       this.getIngredients();
     })
     
+  }
+
+  goBack(){
+    this._location.back()
   }
 
 }

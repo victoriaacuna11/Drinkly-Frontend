@@ -463,4 +463,8 @@ export class ShowFilterComponent implements OnInit {
   }
 }
 
+goBack(){
+  this.router.navigate(["drinks/filter/"])
+}
+
 }
