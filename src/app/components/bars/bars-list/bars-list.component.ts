@@ -4,6 +4,7 @@ import { BarService } from 'src/app/services/bar.service';
 import { ZoneService } from 'src/app/services/zone.service';
 import { zone } from 'src/app/models/zone';
 import { Router } from '@angular/router';
+import { SharedService } from 'src/app/services/shared.service';
 
 @Component({
   selector: 'app-bars-list',
@@ -17,11 +18,17 @@ export class BarsListComponent implements OnInit {
   zones:zone[];
   sidebar: Boolean;
   barsAv: Bar[] =[];
+  defaultFilt = true;
+  filterPost: string = "qlqsa";
 
-  constructor(private service: BarService, private zoneService: ZoneService, private route: Router) { }
+
+  constructor(private service: BarService, private zoneService: ZoneService, private route: Router,
+     private data: SharedService) { }
 
   ngOnInit() {
+    this.data.currentMsg.subscribe(m => this.filterPost = m)
     this.getZones();
+    
   }
 
   getZone(id){
@@ -68,6 +75,14 @@ export class BarsListComponent implements OnInit {
       this.zones = [...res.data];
       this.getBars();
     })
+  }
+
+  receiveFilt($event){
+    console.log("en la lista: " + $event)
+    if($event==="zonas"){
+      this.defaultFilt = true;
+    }else 
+      this.defaultFilt = false;
   }
   
 

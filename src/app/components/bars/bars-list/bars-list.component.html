@@ -2,8 +2,10 @@
 
 <div [ngStyle]="{'margin-left.rem': !sidebar? '0': '16'}" class="move">
 
-  <app-admin-header></app-admin-header>
+  <app-header hasFilter=true hasSearchBar=true [searchBarContent]="defaultFilt? 'zona...': 'nombre...' " [arr]="defaultFilt? zones: barsAv" 
+  [filterOp]="['zonas', 'nombre']" (filt)="receiveFilt($event)"></app-header>
 
+  
   <div class="w-full" *ngIf="!loading">
 
    
@@ -14,7 +16,7 @@
 
 
           <div class="rounded overflow-hidden border-2 shadow-lg   hover:border-solid hover:border-orange-500 hover:border-opacity-75   transition ease-in duration-200" 
-           *ngFor="let item of barsAv"
+           *ngFor="let item of barsAv | filter: filterPost: defaultFilt: zones"
            
            >
             <div (click)="detail(item._id)" class="bar_img"
@@ -23,7 +25,6 @@
                     background-size: cover;
                     position: relative; "
                     [style.backgroundImage]="'url('+ item.main_image +')'">
-
             </div>
             <div (click)="detail(item._id)" class="px-6 py-4">
               <div class="font-bold text-xl md:text-2xl mb-2"> <h1>{{ item.name }} </h1> </div>
@@ -32,9 +33,22 @@
               
             </div>
         </div>
-
         </div>
-
+        <div style="font-family: 'Open Sans', sans-serif; width: 30%; font-size: medium;" 
+        *ngIf="(barsAv | filter: filterPost: defaultFilt: zones)?.length==0"
+        class="mt-40"
+        >
+          <div style="height: 20rem;
+          width: 85%; margin-left: 2.5rem; 
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-image: url(assets/images/notFoundBar.jpeg);
+          border-radius: 0.25rem;"
+          >
+          </div>
+          <p style="padding-left: 5rem;">No se encontró el bar...</p>
+        </div>
       </div>
     </div>
   
