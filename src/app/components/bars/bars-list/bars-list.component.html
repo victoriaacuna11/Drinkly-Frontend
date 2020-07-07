@@ -34,20 +34,19 @@
             </div>
         </div>
         </div>
-        <div style="font-family: 'Open Sans', sans-serif; width: 30%; font-size: medium;" 
+        <div style=" font-size: medium;" 
         *ngIf="(barsAv | filter: filterPost: defaultFilt: zones)?.length==0"
-        class="mt-40"
+        class="mt-32"
         >
-          <div style="height: 20rem;
-          width: 85%; margin-left: 2.5rem; 
+          <div style="height: 22rem;
           background-position: center;
           background-repeat: no-repeat;
           background-size: cover;
-          background-image: url(assets/images/notFoundBar.jpeg);
+          background-image: url(assets/images/barNotFound.jpeg);
           border-radius: 0.25rem;"
           >
           </div>
-          <p style="padding-left: 5rem;">No se encontró el bar...</p>
+          <p >No se encontró el bar...</p>
         </div>
       </div>
     </div>
