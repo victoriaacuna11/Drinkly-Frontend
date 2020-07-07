@@ -24,7 +24,55 @@
                 </button>
                 </div>
               </div>
+
+              
+    
+
+
             </div>
+
+            <div class="w-full flex flex-col items-center mb-20 mt-10" *ngIf="!userLoading">
+              <div class="drink_card">
+                <div id="test" class="rounded overflow-hidden border-2 shadow-lg   hover:border-solid hover:border-orange-500 hover:border-opacity-75   transition ease-in duration-200" 
+                *ngFor="let item of drinksA"   
+                >
+                
+        
+                 <div class="drink_img"
+                  style="  background-position: center;
+                  background-repeat: no-repeat;
+                  background-size: cover;
+                  position: relative; "
+                  [style.backgroundImage]="'url('+ item.pictures +')'"
+                  (click)="detail(item._id)"
+                  >
+        
+                  <button (click)="fav($event, item._id)" 
+                  class="rounded-full w-10 h-10 rounded-full  opacity-75 bg-white m-2 hover:bg-orange-300 transition ease-in duration-300" >
+                      <img  class="p-1" src="https://image.flaticon.com/icons/svg/1828/1828970.svg" alt="" *ngIf="!is_fav(item._id)">
+                      <img  class="p-1" src="https://image.flaticon.com/icons/svg/1828/1828614.svg" alt="" *ngIf="is_fav(item._id)">
+                  </button>
+        
+                    
+                    <!-- CAMBIAR A ORANGE CON CLICK -->
+                  </div>
+                 
+                  <div (click)="detail(item._id)" class="px-6 py-4">
+                    <div class="font-bold text-xl md:text-2xl mb-2"> <h1>{{ item.name }} </h1> </div>
+                      <p class="text-gray-700 text-lg mb-1">
+                        Autor: {{ item.owner.name }}
+                      </p>
+                      <p class="text-gray-700 text-lg">
+                        {{ item.owner.category }}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div style="font-family: 'Open Sans', sans-serif; width: 30%; font-size: medium;" *ngIf="(drinksA | filter: filterPost)?.length==0"
+                class="m-auto"
+                >
+                </div>
+              </div>
 <app-footer></app-footer>
 </div>
 

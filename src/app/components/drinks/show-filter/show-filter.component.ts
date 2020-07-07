@@ -7,6 +7,9 @@ import { IngredientService } from "src/app/services/ingredient.service";
 import { CategoriesService } from 'src/app/services/categories.service';
 import { style } from '@angular/animations';
 import { filter } from 'rxjs/operators';
+import { UserService } from 'src/app/services/user.service';
+import { AuthService } from 'src/app/services/auth.service';
+import { user } from 'src/app/models/user';
 
 @Component({
   selector: 'app-show-filter',
@@ -22,7 +25,9 @@ export class ShowFilterComponent implements OnInit {
     private routeSV: ActivatedRoute,
     private ing_service:IngredientService,
     private cat_service:CategoriesService,
-    private router:Router
+    private router:Router,
+    private auth_svc:AuthService, 
+    private user_s:UserService
   ) { }
 
   filter_ing=[];
@@ -41,6 +46,7 @@ export class ShowFilterComponent implements OnInit {
   list=[];
   search_bar=""
   categories=[]
+  user:user;
 
   ngOnInit() {    
     this.aux=this.routeSV.snapshot.paramMap.get('filter');
@@ -60,12 +66,78 @@ export class ShowFilterComponent implements OnInit {
         }
       })
       
-      this.loading = false;
+      this.getProfile();
       this.filter_ing=this.aux.split(',')
      // console.log(this.drinks)
     });
     
   }
+
+  
+  fav(event:Event ,drink:any){
+    event.stopPropagation();
+    if(this.user.favorites.includes(drink)){
+
+      for (let index = 0; index < this.user.favorites.length; index++) {
+        if(this.user.favorites[index]==drink){
+          this.user.favorites.splice(index,1);
+        }
+      }
+
+      this.updateUser();
+
+    }else{
+      this.user.favorites.push(drink);
+      this.updateUser();
+
+    }
+
+    console.log(this.user)
+  }
+  is_fav(id:any){
+    if(this.user.favorites.includes(id)){
+      return true
+    }else{
+      return false
+    }
+  }
+  updateUser(){
+
+    var user: user = {
+      f_name: this.user.f_name,
+      l_name: this.user.l_name,
+      user_name: this.user.user_name,
+      password: this.user.password,
+      email: this.user.email,
+      _id: this.user._id,
+      available: true,     
+      isAdmin: this.user.isAdmin,
+      birthday: this.user.birthday,
+      favorites: this.user.favorites,
+    };
+
+    console.log(user);
+    this.user_s.updateUser(user).subscribe((res:any) => {
+    });
+  }
+
+  getProfile(){
+    this.auth_svc.getProfile().subscribe(
+      (profile:any)=>{
+        this.user=profile.user;
+        console.log(this.user)
+        this.loading = false;
+      },
+      (err)=>{
+        console.log(err)
+        return false
+      }
+      
+    )
+
+    
+  }
+
 
   getMessage($event){
     if(screen.width>640){
@@ -325,6 +397,7 @@ export class ShowFilterComponent implements OnInit {
     this.ing_filter=[];
     
     this.filter_ing=this.aux.split(',')
+    this.loading=true
     this.getIngredients();
     this.getFilteredDrinks();
   }
