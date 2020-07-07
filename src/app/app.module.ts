@@ -65,6 +65,7 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { clickedOutDirective } from './Directives/dropdown.directive';
 import { UploadingLoaderComponent } from './components/uploading-loader/uploading-loader.component';
 import { PostBusinessComponent } from './components/post-business/post-business.component';
+import { DrinklyTeamComponent } from './components/drinkly-team/drinkly-team.component';
 
 @NgModule({
   declarations: [
@@ -119,7 +120,8 @@ import { PostBusinessComponent } from './components/post-business/post-business.
     FilterPipe,
     clickedOutDirective,
     UploadingLoaderComponent,
-    PostBusinessComponent
+    PostBusinessComponent,
+    DrinklyTeamComponent
   ],
   imports: [
     BrowserModule,
