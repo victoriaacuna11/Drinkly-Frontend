@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-drinkly-team',
@@ -12,6 +13,7 @@ export class DrinklyTeamComponent implements OnInit {
 
   constructor(
     private route: Router,
+    private _location:Location,
   ) { }
 
   ngOnInit() {
@@ -25,5 +27,9 @@ export class DrinklyTeamComponent implements OnInit {
 
   postBusiness(){
     this.route.navigate(["post-your-business"]);
+  }
+
+  goBack(){
+    this._location.back()
   }
 }

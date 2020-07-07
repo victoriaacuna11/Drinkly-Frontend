@@ -133,17 +133,10 @@
                     <button
                     [disabled]="form.invalid"
                     (click)="post()"
-                    class="w-1/3 sm:w-1/4 md:w-1/4 shadow bg-green-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                    class="w-1/3 sm:w-1/2 md:w-1/2 shadow bg-green-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
                     type="button"
                     >
                     Enviar
-                    </button>
-                    <button
-                    (click)="goBack()"
-                    class="w-1/3 sm:w-1/4 md:w-1/4 shadow bg-orange-500 hover:bg-orange-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-                    type="button"
-                    >
-                    Regresar
                     </button>
                 </div>
                 </div>
@@ -193,6 +186,9 @@
       
 
     </div>
+    <button class="back_btn" (click)="goBack()">
+      <img class="p-3" src="assets/images/goback.png" alt="" >
+    </button>
     <app-footer></app-footer>
 
 </div>

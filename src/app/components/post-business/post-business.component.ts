@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { SendMailService } from 'src/app/services/send-mail.service';
 import { AuthService } from 'src/app/services/auth.service';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-post-business',
@@ -20,10 +21,10 @@ export class PostBusinessComponent implements OnInit {
   
   constructor(
     private route: Router,
-    private routeSV: ActivatedRoute,
     private _builder: FormBuilder,
     private service: SendMailService,
     private authService: AuthService,
+    private _location:Location
   ) { 
     this.form = this._builder.group({
       name: ["",Validators.required],
@@ -46,11 +47,13 @@ export class PostBusinessComponent implements OnInit {
     }
   }
 
-  goBack(){
-    this.route.navigate([""]);
-  }
+  
   goHome(){
     this.route.navigate([""]);
+  }
+
+  goBack(){
+    this._location.back()
   }
 
   post(){

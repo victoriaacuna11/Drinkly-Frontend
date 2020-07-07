@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, Validators, FormGroup, FormArray } from '@angular/forms';
 import { SendMailService } from 'src/app/services/send-mail.service';
 import { AuthService } from 'src/app/services/auth.service';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-post-drink',
@@ -24,6 +25,7 @@ export class PostDrinkComponent implements OnInit {
     private _builder: FormBuilder,
     private service: SendMailService,
     private authService: AuthService,
+    private _location:Location,
   ) { 
     this.form = this._builder.group({
       name: ["",Validators.required],
@@ -67,9 +69,6 @@ export class PostDrinkComponent implements OnInit {
     this.IngredientArray.removeAt(index);
   }
 
-  goBack(){
-    this.route.navigate([""]);
-  }
 
   postRecipe(){
     this.sending=true;
@@ -100,13 +99,12 @@ export class PostDrinkComponent implements OnInit {
     })
   }
 
-  keepPosting(){
-    // this.route.navigate(["post-drink"]);
-    window.location.reload()
-  }
-
   goHome(){
     this.route.navigate([""]);
+  }
+
+  goBack(){
+    this._location.back()
   }
 
 }
