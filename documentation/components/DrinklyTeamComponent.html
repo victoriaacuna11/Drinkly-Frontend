@@ -1,0 +1,645 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>drinkly documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">drinkly documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>DrinklyTeamComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/drinkly-team/drinkly-team.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-drinkly-team</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./drinkly-team.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./drinkly-team.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#sidebar">sidebar</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#getMessage">getMessage</a>
+                            </li>
+                            <li>
+                                <a href="#goBack">goBack</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#postBusiness">postBusiness</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(route: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, _location: <a href="https://angular.io/api/common/Location" target="_blank">Location</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/components/drinkly-team/drinkly-team.component.ts:12</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_location</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/common/Location" target="_blank" >Location</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getMessage"></a>
+                    <span class="name">
+                        <b>
+                            getMessage
+                        </b>
+                        <a href="#getMessage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getMessage($event)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="22"
+                            class="link-to-prism">src/app/components/drinkly-team/drinkly-team.component.ts:22</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>$event</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="goBack"></a>
+                    <span class="name">
+                        <b>
+                            goBack
+                        </b>
+                        <a href="#goBack"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>goBack()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="32"
+                            class="link-to-prism">src/app/components/drinkly-team/drinkly-team.component.ts:32</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="19"
+                            class="link-to-prism">src/app/components/drinkly-team/drinkly-team.component.ts:19</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="postBusiness"></a>
+                    <span class="name">
+                        <b>
+                            postBusiness
+                        </b>
+                        <a href="#postBusiness"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>postBusiness()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="28"
+                            class="link-to-prism">src/app/components/drinkly-team/drinkly-team.component.ts:28</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="sidebar"></a>
+                        <span class="name">
+                            <b>
+                            sidebar</b>
+                            <a href="#sidebar"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" target="_blank" >Boolean</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/components/drinkly-team/drinkly-team.component.ts:12</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import {Location} from &#x27;@angular/common&#x27;;
+
+@Component({
+  selector: &#x27;app-drinkly-team&#x27;,
+  templateUrl: &#x27;./drinkly-team.component.html&#x27;,
+  styleUrls: [&#x27;./drinkly-team.component.scss&#x27;]
+})
+export class DrinklyTeamComponent implements OnInit {
+
+  sidebar: Boolean;
+
+  constructor(
+    private route: Router,
+    private _location:Location,
+  ) { }
+
+  ngOnInit() {
+  }
+
+  getMessage($event){
+    if(screen.width&gt;640){
+      this.sidebar &#x3D; $event;
+    }
+  }
+
+  postBusiness(){
+    this.route.navigate([&quot;post-your-business&quot;]);
+  }
+
+  goBack(){
+    this._location.back()
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;app-test-bar (message)&#x3D;&quot;getMessage($event)&quot;&gt;&lt;/app-test-bar&gt;
+&lt;div [ngStyle]&#x3D;&quot;{&#x27;margin-left.rem&#x27;: !sidebar? &#x27;0&#x27;: &#x27;16&#x27;}&quot; class&#x3D;&quot;move&quot;&gt;
+    &lt;app-header&gt;&lt;/app-header&gt;
+   
+    &lt;div style&#x3D;&quot;font-family: &#x27;Open Sans&#x27;, sans-serif;&quot;&gt; 
+
+        &lt;div
+            class&#x3D;&quot;h-20 w-full flex justify-center items-center pt-12 pb-12&quot;
+            style&#x3D;&quot;font-family: &#x27;Open Sans&#x27;, sans-serif;&quot;
+        &gt;
+            &lt;div&gt;&lt;h2 class&#x3D;&quot;text-4xl&quot;&gt;¿QUIERES QUE PUBLIQUEMOS TU NEGOCIO?&lt;/h2&gt;&lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;w-full flex justify-center items-center h-full&quot;&gt;
+            &lt;div
+                class&#x3D;&quot;w-2/3 md:w-2/4 content-center&quot;
+                encType&#x3D;&quot;multipart/form-data&quot;
+            &gt;
+                &lt;div class&#x3D;&quot;w-full flex space-x-4 justify-center&quot;&gt;
+                    &lt;button
+                    (click)&#x3D;&quot;postBusiness()&quot;
+                    class&#x3D;&quot;w-1/3 shadow bg-green-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded&quot;
+                    &gt;
+                        Formar parte
+                    &lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+    &lt;/div&gt;
+
+    &lt;button class&#x3D;&quot;back_btn&quot; (click)&#x3D;&quot;goBack()&quot;&gt;
+      &lt;img class&#x3D;&quot;p-3&quot; src&#x3D;&quot;assets/images/goback.png&quot; alt&#x3D;&quot;&quot; &gt;
+    &lt;/button&gt;
+
+    &lt;app-footer&gt;&lt;/app-footer&gt;
+
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./drinkly-team.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><app-test-bar (message)="getMessage($event)"></app-test-bar><div [ngStyle]="{\'margin-left.rem\': !sidebar? \'0\': \'16\'}" class="move">    <app-header></app-header>       <div style="font-family: \'Open Sans\', sans-serif;">         <div            class="h-20 w-full flex justify-center items-center pt-12 pb-12"            style="font-family: \'Open Sans\', sans-serif;"        >            <div><h2 class="text-4xl">¿QUIERES QUE PUBLIQUEMOS TU NEGOCIO?</h2></div>        </div>        <div class="w-full flex justify-center items-center h-full">            <div                class="w-2/3 md:w-2/4 content-center"                encType="multipart/form-data"            >                <div class="w-full flex space-x-4 justify-center">                    <button                    (click)="postBusiness()"                    class="w-1/3 shadow bg-green-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"                    >                        Formar parte                    </button>                </div>            </div>        </div>    </div>    <button class="back_btn" (click)="goBack()">      <img class="p-3" src="assets/images/goback.png" alt="" >    </button>    <app-footer></app-footer></div></div>'
+    var COMPONENTS = [{'name': 'AddAdComponent', 'selector': 'app-add-ad'},{'name': 'AddBarComponent', 'selector': 'app-add-bar'},{'name': 'AddDrinkComponent', 'selector': 'app-add-drink'},{'name': 'AddGameComponent', 'selector': 'app-add-game'},{'name': 'AddIngredientComponent', 'selector': 'app-add-ingredient'},{'name': 'AddZoneComponent', 'selector': 'app-add-zone'},{'name': 'AdminHeaderComponent', 'selector': 'app-admin-header'},{'name': 'AdminHomeComponent', 'selector': 'app-admin-home'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BarsListComponent', 'selector': 'app-bars-list'},{'name': 'DetailBarComponent', 'selector': 'app-detail-bar'},{'name': 'DrinklyTeamComponent', 'selector': 'app-drinkly-team'},{'name': 'DrinksFilterComponent', 'selector': 'app-drinks-filter'},{'name': 'DrinksListComponent', 'selector': 'app-drinks-list'},{'name': 'EditAdComponent', 'selector': 'app-edit-ad'},{'name': 'EditBarComponent', 'selector': 'app-edit-bar'},{'name': 'EditDrinkComponent', 'selector': 'app-edit-drink'},{'name': 'EditGameComponent', 'selector': 'app-edit-game'},{'name': 'EditIngredientComponent', 'selector': 'app-edit-ingredient'},{'name': 'EditUserComponent', 'selector': 'app-edit-user'},{'name': 'EditZoneComponent', 'selector': 'app-edit-zone'},{'name': 'FilterChildComponent', 'selector': 'app-filter-child'},{'name': 'FilterParentComponent', 'selector': 'app-filter-parent'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'JuegosComponent', 'selector': 'app-juegos'},{'name': 'ListAdComponent', 'selector': 'app-list-ad'},{'name': 'ListBarComponent', 'selector': 'app-list-bar'},{'name': 'ListDrinkComponent', 'selector': 'app-list-drink'},{'name': 'ListGameComponent', 'selector': 'app-list-game'},{'name': 'ListIngredientComponent', 'selector': 'app-list-ingredient'},{'name': 'ListUserComponent', 'selector': 'app-list-user'},{'name': 'ListZoneComponent', 'selector': 'app-list-zone'},{'name': 'LoaderComponent', 'selector': 'app-loader'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PostBusinessComponent', 'selector': 'app-post-business'},{'name': 'PostDrinkComponent', 'selector': 'app-post-drink'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RecipeComponent', 'selector': 'app-recipe'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'RequiredFieldComponent', 'selector': 'app-required-field'},{'name': 'ShowFilterComponent', 'selector': 'app-show-filter'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'TestBarComponent', 'selector': 'app-test-bar'},{'name': 'UploadingLoaderComponent', 'selector': 'app-uploading-loader'}];
+    var DIRECTIVES = [{'name': 'AgeValidatorDirective', 'selector': '[isAdult]'},{'name': 'clickedOutDirective', 'selector': '[clickedOut]'},{'name': 'ExternalUrlDirective', 'selector': 'a[appExternalUrl]'},{'name': 'passwordValidator', 'selector': '[passwordValid]'}];
+    var ACTUAL_COMPONENT = {'name': 'DrinklyTeamComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'DrinklyTeamComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

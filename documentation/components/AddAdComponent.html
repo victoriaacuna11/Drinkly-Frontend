@@ -1,0 +1,1111 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>drinkly documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">drinkly documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>AddAdComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/admin/ad/add-ad/add-ad.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-add-ad</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./add-ad.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./add-ad.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#form">form</a>
+                            </li>
+                            <li>
+                                <a href="#main_image">main_image</a>
+                            </li>
+                            <li>
+                                <a href="#selectedFile">selectedFile</a>
+                            </li>
+                            <li>
+                                <a href="#sidebar">sidebar</a>
+                            </li>
+                            <li>
+                                <a href="#updating">updating</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#addAd">addAd</a>
+                            </li>
+                            <li>
+                                <a href="#changeImage">changeImage</a>
+                            </li>
+                            <li>
+                                <a href="#getMessage">getMessage</a>
+                            </li>
+                            <li>
+                                <a href="#goBack">goBack</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#uploadEnRes">uploadEnRes</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(service: <a href="../injectables/AdvertisementService.html">AdvertisementService</a>, _builder: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, route: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, storage: AngularFireStorage)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/components/admin/ad/add-ad/add-ad.component.ts:19</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>service</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AdvertisementService.html" target="_self" >AdvertisementService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_builder</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/forms/FormBuilder" target="_blank" >FormBuilder</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>storage</td>
+                                                  
+                                                        <td>
+                                                                    <code>AngularFireStorage</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addAd"></a>
+                    <span class="name">
+                        <b>
+                            addAd
+                        </b>
+                        <a href="#addAd"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>addAd()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="36"
+                            class="link-to-prism">src/app/components/admin/ad/add-ad/add-ad.component.ts:36</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="changeImage"></a>
+                    <span class="name">
+                        <b>
+                            changeImage
+                        </b>
+                        <a href="#changeImage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>changeImage(url)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="80"
+                            class="link-to-prism">src/app/components/admin/ad/add-ad/add-ad.component.ts:80</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>url</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getMessage"></a>
+                    <span class="name">
+                        <b>
+                            getMessage
+                        </b>
+                        <a href="#getMessage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getMessage($event)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="89"
+                            class="link-to-prism">src/app/components/admin/ad/add-ad/add-ad.component.ts:89</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>$event</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="goBack"></a>
+                    <span class="name">
+                        <b>
+                            goBack
+                        </b>
+                        <a href="#goBack"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>goBack()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="72"
+                            class="link-to-prism">src/app/components/admin/ad/add-ad/add-ad.component.ts:72</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="33"
+                            class="link-to-prism">src/app/components/admin/ad/add-ad/add-ad.component.ts:33</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="uploadEnRes"></a>
+                    <span class="name">
+                        <b>
+                            uploadEnRes
+                        </b>
+                        <a href="#uploadEnRes"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>uploadEnRes(event)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="76"
+                            class="link-to-prism">src/app/components/admin/ad/add-ad/add-ad.component.ts:76</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>event</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="form"></a>
+                        <span class="name">
+                            <b>
+                            form</b>
+                            <a href="#form"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/components/admin/ad/add-ad/add-ad.component.ts:16</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="main_image"></a>
+                        <span class="name">
+                            <b>
+                            main_image</b>
+                            <a href="#main_image"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank" >String</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>null</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/components/admin/ad/add-ad/add-ad.component.ts:17</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selectedFile"></a>
+                        <span class="name">
+                            <b>
+                            selectedFile</b>
+                            <a href="#selectedFile"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>File</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>null</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/components/admin/ad/add-ad/add-ad.component.ts:15</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="sidebar"></a>
+                        <span class="name">
+                            <b>
+                            sidebar</b>
+                            <a href="#sidebar"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" target="_blank" >Boolean</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/components/admin/ad/add-ad/add-ad.component.ts:18</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="updating"></a>
+                        <span class="name">
+                            <b>
+                            updating</b>
+                            <a href="#updating"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" target="_blank" >Boolean</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/components/admin/ad/add-ad/add-ad.component.ts:19</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &quot;@angular/core&quot;;
+import { advertisement } from &quot;src/app/models/advertisement&quot;;
+import { AdvertisementService } from &quot;src/app/services/advertisement.service&quot;;
+import { Router } from &quot;@angular/router&quot;;
+import { FormGroup, FormBuilder, Validators } from &#x27;@angular/forms&#x27;;
+import { AngularFireStorage } from &quot;@angular/fire/storage&quot;;
+
+@Component({
+  selector: &#x27;app-add-ad&#x27;,
+  templateUrl: &#x27;./add-ad.component.html&#x27;,
+  styleUrls: [&#x27;./add-ad.component.scss&#x27;]
+})
+export class AddAdComponent implements OnInit {
+
+  selectedFile: File &#x3D; null;
+  form: FormGroup;
+  main_image: String&#x3D;null;
+  sidebar: Boolean;
+  updating:Boolean&#x3D;false;
+
+
+  constructor(
+    private service: AdvertisementService,
+    private _builder: FormBuilder,
+    private route: Router,
+    private storage: AngularFireStorage
+  ) { 
+    this.form &#x3D; this._builder.group({
+      client: [&quot;&quot;, Validators.required],
+    });
+  }
+
+  ngOnInit() {
+  }
+  
+  addAd() {
+    
+    if(this.main_image!&#x3D;null){
+
+      if(!this.form.invalid){
+        this.updating&#x3D;true;
+      
+        const ad: advertisement &#x3D; {
+          promo_img: this.main_image,
+          client:this.form.value.client,
+          _id: &quot;&quot;,
+          available: true,
+        };
+        console.log(ad);
+        this.service.createAd(ad).subscribe((res) &#x3D;&gt; {
+          this.route.navigate([&quot;admin/ad&quot;]);
+        });
+
+      }else{
+
+        const response &#x3D; alert(
+          &quot;Por favor asegurese de rellenar todos los campos antes de añadir la publicidad&quot;
+          
+        );
+
+      }
+
+
+    } else {
+      const response &#x3D; alert(
+        &quot;No ha subido ninguna imagen. Por favor, suba una.&quot;
+      );
+    }
+    
+  }
+
+  goBack() {
+    this.route.navigate([&quot;admin/ad&quot;]);
+  }
+
+  uploadEnRes(event) {
+    this.main_image &#x3D; event.thumbnail;
+  }
+
+  changeImage(url) {
+    return this.storage.storage
+      .refFromURL(url)
+      .delete()
+      .then((res) &#x3D;&gt; {
+        this.main_image &#x3D; null;
+      });
+  }
+
+  getMessage($event){
+    if(screen.width&gt;640){
+      this.sidebar &#x3D; $event;
+    }
+  }
+
+
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">
+&lt;app-test-bar (message)&#x3D;&quot;getMessage($event)&quot;&gt;&lt;/app-test-bar&gt; 
+
+&lt;div [ngStyle]&#x3D;&quot;{&#x27;margin-left.rem&#x27;: !sidebar? &#x27;0&#x27;: &#x27;16&#x27;}&quot; class&#x3D;&quot;move&quot;&gt;
+
+  &lt;app-admin-header&gt;&lt;/app-admin-header&gt;
+  &lt;div *ngIf&#x3D;&quot;!updating&quot;&gt;
+  &lt;div  style&#x3D;&quot;font-family: &#x27;Open Sans&#x27;, sans-serif;&quot;&gt; 
+    &lt;div
+      class&#x3D;&quot;h-20 w-full flex justify-center items-center&quot;
+      style&#x3D;&quot;font-family: &#x27;Open Sans&#x27;, sans-serif;&quot;
+    &gt;
+      &lt;div&gt;
+        &lt;h2 class&#x3D;&quot;text-4xl&quot;&gt;CREA UNA PUBLICIDAD&lt;/h2&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;w-full flex justify-center items-center h-full&quot;&gt;
+      &lt;form
+        [formGroup]&#x3D;&quot;form&quot;
+        class&#x3D;&quot;w-2/3 md:w-2/4 content-center&quot;
+        encType&#x3D;&quot;multipart/form-data&quot;
+      &gt;
+      
+      &lt;div class&#x3D;&quot;width-full&quot;&gt;
+        &lt;div class&#x3D;&quot;lg:flex lg:items-center mb-6&quot;&gt;
+          &lt;div class&#x3D;&quot;md:w-full lg:w-1/5&quot;&gt;
+            &lt;label
+              class&#x3D;&quot;block text-black-500 font-bold lg:text-right mb-1 md:mb-0 pr-4&quot;
+              for&#x3D;&quot;inline-full-name&quot;
+            &gt;
+              Nombre de la empresa
+            &lt;/label&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;md:w-full lg:w-4/5&quot;&gt;
+            &lt;input
+              formControlName&#x3D;&quot;client&quot;
+              class&#x3D;&quot;bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500&quot;
+              id&#x3D;&quot;inline-full-name&quot;
+              type&#x3D;&quot;text&quot;
+              placeholder&#x3D;&quot;Ej. Empresas Polar&quot;
+            /&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;app-required-field
+                [text]&#x3D;&quot;&#x27;Este campo es requerido.&#x27;&quot;
+                *ngIf&#x3D;&quot;form.get(&#x27;client&#x27;).invalid &amp;&amp; form.get(&#x27;client&#x27;).touched&quot;
+            &gt;&lt;/app-required-field&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;width-full&quot;&gt;
+            &lt;div class&#x3D;&quot;w-full&quot;&gt;
+              &lt;label
+                style&#x3D;&quot;font-family: &#x27;Open Sans&#x27;, sans-serif;&quot;
+                class&#x3D;&quot;block text-black-500 font-bold text-center mb-1 md:mb-0 pr-4&quot;
+                for&#x3D;&quot;inline-full-name&quot;
+              &gt;
+                Galería
+              &lt;/label&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;w-full pb-4&quot;&gt;
+              &lt;label
+                style&#x3D;&quot;font-family: &#x27;Open Sans&#x27;, sans-serif;&quot;
+                class&#x3D;&quot;block text-black-500 font-bold md:text-center mb-1 md:mb-0 pr-4&quot;
+                for&#x3D;&quot;inline-full-name&quot;
+              &gt;
+                Por favor, esperar a que aparezcan las fotos. Esto indicará que
+                fueron cargadas con éxito.
+              &lt;/label&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;lg:flex lg:items-center mb-6&quot;&gt;
+            &lt;div class&#x3D;&quot;md:w-full lg:w-1/5&quot;&gt;
+              &lt;label
+                class&#x3D;&quot;block text-black-500 font-bold lg:text-right mb-1 md:mb-0 pr-4&quot;
+                for&#x3D;&quot;inline-full-name&quot;
+              &gt;
+                Foto
+              &lt;/label&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;md:w-full lg:w-4/5&quot;&gt;
+              &lt;div
+                *ngIf&#x3D;&quot;!this.main_image&quot;
+                class&#x3D;&quot;flex items-center justify-center bg-grey-lighter&quot;
+              &gt;
+                &lt;label
+                  class&#x3D;&quot;w-full flex justify-center h-full items-center px-4 py-3 pr-8 bg-gray-200 rounded-lg shadow-lg tracking-wide border border-blue cursor-pointer hover:bg-orange-500 hover:text-white&quot;
+                &gt;
+                  &lt;span class&#x3D;&quot;mt-2 text-base leading-normal&quot;
+                    &gt;Selecciona un archivo&lt;/span
+                  &gt;
+                  &lt;lib-file-upload-firestorage
+                    storagePath&#x3D;&quot;ingredient&quot;
+                    (res)&#x3D;&quot;uploadEnRes($event)&quot;
+                    class&#x3D;&quot;hidden&quot;
+                  &gt;
+                  &lt;/lib-file-upload-firestorage&gt;
+                &lt;/label&gt;
+              &lt;/div&gt;
+
+              &lt;div *ngIf&#x3D;&quot;this.main_image&quot; class&#x3D;&quot;width-full bg-grey-lighter&quot;&gt;
+                &lt;div class&#x3D;&quot;width-2/3 flex items-center justify-center&quot;&gt;
+                  &lt;img [src]&#x3D;&quot;this.main_image&quot; class&#x3D;&quot;h-24&quot; /&gt;
+              &lt;/div&gt;
+              
+                &lt;div class&#x3D;&quot;pt-4 flex space-x-4 justify-end w-full&quot;&gt;
+                  &lt;button
+                    (click)&#x3D;&quot;changeImage(this.main_image)&quot;
+                    class&#x3D;&quot;w-1/3 sm:w-1/4 shadow bg-gray-500 hover:bg-orange-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded&quot;
+                    type&#x3D;&quot;button&quot;
+                  &gt;
+                    Cambiar
+                  &lt;/button&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;md:flex md:items-center mb-6&quot;&gt;
+          &lt;div class&#x3D;&quot;flex space-x-4 justify-center md:w-full&quot;&gt;
+            &lt;button
+              (click)&#x3D;&quot;addAd()&quot;
+              class&#x3D;&quot;w-1/3 sm:w-1/4 shadow bg-green-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded&quot;
+              type&#x3D;&quot;button&quot;
+            &gt;
+              Crear
+            &lt;/button&gt;
+            &lt;button
+              (click)&#x3D;&quot;goBack()&quot;
+              class&#x3D;&quot;w-1/3 sm:w-1/4 shadow bg-orange-500 hover:bg-orange-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded&quot;
+              type&#x3D;&quot;button&quot;
+            &gt;
+              Regresar
+            &lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/form&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div *ngIf&#x3D;&quot;updating&quot;&gt;
+    &lt;app-uploading-loader [text]&#x3D;&quot;&#x27;Creando la publicidad...&#x27;&quot;&gt;&lt;/app-uploading-loader&gt;
+  &lt;/div&gt;
+    &lt;app-footer&gt;&lt;/app-footer&gt;
+  &lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./add-ad.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><app-test-bar (message)="getMessage($event)"></app-test-bar> <div [ngStyle]="{\'margin-left.rem\': !sidebar? \'0\': \'16\'}" class="move">  <app-admin-header></app-admin-header>  <div *ngIf="!updating">  <div  style="font-family: \'Open Sans\', sans-serif;">     <div      class="h-20 w-full flex justify-center items-center"      style="font-family: \'Open Sans\', sans-serif;"    >      <div>        <h2 class="text-4xl">CREA UNA PUBLICIDAD</h2>      </div>    </div>    <div class="w-full flex justify-center items-center h-full">      <form        [formGroup]="form"        class="w-2/3 md:w-2/4 content-center"        encType="multipart/form-data"      >            <div class="width-full">        <div class="lg:flex lg:items-center mb-6">          <div class="md:w-full lg:w-1/5">            <label              class="block text-black-500 font-bold lg:text-right mb-1 md:mb-0 pr-4"              for="inline-full-name"            >              Nombre de la empresa            </label>          </div>          <div class="md:w-full lg:w-4/5">            <input              formControlName="client"              class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"              id="inline-full-name"              type="text"              placeholder="Ej. Empresas Polar"            />          </div>        </div>        <app-required-field                [text]="\'Este campo es requerido.\'"                *ngIf="form.get(\'client\').invalid && form.get(\'client\').touched"            ></app-required-field>        </div>        <div class="width-full">            <div class="w-full">              <label                style="font-family: \'Open Sans\', sans-serif;"                class="block text-black-500 font-bold text-center mb-1 md:mb-0 pr-4"                for="inline-full-name"              >                Galería              </label>            </div>            <div class="w-full pb-4">              <label                style="font-family: \'Open Sans\', sans-serif;"                class="block text-black-500 font-bold md:text-center mb-1 md:mb-0 pr-4"                for="inline-full-name"              >                Por favor, esperar a que aparezcan las fotos. Esto indicará que                fueron cargadas con éxito.              </label>            </div>        </div>        <div class="lg:flex lg:items-center mb-6">            <div class="md:w-full lg:w-1/5">              <label                class="block text-black-500 font-bold lg:text-right mb-1 md:mb-0 pr-4"                for="inline-full-name"              >                Foto              </label>            </div>            <div class="md:w-full lg:w-4/5">              <div                *ngIf="!this.main_image"                class="flex items-center justify-center bg-grey-lighter"              >                <label                  class="w-full flex justify-center h-full items-center px-4 py-3 pr-8 bg-gray-200 rounded-lg shadow-lg tracking-wide border border-blue cursor-pointer hover:bg-orange-500 hover:text-white"                >                  <span class="mt-2 text-base leading-normal"                    >Selecciona un archivo</span                  >                  <lib-file-upload-firestorage                    storagePath="ingredient"                    (res)="uploadEnRes($event)"                    class="hidden"                  >                  </lib-file-upload-firestorage>                </label>              </div>              <div *ngIf="this.main_image" class="width-full bg-grey-lighter">                <div class="width-2/3 flex items-center justify-center">                  <img [src]="this.main_image" class="h-24" />              </div>                              <div class="pt-4 flex space-x-4 justify-end w-full">                  <button                    (click)="changeImage(this.main_image)"                    class="w-1/3 sm:w-1/4 shadow bg-gray-500 hover:bg-orange-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"                    type="button"                  >                    Cambiar                  </button>                </div>              </div>            </div>          </div>        <div class="md:flex md:items-center mb-6">          <div class="flex space-x-4 justify-center md:w-full">            <button              (click)="addAd()"              class="w-1/3 sm:w-1/4 shadow bg-green-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"              type="button"            >              Crear            </button>            <button              (click)="goBack()"              class="w-1/3 sm:w-1/4 shadow bg-orange-500 hover:bg-orange-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"              type="button"            >              Regresar            </button>          </div>        </div>      </form>      </div>    </div>    </div>    <div *ngIf="updating">    <app-uploading-loader [text]="\'Creando la publicidad...\'"></app-uploading-loader>  </div>    <app-footer></app-footer>  </div></div>'
+    var COMPONENTS = [{'name': 'AddAdComponent', 'selector': 'app-add-ad'},{'name': 'AddBarComponent', 'selector': 'app-add-bar'},{'name': 'AddDrinkComponent', 'selector': 'app-add-drink'},{'name': 'AddGameComponent', 'selector': 'app-add-game'},{'name': 'AddIngredientComponent', 'selector': 'app-add-ingredient'},{'name': 'AddZoneComponent', 'selector': 'app-add-zone'},{'name': 'AdminHeaderComponent', 'selector': 'app-admin-header'},{'name': 'AdminHomeComponent', 'selector': 'app-admin-home'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BarsListComponent', 'selector': 'app-bars-list'},{'name': 'DetailBarComponent', 'selector': 'app-detail-bar'},{'name': 'DrinklyTeamComponent', 'selector': 'app-drinkly-team'},{'name': 'DrinksFilterComponent', 'selector': 'app-drinks-filter'},{'name': 'DrinksListComponent', 'selector': 'app-drinks-list'},{'name': 'EditAdComponent', 'selector': 'app-edit-ad'},{'name': 'EditBarComponent', 'selector': 'app-edit-bar'},{'name': 'EditDrinkComponent', 'selector': 'app-edit-drink'},{'name': 'EditGameComponent', 'selector': 'app-edit-game'},{'name': 'EditIngredientComponent', 'selector': 'app-edit-ingredient'},{'name': 'EditUserComponent', 'selector': 'app-edit-user'},{'name': 'EditZoneComponent', 'selector': 'app-edit-zone'},{'name': 'FilterChildComponent', 'selector': 'app-filter-child'},{'name': 'FilterParentComponent', 'selector': 'app-filter-parent'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'JuegosComponent', 'selector': 'app-juegos'},{'name': 'ListAdComponent', 'selector': 'app-list-ad'},{'name': 'ListBarComponent', 'selector': 'app-list-bar'},{'name': 'ListDrinkComponent', 'selector': 'app-list-drink'},{'name': 'ListGameComponent', 'selector': 'app-list-game'},{'name': 'ListIngredientComponent', 'selector': 'app-list-ingredient'},{'name': 'ListUserComponent', 'selector': 'app-list-user'},{'name': 'ListZoneComponent', 'selector': 'app-list-zone'},{'name': 'LoaderComponent', 'selector': 'app-loader'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PostBusinessComponent', 'selector': 'app-post-business'},{'name': 'PostDrinkComponent', 'selector': 'app-post-drink'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RecipeComponent', 'selector': 'app-recipe'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'RequiredFieldComponent', 'selector': 'app-required-field'},{'name': 'ShowFilterComponent', 'selector': 'app-show-filter'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'TestBarComponent', 'selector': 'app-test-bar'},{'name': 'UploadingLoaderComponent', 'selector': 'app-uploading-loader'}];
+    var DIRECTIVES = [{'name': 'AgeValidatorDirective', 'selector': '[isAdult]'},{'name': 'clickedOutDirective', 'selector': '[clickedOut]'},{'name': 'ExternalUrlDirective', 'selector': 'a[appExternalUrl]'},{'name': 'passwordValidator', 'selector': '[passwordValid]'}];
+    var ACTUAL_COMPONENT = {'name': 'AddAdComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'AddAdComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
