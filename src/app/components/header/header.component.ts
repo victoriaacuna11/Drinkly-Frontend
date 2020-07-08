@@ -29,15 +29,24 @@ export class HeaderComponent implements OnInit {
   }
 
   makeChange(){
+    if(this.filteringOptions){
+      this.filteringOptions=false;
+    }
     this.touched=true;
     this.data.changeMsg((<HTMLInputElement>document.getElementById("search")).value) 
    }
 
    showDrop(){
+     if(this.filteringOptions){
+       this.filteringOptions=false;
+     }
      this.touched = !this.touched;
    }
 
    showDropForFilteringOp(){
+     if(this.touched){
+       this.touched=false;
+     }
      this.filteringOptions = !this.filteringOptions;
    }
 
