@@ -66,6 +66,7 @@ import { clickedOutDirective } from './Directives/dropdown.directive';
 import { UploadingLoaderComponent } from './components/uploading-loader/uploading-loader.component';
 import { PostBusinessComponent } from './components/post-business/post-business.component';
 import { DrinklyTeamComponent } from './components/drinkly-team/drinkly-team.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -136,7 +137,8 @@ import { DrinklyTeamComponent } from './components/drinkly-team/drinkly-team.com
     BsDatepickerModule.forRoot(),
     MatFormFieldModule,
     MatInputModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
     
   ],
   providers: [AuthService, AuthGuard, AdminAuthGuard],
