@@ -8,6 +8,7 @@ import { ZoneService } from 'src/app/services/zone.service';
 import { zone } from 'src/app/models/zone';
 import { advertisement } from 'src/app/models/advertisement';
 import { AdvertisementService } from 'src/app/services/advertisement.service';
+import { user } from 'src/app/models/user';
 
 @Component({
   selector: 'app-home',
@@ -128,6 +129,7 @@ export class HomeComponent implements OnInit {
       // this.loading=false;
     })
   }
+
 
   getZones(){
     this.zoneService.getZones().subscribe((res:any) => {

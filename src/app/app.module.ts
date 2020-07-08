@@ -68,6 +68,7 @@ import { UploadingLoaderComponent } from './components/uploading-loader/uploadin
 import { PostBusinessComponent } from './components/post-business/post-business.component';
 import { DrinklyTeamComponent } from './components/drinkly-team/drinkly-team.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
+  import { from } from 'rxjs';
 
 @NgModule({
   declarations: [

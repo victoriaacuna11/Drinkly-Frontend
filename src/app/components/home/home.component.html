@@ -39,20 +39,16 @@
                       background-size: cover;
                       position: relative; "
                       [style.backgroundImage]="'url('+ item.pictures +')'"
-                      (click)="detail(item._id)"
+                      (click)="detailDrink(item._id)"
                       >
-            
-                      <button (click)="fav($event, item._id)" 
-                      class="rounded-full w-12 h-12 lg:h-10 lg:w-10  rounded-full  opacity-75 bg-white m-2 hover:bg-orange-300 transition ease-in duration-300" >
-                          <img  class="p-1" src="https://image.flaticon.com/icons/svg/1828/1828970.svg" alt="">
-                          <!-- <img  class="p-1" src="https://image.flaticon.com/icons/svg/1828/1828614.svg" alt="" *ngIf="is_fav(item._id)"> -->
-                      </button>
+
+                      
             
                         
                         <!-- CAMBIAR A ORANGE CON CLICK -->
                       </div>
                      
-                      <div (click)="detail(item._id)" class="px-6 py-4">
+                      <div (click)="detailDrink(item._id)" class="px-6 py-4">
                         <div class="font-bold text-xl md:text-2xl mb-2"> <h1>{{ item.name }} </h1> </div>
                           <p class="text-gray-700 text-lg mb-1">
                             Autor: {{ item.owner.name }}
@@ -68,7 +64,7 @@
                 
                 <!-- FIN DRINK CARDS -->
                 <div class="flex justify-center pb-12">
-                    <div (click)="addAdvertisement()" class="text-gray-400 hover:text-orange-500">
+                    <div (click)="addDrink()" class="text-gray-400 hover:text-orange-500">
                     <div class="flex h-24 sm:h-32 md:h-32 justify-center">
                       <svg class="fill-current h-1/4 w-1/4" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
@@ -124,7 +120,7 @@
               <!-- FIN BAR CARDS -->
 
               <div class="flex justify-center pb-12">
-                <div (click)="addDrink()" class="w-auto text-gray-400 hover:text-orange-500">
+                <div (click)="addAdvertisement()" class="w-auto text-gray-400 hover:text-orange-500">
                 <div class="flex h-24 sm:h-32 md:h-32 justify-center">
                   <svg class="fill-current h-1/4 w-1/4" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
