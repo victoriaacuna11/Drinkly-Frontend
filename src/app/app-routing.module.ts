@@ -220,7 +220,7 @@ const routes: Routes = [
   {path: "prueba/barra", component: TestBarComponent},
 
   //Ruta no encontrada
-  { path: "404", component: NotFoundComponent },
+  { path: "**", component: NotFoundComponent },
 ];
 
 @NgModule({
