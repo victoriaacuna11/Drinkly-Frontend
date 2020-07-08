@@ -31,11 +31,10 @@
         (keydown.enter)="pressEnter()"
       />
       <button
-        id="search2"
         (click)="showDropForFilteringOp()"
         class="absolute right-0 top-0 mt-4 mr-4 focus:outline-none"
       >
-      <img *ngIf="hasFilter" class="h-8 rounded cursor-pointer" src="assets/images/filtro.png" alt="filterimg">
+      <img id="search2" *ngIf="hasFilter" class="h-8 rounded cursor-pointer" src="assets/images/filtro.png" alt="filterimg">
       </button>
 
       <div clickedOut (clickOutside)="showDrop()" *ngIf="touched" class="drop">
@@ -44,7 +43,7 @@
         </div>
       </div>
 
-      <div *ngIf="filteringOptions" class="drop">
+      <div clickedOut (clickOutside)="showDropForFilteringOp()" *ngIf="filteringOptions" class="drop">
         <div id="coolB" (click)="sendChangedFilter(i)" class="d" *ngFor="let i of filterOp">
           <div class="d2">{{i}}</div>
         </div>
