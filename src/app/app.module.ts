@@ -66,6 +66,8 @@ import { clickedOutDirective } from './Directives/dropdown.directive';
 import { UploadingLoaderComponent } from './components/uploading-loader/uploading-loader.component';
 import { PostBusinessComponent } from './components/post-business/post-business.component';
 import { DrinklyTeamComponent } from './components/drinkly-team/drinkly-team.component';
+import {passwordValidator} from './Directives/password.directive';
+  import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -121,7 +123,8 @@ import { DrinklyTeamComponent } from './components/drinkly-team/drinkly-team.com
     clickedOutDirective,
     UploadingLoaderComponent,
     PostBusinessComponent,
-    DrinklyTeamComponent
+    DrinklyTeamComponent,
+    passwordValidator,
   ],
   imports: [
     BrowserModule,
@@ -136,7 +139,8 @@ import { DrinklyTeamComponent } from './components/drinkly-team/drinkly-team.com
     BsDatepickerModule.forRoot(),
     MatFormFieldModule,
     MatInputModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    
     
   ],
   providers: [AuthService, AuthGuard, AdminAuthGuard],
