@@ -68,6 +68,7 @@ export class JuegosComponent implements OnInit {
   jugandoTrident: boolean=false;
   jugando: boolean = false;
   juegoAcabado: boolean=false;
+  hayJugadores: boolean = true;
 
   elegido: string;
   verdad: string;
@@ -106,7 +107,16 @@ export class JuegosComponent implements OnInit {
   guardarJugadores() {
       this.jugadores = this.form.value.jug;
       console.log(this.jugadores);
-      this.elegirTrident();
+      if(this.jugadores){
+        this.hayJugadores = true;
+        this.elegirTrident();  
+        this.jugandoTrident = true;
+        this.juegoAcabado = false;
+        this.jugando = true;
+      }else{
+        this.hayJugadores = false;
+      }
+      
   }
 
   elegirTrident() {
