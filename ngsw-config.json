@@ -12,6 +12,9 @@
           "/manifest.webmanifest",
           "/*.css",
           "/*.js"
+        ],
+        "urls": [
+          "https://fonts.googleapis.com/**"
         ]
       }
     }, {
@@ -23,6 +26,21 @@
           "/assets/**",
           "/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"
         ]
+      }
+    }
+  ], 
+  "dataGroups": [
+    {
+      "name": "backend",
+      "urls": [
+        "https://drinklyapi.herokuapp.com/api/**",
+        "https://firebasestorage.googleapis.com/v0/b/drinkly-unimet.appspot.com/**"
+      ],
+      "cacheConfig":{
+        "strategy": "freshness",
+        "maxAge": "1h",
+        "maxSize": 20,
+        "timeout": "10s"
       }
     }
   ]

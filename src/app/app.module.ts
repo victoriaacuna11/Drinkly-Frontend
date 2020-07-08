@@ -1,3 +1,4 @@
+import { passwordValidator } from './Directives/password.directive';
 import { AdminAuthGuard } from "./guards/adminAuth.guard";
 import { AuthGuard } from "./guards/auth.guard";
 import { AuthService } from "./services/auth.service";
@@ -122,7 +123,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     clickedOutDirective,
     UploadingLoaderComponent,
     PostBusinessComponent,
-    DrinklyTeamComponent
+    DrinklyTeamComponent,
+    passwordValidator
   ],
   imports: [
     BrowserModule,
