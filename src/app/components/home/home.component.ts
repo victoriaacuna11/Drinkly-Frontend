@@ -6,6 +6,8 @@ import { Bar } from 'src/app/models/bar';
 import { BarService } from 'src/app/services/bar.service';
 import { ZoneService } from 'src/app/services/zone.service';
 import { zone } from 'src/app/models/zone';
+import { advertisement } from 'src/app/models/advertisement';
+import { AdvertisementService } from 'src/app/services/advertisement.service';
 
 @Component({
   selector: 'app-home',
@@ -16,27 +18,46 @@ export class HomeComponent implements OnInit {
 
   bars: Bar[];
   zones:zone[];
-  barsAv: Bar[] =[];
+  barsAv: Bar[]=[];
+  showBars: Bar[]=[];
   drinks: drink[]=[];
-  elegidos: drink[]=[];
+  drinksA: drink[] =[];  
+  showDrinks: drink[]=[];
+  ads: advertisement[]=[];
+  adsA: advertisement[]=[];
   eleg: number[];
   loading: Boolean = true;
   sidebar: Boolean;
-  drinksA: drink[] =[];
   aux;
   filterPost: string = "qlqsa";
 
-  constructor(private service: DrinkService, private route: Router, private serviceB: BarService, private zoneService: ZoneService) { }
+  constructor(private service: DrinkService, private route: Router, private serviceB: BarService, private zoneService: ZoneService,
+              private serviceAd: AdvertisementService) { }
 
   ngOnInit() {
     this.getDrinks();
     this.getZones();
+    this.getAdvertisements();
   }
 
   getMessage($event){
     this.sidebar = $event;
   }
 
+  getAdvertisements() {
+    this.serviceAd.getAds().subscribe((res:any) => {
+      console.log(this.ads);
+      this.ads = [...res.data]
+      
+      this.ads.forEach(i => {
+        if(i.available){
+          this.adsA.push(i);
+        }
+      })
+      this.loading = false;
+    })
+  }
+  
   getDrinks() {
     this.service.getDrinks().subscribe((res: any) => {
       this.drinks = [...res.data];
@@ -46,14 +67,20 @@ export class HomeComponent implements OnInit {
           this.drinksA.push(i);
         }
       })
-      // this.eleg[0] = Math.floor(Math.random() * ((this.drinksA.length)-3))
-      // this.eleg[1] = this.eleg[0]+1
-      // this.eleg[2] = this.eleg[1]+1
-      // this.elegidos[0] = this.drinksA[this.eleg[0]]
-      // this.elegidos[1] = this.drinksA[this.eleg[1]]
-      // this.elegidos[2] = this.drinksA[this.eleg[2]]
-      this.loading = false;
+      this.elegir(this.drinksA, this.showDrinks)
+      // this.loading = false;
     })
+  }
+
+  elegir(vector = [], aux = []) {
+    var num;
+    for (var i = 0; i < 3; i++) {
+      num = Math.floor(Math.random() * vector.length)
+      var rand = vector[num];
+      aux.push(rand);
+      vector.splice(num,1)
+    }
+    console.log(aux)
   }
 
   getZone(id){
@@ -84,8 +111,9 @@ export class HomeComponent implements OnInit {
           this.barsAv.push(item);
         }
       })
+      this.elegir(this.barsAv, this.showBars)
       console.log(this.barsAv)
-      this.loading=false;
+      // this.loading=false;
     })
   }
 

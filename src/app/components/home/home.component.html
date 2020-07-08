@@ -21,7 +21,7 @@
                 <div class="w-full flex flex-col items-center mb-20 mt-10">
                     <div class="drink_card">
                       <div id="test" class="rounded overflow-hidden border-2 shadow-lg   hover:border-solid hover:border-orange-500 hover:border-opacity-75   transition ease-in duration-200" 
-                      *ngFor="let item of drinksA"   
+                      *ngFor="let item of showDrinks"   
                       >
                        <div class="drink_img"
                         style="  background-position: center;
@@ -63,6 +63,41 @@
     
             </div>
             <!-- FIN DE PREPARALO TU MISMO -->
+
+            <!-- ADS -->
+            <div>
+              <div class="flex justify-center">
+                <svg class="fill-current text-gray-200" width="746" height="4" viewBox="0 0 746 4" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <rect width="746" height="4" rx="2" />
+                </svg>
+              </div>
+              <div class="px-64 py-4 text-4xl font-semibold">DISFRUTA POR MENOS</div>
+              <!-- ADS CARDS -->
+              <div class="w-full flex flex-col items-center mb-20 mt-10">
+                <div class="ad_card">
+                  <div
+                    class="rounded overflow-hidden border-2 shadow-lg transition"
+                    *ngFor="let item of adsA">
+                    <div (click)="detail(item._id)" class="ad_img" style="  background-position: center;
+                                          background-repeat: no-repeat;
+                                          background-size: cover;
+                                          position: relative; " [style.backgroundImage]="'url('+ item.promo_img +')'">
+            
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- FIN BAR CARDS -->
+              <!-- <div class="flex justify-center pb-8 ">
+                  <a href="/drinks" class="hover:no-underline">
+                      <div class="no-underline py-1 px-8 bg-orange-400 hover:bg-orange-500 text-white rounded">Ver más
+                      </div>
+                  </a>
+              </div> -->
+          </div>
+          <!-- FIN ADS -->
+
             <!-- BARES DE CARACAS -->
             <div>
                 <div class="flex justify-center">
@@ -79,7 +114,7 @@
             
             
                       <div class="rounded overflow-hidden border-2 shadow-lg   hover:border-solid hover:border-orange-500 hover:border-opacity-75   transition ease-in duration-200" 
-                       *ngFor="let item of barsAv"
+                       *ngFor="let item of showBars"
                        
                        >
                         <div (click)="detail(item._id)" class="bar_img"
