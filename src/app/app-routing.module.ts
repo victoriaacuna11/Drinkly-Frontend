@@ -108,7 +108,7 @@ const routes: Routes = [
     component: NotFoundComponent,
   },
   
-  { path: "home", component: HomeComponent },
+  { path: "", component: HomeComponent },
 
   { path: "games", component: JuegosComponent,
     canActivate: [AuthGuard]},
@@ -220,7 +220,7 @@ const routes: Routes = [
   {path: "prueba/barra", component: TestBarComponent},
 
   //Ruta no encontrada
-  { path: "**", component: NotFoundComponent },
+  { path: "404", component: NotFoundComponent },
 ];
 
 @NgModule({

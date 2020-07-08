@@ -98,8 +98,16 @@ export class HomeComponent implements OnInit {
  
    }
 
-   detail(id){
+  detailBar(id){
     this.route.navigate(['bar/', id]);
+  }
+
+  detailDrink(id){
+    this.route.navigate(['drink/', id]);
+  }
+
+  addDrink(){
+    this.route.navigate(['post-drink/']);
   }
 
   getBars(){

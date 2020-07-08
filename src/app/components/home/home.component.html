@@ -18,7 +18,7 @@
                 </div>
                 <div class="px-64 py-4 text-4xl font-semibold">PREPARALO TU MISMO</div>
                 <!-- DRINK CARDS -->
-                <div class="w-full flex flex-col items-center mb-20 mt-10">
+                <div class="w-full flex items-center mb-20 mt-10">
                     <div class="drink_card">
                       <div id="test" class="rounded overflow-hidden border-2 shadow-lg   hover:border-solid hover:border-orange-500 hover:border-opacity-75   transition ease-in duration-200" 
                       *ngFor="let item of showDrinks"   
@@ -29,10 +29,10 @@
                         background-size: cover;
                         position: relative; "
                         [style.backgroundImage]="'url('+ item.pictures +')'"
-                        (click)="detail(item._id)"
+                        (click)="detailDrink(item._id)"
                         >
               
-                          <div (click)="detail(item._id)" class="w-10 h-10 rounded-full  opacity-75 bg-white m-2 hover:bg-orange-300 transition ease-in duration-300">
+                          <div (click)="detailDrink(item._id)" class="w-10 h-10 rounded-full  opacity-75 bg-white m-2 hover:bg-orange-300 transition ease-in duration-300">
                             <div class="  rounded-full ">
                               <img  class="p-1" src="https://i.ya-webdesign.com/images/5-star-icon-png-5.png" alt="">
                             </div>
@@ -40,7 +40,7 @@
                           <!-- CAMBIAR A ORANGE CON CLICK -->
                         </div>
                        
-                        <div (click)="detail(item._id)" class="px-6 py-4">
+                        <div (click)="detailDrink(item._id)" class="px-6 py-4">
                           <div class="font-bold text-xl md:text-2xl mb-2"> <h1>{{ item.name }} </h1> </div>
                             <p class="text-gray-700 text-lg mb-1">
                               Autor: {{ item.owner.name }}
@@ -51,6 +51,33 @@
                           </div>
                         </div>
                       </div>
+                      
+                      <!-- EXTRA -->
+                      
+                        <div class="extra_card" (click)="addDrink()">
+                        <div id="test" class="rounded overflow-hidden border-2 shadow-lg   hover:border-solid hover:border-orange-500 hover:border-opacity-75   transition ease-in duration-200">
+                         <div class="flex h-full w-full justify-center hover:shadow-2xl  text-gray-400 hover:text-orange-500">
+                          <svg class="fill-current h-1/4 w-1/4" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	                        viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+	                        <g>
+		                      <path d="M256,0C114.833,0,0,114.833,0,256s114.833,256,256,256s256-114.853,256-256S397.167,0,256,0z M256,472.341
+			                    c-119.275,0-216.341-97.046-216.341-216.341S136.725,39.659,256,39.659S472.341,136.705,472.341,256S375.295,472.341,256,472.341z
+                          "/>
+                          </g>
+                          <g>
+                          <path d="M355.148,234.386H275.83v-79.318c0-10.946-8.864-19.83-19.83-19.83s-19.83,8.884-19.83,19.83v79.318h-79.318
+                          c-10.966,0-19.83,8.884-19.83,19.83s8.864,19.83,19.83,19.83h79.318v79.318c0,10.946,8.864,19.83,19.83,19.83
+                          s19.83-8.884,19.83-19.83v-79.318h79.318c10.966,0,19.83-8.884,19.83-19.83S366.114,234.386,355.148,234.386z"/>
+                          </g>
+                          </svg>
+                          
+                         </div>
+                         
+                          </div>
+                        </div>
+                      
+                      
+                      <!-- FIN EXTRA -->
                     </div>
                 
                 <!-- FIN DRINK CARDS -->
@@ -79,7 +106,7 @@
                   <div
                     class="rounded overflow-hidden border-2 shadow-lg transition"
                     *ngFor="let item of adsA">
-                    <div (click)="detail(item._id)" class="ad_img" style="  background-position: center;
+                    <div class="ad_img" style="  background-position: center;
                                           background-repeat: no-repeat;
                                           background-size: cover;
                                           position: relative; " [style.backgroundImage]="'url('+ item.promo_img +')'">
@@ -117,7 +144,7 @@
                        *ngFor="let item of showBars"
                        
                        >
-                        <div (click)="detail(item._id)" class="bar_img"
+                        <div (click)="detailBar(item._id)" class="bar_img"
                         style="  background-position: center;
                                 background-repeat: no-repeat;
                                 background-size: cover;
@@ -125,7 +152,7 @@
                                 [style.backgroundImage]="'url('+ item.main_image +')'">
             
                         </div>
-                        <div (click)="detail(item._id)" class="px-6 py-4">
+                        <div (click)="detailBar(item._id)" class="px-6 py-4">
                           <div class="font-bold text-xl md:text-2xl mb-2"> <h1>{{ item.name }} </h1> </div>
                           <p class="text-gray-700 text-lg mb-1">
                             {{ getZone(item.location.zone) }}
