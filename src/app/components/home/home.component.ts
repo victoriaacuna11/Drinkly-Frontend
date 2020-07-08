@@ -110,6 +110,10 @@ export class HomeComponent implements OnInit {
     this.route.navigate(['post-drink/']);
   }
 
+  addAdvertisement(){
+    this.route.navigate(['drinkly-team/']);
+  }
+
   getBars(){
     this.serviceB.getBars().subscribe((res:any) => {
       this.bars=[...res.data];

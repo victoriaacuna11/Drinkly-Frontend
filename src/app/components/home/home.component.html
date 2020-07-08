@@ -16,7 +16,15 @@
                         <rect width="746" height="4" rx="2" />
                     </svg>
                 </div>
-                <div class="px-8 sm:px-64 md:px-64 py-4 text-4xl font-semibold">PREPARALO TU MISMO</div>
+                <div class="flex px-8 sm:px-64 md:px-64 py-4 pt-8 text-2xl sm:text-4xl md:text-4xl font-semibold">
+                  PREPARALO TU MISMO
+                  <div class="flex items-center justify-center px-2 sm:px-8 md:px-8">
+                    <a href="/drinks" class="hover:no-underline">
+                        <div class="text-lg sm:text-xl md:text-xl no-underline py-1 px-8 bg-orange-400 hover:bg-orange-500 text-white rounded">Ver más
+                        </div>
+                    </a>
+                  </div>
+                </div>
                 <!-- DRINK CARDS -->
                 <div class="w-full flex flex-col items-center mb-20 mt-10">
                   <div class="drink_card">
@@ -55,16 +63,37 @@
                         </div>
                       </div>
                     </div>
+                    
                   </div>
                 
                 <!-- FIN DRINK CARDS -->
-                <div class="flex justify-center pb-16 ">
-                    <a href="/drinks" class="hover:no-underline">
-                        <div class="no-underline py-1 px-8 bg-orange-400 hover:bg-orange-500 text-white rounded">Ver más
-                        </div>
-                    </a>
-                </div>
-    
+                <div class="flex justify-center pb-12">
+                    <div (click)="addAdvertisement()" class="text-gray-400 hover:text-orange-500">
+                    <div class="flex h-24 sm:h-32 md:h-32 justify-center">
+                      <svg class="fill-current h-1/4 w-1/4" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                        style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                        <g>
+                          <path d="M256,0C114.833,0,0,114.833,0,256s114.833,256,256,256s256-114.853,256-256S397.167,0,256,0z M256,472.341
+                                                      c-119.275,0-216.341-97.046-216.341-216.341S136.725,39.659,256,39.659S472.341,136.705,472.341,256S375.295,472.341,256,472.341z
+                                                      " />
+                        </g>
+                        <g>
+                          <path
+                            d="M355.148,234.386H275.83v-79.318c0-10.946-8.864-19.83-19.83-19.83s-19.83,8.884-19.83,19.83v79.318h-79.318
+                                                      c-10.966,0-19.83,8.884-19.83,19.83s8.864,19.83,19.83,19.83h79.318v79.318c0,10.946,8.864,19.83,19.83,19.83
+                                                      s19.83-8.884,19.83-19.83v-79.318h79.318c10.966,0,19.83-8.884,19.83-19.83S366.114,234.386,355.148,234.386z" />
+                        </g>
+                      </svg>
+            
+                    </div>
+                    <div>
+                      <div class="flex justify-center">Tienes una receta?</div>
+                      <div class="flex justify-center">Compartela con nosotros</div>
+                    </div>  
+                    </div>
+                    
+                  </div>
             </div>
             <!-- FIN DE PREPARALO TU MISMO -->
 
@@ -76,7 +105,7 @@
                   <rect width="746" height="4" rx="2" />
                 </svg>
               </div>
-              <div class="px-8 sm:px-64 md:px-64 py-4 text-4xl font-semibold">DISFRUTA POR MENOS</div>
+              <div class="px-8 sm:px-64 md:px-64 py-4 pt-8 text-4xl font-semibold">DISFRUTA POR MENOS</div>
               <!-- ADS CARDS -->
               <div class="w-full flex flex-col items-center mb-20 mt-10">
                 <div class="ad_card">
@@ -93,12 +122,34 @@
                 </div>
               </div>
               <!-- FIN BAR CARDS -->
-              <!-- <div class="flex justify-center pb-8 ">
-                  <a href="/drinks" class="hover:no-underline">
-                      <div class="no-underline py-1 px-8 bg-orange-400 hover:bg-orange-500 text-white rounded">Ver más
-                      </div>
-                  </a>
-              </div> -->
+
+              <div class="flex justify-center pb-12">
+                <div (click)="addDrink()" class="w-auto text-gray-400 hover:text-orange-500">
+                <div class="flex h-24 sm:h-32 md:h-32 justify-center">
+                  <svg class="fill-current h-1/4 w-1/4" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                    style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                    <g>
+                      <path d="M256,0C114.833,0,0,114.833,0,256s114.833,256,256,256s256-114.853,256-256S397.167,0,256,0z M256,472.341
+                                                  c-119.275,0-216.341-97.046-216.341-216.341S136.725,39.659,256,39.659S472.341,136.705,472.341,256S375.295,472.341,256,472.341z
+                                                  " />
+                    </g>
+                    <g>
+                      <path
+                        d="M355.148,234.386H275.83v-79.318c0-10.946-8.864-19.83-19.83-19.83s-19.83,8.884-19.83,19.83v79.318h-79.318
+                                                  c-10.966,0-19.83,8.884-19.83,19.83s8.864,19.83,19.83,19.83h79.318v79.318c0,10.946,8.864,19.83,19.83,19.83
+                                                  s19.83-8.884,19.83-19.83v-79.318h79.318c10.966,0,19.83-8.884,19.83-19.83S366.114,234.386,355.148,234.386z" />
+                    </g>
+                  </svg>
+        
+                </div>
+                <div>
+                  <div class="flex justify-center">Tu bar tiene una promoción?</div>
+                  <div class="flex justify-center">Compartela con nosotros</div>
+                </div>  
+                </div>
+                
+              </div>
           </div>
           <!-- FIN ADS -->
 
@@ -110,7 +161,15 @@
                         <rect width="746" height="4" rx="2" />
                     </svg>
                 </div>
-                <div class="px-8 sm:px-64 md:px-64 py-4 text-4xl font-semibold">DISFRUTA DE CARACAS</div>
+                <div class="flex px-8 sm:px-64 md:px-64 py-4 pt-8 text-2xl sm:text-4xl md:text-4xl font-semibold">
+                  DISFRUTA DE CARACAS
+                  <div class="flex items-center justify-center px-2 sm:px-8 md:px-8">
+                    <a href="/bars" class="hover:no-underline">
+                        <div class="text-lg sm:text-xl md:text-xl no-underline py-1 px-8 bg-orange-400 hover:bg-orange-500 text-white rounded">Ver más
+                        </div>
+                    </a>
+                  </div>
+                </div>
                 <!-- BAR CARDS -->
                 <div class="w-full flex flex-col items-center mb-20 mt-10">
 
@@ -141,12 +200,6 @@
             
                   </div>
                 <!-- FIN BAR CARDS -->
-                <div class="flex justify-center pb-8 ">
-                    <a href="/drinks" class="hover:no-underline">
-                        <div class="no-underline py-1 px-8 bg-orange-400 hover:bg-orange-500 text-white rounded">Ver más
-                        </div>
-                    </a>
-                </div>
             </div>
             <!-- FIN BARES DE CARACAS -->
         </div>
