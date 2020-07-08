@@ -5,6 +5,9 @@
   <app-header hasFilter=true hasSearchBar=true [searchBarContent]="defaultFilt? 'zona...': 'nombre...' " [arr]="defaultFilt? zones: barsAv" 
   [filterOp]="['zonas', 'nombre']" (filt)="receiveFilt($event)"></app-header>
 
+  <div *ngIf="loading">
+    <app-loader></app-loader>
+  </div>
   
   <div class="w-full" *ngIf="!loading">
 

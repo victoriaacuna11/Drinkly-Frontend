@@ -11,7 +11,7 @@ export class FilterPipe implements PipeTransform {
 
   }
 
-  transform(value: any, arg: string, defaultFilt?:Boolean, zones?:Function): any {
+  transform(value: any, arg: string, defaultFilt?:Boolean, zones?:any): any {
     // console.log(arg)
     // console.log(zones)
     // console.log(value)
