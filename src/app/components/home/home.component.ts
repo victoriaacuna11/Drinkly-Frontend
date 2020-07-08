@@ -112,7 +112,7 @@ export class HomeComponent implements OnInit {
   }
 
   addAdvertisement(){
-    this.route.navigate(['drinkly-team/']);
+    this.route.navigate(["post-your-business"]);
   }
 
   getBars(){
