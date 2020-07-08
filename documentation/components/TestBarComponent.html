@@ -1,0 +1,1012 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>drinkly documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">drinkly documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>TestBarComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/test-bar/test-bar.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-test-bar</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./test-bar.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./test-bar.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#btn">btn</a>
+                            </li>
+                            <li>
+                                <a href="#cancel">cancel</a>
+                            </li>
+                            <li>
+                                <a href="#isAdmin">isAdmin</a>
+                            </li>
+                            <li>
+                                <a href="#isLogged">isLogged</a>
+                            </li>
+                            <li>
+                                <a href="#isOpen">isOpen</a>
+                            </li>
+                            <li>
+                                <a href="#sidebar_left">sidebar_left</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#getOut">getOut</a>
+                            </li>
+                            <li>
+                                <a href="#makeChange">makeChange</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#message">message</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(auth_svc: <a href="../injectables/AuthService.html">AuthService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/components/test-bar/test-bar.component.ts:18</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>auth_svc</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section>
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="message"></a>
+                        <b>message</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/core/EventEmitter" target="_blank" >EventEmitter</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/components/test-bar/test-bar.component.ts:18</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getOut"></a>
+                    <span class="name">
+                        <b>
+                            getOut
+                        </b>
+                        <a href="#getOut"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getOut()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="33"
+                            class="link-to-prism">src/app/components/test-bar/test-bar.component.ts:33</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="makeChange"></a>
+                    <span class="name">
+                        <b>
+                            makeChange
+                        </b>
+                        <a href="#makeChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>makeChange()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="39"
+                            class="link-to-prism">src/app/components/test-bar/test-bar.component.ts:39</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Async</span>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="22"
+                            class="link-to-prism">src/app/components/test-bar/test-bar.component.ts:22</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="btn"></a>
+                        <span class="name">
+                            <b>
+                            btn</b>
+                            <a href="#btn"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>true</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/components/test-bar/test-bar.component.ts:16</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="cancel"></a>
+                        <span class="name">
+                            <b>
+                            cancel</b>
+                            <a href="#cancel"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>true</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/components/test-bar/test-bar.component.ts:17</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isAdmin"></a>
+                        <span class="name">
+                            <b>
+                            isAdmin</b>
+                            <a href="#isAdmin"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/components/test-bar/test-bar.component.ts:13</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isLogged"></a>
+                        <span class="name">
+                            <b>
+                            isLogged</b>
+                            <a href="#isLogged"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" target="_blank" >Boolean</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>true</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/components/test-bar/test-bar.component.ts:14</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isOpen"></a>
+                        <span class="name">
+                            <b>
+                            isOpen</b>
+                            <a href="#isOpen"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/components/test-bar/test-bar.component.ts:12</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="sidebar_left"></a>
+                        <span class="name">
+                            <b>
+                            sidebar_left</b>
+                            <a href="#sidebar_left"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" target="_blank" >Boolean</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/components/test-bar/test-bar.component.ts:15</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, Output, EventEmitter } from &#x27;@angular/core&#x27;;
+import { AuthService } from &#x27;../../services/auth.service&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+
+@Component({
+  selector: &#x27;app-test-bar&#x27;,
+  templateUrl: &#x27;./test-bar.component.html&#x27;,
+  styleUrls: [&#x27;./test-bar.component.scss&#x27;]
+})
+export class TestBarComponent implements OnInit {
+
+  isOpen: boolean &#x3D; false;
+  isAdmin: any;
+  isLogged: Boolean &#x3D; true;
+  sidebar_left: Boolean &#x3D; false;
+  btn &#x3D;true;
+  cancel &#x3D; true;
+  @Output() message&#x3D; new EventEmitter&lt;Boolean&gt;();
+
+  constructor(private auth_svc: AuthService, private router: Router) { }
+
+  async ngOnInit() {
+
+    if (!this.auth_svc.loggedIn()) {
+      this.isAdmin &#x3D; false;
+      this.isLogged &#x3D; false;
+    } else {
+      this.isLogged &#x3D; true;
+      let x &#x3D; await this.auth_svc.getAdmin().toPromise();
+      this.isAdmin &#x3D; x;
+    }
+  }
+  getOut() {
+    this.auth_svc.logout();
+    console.log(&quot;Cerraste sesión&quot;);
+    this.router.navigateByUrl(&quot;/login&quot;);
+  }
+
+ makeChange(){
+
+  this.sidebar_left &#x3D; !this.sidebar_left;   
+  this.message.emit(this.sidebar_left)
+     
+ }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div id&#x3D;&quot;barComputer&quot;&gt;
+    &lt;input type&#x3D;&quot;checkbox&quot; (change)&#x3D;&quot;makeChange()&quot; class&#x3D;&quot;h-10 w-10&quot; id&#x3D;&quot;check&quot;&gt;
+    &lt;label for&#x3D;&quot;check&quot;&gt; 
+        &lt;svg [ngStyle]&#x3D;&quot;{&#x27;left.rem&#x27;: sidebar_left? &#x27;13&#x27;: &#x27;-13&#x27;}&quot; class&#x3D;&quot;fill-current h-10 w-10 outline-none&quot; id&#x3D;&quot;cancel&quot;&gt;
+            &lt;path
+            d&#x3D;&quot;M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z&quot; /&gt;
+        &lt;/svg&gt;  
+        &lt;svg [ngStyle]&#x3D;&quot;{&#x27;left.rem&#x27;: !sidebar_left? &#x27;1&#x27;: &#x27;12&#x27;, &#x27;opacity&#x27;:!sidebar_left? &#x27;1&#x27;: &#x27;0&#x27;, &#x27;pointer-events&#x27;:!sidebar_left? &#x27;auto&#x27;: &#x27;none&#x27;}&quot; 
+        class&#x3D;&quot;fill-current h-10 w-10 outline-none&quot; id&#x3D;&quot;btn&quot;&gt;
+            &lt;path
+            d&#x3D;&quot;M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z&quot; /&gt;
+        &lt;/svg&gt; 
+    &lt;/label&gt;
+    &lt;div [ngStyle]&#x3D;&quot;{&#x27;left.rem&#x27;: !sidebar_left? &#x27;-16&#x27; : &#x27;0&#x27;}&quot; class&#x3D;&quot;sidebar overflow-y-scroll sm:overflow-y-auto&quot;&gt;
+        &lt;header class&#x3D;&quot;text-4xl text-white h-16&quot;&gt;&lt;/header&gt;
+
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href&#x3D;&quot;/drinks&quot;&gt;&lt;img src&#x3D;&quot;assets/images/coctel.png&quot; class&#x3D;&quot;h-16&quot;&gt;Tragos&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href&#x3D;&quot;/bars&quot; &gt;&lt;img src&#x3D;&quot;assets/images/bar.png&quot; class&#x3D;&quot;h-16&quot;&gt;Bares&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href&#x3D;&quot;/games&quot;&gt;&lt;img src&#x3D;&quot;assets/images/game.png&quot; class&#x3D;&quot;h-16&quot;&gt;Juegos&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href&#x3D;&quot;/post-drink&quot;&gt;&lt;img src&#x3D;&quot;assets/images/post.png&quot; class&#x3D;&quot;h-16&quot;&gt;Publica&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href&#x3D;&quot;/drinkly-team&quot;&gt;&lt;img src&#x3D;&quot;assets/images/gettoknowus.png&quot; class&#x3D;&quot;h-16&quot;&gt;Conócenos&lt;/a&gt;&lt;/li&gt;
+            &lt;li *ngIf&#x3D;&quot;isAdmin&quot;&gt;&lt;a href&#x3D;&quot;/admin&quot;&gt;&lt;img src&#x3D;&quot;assets/images/settings.png&quot; class&#x3D;&quot;h-16&quot;&gt;Administrar&lt;/a&gt;&lt;/li&gt;
+            &lt;li *ngIf&#x3D;&quot;isLogged&quot;&gt;&lt;a href&#x3D;&quot;/profile&quot;&gt;&lt;img src&#x3D;&quot;assets/images/user.png&quot; class&#x3D;&quot;h-16&quot;&gt;Tu Perfil&lt;/a&gt;&lt;/li&gt;
+            &lt;li *ngIf&#x3D;&quot;!isLogged&quot;&gt;&lt;a href&#x3D;&quot;/login&quot;&gt;&lt;img src&#x3D;&quot;assets/images/login_.png&quot; class&#x3D;&quot;h-16&quot;&gt;Entrar&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id&#x3D;&quot;barPhone&quot;&gt;
+    &lt;input type&#x3D;&quot;checkbox&quot; (change)&#x3D;&quot;makeChange()&quot; class&#x3D;&quot;h-10 w-10&quot; id&#x3D;&quot;check&quot;&gt;
+    &lt;label for&#x3D;&quot;check&quot;&gt; 
+        &lt;svg  [ngStyle]&#x3D;&quot;{&#x27;left.%&#x27;: sidebar_left? &#x27;89&#x27;: &#x27;-13&#x27;}&quot; class&#x3D;&quot;fill-current h-10 w-10 outline-none&quot; id&#x3D;&quot;cancel&quot;&gt;
+            &lt;path
+            d&#x3D;&quot;M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z&quot; /&gt;
+        &lt;/svg&gt;  
+        &lt;svg [ngStyle]&#x3D;&quot;{&#x27;left.rem&#x27;: !sidebar_left? &#x27;1&#x27;: &#x27;12&#x27;, &#x27;opacity&#x27;:!sidebar_left? &#x27;1&#x27;: &#x27;0&#x27;, &#x27;pointer-events&#x27;:!sidebar_left? &#x27;auto&#x27;: &#x27;none&#x27;}&quot; 
+        class&#x3D;&quot;fill-current h-10 w-10 outline-none&quot; id&#x3D;&quot;btn&quot;&gt;
+            &lt;path
+            d&#x3D;&quot;M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z&quot; /&gt;
+        &lt;/svg&gt; 
+    &lt;/label&gt;
+    &lt;div [ngStyle]&#x3D;&quot;{&#x27;left.vw&#x27;: !sidebar_left? &#x27;-100&#x27; : &#x27;0&#x27;}&quot; class&#x3D;&quot;sidebar overflow-y-scroll sm:overflow-y-auto&quot;&gt;
+        &lt;header class&#x3D;&quot;text-4xl text-white h-16&quot;&gt;&lt;/header&gt;
+
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href&#x3D;&quot;/drinks&quot;&gt;&lt;img src&#x3D;&quot;assets/images/coctel.png&quot; class&#x3D;&quot;h-16&quot;&gt;Tragos&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href&#x3D;&quot;/bars&quot; &gt;&lt;img src&#x3D;&quot;assets/images/bar.png&quot; class&#x3D;&quot;h-16&quot;&gt;Bares&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href&#x3D;&quot;/games&quot;&gt;&lt;img src&#x3D;&quot;assets/images/game.png&quot; class&#x3D;&quot;h-16&quot;&gt;Juegos&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href&#x3D;&quot;/post-drink&quot;&gt;&lt;img src&#x3D;&quot;assets/images/post.png&quot; class&#x3D;&quot;h-16&quot;&gt;Publica&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href&#x3D;&quot;/drinkly-team&quot;&gt;&lt;img src&#x3D;&quot;assets/images/gettoknowus.png&quot; class&#x3D;&quot;h-16&quot;&gt;Conócenos&lt;/a&gt;&lt;/li&gt;
+            &lt;li *ngIf&#x3D;&quot;isAdmin&quot;&gt;&lt;a href&#x3D;&quot;/admin&quot;&gt;&lt;img src&#x3D;&quot;assets/images/settings.png&quot; class&#x3D;&quot;h-16&quot;&gt;Administrar&lt;/a&gt;&lt;/li&gt;
+            &lt;li *ngIf&#x3D;&quot;isLogged&quot;&gt;&lt;a href&#x3D;&quot;/profile&quot;&gt;&lt;img src&#x3D;&quot;assets/images/user.png&quot; class&#x3D;&quot;h-16&quot;&gt;Tu Perfil&lt;/a&gt;&lt;/li&gt;
+            &lt;li *ngIf&#x3D;&quot;!isLogged&quot;&gt;&lt;a href&#x3D;&quot;/login&quot;&gt;&lt;img src&#x3D;&quot;assets/images/login_.png&quot; class&#x3D;&quot;h-16&quot;&gt;Entrar&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+
+    &lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;!-- &lt;div [ngStyle]&#x3D;&quot;{&#x27;margin-left.rem&#x27;: !sidebar_left? &#x27;0&#x27;: &#x27;16&#x27;}&quot; class&#x3D;&quot;move&quot;&gt;   
+    &lt;app-header&gt;&lt;/app-header&gt;
+    &lt;app-footer&gt;&lt;/app-footer&gt;
+&lt;/div&gt; --&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./test-bar.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">
+*{
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none; 
+    color:white;
+}
+
+.sidebar{
+    position: fixed;
+    // left:-16rem;
+    width: 16rem;
+    height: 100%;
+    background-color: black;
+    transition: all .5s ease;
+    // overflow-y: scroll;
+    // z-index: 5000;
+
+    header {
+        text-align: center;
+        line-height: 6rem;
+        user-select: none;
+    }
+
+    ul li{
+        padding-bottom: 2.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        a{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+        }
+
+        img{
+            padding: 0.5rem;
+            transition: .4s;  
+        }
+
+        :hover{
+            padding: 0 ;
+        }
+    }
+}
+
+label{
+    position: fixed;
+    z-index: 20;
+}
+
+#check{
+    display: none;
+}
+
+label #btn, label #cancel{
+    position: absolute;
+    cursor: pointer;
+    background-color: black;
+    border-radius: 3px;
+}
+
+label #btn{
+    z-index: 6000;
+    // left: 1rem;
+    top: 1rem;
+    color: orange;
+    transition: all .5s ease;
+}
+
+label #cancel{
+    position: fixed;
+    z-index: 6000;
+    // left: -13rem;
+    top: 1rem;
+    color: orange;
+    transition: all .5s ease;
+}
+
+@media (min-width: 640px){
+    #barComputer{
+        display: block;
+    }
+    #barPhone{
+        display: none;
+    }
+}
+
+@media (max-width: 640px){
+    #barPhone{
+        display: block;
+    }
+    #barComputer{
+        display: none;
+    }
+
+    .sidebar{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color: #000000, $alpha: 0.9);;
+        transition: all .5s ease;
+        z-index: 19;
+        // overflow-y: scroll;
+
+        header {
+            text-align: center;
+            line-height: 6rem;
+            user-select: none;
+        }
+
+        ul li{
+            padding-bottom: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            a{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                box-sizing: border-box;
+            }
+
+            img{
+                padding: 0.5rem;
+                transition: .4s;  
+            }
+
+            :hover{
+                padding: 0 ;
+            }
+        }
+    }
+    label{
+        position: fixed;
+        z-index: 20;
+    }
+    
+    #check{
+        display: none;
+    }
+    
+    label #btn, label #cancel{
+        position: fixed;
+        cursor: pointer;
+        background-color: black;
+        border-radius: 3px;
+    }
+    
+    label #btn{
+        z-index: 91000;
+        top: 1rem;
+        color: orange;
+        transition: all .5s ease;
+    }
+    
+    label #cancel{
+        position: fixed;
+        z-index: 91000;
+        top: 1rem;
+        color: orange;
+        transition: all .5s ease;
+    }
+
+}
+
+// #check:checked ~ .sidebar{
+//     left: 0;
+// }
+
+// #check:checked ~ label #btn{
+//     left: 12rem;
+    // opacity: 0;
+    // pointer-events: none;
+// }
+
+// #check:checked ~ label #cancel{
+//     left: 13rem;
+// }
+
+// .move{
+//     transition: all .5s;
+// }
+
+// #check:checked ~ .move{
+//     margin-left: 16rem;
+// }
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div id="barComputer">    <input type="checkbox" (change)="makeChange()" class="h-10 w-10" id="check">    <label for="check">         <svg [ngStyle]="{\'left.rem\': sidebar_left? \'13\': \'-13\'}" class="fill-current h-10 w-10 outline-none" id="cancel">            <path            d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z" />        </svg>          <svg [ngStyle]="{\'left.rem\': !sidebar_left? \'1\': \'12\', \'opacity\':!sidebar_left? \'1\': \'0\', \'pointer-events\':!sidebar_left? \'auto\': \'none\'}"         class="fill-current h-10 w-10 outline-none" id="btn">            <path            d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z" />        </svg>     </label>    <div [ngStyle]="{\'left.rem\': !sidebar_left? \'-16\' : \'0\'}" class="sidebar overflow-y-scroll sm:overflow-y-auto">        <header class="text-4xl text-white h-16"></header>        <ul>            <li><a href="/drinks"><img src="assets/images/coctel.png" class="h-16">Tragos</a></li>            <li><a href="/bars" ><img src="assets/images/bar.png" class="h-16">Bares</a></li>            <li><a href="/games"><img src="assets/images/game.png" class="h-16">Juegos</a></li>            <li><a href="/post-drink"><img src="assets/images/post.png" class="h-16">Publica</a></li>            <li><a href="/drinkly-team"><img src="assets/images/gettoknowus.png" class="h-16">Conócenos</a></li>            <li *ngIf="isAdmin"><a href="/admin"><img src="assets/images/settings.png" class="h-16">Administrar</a></li>            <li *ngIf="isLogged"><a href="/profile"><img src="assets/images/user.png" class="h-16">Tu Perfil</a></li>            <li *ngIf="!isLogged"><a href="/login"><img src="assets/images/login_.png" class="h-16">Entrar</a></li>        </ul>    </div></div><div id="barPhone">    <input type="checkbox" (change)="makeChange()" class="h-10 w-10" id="check">    <label for="check">         <svg  [ngStyle]="{\'left.%\': sidebar_left? \'89\': \'-13\'}" class="fill-current h-10 w-10 outline-none" id="cancel">            <path            d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z" />        </svg>          <svg [ngStyle]="{\'left.rem\': !sidebar_left? \'1\': \'12\', \'opacity\':!sidebar_left? \'1\': \'0\', \'pointer-events\':!sidebar_left? \'auto\': \'none\'}"         class="fill-current h-10 w-10 outline-none" id="btn">            <path            d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z" />        </svg>     </label>    <div [ngStyle]="{\'left.vw\': !sidebar_left? \'-100\' : \'0\'}" class="sidebar overflow-y-scroll sm:overflow-y-auto">        <header class="text-4xl text-white h-16"></header>        <ul>            <li><a href="/drinks"><img src="assets/images/coctel.png" class="h-16">Tragos</a></li>            <li><a href="/bars" ><img src="assets/images/bar.png" class="h-16">Bares</a></li>            <li><a href="/games"><img src="assets/images/game.png" class="h-16">Juegos</a></li>            <li><a href="/post-drink"><img src="assets/images/post.png" class="h-16">Publica</a></li>            <li><a href="/drinkly-team"><img src="assets/images/gettoknowus.png" class="h-16">Conócenos</a></li>            <li *ngIf="isAdmin"><a href="/admin"><img src="assets/images/settings.png" class="h-16">Administrar</a></li>            <li *ngIf="isLogged"><a href="/profile"><img src="assets/images/user.png" class="h-16">Tu Perfil</a></li>            <li *ngIf="!isLogged"><a href="/login"><img src="assets/images/login_.png" class="h-16">Entrar</a></li>        </ul>    </div></div><!-- <div [ngStyle]="{\'margin-left.rem\': !sidebar_left? \'0\': \'16\'}" class="move">       <app-header></app-header>    <app-footer></app-footer></div> --></div>'
+    var COMPONENTS = [{'name': 'AddAdComponent', 'selector': 'app-add-ad'},{'name': 'AddBarComponent', 'selector': 'app-add-bar'},{'name': 'AddDrinkComponent', 'selector': 'app-add-drink'},{'name': 'AddGameComponent', 'selector': 'app-add-game'},{'name': 'AddIngredientComponent', 'selector': 'app-add-ingredient'},{'name': 'AddZoneComponent', 'selector': 'app-add-zone'},{'name': 'AdminHeaderComponent', 'selector': 'app-admin-header'},{'name': 'AdminHomeComponent', 'selector': 'app-admin-home'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BarsListComponent', 'selector': 'app-bars-list'},{'name': 'DetailBarComponent', 'selector': 'app-detail-bar'},{'name': 'DrinklyTeamComponent', 'selector': 'app-drinkly-team'},{'name': 'DrinksFilterComponent', 'selector': 'app-drinks-filter'},{'name': 'DrinksListComponent', 'selector': 'app-drinks-list'},{'name': 'EditAdComponent', 'selector': 'app-edit-ad'},{'name': 'EditBarComponent', 'selector': 'app-edit-bar'},{'name': 'EditDrinkComponent', 'selector': 'app-edit-drink'},{'name': 'EditGameComponent', 'selector': 'app-edit-game'},{'name': 'EditIngredientComponent', 'selector': 'app-edit-ingredient'},{'name': 'EditUserComponent', 'selector': 'app-edit-user'},{'name': 'EditZoneComponent', 'selector': 'app-edit-zone'},{'name': 'FilterChildComponent', 'selector': 'app-filter-child'},{'name': 'FilterParentComponent', 'selector': 'app-filter-parent'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'JuegosComponent', 'selector': 'app-juegos'},{'name': 'ListAdComponent', 'selector': 'app-list-ad'},{'name': 'ListBarComponent', 'selector': 'app-list-bar'},{'name': 'ListDrinkComponent', 'selector': 'app-list-drink'},{'name': 'ListGameComponent', 'selector': 'app-list-game'},{'name': 'ListIngredientComponent', 'selector': 'app-list-ingredient'},{'name': 'ListUserComponent', 'selector': 'app-list-user'},{'name': 'ListZoneComponent', 'selector': 'app-list-zone'},{'name': 'LoaderComponent', 'selector': 'app-loader'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PostBusinessComponent', 'selector': 'app-post-business'},{'name': 'PostDrinkComponent', 'selector': 'app-post-drink'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RecipeComponent', 'selector': 'app-recipe'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'RequiredFieldComponent', 'selector': 'app-required-field'},{'name': 'ShowFilterComponent', 'selector': 'app-show-filter'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'TestBarComponent', 'selector': 'app-test-bar'},{'name': 'UploadingLoaderComponent', 'selector': 'app-uploading-loader'}];
+    var DIRECTIVES = [{'name': 'AgeValidatorDirective', 'selector': '[isAdult]'},{'name': 'clickedOutDirective', 'selector': '[clickedOut]'},{'name': 'ExternalUrlDirective', 'selector': 'a[appExternalUrl]'},{'name': 'passwordValidator', 'selector': '[passwordValid]'}];
+    var ACTUAL_COMPONENT = {'name': 'TestBarComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'TestBarComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

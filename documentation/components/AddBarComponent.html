@@ -1,0 +1,2495 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>drinkly documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">drinkly documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>AddBarComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/admin/bar/add-bar/add-bar.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-add-bar</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./add-bar.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./add-bar.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#bar">bar</a>
+                            </li>
+                            <li>
+                                <a href="#form">form</a>
+                            </li>
+                            <li>
+                                <a href="#loading">loading</a>
+                            </li>
+                            <li>
+                                <a href="#main_image">main_image</a>
+                            </li>
+                            <li>
+                                <a href="#phone">phone</a>
+                            </li>
+                            <li>
+                                <a href="#photo">photo</a>
+                            </li>
+                            <li>
+                                <a href="#sidebar">sidebar</a>
+                            </li>
+                            <li>
+                                <a href="#updating">updating</a>
+                            </li>
+                            <li>
+                                <a href="#zones">zones</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#addMenu">addMenu</a>
+                            </li>
+                            <li>
+                                <a href="#addMenuGroup">addMenuGroup</a>
+                            </li>
+                            <li>
+                                <a href="#addPhone">addPhone</a>
+                            </li>
+                            <li>
+                                <a href="#addPhoneGroup">addPhoneGroup</a>
+                            </li>
+                            <li>
+                                <a href="#addPhoto">addPhoto</a>
+                            </li>
+                            <li>
+                                <a href="#changeImage">changeImage</a>
+                            </li>
+                            <li>
+                                <a href="#createBar">createBar</a>
+                            </li>
+                            <li>
+                                <a href="#deleteMenu">deleteMenu</a>
+                            </li>
+                            <li>
+                                <a href="#deletePhone">deletePhone</a>
+                            </li>
+                            <li>
+                                <a href="#deletePhoto">deletePhoto</a>
+                            </li>
+                            <li>
+                                <a href="#getMessage">getMessage</a>
+                            </li>
+                            <li>
+                                <a href="#getZones">getZones</a>
+                            </li>
+                            <li>
+                                <a href="#goBack">goBack</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#uploadEnRes">uploadEnRes</a>
+                            </li>
+                            <li>
+                                <a href="#uploadPhoto">uploadPhoto</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#PhoneArray">PhoneArray</a>
+                                </li>
+                                <li>
+                                    <a href="#MenuArray">MenuArray</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(_builder: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, route: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, zoneService: <a href="../injectables/ZoneService.html">ZoneService</a>, service: <a href="../injectables/BarService.html">BarService</a>, storage: AngularFireStorage)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/components/admin/bar/add-bar/add-bar.component.ts:26</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>_builder</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/forms/FormBuilder" target="_blank" >FormBuilder</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>zoneService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ZoneService.html" target="_self" >ZoneService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>service</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/BarService.html" target="_self" >BarService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>storage</td>
+                                                  
+                                                        <td>
+                                                                    <code>AngularFireStorage</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addMenu"></a>
+                    <span class="name">
+                        <b>
+                            addMenu
+                        </b>
+                        <a href="#addMenu"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>addMenu()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="163"
+                            class="link-to-prism">src/app/components/admin/bar/add-bar/add-bar.component.ts:163</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addMenuGroup"></a>
+                    <span class="name">
+                        <b>
+                            addMenuGroup
+                        </b>
+                        <a href="#addMenuGroup"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>addMenuGroup()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="132"
+                            class="link-to-prism">src/app/components/admin/bar/add-bar/add-bar.component.ts:132</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addPhone"></a>
+                    <span class="name">
+                        <b>
+                            addPhone
+                        </b>
+                        <a href="#addPhone"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>addPhone()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="155"
+                            class="link-to-prism">src/app/components/admin/bar/add-bar/add-bar.component.ts:155</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addPhoneGroup"></a>
+                    <span class="name">
+                        <b>
+                            addPhoneGroup
+                        </b>
+                        <a href="#addPhoneGroup"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>addPhoneGroup()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="120"
+                            class="link-to-prism">src/app/components/admin/bar/add-bar/add-bar.component.ts:120</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addPhoto"></a>
+                    <span class="name">
+                        <b>
+                            addPhoto
+                        </b>
+                        <a href="#addPhoto"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>addPhoto()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="171"
+                            class="link-to-prism">src/app/components/admin/bar/add-bar/add-bar.component.ts:171</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="changeImage"></a>
+                    <span class="name">
+                        <b>
+                            changeImage
+                        </b>
+                        <a href="#changeImage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>changeImage(url)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="79"
+                            class="link-to-prism">src/app/components/admin/bar/add-bar/add-bar.component.ts:79</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>url</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createBar"></a>
+                    <span class="name">
+                        <b>
+                            createBar
+                        </b>
+                        <a href="#createBar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>createBar()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="185"
+                            class="link-to-prism">src/app/components/admin/bar/add-bar/add-bar.component.ts:185</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteMenu"></a>
+                    <span class="name">
+                        <b>
+                            deleteMenu
+                        </b>
+                        <a href="#deleteMenu"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>deleteMenu(index)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="167"
+                            class="link-to-prism">src/app/components/admin/bar/add-bar/add-bar.component.ts:167</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>index</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deletePhone"></a>
+                    <span class="name">
+                        <b>
+                            deletePhone
+                        </b>
+                        <a href="#deletePhone"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>deletePhone(index)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="159"
+                            class="link-to-prism">src/app/components/admin/bar/add-bar/add-bar.component.ts:159</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>index</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deletePhoto"></a>
+                    <span class="name">
+                        <b>
+                            deletePhoto
+                        </b>
+                        <a href="#deletePhoto"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>deletePhoto(url, index)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="95"
+                            class="link-to-prism">src/app/components/admin/bar/add-bar/add-bar.component.ts:95</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>url</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>index</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getMessage"></a>
+                    <span class="name">
+                        <b>
+                            getMessage
+                        </b>
+                        <a href="#getMessage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getMessage($event)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="237"
+                            class="link-to-prism">src/app/components/admin/bar/add-bar/add-bar.component.ts:237</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>$event</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getZones"></a>
+                    <span class="name">
+                        <b>
+                            getZones
+                        </b>
+                        <a href="#getZones"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getZones()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="177"
+                            class="link-to-prism">src/app/components/admin/bar/add-bar/add-bar.component.ts:177</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="goBack"></a>
+                    <span class="name">
+                        <b>
+                            goBack
+                        </b>
+                        <a href="#goBack"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>goBack()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="233"
+                            class="link-to-prism">src/app/components/admin/bar/add-bar/add-bar.component.ts:233</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="71"
+                            class="link-to-prism">src/app/components/admin/bar/add-bar/add-bar.component.ts:71</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="uploadEnRes"></a>
+                    <span class="name">
+                        <b>
+                            uploadEnRes
+                        </b>
+                        <a href="#uploadEnRes"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>uploadEnRes(event)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="75"
+                            class="link-to-prism">src/app/components/admin/bar/add-bar/add-bar.component.ts:75</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>event</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="uploadPhoto"></a>
+                    <span class="name">
+                        <b>
+                            uploadPhoto
+                        </b>
+                        <a href="#uploadPhoto"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>uploadPhoto(event, index)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="88"
+                            class="link-to-prism">src/app/components/admin/bar/add-bar/add-bar.component.ts:88</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>event</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>index</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="bar"></a>
+                        <span class="name">
+                            <b>
+                            bar</b>
+                            <a href="#bar"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/Bar.html" target="_self" >Bar</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/components/admin/bar/add-bar/add-bar.component.ts:19</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="form"></a>
+                        <span class="name">
+                            <b>
+                            form</b>
+                            <a href="#form"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/components/admin/bar/add-bar/add-bar.component.ts:18</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="loading"></a>
+                        <span class="name">
+                            <b>
+                            loading</b>
+                            <a href="#loading"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" target="_blank" >Boolean</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>true</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/components/admin/bar/add-bar/add-bar.component.ts:21</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="main_image"></a>
+                        <span class="name">
+                            <b>
+                            main_image</b>
+                            <a href="#main_image"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank" >String</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>null</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/components/admin/bar/add-bar/add-bar.component.ts:23</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="phone"></a>
+                        <span class="name">
+                            <b>
+                            phone</b>
+                            <a href="#phone"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>String[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/components/admin/bar/add-bar/add-bar.component.ts:24</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="photo"></a>
+                        <span class="name">
+                            <b>
+                            photo</b>
+                            <a href="#photo"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>String[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[&quot;null&quot;]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/components/admin/bar/add-bar/add-bar.component.ts:22</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="sidebar"></a>
+                        <span class="name">
+                            <b>
+                            sidebar</b>
+                            <a href="#sidebar"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" target="_blank" >Boolean</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/components/admin/bar/add-bar/add-bar.component.ts:25</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="updating"></a>
+                        <span class="name">
+                            <b>
+                            updating</b>
+                            <a href="#updating"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" target="_blank" >Boolean</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/components/admin/bar/add-bar/add-bar.component.ts:26</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="zones"></a>
+                        <span class="name">
+                            <b>
+                            zones</b>
+                            <a href="#zones"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/zone.html" target="_self" >zone[]</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/components/admin/bar/add-bar/add-bar.component.ts:20</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="PhoneArray"></a>
+                        <span class="name"><b>PhoneArray</b><a href="#PhoneArray"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>PhoneArray()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="143" class="link-to-prism">src/app/components/admin/bar/add-bar/add-bar.component.ts:143</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="MenuArray"></a>
+                        <span class="name"><b>MenuArray</b><a href="#MenuArray"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>MenuArray()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="147" class="link-to-prism">src/app/components/admin/bar/add-bar/add-bar.component.ts:147</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, Input, NgZone } from &quot;@angular/core&quot;;
+import { FormGroup, FormBuilder, FormArray, Validators } from &quot;@angular/forms&quot;;
+import { Router } from &quot;@angular/router&quot;;
+import { Bar } from &quot;src/app/models/bar&quot;;
+import { zone } from &quot;src/app/models/zone&quot;;
+import { ZoneService } from &quot;src/app/services/zone.service&quot;;
+import { BarService } from &quot;src/app/services/bar.service&quot;;
+import { AngularFireStorage } from &quot;@angular/fire/storage&quot;;
+
+@Component({
+  selector: &quot;app-add-bar&quot;,
+  templateUrl: &quot;./add-bar.component.html&quot;,
+  styleUrls: [&quot;./add-bar.component.scss&quot;],
+})
+export class AddBarComponent implements OnInit {
+
+  // mainImage: File &#x3D; null;
+  form: FormGroup;
+  bar: Bar;
+  zones: zone[];
+  loading: Boolean &#x3D; true;
+  photo: String[] &#x3D; [&quot;null&quot;];
+  main_image: String &#x3D; null;
+  phone: String[] &#x3D; [];
+  sidebar: Boolean;
+  updating:Boolean&#x3D;false;
+
+  constructor(
+    private _builder: FormBuilder,
+    private route: Router,
+    private zoneService: ZoneService,
+    private service: BarService,
+    private storage: AngularFireStorage
+  ) {
+    this.form &#x3D; this._builder.group({
+      name: [&quot;&quot;, Validators.required],
+      working_hours: [&quot;&quot;, Validators.required],
+      rating: [
+        &quot;1&quot;,
+        Validators.compose([
+          Validators.max(5),
+          Validators.min(1),
+          Validators.required,
+        ]),
+      ],
+      cost: [
+        &quot;1&quot;,
+        Validators.compose([
+          Validators.max(5),
+          Validators.min(1),
+          Validators.required,
+        ]),
+      ],
+      twitter: [&quot;&quot;],
+      instagram: [&quot;&quot;],
+      facebook: [&quot;&quot;],
+      email: [&quot;&quot;, Validators.compose([Validators.required, Validators.email])],
+      description: [&quot;&quot;, Validators.required],
+      address: [&quot;&quot;, Validators.required],
+      zone: [&quot;&quot;, Validators.required],
+      associate: false,
+      phone: this._builder.array([
+        this.addPhoneGroup()
+      ]),
+      menu: this._builder.array([
+        this.addMenuGroup()
+      ]),
+    });
+  }
+
+  ngOnInit() {
+    this.getZones();
+  }
+
+  uploadEnRes(event) {
+    this.main_image &#x3D; event.thumbnail;
+  }
+
+  changeImage(url) {
+    return this.storage.storage
+      .refFromURL(url)
+      .delete()
+      .then((res) &#x3D;&gt; {
+        this.main_image &#x3D; null;
+      });
+  }
+
+  uploadPhoto(event, index) {
+    const newURL &#x3D; event.thumbnail;
+    this.photo.push(newURL);
+    this.photo.splice(index, 1);
+    console.log(this.photo);
+  }
+
+  deletePhoto(url, index) {
+    if (this.photo.length &#x3D;&#x3D; 1 &amp;&amp; this.photo[0] !&#x3D; &quot;null&quot;) {
+      this.storage.storage
+        .refFromURL(url)
+        .delete()
+        .then((res) &#x3D;&gt; {
+          this.photo[index] &#x3D; &quot;null&quot;;
+          console.log(this.photo);
+        });
+    } else {
+      if (this.photo.length &#x3D;&#x3D; 1 &amp;&amp; this.photo[0] &#x3D;&#x3D; &quot;null&quot;) {
+        console.log(&quot;No se puede eliminar&quot;);
+      } else {
+
+        if (this.photo[index] !&#x3D; &#x27;null&#x27;) {
+          this.storage.storage.refFromURL(url).delete().then(res &#x3D;&gt; {
+            console.log(this.photo);
+          })
+          
+        }
+        this.photo.splice(index, 1);
+      }
+    }
+  }
+
+  addPhoneGroup() {
+    return this._builder.group({
+      phone: [&quot;&quot;, Validators.required],
+    });
+  }
+
+  // addPhotoGroup() {
+  //   return this._builder.group({
+  //     url: [null]
+  //   })
+  // }
+
+  addMenuGroup() {
+    return this._builder.group({
+      name: [&quot;&quot;, Validators.required],
+      price: [
+        &quot;0,00&quot;,
+        Validators.compose([Validators.required, Validators.min(0.01)]),
+      ],
+      description: [&quot;&quot;],
+    });
+  }
+
+  get PhoneArray() {
+    return &lt;FormArray&gt;this.form.get(&quot;phone&quot;);
+  }
+
+  get MenuArray() {
+    return &lt;FormArray&gt;this.form.get(&quot;menu&quot;);
+  }
+
+  // get PhotoArray() {
+  //   return &lt;FormArray&gt;this.form.get(&#x27;photo&#x27;);
+  // }
+
+  addPhone() {
+    this.PhoneArray.push(this.addPhoneGroup());
+  }
+
+  deletePhone(index) {
+    this.PhoneArray.removeAt(index);
+  }
+
+  addMenu() {
+    this.MenuArray.push(this.addMenuGroup());
+  }
+
+  deleteMenu(index) {
+    this.MenuArray.removeAt(index);
+  }
+
+  addPhoto() {
+    this.photo.push(&quot;null&quot;);
+    console.log(this.photo);
+    console.log(this.photo.length);
+  }
+
+  getZones() {
+    this.zoneService.getZones().subscribe((res: any) &#x3D;&gt; {
+      this.zones &#x3D; [...res.data];
+      console.log(this.zones);
+      this.loading &#x3D; false;
+    });
+  }
+
+  createBar() {
+    let photos: String[] &#x3D; [];
+    this.photo.forEach((item) &#x3D;&gt; {
+      if (item !&#x3D; &quot;null&quot;) {
+        photos.push(item);
+      }
+    });
+    let phones: String[] &#x3D; [];
+    this.form.value.phone.forEach((item) &#x3D;&gt; {
+      phones.push(item.phone);
+    });
+    
+
+    // VALIDA SI SE INTRODUJERON LAS IMÁGENES NECESARIAS (EL FORM YA ESTÁ VALIDADO).
+    if (this.main_image !&#x3D; null &amp;&amp; photos !&#x3D; null &amp;&amp; photos.length&gt;0) {
+      this.updating&#x3D;true;
+      const bar: Bar &#x3D; {
+        _id: &#x27;&#x27;,
+        name: this.form.value.name,
+        working_hours: this.form.value.working_hours,
+        rating: Math.round(this.form.value.rating),
+        cost: Math.round(this.form.value.cost),
+        twitter: this.form.value.twitter,
+        instagram: this.form.value.instagram,
+        facebook: this.form.value.facebook,
+        email: this.form.value.email,
+        description: this.form.value.description,
+        zone: this.form.value.zone,
+        address: this.form.value.address,
+        available: true,
+        views: 0,
+        associate: this.form.value.associate,
+        menu: this.form.value.menu,
+        phone: phones,
+        main_image: this.main_image,
+        pictures: photos,
+      };
+
+      this.service.createBar(bar).subscribe(res &#x3D;&gt; {
+        this.route.navigate([&quot;admin/bar&quot;]);
+      })
+    } else {
+      const response &#x3D; alert(
+        &quot;Debe introducir al menos una imagen tanto en el apartado de ícono como en el de fotos&quot;
+      );
+    }
+  }
+
+  goBack() {
+    this.route.navigate([&quot;admin/bar&quot;]);
+  }
+
+  getMessage($event){
+    if(screen.width&gt;640){
+      this.sidebar &#x3D; $event;
+    }
+  }
+
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;style&gt;
+  .custom-label input:checked + svg {
+    display: block !important;
+  }
+&lt;/style&gt;
+
+&lt;app-test-bar (message)&#x3D;&quot;getMessage($event)&quot;&gt;&lt;/app-test-bar&gt; 
+
+&lt;div [ngStyle]&#x3D;&quot;{&#x27;margin-left.rem&#x27;: !sidebar? &#x27;0&#x27;: &#x27;16&#x27;}&quot; class&#x3D;&quot;move&quot;&gt;
+  &lt;app-admin-header&gt;&lt;/app-admin-header&gt;
+  &lt;div *ngIf&#x3D;&quot;loading&quot;&gt;
+      &lt;app-loader&gt;&lt;/app-loader&gt;
+  &lt;/div&gt;
+  &lt;div *ngIf&#x3D;&quot;!loading &amp;&amp; !updating&quot; style&#x3D;&quot;font-family: &#x27;Open Sans&#x27;, sans-serif;&quot;&gt;
+    &lt;div
+      class&#x3D;&quot;h-20 w-full flex justify-center items-center&quot;
+      style&#x3D;&quot;font-family: &#x27;Open Sans&#x27;, sans-serif;&quot;
+    &gt;
+      &lt;div&gt;&lt;h2 class&#x3D;&quot;text-4xl&quot;&gt;CREA UN BAR&lt;/h2&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;w-full flex justify-center items-center h-full&quot;&gt;
+      &lt;form
+        [formGroup]&#x3D;&quot;form&quot;
+        class&#x3D;&quot;w-2/3 md:w-2/4 content-center&quot;
+        encType&#x3D;&quot;multipart/form-data&quot;
+      &gt;
+        &lt;div class&#x3D;&quot;width-full&quot;&gt;
+          &lt;div class&#x3D;&quot;lg:flex lg:items-center mb-6&quot;&gt;
+            &lt;div class&#x3D;&quot;md:w-full lg:w-1/5&quot;&gt;
+              &lt;label
+                class&#x3D;&quot;block text-black-500 font-bold lg:text-right mb-1 md:mb-0 pr-4&quot;
+                for&#x3D;&quot;inline-full-name&quot;
+              &gt;
+                Nombre
+              &lt;/label&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;md:w-full lg:w-4/5&quot;&gt;
+              &lt;input
+                formControlName&#x3D;&quot;name&quot;
+                class&#x3D;&quot;bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500&quot;
+                id&#x3D;&quot;inline-full-name&quot;
+                type&#x3D;&quot;text&quot;
+                placeholder&#x3D;&quot;Ej. Bar 360&quot;
+              /&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;app-required-field
+            [text]&#x3D;&quot;&#x27;Este campo es requerido.&#x27;&quot;
+            *ngIf&#x3D;&quot;form.get(&#x27;name&#x27;).invalid &amp;&amp; form.get(&#x27;name&#x27;).touched&quot;
+          &gt;&lt;/app-required-field&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;width-full&quot;&gt;
+          &lt;div class&#x3D;&quot;lg:flex lg:items-center mb-6&quot;&gt;
+            &lt;div class&#x3D;&quot;md:w-full lg:w-1/5&quot;&gt;
+              &lt;label
+                class&#x3D;&quot;block text-black-500 font-bold lg:text-right mb-1 md:mb-0 pr-4&quot;
+                for&#x3D;&quot;inline-full-name&quot;
+              &gt;
+                Horario de trabajo
+              &lt;/label&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;md:w-full lg:w-4/5&quot;&gt;
+              &lt;input
+                formControlName&#x3D;&quot;working_hours&quot;
+                class&#x3D;&quot;bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500&quot;
+                id&#x3D;&quot;inline-full-name&quot;
+                type&#x3D;&quot;text&quot;
+                placeholder&#x3D;&quot;Ej. Abiertos de 9pm a 4 am.&quot;
+              /&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;app-required-field
+            [text]&#x3D;&quot;&#x27;Este campo es requerido.&#x27;&quot;
+            *ngIf&#x3D;&quot;
+              form.get(&#x27;working_hours&#x27;).invalid &amp;&amp;
+              form.get(&#x27;working_hours&#x27;).touched
+            &quot;
+          &gt;&lt;/app-required-field&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;width-full&quot;&gt;
+          &lt;div class&#x3D;&quot;lg:flex lg:items-center mb-6&quot;&gt;
+            &lt;div class&#x3D;&quot;md:w-full lg:w-1/5&quot;&gt;
+              &lt;label
+                class&#x3D;&quot;block text-black-500 font-boldlg mb-1 md:mb-0 pr-4&quot;
+                for&#x3D;&quot;inline-full-name&quot;
+              &gt;
+                Rating (1-5)
+              &lt;/label&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;md:w-full lg:w-4/5&quot;&gt;
+              &lt;input
+                formControlName&#x3D;&quot;rating&quot;
+                class&#x3D;&quot;bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500&quot;
+                id&#x3D;&quot;inline-full-name&quot;
+                type&#x3D;&quot;number&quot;
+                step&#x3D;&quot;1&quot;
+              /&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;app-required-field
+            [text]&#x3D;&quot;&#x27;Este campo es requerido. (Valores entre 1 y 5)&#x27;&quot;
+            *ngIf&#x3D;&quot;form.get(&#x27;rating&#x27;).invalid &amp;&amp; form.get(&#x27;rating&#x27;).touched&quot;
+          &gt;&lt;/app-required-field&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;width-full&quot;&gt;
+          &lt;div class&#x3D;&quot;lg:flex lg:items-center mb-6&quot;&gt;
+            &lt;div class&#x3D;&quot;md:w-full lg:w-1/5&quot;&gt;
+              &lt;label
+                class&#x3D;&quot;block text-black-500 font-boldlg mb-1 md:mb-0 pr-4&quot;
+                for&#x3D;&quot;inline-full-name&quot;
+              &gt;
+                Costo promedio (1-5)
+              &lt;/label&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;md:w-full lg:w-4/5&quot;&gt;
+              &lt;input
+                formControlName&#x3D;&quot;cost&quot;
+                class&#x3D;&quot;bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500&quot;
+                id&#x3D;&quot;inline-full-name&quot;
+                type&#x3D;&quot;number&quot;
+                min&#x3D;&quot;1&quot;
+                max&#x3D;&quot;5&quot;
+              /&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;app-required-field
+            [text]&#x3D;&quot;&#x27;Este campo es requerido. (Valores entre 1 y 5)&#x27;&quot;
+            *ngIf&#x3D;&quot;form.get(&#x27;cost&#x27;).invalid &amp;&amp; form.get(&#x27;cost&#x27;).touched&quot;
+          &gt;&lt;/app-required-field&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;width-full&quot;&gt;
+          &lt;div class&#x3D;&quot;lg:flex lg:items-center mb-6&quot;&gt;
+            &lt;div class&#x3D;&quot;md:w-full lg:w-1/5&quot;&gt;
+              &lt;label
+                class&#x3D;&quot;block text-black-500 font-boldlg mb-1 md:mb-0 pr-4&quot;
+                for&#x3D;&quot;inline-full-name&quot;
+              &gt;
+                Twitter (Link de la cuenta)
+              &lt;/label&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;md:w-full lg:w-4/5&quot;&gt;
+              &lt;input
+                formControlName&#x3D;&quot;twitter&quot;
+                class&#x3D;&quot;bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500&quot;
+                id&#x3D;&quot;inline-full-name&quot;
+                type&#x3D;&quot;text&quot;
+                placeholder&#x3D;&quot;Ej. http://twitter.com/usuario&quot;
+              /&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;lg:flex lg:items-center mb-6&quot;&gt;
+          &lt;div class&#x3D;&quot;md:w-full lg:w-1/5&quot;&gt;
+            &lt;label
+              class&#x3D;&quot;block text-black-500 font-boldlg mb-1 md:mb-0 pr-4&quot;
+              for&#x3D;&quot;inline-full-name&quot;
+            &gt;
+              Facebook (Link de la cuenta)
+            &lt;/label&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;md:w-full lg:w-4/5&quot;&gt;
+            &lt;input
+              formControlName&#x3D;&quot;facebook&quot;
+              class&#x3D;&quot;bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500&quot;
+              id&#x3D;&quot;inline-full-name&quot;
+              type&#x3D;&quot;text&quot;
+              placeholder&#x3D;&quot;Ej. http://facebook.com/usuario&quot;
+            /&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;lg:flex lg:items-center mb-6&quot;&gt;
+          &lt;div class&#x3D;&quot;md:w-full lg:w-1/5&quot;&gt;
+            &lt;label
+              class&#x3D;&quot;block text-black-500 font-boldlg mb-1 md:mb-0 pr-4&quot;
+              for&#x3D;&quot;inline-full-name&quot;
+            &gt;
+              Instagram (Link de la cuenta)
+            &lt;/label&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;md:w-full lg:w-4/5&quot;&gt;
+            &lt;input
+              formControlName&#x3D;&quot;instagram&quot;
+              class&#x3D;&quot;bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500&quot;
+              id&#x3D;&quot;inline-full-name&quot;
+              type&#x3D;&quot;text&quot;
+              placeholder&#x3D;&quot;Ej. http://instagram.com/usuario&quot;
+            /&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;width-full&quot;&gt;
+          &lt;div class&#x3D;&quot;lg:flex lg:items-center mb-6&quot;&gt;
+            &lt;div class&#x3D;&quot;md:w-full lg:w-1/5&quot;&gt;
+              &lt;label
+                class&#x3D;&quot;block text-black-500 font-boldlg mb-1 md:mb-0 pr-4&quot;
+                for&#x3D;&quot;inline-full-name&quot;
+              &gt;
+                Email
+              &lt;/label&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;md:w-full lg:w-4/5&quot;&gt;
+              &lt;input
+                formControlName&#x3D;&quot;email&quot;
+                class&#x3D;&quot;bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500&quot;
+                id&#x3D;&quot;inline-full-name&quot;
+                type&#x3D;&quot;email&quot;
+                placeholder&#x3D;&quot;Ej. usuario@gmail.com&quot;
+              /&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;app-required-field
+            [text]&#x3D;&quot;&#x27;Este campo es requerido y debe ser un correo&#x27;&quot;
+            *ngIf&#x3D;&quot;form.get(&#x27;email&#x27;).invalid &amp;&amp; form.get(&#x27;email&#x27;).touched&quot;
+          &gt;&lt;/app-required-field&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;width-full&quot;&gt;
+          &lt;div class&#x3D;&quot;lg:flex lg:items-center mb-6&quot;&gt;
+            &lt;div class&#x3D;&quot;md:w-full lg:w-1/5&quot;&gt;
+              &lt;label
+                class&#x3D;&quot;block text-black-500 font-boldlg mb-1 md:mb-0 pr-4&quot;
+                for&#x3D;&quot;inline-full-name&quot;
+              &gt;
+                Descripción
+              &lt;/label&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;md:w-full lg:w-4/5&quot;&gt;
+              &lt;input
+                formControlName&#x3D;&quot;description&quot;
+                class&#x3D;&quot;bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500&quot;
+                id&#x3D;&quot;inline-full-name&quot;
+                type&#x3D;&quot;text&quot;
+                placeholder&#x3D;&quot;Ej. Bar360 es un lugar agradable donde puedes relajarte mientars disfrutas de la buena música...&quot;
+              /&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;app-required-field
+            [text]&#x3D;&quot;&#x27;Este campo es requerido.&#x27;&quot;
+            *ngIf&#x3D;&quot;
+              form.get(&#x27;description&#x27;).invalid &amp;&amp; form.get(&#x27;description&#x27;).touched
+            &quot;
+          &gt;&lt;/app-required-field&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;width-full&quot;&gt;
+          &lt;div class&#x3D;&quot;lg:flex lg:items-center mb-6&quot;&gt;
+            &lt;div class&#x3D;&quot;md:w-full lg:w-1/5&quot;&gt;
+              &lt;label
+                class&#x3D;&quot;block text-black-500 font-boldlg mb-1 md:mb-0 pr-4&quot;
+                for&#x3D;&quot;inline-full-name&quot;
+              &gt;
+                Zona
+              &lt;/label&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;md:w-full lg:w-4/5 relative&quot;&gt;
+              &lt;select
+                formControlName&#x3D;&quot;zone&quot;
+                class&#x3D;&quot;block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-orange-500&quot;
+                id&#x3D;&quot;grid-state&quot;
+              &gt;
+                &lt;ng-container *ngFor&#x3D;&quot;let item of zones&quot;&gt;
+                  &lt;option [value]&#x3D;&quot;item._id&quot; *ngIf&#x3D;&quot;item.available&quot;&gt;{{
+                    item.name
+                  }}&lt;/option&gt;
+                &lt;/ng-container&gt;
+              &lt;/select&gt;
+              &lt;div
+                class&#x3D;&quot;pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700&quot;
+              &gt;
+                &lt;svg
+                  class&#x3D;&quot;fill-current h-4 w-4&quot;
+                  xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot;
+                  viewBox&#x3D;&quot;0 0 20 20&quot;
+                &gt;
+                  &lt;path
+                    d&#x3D;&quot;M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z&quot;
+                  /&gt;
+                &lt;/svg&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;app-required-field
+            [text]&#x3D;&quot;&#x27;Este campo es requerido.&#x27;&quot;
+            *ngIf&#x3D;&quot;form.get(&#x27;zone&#x27;).invalid &amp;&amp; form.get(&#x27;zone&#x27;).touched&quot;
+          &gt;&lt;/app-required-field&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;width-full&quot;&gt;
+          &lt;div class&#x3D;&quot;lg:flex lg:items-center mb-6&quot;&gt;
+            &lt;div class&#x3D;&quot;md:w-full lg:w-1/5&quot;&gt;
+              &lt;label
+                class&#x3D;&quot;block text-black-500 font-boldlg mb-1 md:mb-0 pr-4&quot;
+                for&#x3D;&quot;inline-full-name&quot;
+              &gt;
+                Dirección
+              &lt;/label&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;md:w-full lg:w-4/5&quot;&gt;
+              &lt;input
+                formControlName&#x3D;&quot;address&quot;
+                class&#x3D;&quot;bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500&quot;
+                id&#x3D;&quot;inline-full-name&quot;
+                type&#x3D;&quot;text&quot;
+                placeholder&#x3D;&quot;Ej. Calle 7, Av. 5&quot;
+              /&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;app-required-field
+            [text]&#x3D;&quot;&#x27;Este campo es requerido.&#x27;&quot;
+            *ngIf&#x3D;&quot;form.get(&#x27;address&#x27;).invalid &amp;&amp; form.get(&#x27;address&#x27;).touched&quot;
+          &gt;&lt;/app-required-field&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;lg:flex lg:items-center mb-6&quot;&gt;
+          &lt;div class&#x3D;&quot;md:w-full lg:w-1/5&quot;&gt;
+            &lt;label
+              class&#x3D;&quot;block text-black-500 font-boldlg mb-1 md:mb-0 pr-4&quot;
+              for&#x3D;&quot;inline-full-name&quot;
+            &gt;
+              ¿Es socio?
+            &lt;/label&gt;
+          &lt;/div&gt;
+          &lt;label class&#x3D;&quot;custom-label flex&quot;&gt;
+            &lt;div
+              class&#x3D;&quot;bg-white shadow w-6 h-6 p-1 flex justify-center items-center mr-2&quot;
+            &gt;
+              &lt;input formControlName&#x3D;&quot;associate&quot; type&#x3D;&quot;checkbox&quot; class&#x3D;&quot;hidden&quot; /&gt;
+              &lt;svg
+                class&#x3D;&quot;hidden w-4 h-4 text-green-600 pointer-events-none&quot;
+                viewBox&#x3D;&quot;0 0 172 172&quot;
+              &gt;
+                &lt;g
+                  fill&#x3D;&quot;none&quot;
+                  stroke-width&#x3D;&quot;none&quot;
+                  stroke-miterlimit&#x3D;&quot;10&quot;
+                  font-family&#x3D;&quot;none&quot;
+                  font-weight&#x3D;&quot;none&quot;
+                  font-size&#x3D;&quot;none&quot;
+                  text-anchor&#x3D;&quot;none&quot;
+                  style&#x3D;&quot;mix-blend-mode: normal;&quot;
+                &gt;
+                  &lt;path d&#x3D;&quot;M0 172V0h172v172z&quot; /&gt;
+                  &lt;path
+                    d&#x3D;&quot;M145.433 37.933L64.5 118.8658 33.7337 88.0996l-10.134 10.1341L64.5 139.1341l91.067-91.067z&quot;
+                    fill&#x3D;&quot;currentColor&quot;
+                    stroke-width&#x3D;&quot;1&quot;
+                  /&gt;
+                &lt;/g&gt;
+              &lt;/svg&gt;
+            &lt;/div&gt;
+            &lt;span class&#x3D;&quot;select-none&quot;&gt;&lt;/span&gt;
+          &lt;/label&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;md:items-center mb-6&quot;&gt;
+          &lt;div class&#x3D;&quot;w-full&quot;&gt;
+              &lt;label
+              style&#x3D;&quot;font-family: &#x27;Open Sans&#x27;, sans-serif;&quot;
+              class&#x3D;&quot;block md:text-2xl text-black-500 font-bold text-center mb-1 md:mb-0 pr-4&quot;
+              for&#x3D;&quot;inline-full-name&quot;
+              &gt;
+              Números de contacto
+              &lt;/label&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;w-full&quot;&gt;
+              &lt;label
+              style&#x3D;&quot;font-family: &#x27;Open Sans&#x27;, sans-serif;&quot;
+              class&#x3D;&quot;text-lg md:text-xl block text-black-500 font-bold text-center mb-1 md:mb-0 pr-4&quot;
+              for&#x3D;&quot;inline-full-name&quot;
+              &gt;
+              Añade los números de teléfono
+              &lt;/label&gt;
+          &lt;/div&gt;
+      &lt;/div&gt;
+      
+      &lt;div formArrayName&#x3D;&quot;phone&quot; class&#x3D;&quot;width-full&quot;&gt;
+          &lt;div *ngFor&#x3D;&quot;let group of PhoneArray.controls; let i &#x3D; index;&quot; [formGroupName]&#x3D;&quot;i&quot; class&#x3D;&quot;width-full&quot;&gt;
+              &lt;div class&#x3D;&quot;lg:flex lg:items-center mb-6&quot;&gt;
+                  &lt;div class&#x3D;&quot;w-full lg:w-1/5&quot;&gt;
+                  &lt;label
+                      class&#x3D;&quot;block text-black-500 font-bold lg:text-right mb-1 md:mb-6 pr-4&quot;
+                      for&#x3D;&quot;inline-full-name&quot;
+                  &gt;
+                      Teléfono
+                  &lt;/label&gt;
+                  &lt;/div&gt;
+                  &lt;div class&#x3D;&quot;w-full flex mb-6&quot;&gt;
+                  &lt;div class&#x3D;&quot;w-4/5&quot;&gt;
+                      &lt;input formControlName&#x3D;&quot;phone&quot; class&#x3D;&quot;bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Ej. 02123451234&quot;&gt;
+                  &lt;/div&gt;
+                  &lt;div class&#x3D;&quot;pt-0 flex space-x-4 justify-end  w-1/5&quot;&gt;
+                      &lt;button
+                      *ngIf&#x3D;&quot;i !&#x3D; 0&quot;
+                      (click)&#x3D;&quot;deletePhone(i)&quot;
+                      class&#x3D;&quot;w-3/4  shadow bg-gray-500 hover:bg-red-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded&quot;
+                      type&#x3D;&quot;button&quot;
+                      &gt;
+                      -
+                      &lt;/button&gt;
+                  &lt;/div&gt;
+              &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;app-required-field *ngIf&#x3D;&quot;group.controls.phone.invalid &amp;&amp; group.controls.phone.touched&quot; [text]&#x3D;&quot;&#x27;Este campo es requerido.&#x27;&quot;&gt;&lt;/app-required-field&gt;
+          &lt;/div&gt; 
+          &lt;div class&#x3D;&quot;pt-0 pb-4 flex space-x-4 justify-center md:w-full&quot;&gt;
+              &lt;button
+              (click)&#x3D;&quot;addPhone()&quot;
+              class&#x3D;&quot;md:w-1/4 w-1/2 shadow bg-gray-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded&quot;
+              type&#x3D;&quot;button&quot;
+              &gt;
+              Añadir otro
+              &lt;/button&gt;
+          &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;pt-4 md:items-center mb-6&quot;&gt;
+          &lt;div class&#x3D;&quot;w-full&quot;&gt;
+              &lt;label
+              style&#x3D;&quot;font-family: &#x27;Open Sans&#x27;, sans-serif;&quot;
+              class&#x3D;&quot;block md:text-2xl text-black-500 font-bold text-center mb-1 md:mb-0 pr-4&quot;
+              for&#x3D;&quot;inline-full-name&quot;
+              &gt;
+              Menú
+              &lt;/label&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;w-full&quot;&gt;
+              &lt;label
+              style&#x3D;&quot;font-family: &#x27;Open Sans&#x27;, sans-serif;&quot;
+              class&#x3D;&quot;text-lg md:text-xl block text-black-500 font-bold text-center mb-1 md:mb-0 pr-4&quot;
+              for&#x3D;&quot;inline-full-name&quot;
+              &gt;
+              Añade los tragos disponibles en el bar
+              &lt;/label&gt;
+          &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div formArrayName&#x3D;&quot;menu&quot; class&#x3D;&quot;width-full&quot;&gt;
+          &lt;div *ngFor&#x3D;&quot;let group of MenuArray.controls; let i &#x3D; index;&quot; [formGroupName]&#x3D;&quot;i&quot; class&#x3D;&quot; mb-6&quot;&gt;
+              
+              &lt;div class&#x3D;&quot;lg:flex lg:items-center mb-6&quot;&gt;
+                  &lt;div class&#x3D;&quot;md:w-full lg:w-1/5&quot;&gt;
+                      &lt;label class&#x3D;&quot;block text-black-500 font-bollgmd:text-right mb-1 md:mb-0 pr-4&quot; for&#x3D;&quot;inline-full-name&quot;&gt;
+                          Nombre del trago
+                      &lt;/label&gt;
+                  &lt;/div&gt;
+                  &lt;div class&#x3D;&quot;md:w-full lg:w-4/5&quot;&gt;
+                      &lt;input formControlName&#x3D;&quot;name&quot; class&#x3D;&quot;bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500&quot; id&#x3D;&quot;inline-full-name&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Ej. Mojito&quot;&gt;
+                  &lt;/div&gt;
+              &lt;/div&gt;
+              &lt;app-required-field *ngIf&#x3D;&quot;group.controls.name.invalid &amp;&amp; group.controls.name.touched&quot; [text]&#x3D;&quot;&#x27;Este campo es requerido.&#x27;&quot;&gt;&lt;/app-required-field&gt;
+
+              &lt;div class&#x3D;&quot;lg:flex lg:items-center mb-6&quot;&gt;
+                  &lt;div class&#x3D;&quot;md:w-full lg:w-1/5&quot;&gt;
+                      &lt;label class&#x3D;&quot;block text-black-500 font-bollgmd:text-right mb-1 md:mb-0 pr-4&quot; for&#x3D;&quot;inline-full-name&quot;&gt;
+                          Precio
+                      &lt;/label&gt;
+                  &lt;/div&gt;
+                  &lt;div class&#x3D;&quot;md:w-full lg:w-4/5&quot;&gt;
+                      &lt;input formControlName&#x3D;&quot;price&quot; class&#x3D;&quot;bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500&quot; id&#x3D;&quot;inline-full-name&quot; type&#x3D;&quot;number&quot; min&#x3D;&quot;0.01&quot; step&#x3D;&quot;0.01&quot;&gt;
+                  &lt;/div&gt;
+              &lt;/div&gt;
+              &lt;app-required-field *ngIf&#x3D;&quot;group.controls.price.invalid &amp;&amp; group.controls.price.touched&quot; [text]&#x3D;&quot;&#x27;Este campo es requerido. (Solo números positivos)&#x27;&quot;&gt;&lt;/app-required-field&gt;
+
+              &lt;div class&#x3D;&quot;lg:flex lg:items-center mb-6&quot;&gt;
+                  &lt;div class&#x3D;&quot;md:w-full lg:w-1/5&quot;&gt;
+                      &lt;label class&#x3D;&quot;block text-black-500 font-bollgmd:text-right mb-1 md:mb-0 pr-4&quot; for&#x3D;&quot;inline-full-name&quot;&gt;
+                          Descripción
+                      &lt;/label&gt;
+                  &lt;/div&gt;
+                  &lt;div class&#x3D;&quot;md:w-full lg:w-4/5&quot;&gt;
+                      &lt;input formControlName&#x3D;&quot;description&quot; class&#x3D;&quot;bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500&quot; id&#x3D;&quot;inline-full-name&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Ej. Cóctel muy refrescante que no sabe mucho a alcohol.&quot;&gt;
+                  &lt;/div&gt;
+              &lt;/div&gt;
+              &lt;div class&#x3D;&quot;lg:flex lg:items-center mb-6&quot;&gt;
+                  &lt;div class&#x3D;&quot;md:w-1/3&quot;&gt;&lt;/div&gt;
+                  &lt;div class&#x3D;&quot;flex space-x-4 justify-end w-full&quot;&gt;
+                      &lt;button (click)&#x3D;&quot;deleteMenu(i)&quot; *ngIf&#x3D;&quot;i&gt;0&quot; class&#x3D;&quot;w-1/3 sm:w-1/4 shadow bg-gray-500 hover:bg-red-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded&quot; type&#x3D;&quot;button&quot;&gt;
+                          -
+                      &lt;/button&gt;
+                  &lt;/div&gt;
+              &lt;/div&gt;
+          &lt;/div&gt; 
+          &lt;div class&#x3D;&quot;pt-0 pb-4 flex space-x-4 justify-center md:w-full&quot;&gt;
+              &lt;button
+              (click)&#x3D;&quot;addMenu()&quot;
+              class&#x3D;&quot;md:w-1/4 w-1/2 shadow bg-gray-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded&quot;
+              type&#x3D;&quot;button&quot;
+              &gt;
+              Añadir otro
+              &lt;/button&gt;
+          &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;pt-4 md:items-center mb-6&quot;&gt;
+          &lt;div class&#x3D;&quot;w-full&quot;&gt;
+              &lt;label
+              style&#x3D;&quot;font-family: &#x27;Open Sans&#x27;, sans-serif;&quot;
+              class&#x3D;&quot;block md:text-2xl text-black-500 font-bold text-center mb-1 md:mb-0 pr-4&quot;
+              for&#x3D;&quot;inline-full-name&quot;
+              &gt;
+              Galería
+              &lt;/label&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;w-full&quot;&gt;
+              &lt;label
+              style&#x3D;&quot;font-family: &#x27;Open Sans&#x27;, sans-serif;&quot;
+              class&#x3D;&quot;text-lg md:text-xl block text-black-500 font-bold text-center mb-1 md:mb-0 pr-4&quot;
+              for&#x3D;&quot;inline-full-name&quot;
+              &gt;
+              Por favor, esperar a que aparezcan las fotos. Esto indicará que fueron cargadas con éxito.
+              &lt;/label&gt;
+          &lt;/div&gt;
+      &lt;/div&gt;
+
+
+
+      &lt;div class&#x3D;&quot;lg:flex lg:items-center mb-6&quot;&gt;
+          &lt;div class&#x3D;&quot;md:w-full lg:w-1/5&quot;&gt;
+          &lt;label class&#x3D;&quot;block text-black-500 font-bold lg:text-right mb-1 md:mb-0 pr-4&quot; for&#x3D;&quot;inline-full-name&quot;&gt;
+              Ícono
+          &lt;/label&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;md:w-full lg:w-4/5&quot;&gt;
+
+              &lt;div *ngIf&#x3D;&quot;!this.main_image&quot; class&#x3D;&quot;flex items-center justify-center bg-grey-lighter&quot;&gt;
+                  &lt;label class&#x3D;&quot;w-full flex justify-center h-full items-center px-4 py-3 pr-8 bg-gray-200 rounded-lg shadow-lg tracking-wide  border border-blue cursor-pointer hover:bg-orange-500 hover:text-white&quot;&gt;   
+                      &lt;span class&#x3D;&quot;mt-2 text-base leading-normal&quot;&gt;Selecciona un archivo&lt;/span&gt;
+                      &lt;lib-file-upload-firestorage storagePath&#x3D;&quot;bar&quot; (res)&#x3D;&quot;uploadEnRes($event)&quot; class&#x3D;&quot;hidden&quot;&gt;
+                      &lt;/lib-file-upload-firestorage&gt;
+                  &lt;/label&gt;
+              &lt;/div&gt;
+
+              &lt;div *ngIf&#x3D;&quot;this.main_image&quot; class&#x3D;&quot;width-full bg-grey-lighter&quot;&gt;
+                  &lt;div class&#x3D;&quot;width-2/3 flex items-center justify-center&quot;&gt;
+                      &lt;img [src]&#x3D;&quot;this.main_image&quot; class&#x3D;&quot;h-24&quot;&gt;
+                  &lt;/div&gt;
+                  &lt;div class&#x3D;&quot;pt-4 flex space-x-4 justify-center w-full&quot;&gt;
+                      &lt;button  (click)&#x3D;&quot;changeImage(this.main_image)&quot; class&#x3D;&quot;w-1/3 sm:w-1/4 shadow bg-gray-500 hover:bg-orange-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded&quot; type&#x3D;&quot;button&quot;&gt;
+                          Cambiar
+                      &lt;/button&gt;
+                  &lt;/div&gt;
+              &lt;/div&gt;
+
+          &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;width-full&quot;&gt;
+          &lt;div *ngFor&#x3D;&quot;let group of photo; let i &#x3D; index;&quot; class&#x3D;&quot;width-full&quot;&gt;
+              &lt;div class&#x3D;&quot;lg:flex lg:items-center mb-6&quot;&gt;
+
+                  &lt;div class&#x3D;&quot;md:w-full lg:w-1/5&quot;&gt;
+                      &lt;label class&#x3D;&quot;block text-black-500 font-bollgmd:text-right mb-1 md:mb-0 pr-4&quot; for&#x3D;&quot;inline-full-name&quot;&gt;
+                          Foto
+                      &lt;/label&gt;
+                  &lt;/div&gt;
+
+                  &lt;div class&#x3D;&quot;md:w-full lg:w-4/5&quot;&gt;
+
+                      &lt;div *ngIf&#x3D;&quot;group&#x3D;&#x3D;&#x27;null&#x27;&quot; class&#x3D;&quot;flex items-center justify-center bg-grey-lighter&quot;&gt;
+                          &lt;label class&#x3D;&quot;w-full flex justify-center h-full items-center px-4 py-3 pr-8 bg-gray-200 rounded-lg shadow-lg tracking-wide  border border-blue cursor-pointer hover:bg-orange-500 hover:text-white&quot;&gt;   
+                              &lt;span class&#x3D;&quot;mt-2 text-base leading-normal&quot;&gt;Selecciona un archivo&lt;/span&gt;
+                              &lt;lib-file-upload-firestorage storagePath&#x3D;&quot;bar&quot; (res)&#x3D;&quot;uploadPhoto($event, i)&quot; class&#x3D;&quot;hidden&quot;&gt;
+                              &lt;/lib-file-upload-firestorage&gt;
+                          &lt;/label&gt;
+                      &lt;/div&gt;
+
+                      &lt;div *ngIf&#x3D;&quot;group!&#x3D;&#x27;null&#x27;&quot; class&#x3D;&quot;width-full bg-grey-lighter&quot;&gt;
+                          &lt;div class&#x3D;&quot;width-2/3 flex items-center justify-center&quot;&gt;
+                              &lt;img [src]&#x3D;&quot;group&quot; class&#x3D;&quot;h-24&quot;&gt;
+                          &lt;/div&gt;
+                      &lt;/div&gt;
+
+                      &lt;div class&#x3D;&quot;pt-4 flex space-x-4 justify-center w-full&quot;&gt;
+                          &lt;button (click)&#x3D;&quot;deletePhoto(group, i)&quot; class&#x3D;&quot;sm:w-1/4 w-1/3 shadow bg-gray-500 hover:bg-red-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded&quot; type&#x3D;&quot;button&quot;&gt;
+                              -
+                          &lt;/button&gt;
+                      &lt;/div&gt;
+
+                  &lt;/div&gt;
+              &lt;/div&gt;
+              
+          &lt;/div&gt; 
+          &lt;div class&#x3D;&quot;pt-0 pb-4 flex space-x-4 justify-center md:w-full&quot;&gt;
+              &lt;button
+              (click)&#x3D;&quot;addPhoto()&quot;
+              class&#x3D;&quot;md:w-1/4 w-1/2 shadow bg-gray-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded&quot;
+              type&#x3D;&quot;button&quot;
+              &gt;
+              Añadir otra
+              &lt;/button&gt;
+          &lt;/div&gt;
+      &lt;/div&gt;
+        &lt;div class&#x3D;&quot;md:flex md:items-center mb-6&quot;&gt;
+          &lt;div class&#x3D;&quot;flex space-x-4 justify-center md:w-full&quot;&gt;
+            &lt;button
+              [disabled]&#x3D;&quot;form.invalid&quot;
+              (click)&#x3D;&quot;createBar()&quot;
+              class&#x3D;&quot;w-1/3 sm:w-1/4 shadow bg-green-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded&quot;
+              type&#x3D;&quot;button&quot;
+            &gt;
+              Crear
+            &lt;/button&gt;
+            &lt;button
+              (click)&#x3D;&quot;goBack()&quot;
+              class&#x3D;&quot;w-1/3 sm:w-1/4 shadow bg-orange-500 hover:bg-orange-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded&quot;
+              type&#x3D;&quot;button&quot;
+            &gt;
+              Regresar
+            &lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/form&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div *ngIf&#x3D;&quot;!loading &amp;&amp; updating&quot;&gt;
+    &lt;app-uploading-loader [text]&#x3D;&quot;&#x27;Creando el bar...&#x27;&quot;&gt;&lt;/app-uploading-loader&gt;
+  &lt;/div&gt;
+  &lt;app-footer&gt;&lt;/app-footer&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./add-bar.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">button:disabled,
+button[disabled]{
+  
+  background-color: gray;
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><style>  .custom-label input:checked + svg {    display: block !important;  }</style><app-test-bar (message)="getMessage($event)"></app-test-bar> <div [ngStyle]="{\'margin-left.rem\': !sidebar? \'0\': \'16\'}" class="move">  <app-admin-header></app-admin-header>  <div *ngIf="loading">      <app-loader></app-loader>  </div>  <div *ngIf="!loading && !updating" style="font-family: \'Open Sans\', sans-serif;">    <div      class="h-20 w-full flex justify-center items-center"      style="font-family: \'Open Sans\', sans-serif;"    >      <div><h2 class="text-4xl">CREA UN BAR</h2></div>    </div>    <div class="w-full flex justify-center items-center h-full">      <form        [formGroup]="form"        class="w-2/3 md:w-2/4 content-center"        encType="multipart/form-data"      >        <div class="width-full">          <div class="lg:flex lg:items-center mb-6">            <div class="md:w-full lg:w-1/5">              <label                class="block text-black-500 font-bold lg:text-right mb-1 md:mb-0 pr-4"                for="inline-full-name"              >                Nombre              </label>            </div>            <div class="md:w-full lg:w-4/5">              <input                formControlName="name"                class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"                id="inline-full-name"                type="text"                placeholder="Ej. Bar 360"              />            </div>          </div>          <app-required-field            [text]="\'Este campo es requerido.\'"            *ngIf="form.get(\'name\').invalid && form.get(\'name\').touched"          ></app-required-field>        </div>        <div class="width-full">          <div class="lg:flex lg:items-center mb-6">            <div class="md:w-full lg:w-1/5">              <label                class="block text-black-500 font-bold lg:text-right mb-1 md:mb-0 pr-4"                for="inline-full-name"              >                Horario de trabajo              </label>            </div>            <div class="md:w-full lg:w-4/5">              <input                formControlName="working_hours"                class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"                id="inline-full-name"                type="text"                placeholder="Ej. Abiertos de 9pm a 4 am."              />            </div>          </div>          <app-required-field            [text]="\'Este campo es requerido.\'"            *ngIf="              form.get(\'working_hours\').invalid &&              form.get(\'working_hours\').touched            "          ></app-required-field>        </div>        <div class="width-full">          <div class="lg:flex lg:items-center mb-6">            <div class="md:w-full lg:w-1/5">              <label                class="block text-black-500 font-boldlg mb-1 md:mb-0 pr-4"                for="inline-full-name"              >                Rating (1-5)              </label>            </div>            <div class="md:w-full lg:w-4/5">              <input                formControlName="rating"                class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"                id="inline-full-name"                type="number"                step="1"              />            </div>          </div>          <app-required-field            [text]="\'Este campo es requerido. (Valores entre 1 y 5)\'"            *ngIf="form.get(\'rating\').invalid && form.get(\'rating\').touched"          ></app-required-field>        </div>        <div class="width-full">          <div class="lg:flex lg:items-center mb-6">            <div class="md:w-full lg:w-1/5">              <label                class="block text-black-500 font-boldlg mb-1 md:mb-0 pr-4"                for="inline-full-name"              >                Costo promedio (1-5)              </label>            </div>            <div class="md:w-full lg:w-4/5">              <input                formControlName="cost"                class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"                id="inline-full-name"                type="number"                min="1"                max="5"              />            </div>          </div>          <app-required-field            [text]="\'Este campo es requerido. (Valores entre 1 y 5)\'"            *ngIf="form.get(\'cost\').invalid && form.get(\'cost\').touched"          ></app-required-field>        </div>        <div class="width-full">          <div class="lg:flex lg:items-center mb-6">            <div class="md:w-full lg:w-1/5">              <label                class="block text-black-500 font-boldlg mb-1 md:mb-0 pr-4"                for="inline-full-name"              >                Twitter (Link de la cuenta)              </label>            </div>            <div class="md:w-full lg:w-4/5">              <input                formControlName="twitter"                class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"                id="inline-full-name"                type="text"                placeholder="Ej. http://twitter.com/usuario"              />            </div>          </div>        </div>        <div class="lg:flex lg:items-center mb-6">          <div class="md:w-full lg:w-1/5">            <label              class="block text-black-500 font-boldlg mb-1 md:mb-0 pr-4"              for="inline-full-name"            >              Facebook (Link de la cuenta)            </label>          </div>          <div class="md:w-full lg:w-4/5">            <input              formControlName="facebook"              class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"              id="inline-full-name"              type="text"              placeholder="Ej. http://facebook.com/usuario"            />          </div>        </div>        <div class="lg:flex lg:items-center mb-6">          <div class="md:w-full lg:w-1/5">            <label              class="block text-black-500 font-boldlg mb-1 md:mb-0 pr-4"              for="inline-full-name"            >              Instagram (Link de la cuenta)            </label>          </div>          <div class="md:w-full lg:w-4/5">            <input              formControlName="instagram"              class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"              id="inline-full-name"              type="text"              placeholder="Ej. http://instagram.com/usuario"            />          </div>        </div>        <div class="width-full">          <div class="lg:flex lg:items-center mb-6">            <div class="md:w-full lg:w-1/5">              <label                class="block text-black-500 font-boldlg mb-1 md:mb-0 pr-4"                for="inline-full-name"              >                Email              </label>            </div>            <div class="md:w-full lg:w-4/5">              <input                formControlName="email"                class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"                id="inline-full-name"                type="email"                placeholder="Ej. usuario@gmail.com"              />            </div>          </div>          <app-required-field            [text]="\'Este campo es requerido y debe ser un correo\'"            *ngIf="form.get(\'email\').invalid && form.get(\'email\').touched"          ></app-required-field>        </div>        <div class="width-full">          <div class="lg:flex lg:items-center mb-6">            <div class="md:w-full lg:w-1/5">              <label                class="block text-black-500 font-boldlg mb-1 md:mb-0 pr-4"                for="inline-full-name"              >                Descripción              </label>            </div>            <div class="md:w-full lg:w-4/5">              <input                formControlName="description"                class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"                id="inline-full-name"                type="text"                placeholder="Ej. Bar360 es un lugar agradable donde puedes relajarte mientars disfrutas de la buena música..."              />            </div>          </div>          <app-required-field            [text]="\'Este campo es requerido.\'"            *ngIf="              form.get(\'description\').invalid && form.get(\'description\').touched            "          ></app-required-field>        </div>        <div class="width-full">          <div class="lg:flex lg:items-center mb-6">            <div class="md:w-full lg:w-1/5">              <label                class="block text-black-500 font-boldlg mb-1 md:mb-0 pr-4"                for="inline-full-name"              >                Zona              </label>            </div>            <div class="md:w-full lg:w-4/5 relative">              <select                formControlName="zone"                class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-orange-500"                id="grid-state"              >                <ng-container *ngFor="let item of zones">                  <option [value]="item._id" *ngIf="item.available">{{                    item.name                  }}</option>                </ng-container>              </select>              <div                class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"              >                <svg                  class="fill-current h-4 w-4"                  xmlns="http://www.w3.org/2000/svg"                  viewBox="0 0 20 20"                >                  <path                    d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"                  />                </svg>              </div>            </div>          </div>          <app-required-field            [text]="\'Este campo es requerido.\'"            *ngIf="form.get(\'zone\').invalid && form.get(\'zone\').touched"          ></app-required-field>        </div>        <div class="width-full">          <div class="lg:flex lg:items-center mb-6">            <div class="md:w-full lg:w-1/5">              <label                class="block text-black-500 font-boldlg mb-1 md:mb-0 pr-4"                for="inline-full-name"              >                Dirección              </label>            </div>            <div class="md:w-full lg:w-4/5">              <input                formControlName="address"                class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"                id="inline-full-name"                type="text"                placeholder="Ej. Calle 7, Av. 5"              />            </div>          </div>          <app-required-field            [text]="\'Este campo es requerido.\'"            *ngIf="form.get(\'address\').invalid && form.get(\'address\').touched"          ></app-required-field>        </div>        <div class="lg:flex lg:items-center mb-6">          <div class="md:w-full lg:w-1/5">            <label              class="block text-black-500 font-boldlg mb-1 md:mb-0 pr-4"              for="inline-full-name"            >              ¿Es socio?            </label>          </div>          <label class="custom-label flex">            <div              class="bg-white shadow w-6 h-6 p-1 flex justify-center items-center mr-2"            >              <input formControlName="associate" type="checkbox" class="hidden" />              <svg                class="hidden w-4 h-4 text-green-600 pointer-events-none"                viewBox="0 0 172 172"              >                <g                  fill="none"                  stroke-width="none"                  stroke-miterlimit="10"                  font-family="none"                  font-weight="none"                  font-size="none"                  text-anchor="none"                  style="mix-blend-mode: normal;"                >                  <path d="M0 172V0h172v172z" />                  <path                    d="M145.433 37.933L64.5 118.8658 33.7337 88.0996l-10.134 10.1341L64.5 139.1341l91.067-91.067z"                    fill="currentColor"                    stroke-width="1"                  />                </g>              </svg>            </div>            <span class="select-none"></span>          </label>        </div>        <div class="md:items-center mb-6">          <div class="w-full">              <label              style="font-family: \'Open Sans\', sans-serif;"              class="block md:text-2xl text-black-500 font-bold text-center mb-1 md:mb-0 pr-4"              for="inline-full-name"              >              Números de contacto              </label>          </div>          <div class="w-full">              <label              style="font-family: \'Open Sans\', sans-serif;"              class="text-lg md:text-xl block text-black-500 font-bold text-center mb-1 md:mb-0 pr-4"              for="inline-full-name"              >              Añade los números de teléfono              </label>          </div>      </div>            <div formArrayName="phone" class="width-full">          <div *ngFor="let group of PhoneArray.controls; let i = index;" [formGroupName]="i" class="width-full">              <div class="lg:flex lg:items-center mb-6">                  <div class="w-full lg:w-1/5">                  <label                      class="block text-black-500 font-bold lg:text-right mb-1 md:mb-6 pr-4"                      for="inline-full-name"                  >                      Teléfono                  </label>                  </div>                  <div class="w-full flex mb-6">                  <div class="w-4/5">                      <input formControlName="phone" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500" type="text" placeholder="Ej. 02123451234">                  </div>                  <div class="pt-0 flex space-x-4 justify-end  w-1/5">                      <button                      *ngIf="i != 0"                      (click)="deletePhone(i)"                      class="w-3/4  shadow bg-gray-500 hover:bg-red-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"                      type="button"                      >                      -                      </button>                  </div>              </div>          </div>          <app-required-field *ngIf="group.controls.phone.invalid && group.controls.phone.touched" [text]="\'Este campo es requerido.\'"></app-required-field>          </div>           <div class="pt-0 pb-4 flex space-x-4 justify-center md:w-full">              <button              (click)="addPhone()"              class="md:w-1/4 w-1/2 shadow bg-gray-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"              type="button"              >              Añadir otro              </button>          </div>      </div>      <div class="pt-4 md:items-center mb-6">          <div class="w-full">              <label              style="font-family: \'Open Sans\', sans-serif;"              class="block md:text-2xl text-black-500 font-bold text-center mb-1 md:mb-0 pr-4"              for="inline-full-name"              >              Menú              </label>          </div>          <div class="w-full">              <label              style="font-family: \'Open Sans\', sans-serif;"              class="text-lg md:text-xl block text-black-500 font-bold text-center mb-1 md:mb-0 pr-4"              for="inline-full-name"              >              Añade los tragos disponibles en el bar              </label>          </div>      </div>      <div formArrayName="menu" class="width-full">          <div *ngFor="let group of MenuArray.controls; let i = index;" [formGroupName]="i" class=" mb-6">                            <div class="lg:flex lg:items-center mb-6">                  <div class="md:w-full lg:w-1/5">                      <label class="block text-black-500 font-bollgmd:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">                          Nombre del trago                      </label>                  </div>                  <div class="md:w-full lg:w-4/5">                      <input formControlName="name" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500" id="inline-full-name" type="text" placeholder="Ej. Mojito">                  </div>              </div>              <app-required-field *ngIf="group.controls.name.invalid && group.controls.name.touched" [text]="\'Este campo es requerido.\'"></app-required-field>              <div class="lg:flex lg:items-center mb-6">                  <div class="md:w-full lg:w-1/5">                      <label class="block text-black-500 font-bollgmd:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">                          Precio                      </label>                  </div>                  <div class="md:w-full lg:w-4/5">                      <input formControlName="price" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500" id="inline-full-name" type="number" min="0.01" step="0.01">                  </div>              </div>              <app-required-field *ngIf="group.controls.price.invalid && group.controls.price.touched" [text]="\'Este campo es requerido. (Solo números positivos)\'"></app-required-field>              <div class="lg:flex lg:items-center mb-6">                  <div class="md:w-full lg:w-1/5">                      <label class="block text-black-500 font-bollgmd:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">                          Descripción                      </label>                  </div>                  <div class="md:w-full lg:w-4/5">                      <input formControlName="description" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500" id="inline-full-name" type="text" placeholder="Ej. Cóctel muy refrescante que no sabe mucho a alcohol.">                  </div>              </div>              <div class="lg:flex lg:items-center mb-6">                  <div class="md:w-1/3"></div>                  <div class="flex space-x-4 justify-end w-full">                      <button (click)="deleteMenu(i)" *ngIf="i>0" class="w-1/3 sm:w-1/4 shadow bg-gray-500 hover:bg-red-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">                          -                      </button>                  </div>              </div>          </div>           <div class="pt-0 pb-4 flex space-x-4 justify-center md:w-full">              <button              (click)="addMenu()"              class="md:w-1/4 w-1/2 shadow bg-gray-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"              type="button"              >              Añadir otro              </button>          </div>      </div>      <div class="pt-4 md:items-center mb-6">          <div class="w-full">              <label              style="font-family: \'Open Sans\', sans-serif;"              class="block md:text-2xl text-black-500 font-bold text-center mb-1 md:mb-0 pr-4"              for="inline-full-name"              >              Galería              </label>          </div>          <div class="w-full">              <label              style="font-family: \'Open Sans\', sans-serif;"              class="text-lg md:text-xl block text-black-500 font-bold text-center mb-1 md:mb-0 pr-4"              for="inline-full-name"              >              Por favor, esperar a que aparezcan las fotos. Esto indicará que fueron cargadas con éxito.              </label>          </div>      </div>      <div class="lg:flex lg:items-center mb-6">          <div class="md:w-full lg:w-1/5">          <label class="block text-black-500 font-bold lg:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">              Ícono          </label>          </div>          <div class="md:w-full lg:w-4/5">              <div *ngIf="!this.main_image" class="flex items-center justify-center bg-grey-lighter">                  <label class="w-full flex justify-center h-full items-center px-4 py-3 pr-8 bg-gray-200 rounded-lg shadow-lg tracking-wide  border border-blue cursor-pointer hover:bg-orange-500 hover:text-white">                         <span class="mt-2 text-base leading-normal">Selecciona un archivo</span>                      <lib-file-upload-firestorage storagePath="bar" (res)="uploadEnRes($event)" class="hidden">                      </lib-file-upload-firestorage>                  </label>              </div>              <div *ngIf="this.main_image" class="width-full bg-grey-lighter">                  <div class="width-2/3 flex items-center justify-center">                      <img [src]="this.main_image" class="h-24">                  </div>                  <div class="pt-4 flex space-x-4 justify-center w-full">                      <button  (click)="changeImage(this.main_image)" class="w-1/3 sm:w-1/4 shadow bg-gray-500 hover:bg-orange-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">                          Cambiar                      </button>                  </div>              </div>          </div>      </div>      <div class="width-full">          <div *ngFor="let group of photo; let i = index;" class="width-full">              <div class="lg:flex lg:items-center mb-6">                  <div class="md:w-full lg:w-1/5">                      <label class="block text-black-500 font-bollgmd:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">                          Foto                      </label>                  </div>                  <div class="md:w-full lg:w-4/5">                      <div *ngIf="group==\'null\'" class="flex items-center justify-center bg-grey-lighter">                          <label class="w-full flex justify-center h-full items-center px-4 py-3 pr-8 bg-gray-200 rounded-lg shadow-lg tracking-wide  border border-blue cursor-pointer hover:bg-orange-500 hover:text-white">                                 <span class="mt-2 text-base leading-normal">Selecciona un archivo</span>                              <lib-file-upload-firestorage storagePath="bar" (res)="uploadPhoto($event, i)" class="hidden">                              </lib-file-upload-firestorage>                          </label>                      </div>                      <div *ngIf="group!=\'null\'" class="width-full bg-grey-lighter">                          <div class="width-2/3 flex items-center justify-center">                              <img [src]="group" class="h-24">                          </div>                      </div>                      <div class="pt-4 flex space-x-4 justify-center w-full">                          <button (click)="deletePhoto(group, i)" class="sm:w-1/4 w-1/3 shadow bg-gray-500 hover:bg-red-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">                              -                          </button>                      </div>                  </div>              </div>                        </div>           <div class="pt-0 pb-4 flex space-x-4 justify-center md:w-full">              <button              (click)="addPhoto()"              class="md:w-1/4 w-1/2 shadow bg-gray-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"              type="button"              >              Añadir otra              </button>          </div>      </div>        <div class="md:flex md:items-center mb-6">          <div class="flex space-x-4 justify-center md:w-full">            <button              [disabled]="form.invalid"              (click)="createBar()"              class="w-1/3 sm:w-1/4 shadow bg-green-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"              type="button"            >              Crear            </button>            <button              (click)="goBack()"              class="w-1/3 sm:w-1/4 shadow bg-orange-500 hover:bg-orange-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"              type="button"            >              Regresar            </button>          </div>        </div>      </form>    </div>  </div>  <div *ngIf="!loading && updating">    <app-uploading-loader [text]="\'Creando el bar...\'"></app-uploading-loader>  </div>  <app-footer></app-footer></div></div>'
+    var COMPONENTS = [{'name': 'AddAdComponent', 'selector': 'app-add-ad'},{'name': 'AddBarComponent', 'selector': 'app-add-bar'},{'name': 'AddDrinkComponent', 'selector': 'app-add-drink'},{'name': 'AddGameComponent', 'selector': 'app-add-game'},{'name': 'AddIngredientComponent', 'selector': 'app-add-ingredient'},{'name': 'AddZoneComponent', 'selector': 'app-add-zone'},{'name': 'AdminHeaderComponent', 'selector': 'app-admin-header'},{'name': 'AdminHomeComponent', 'selector': 'app-admin-home'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BarsListComponent', 'selector': 'app-bars-list'},{'name': 'DetailBarComponent', 'selector': 'app-detail-bar'},{'name': 'DrinklyTeamComponent', 'selector': 'app-drinkly-team'},{'name': 'DrinksFilterComponent', 'selector': 'app-drinks-filter'},{'name': 'DrinksListComponent', 'selector': 'app-drinks-list'},{'name': 'EditAdComponent', 'selector': 'app-edit-ad'},{'name': 'EditBarComponent', 'selector': 'app-edit-bar'},{'name': 'EditDrinkComponent', 'selector': 'app-edit-drink'},{'name': 'EditGameComponent', 'selector': 'app-edit-game'},{'name': 'EditIngredientComponent', 'selector': 'app-edit-ingredient'},{'name': 'EditUserComponent', 'selector': 'app-edit-user'},{'name': 'EditZoneComponent', 'selector': 'app-edit-zone'},{'name': 'FilterChildComponent', 'selector': 'app-filter-child'},{'name': 'FilterParentComponent', 'selector': 'app-filter-parent'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'JuegosComponent', 'selector': 'app-juegos'},{'name': 'ListAdComponent', 'selector': 'app-list-ad'},{'name': 'ListBarComponent', 'selector': 'app-list-bar'},{'name': 'ListDrinkComponent', 'selector': 'app-list-drink'},{'name': 'ListGameComponent', 'selector': 'app-list-game'},{'name': 'ListIngredientComponent', 'selector': 'app-list-ingredient'},{'name': 'ListUserComponent', 'selector': 'app-list-user'},{'name': 'ListZoneComponent', 'selector': 'app-list-zone'},{'name': 'LoaderComponent', 'selector': 'app-loader'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PostBusinessComponent', 'selector': 'app-post-business'},{'name': 'PostDrinkComponent', 'selector': 'app-post-drink'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RecipeComponent', 'selector': 'app-recipe'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'RequiredFieldComponent', 'selector': 'app-required-field'},{'name': 'ShowFilterComponent', 'selector': 'app-show-filter'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'TestBarComponent', 'selector': 'app-test-bar'},{'name': 'UploadingLoaderComponent', 'selector': 'app-uploading-loader'}];
+    var DIRECTIVES = [{'name': 'AgeValidatorDirective', 'selector': '[isAdult]'},{'name': 'clickedOutDirective', 'selector': '[clickedOut]'},{'name': 'ExternalUrlDirective', 'selector': 'a[appExternalUrl]'},{'name': 'passwordValidator', 'selector': '[passwordValid]'}];
+    var ACTUAL_COMPONENT = {'name': 'AddBarComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'AddBarComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

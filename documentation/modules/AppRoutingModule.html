@@ -1,0 +1,380 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>drinkly documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">drinkly documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content module">
+                   <div class="content-data">
+
+
+
+<ol class="breadcrumb">
+    <li>Modules</li>
+    <li>AppRoutingModule</li>
+</ol>
+
+
+<ul class="nav nav-tabs" role="tablist">
+    <li  class="active" >
+        <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+    </li>
+    <li >
+        <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+    </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/app-routing.module.ts</code>
+        </p>
+
+
+
+
+        <div class="container-fluid module">
+            <div class="row">
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { TestBarComponent } from &#x27;./components/test-bar/test-bar.component&#x27;;
+import { DetailBarComponent } from &#x27;./components/bars/detail-bar/detail-bar.component&#x27;;
+import { ListUserComponent } from &#x27;./components/admin/user/list-user/list-user.component&#x27;;
+import { AdminAuthGuard } from &quot;./guards/adminAuth.guard&quot;;
+import { ProfileComponent } from &quot;./components/profile-page/profile/profile.component&quot;;
+import { LoginComponent } from &quot;./components/login/login.component&quot;;
+import { RegisterComponent } from &quot;./components/register/register.component&quot;;
+
+import { ListIngredientComponent } from &quot;./components/admin/ingredient/list-ingredient/list-ingredient.component&quot;;
+import { EditIngredientComponent } from &quot;./components/admin/ingredient/edit-ingredient/edit-ingredient.component&quot;;
+import { NgModule, InjectionToken } from &quot;@angular/core&quot;;
+import { Routes, RouterModule, ActivatedRouteSnapshot } from &quot;@angular/router&quot;;
+import { BarsListComponent } from &quot;./components/bars/bars-list/bars-list.component&quot;;
+import { DrinksListComponent } from &quot;./components/drinks/drinks-list/drinks-list.component&quot;;
+import { DrinksFilterComponent } from &quot;./components/drinks/drinks-filter/drinks-filter.component&quot;;
+import { AddIngredientComponent } from &quot;./components/admin/ingredient/add-ingredient/add-ingredient.component&quot;;
+import { AddBarComponent } from &quot;./components/admin/bar/add-bar/add-bar.component&quot;;
+import { JuegosComponent } from &quot;./components/juegos/juegos.component&quot;;
+import { ListBarComponent } from &quot;./components/admin/bar/list-bar/list-bar.component&quot;;
+import { EditBarComponent } from &quot;./components/admin/bar/edit-bar/edit-bar.component&quot;;
+import { RecipeComponent } from &quot;./components/recipe/recipe.component&quot;;
+import { HomeComponent } from &quot;./components/home/home.component&quot;;
+import { AdminHomeComponent} from &quot;./components/admin/admin-home/admin-home.component&quot;;
+
+
+import { NotFoundComponent } from &quot;./components/not-found/not-found.component&quot;;
+import { AuthGuard } from &quot;./guards/auth.guard&quot;;
+import { from } from &quot;rxjs&quot;;
+
+import { FilterParentComponent } from &quot;./components/drinks/filter-parent/filter-parent.component&quot;;
+import { ListDrinkComponent } from &quot;./components/admin/drink/list-drink/list-drink.component&quot;;
+import { AddDrinkComponent } from &quot;./components/admin/drink/add-drink/add-drink.component&quot;;
+import { EditDrinkComponent } from &quot;./components/admin/drink/edit-drink/edit-drink.component&quot;;
+import { EditUserComponent } from &#x27;./components/profile-page/edit-user/edit-user.component&#x27;;
+import {AddZoneComponent} from &#x27;./components/admin/zone/add-zone/add-zone.component&#x27;;
+import {EditZoneComponent} from &#x27;./components/admin/zone/edit-zone/edit-zone.component&#x27;;
+import {ListZoneComponent} from &#x27;./components/admin/zone/list-zone/list-zone.component&#x27;;
+import {ListGameComponent} from &#x27;./components/admin/game/list-game/list-game.component&#x27;;
+import {EditGameComponent} from &#x27;./components/admin/game/edit-game/edit-game.component&#x27;;
+import {AddGameComponent} from &#x27;./components/admin/game/add-game/add-game.component&#x27;;
+import { ShowFilterComponent } from &#x27;./components/drinks/show-filter/show-filter.component&#x27;;
+import { ListAdComponent } from &#x27;./components/admin/ad/list-ad/list-ad.component&#x27;;
+import { AddAdComponent } from &#x27;./components/admin/ad/add-ad/add-ad.component&#x27;;
+import { EditAdComponent } from &#x27;./components/admin/ad/edit-ad/edit-ad.component&#x27;;
+const externalUrlProvider &#x3D; new InjectionToken(&#x27;externalUrlRedirectResolver&#x27;);
+import {PostDrinkComponent} from &#x27;./components/post-drink/post-drink.component&#x27;;
+import {PostBusinessComponent} from &#x27;./components/post-business/post-business.component&#x27;;
+import {DrinklyTeamComponent} from &#x27;./components/drinkly-team/drinkly-team.component&#x27;;
+
+const routes: Routes &#x3D; [
+
+   
+
+  // USERS&#x27; ROUTES
+
+  {
+    path: &quot;bars&quot;,
+    component: BarsListComponent,
+    canActivate: [AuthGuard]
+  },
+  { 
+    path: &quot;drinks&quot;, 
+    component: DrinksListComponent,
+    canActivate: [AuthGuard]
+  },
+  { 
+    path: &quot;bar/:id&quot;, 
+    component: DetailBarComponent, 
+    canActivate: [AuthGuard]},
+  {
+    path: &quot;drinks/filter&quot;,
+    component: FilterParentComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: &quot;drinks/filtered_drinks/:filter&quot;,
+    component: ShowFilterComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: &quot;post-drink&quot;,
+    component: PostDrinkComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: &quot;post-your-business&quot;,
+    component: PostBusinessComponent,
+    canActivate: [AuthGuard],
+  },
+
+  {
+    path: &quot;drinkly-team&quot;,
+    component: DrinklyTeamComponent,
+    canActivate: [AuthGuard],
+  },
+
+  { path: &quot;drink/:id&quot;, component: RecipeComponent,
+    canActivate: [AuthGuard]},
+
+  { path: &quot;register&quot;, component: RegisterComponent },
+  { path: &quot;login&quot;, component: LoginComponent },
+  { path: &quot;profile&quot;, component: ProfileComponent, canActivate: [AuthGuard] },
+  { path: &quot;edit-user/:id&quot;, component: EditUserComponent, canActivate: [AuthGuard] },
+  {
+    path: &#x27;externalRedirect&#x27;,
+    canActivate: [externalUrlProvider],
+    // We need a component here because we cannot define the route otherwise
+    component: NotFoundComponent,
+  },
+  
+  { path: &quot;home&quot;, component: HomeComponent },
+
+  { path: &quot;games&quot;, component: JuegosComponent,
+    canActivate: [AuthGuard]},
+
+  // ADMIN&#x27;S ROUTES
+  { path: &quot;admin&quot;, 
+    component: AdminHomeComponent, 
+    canActivate: [AdminAuthGuard]},
+  {
+    path: &quot;admin/ingredient/add&quot;,
+    component: AddIngredientComponent,
+    canActivate: [AdminAuthGuard]
+  },
+  {
+    path: &quot;admin/ingredient&quot;,
+    component: ListIngredientComponent,
+    canActivate: [AdminAuthGuard],
+  },
+  {
+    path: &quot;admin/ingredient/edit/:id&quot;,
+    component: EditIngredientComponent,
+    canActivate: [AdminAuthGuard],
+  },
+  {
+    path: &quot;admin/bar/add&quot;,
+    component: AddBarComponent,
+    canActivate: [AdminAuthGuard],
+  },
+  {
+    path: &quot;admin/bar&quot;,
+    component: ListBarComponent,
+    canActivate: [AdminAuthGuard],
+
+  },
+  {
+    path: &quot;admin/bar/edit/:id&quot;,
+    component: EditBarComponent,
+    canActivate: [AdminAuthGuard],
+  },
+
+  {
+    path: &quot;admin/drink&quot;,
+    component: ListDrinkComponent,
+    canActivate: [AdminAuthGuard],
+  },
+  {
+    path: &quot;admin/drink/add&quot;,
+    component: AddDrinkComponent,
+    canActivate: [AdminAuthGuard]
+  },
+  {
+    path: &quot;admin/drink/edit/:id&quot;,
+    component: EditDrinkComponent,
+    canActivate: [AdminAuthGuard]
+  },
+  {
+    path: &quot;admin/zone&quot;,
+    component: ListZoneComponent,
+    canActivate: [AdminAuthGuard]
+  },
+  {
+    path: &quot;admin/zone/add&quot;,
+    component: AddZoneComponent,
+    canActivate: [AdminAuthGuard]
+  },
+  {
+    path: &quot;admin/zone/edit/:id&quot;,
+    component: EditZoneComponent,
+    canActivate: [AdminAuthGuard]
+  },
+  {
+    path: &quot;admin/game&quot;,
+    component: ListGameComponent,
+    canActivate: [AdminAuthGuard]
+  },
+  {
+    path: &quot;admin/game/add&quot;,
+    component: AddGameComponent,
+    canActivate: [AdminAuthGuard]
+  },
+  {
+    path: &quot;admin/game/edit/:id&quot;,
+    component: EditGameComponent,
+    canActivate: [AdminAuthGuard]
+  },
+  {
+    path: &quot;admin/ad&quot;,
+    component: ListAdComponent,
+    canActivate: [AdminAuthGuard]
+  },
+  {
+    path: &quot;admin/ad/add&quot;,
+    component: AddAdComponent,
+    canActivate: [AdminAuthGuard]
+  },
+  {
+    path: &quot;admin/ad/edit/:id&quot;,
+    component: EditAdComponent,
+    canActivate: [AdminAuthGuard]
+  },
+
+
+  {
+    path: &quot;admin/user&quot;,
+    component: ListUserComponent,
+    canActivate: [AdminAuthGuard]
+  },
+
+  {path: &quot;prueba/barra&quot;, component: TestBarComponent},
+
+  //Ruta no encontrada
+  { path: &quot;**&quot;, component: NotFoundComponent },
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
+  providers: [
+    {
+        provide: externalUrlProvider,
+        useValue: (route: ActivatedRouteSnapshot) &#x3D;&gt; {
+            
+            const externalUrl &#x3D; route.paramMap.get(&#x27;externalUrl&#x27;);
+            window.open(externalUrl, &#x27;_blank&#x27;);
+        },
+    },
+  ]
+})
+export class AppRoutingModule {}
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'module';
+            var COMPODOC_CURRENT_PAGE_URL = 'AppRoutingModule.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
