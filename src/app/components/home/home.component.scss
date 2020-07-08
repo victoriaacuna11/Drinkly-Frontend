@@ -15,7 +15,7 @@
 /* Large (lg) */
 @media (min-width: 1400px) { 
     
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     width: 75%;
     gap: 2.5rem;
  }
@@ -72,7 +72,7 @@
 /* Large (lg) */
 @media (min-width: 1400px) { 
     
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     width: 75%;
     gap: 2.5rem;
  }

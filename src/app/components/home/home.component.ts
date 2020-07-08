@@ -42,7 +42,9 @@ export class HomeComponent implements OnInit {
   }
 
   getMessage($event){
-    this.sidebar = $event;
+    if(screen.width>640){
+      this.sidebar = $event;
+    } 
   }
 
   getAdvertisements() {
@@ -112,7 +114,7 @@ export class HomeComponent implements OnInit {
   }
 
   addAdvertisement(){
-    this.route.navigate(['drinkly-team/']);
+    this.route.navigate(["post-your-business"]);
   }
 
   getBars(){
