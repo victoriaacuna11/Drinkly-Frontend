@@ -18,6 +18,7 @@ export class DetailBarComponent implements OnInit {
   zone: zone;
   images: String[];
   loading: Boolean=true;
+  stars: Boolean[]=[];
 
   sidebar: Boolean;
 
@@ -29,6 +30,21 @@ export class DetailBarComponent implements OnInit {
     this.getBar();
   }
 
+  getStars(){
+    var i;
+    var aux: boolean;
+    for(i=0 ; i<5 ; i++){
+      if(i<this.bar.rating){
+        aux = true
+        this.stars.push(aux)
+      }else{
+        aux = false 
+        this.stars.push(aux)
+      }
+    }
+    this.loading = false;
+  }
+
   getBar(){
     const id = this.routeSV.snapshot.paramMap.get('id');
     this.svc.getBar(id).subscribe( (b:any) => {
@@ -36,6 +52,7 @@ export class DetailBarComponent implements OnInit {
       console.log(this.bar);
       this.images = this.bar.pictures;
       this.getZone(this.bar.zone);
+      this.getStars();
     })
   }
 
@@ -43,7 +60,6 @@ export class DetailBarComponent implements OnInit {
     
     this.zoneService.getZone(id_zone).subscribe((res:any) => {
       this.zone={...res.data};
-      this.loading = false;
     })
   }
 

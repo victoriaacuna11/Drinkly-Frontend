@@ -32,34 +32,34 @@ export class JuegosComponent implements OnInit {
                     'Que es lo mas cochino que has hecho en tu vida?',
                     'A quien matarias de tus exes?'];
   fichas: Ficha[] = [
-    {ficha:'0/0', listo:false},
-    {ficha:'0/1', listo:false}, 
-    {ficha:'0/2', listo:false}, 
-    {ficha:'0/3', listo:false}, 
-    {ficha:'0/4', listo:false}, 
-    {ficha:'0/5', listo:false}, 
-    {ficha:'0/6', listo:false}, 
-    {ficha:'1/1', listo:false}, 
-    {ficha:'1/2', listo:false}, 
-    {ficha:'1/3', listo:false}, 
-    {ficha:'1/4', listo:false}, 
-    {ficha:'1/5', listo:false}, 
-    {ficha:'1/6', listo:false}, 
-    {ficha:'2/2', listo:false}, 
-    {ficha:'2/3', listo:false}, 
-    {ficha:'2/4', listo:false}, 
-    {ficha:'2/5', listo:false}, 
-    {ficha:'2/6', listo:false}, 
-    {ficha:'3/3', listo:false}, 
-    {ficha:'3/4', listo:false},
-    {ficha:'3/5', listo:false},
-    {ficha:'3/6', listo:false},
-    {ficha:'4/4', listo:false},
-    {ficha:'4/5', listo:false},
-    {ficha:'4/6', listo:false},
-    {ficha:'5/5', listo:false},
-    {ficha:'5/6', listo:false},
-    {ficha:'6/6', listo:false},
+    {ficha:'0_0', listo:false},
+    {ficha:'0_1', listo:false}, 
+    {ficha:'0_2', listo:false}, 
+    {ficha:'0_3', listo:false}, 
+    {ficha:'0_4', listo:false}, 
+    {ficha:'0_5', listo:false}, 
+    {ficha:'0_6', listo:false}, 
+    {ficha:'1_1', listo:false}, 
+    {ficha:'1_2', listo:false}, 
+    {ficha:'1_3', listo:false}, 
+    {ficha:'1_4', listo:false}, 
+    {ficha:'1_5', listo:false}, 
+    {ficha:'1_6', listo:false}, 
+    {ficha:'2_2', listo:false}, 
+    {ficha:'2_3', listo:false}, 
+    {ficha:'2_4', listo:false}, 
+    {ficha:'2_5', listo:false}, 
+    {ficha:'2_6', listo:false}, 
+    {ficha:'3_3', listo:false}, 
+    {ficha:'3_4', listo:false},
+    {ficha:'3_5', listo:false},
+    {ficha:'3_6', listo:false},
+    {ficha:'4_4', listo:false},
+    {ficha:'4_5', listo:false},
+    {ficha:'4_6', listo:false},
+    {ficha:'5_5', listo:false},
+    {ficha:'5_6', listo:false},
+    {ficha:'6_6', listo:false},
   ]
   ficha: String;
   jugadores: number;
@@ -142,10 +142,16 @@ export class JuegosComponent implements OnInit {
 
   terminarPartida() {
     this.jugandoTrident = false;
-      this.trident = 0;
-      this.jugadores = 0;
-      this.jugando = false;
-      this.juegoAcabado = true;
+    this.trident = 0;
+    this.jugadores = 0;
+    this.jugando = false;
+    this.juegoAcabado = true;
+    var i = 0;
+    for(i = 0; i<this.fichas.length ; i++){
+      this.fichas[i].listo = false
+    }
+    this.jugadas = 0;
+
   }
 
   getMessage($event){

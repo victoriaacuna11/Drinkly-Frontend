@@ -4,12 +4,14 @@
     <div *ngIf="!loadingDrinks && !loadingUsers && !loadingBars">
         <!-- BARRA DEL MENÚ-->
         <div class="flex sticky top-0 bg-black w-full z-10">
-            <a href="/"
-                ><img
-                src="assets/images/Drinkly-2.png"
-                alt="logo_drinkly"
-                class="object-scale-down h-16 mx-auto ml-8"
-            /></a>
+            <div class="ml-20 my-1">
+                <a href="/"
+                  ><img
+                    src="assets/images/Drinkly-2.png"
+                    alt="logo_drinkly"
+                    class="object-scale-down h-16 transition duration-500 ease-in-out transform  hover:scale-110"
+                /></a>  
+                </div>
         </div>
         <!-- BACKGROUND IMAGE-->
         <div class="w-full" style="font-family: 'Open Sans', sans-serif; min-height: 75vh; background-image: url(assets/images/about3.jpg);

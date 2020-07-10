@@ -1,0 +1,21 @@
+.info {
+
+    width: 100%;
+
+
+/* Medium (md) */
+@media (min-width: 768px) { 
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: 35%;
+    gap: 2rem;
+ }
+/* Large (lg) */
+@media (min-width: 1400px) { 
+
+    width: 40%;
+ }
+
+
+
+
+}
