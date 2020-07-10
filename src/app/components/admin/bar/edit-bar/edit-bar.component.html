@@ -373,7 +373,7 @@
 
                         <div *ngIf="this.main_image" class="width-full bg-grey-lighter">
                             <div class="width-2/3 flex items-center justify-center">
-                                <img [src]="this.main_image" class="h-24">
+                                <img [src]="this.main_image" alt="main-image" class="h-24">
                             </div>
                             <div class="pt-4 flex space-x-4 justify-center w-full">
                                 <button  (click)="changeImage(this.main_image)" class="w-1/3 sm:w-1/4 shadow bg-gray-500 hover:bg-orange-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">
@@ -407,7 +407,7 @@
 
                                 <div *ngIf="group!='null'" class="width-full bg-grey-lighter">
                                     <div class="width-2/3 flex items-center justify-center">
-                                        <img [src]="group" class="h-24">
+                                        <img [src]="group" alt="image" class="h-24">
                                     </div>
                                 </div>
 

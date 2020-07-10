@@ -31,7 +31,7 @@ style="margin-left: 0;"
         <img
           class="w-full h-full rounded flex-initial"
           src="{{ x }}"
-          alt="Sunset in the mountains"
+          alt="bar-image"
         />
       </div>
     </div>
@@ -47,10 +47,10 @@ style="margin-left: 0;"
     <div class="flex justify-center">
       <div *ngFor="let s of stars">
         <div *ngIf="s" class="w-16 px-2">
-          <img src="../../../../assets/images/star_y.svg" alt="si">
+          <img src="../../../../assets/images/star_y.svg" alt="star">
         </div>
         <div *ngIf="!s" class="w-16 px-2">
-          <img src="../../../../assets/images/star_g.svg" alt="si">
+          <img src="../../../../assets/images/star_g.svg" alt="star">
         </div>
       </div>  
     </div>
@@ -88,25 +88,25 @@ style="margin-left: 0;"
         <a [href]="bar.twitter" appExternalUrl *ngIf= "bar.twitter!=''">
           <img class="w-12 cursor-pointer rounded"
           src="../../../../assets/images/twitter_bar.svg"
-          alt="Sunset in the mountains">
+          alt="twitter">
         </a>
 
         <a [href]="bar.instagram" appExternalUrl *ngIf= "bar.instagram!=''">
           <img class="w-12 cursor-pointer rounded"
           src="../../../../assets/images/instagram.png"
-          alt="Sunset in the mountains">
+          alt="instagram">
         </a>
 
         <a [href]="bar.facebook" appExternalUrl *ngIf= "bar.facebook!=''">
           <img class="w-12 cursor-pointer rounded"
           src="../../../../assets/images/fb.png"
-          alt="Sunset in the mountains">
+          alt="facebook">
         </a>
 
         <a href="{{'mailto:'+bar.email}}" appExternalUrl *ngIf= "bar.email!=''">    
           <img class="w-12 cursor-pointer rounded border-gray-400 border-solid border"
           src="../../../../assets/images/gm2.png"
-          alt="Sunset in the mountains">
+          alt="email">
         </a>
 
       </div>
@@ -122,14 +122,14 @@ style="margin-left: 0;"
         <img
           class="w-full h-full rounded flex-initial"
           src="{{ x }}"
-          alt="Sunset in the mountains"
+          alt="bar-image"
         />
       </div>
     </div>
   </div>
 </div>  
 <button class="back_btn" (click)="goBack()">
-      <img class="p-3" src="assets/images/goback.png" alt="" >
+      <img class="p-3" src="assets/images/goback.png" alt="button" >
     </button>
 <app-footer></app-footer>
 </div>
