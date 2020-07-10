@@ -59,14 +59,14 @@ label{
     display: none;
 }
 
-label #btn, label #cancel{
+label .btn-svg, label .cancel-svg{
     position: absolute;
     cursor: pointer;
     background-color: black;
     border-radius: 3px;
 }
 
-label #btn{
+label .btn-svg{
     z-index: 6000;
     // left: 1rem;
     top: 1rem;
@@ -74,7 +74,7 @@ label #btn{
     transition: all .5s ease;
 }
 
-label #cancel{
+label .cancel-svg{
     position: fixed;
     z-index: 6000;
     // left: -13rem;

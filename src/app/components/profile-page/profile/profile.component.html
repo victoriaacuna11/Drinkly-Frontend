@@ -49,8 +49,8 @@
         
                   <button (click)="fav($event, item._id)" 
                   class="rounded-full w-10 h-10 rounded-full  opacity-75 bg-white m-2 hover:bg-orange-300 transition ease-in duration-300" >
-                      <img  class="p-1" src="https://image.flaticon.com/icons/svg/1828/1828970.svg" alt="" *ngIf="!is_fav(item._id)">
-                      <img  class="p-1" src="https://image.flaticon.com/icons/svg/1828/1828614.svg" alt="" *ngIf="is_fav(item._id)">
+                      <img  class="p-1" src="https://image.flaticon.com/icons/svg/1828/1828970.svg" alt="fav" *ngIf="!is_fav(item._id)">
+                      <img  class="p-1" src="https://image.flaticon.com/icons/svg/1828/1828614.svg" alt="no-fav" *ngIf="is_fav(item._id)">
                   </button>
         
                     
