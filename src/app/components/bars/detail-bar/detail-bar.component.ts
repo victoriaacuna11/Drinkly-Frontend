@@ -42,6 +42,7 @@ export class DetailBarComponent implements OnInit {
         this.stars.push(aux)
       }
     }
+    console.log(this.stars)
     this.loading = false;
   }
 
@@ -52,7 +53,6 @@ export class DetailBarComponent implements OnInit {
       console.log(this.bar);
       this.images = this.bar.pictures;
       this.getZone(this.bar.zone);
-      this.getStars();
     })
   }
 
@@ -60,6 +60,7 @@ export class DetailBarComponent implements OnInit {
     
     this.zoneService.getZone(id_zone).subscribe((res:any) => {
       this.zone={...res.data};
+      this.getStars();
     })
   }
 

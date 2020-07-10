@@ -44,7 +44,6 @@ style="margin-left: 0;"
 
   <div class="mt-12 m-auto max-w-3xl text-center">  
     <div class="text-3xl bold">RATING:</div>  
-    {{bar.rating}}
     <div class="flex justify-center">
       <div *ngFor="let s of stars">
         <div *ngIf="s" class="w-16 px-2">
@@ -88,7 +87,7 @@ style="margin-left: 0;"
 
         <a [href]="bar.twitter" appExternalUrl *ngIf= "bar.twitter!=''">
           <img class="w-12 cursor-pointer rounded"
-          src="../../../../assets/images/tw4.png"
+          src="../../../../assets/images/twitter_bar.svg"
           alt="Sunset in the mountains">
         </a>
 
