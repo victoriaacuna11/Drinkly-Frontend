@@ -82,8 +82,8 @@
 
                       <button (click)="fav($event, item._id)" 
                         class="rounded-full w-10 h-10 rounded-full  opacity-75 bg-white m-2 hover:bg-orange-300 transition ease-in duration-300" >
-                          <img  class="p-1" src="https://image.flaticon.com/icons/svg/1828/1828970.svg" alt="" *ngIf="!is_fav(item._id)">
-                          <img  class="p-1" src="https://image.flaticon.com/icons/svg/1828/1828614.svg" alt="" *ngIf="is_fav(item._id)">
+                          <img  class="p-1" src="https://image.flaticon.com/icons/svg/1828/1828970.svg" alt="fav" *ngIf="!is_fav(item._id)">
+                          <img  class="p-1" src="https://image.flaticon.com/icons/svg/1828/1828614.svg" alt="no-fav" *ngIf="is_fav(item._id)">
                       </button>
                   <!-- CAMBIAR A ORANGE CON CLICK -->
 
@@ -192,11 +192,13 @@
                           src="https://imageog.flaticon.com/icons/png/512/25/25623.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF"
                           class="h-3 md:h-4 rounded-full shadow-sm cursor-pointer hover:shadow"
                           *ngIf="item.hidden"
+                          alt="open"
                         />
                         <img
                           src="https://imageog.flaticon.com/icons/png/512/61/61032.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF"
                           class="h-4 md:h-5 rounded-full shadow-sm cursor-pointer hover:shadow"
                           *ngIf="!item.hidden"
+                          alt="close"
                         />
                       </div>
                     </div>
@@ -210,6 +212,7 @@
                       <img
                         src="https://imageog.flaticon.com/icons/png/512/61/61032.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF"
                         class="h-4 mt-6  md:mt-10 md:h-5 rounded-full shadow-sm cursor-pointer hover:shadow"
+                        alt="close"
                         *ngIf="!item.hidden"
                         (click)="item.hidden = !item.hidden"
                       />
@@ -278,7 +281,7 @@
         </div>
 
     <button class="back_btn" (click)="goBack()">
-      <img class="p-3" src="assets/images/goback.png" alt="" >
+      <img class="p-3" src="assets/images/goback.png" alt="button" >
     </button>
   <app-footer></app-footer>
 </div>

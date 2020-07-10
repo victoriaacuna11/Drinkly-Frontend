@@ -93,11 +93,13 @@
                           src="https://imageog.flaticon.com/icons/png/512/25/25623.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF"
                           class="h-3 md:h-4 rounded-full shadow-sm cursor-pointer hover:shadow"
                           *ngIf="item.hidden"
+                          alt="show"
                         />
                         <img
                           src="https://imageog.flaticon.com/icons/png/512/61/61032.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF"
                           class="h-4 md:h-5 rounded-full shadow-sm cursor-pointer hover:shadow"
                           *ngIf="!item.hidden"
+                          alt="hide"
                         />
                       </div>
                     </div>
@@ -112,6 +114,7 @@
                         src="https://imageog.flaticon.com/icons/png/512/61/61032.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF"
                         class="h-4 mt-6  md:mt-10 md:h-5 rounded-full shadow-sm cursor-pointer hover:shadow"
                         *ngIf="!item.hidden"
+                        alt="show"
                         (click)="item.hidden = !item.hidden"
                       />
                     </div>
@@ -166,7 +169,7 @@
             </div>
 
             <button class="back_btn" (click)="goBack()">
-              <img class="p-3" src="assets/images/goback.png" alt="" >
+              <img class="p-3" src="assets/images/goback.png" alt="button" >
             </button>
             <app-footer></app-footer>
           </div>
