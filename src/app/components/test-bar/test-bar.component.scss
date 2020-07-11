@@ -59,6 +59,10 @@ label{
     display: none;
 }
 
+#check2{
+    display: none;
+}
+
 label #btn, label #cancel{
     position: absolute;
     cursor: pointer;
@@ -145,6 +149,9 @@ label #cancel{
     }
     
     #check{
+        display: none;
+    }
+    #check2{
         display: none;
     }
     
