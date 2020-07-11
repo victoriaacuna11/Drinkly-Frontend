@@ -66,7 +66,8 @@ const routes: Routes = [
   { 
     path: "bar/:id", 
     component: DetailBarComponent, 
-    canActivate: [AuthGuard]},
+    canActivate: [AuthGuard]
+  },
   {
     path: "drinks/filter",
     component: FilterParentComponent,
@@ -95,12 +96,17 @@ const routes: Routes = [
   },
 
   { path: "drink/:id", component: RecipeComponent,
-    canActivate: [AuthGuard]},
+    canActivate: [AuthGuard]
+  },
 
   { path: "register", component: RegisterComponent },
   { path: "login", component: LoginComponent },
-  { path: "profile", component: ProfileComponent, canActivate: [AuthGuard] },
-  { path: "edit-user/:id", component: EditUserComponent, canActivate: [AuthGuard] },
+  { path: "profile", component: ProfileComponent, 
+  canActivate: [AuthGuard] 
+},
+  { path: "edit-user/:id", component: EditUserComponent, 
+  canActivate: [AuthGuard] 
+},
   {
     path: 'externalRedirect',
     canActivate: [externalUrlProvider],
@@ -111,12 +117,14 @@ const routes: Routes = [
   { path: "", component: HomeComponent },
 
   { path: "games", component: JuegosComponent,
-    canActivate: [AuthGuard]},
+    canActivate: [AuthGuard]
+  },
 
   // ADMIN'S ROUTES
   { path: "admin", 
     component: AdminHomeComponent, 
-    canActivate: [AdminAuthGuard]},
+    canActivate: [AdminAuthGuard]
+  },
   {
     path: "admin/ingredient/add",
     component: AddIngredientComponent,
