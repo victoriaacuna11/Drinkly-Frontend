@@ -33,7 +33,7 @@
               <input
                 formControlName="name"
                 class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
-                id="inline-full-name"
+                
                 type="text"
                 placeholder="Ej. Cultura Chupística"
               />
@@ -59,7 +59,7 @@
               <input
                 formControlName="description"
                 class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
-                id="inline-full-name"
+                
                 type="text"
                 placeholder="Ej. Cultura Chupística es un juego ideal para pasar el rato con los amigos..."
               />
@@ -205,7 +205,7 @@
 
             <div *ngIf="this.main_image" class="width-full bg-grey-lighter">
               <div class="width-2/3 flex items-center justify-center">
-                <img [src]="this.main_image" class="h-24" />
+                <img [src]="this.main_image" class="h-24" alt="main-image"/>
               </div>
               <div class="pt-4 flex space-x-4 justify-center w-full">
                 <button

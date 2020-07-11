@@ -37,7 +37,7 @@
               <input
                 formControlName="name"
                 class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
-                id="inline-full-name"
+                
                 type="text"
                 placeholder="Ej. Margarita"
               />
@@ -65,7 +65,7 @@
             <input
               formControlName="description"
               class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
-              id="inline-full-name"
+              
               type="text"
               placeholder=""
             />
@@ -101,7 +101,7 @@
             <input
               formControlName="recipe"
               class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
-              id="inline-full-name"
+              
               type="text"
               placeholder=""
             />
@@ -128,7 +128,7 @@
             <input
               formControlName="owner_name"
               class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
-              id="inline-full-name"
+              
               type="text"
               placeholder="Ej. USERNAME"
             />
@@ -235,7 +235,7 @@
 
                     <div *ngIf="this.main_image" class="width-full bg-grey-lighter">
                       <div class="width-2/3 flex items-center justify-center">
-                        <img [src]="this.main_image" class="h-24" />
+                        <img [src]="this.main_image" alt="main-image" class="h-24" />
                       </div>
                       <div class="pt-4 flex space-x-4 justify-center w-full">
                         <button
@@ -303,7 +303,7 @@
                               formControlName="ingredients"
                               list="ing_list"
                               class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
-                              id="inline-full-name"
+                              
                               type="text"
                               placeholder="Ej. Fresa" 
                               [matAutocomplete]="auto"
@@ -370,7 +370,7 @@
                           formControlName="ingredients"
                           list="ing_list"
                           class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
-                          id="inline-full-name"
+                          
                           type="text"
                           placeholder="Ej. Fresa" 
                           [matAutocomplete]="auto"
@@ -473,7 +473,7 @@
             <input
               formControlName="name_ing"
               class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
-              id="inline-full-name"
+              
               type="text"
               placeholder="Ej. Ron"
             />
@@ -579,7 +579,7 @@
 
               <div *ngIf="this.main_image_ing" class="width-full bg-grey-lighter">
                 <div class="width-2/3 flex items-center justify-center">
-                  <img [src]="this.main_image_ing" class="h-24" />
+                  <img [src]="this.main_image_ing" alt="main-image" class="h-24" />
                 </div>
                 <div class="pt-4 flex space-x-4 justify-center w-full">
                   <button

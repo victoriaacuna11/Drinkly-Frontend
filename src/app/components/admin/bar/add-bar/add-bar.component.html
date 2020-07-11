@@ -38,7 +38,7 @@
               <input
                 formControlName="name"
                 class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
-                id="inline-full-name"
+                
                 type="text"
                 placeholder="Ej. Bar 360"
               />
@@ -64,7 +64,7 @@
               <input
                 formControlName="working_hours"
                 class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
-                id="inline-full-name"
+                
                 type="text"
                 placeholder="Ej. Abiertos de 9pm a 4 am."
               />
@@ -93,7 +93,7 @@
               <input
                 formControlName="rating"
                 class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
-                id="inline-full-name"
+                
                 type="number"
                 step="1"
               />
@@ -119,7 +119,7 @@
               <input
                 formControlName="cost"
                 class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
-                id="inline-full-name"
+                
                 type="number"
                 min="1"
                 max="5"
@@ -146,7 +146,7 @@
               <input
                 formControlName="twitter"
                 class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
-                id="inline-full-name"
+                
                 type="text"
                 placeholder="Ej. http://twitter.com/usuario"
               />
@@ -167,7 +167,7 @@
             <input
               formControlName="facebook"
               class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
-              id="inline-full-name"
+              
               type="text"
               placeholder="Ej. http://facebook.com/usuario"
             />
@@ -187,7 +187,7 @@
             <input
               formControlName="instagram"
               class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
-              id="inline-full-name"
+              
               type="text"
               placeholder="Ej. http://instagram.com/usuario"
             />
@@ -208,7 +208,7 @@
               <input
                 formControlName="email"
                 class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
-                id="inline-full-name"
+                
                 type="email"
                 placeholder="Ej. usuario@gmail.com"
               />
@@ -234,7 +234,7 @@
               <input
                 formControlName="description"
                 class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
-                id="inline-full-name"
+                
                 type="text"
                 placeholder="Ej. Bar360 es un lugar agradable donde puedes relajarte mientars disfrutas de la buena música..."
               />
@@ -305,7 +305,7 @@
               <input
                 formControlName="address"
                 class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
-                id="inline-full-name"
+                
                 type="text"
                 placeholder="Ej. Calle 7, Av. 5"
               />
@@ -449,7 +449,7 @@
                       </label>
                   </div>
                   <div class="md:w-full lg:w-4/5">
-                      <input formControlName="name" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500" id="inline-full-name" type="text" placeholder="Ej. Mojito">
+                      <input formControlName="name" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"  type="text" placeholder="Ej. Mojito">
                   </div>
               </div>
               <app-required-field *ngIf="group.controls.name.invalid && group.controls.name.touched" [text]="'Este campo es requerido.'"></app-required-field>
@@ -461,7 +461,7 @@
                       </label>
                   </div>
                   <div class="md:w-full lg:w-4/5">
-                      <input formControlName="price" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500" id="inline-full-name" type="number" min="0.01" step="0.01">
+                      <input formControlName="price" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"  type="number" min="0.01" step="0.01">
                   </div>
               </div>
               <app-required-field *ngIf="group.controls.price.invalid && group.controls.price.touched" [text]="'Este campo es requerido. (Solo números positivos)'"></app-required-field>
@@ -473,7 +473,7 @@
                       </label>
                   </div>
                   <div class="md:w-full lg:w-4/5">
-                      <input formControlName="description" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500" id="inline-full-name" type="text" placeholder="Ej. Cóctel muy refrescante que no sabe mucho a alcohol.">
+                      <input formControlName="description" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"  type="text" placeholder="Ej. Cóctel muy refrescante que no sabe mucho a alcohol.">
                   </div>
               </div>
               <div class="lg:flex lg:items-center mb-6">
@@ -537,7 +537,7 @@
 
               <div *ngIf="this.main_image" class="width-full bg-grey-lighter">
                   <div class="width-2/3 flex items-center justify-center">
-                      <img [src]="this.main_image" class="h-24">
+                      <img [src]="this.main_image" alt="main-image" class="h-24">
                   </div>
                   <div class="pt-4 flex space-x-4 justify-center w-full">
                       <button  (click)="changeImage(this.main_image)" class="w-1/3 sm:w-1/4 shadow bg-gray-500 hover:bg-orange-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">
@@ -571,7 +571,7 @@
 
                       <div *ngIf="group!='null'" class="width-full bg-grey-lighter">
                           <div class="width-2/3 flex items-center justify-center">
-                              <img [src]="group" class="h-24">
+                              <img [src]="group" alt="image" class="h-24">
                           </div>
                       </div>
 

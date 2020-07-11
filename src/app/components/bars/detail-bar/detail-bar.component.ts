@@ -18,6 +18,7 @@ export class DetailBarComponent implements OnInit {
   zone: zone;
   images: String[];
   loading: Boolean=true;
+  stars: Boolean[]=[];
 
   sidebar: Boolean;
 
@@ -27,6 +28,22 @@ export class DetailBarComponent implements OnInit {
 
   ngOnInit() {
     this.getBar();
+  }
+
+  getStars(){
+    var i;
+    var aux: boolean;
+    for(i=0 ; i<5 ; i++){
+      if(i<this.bar.rating){
+        aux = true
+        this.stars.push(aux)
+      }else{
+        aux = false 
+        this.stars.push(aux)
+      }
+    }
+    console.log(this.stars)
+    this.loading = false;
   }
 
   getBar(){
@@ -43,7 +60,7 @@ export class DetailBarComponent implements OnInit {
     
     this.zoneService.getZone(id_zone).subscribe((res:any) => {
       this.zone={...res.data};
-      this.loading = false;
+      this.getStars();
     })
   }
 

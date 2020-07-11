@@ -8,19 +8,45 @@
     </div>
     <div *ngIf="!loading" class="h-full w-full">
         <div class="h-full w-full px-16 py-16">
+            <!-- PRESENTACION -->
+            <div  class="sm:flex md:flex justify-center px-8 sm:px-32 md:px-64 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+              <div class="flex justify-center items-center w-2/3">
+                <div class="flex justify-center">
+                <img
+                src="assets/images/Drinkly-1.png"
+                alt="logo_drinkly"
+                class="object-contain"/>  
+                </div>
+                
+              </div>
+                <div class="flex items-center py-8 sm:py-16 md:py-16">
+                  <div>
+                  
+                  <div class="flex text-gray-800 lg:text-5xl sm:text-4xl text-2xl pb-4">
+                      <p>Drinkly ayuda e impulsa a los entusiastas de la coctelería a experimentar con nuevas recetas</p>
+                  </div>
+                  <div class="flex text-gray-700 lg:text-3xl text-xl sm:text-2xl" style="font-family: 'Roboto', sans-serif;">
+                      <p>En nuestra plataforma podrás encontrar una enorme variedad de tragos que podrás preparar desde la comodidad de tu hogar. Te ofrecemos el paso a paso y los ingredientes que vas a necesitar para que puedas degustarla.</p>
+                  </div> 
+                   
+                  </div>
+                  
+                </div>
+            </div>
+            <!-- FIN PRESENTACION -->
+
             <!-- PREPARALO TU MISMO -->
             <div class="h-full w-full">
                 <div class="flex justify-center">
-                    <svg class="fill-current text-gray-200" width="746" height="4" viewBox="0 0 746 4" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <rect width="746" height="4" rx="2" />
-                    </svg>
+                  <div class="w-full flex justify-center">
+                    <div class="w-3/4 border-gray-300 border-b-2" style="min-height:32px"></div>
                 </div>
-                <div class="flex px-8 sm:px-64 md:px-64 py-4 pt-8 text-2xl sm:text-4xl md:text-4xl font-semibold">
+                </div>
+                <div class="flex px-8 sm:px-48 md:px-64 py-4 pt-8 text-2xl sm:text-4xl md:text-5xl font-semibold">
                   PREPÁRALO TÚ MISMO
                   <div class="flex items-center justify-center px-2 sm:px-8 md:px-8">
                     <a href="/drinks" class="hover:no-underline">
-                        <div class="text-lg sm:text-xl md:text-xl no-underline py-1 px-8 bg-orange-400 hover:bg-orange-500 text-white rounded">Ver más
+                        <div class="text-lg text-center sm:text-xl md:text-xl no-underline py-1 px-8 bg-orange-500 hover:bg-orange-400 text-white rounded">Ver más
                         </div>
                     </a>
                   </div>
@@ -28,7 +54,7 @@
                 <!-- DRINK CARDS -->
                 <div class="w-full flex flex-col items-center mb-20 mt-10">
                   <div class="drink_card">
-                    <div id="test" class="rounded overflow-hidden border-2 shadow-lg   hover:border-solid hover:border-orange-500 hover:border-opacity-75   transition ease-in duration-200" 
+                    <div  class="rounded overflow-hidden border-2 shadow-lg   hover:border-solid hover:border-orange-500 hover:border-opacity-75   transition ease-in duration-200" 
                     *ngFor="let item of showDrinks"   
                     >
                     
@@ -64,9 +90,9 @@
                 
                 <!-- FIN DRINK CARDS -->
                 <div class="flex justify-center pb-12">
-                    <div (click)="addDrink()" class="text-gray-400 hover:text-orange-500">
+                    <div (click)="addDrink()" class="text-gray-900 hover:text-orange-500">
                     <div class="flex h-24 sm:h-32 md:h-32 justify-center">
-                      <svg class="fill-current h-1/4 w-1/4" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                      <svg class="fill-current h-1/4 w-1/4" version="1.1"  xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
                         style="enable-background:new 0 0 512 512;" xml:space="preserve">
                         <g>
@@ -85,7 +111,7 @@
                     </div>
                     <div>
                       <div class="flex justify-center">¿Tienes una receta?</div>
-                      <div class="flex justify-center">¡Compártela con nosotros!</div>
+                      <div class="flex justify-center">Compártela con nosotros</div>
                     </div>  
                     </div>
                     
@@ -96,12 +122,11 @@
             <!-- ADS -->
             <div>
               <div class="flex justify-center">
-                <svg class="fill-current text-gray-200" width="746" height="4" viewBox="0 0 746 4" fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <rect width="746" height="4" rx="2" />
-                </svg>
+                <div class="w-full flex justify-center">
+                  <div class="w-3/4 border-gray-300 border-b-2" style="min-height:32px"></div>
               </div>
-              <div class="px-8 sm:px-64 md:px-64 py-4 pt-8 text-4xl font-semibold">DISFRUTA POR MENOS</div>
+              </div>
+              <div class="px-8 sm:px-48 md:px-64 py-4 pt-8 text-2xl sm:text-4xl md:text-5xl font-semibold">DISFRUTA POR MENOS</div>
               <!-- ADS CARDS -->
               <div class="w-full flex flex-col items-center mb-20 mt-10">
                 <div class="ad_card">
@@ -120,9 +145,9 @@
               <!-- FIN BAR CARDS -->
 
               <div class="flex justify-center pb-12">
-                <div (click)="addAdvertisement()" class="w-auto text-gray-400 hover:text-orange-500">
+                <div (click)="addAdvertisement()" class="w-auto text-gray-900 hover:text-orange-500">
                 <div class="flex h-24 sm:h-32 md:h-32 justify-center">
-                  <svg class="fill-current h-1/4 w-1/4" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                  <svg class="fill-current h-1/4 w-1/4" version="1.1"  xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
                     style="enable-background:new 0 0 512 512;" xml:space="preserve">
                     <g>
@@ -141,7 +166,7 @@
                 </div>
                 <div>
                   <div class="flex justify-center">¿Tu bar tiene una promoción?</div>
-                  <div class="flex justify-center">¡Compártela con nosotros!</div>
+                  <div class="flex justify-center">Compártela con nosotros</div>
                 </div>  
                 </div>
                 
@@ -152,16 +177,15 @@
             <!-- BARES DE CARACAS -->
             <div>
                 <div class="flex justify-center">
-                    <svg class="fill-current text-gray-200" width="746" height="4" viewBox="0 0 746 4" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <rect width="746" height="4" rx="2" />
-                    </svg>
+                  <div class="w-full flex justify-center">
+                    <div class="w-3/4 border-gray-300 border-b-2" style="min-height:32px"></div>
                 </div>
-                <div class="flex px-8 sm:px-64 md:px-64 py-4 pt-8 text-2xl sm:text-4xl md:text-4xl font-semibold">
+                </div>
+                <div class="flex px-8 sm:px-48 md:px-64 py-4 pt-8 text-2xl sm:text-4xl md:text-5xl font-semibold">
                   DISFRUTA DE CARACAS
                   <div class="flex items-center justify-center px-2 sm:px-8 md:px-8">
                     <a href="/bars" class="hover:no-underline">
-                        <div class="text-lg sm:text-xl md:text-xl no-underline py-1 px-8 bg-orange-400 hover:bg-orange-500 text-white rounded">Ver más
+                        <div class="flex items-center text-lg text-center sm:text-xl md:text-xl no-underline py-1 px-8 bg-orange-500 hover:bg-orange-400 text-white rounded">Ver más
                         </div>
                     </a>
                   </div>

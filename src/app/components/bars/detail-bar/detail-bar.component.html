@@ -31,7 +31,7 @@ style="margin-left: 0;"
         <img
           class="w-full h-full rounded flex-initial"
           src="{{ x }}"
-          alt="Sunset in the mountains"
+          alt="bar-image"
         />
       </div>
     </div>
@@ -44,7 +44,17 @@ style="margin-left: 0;"
 
   <div class="mt-12 m-auto max-w-3xl text-center">  
     <div class="text-3xl bold">RATING:</div>  
-    {{bar.rating}}
+    <div class="flex justify-center">
+      <div *ngFor="let s of stars">
+        <div *ngIf="s" class="w-16 px-2">
+          <img src="../../../../assets/images/star_y.svg" alt="star">
+        </div>
+        <div *ngIf="!s" class="w-16 px-2">
+          <img src="../../../../assets/images/star_g.svg" alt="star">
+        </div>
+      </div>  
+    </div>
+    
   </div>
 
   <div class="mt-12 m-auto max-w-3xl text-center">  
@@ -67,33 +77,36 @@ style="margin-left: 0;"
 
     <div class="mt-5 m-auto max-w-3xl text-center">  
       <div class="text-1xl bold">Teléfonos: </div>  
-        <div *ngFor="let p of bar.phone" class="pt-2">{{p}}</div>
+        <div *ngFor="let p of bar.phone" class="pt-2">
+          <a href="tel:{{p}}">{{p}}</a>
+          
+        </div>
     </div>
 
       <div class="flex flex-initial space-x-6 justify-center mt-8">
 
         <a [href]="bar.twitter" appExternalUrl *ngIf= "bar.twitter!=''">
           <img class="w-12 cursor-pointer rounded"
-          src="../../../../assets/images/tw4.png"
-          alt="Sunset in the mountains">
+          src="../../../../assets/images/twitter_bar.svg"
+          alt="twitter">
         </a>
 
         <a [href]="bar.instagram" appExternalUrl *ngIf= "bar.instagram!=''">
           <img class="w-12 cursor-pointer rounded"
           src="../../../../assets/images/instagram.png"
-          alt="Sunset in the mountains">
+          alt="instagram">
         </a>
 
         <a [href]="bar.facebook" appExternalUrl *ngIf= "bar.facebook!=''">
           <img class="w-12 cursor-pointer rounded"
           src="../../../../assets/images/fb.png"
-          alt="Sunset in the mountains">
+          alt="facebook">
         </a>
 
         <a href="{{'mailto:'+bar.email}}" appExternalUrl *ngIf= "bar.email!=''">    
           <img class="w-12 cursor-pointer rounded border-gray-400 border-solid border"
           src="../../../../assets/images/gm2.png"
-          alt="Sunset in the mountains">
+          alt="email">
         </a>
 
       </div>
@@ -109,14 +122,14 @@ style="margin-left: 0;"
         <img
           class="w-full h-full rounded flex-initial"
           src="{{ x }}"
-          alt="Sunset in the mountains"
+          alt="bar-image"
         />
       </div>
     </div>
   </div>
 </div>  
 <button class="back_btn" (click)="goBack()">
-      <img class="p-3" src="assets/images/goback.png" alt="" >
+      <img class="p-3" src="assets/images/goback.png" alt="button" >
     </button>
 <app-footer></app-footer>
 </div>
