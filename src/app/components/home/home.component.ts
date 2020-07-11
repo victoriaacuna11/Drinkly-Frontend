@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { DrinkService } from 'src/app/services/drink.service';
 import { Router } from '@angular/router';
 import { drink } from 'src/app/models/drink';
@@ -8,7 +8,6 @@ import { ZoneService } from 'src/app/services/zone.service';
 import { zone } from 'src/app/models/zone';
 import { advertisement } from 'src/app/models/advertisement';
 import { AdvertisementService } from 'src/app/services/advertisement.service';
-import { user } from 'src/app/models/user';
 
 @Component({
   selector: 'app-home',
@@ -40,6 +39,24 @@ export class HomeComponent implements OnInit {
     this.getZones();
     this.getAdvertisements();
   }
+
+  @HostListener('window:scroll', [])
+onWindowScroll() {
+    const scrollOffset = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+
+    if (scrollOffset >= 20) {
+        
+            document.getElementById("navbar").style.height = "5rem";
+            document.getElementById("logo").style.height = "4rem";
+            document.getElementById("lema").hidden;
+       
+    } else {
+        
+          document.getElementById("navbar").style.height = "35rem";
+          document.getElementById("logo").style.height = "20rem";
+          // document.getElementById("lema").
+    }
+}
 
   getMessage($event){
     if(screen.width>640){

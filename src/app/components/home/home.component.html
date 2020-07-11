@@ -1,13 +1,22 @@
 <app-test-bar (message)="getMessage($event)"></app-test-bar> 
 
 <div [ngStyle]="{'margin-left.rem': !sidebar? '0': '16'}" class="move">
-    <app-header></app-header>
 
     <div *ngIf="loading">
         <app-loader></app-loader>
     </div>
+     
     <div *ngIf="!loading" class="h-full w-full">
-        <div class="h-full w-full px-16 py-16">
+      <div id="navbar" class=" flex sticky top-0 bg-black w-full z-10">
+      <div class="ml-20 my-1">
+          <a href="/"><img src="assets/images/Drinkly-2.png" alt="logo_drinkly" id="logo"
+              class="object-scale-down transition duration-500 ease-in-out transform  hover:scale-110" /></a>
+          <div id="lema" class="pl-64 text-6xl text-white">
+            Tu bar en el hogar
+          </div>
+      </div>
+  </div>
+        <div class="sticky h-full w-full px-16 py-16">
             <!-- PRESENTACION -->
             <div (click)="addAdvertisement()" class="sm:flex md:flex justify-center px-8 sm:px-32 md:px-64 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
               <div class="flex justify-center items-center w-2/3">

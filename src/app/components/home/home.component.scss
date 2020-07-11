@@ -1,3 +1,14 @@
+#navbar {
+  height: 35rem ;
+  // padding: 90px 10px; /* Large padding which will shrink on scroll (using JS) */
+  transition: 0.5s; /* Adds a transition effect when the padding is decreased */
+}
+
+#logo {
+  height: 20rem;
+  transition: 0.4s;
+}
+
 .drink_card {
 
     width: 95%;

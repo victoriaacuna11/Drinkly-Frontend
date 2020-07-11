@@ -14,64 +14,44 @@ style="margin-left: 0;"
   <div
   *ngIf = "!loading"
   style="max-width: 90%; font-family: 'Open Sans', sans-serif;"
-    class="my-6 p-3 pb-6 mt-12 bg-cover  m-auto self-center  shadow"
+    class="my-6 p-16 pb-16 mt-12 bg-cover  m-auto self-center  shadow"
   > 
     <span class="text-5xl text-black bold pr-6 pl-8">{{bar.name}}</span> 
     <span class="text-4xl text-black"> {{zone.name}}</span>
-
-    <div class="sm:hidden">
+    <div class="mt-2 pl-8 max-w-3xl text-center">  
+      <div class="flex">
+        <div *ngFor="let s of stars">
+          <div *ngIf="s" class="w-12 px-2">
+            <img src="../../../../assets/images/star_y.svg" alt="si">
+          </div>
+          <div *ngIf="!s" class="w-12 px-2">
+            <img src="../../../../assets/images/star_g.svg" alt="si">
+          </div>
+        </div>  
+      </div>
+      
+    </div>
+    <div class="w-full sm:w-1/3 md:w-1/3 sm:px-16 md:px-16 my-8">
       <img class="w-full h-full rounded flex-initial" src="{{bar.main_image}}" alt="main_image_bar">
     </div>
 
-    <div id="ladilla" class="sm:grid sm:grid-cols-2 sm:gap-4 md:flex md:flex-wrap lg:flex-no-wrap md:flex-no-wrap md:xs md:pt-16">
-      <div
-      *ngFor="let x of images"
-      class="md:w-1/3 md:px-2 overflow-hidden my-2"
-      >
-        <img
-          class="w-full h-full rounded flex-initial"
-          src="{{ x }}"
-          alt="Sunset in the mountains"
-        />
-      </div>
-    </div>
-
-  <div class="mt-12 m-auto max-w-3xl text-center">
+ <div class="mt-12 m-auto max-w-3xl text-center">
     "{{bar.description}}"
 
 
   </div>
-
-  <div class="mt-12 m-auto max-w-3xl text-center">  
-    <div class="text-3xl bold">RATING:</div>  
-    <div class="flex justify-center">
-      <div *ngFor="let s of stars">
-        <div *ngIf="s" class="w-16 px-2">
-          <img src="../../../../assets/images/star_y.svg" alt="si">
-        </div>
-        <div *ngIf="!s" class="w-16 px-2">
-          <img src="../../../../assets/images/star_g.svg" alt="si">
-        </div>
-      </div>  
-    </div>
-    
-  </div>
-
-  <div class="mt-12 m-auto max-w-3xl text-center">  
+<div class="mt-12 m-auto max-w-3xl text-center">  
   <div class="text-3xl bold">HORAS DE TRABAJO: </div>  
   {{bar.working_hours}}
   </div>
-
   <div class="mt-12 m-auto max-w-3xl text-center">  
     <div class="text-3xl bold">DIRECCIÓN: </div>  
     {{bar.address}}
   </div>
-
-  <div class="mt-12 m-auto max-w-3xl text-center">  
+<div class="mt-12 m-auto max-w-3xl text-center">  
     <div class="text-3xl bold">ECHALE UN VISTAZO A SU MENU: </div>  
     <div *ngFor="let d of bar.menu" class="pt-2">{{d.name}}: {{d.description}} </div>
   </div>
-
   <div class="mt-12 m-auto max-w-3xl text-center">  
     <div class="text-3xl bold">CONTÁCTALOS Y SÍGUELOS: </div> 
 
@@ -85,32 +65,57 @@ style="margin-left: 0;"
 
       <div class="flex flex-initial space-x-6 justify-center mt-8">
 
-        <a [href]="bar.twitter" appExternalUrl *ngIf= "bar.twitter!=''">
-          <img class="w-12 cursor-pointer rounded"
+        <a [href]="bar.twitter" appExternalUrl *ngIf= "bar.twitter!=''" class="lock">
+          <img class="icon-unlock w-12 cursor-pointer rounded"
           src="../../../../assets/images/twitter_bar.svg"
           alt="Sunset in the mountains">
-        </a>
-
-        <a [href]="bar.instagram" appExternalUrl *ngIf= "bar.instagram!=''">
-          <img class="w-12 cursor-pointer rounded"
-          src="../../../../assets/images/instagram.png"
+          <img class="icon-lock w-12 cursor-pointer rounded"
+          src="../../../../assets/images/twitter_bar2.svg"
           alt="Sunset in the mountains">
         </a>
 
-        <a [href]="bar.facebook" appExternalUrl *ngIf= "bar.facebook!=''">
-          <img class="w-12 cursor-pointer rounded"
-          src="../../../../assets/images/fb.png"
+        <a [href]="bar.instagram" appExternalUrl *ngIf= "bar.instagram!=''" class="lock">
+          <img class="icon-unlock w-12 cursor-pointer rounded"
+          src="../../../../assets/images/instagram_bar.svg"
+          alt="Sunset in the mountains">
+          <img class="icon-lock w-12 cursor-pointer rounded"
+          src="../../../../assets/images/instagram_bar2.svg"
           alt="Sunset in the mountains">
         </a>
 
-        <a href="{{'mailto:'+bar.email}}" appExternalUrl *ngIf= "bar.email!=''">    
-          <img class="w-12 cursor-pointer rounded border-gray-400 border-solid border"
-          src="../../../../assets/images/gm2.png"
+        <a [href]="bar.facebook" appExternalUrl *ngIf= "bar.facebook!=''" class="lock">
+          <img class="icon-unlock w-12 cursor-pointer rounded"
+          src="../../../../assets/images/facebook_bar.svg"
+          alt="Sunset in the mountains">
+          <img class="icon-lock w-12 cursor-pointer rounded"
+          src="../../../../assets/images/facebook_bar2.svg"
+          alt="Sunset in the mountains">
+        </a>
+
+        <a href="{{'mailto:'+bar.email}}" appExternalUrl *ngIf= "bar.email!=''" class="lock">    
+          <img class="icon-unlock w-12 cursor-pointer rounded"
+          src="../../../../assets/images/mail_bar.svg"
+          alt="Sunset in the mountains">
+          <img class="icon-lock w-12 cursor-pointer rounded"
+          src="../../../../assets/images/mail_bar2.svg"
           alt="Sunset in the mountains">
         </a>
 
       </div>
   </div>
+    <div id="ladilla" class="sm:grid sm:grid-cols-2 sm:gap-4 md:flex md:flex-wrap lg:flex-no-wrap md:flex-no-wrap md:xs md:pt-16">
+      <div
+      *ngFor="let x of images"
+      class="md:w-1/3 md:px-2 overflow-hidden my-2"
+      >
+        <img
+          class="w-full h-full rounded flex-initial"
+          src="{{ x }}"
+          alt="Sunset in the mountains"
+        />
+      </div>
+    </div>
+
 
   <div class="pt-6 sm:hidden">
     
