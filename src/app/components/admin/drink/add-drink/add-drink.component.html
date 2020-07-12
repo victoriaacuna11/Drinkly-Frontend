@@ -32,7 +32,7 @@
                 <div class="md:w-full lg:w-1/5">
                 <label
                   class="block text-black-500 font-bold lg:text-right mb-1 md:mb-0 pr-4"
-                  for="inline-full-name"
+                  for="name"
                 >
                   Nombre
                 </label>
@@ -42,6 +42,7 @@
                   formControlName="name"
                   class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
                   type="text"
+                  id="name"
                   placeholder="Ej. Margarita"
                 />
               </div>
@@ -59,7 +60,7 @@
                 <div class="md:w-full lg:w-1/5">
               <label
                 class="block text-black-500 font-bold lg:text-right mb-1 md:mb-0 pr-4"
-                for="inline-full-name"
+                for="description"
               >
                 Descripción
               </label>
@@ -69,7 +70,8 @@
                 formControlName="description"
                 class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
                 type="text"
-                placeholder=""
+                placeholder="Ej. Excelente trago para..."
+                id="description"
               />
             </div>
             </div>
@@ -84,7 +86,7 @@
                 <div class="md:w-full lg:w-1/5">
               <label
                 class="block text-black-500 font-bold lg:text-right mb-1 md:mb-0 pr-4"
-                for="inline-full-name"
+                for="recipe"
               >
                 Receta
               </label>
@@ -95,6 +97,7 @@
                 formControlName="recipe"
                 class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
                 rows="10" cols="30"
+                id="recipe"
                 placeholder="Introduzca el paso a paso de la receta..."
                 style= "white-space: pre-line; white-space: pre-wrap;"
                 >
@@ -121,7 +124,7 @@
                 <div class="md:w-full lg:w-1/5">
               <label
                 class="block text-black-500 font-bold lg:text-right mb-1 md:mb-0 pr-4"
-                for="inline-full-name"
+                for="owner_name"
               >
                 Creador
               </label>
@@ -130,7 +133,7 @@
               <input
                 formControlName="owner_name"
                 class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
-                
+                id="owner_name"
                 type="text"
                 placeholder="Ej. USERNAME"
               />
@@ -147,7 +150,7 @@
                 <div class="md:w-full lg:w-1/5">
               <label
                 class="block text-black-500 font-bold lg:text-right mb-1 md:mb-0 pr-4"
-                for="inline-full-name"
+                for="rol"
               >
                 Rol
               </label>
@@ -158,7 +161,7 @@
                 class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
                 id="grid-state"
               >
-                <option [value]="item" *ngFor="let item of categories">{{
+                <option id="{{item}}" [value]="item" *ngFor="let item of categories">{{
                   item
                 }}</option>
               </select>
@@ -189,7 +192,7 @@
                       <label
                         style="font-family: 'Open Sans', sans-serif;"
                         class="block md:text-2xl text-black-500 font-bold text-center mb-1 md:mb-0 pr-4"
-                        for="inline-full-name"
+                        for="title-galery"
                       >
                         Galería
                       </label>
@@ -198,7 +201,7 @@
                       <label
                         style="font-family: 'Open Sans', sans-serif;"
                         class="text-lg md:text-xl block text-black-500 font-bold text-center mb-1 md:mb-0 pr-4"
-                        for="inline-full-name"
+                        for="description-galery"
                       >
                         Por favor, esperar a que aparezcan las fotos. Esto indicará que
                         fueron cargadas con éxito.
@@ -210,7 +213,7 @@
                     <div class="md:w-full lg:w-1/5">
                       <label
                         class="block text-black-500 font-bold lg:text-right mb-1 md:mb-0 pr-4"
-                        for="inline-full-name"
+                        for="main-image"
                       >
                         Foto
                       </label>
@@ -257,7 +260,7 @@
                       <label
                         style="font-family: 'Open Sans', sans-serif;"
                         class="block md:text-2xl text-black-500 font-bold text-center mb-1 md:mb-0 pr-4"
-                        for="inline-full-name"
+                        for="title-list-ingredients"
                       >
                         Lista de ingredientes
                       </label>
@@ -266,7 +269,7 @@
                       <label
                         style="font-family: 'Open Sans', sans-serif;"
                         class="text-lg md:text-xl block text-black-500 font-bold text-center mb-1 md:mb-0 pr-4"
-                        for="inline-full-name"
+                        for="create-ingredient-description"
                       >
                         ¿No encuentras el ingrediente? ¡Creálo!
                       </label>
@@ -292,7 +295,7 @@
                         <div class="w-full lg:w-1/5">
                           <label
                             class="block text-black-500 font-bold lg:text-right mb-1 md:mb-6 pr-4"
-                            for="inline-full-name"
+                            for="ingredient-{{i}}"
                           >
                             Ingrediente
                           </label>
@@ -305,7 +308,7 @@
                               formControlName="ingredients"
                               list="ing_list"
                               class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
-                              
+                              id="ingredient-{{i}}"
                               type="text"
                               placeholder="Ej. Fresa" 
                               [matAutocomplete]="auto"
@@ -395,7 +398,7 @@
             <div class="md:w-full lg:w-1/5">
               <label
                 class="text-lg sm:text-2xl block text-black-500 font-bold lg:text-right mb-1 md:mb-0 pr-4"
-                for="inline-full-name"
+                for="name-ing"
               >
                 Nombre
               </label>
@@ -404,7 +407,7 @@
               <input
                 formControlName="name_ing"
                 class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
-                
+                id="name-ing"
                 type="text"
                 placeholder="Ej. Ron"
               />
@@ -421,7 +424,7 @@
             <div class="md:w-full lg:w-1/5">
               <label
                 class="text-lg sm:text-2xl block text-black-500 font-bold lg:text-right mb-1 md:mb-0 pr-4"
-                for="inline-full-name"
+                for="category-ing"
               >
                 Categoría
               </label>
@@ -432,7 +435,7 @@
                 class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
                 id="grid-state"
               >
-                <option [value]="item" *ngFor="let item of categories_ing">{{
+                <option id="{{item}}" [value]="item" *ngFor="let item of categories_ing">{{
                   item
                 }}</option>
               </select>
@@ -462,7 +465,7 @@
               <label
                 style="font-family: 'Open Sans', sans-serif;"
                 class="block md:text-2xl text-black-500 font-bold text-center mb-1 md:mb-0 pr-4"
-                for="inline-full-name"
+                for="title-galery-ing"
               >
                 Galería
               </label>
@@ -471,7 +474,7 @@
               <label
                 style="font-family: 'Open Sans', sans-serif;"
                 class="text-lg md:text-xl block text-black-500 font-bold text-center mb-1 md:mb-0 pr-4"
-                for="inline-full-name"
+                for="description-galery-ing"
               >
                 Por favor, esperar a que aparezcan las fotos. Esto indicará que
                 fueron cargadas con éxito.
@@ -483,7 +486,7 @@
               <div class="md:w-full lg:w-1/5">
                 <label
                   class="text-lg sm:text-2xl block text-black-500 font-bold lg:text-right mb-1 md:mb-0 pr-4"
-                  for="inline-full-name"
+                  for="main-image-ing"
                 >
                   Ícono
                 </label>

@@ -22,12 +22,12 @@
                 <div class="width-full">
                     <div class="lg:flex lg:items-center mb-6">
                         <div class="md:w-full lg:w-1/5">
-                            <label class="block text-black-500 font-bold lg:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                            <label class="block text-black-500 font-bold lg:text-right mb-1 md:mb-0 pr-4" for="name">
                                 Nombre
                             </label>
                         </div>
                         <div class="md:w-full lg:w-4/5">
-                            <input formControlName="name" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"  type="text" placeholder="Ej. Bar 360">
+                            <input id="name" formControlName="name" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"  type="text" placeholder="Ej. Bar 360">
                         </div>
                     </div>
                     <app-required-field [text]="'Este campo es requerido.'" *ngIf="form.get('name').invalid && form.get('name').touched"></app-required-field>
@@ -36,12 +36,12 @@
                 <div class="width-full">
                     <div class="lg:flex lg:items-center mb-6">
                         <div class="md:w-full lg:w-1/5">
-                        <label class="block text-black-500 font-bollgmd:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                        <label class="block text-black-500 font-bollgmd:text-right mb-1 md:mb-0 pr-4" for="working_hours">
                             Horario de trabajo
                         </label>
                         </div>
                         <div class="md:w-full lg:w-4/5">
-                        <input formControlName="working_hours" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"  type="text" placeholder="Ej. Abiertos de 9pm a 4 am.">
+                        <input id="working_hours" formControlName="working_hours" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"  type="text" placeholder="Ej. Abiertos de 9pm a 4 am.">
                         </div>
                     </div>
                     <app-required-field [text]="'Este campo es requerido.'" *ngIf="form.get('working_hours').invalid && form.get('working_hours').touched"></app-required-field>
@@ -50,12 +50,12 @@
                 <div class="width-full">
                     <div class="lg:flex lg:items-center mb-6">
                         <div class="md:w-full lg:w-1/5">
-                        <label class="block text-black-500 font-bollgmd:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                        <label class="block text-black-500 font-bollgmd:text-right mb-1 md:mb-0 pr-4" for="rating">
                             Rating (1-5)
                         </label>
                         </div>
                         <div class="md:w-full lg:w-4/5">
-                        <input formControlName="rating" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"  type="number" step="1">
+                        <input id="rating" formControlName="rating" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"  type="number" step="1">
                         </div>
                     </div>
                     <app-required-field [text]="'Este campo es requerido. (Valores entre 1 y 5)'" *ngIf="form.get('rating').invalid && form.get('rating').touched"></app-required-field>
@@ -64,12 +64,12 @@
                 <div class="width-full">
                     <div class="lg:flex lg:items-center mb-6">
                         <div class="md:w-full lg:w-1/5">
-                        <label class="block text-black-500 font-bollgmd:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                        <label class="block text-black-500 font-bollgmd:text-right mb-1 md:mb-0 pr-4" for="cost">
                             Costo promedio (1-5)
                         </label>
                         </div>
                         <div class="md:w-full lg:w-4/5">
-                        <input formControlName="cost" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"  type="number" min="1" max="5">
+                        <input id="cost" formControlName="cost" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"  type="number" min="1" max="5">
                         </div>
                     </div>
                     <app-required-field [text]="'Este campo es requerido. (Valores entre 1 y 5)'" *ngIf="form.get('cost').invalid && form.get('cost').touched"></app-required-field>
@@ -78,47 +78,47 @@
                 <div class="width-full">
                     <div class="lg:flex lg:items-center mb-6">
                         <div class="md:w-full lg:w-1/5">
-                        <label class="block text-black-500 font-bollgmd:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                        <label class="block text-black-500 font-bollgmd:text-right mb-1 md:mb-0 pr-4" for="twitter">
                             Twitter (Link de la cuenta)
                         </label>
                         </div>
                         <div class="md:w-full lg:w-4/5">
-                        <input formControlName="twitter" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"  type="text" placeholder="Ej. http://twitter.com/usuario">
+                        <input id="twitter" formControlName="twitter" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"  type="text" placeholder="Ej. http://twitter.com/usuario">
                         </div>
                     </div>
                 </div>
 
                 <div class="lg:flex lg:items-center mb-6">
                     <div class="md:w-full lg:w-1/5">
-                    <label class="block text-black-500 font-bollgmd:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                    <label class="block text-black-500 font-bollgmd:text-right mb-1 md:mb-0 pr-4" for="facebook">
                         Facebook (Link de la cuenta)
                     </label>
                     </div>
                     <div class="md:w-full lg:w-4/5">
-                    <input formControlName="facebook" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"  type="text" placeholder="Ej. http://facebook.com/usuario">
+                    <input id="facebook" formControlName="facebook" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"  type="text" placeholder="Ej. http://facebook.com/usuario">
                     </div>
                 </div>
 
                 <div class="lg:flex lg:items-center mb-6">
                     <div class="md:w-full lg:w-1/5">
-                    <label class="block text-black-500 font-bollgmd:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                    <label class="block text-black-500 font-bollgmd:text-right mb-1 md:mb-0 pr-4" for="instagram">
                         Instagram (Link de la cuenta)
                     </label>
                     </div>
                     <div class="md:w-full lg:w-4/5">
-                    <input formControlName="instagram" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"  type="text" placeholder="Ej. http://instagram.com/usuario">
+                    <input id="instagram" formControlName="instagram" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"  type="text" placeholder="Ej. http://instagram.com/usuario">
                     </div>
                 </div>
 
                 <div class="width-full">
                     <div class="lg:flex lg:items-center mb-6">
                         <div class="md:w-full lg:w-1/5">
-                            <label class="block text-black-500 font-bollgmd:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                            <label class="block text-black-500 font-bollgmd:text-right mb-1 md:mb-0 pr-4" for="email">
                                 Email
                             </label>
                             </div>
                             <div class="md:w-full lg:w-4/5">
-                            <input formControlName="email" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"  type="email" placeholder="Ej. usuario@gmail.com">
+                            <input id="email" formControlName="email" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"  type="email" placeholder="Ej. usuario@gmail.com">
                         </div>
                     </div>
                     <app-required-field [text]="'Este campo es requerido y debe ser un correo'" *ngIf="form.get('email').invalid && form.get('email').touched"></app-required-field>
@@ -127,12 +127,12 @@
                 <div class="width-full">
                     <div class="lg:flex lg:items-center mb-6">
                         <div class="md:w-full lg:w-1/5">
-                        <label class="block text-black-500 font-bollgmd:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                        <label class="block text-black-500 font-bollgmd:text-right mb-1 md:mb-0 pr-4" for="description">
                             Descripción
                         </label>
                         </div>
                         <div class="md:w-full lg:w-4/5">
-                        <input formControlName="description" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"  type="text" placeholder="Ej. Bar360 es un lugar agradable donde puedes relajarte mientars disfrutas de la buena música...">
+                        <input id="description" formControlName="description" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"  type="text" placeholder="Ej. Bar360 es un lugar agradable donde puedes relajarte mientars disfrutas de la buena música...">
                         </div>
                     </div>
                     <app-required-field [text]="'Este campo es requerido.'" *ngIf="form.get('description').invalid && form.get('description').touched"></app-required-field>
@@ -141,14 +141,14 @@
                 <div class="width-full">
                     <div class="lg:flex lg:items-center mb-6">
                         <div class="md:w-full lg:w-1/5">
-                        <label class="block text-black-500 font-bollgmd:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                        <label class="block text-black-500 font-bollgmd:text-right mb-1 md:mb-0 pr-4" for="zone">
                             Zona
                         </label>
                         </div>
                         <div class="md:w-full lg:w-4/5 relative">
                             <select formControlName="zone" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-orange-500" id="grid-state">
                                 <ng-container *ngFor="let item of zones">
-                                    <option [value]="item._id" *ngIf="item.available" >{{item.name}}</option>
+                                    <option id="{{item.name}}" [value]="item._id" *ngIf="item.available" >{{item.name}}</option>
                                 </ng-container>
                             </select>
                             <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
@@ -162,12 +162,12 @@
                 <div class="width-full">
                     <div class="lg:flex lg:items-center mb-6">
                         <div class="md:w-full lg:w-1/5">
-                        <label class="block text-black-500 font-bollgmd:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                        <label class="block text-black-500 font-bollgmd:text-right mb-1 md:mb-0 pr-4" for="address">
                             Dirección
                         </label>
                         </div>
                         <div class="md:w-full lg:w-4/5">
-                        <input formControlName="address" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"  type="text" placeholder="Ej. Calle 7, Av. 5">
+                        <input id="address" formControlName="address" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"  type="text" placeholder="Ej. Calle 7, Av. 5">
                         </div>
                     </div>
                     <app-required-field [text]="'Este campo es requerido.'" *ngIf="form.get('address').invalid && form.get('address').touched"></app-required-field>
@@ -176,13 +176,13 @@
                 
                 <div class="lg:flex lg:items-center mb-6">
                     <div class="md:w-full lg:w-1/5">
-                    <label class="block text-black-500 font-bollgmd:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                    <label class="block text-black-500 font-bollgmd:text-right mb-1 md:mb-0 pr-4" for="associate">
                         ¿Es socio?
                     </label>
                     </div>
                     <label class="custom-label flex">
                         <div class="bg-white shadow w-6 h-6 p-1 flex justify-center items-center mr-2">
-                            <input formControlName="associate" type="checkbox" class="hidden">
+                            <input id="associate" formControlName="associate" type="checkbox" class="hidden">
                             <svg class="hidden w-4 h-4 text-green-600 pointer-events-none" viewBox="0 0 172 172">
                                 <g fill="none" stroke-width="none" stroke-miterlimit="10" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode:normal">
                                     <path d="M0 172V0h172v172z"/><path d="M145.433 37.933L64.5 118.8658 33.7337 88.0996l-10.134 10.1341L64.5 139.1341l91.067-91.067z" fill="currentColor" stroke-width="1"/>
@@ -198,7 +198,7 @@
                         <label
                         style="font-family: 'Open Sans', sans-serif;"
                         class="block md:text-2xl text-black-500 font-bold text-center mb-1 md:mb-0 pr-4"
-                        for="inline-full-name"
+                        for="title-phones"
                         >
                         Números de contacto
                         </label>
@@ -207,7 +207,7 @@
                         <label
                         style="font-family: 'Open Sans', sans-serif;"
                         class="text-lg md:text-xl block text-black-500 font-bold text-center mb-1 md:mb-0 pr-4"
-                        for="inline-full-name"
+                        for="description-phones"
                         >
                         Añade los números de teléfono
                         </label>
@@ -220,14 +220,14 @@
                             <div class="w-full lg:w-1/5">
                             <label
                                 class="block text-black-500 font-bold lg:text-right mb-1 md:mb-6 pr-4"
-                                for="inline-full-name"
+                                for="phone-{{i}}"
                             >
                                 Teléfono
                             </label>
                             </div>
                             <div class="w-full flex mb-6">
                             <div class="w-4/5">
-                                <input formControlName="phone" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500" type="text" placeholder="Ej. 02123451234">
+                                <input id="phone-{{i}}" formControlName="phone" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500" type="text" placeholder="Ej. 02123451234">
                             </div>
                             <div class="pt-0 flex space-x-4 justify-end  w-1/5">
                                 <button
@@ -259,7 +259,7 @@
                         <label
                         style="font-family: 'Open Sans', sans-serif;"
                         class="block md:text-2xl text-black-500 font-bold text-center mb-1 md:mb-0 pr-4"
-                        for="inline-full-name"
+                        for="title-menu"
                         >
                         Menú
                         </label>
@@ -268,7 +268,7 @@
                         <label
                         style="font-family: 'Open Sans', sans-serif;"
                         class="text-lg md:text-xl block text-black-500 font-bold text-center mb-1 md:mb-0 pr-4"
-                        for="inline-full-name"
+                        for="description-menu"
                         >
                         Añade los tragos disponibles en el bar
                         </label>
@@ -280,36 +280,36 @@
                         
                         <div class="lg:flex lg:items-center mb-6">
                             <div class="md:w-full lg:w-1/5">
-                                <label class="block text-black-500 font-bollgmd:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                                <label class="block text-black-500 font-bollgmd:text-right mb-1 md:mb-0 pr-4" for="name-drink-{{i}}">
                                     Nombre del trago
                                 </label>
                             </div>
                             <div class="md:w-full lg:w-4/5">
-                                <input formControlName="name" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"  type="text" placeholder="Ej. Mojito">
+                                <input id="name-drink-{{i}}" formControlName="name" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"  type="text" placeholder="Ej. Mojito">
                             </div>
                         </div>
                         <app-required-field *ngIf="group.controls.name.invalid && group.controls.name.touched" [text]="'Este campo es requerido.'"></app-required-field>
 
                         <div class="lg:flex lg:items-center mb-6">
                             <div class="md:w-full lg:w-1/5">
-                                <label class="block text-black-500 font-bollgmd:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                                <label class="block text-black-500 font-bollgmd:text-right mb-1 md:mb-0 pr-4" for="price-drink-{{i}}">
                                     Precio
                                 </label>
                             </div>
                             <div class="md:w-full lg:w-4/5">
-                                <input formControlName="price" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"  type="number" min="0.01" step="0.01">
+                                <input id="price-drink-{{i}}" formControlName="price" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"  type="number" min="0.01" step="0.01">
                             </div>
                         </div>
                         <app-required-field *ngIf="group.controls.price.invalid && group.controls.price.touched" [text]="'Este campo es requerido. (Solo números positivos)'"></app-required-field>
 
                         <div class="lg:flex lg:items-center mb-6">
                             <div class="md:w-full lg:w-1/5">
-                                <label class="block text-black-500 font-bollgmd:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                                <label class="block text-black-500 font-bollgmd:text-right mb-1 md:mb-0 pr-4" for="description-drink-{{i}}">
                                     Descripción
                                 </label>
                             </div>
                             <div class="md:w-full lg:w-4/5">
-                                <input formControlName="description" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"  type="text" placeholder="Ej. Cóctel muy refrescante que no sabe mucho a alcohol.">
+                                <input id="description-drink-{{i}}" formControlName="description" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"  type="text" placeholder="Ej. Cóctel muy refrescante que no sabe mucho a alcohol.">
                             </div>
                         </div>
                         <div class="lg:flex lg:items-center mb-6">
@@ -337,7 +337,7 @@
                         <label
                         style="font-family: 'Open Sans', sans-serif;"
                         class="block md:text-2xl text-black-500 font-bold text-center mb-1 md:mb-0 pr-4"
-                        for="inline-full-name"
+                        for="title-galery"
                         >
                         Galería
                         </label>
@@ -346,7 +346,7 @@
                         <label
                         style="font-family: 'Open Sans', sans-serif;"
                         class="text-lg md:text-xl block text-black-500 font-bold text-center mb-1 md:mb-0 pr-4"
-                        for="inline-full-name"
+                        for="description-galery"
                         >
                         Por favor, esperar a que aparezcan las fotos. Esto indicará que fueron cargadas con éxito.
                         </label>
@@ -357,7 +357,7 @@
 
                 <div class="lg:flex lg:items-center mb-6">
                     <div class="md:w-full lg:w-1/5">
-                    <label class="block text-black-500 font-bold lg:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                    <label class="block text-black-500 font-bold lg:text-right mb-1 md:mb-0 pr-4" for="main-image">
                         Ícono
                     </label>
                     </div>
@@ -390,7 +390,7 @@
                         <div class="lg:flex lg:items-center mb-6">
 
                             <div class="md:w-full lg:w-1/5">
-                                <label class="block text-black-500 font-bollgmd:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                                <label class="block text-black-500 font-bollgmd:text-right mb-1 md:mb-0 pr-4" for="image-bar-{{i}}">
                                     Foto
                                 </label>
                             </div>

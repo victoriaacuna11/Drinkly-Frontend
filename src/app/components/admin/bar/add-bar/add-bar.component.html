@@ -29,7 +29,7 @@
             <div class="md:w-full lg:w-1/5">
               <label
                 class="block text-black-500 font-bold lg:text-right mb-1 md:mb-0 pr-4"
-                for="inline-full-name"
+                for="name"
               >
                 Nombre
               </label>
@@ -38,7 +38,7 @@
               <input
                 formControlName="name"
                 class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
-                
+                id="name"
                 type="text"
                 placeholder="Ej. Bar 360"
               />
@@ -55,7 +55,7 @@
             <div class="md:w-full lg:w-1/5">
               <label
                 class="block text-black-500 font-bold lg:text-right mb-1 md:mb-0 pr-4"
-                for="inline-full-name"
+                for="working_hours"
               >
                 Horario de trabajo
               </label>
@@ -64,7 +64,7 @@
               <input
                 formControlName="working_hours"
                 class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
-                
+                id="working_hours"
                 type="text"
                 placeholder="Ej. Abiertos de 9pm a 4 am."
               />
@@ -84,7 +84,7 @@
             <div class="md:w-full lg:w-1/5">
               <label
                 class="block text-black-500 font-boldlg mb-1 md:mb-0 pr-4"
-                for="inline-full-name"
+                for="rating"
               >
                 Rating (1-5)
               </label>
@@ -93,7 +93,7 @@
               <input
                 formControlName="rating"
                 class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
-                
+                id="rating"
                 type="number"
                 step="1"
               />
@@ -110,7 +110,7 @@
             <div class="md:w-full lg:w-1/5">
               <label
                 class="block text-black-500 font-boldlg mb-1 md:mb-0 pr-4"
-                for="inline-full-name"
+                for="cost"
               >
                 Costo promedio (1-5)
               </label>
@@ -119,7 +119,7 @@
               <input
                 formControlName="cost"
                 class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
-                
+                id="cost"
                 type="number"
                 min="1"
                 max="5"
@@ -137,7 +137,7 @@
             <div class="md:w-full lg:w-1/5">
               <label
                 class="block text-black-500 font-boldlg mb-1 md:mb-0 pr-4"
-                for="inline-full-name"
+                for="twitter"
               >
                 Twitter (Link de la cuenta)
               </label>
@@ -146,7 +146,7 @@
               <input
                 formControlName="twitter"
                 class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
-                
+                id="twitter"
                 type="text"
                 placeholder="Ej. http://twitter.com/usuario"
               />
@@ -158,7 +158,7 @@
           <div class="md:w-full lg:w-1/5">
             <label
               class="block text-black-500 font-boldlg mb-1 md:mb-0 pr-4"
-              for="inline-full-name"
+              for="facebook"
             >
               Facebook (Link de la cuenta)
             </label>
@@ -167,7 +167,7 @@
             <input
               formControlName="facebook"
               class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
-              
+              id="facebook"
               type="text"
               placeholder="Ej. http://facebook.com/usuario"
             />
@@ -178,7 +178,7 @@
           <div class="md:w-full lg:w-1/5">
             <label
               class="block text-black-500 font-boldlg mb-1 md:mb-0 pr-4"
-              for="inline-full-name"
+              for="instagram"
             >
               Instagram (Link de la cuenta)
             </label>
@@ -187,7 +187,7 @@
             <input
               formControlName="instagram"
               class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
-              
+              id="instagram"
               type="text"
               placeholder="Ej. http://instagram.com/usuario"
             />
@@ -199,7 +199,7 @@
             <div class="md:w-full lg:w-1/5">
               <label
                 class="block text-black-500 font-boldlg mb-1 md:mb-0 pr-4"
-                for="inline-full-name"
+                for="email"
               >
                 Email
               </label>
@@ -208,7 +208,7 @@
               <input
                 formControlName="email"
                 class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
-                
+                id="email"
                 type="email"
                 placeholder="Ej. usuario@gmail.com"
               />
@@ -225,7 +225,7 @@
             <div class="md:w-full lg:w-1/5">
               <label
                 class="block text-black-500 font-boldlg mb-1 md:mb-0 pr-4"
-                for="inline-full-name"
+                for="description"
               >
                 Descripción
               </label>
@@ -234,7 +234,7 @@
               <input
                 formControlName="description"
                 class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
-                
+                id="description"
                 type="text"
                 placeholder="Ej. Bar360 es un lugar agradable donde puedes relajarte mientars disfrutas de la buena música..."
               />
@@ -253,7 +253,7 @@
             <div class="md:w-full lg:w-1/5">
               <label
                 class="block text-black-500 font-boldlg mb-1 md:mb-0 pr-4"
-                for="inline-full-name"
+                for="zone"
               >
                 Zona
               </label>
@@ -265,7 +265,7 @@
                 id="grid-state"
               >
                 <ng-container *ngFor="let item of zones">
-                  <option [value]="item._id" *ngIf="item.available">{{
+                  <option id="{{item.name}}" [value]="item._id" *ngIf="item.available">{{
                     item.name
                   }}</option>
                 </ng-container>
@@ -296,7 +296,7 @@
             <div class="md:w-full lg:w-1/5">
               <label
                 class="block text-black-500 font-boldlg mb-1 md:mb-0 pr-4"
-                for="inline-full-name"
+                for="address"
               >
                 Dirección
               </label>
@@ -305,7 +305,7 @@
               <input
                 formControlName="address"
                 class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
-                
+                id="address"
                 type="text"
                 placeholder="Ej. Calle 7, Av. 5"
               />
@@ -321,7 +321,7 @@
           <div class="md:w-full lg:w-1/5">
             <label
               class="block text-black-500 font-boldlg mb-1 md:mb-0 pr-4"
-              for="inline-full-name"
+              for="associate"
             >
               ¿Es socio?
             </label>
@@ -330,7 +330,7 @@
             <div
               class="bg-white shadow w-6 h-6 p-1 flex justify-center items-center mr-2"
             >
-              <input formControlName="associate" type="checkbox" class="hidden" />
+              <input id="associate" formControlName="associate" type="checkbox" class="hidden" />
               <svg
                 class="hidden w-4 h-4 text-green-600 pointer-events-none"
                 viewBox="0 0 172 172"
@@ -362,7 +362,7 @@
               <label
               style="font-family: 'Open Sans', sans-serif;"
               class="block md:text-2xl text-black-500 font-bold text-center mb-1 md:mb-0 pr-4"
-              for="inline-full-name"
+              for="title-phones"
               >
               Números de contacto
               </label>
@@ -371,7 +371,7 @@
               <label
               style="font-family: 'Open Sans', sans-serif;"
               class="text-lg md:text-xl block text-black-500 font-bold text-center mb-1 md:mb-0 pr-4"
-              for="inline-full-name"
+              for="description-phones"
               >
               Añade los números de teléfono
               </label>
@@ -384,14 +384,14 @@
                   <div class="w-full lg:w-1/5">
                   <label
                       class="block text-black-500 font-bold lg:text-right mb-1 md:mb-6 pr-4"
-                      for="inline-full-name"
+                      for="phone-{{i}}"
                   >
                       Teléfono
                   </label>
                   </div>
                   <div class="w-full flex mb-6">
                   <div class="w-4/5">
-                      <input formControlName="phone" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500" type="text" placeholder="Ej. 02123451234">
+                      <input id="phone-{{i}}" formControlName="phone" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500" type="text" placeholder="Ej. 02123451234">
                   </div>
                   <div class="pt-0 flex space-x-4 justify-end  w-1/5">
                       <button
@@ -423,7 +423,7 @@
               <label
               style="font-family: 'Open Sans', sans-serif;"
               class="block md:text-2xl text-black-500 font-bold text-center mb-1 md:mb-0 pr-4"
-              for="inline-full-name"
+              for="title-menu"
               >
               Menú
               </label>
@@ -432,7 +432,7 @@
               <label
               style="font-family: 'Open Sans', sans-serif;"
               class="text-lg md:text-xl block text-black-500 font-bold text-center mb-1 md:mb-0 pr-4"
-              for="inline-full-name"
+              for="description-menu"
               >
               Añade los tragos disponibles en el bar
               </label>
@@ -444,36 +444,36 @@
               
               <div class="lg:flex lg:items-center mb-6">
                   <div class="md:w-full lg:w-1/5">
-                      <label class="block text-black-500 font-bollgmd:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                      <label class="block text-black-500 font-bollgmd:text-right mb-1 md:mb-0 pr-4" for="name-drink">
                           Nombre del trago
                       </label>
                   </div>
                   <div class="md:w-full lg:w-4/5">
-                      <input formControlName="name" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"  type="text" placeholder="Ej. Mojito">
+                      <input id="name-drink" formControlName="name" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"  type="text" placeholder="Ej. Mojito">
                   </div>
               </div>
               <app-required-field *ngIf="group.controls.name.invalid && group.controls.name.touched" [text]="'Este campo es requerido.'"></app-required-field>
 
               <div class="lg:flex lg:items-center mb-6">
                   <div class="md:w-full lg:w-1/5">
-                      <label class="block text-black-500 font-bollgmd:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                      <label class="block text-black-500 font-bollgmd:text-right mb-1 md:mb-0 pr-4" for="price-drink">
                           Precio
                       </label>
                   </div>
                   <div class="md:w-full lg:w-4/5">
-                      <input formControlName="price" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"  type="number" min="0.01" step="0.01">
+                      <input id="price-drink" formControlName="price" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"  type="number" min="0.01" step="0.01">
                   </div>
               </div>
               <app-required-field *ngIf="group.controls.price.invalid && group.controls.price.touched" [text]="'Este campo es requerido. (Solo números positivos)'"></app-required-field>
 
               <div class="lg:flex lg:items-center mb-6">
                   <div class="md:w-full lg:w-1/5">
-                      <label class="block text-black-500 font-bollgmd:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                      <label class="block text-black-500 font-bollgmd:text-right mb-1 md:mb-0 pr-4" for="description-drink">
                           Descripción
                       </label>
                   </div>
                   <div class="md:w-full lg:w-4/5">
-                      <input formControlName="description" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"  type="text" placeholder="Ej. Cóctel muy refrescante que no sabe mucho a alcohol.">
+                      <input id="description-drink" formControlName="description" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"  type="text" placeholder="Ej. Cóctel muy refrescante que no sabe mucho a alcohol.">
                   </div>
               </div>
               <div class="lg:flex lg:items-center mb-6">
@@ -501,7 +501,7 @@
               <label
               style="font-family: 'Open Sans', sans-serif;"
               class="block md:text-2xl text-black-500 font-bold text-center mb-1 md:mb-0 pr-4"
-              for="inline-full-name"
+              for="title-galery"
               >
               Galería
               </label>
@@ -510,7 +510,7 @@
               <label
               style="font-family: 'Open Sans', sans-serif;"
               class="text-lg md:text-xl block text-black-500 font-bold text-center mb-1 md:mb-0 pr-4"
-              for="inline-full-name"
+              for="description-galery"
               >
               Por favor, esperar a que aparezcan las fotos. Esto indicará que fueron cargadas con éxito.
               </label>
@@ -521,7 +521,7 @@
 
       <div class="lg:flex lg:items-center mb-6">
           <div class="md:w-full lg:w-1/5">
-          <label class="block text-black-500 font-bold lg:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+          <label class="block text-black-500 font-bold lg:text-right mb-1 md:mb-0 pr-4" for="main-image">
               Ícono
           </label>
           </div>
@@ -554,7 +554,7 @@
               <div class="lg:flex lg:items-center mb-6">
 
                   <div class="md:w-full lg:w-1/5">
-                      <label class="block text-black-500 font-bollgmd:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                      <label class="block text-black-500 font-bollgmd:text-right mb-1 md:mb-0 pr-4" for="photo-{{i}}">
                           Foto
                       </label>
                   </div>

@@ -26,7 +26,7 @@
           <div class="md:w-full lg:w-1/5">
             <label
               class="block text-black-500 font-bold lg:text-right mb-1 md:mb-0 pr-4"
-              for="inline-full-name"
+              for="name"
             >
               Nombre
             </label>
@@ -35,7 +35,7 @@
             <input
               formControlName="name"
               class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
-              
+              id="name"
               type="text"
               placeholder="Ej. Ron"
             />
@@ -52,7 +52,7 @@
           <div class="md:w-full lg:w-1/5">
             <label
               class="block text-black-500 font-bold lg:text-right mb-1 md:mb-0 pr-4"
-              for="inline-full-name"
+              for="category"
             >
               Categoría
             </label>
@@ -63,7 +63,7 @@
               class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
               id="grid-state"
             >
-              <option [value]="item" *ngFor="let item of categories">{{
+              <option id="{{item}}" [value]="item" *ngFor="let item of categories">{{
                 item
               }}</option>
             </select>
@@ -93,7 +93,7 @@
             <label
               style="font-family: 'Open Sans', sans-serif;"
               class="block text-black-500 font-bold text-center mb-1 md:mb-0 pr-4"
-              for="inline-full-name"
+              for="title"
             >
               Galería
             </label>
@@ -102,7 +102,7 @@
             <label
               style="font-family: 'Open Sans', sans-serif;"
               class="block text-black-500 font-bold md:text-center mb-1 md:mb-0 pr-4"
-              for="inline-full-name"
+              for="description"
             >
               Por favor, esperar a que aparezcan las fotos. Esto indicará que
               fueron cargadas con éxito.
@@ -114,7 +114,7 @@
           <div class="md:w-full lg:w-1/5">
             <label
               class="block text-black-500 font-bold lg:text-right mb-1 md:mb-0 pr-4"
-              for="inline-full-name"
+              for="icon"
             >
               Ícono
             </label>

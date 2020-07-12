@@ -24,7 +24,7 @@
             <div class="md:w-full lg:w-1/5">
               <label
                 class="block text-black-500 font-bold lg:text-right mb-1 md:mb-0 pr-4"
-                for="inline-full-name"
+                for="name"
               >
                 Nombre
               </label>
@@ -33,7 +33,7 @@
               <input
                 formControlName="name"
                 class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
-                
+                id="name"
                 type="text"
                 placeholder="Ej. Cultura Chupística"
               />
@@ -50,7 +50,7 @@
             <div class="md:w-full lg:w-1/5">
               <label
                 class="block text-black-500 font-bold lg:text-right mb-1 md:mb-0 pr-4"
-                for="inline-full-name"
+                for="description"
               >
                 Descripción
               </label>
@@ -59,7 +59,7 @@
               <input
                 formControlName="description"
                 class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
-                
+                id="description"
                 type="text"
                 placeholder="Ej. Cultura Chupística es un juego ideal para pasar el rato con los amigos..."
               />
@@ -78,7 +78,7 @@
             <label
               style="font-family: 'Open Sans', sans-serif;"
               class="block md:text-2xl text-black-500 font-bold text-center mb-1 md:mb-0 pr-4"
-              for="inline-full-name"
+              for="title"
             >
               Lista de reglas
             </label>
@@ -87,7 +87,7 @@
             <label
               style="font-family: 'Open Sans', sans-serif;"
               class="text-lg md:text-xl block text-black-500 font-bold text-center mb-1 md:mb-0 pr-4"
-              for="inline-full-name"
+              for="description-rules"
             >
               Añade las reglas del juego
             </label>
@@ -104,7 +104,7 @@
               <div class="w-full lg:w-1/5">
                 <label
                   class="block text-black-500 font-bold lg:text-right mb-1 md:mb-6 pr-4"
-                  for="inline-full-name"
+                  for="rule {{i+1}}"
                 >
                   Regla
                 </label>
@@ -115,7 +115,7 @@
                     <input
                     formControlName="rule"
                     class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
-                    
+                    id="rule {{i+1}}"
                     type="text"
                     placeholder="Ej. Mínimo tres jugadores." 
                   />
@@ -157,7 +157,7 @@
             <label
               style="font-family: 'Open Sans', sans-serif;"
               class="block text-black-500 font-bold text-center mb-1 md:mb-0 pr-4"
-              for="inline-full-name"
+              for="title-galery"
             >
               Galería
             </label>
@@ -166,7 +166,7 @@
             <label
               style="font-family: 'Open Sans', sans-serif;"
               class="block text-black-500 font-bold text-center mb-1 md:mb-0 pr-4"
-              for="inline-full-name"
+              for="description-galery"
             >
               Por favor, esperar a que aparezcan las fotos. Esto indicará que
               fueron cargadas con éxito.
@@ -178,7 +178,7 @@
           <div class="md:w-full lg:w-1/5">
             <label
               class="block text-black-500 font-bold lg:text-right mb-1 md:mb-0 pr-4"
-              for="inline-full-name"
+              for="icon"
             >
               Ícono
             </label>
