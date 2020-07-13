@@ -7,6 +7,9 @@ import { IngredientService } from "src/app/services/ingredient.service";
 import { ingredient } from "src/app/models/ingredient";
 import { database } from 'firebase';
 import {Location} from '@angular/common';
+import { user } from 'src/app/models/user';
+import { UserService } from 'src/app/services/user.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 
 @Component({
@@ -20,12 +23,17 @@ export class RecipeComponent implements OnInit {
   sidebar: Boolean;
   receta: drink;
   ingredients: ingredient[];
+  user:user;
   ingreAux: ingredient;
 
 
-  constructor(private service: DrinkService, private route: Router, 
-    private rout: ActivatedRoute, private service_ing: IngredientService,
-    private _location:Location) { }
+  constructor(private service: DrinkService, 
+              private route: Router, 
+              private rout: ActivatedRoute, 
+              private service_ing: IngredientService,
+              private _location:Location, 
+              private user_s:UserService,
+              private auth_svc:AuthService) { }
 
   ngOnInit() {
     this.getReceta();
@@ -62,8 +70,8 @@ export class RecipeComponent implements OnInit {
   getIngredients(){
     this.service_ing.getIngredients().subscribe((res:any) => {
       this.ingredients=[...res.data];
-      this.loading=false;
-    })
+      this.getProfile()  
+      })
   }
 
   getMessage($event){
@@ -87,6 +95,69 @@ export class RecipeComponent implements OnInit {
 
   goBack(){
     this._location.back()
+  }
+  is_fav(id:any){
+    if(this.user.favorites.includes(id)){
+      return true
+    }else{
+      return false
+    }
+  }
+  fav(event:Event ,drink:any){
+    event.stopPropagation();
+    if(this.user.favorites.includes(drink)){
+
+      for (let index = 0; index < this.user.favorites.length; index++) {
+        if(this.user.favorites[index]==drink){
+          this.user.favorites.splice(index,1);
+        }
+      }
+
+      this.updateUser();
+
+    }else{
+      this.user.favorites.push(drink);
+      this.updateUser();
+
+    }
+
+    console.log(this.user)
+  }
+  updateUser(){
+
+    var user: user = {
+      f_name: this.user.f_name,
+      l_name: this.user.l_name,
+      user_name: this.user.user_name,
+      password: this.user.password,
+      email: this.user.email,
+      _id: this.user._id,
+      available: true,     
+      isAdmin: this.user.isAdmin,
+      birthday: this.user.birthday,
+      favorites: this.user.favorites,
+    };
+
+    console.log(user);
+    this.user_s.updateUser(user).subscribe((res:any) => {
+    });
+  }
+
+  getProfile(){
+    this.auth_svc.getProfile().subscribe(
+      (profile:any)=>{
+        this.user=profile.user;
+        console.log(this.user)
+        this.loading = false;
+      },
+      (err)=>{
+        console.log(err)
+        return false
+      }
+      
+    )
+
+    
   }
 
 }

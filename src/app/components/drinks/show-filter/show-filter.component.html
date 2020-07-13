@@ -65,7 +65,7 @@
             <h1 class="text-4xl  font-bold md:text-5xl "> Tragos fitrados </h1>
           </div>
 
-          <div class="drink_card">
+          <div class="drink_card" *ngIf="has_any()" style="font-family: 'Open Sans', sans-serif;">
 
 
             <div class="rounded overflow-hidden border-2 shadow-lg   hover:border-solid hover:border-orange-500 hover:border-opacity-75   transition ease-in duration-200" 
@@ -99,6 +99,11 @@
               </div>
           </div>
 
+          </div>
+
+          <div *ngIf="!has_any()"  class="w-full flex flex-col items-center " style="font-family: 'Open Sans', sans-serif;">
+            <img src="../../../../assets/images/emptyGlass2.jpg" alt="Drink 404" class=" rounded-full w-48 md:w-56 lg:w-64 ">
+            <h1 class="text-3xl  font-bold md:text-4xl ">Drink not found</h1>
           </div>
 
         </div>

@@ -467,4 +467,12 @@ goBack(){
   this.router.navigate(["drinks/filter/"])
 }
 
+has_any(){
+  if(this.drinksA.length==0){
+    return false
+  }else{
+    return true
+  }
+}
+
 }
