@@ -1,3 +1,23 @@
+#navbar {
+  height: 20rem ;
+  // padding: 90px 10px; /* Large padding which will shrink on scroll (using JS) */
+  transition: 0.5s; /* Adds a transition effect when the padding is decreased */
+}
+
+#logo {
+  transition: 0.4s;
+  padding-left: 0;
+}
+
+
+#lema {
+  color: white;
+  transition: 0.4s;
+  padding-left: 5%;
+  padding-right: 1%;
+}
+
+
 .drink_card {
 
     width: 95%;
@@ -121,14 +141,14 @@
     gap: 1rem;
 /* Medium (md) */
 @media (min-width: 768px) { 
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     width: 90%;
     gap: 2.5rem;
  }
 /* Large (lg) */
 @media (min-width: 1024px) { 
     
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     width: 75%;
     gap: 2.5rem;
  }

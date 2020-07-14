@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { DrinkService } from 'src/app/services/drink.service';
 import { Router } from '@angular/router';
 import { drink } from 'src/app/models/drink';
@@ -8,7 +8,6 @@ import { ZoneService } from 'src/app/services/zone.service';
 import { zone } from 'src/app/models/zone';
 import { advertisement } from 'src/app/models/advertisement';
 import { AdvertisementService } from 'src/app/services/advertisement.service';
-import { user } from 'src/app/models/user';
 
 @Component({
   selector: 'app-home',
@@ -21,6 +20,7 @@ export class HomeComponent implements OnInit {
   zones:zone[];
   barsAv: Bar[]=[];
   showBars: Bar[]=[];
+  stars: Boolean[]=[];
   drinks: drink[]=[];
   drinksA: drink[] =[];  
   showDrinks: drink[]=[];
@@ -41,10 +41,45 @@ export class HomeComponent implements OnInit {
     this.getAdvertisements();
   }
 
+  @HostListener('window:scroll', [])
+onWindowScroll() {
+    const scrollOffset = window.pageYOffset;
+
+    let header = document.getElementById("navbar");
+    let lema = document.getElementById("lema");
+
+    var height = Math.max( 50 , 280 - window.scrollY ) 
+    header.style.height = height + 'px';
+    if ( height >= 20 ) {
+      document.getElementById("logo").style.paddingLeft = "0";
+    } else { 
+      document.getElementById("logo").style.paddingLeft = "5rem";
+    }
+    height = (height - 50)/230;
+    lema.style.color = "rgba(255,255,255,"+height+")";
+
+    
+}
+
   getMessage($event){
     if(screen.width>640){
       this.sidebar = $event;
     } 
+  }
+
+  getStars(bar: Bar){
+    this.stars.length = 0;
+    var i;
+    var aux: boolean;
+    for(i=0 ; i<5 ; i++){
+      if(i<bar.rating){
+        aux = true
+        this.stars.push(aux)
+      }else{
+        aux = false 
+        this.stars.push(aux)
+      }
+    }
   }
 
   getAdvertisements() {
@@ -115,6 +150,10 @@ export class HomeComponent implements OnInit {
 
   addAdvertisement(){
     this.route.navigate(["post-your-business"]);
+  }
+
+  home(){
+    this.route.navigate([""]);
   }
 
   getBars(){
