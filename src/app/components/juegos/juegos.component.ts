@@ -23,8 +23,7 @@ export class JuegosComponent implements OnInit {
   vorisOpen: boolean = false;
 
   temas: string[]=['Peliculas','Famosos','Series','Animales','Marcas de Carro','Equipos de Futbol','Capitales','Marcas de Zapato'];
-  retos: string[]=['Besa a alguien del grupo', 
-                  'Escribele a tu ex y dile que lo extrañas', 
+  retos: string[]=['Escribele a tu ex y dile que lo extrañas', 
                   'Llama a tu crush',
                   'Monta una foto fea en tus stories'];
   verdades: string[]=['Has cometido un delito?', 

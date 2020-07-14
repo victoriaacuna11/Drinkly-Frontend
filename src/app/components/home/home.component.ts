@@ -20,6 +20,7 @@ export class HomeComponent implements OnInit {
   zones:zone[];
   barsAv: Bar[]=[];
   showBars: Bar[]=[];
+  stars: Boolean[]=[];
   drinks: drink[]=[];
   drinksA: drink[] =[];  
   showDrinks: drink[]=[];
@@ -42,26 +43,43 @@ export class HomeComponent implements OnInit {
 
   @HostListener('window:scroll', [])
 onWindowScroll() {
-    const scrollOffset = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    const scrollOffset = window.pageYOffset;
 
-    if (scrollOffset >= 20) {
-        
-            document.getElementById("navbar").style.height = "5rem";
-            document.getElementById("logo").style.height = "4rem";
-            document.getElementById("lema").hidden;
-       
-    } else {
-        
-          document.getElementById("navbar").style.height = "35rem";
-          document.getElementById("logo").style.height = "20rem";
-          // document.getElementById("lema").
+    let header = document.getElementById("navbar");
+    let lema = document.getElementById("lema");
+
+    var height = Math.max( 50 , 280 - window.scrollY ) 
+    header.style.height = height + 'px';
+    if ( height >= 20 ) {
+      document.getElementById("logo").style.paddingLeft = "0";
+    } else { 
+      document.getElementById("logo").style.paddingLeft = "5rem";
     }
+    height = (height - 50)/230;
+    lema.style.color = "rgba(255,255,255,"+height+")";
+
+    
 }
 
   getMessage($event){
     if(screen.width>640){
       this.sidebar = $event;
     } 
+  }
+
+  getStars(bar: Bar){
+    this.stars.length = 0;
+    var i;
+    var aux: boolean;
+    for(i=0 ; i<5 ; i++){
+      if(i<bar.rating){
+        aux = true
+        this.stars.push(aux)
+      }else{
+        aux = false 
+        this.stars.push(aux)
+      }
+    }
   }
 
   getAdvertisements() {
@@ -132,6 +150,10 @@ onWindowScroll() {
 
   addAdvertisement(){
     this.route.navigate(["post-your-business"]);
+  }
+
+  home(){
+    this.route.navigate([""]);
   }
 
   getBars(){
