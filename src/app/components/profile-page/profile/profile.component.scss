@@ -87,13 +87,13 @@
             }
         }
         
-        @media (min-width: 1000px) { 
+        @media (min-width: 1024px) { 
             grid-template-columns: repeat(2, minmax(0, 1fr));
             width: 100%;
             gap: 2rem;
-            margin-left: 100px;
+            margin-left: 50px;
             top: 150px;
-            width: 27vw;
+            width: 30vw;
             #icon-profile-div{
                 height: 18vh;
             }
@@ -104,9 +104,9 @@
             grid-template-columns: repeat(3, minmax(0, 1fr));
             width: 100%;
             gap: 2.5rem;
-            margin-left: 100px;
+            margin-left: 50px;
             top: 150px;
-            width: 27vw;
+            width: 30vw;
             #icon-profile-div{
                 height: 25vh;
             }
