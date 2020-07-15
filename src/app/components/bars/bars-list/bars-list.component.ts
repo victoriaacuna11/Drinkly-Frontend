@@ -19,6 +19,7 @@ export class BarsListComponent implements OnInit {
   sidebar: Boolean;
   barsAv: Bar[] =[];
   defaultFilt = true;
+  stars=[];
   filterPost: string = "qlqsa";
 
 
@@ -66,6 +67,7 @@ export class BarsListComponent implements OnInit {
         }
       })
       console.log(this.barsAv)
+      this.getStars()
       this.loading=false;
     })
   }
@@ -89,6 +91,37 @@ export class BarsListComponent implements OnInit {
     //vete a home
     this.route.navigate([""])
   }
+
+  getStars(){
+    let aux_stars=[]
+
+    this.barsAv.forEach(i=>{
+      let a
+      let rate=i.rating
+      let aux;
+      aux_stars=[]
+      
+      for(a=0 ; a<5 ; a++){
+        if(rate!=0){
+          aux = true
+          aux_stars.push(aux)
+        }else{
+          aux = false 
+          aux_stars.push(aux)
+        }
+        if(rate!=0){
+          rate=rate-1
+        }
+        
+      }
+      
+      this.stars.push(aux_stars)
+      
+    })
+    console.log(this.stars)
+    
+  }
+  
   
 
 }
