@@ -37,7 +37,6 @@ export class ProfileComponent implements OnInit {
     "Lo importante es lo de adentro... de la jarra",
   ]
   randomQuote:String;
-  editProfile=false;
   favorites:Boolean=false;
 
   constructor(private router: Router, private auth_svc: AuthService, private service: DrinkService, private user_sv:UserService ) {}
@@ -150,12 +149,13 @@ export class ProfileComponent implements OnInit {
     console.log(this.randomQuote);
   }
 
-  edit(){
-    this.editProfile=!this.editProfile;
-  }
 
   showFavorites(){
     this.favorites=!this.favorites;
+  }
+
+  goDrinks(){
+    this.router.navigate(["drinks"]);
   }
 
   
