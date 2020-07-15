@@ -2,6 +2,10 @@
 
 <div [ngStyle]="{'margin-left.rem': !sidebar? '0': '16'}" class="move">
 
+  <app-admin-header *ngIf="userLoading"></app-admin-header>
+  <div *ngIf="userLoading">
+    <app-loader></app-loader>
+  </div>
   <!--PROFILE DESKTOP-->
   <div *ngIf="!userLoading" id="profile-desktop" style="font-family: 'Open Sans', sans-serif;">
 
@@ -29,8 +33,8 @@
     </div>
     
     <!--STICKY CARD-->
-    <div id="sticky-profile" class="fixed z-10 rounded-lg" style="height: 65vh; background-position: center; background-image: url(assets/images/profileheader.jpg); background-size: cover;">
-    <div class="w-full" id="background-profile" style="height: 65vh;">
+    <div id="sticky-profile" class="fixed z-10 rounded-lg" style="min-height: 65vh; background-position: center; background-image: url(assets/images/profileheader.jpg); background-size: cover;">
+    <div class="w-full" id="background-profile" style="min-height: 65vh;">
         <div class="w-full flex items-center content-center flex-wrap justify-center" style="height: 30vh;">
           <div class="w-3/5 flex items-center content-center flex-wrap justify-center" id="icon-profile-div">
             <img
@@ -62,7 +66,7 @@
                   Editar perfil
                 </button>
               </div>
-              <div class="pt-8 w-full flex justify-center">
+              <div class="pt-8 pb-8 w-full flex justify-center">
                 <button
                     (click)="getOut()"
                     class="w-3/4 lg:w-1/2 shadow bg-orange-500 hover:bg-orange-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
