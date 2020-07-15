@@ -21,12 +21,30 @@ export class ProfileComponent implements OnInit {
   sidebar: Boolean;
   drinks:drink[]=[];
   drinksA:drink[]=[];
+  quotes : String[] = [
+    "El vino mejora con la edad. Tú mejoras con el vino", 
+    "El día que el amor se convierta en vino tómatelo en serio",
+    "La mente clara y la cerveza oscura",
+    "Somos las cervezas que nos bebemos",
+    "Por favor, si van a dar lata... que sea de cerveza",
+    "Con cerveza, no hay tristeza",
+    "Si la vida te da limones, pide sal y tequila",
+    "Vinos y amigos, la mezcla perfecta",
+    "Eres como un buen vino, cada día estás más bueno/a",
+    "La vida empieza después de un vinito",
+    "Salvemos el agua, bebamos vino",
+    "Correr para ir a comprar vino cuenta como ejercicio",
+    "Lo importante es lo de adentro... de la jarra",
+  ]
+  randomQuote:String;
+  editProfile=false;
+  favorites:Boolean=false;
 
   constructor(private router: Router, private auth_svc: AuthService, private service: DrinkService, private user_sv:UserService ) {}
 
   ngOnInit() {
+    this.chooseQuote();
     this.userLoading = true;
-
     this.getProfile();
   }
 
@@ -71,6 +89,7 @@ export class ProfileComponent implements OnInit {
         }
       })
       this.userLoading = false;
+      console.log(this.drinksA)
       
     })
   }
@@ -125,5 +144,20 @@ export class ProfileComponent implements OnInit {
     this.user_sv.updateUser(user).subscribe((res:any) => {
     });
   }
+
+  chooseQuote(){
+    this.randomQuote = this.quotes[Math.floor(Math.random() * this.quotes.length)];
+    console.log(this.randomQuote);
+  }
+
+  edit(){
+    this.editProfile=!this.editProfile;
+  }
+
+  showFavorites(){
+    this.favorites=!this.favorites;
+  }
+
+  
 
 }

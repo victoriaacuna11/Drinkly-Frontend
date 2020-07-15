@@ -1,0 +1,138 @@
+#profile-mobile{
+
+    @media (max-width: 768px) { 
+        
+        display: block;
+    }
+
+    @media (min-width: 768px) { 
+        
+        display: none;
+    }
+
+    .drink_card {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        padding-right: 2.5rem;
+        padding-left: 2.5rem;
+        gap: 1rem;
+        
+        /* Medium (md) */
+        @media (min-width: 640px) { 
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            width: 100%;
+            gap: 2rem;
+        }
+
+    }    
+
+  }
+
+
+#profile-desktop{
+
+    @media (max-width: 768px) { 
+        
+        display: none;
+    }
+
+    @media (min-width: 768px) { 
+        
+        display: block;
+    }
+
+    #background-profile{
+        background-color: rgba(0, 0, 0, 0.658);
+    }
+
+    .drink_card {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        padding-right: 2.5rem;
+        padding-left: 2.5rem;
+        gap: 1rem;
+        
+        /* Medium (md) */
+        @media (min-width: 768px) { 
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+            width: 100%;
+            gap: 2rem;
+        }
+
+        @media (min-width: 1000px) { 
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            width: 100%;
+            gap: 2rem;
+        }
+        /* Large (lg) */
+        @media (min-width: 1400px) { 
+            
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            width: 100%;
+            gap: 2.5rem;
+    }
+
+    }
+
+    #sticky-profile{
+        @media (min-width: 768px) { 
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+            width: 100%;
+            gap: 2rem;
+            margin-left: 50px;
+            top: 150px;
+            width: 30vw;
+            #icon-profile-div{
+                height: 18vh;
+            }
+        }
+        
+        @media (min-width: 1000px) { 
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            width: 100%;
+            gap: 2rem;
+            margin-left: 100px;
+            top: 150px;
+            width: 27vw;
+            #icon-profile-div{
+                height: 18vh;
+            }
+        }
+        /* Large (lg) */
+        @media (min-width: 1400px) { 
+            
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            width: 100%;
+            gap: 2.5rem;
+            margin-left: 100px;
+            top: 150px;
+            width: 27vw;
+            #icon-profile-div{
+                height: 25vh;
+            }
+        }
+    }
+
+
+    .drink_img{
+
+        width: 100%;
+        height: 30rem;
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 1rem;
+    /* Medium (md) */
+    @media (min-width: 768px) { 
+        height: 25rem;
+
+    }
+    /* Large (lg) */
+    @media (min-width: 1024px) { 
+        height: 25rem;
+        
+    }
+
+  }
+  
+  
+  }
