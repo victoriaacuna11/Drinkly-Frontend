@@ -38,6 +38,7 @@ export class ProfileComponent implements OnInit {
   ]
   randomQuote:String;
   favorites:Boolean=false;
+  editProfile=false;
 
   constructor(private router: Router, private auth_svc: AuthService, private service: DrinkService, private user_sv:UserService ) {}
 
