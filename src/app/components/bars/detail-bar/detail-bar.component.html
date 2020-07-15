@@ -34,13 +34,13 @@ style="margin-left: 0;"
       </div>
       
     </div>
-    <div class="sm:flex md:flex sm:px-16 md:px-16 my-8">
+    <div class="md:flex sm:px-16 md:px-16 my-8">
       <div class="w-full sm:w-full md:w-full ">
         <img class="w-full h-full rounded flex-initial" src="{{bar.main_image}}" alt="main_image_bar">
       </div>  
-      <div class="pt-16 sm:w-2/3 md:w-2/3">
+      <div class="sm:pt-4 pt-16 md:w-2/3">
         <div class="flex justify-center">
-        <div class="w-full sm:w-2/3 md:w-2/3 bg-black text-white rounded sm:px-16 md:px-16 py-16">
+        <div class="w-full sm:w-3/4 md:w-2/3 bg-black text-white rounded sm:px-8 md:px-16 py-16">
           <div class="flex justify-center font-medium text-3xl">Horario:</div>
           <div class="mt-3 flex justify-center m-auto max-w-xl">
             <div class="text-xl font-light">{{bar.working_hours}}</div>
@@ -122,7 +122,7 @@ style="margin-left: 0;"
 
   <!-- <div class="mt-12 m-auto max-w-3xl text-center">    
   </div> -->
-    <div id="ladilla" class="sm:grid sm:grid-cols-2 sm:gap-4 md:flex md:flex-wrap lg:flex-no-wrap md:flex-no-wrap md:xs md:pt-16">
+    <div id="ladilla" class="grid grid-cols-2 gap-4 sm:grid sm:grid-cols-2 sm:gap-4 md:flex md:flex-wrap lg:flex-no-wrap md:flex-no-wrap md:xs md:pt-16">
       <div
       *ngFor="let x of images"
       class="md:w-1/3 md:px-2 overflow-hidden my-2"
@@ -134,23 +134,6 @@ style="margin-left: 0;"
         />
       </div>
     </div>
-
-
-  <div class="pt-6 sm:hidden">
-    
-    <div class="grid grid-cols-2 gap-4">
-      <div
-      *ngFor="let x of images"
-      class="overflow-hidden my-2"
-      >
-        <img
-          class="w-full h-full rounded flex-initial"
-          src="{{ x }}"
-          alt="bar-image"
-        />
-      </div>
-    </div>
-  </div>
 </div>  
 <button class="back_btn" (click)="goBack()">
       <img class="p-3" src="assets/images/goback.png" alt="button" >

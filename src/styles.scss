@@ -35,7 +35,7 @@ html {
   width: 3.5rem;
   box-shadow: 1px 1px 7px #868585;
 
-  @media (min-width: 768px) { 
+  @media (min-width: 769px) { 
     height: 4rem;
     width: 4rem;
     bottom: 6.5rem;
@@ -655,9 +655,9 @@ video {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 769px) {
   .container {
-    max-width: 768px;
+    max-width: 769px;
   }
 }
 
@@ -7631,7 +7631,7 @@ video {
 }
 
 .max-w-screen-md {
-  max-width: 768px;
+  max-width: 769px;
 }
 
 .max-w-screen-lg {
@@ -24908,7 +24908,7 @@ video {
   }
 
   .sm\:max-w-screen-md {
-    max-width: 768px;
+    max-width: 769px;
   }
 
   .sm\:max-w-screen-lg {
@@ -35226,7 +35226,7 @@ video {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 769px) {
   .md\:space-y-0 > :not(template) ~ :not(template) {
     --space-y-reverse: 0;
     margin-top: calc(0px * calc(1 - var(--space-y-reverse)));
@@ -42186,7 +42186,7 @@ video {
   }
 
   .md\:max-w-screen-md {
-    max-width: 768px;
+    max-width: 769px;
   }
 
   .md\:max-w-screen-lg {
@@ -59464,7 +59464,7 @@ video {
   }
 
   .lg\:max-w-screen-md {
-    max-width: 768px;
+    max-width: 769px;
   }
 
   .lg\:max-w-screen-lg {
@@ -76742,7 +76742,7 @@ video {
   }
 
   .xl\:max-w-screen-md {
-    max-width: 768px;
+    max-width: 769px;
   }
 
   .xl\:max-w-screen-lg {
