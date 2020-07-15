@@ -1,41 +1,80 @@
 
 <app-test-bar (message)="getMessage($event)"></app-test-bar> 
 
-<div [ngStyle]="{'margin-left.rem': !sidebar? '0': '16'}" class="move">
+<div [ngStyle]="{'margin-left.rem': !sidebar? '0': '16'}" class="move" style="font-family: 'Roboto', sans-serif;">
 
   <app-admin-header></app-admin-header>
 
-  <div class="text-5xl font-bold pl-16 pt-8">Bienvenido Administrador</div>
-  <div class="flex flex-wrap mb-4 px-16 py-8">
-      <div *ngIf="!loading" class="max-w-lg h-auto my-6 p-3 pb-6 mt-12 bg-cover  m-auto self-center  shadow">
-          <div class="flex text-4xl font-bold py-2 px-4">Bares</div>
-          <a href="admin/bar">
-              <button class="w-full bg-orange-400 hover:bg-orange-600 text-white font-bold py-2 px-32 rounded">
-                  Ver bares disponibles
-              </button>    
-          </a> 
-          <div class="h-4"></div>
-          <a href="admin/bar/add">
-              <button class="w-full bg-orange-400 hover:bg-orange-600 text-white font-bold py-2 px-32 rounded">
-                  Agregar nuevo bar
-              </button>    
-          </a> 
-      </div> 
-      <!--  -->
-      <div *ngIf="!loading" class="max-w-lg h-auto my-6 p-3 pb-6 mt-12 bg-cover  m-auto self-center  shadow">
-          <div class="flex text-4xl font-bold py-2 px-4">Tragos</div>
-          <a href="admin/drink">
-              <button class="w-full bg-orange-400 hover:bg-orange-600 text-white font-bold py-2 px-32 rounded">
-                  Ver recetas
-              </button>    
-          </a> 
-          <div class="h-4"></div>
-          <a href="admin/drink/add">
-              <button class="w-full bg-orange-400 hover:bg-orange-600 text-white font-bold py-2 px-32 rounded">
-                  Agregar receta
-              </button>    
-          </a>
-      </div>  
+  <div class="text-5xl font-bold pl-16 pt-8">Bienvenido Administrador</div>    
+  <div *ngIf="!loading">
+    <div class="w-full flex justify-center">
+        <div class="card px-8 sm:px-16 md:px-32 lg:w-3/4 w-4/5 justify-center">
+            <div class="w-full m-8 py-12 px-4">
+                <div class="bg-black rounded-md py-12">
+                    <div class="text-center text-white text-2xl sm:text-3xl">
+                        Recetas publicadas
+                    </div>
+                    <div class="font-black text-6xl text-orange-600 flex justify-center items-center num-about">
+                        {{this.recipes}}
+                    </div>
+                </div>
+                <div class="h-4"></div>
+                <a href="admin/drink">
+                    <button class="w-full bg-orange-400 hover:bg-orange-600 text-white font-bold py-2 px-32 rounded">
+                        Ver recetas
+                    </button>    
+                </a> 
+                <div class="h-4"></div>
+                <a href="admin/drink/add">
+                    <button class="w-full bg-orange-400 hover:bg-orange-600 text-white font-bold py-2 px-32 rounded">
+                        Agregar receta
+                    </button>    
+                </a>
+            </div>
+            <div class="w-full m-8 py-12 px-4">
+                <div class="bg-black rounded-md py-12">
+                    <div class="text-center text-white text-2xl sm:text-3xl">
+                        Usuarios registrados
+                    </div>
+                    <div class="font-black text-6xl text-orange-600 flex justify-center items-center num-about">
+                        {{this.users}}
+                    </div>
+                </div>
+                <div class="h-4"></div>
+                <a href="admin/user">
+                    <button class="w-full bg-orange-400 hover:bg-orange-600 text-white font-bold py-2 px-32 rounded">
+                        Administrar usuarios
+                    </button>    
+                </a>
+            </div>
+            <div class="w-full m-8 py-12 px-4">
+                <div class="bg-black rounded-md py-12">
+                    <div class="text-center text-white text-2xl sm:text-3xl">
+                        Bares asociados
+                    </div>
+                    <div class="font-black text-6xl text-orange-600 flex justify-center items-center num-about">
+                        {{this.bars}}
+                    </div>
+                </div>
+                <div class="h-4"></div>
+                <a href="admin/bar" class="flex justify-center">
+                    <button class="w-full bg-orange-400 hover:bg-orange-600 text-white font-bold py-2 px-32 rounded">
+                        Ver bares disponibles
+                    </button>
+                </a>
+                <div class="h-4"></div>
+                <a href="admin/bar/add" class="flex justify-center">
+                    <button class="w-full bg-orange-400 hover:bg-orange-600 text-white font-bold py-2 px-32 rounded">
+                        Agregar nuevo bar
+                    </button>
+                </a>
+            </div>
+        
+        </div>
+    </div>
+    </div>
+
+  <div class="card flex flex-col mb-4 px-8 sm:px-16 md:px-32 py-8">
        <!--  -->
        <div *ngIf="!loading" class="max-w-lg h-auto my-6 p-3 pb-6 mt-12 bg-cover  m-auto self-center  shadow">
           <div class="flex text-4xl font-bold py-2 px-4">Ingredientes</div>
@@ -88,16 +127,7 @@
                   Agregar publicidad
               </button>    
           </a>
-      </div>
-      <!--  -->
-      <div *ngIf="!loading" class="max-w-lg h-auto my-6 p-3 pb-6 mt-12 bg-cover  m-auto self-center  shadow">
-          <div class="flex text-4xl font-bold py-2 px-4">Usuarios</div>
-          <a href="admin/user">
-              <button class="w-full bg-orange-400 hover:bg-orange-600 text-white font-bold py-2 px-32 rounded">
-                  Administrar usuarios
-              </button>    
-          </a> 
-      </div>                   
+      </div>                  
   </div>
 
     <app-footer></app-footer>

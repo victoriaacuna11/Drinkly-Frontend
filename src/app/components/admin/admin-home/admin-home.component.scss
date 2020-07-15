@@ -1,0 +1,46 @@
+.card {
+
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    // padding-right: 1.5rem;
+    // padding-left: 1.5rem;
+    gap: 1rem;
+/* Medium (md) */
+@media (min-width: 768px) { 
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: 100%;
+    gap: 2rem;
+ }
+/* Large (lg) */
+@media (min-width: 1400px) { 
+    
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: 100%;
+    gap: 2.5rem;
+ }
+}
+
+@media screen and (max-width: 640px){
+    .num-about{
+        font-size:4rem;
+    }
+}
+
+@media screen and (min-width: 640px) and (max-width: 768px) {
+    .num-about{
+        font-size:9rem;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .num-about{
+        font-size:9rem;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .num-about{
+        font-size:10rem;
+    }
+}
