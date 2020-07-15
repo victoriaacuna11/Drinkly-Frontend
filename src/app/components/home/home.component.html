@@ -34,7 +34,7 @@
                         <div class="flex justify-center items-center sm:w-2/3 md:w-2/3 py-8 sm:py-16 md:py-16">
                           <div>
                           <div class="flex justify-center text-white text-center sm:text-left md:text-left lg:text-left lg:text-5xl sm:text-4xl text-2xl pb-4 font-light">
-                            <p>Conviertete en un experto de la coctelería, descubre nuevos lugares y diviertete con tus amigos en Drinkly</p>
+                            <p>Conviértete en un experto de la coctelería, descubre nuevos lugares y diviértete con tus amigos en Drinkly</p>
                           </div>
                           <div class="flex justify-center sm:justify-start justify-start items-center">
                             <a href="/drinkly-team" class="hover:no-underline">
@@ -207,7 +207,8 @@
                     class="flex items-center justify-center text-gray-800 lg:text-4xl text-xl font-light sm:text-3xl pb-4 font-light">Juegos</label>
                 </div>
                 <div class="flex text-gray-700 text-center lg:text-3xl text-xl font-light sm:text-2xl">
-                  <p>En nuestra plataforma podrás encontrar una enorme variedad de tragos que podrás preparar desde la comodidad de tu hogar. Te ofrecemos el paso a paso y los ingredientes que vas a necesitar para que puedas degustarla.</p>
+                  <p>¿Por qué no proponer unos juegos de beber y cambiar un poco la dinámica de la noche? Te ofrecemos los mejores juegos online, sin necesidad de nada más aparte de tu teléfono celular o una computadora.</p>
+                  
                 </div> 
               </div>
             </a>
@@ -308,7 +309,7 @@
                   <label class="flex items-center justify-center text-gray-800 lg:text-4xl text-xl font-light sm:text-3xl pb-4 font-light">Bares</label>
                 </div>
                 <div class="flex text-gray-700 text-center lg:text-3xl text-xl font-light sm:text-2xl">
-                  <p>En nuestra plataforma podrás encontrar una enorme variedad de tragos que podrás preparar desde la comodidad de tu hogar. Te ofrecemos el paso a paso y los ingredientes que vas a necesitar para que puedas degustarla.</p>
+                  <p>Caracas está llena de lugares para pasarla bien con unos tragos y amigos. Aquí te damos los detalles e información de cada uno, incluso puedes buscar por zona para que encuentres el mejor plan para tu noche.</p>
                 </div> 
               </div>
             </a>
@@ -319,7 +320,7 @@
                 <div class="flex justify-center">
                 </div>
                 <div class="flex px-8 sm:px-48 md:px-64 py-4 pt-8 text-2xl sm:text-4xl md:text-5xl text-white font-semibold">
-                  PREPARALO TU MISMO
+                  PREPÁRALO TÚ MISMO
                   <div class="flex items-center justify-center px-2 sm:px-8 md:px-8">
                     <a href="/drinks" class="hover:no-underline">
                         <div class="text-lg text-center sm:text-xl md:text-xl no-underline py-1 px-8 bg-orange-600 font-light hover:bg-orange-500 text-white rounded">Ver más
@@ -366,8 +367,9 @@
                 
                 <!-- FIN DRINK CARDS -->
                 <div class="flex justify-center pb-2 pt-8">
-                  <div (click)="addDrink()" class="flex justify-center text-gray-400 hover:text-orange-500">
-                    <svg class="fill-current h-1/12 w-1/12 p-4" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                  <div (click)="addDrink()" class="justify-center text-gray-400 hover:text-orange-500">
+                    <div class="flex justify-center">
+                    <svg class="fill-current w-1/6 sm:h-1/12 md:h-1/12 p-4" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
                       xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
                       style="enable-background:new 0 0 512 512;" xml:space="preserve">
                       <g>
@@ -381,18 +383,22 @@
                                                                       c-10.966,0-19.83,8.884-19.83,19.83s8.864,19.83,19.83,19.83h79.318v79.318c0,10.946,8.864,19.83,19.83,19.83
                                                                       s19.83-8.884,19.83-19.83v-79.318h79.318c10.966,0,19.83-8.884,19.83-19.83S366.114,234.386,355.148,234.386z" />
                       </g>
-                    </svg>
-                    <div>
-                      <div class="flex">Tienes una receta?</div>
-                      <div class="flex">Compartela con nosotros</div>
+                    </svg>  
                     </div>
+                    
+                    <div class="flex justify-center items-center">
+                    <div>
+                      <div class="flex items-center justify-center text-center">¿Tienes una receta?</div>
+                      <div class="flex items-center justify-center text-center">Compártela con nosotros</div>
+                    </div>
+                    
                   </div>
                 </div>
             </div>
             <!-- FIN DE PREPARALO TU MISMO -->
 
             <!-- ADS -->
-            <div class="py-8">
+            <div class="py-8 bg-white">
               <div class="px-8 sm:px-48 md:px-64 py-4 pt-8 text-2xl sm:text-4xl md:text-5xl font-semibold">DISFRUTA POR MENOS</div>
               <!-- ADS CARDS -->
               <div class="w-full flex flex-col items-center mt-10 px-12 sm:px-64 md:px-64">
@@ -411,28 +417,34 @@
                 </div>
               </div>
               <!-- FIN ADS CARDS -->
-                <div class="flex justify-center pb-2 pt-8">
-                  <div (click)="addAdvertisement()" class="flex justify-center text-gray-400 hover:text-orange-500">
-                    <svg class="fill-current h-1/12 w-1/12 p-4" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
-                      xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
-                      style="enable-background:new 0 0 512 512;" xml:space="preserve">
-                      <g>
-                        <path d="M256,0C114.833,0,0,114.833,0,256s114.833,256,256,256s256-114.853,256-256S397.167,0,256,0z M256,472.341
-                                                                      c-119.275,0-216.341-97.046-216.341-216.341S136.725,39.659,256,39.659S472.341,136.705,472.341,256S375.295,472.341,256,472.341z
-                                                                      " />
-                      </g>
-                      <g>
-                        <path
-                          d="M355.148,234.386H275.83v-79.318c0-10.946-8.864-19.83-19.83-19.83s-19.83,8.884-19.83,19.83v79.318h-79.318
-                                                                      c-10.966,0-19.83,8.884-19.83,19.83s8.864,19.83,19.83,19.83h79.318v79.318c0,10.946,8.864,19.83,19.83,19.83
-                                                                      s19.83-8.884,19.83-19.83v-79.318h79.318c10.966,0,19.83-8.884,19.83-19.83S366.114,234.386,355.148,234.386z" />
-                      </g>
-                    </svg>
-                    <div>
-                      <div class="flex justify-center">Tu bar tiene una promoción?</div>
-                      <div class="flex justify-center">Compartela con nosotros</div>
-                    </div>
+              <div class="flex justify-center pb-2 pt-8">
+                <div (click)="addAdvertisement()" class="justify-center text-gray-400 hover:text-orange-500">
+                  <div class="flex justify-center">
+                  <svg class="fill-current w-1/6 sm:h-1/12 md:h-1/12 p-4" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                    style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                    <g>
+                      <path d="M256,0C114.833,0,0,114.833,0,256s114.833,256,256,256s256-114.853,256-256S397.167,0,256,0z M256,472.341
+                                                                    c-119.275,0-216.341-97.046-216.341-216.341S136.725,39.659,256,39.659S472.341,136.705,472.341,256S375.295,472.341,256,472.341z
+                                                                    " />
+                    </g>
+                    <g>
+                      <path
+                        d="M355.148,234.386H275.83v-79.318c0-10.946-8.864-19.83-19.83-19.83s-19.83,8.884-19.83,19.83v79.318h-79.318
+                                                                    c-10.966,0-19.83,8.884-19.83,19.83s8.864,19.83,19.83,19.83h79.318v79.318c0,10.946,8.864,19.83,19.83,19.83
+                                                                    s19.83-8.884,19.83-19.83v-79.318h79.318c10.966,0,19.83-8.884,19.83-19.83S366.114,234.386,355.148,234.386z" />
+                    </g>
+                  </svg>  
                   </div>
+                  
+                  <div class="flex justify-center items-center">
+                  <div>
+                    <div class="flex items-center justify-center text-center">¿Tu bar tiene una promoción?</div>
+                    <div class="flex items-center justify-center text-center">Compártela con nosotros</div>
+                  </div>  
+                  </div>
+                  
+                </div>
               </div>
           </div>
           <!-- FIN ADS -->
@@ -491,8 +503,9 @@
                   </div>
                 <!-- FIN BAR CARDS -->
                 <div class="flex justify-center pb-2 pt-8">
-                  <div (click)="addAdvertisement()" class="flex justify-center text-gray-400 hover:text-orange-500">
-                    <svg class="fill-current h-1/12 w-1/12 p-4" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                  <div (click)="addAdvertisement()" class="justify-center text-gray-400 hover:text-orange-500">
+                    <div class="flex justify-center">
+                    <svg class="fill-current w-1/6 sm:h-1/12 md:h-1/12 p-4" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
                       xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
                       style="enable-background:new 0 0 512 512;" xml:space="preserve">
                       <g>
@@ -506,13 +519,17 @@
                                                                       c-10.966,0-19.83,8.884-19.83,19.83s8.864,19.83,19.83,19.83h79.318v79.318c0,10.946,8.864,19.83,19.83,19.83
                                                                       s19.83-8.884,19.83-19.83v-79.318h79.318c10.966,0,19.83-8.884,19.83-19.83S366.114,234.386,355.148,234.386z" />
                       </g>
-                    </svg>
-                    <div>
-                      <div class="flex justify-center">Tu bar tiene una promoción?</div>
-                      <div class="flex justify-center">Compartela con nosotros</div>
+                    </svg>  
                     </div>
+                    
+                    <div class="flex justify-center items-center">
+                    <div>
+                      <div class="flex items-center justify-center text-center">¿Eres dueño de un bar?</div>
+                      <div class="flex items-center justify-center text-center">Únete a Drinkly</div>
+                    </div>
+                    
                   </div>
-              </div>
+                </div>
             </div>
             <!-- FIN BARES DE CARACAS -->
             
