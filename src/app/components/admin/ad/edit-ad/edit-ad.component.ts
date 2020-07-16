@@ -28,12 +28,18 @@ export class EditAdComponent implements OnInit {
       client: ["", Validators.required],
     });
   }
-
+/**
+ * Inicializa el componente 
+ * 
+ */
   ngOnInit() {
     this.getAd();
   }
 
-  
+/**
+ * Trae el advertisement de la base de datos para editarlo 
+ * 
+ */
   getAd() {
     const id = this.routeSV.snapshot.paramMap.get("id");
     this.service.getAd(id).subscribe((res: any) => {
@@ -50,6 +56,10 @@ export class EditAdComponent implements OnInit {
   //   this.selectedFile = event.target.files[0];
   // }
 
+/**
+ * Hace submit al form y usa el servicio para editar el advertisement en la base de datos 
+ * 
+ */
   editAd() {
     
     var adver: advertisement = {
@@ -82,6 +92,10 @@ export class EditAdComponent implements OnInit {
       );
     }
   }
+/**
+ * Navega a la vista anterior 
+ * 
+ */
   goBack() {
     if(this.main_image==null || this.main_image!=this.ad.promo_img){
       const response = alert(

@@ -47,7 +47,9 @@ export class ShowFilterComponent implements OnInit {
   search_bar=""
   categories=[]
   user:user;
-
+/**
+ * Inicializa el componete
+ */
   ngOnInit() {    
     this.aux=this.routeSV.snapshot.paramMap.get('filter');
     this.filter_ing=this.aux.split(',')
@@ -57,6 +59,9 @@ export class ShowFilterComponent implements OnInit {
 
     //console.log(this.filter_ing)
   }
+/**
+ * Trae los drinks filtrados de la base de datos
+ */
   getFilteredDrinks() {
     this.service.filteredDrink(this.aux).subscribe((res: any) => {
       this.drinks = res.data;
@@ -73,7 +78,12 @@ export class ShowFilterComponent implements OnInit {
     
   }
 
-  
+/**
+ * 
+ * Añade el trago al array de favoritos del usuario
+ * @param {Event}  event evento para evitar que se progague la accion
+ * @param {any} drink drink que se añadira al array de favoritso del usuario
+ */
   fav(event:Event ,drink:any){
     event.stopPropagation();
     if(this.user.favorites.includes(drink)){
@@ -94,6 +104,10 @@ export class ShowFilterComponent implements OnInit {
 
     console.log(this.user)
   }
+/**
+ * Checkea si el trago esta en el array de favoritos del usuario
+ * @param {string} id id del card del trago que se checkeara
+ */
   is_fav(id:any){
     if(this.user.favorites.includes(id)){
       return true
@@ -101,6 +115,10 @@ export class ShowFilterComponent implements OnInit {
       return false
     }
   }
+/**
+ * Actualiza al usuario usando el servicio con los nuevos favoritos
+ * 
+ */
   updateUser(){
 
     var user: user = {
@@ -120,7 +138,10 @@ export class ShowFilterComponent implements OnInit {
     this.user_s.updateUser(user).subscribe((res:any) => {
     });
   }
-
+/**
+ * 
+ * Trae al usuario de la base de datos
+ */
   getProfile(){
     this.auth_svc.getProfile().subscribe(
       (profile:any)=>{
@@ -144,9 +165,17 @@ export class ShowFilterComponent implements OnInit {
       this.sidebar = $event;
     }
   }
+/**
+ * Navega a la vista del detalle del ingrediente
+ * @param {sting} id id del drink
+ */
   detail(id){
     this.route.navigate(['drink/', id]);
   }
+  /**
+ * 
+ * Trae los ingredientes de la base de datos
+ */
   getIngredients() {
     this.ing_service.getIngredients().subscribe((res: any) => {
       this.ingredients_aux = [...res.data];
@@ -165,7 +194,11 @@ export class ShowFilterComponent implements OnInit {
       this.loading = false;
     }); 
   }
-
+/**
+ * 
+ * Pone los ingredientes en un array para mostrarlos al usuario y llena el volver a filtrar con los ingredientes seleccionados
+ * 
+ */
   fill_filter(){
     //metemos en el arrya de filtro los que ya tenemos y ponemos los styles e true
     //cambiar a los objetos completos
@@ -203,6 +236,10 @@ export class ShowFilterComponent implements OnInit {
 
   }
 
+/**
+ * 
+ * Trae los ingredientes que se seleccionaron
+ */
   getIngrFilter(){
 
     this.ingredients.forEach(i=>{
@@ -217,7 +254,10 @@ export class ShowFilterComponent implements OnInit {
 
   //FILTER----------------------------------------------------------------------------------------------------
 
-  
+/**
+ * Añade/elimina el ing que se busca por la barra de busqueda en el filtro
+ * @param {any} object ingrediente seleccionado
+ */
   search_add_to_filter(object:any){
     
 
@@ -251,7 +291,10 @@ export class ShowFilterComponent implements OnInit {
 
 
   }
-
+/**
+ * Añade/elimina el ing seleccionado en el array de filtro (Usando los dropdowns)
+ * @param {any} object ingrediente seleccionado
+ */
   add_to_filter(object:any){
     if(object.style==true){
       this.filter.push(object)
@@ -277,7 +320,10 @@ export class ShowFilterComponent implements OnInit {
 
 
   }
-
+/**
+ * Elimina el ingrediente del array de filtro 
+ * @param {any} object ingrediente deseleccionado
+ */
   ing_check_off(object:any){
     for (let x = 0; x < this.list.length; x++) {
       for (let y = 0; y < this.list[x].ing.length; y++) {
@@ -308,7 +354,10 @@ export class ShowFilterComponent implements OnInit {
   }
   
 
-
+/**
+ * Añade el campo de style para los ingretientes
+ * 
+ */
   addStyleIng(){
     this.ingredients.forEach(i=>{
       let ing={
@@ -321,7 +370,9 @@ export class ShowFilterComponent implements OnInit {
       this.ing_search.push(ing)
     })
   }
-
+/**
+ * Organiza los ingredientes siguiendo la estructura para separarlos por categoria
+ */
   organizeIngredients(){
 
     for (let x = 0; x < this.categories.length; x++) {
@@ -350,15 +401,21 @@ export class ShowFilterComponent implements OnInit {
    // console.log('esta es la lista')
     //console.log(this.list)
   }
-
+/**
+ * Checkea si la categoria tiene ingredientes en ella
+ * @return booleanso true o false
+ */
   ingExist(item:any){
     if(item.length!=0){
       return true
     }else{
-      false
+       false
     }
   }
 
+/**
+ * Trae nuevamente los tragos de la base de datos con el nuevo filtro aplicado
+ */
   filter_drink(){
 
     //reinicar todo otra vez de una manera boleta elmio
@@ -401,7 +458,10 @@ export class ShowFilterComponent implements OnInit {
     this.getIngredients();
     this.getFilteredDrinks();
   }
-
+/**
+ * Abre la categoria seleccionaday cierra las demas
+ * @param {any} item categoria
+ */
   openCategory(item:any){
     for (let index = 0; index < this.list.length; index++) { 
       if(item.category==this.list[index].category){
@@ -415,6 +475,10 @@ export class ShowFilterComponent implements OnInit {
       } 
     }
   }
+/**
+ * Muestra el componente de mostrar los ingredientes seleccionados
+ * @returns boolean true o false
+ */
   show_ing(){
     if(this.filter.length!=0){
       return true
@@ -422,7 +486,9 @@ export class ShowFilterComponent implements OnInit {
       return false
     }
   }
-
+/**
+ * @ignore
+ */
   is_search(object:any){
 
     let aux=object.toLowerCase()
@@ -436,7 +502,9 @@ export class ShowFilterComponent implements OnInit {
 
 
   }
-
+/**
+ * Funcion que actualiza los ingredientes mostrados en la busqueda por nombre
+ */
   search_ing(){
 
     this.temp_i_s=[]
@@ -462,11 +530,16 @@ export class ShowFilterComponent implements OnInit {
 
   }
 }
-
+/**
+ * Navega a la vista de filtrar
+ */
 goBack(){
   this.router.navigate(["drinks/filter/"])
 }
-
+/**
+ * Funcion que dice si hay drinks con el filtro seleccionado
+ * @returns boolean true o false
+ */
 has_any(){
   if(this.drinksA.length==0){
     return false

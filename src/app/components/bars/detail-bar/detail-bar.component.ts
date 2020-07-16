@@ -25,11 +25,17 @@ export class DetailBarComponent implements OnInit {
 
   constructor(private svc: BarService, private route: Router, 
     private routeSV: ActivatedRoute, private zoneService: ZoneService) { }
-
+/**
+ * 
+ * Inicializa el componente
+ */
   ngOnInit() {
     this.getBar();
   }
-
+/**
+ * Añade al array de las stars la cantidad de estrellas que tiene en manera de booleanos
+ * 
+ */
   getStars(){
     var i;
     var aux: boolean;
@@ -45,7 +51,10 @@ export class DetailBarComponent implements OnInit {
     console.log(this.stars)
     this.loading = false;
   }
-
+/**
+ * Trae el bar de la base de datos
+ * 
+ */
   getBar(){
     const id = this.routeSV.snapshot.paramMap.get('id');
     this.svc.getBar(id).subscribe( (b:any) => {
@@ -55,7 +64,10 @@ export class DetailBarComponent implements OnInit {
       this.getZone(this.bar.zone);
     })
   }
-
+/**
+ * Trae la zona en la cual esta el bar
+ * @param {string} id_zone id de la zona del bar
+ */
   getZone(id_zone){
     
     this.zoneService.getZone(id_zone).subscribe((res:any) => {
@@ -69,6 +81,10 @@ export class DetailBarComponent implements OnInit {
       this.sidebar = $event;
     }
   }
+/**
+ * Regresa a la vista anterior
+ * 
+ */
   goBack(){
     this.route.navigate(["bars/"])
   }

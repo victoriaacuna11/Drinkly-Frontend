@@ -24,6 +24,10 @@ export class FilterParentComponent implements OnInit {
 
   constructor(private ing_service:IngredientService,private router:Router,private cat_service:CategoriesService) { }
 
+/**
+ * Inicializa el componente
+ * 
+ */
   ngOnInit() {
 
 //A CADA CHILD SE LE TIENE QUE PASAR EL ARREGLO CON LA CATEGORIA QUE NECESITA
@@ -35,7 +39,10 @@ export class FilterParentComponent implements OnInit {
 
     
   }
-
+/**
+ * Añade/elimina el ing que se busca por la barra de busqueda en el filtro
+ * @param {any} object ingrediente seleccionado
+ */
   search_add_to_filter(object:any){
 
     if(object.style==true){
@@ -68,7 +75,10 @@ export class FilterParentComponent implements OnInit {
 
 
   }
-
+/**
+ * Añade/elimina el ing seleccionado en el array de filtro (Usando los dropdowns)
+ * @param {any} object ingrediente seleccionado
+ */
   add_to_filter(object:any){
     if(object.style==true){
       this.filter.push(object)
@@ -94,7 +104,10 @@ export class FilterParentComponent implements OnInit {
 
 
   }
-
+/**
+ * Elimina el ingrediente del array de filtro 
+ * @param {any} object ingrediente deseleccionado
+ */
   ing_check_off(object:any){
     for (let x = 0; x < this.list.length; x++) {
       for (let y = 0; y < this.list[x].ing.length; y++) {
@@ -123,7 +136,9 @@ export class FilterParentComponent implements OnInit {
     console.log(this.filter)
 
   }
-  
+/**
+ * Trae los ingredientes de la base de datos
+ */
   getIngredients() {
     this.ing_service.getIngredients().subscribe((res: any) => {
       this.ingredientsA = [...res.data];
@@ -140,7 +155,10 @@ export class FilterParentComponent implements OnInit {
     });
     
   }
-
+/**
+ * Añade el campo de style para los ingretientes
+ * 
+ */
   addStyleIng(){
     this.ingredients.forEach(i=>{
       let ing={
@@ -153,7 +171,9 @@ export class FilterParentComponent implements OnInit {
       this.ing_search.push(ing)
     })
   }
-
+/**
+ * Organiza los ingredientes siguiendo la estructura para separarlos por categoria
+ */
   organizeIngredients(){
 
     for (let x = 0; x < this.categories.length; x++) {
@@ -181,7 +201,10 @@ export class FilterParentComponent implements OnInit {
     }
     console.log(this.list)
   }
-
+/**
+ * Checkea si la categoria tiene ingredientes en ella
+ * @return booleanso true o false
+ */
   ingExist(item:any){
     if(item.length!=0){
       return true
@@ -189,7 +212,9 @@ export class FilterParentComponent implements OnInit {
       false
     }
   }
-
+/**
+ * Navegamos a la vista de mostar filtro con los ing en el arreglo de filter
+ */
   filter_drink(){
     //transformamos en una variable
 
@@ -210,7 +235,10 @@ export class FilterParentComponent implements OnInit {
       );
     }
   }
-
+/**
+ * Abre la categoria seleccionaday cierra las demas
+ * @param {any} item categoria
+ */
   openCategory(item:any){
     for (let index = 0; index < this.list.length; index++) { 
       if(item.category==this.list[index].category){
@@ -224,6 +252,10 @@ export class FilterParentComponent implements OnInit {
       } 
     }
   }
+/**
+ * Muestra el componente de mostrar los ingredientes seleccionados
+ * @returns boolean true o false
+ */
   show_ing(){
     if(this.filter.length!=0){
       return true
@@ -237,7 +269,9 @@ export class FilterParentComponent implements OnInit {
       this.sidebar = $event;
     }
   }
-
+/**
+ * @ignore
+ */
   is_search(object:any){
 
     let aux=object.toLowerCase()
@@ -251,7 +285,9 @@ export class FilterParentComponent implements OnInit {
 
 
   }
-
+/**
+ * Funcion que actualiza los ingredientes mostrados en la busqueda por nombre
+ */
   search_ing(){
 
     this.temp_i_s=[]
@@ -277,7 +313,9 @@ export class FilterParentComponent implements OnInit {
 
   }
 }
-
+/**
+ * Regresa a la vista anterior
+ */
 goBack(){
   this.router.navigate(['drinks/'])
 }

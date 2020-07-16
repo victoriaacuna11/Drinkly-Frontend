@@ -29,16 +29,28 @@ export class DrinksListComponent implements OnInit {
               private data: SharedService, 
               private auth_svc:AuthService, 
               private user_s:UserService) { }
-
+/**
+ * Inicializa el componente
+ * 
+ */
   ngOnInit() {
     this.data.currentMsg.subscribe(m => this.filterPost = m)
     this.getDrinks();
   }
-
+  /**
+ * 
+ * Nos lleva a la vista detallada del trago
+ * @param {string} id id del drink que se quiere ver el especifico
+ */
   detail(id){
     this.route.navigate(['drink/', id]);
   }
-
+/**
+ * 
+ * Añade el trago al array de favoritos del usuario
+ * @param {Event}  event evento para evitar que se progague la accion
+ * @param {any} drink drink que se añadira al array de favoritso del usuario
+ */
   fav(event:Event ,drink:any){
     event.stopPropagation();
     if(this.user.favorites.includes(drink)){
@@ -59,6 +71,10 @@ export class DrinksListComponent implements OnInit {
 
     console.log(this.user)
   }
+/**
+ * Checkea si el trago esta en el array de favoritos del usuario
+ * @param {string} id id del card del trago que se checkeara
+ */
   is_fav(id:any){
     if(this.user.favorites.includes(id)){
       return true
@@ -66,6 +82,10 @@ export class DrinksListComponent implements OnInit {
       return false
     }
   }
+/**
+ * Actualiza al usuario usando el servicio con los nuevos favoritos
+ * 
+ */
   updateUser(){
 
     var user: user = {
@@ -85,7 +105,10 @@ export class DrinksListComponent implements OnInit {
     this.user_s.updateUser(user).subscribe((res:any) => {
     });
   }
-
+/**
+ * 
+ * Trae al usuario de la base de datos
+ */
   getProfile(){
     this.auth_svc.getProfile().subscribe(
       (profile:any)=>{
@@ -102,7 +125,10 @@ export class DrinksListComponent implements OnInit {
 
     
   }
-
+/**
+ * Trae los tragos de la base de datos
+ * 
+ */
   getDrinks() {
     
     this.service.getDrinks().subscribe((res: any) => {
@@ -117,7 +143,10 @@ export class DrinksListComponent implements OnInit {
       
     })
   }
-
+/**
+ * Navega a la vista del filter por ingredientes
+ * 
+ */
   goToFilter(){
     this.route.navigate(['drinks/filter/']);
   }
@@ -127,6 +156,10 @@ export class DrinksListComponent implements OnInit {
       this.sidebar = $event;
     }
   }
+/**
+ * Navega al home
+ * 
+ */
   goBack(){
     //vete al home
     this.route.navigate(['']);

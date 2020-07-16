@@ -17,11 +17,19 @@ export class ListAdComponent implements OnInit {
 
   constructor(private service: AdvertisementService, private route: Router) { }
 
+/**
+ * Inicializa el componente 
+ * 
+ */
   ngOnInit() {
     this.getAds();
   }
 
-
+/**
+ * 
+ * Trae los advertisements de la base de datos
+ * 
+ */
   getAds() {
     this.service.getAds().subscribe((res: any) => {
       this.ads = [...res.data];
@@ -30,11 +38,22 @@ export class ListAdComponent implements OnInit {
     });
   }
 
+/**
+ * 
+ * @ignore
+ * 
+ */
   deleteAd(id) {
     this.service.deleteAd(id).subscribe((res) => {
       this.getAds();
     });
   }
+
+/**
+ * 
+ * Inhabilida e advertisement en la base de datos poniendo la propiedad de available en falso
+ * @param {string} id id del trago que se inhabilita
+ */
 
   inhabilitateAd(id) {
     this.updating=true;
@@ -47,6 +66,11 @@ export class ListAdComponent implements OnInit {
     });
   }
 
+/**
+ * 
+ * Habilita e advertisement en la base de datos poniendo la propiedad de available en verdader
+ * @param {string} id id del trago que se habilita
+ */
   habilitateAd(id) {
     this.updating=true;
     this.service.getAd(id).subscribe((res: any) => {
@@ -58,10 +82,20 @@ export class ListAdComponent implements OnInit {
     });
   }
 
+/**
+ * 
+ * Navega a la vista de editar advertisement
+ * @param {string} id id del trago que se quiere editar
+ */
   editAd(id) {
     this.route.navigate(["admin/ad/edit/", id]);
   }
 
+/**
+ * 
+ * Navega a la vista de crear advertisement
+ * 
+ */
   create(){
     this.route.navigate(["admin/ad/add"]);
   }
@@ -72,6 +106,11 @@ export class ListAdComponent implements OnInit {
     }
   }
 
+/**
+ * 
+ * Navega a la vista de lista de todas las schemas de la base de datos
+ * 
+ */
   goBack(){
     this.route.navigate(["admin"]);
   }

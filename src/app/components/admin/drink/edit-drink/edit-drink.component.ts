@@ -64,14 +64,20 @@ export class EditDrinkComponent implements OnInit {
       category_ing: ["", Validators.required],
     });
   }
-
+/**
+ * Inicializa el componente 
+ * 
+ */
   ngOnInit() {
     console.log('prueba')
     this.getDrink();
     this.categories_ing=this.categoryService.getCategories();
 
   }
-
+/**
+ * Trae el drink de la base de datos 
+ * 
+ */
   getDrink() {
     
     const id = this.routeSV.snapshot.paramMap.get("id");
@@ -144,14 +150,21 @@ export class EditDrinkComponent implements OnInit {
       });
     });
   }
-
+/**
+ * Añade un campo al form de ingredientes
+ * @param {string} ing ingrediente ligado al campo  
+ * 
+ */
   addIngGroupWithValue(ing) {
     return this._builder.group({
       ingredients: [ing, Validators.required]
     })
   }
 
-
+/**
+ * Trae los ingredientes de la base de datos
+ * 
+ */
   getIngredients() {
     this.ing_service.getIngredients().subscribe((res: any) => {
       this.ingredient_arr = [...res.data];
@@ -159,7 +172,10 @@ export class EditDrinkComponent implements OnInit {
       
     });
   }
-
+/**
+ * @ignore
+ * 
+ */
   getSelect(object: any) {
     var is_in = false;
 
@@ -182,7 +198,10 @@ export class EditDrinkComponent implements OnInit {
 
     console.log(this.drink_ingredients);
   }
-
+/**
+ * @ignore
+ * 
+ */
   ingSelector(object: any) {
     var is_in = false;
 
@@ -194,7 +213,10 @@ export class EditDrinkComponent implements OnInit {
 
     return is_in;
   }
-
+/**
+ * Metodo que checkea los campos de los ingredientes son validos
+ * 
+ */
   is_valid(){
     let valid=true
     let aux_name=[]
@@ -210,6 +232,10 @@ export class EditDrinkComponent implements OnInit {
       return valid
   }
 
+/**
+ * Metodo que edita el trago en la base de datos usando el servicio
+ * 
+ */
   editDrink() {
 
     let ing:String[]=[];
@@ -278,7 +304,10 @@ export class EditDrinkComponent implements OnInit {
         this.main_image = null;
       });
   }
-
+/**
+ * Checkea para ver si tiene por lo menos un ingrediente
+ * 
+ */
   mas_de_uno(){
     
     if(this.drink_ingredients.length!=0){
@@ -289,7 +318,10 @@ export class EditDrinkComponent implements OnInit {
   }
 
 
-  //PENDIENTE
+/**
+ * Navega a la vista anterior
+ * 
+ */
   goBack() {
     if(this.main_image==null || this.main_image!=this.drink.pictures){
       const response = alert(
@@ -306,7 +338,10 @@ export class EditDrinkComponent implements OnInit {
     }
   }
 
-  
+/**
+ * detecta un cambio en el input de ingredientes
+ * 
+ */
   change(i){
 
     this.autocomplete=[]
@@ -340,7 +375,10 @@ export class EditDrinkComponent implements OnInit {
     }
 
   }
-
+/**
+ * actualiza el array de autocompeltar cuando se le hace click de manera de que solo salgan los ing que cumplirian el autocompletar de ingrediente
+ * 
+ */
   clicked(i){
 
     this.autocomplete=[]
@@ -368,18 +406,34 @@ export class EditDrinkComponent implements OnInit {
     }
   }
 
-  
+/**
+ * 
+ * Aañade un campo el form de ingredientes
+ */
   addIngGroup() {
     return this._builder.group({
       ingredients: ["", Validators.required],
     });
   }
+/**
+ * Inserta un ingrediente en el array que se usa en el form
+ * 
+ */
   addIng() {
     this.IngArray.push(this.addIngGroup());
   }
+/**
+ * Borra ingrediente en la posicion especificada
+ * @param {number} index posicion del ing que se borra
+ * 
+ */
   deleteIng(index) {
     this.IngArray.removeAt(index);
   }
+/**
+ * Obtiene los ingredientes de el form array
+ * @returns aray de ingredientes
+ */
   get IngArray() {
     return <FormArray>this.form.get("ingredients");
   }
@@ -397,7 +451,10 @@ export class EditDrinkComponent implements OnInit {
         this.main_image_ing = null;
       });
   }
-
+/**
+ * Submit del form de crear ingrediente 
+ * 
+ */
   addIngredient(){
     
     if(this.main_image_ing!=null){
@@ -426,7 +483,10 @@ export class EditDrinkComponent implements OnInit {
     }
     
   }
-  
+/**
+ * Se trae a todos los ingredientes nuevamente despues de crear el ingresiente
+ * 
+ */
   getIngredients2() {
     this.ingredient_arr_aux=[];
     this.ingredient_arr=[];
@@ -445,13 +505,19 @@ export class EditDrinkComponent implements OnInit {
       this.loading = false;
     });
   }
-
+/**
+ * 
+ * Muestra la vista de crear ingrediente
+ */
   addNewIng(){
     this.createIngredient=true;
     console.log(this.createIngredient);
     console.log(this.loading);
   }
-
+/**
+ * 
+ * Regresa a la vista de editar trago
+ */
   notAddIng(){
     this.createIngredient=false;
   }

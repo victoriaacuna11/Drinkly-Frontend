@@ -29,10 +29,17 @@ export class AddAdComponent implements OnInit {
       client: ["", Validators.required],
     });
   }
-
+/**
+ * Inicializa el componente 
+ * 
+ */
   ngOnInit() {
   }
-  
+
+/**
+ * Submit del form para crear un advertisement usanndo el servicio de los ads 
+ * 
+ */
   addAd() {
     
     if(this.main_image!=null){
@@ -68,7 +75,10 @@ export class AddAdComponent implements OnInit {
     }
     
   }
-
+/**
+ * Navega a la vista anterior 
+ * 
+ */
   goBack() {
     this.route.navigate(["admin/ad"]);
   }

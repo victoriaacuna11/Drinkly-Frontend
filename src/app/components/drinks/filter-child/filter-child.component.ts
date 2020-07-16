@@ -13,13 +13,20 @@ export class FilterChildComponent implements OnInit {
 
 
   constructor() { }
-
+/**
+ * Inicializa el componente
+ * 
+ */
   ngOnInit() {
 
 
     console.log(this.ingredients)
   }
 
+/**
+ * envia el ingredietne seleccionado al componente padre
+ * @param {any} object inrgediente seleccionado
+ */
   select(object:any){
 
     this.add.emit(object)

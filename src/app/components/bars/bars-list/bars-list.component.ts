@@ -25,7 +25,10 @@ export class BarsListComponent implements OnInit {
 
   constructor(private service: BarService, private zoneService: ZoneService, private route: Router,
      private data: SharedService) { }
-
+/**
+ * 
+ * Inicializa el componente
+ */
   ngOnInit() {
     this.data.currentMsg.subscribe(m => this.filterPost = m)
     this.getZones();
@@ -91,7 +94,10 @@ export class BarsListComponent implements OnInit {
     //vete a home
     this.route.navigate([""])
   }
-
+/**
+ * Añade las estrellas a los cards de los bares
+ * 
+ */
   getStars(){
     let aux_stars=[]
 

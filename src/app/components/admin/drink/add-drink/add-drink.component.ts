@@ -67,27 +67,49 @@ export class AddDrinkComponent implements OnInit {
       category_ing: ["", Validators.required],
     });
   }
-
+/**
+ * Inicializa el componente
+ * 
+ */
   ngOnInit() {
     this.getIngredients();
     this.categories_ing=this.categoryService.getCategories();
   }
-
+/**
+ * 
+ * Añade un campo para añadir ingredientes en el form
+ */
   addIngGroup() {
     return this._builder.group({
       ingredients: ["", Validators.required],
     });
   }
+/**
+ * Inserta un ingrediente en el array que se usa en el form
+ * 
+ */
   addIng() {
     this.IngArray.push(this.addIngGroup());
   }
+/**
+ * Borra ingrediente en la posicion especificada
+ * @param {number} index posicion del ing que se borra
+ * 
+ */
   deleteIng(index) {
     this.IngArray.removeAt(index);
   }
+/**
+ * Obtiene los ingredientes de el form array
+ * @returns aray de ingredientes
+ */
   get IngArray() {
     return <FormArray>this.form.get("ingredients");
   }
-
+/**
+ * @ignore
+ * 
+ */
   getSelect(object: any) {
     var is_in = false;
 
@@ -124,7 +146,10 @@ export class AddDrinkComponent implements OnInit {
   uploadEnRes(event) {
     this.main_image = event.thumbnail;
   }
-
+/**
+ * Trae los ingredientes de la base de datos y los inserta en los multiples atributoa
+ * 
+ */
   getIngredients() {
     this.ingredient_arr=[];
     this.ingredient_arr_aux=[];
@@ -153,14 +178,20 @@ export class AddDrinkComponent implements OnInit {
   }
 
 
-
+/**
+ * @ignore
+ * 
+ */
   filter(val:string): String[] {
     
     return this.autocomplete.filter(option =>
       option.toLocaleLowerCase().indexOf(val.toLowerCase())===0
       )
   }
-
+/**
+ * Metodo que checkea los campos de los ingredientes son validos
+ * 
+ */
   is_valid(){
     let valid=true
     let aux_name=[]
@@ -177,7 +208,10 @@ export class AddDrinkComponent implements OnInit {
   }
 
   
-
+/**
+ * Metodo que añade el trago en la base de datos usando el servicio
+ * 
+ */
   addDrink() {
     // console.log(this.selectedFile);
     if(this.main_image!=null){
@@ -234,7 +268,10 @@ export class AddDrinkComponent implements OnInit {
       );
     }
   }
-
+/**
+ * Checkea que se haya puesot mas de un ingrediente en el form
+ * 
+ */
   mas_de_uno(){
     
     if(this.drink_ingredients.length!=0){
@@ -243,7 +280,10 @@ export class AddDrinkComponent implements OnInit {
       return true
     }
   }
-
+/**
+ * Navega a la vista anterior
+ * 
+ */
   goBack() {
     this.route.navigate(["admin/drink"]);
   }
@@ -254,7 +294,10 @@ export class AddDrinkComponent implements OnInit {
     }
   }
 
-  
+/**
+ * 
+ * Capta los cambios en los inputs de ingredientes
+ */
   change(i){
 
     this.autocomplete=[]
@@ -288,7 +331,10 @@ export class AddDrinkComponent implements OnInit {
     }
 
   }
-
+/**
+ * actualiza el array de autocompeltar cuando se le hace click de manera de que solo salgan los ing que cumplirian el autocompletar de ingrediente
+ * 
+ */
   clicked(i){
 
     this.autocomplete=[]
@@ -328,7 +374,10 @@ export class AddDrinkComponent implements OnInit {
         this.main_image_ing = null;
       });
   }
-
+/**
+ * 
+ * Añade in ingrediente en la base de datos usando el form
+ */
   addIngredient(){
     
     if(this.main_image_ing!=null){
@@ -358,11 +407,17 @@ export class AddDrinkComponent implements OnInit {
     }
 
   }
-
+/**
+ * 
+ * Muestra el form de crear un nuevo ingrediente 
+ */
   addNewIng(){
     this.createIngredient=true;
   }
-
+/**
+ * Regresa a la vista de añadir ingrediente
+ * 
+ */
   notAddIng(){
     this.createIngredient=false;
   }

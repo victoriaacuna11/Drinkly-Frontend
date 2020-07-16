@@ -16,11 +16,17 @@ export class ListDrinkComponent implements OnInit {
   updating:Boolean=false;
 
   constructor(private service: DrinkService, private route: Router) {}
-
+/**
+ * Inicializa el componente 
+ * 
+ */
   ngOnInit() {
     this.getDrinks();
   }
-
+/**
+ * Trae los drinks de la base de datos 
+ * 
+ */
   getDrinks() {
     this.service.getDrinks().subscribe((res: any) => {
       this.drinks = [...res.data];
@@ -29,13 +35,20 @@ export class ListDrinkComponent implements OnInit {
       console.log(this.drinks)
     });
   }
-
+/**
+ * @ignore 
+ * 
+ */
   deleteDrink(id) {
     this.service.deleteDrink(id).subscribe((res) => {
       this.getDrinks();
     });
   }
-
+/**
+ * 
+ * Inhabilita el drink en la base de datos poniendo la propiedad de available en falso
+ * @param {string} id id del trago que se habilita
+ */
   inhabilitateDrink(id) {
     this.updating=true;
     this.service.getDrink(id).subscribe((res: any) => {
@@ -46,7 +59,11 @@ export class ListDrinkComponent implements OnInit {
       });
     });
   }
-
+/**
+ * 
+ * Habilita el drink en la base de datos poniendo la propiedad de available en verdadero
+ * @param {string} id id del trago que se inhabilita
+ */
   habilitateDrink(id) {
     this.updating=true;
     this.service.getDrink(id).subscribe((res: any) => {
@@ -57,12 +74,18 @@ export class ListDrinkComponent implements OnInit {
       });
     });
   }
-
+/**
+ * Navega a la vista de editar un trago
+ * @param {string} id id del trago que se quiere editar
+ */
   editDrink(id) {
     
     this.route.navigate(["admin/drink/edit/", id]);
   }
-
+/**
+ * Navega a la vista de crear trago
+ * 
+ */
   create(){
     this.route.navigate(["admin/drink/add"]);
   }
@@ -72,7 +95,10 @@ export class ListDrinkComponent implements OnInit {
       this.sidebar = $event;
     }
   }
-
+/**
+ * Navega a la de la lista de schemas
+ * 
+ */
   goBack(){
     this.route.navigate(["admin"]);
   }
