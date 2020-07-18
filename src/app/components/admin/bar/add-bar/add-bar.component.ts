@@ -327,10 +327,11 @@ export class AddBarComponent implements OnInit {
   }
 
   /**
-   * 
-   * @param $event 
+   * Muestra/Oculta el sidebar
+   * @param {any} $event - Evento que ocurre al hacer click para mostrar/ocultar el menú
+   * @returns {void}
    */
-  getMessage($event){
+  getMessage($event:any):void{
     if(screen.width>640){
       this.sidebar = $event;
     }
