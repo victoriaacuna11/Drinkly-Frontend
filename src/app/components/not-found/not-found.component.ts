@@ -14,7 +14,12 @@ export class NotFoundComponent implements OnInit {
   ngOnInit() {
   }
 
-  getMessage($event){
+    /**
+   * Setea el atributo local que mueve el contenido cuando sale el sidebar
+   * @param {any} $event El evento que es pasado cuando el ícono del sidebar es clickeado
+   * @returns {void} 
+   */
+  getMessage($event:any):void{
     if(screen.width>640){
       this.sidebar = $event;
     }

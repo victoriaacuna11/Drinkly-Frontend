@@ -6,6 +6,10 @@ import { Injectable } from "@angular/core";
 export class AdminAuthGuard implements CanActivate {
   constructor(private auth_svc: AuthService, private router: Router) {}
 
+  /**
+   * Guard que restringe acceso a una ruta si el usuario logueado no es administrador
+   * @returns {boolean} true si es admin, false si no
+   */
   async canActivate() {
 
     if(this.auth_svc.loggedIn()){

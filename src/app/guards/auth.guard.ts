@@ -6,7 +6,11 @@ import { Injectable } from "@angular/core";
 export class AuthGuard implements CanActivate {
   constructor(private auth_svc: AuthService, private router: Router) {}
 
-  canActivate() {
+  /**
+   * Guard que restringe acceso a una ruta si no hay un usuario logueado
+   * @returns {boolean} true si está logueado y false si no 
+   */
+  canActivate(): boolean {
     if (this.auth_svc.loggedIn()) {
       return true;
     } else {

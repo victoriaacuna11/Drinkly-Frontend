@@ -45,10 +45,16 @@ export class EditUserComponent implements OnInit {
     });
   }
 
+  /**
+   * Inicializa al componente, trayendose la información del usuario
+   */
   ngOnInit() {
     this.getUser();
   }
 
+  /**
+   * Se trae la información del usuario a través de su id
+   */
   getUser() {
     const id = this.routeSV.snapshot.paramMap.get("id");
     this.service.getUser(id).subscribe((res: any) => {
@@ -68,6 +74,10 @@ export class EditUserComponent implements OnInit {
   //   this.selectedFile = event.target.files[0];
   // }
 
+/**
+ * emplea el método del servicio para actualizar la info que el usuario cambió. Si todo sale bien, te actualiza y lleva al perfil,
+ * si hay un error te lo avisa y no actualiza
+ */
   editUser() {
     var user: user = {
       f_name: this.form.value.f_name,
@@ -107,6 +117,10 @@ export class EditUserComponent implements OnInit {
     } 
   }
 
+  /**
+   * Una vez verificada la constraseña vieja, 
+   * recibe la nueva, la encripta, la cambia en la base de datos y te desloguea
+   */
   editUserPassword(){
     const salt = bcrypt.genSaltSync(10);
     var user: user = {
@@ -132,14 +146,24 @@ export class EditUserComponent implements OnInit {
 
   }
 
+  /**
+   * Navega al perfil
+   */
   goBack() {
     this.route.navigate(["profile"]);
   }
 
+  /**
+   * Muestra los inputs para cambiar la contraseña
+   */
   changeP(){
     this.changingP = !this.changingP;
   }
 
+  /**
+   * Verifica que se haya ingresado la contraseña vieja para permitir hacer la nueva. Si no es correcta te muestra el error,
+   * si todo está bien llama al método que realmente hace el cambio
+   */
   async doChangeP(){
     let x = await this.auth_svc.getPassword().toPromise();
     console.log("yuju " + x);
@@ -156,7 +180,12 @@ export class EditUserComponent implements OnInit {
     }
   }
 
-  getMessage($event){
+  /**
+   * Setea el atributo local que mueve el contenido cuando sale el sidebar
+   * @param {any} $event El evento que es pasado cuando el ícono del sidebar es clickeado
+   * @returns {void} 
+   */
+  getMessage($event: any): void{
     if(screen.width>640){
       this.sidebar = $event;
     }

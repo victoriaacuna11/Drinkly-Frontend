@@ -57,6 +57,10 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {}
 
+  /**
+   * Toma los datos del form validado y emplea el método para registrar un nuevo usuario en la base de datos.
+   * Si todo sale bien lo registra y lo lleva directo al perfil, si no te muestra el error
+   */
   onSubmit() {
     let date = new Date(this.x).toLocaleString(undefined, this.options);
     let vari = date.split("/");
@@ -101,7 +105,12 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  getMessage($event){
+  /**
+   * Setea el atributo local que mueve el contenido cuando sale el sidebar
+   * @param {any} $event El evento que es pasado cuando el ícono del sidebar es clickeado
+   * @returns {void} 
+   */
+  getMessage($event: any): void{
     if(screen.width>640){
       this.sidebar = $event;
     }

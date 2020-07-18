@@ -28,6 +28,10 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {}
 
+  /**
+   * Emplea los métodos del servicio para autenticar al usuario que quiere ingresar a la página, 
+   * navega al perfil si todo sale bien con el token de la sesión, o muestra el error si algo sale mal
+   */
   onSubmit() {
     console.log(this.form.value.user_name);
 
@@ -60,7 +64,12 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  getMessage($event){
+    /**
+   * Setea el atributo local que mueve el contenido cuando sale el sidebar
+   * @param {any} $event El evento que es pasado cuando el ícono del sidebar es clickeado
+   * @returns {void} 
+   */
+  getMessage($event:any):void{
     if(screen.width>640){
       this.sidebar = $event;
     }

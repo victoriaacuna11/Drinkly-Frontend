@@ -35,7 +35,12 @@ export class BarsListComponent implements OnInit {
     
   }
 
-  getZone(id){
+  /**
+   * Regresa el nombre de la zona del bar
+   * @param {string} id El id de cada bar en el ngFor
+   * @returns {string} La zona
+   */
+  getZone(id:string):string{
     let name = '';
     let found = false;
     let i=0;
@@ -50,16 +55,30 @@ export class BarsListComponent implements OnInit {
  
    }
 
-   detail(id){
+   /**
+    * Navega a la ruta de bar detallado, llevándose el id del mismo
+    * @param {string} id el id del bar clickeado
+    * @returns {void}
+    */
+   detail(id:string):void{
     this.route.navigate(['bar/', id]);
   }
 
-  getMessage($event){
+  /**
+   * Setea el atributo local que mueve el contenido cuando sale el sidebar
+   * @param {any} $event El evento que es pasado cuando el ícono del sidebar es clickeado
+   * @returns {void} 
+   */
+  getMessage($event:any):void{
     if(screen.width>640){
       this.sidebar = $event;
     }
   }
 
+  /**
+   * Trae los bares de la base de datos para mostrarlos en la lista
+   * @returns {void}
+   */
   getBars(){
     this.service.getBars().subscribe((res:any) => {
       this.bars=[...res.data];
@@ -75,6 +94,10 @@ export class BarsListComponent implements OnInit {
     })
   }
 
+    /**
+   * Trae las zonas de la base de datos para mostrarlas en la lista
+   * @returns {void}
+   */
   getZones(){
     this.zoneService.getZones().subscribe((res:any) => {
       this.zones = [...res.data];
@@ -82,7 +105,12 @@ export class BarsListComponent implements OnInit {
     })
   }
 
-  receiveFilt($event){
+  /**
+   * Muestra las opciones para filtrar por zona o por nombre dependiendo del evento del botón
+   * @param {any} $event El evento que es pasado cuando el botón de "filtrar por" es clickeado
+   * @returns {void}   
+   */
+  receiveFilt($event:any):void{
     console.log("en la lista: " + $event)
     if($event==="zonas"){
       this.defaultFilt = true;
@@ -90,10 +118,15 @@ export class BarsListComponent implements OnInit {
       this.defaultFilt = false;
   }
 
+  /**
+   * Navega al home
+   * @returns {void}
+   */
   goBack(){
     //vete a home
     this.route.navigate([""])
   }
+  
 /**
  * Añade las estrellas a los cards de los bares
  * 

@@ -42,18 +42,27 @@ export class ProfileComponent implements OnInit {
 
   constructor(private router: Router, private auth_svc: AuthService, private service: DrinkService, private user_sv:UserService ) {}
 
+  /**
+   * Inicializa al componente, elige el quote a mostrar y se trae al usuario
+   */
   ngOnInit() {
     this.chooseQuote();
     this.userLoading = true;
     this.getProfile();
   }
 
+  /**
+   * Borra los datos de local storage y navega al login, terminando tu sesión
+   */
   getOut() {
     this.auth_svc.logout();
     console.log("Cerraste sesión");
     this.router.navigateByUrl("/login");
   }
 
+  /**
+   * Se trae los datos del usuario de la base de datos
+   */
   getProfile() {
     this.auth_svc.getProfile().subscribe(
       (profile:any) => {
@@ -68,16 +77,28 @@ export class ProfileComponent implements OnInit {
     );
   }
 
-  goEdit(id){
+  /**
+   * Navega a la ruta de editar perfil con el id del usuario para mostrar su información
+   * @param {string} id el id del usuario logueado
+   */
+  goEdit(id: string){
     this.router.navigate(['edit-user', id]);
   }
 
-  getMessage($event){
+  /**
+   * Setea el atributo local que mueve el contenido cuando sale el sidebar
+   * @param {any} $event El evento que es pasado cuando el ícono del sidebar es clickeado
+   * @returns {void} 
+   */
+  getMessage($event: any): void{
     if(screen.width>640){
       this.sidebar = $event;
     }
   }
 
+  /**
+   * Se trae los tragos y llena el atributo local con los favoritos del usuario para mostrarlos
+   */
   getDrinks() {
     
     this.service.getDrinks().subscribe((res: any) => {
@@ -94,7 +115,11 @@ export class ProfileComponent implements OnInit {
     })
   }
 
-  detail(id){
+  /**
+   * Te lleva a la receta del trago con el id
+   * @param {string} id el id del trago
+   */
+  detail(id: string){
     this.router.navigate(['drink/', id]);
   }
 
@@ -145,16 +170,25 @@ export class ProfileComponent implements OnInit {
     });
   }
 
+  /**
+   * Elige un quote aleatorio para mostrar
+   */
   chooseQuote(){
     this.randomQuote = this.quotes[Math.floor(Math.random() * this.quotes.length)];
     console.log(this.randomQuote);
   }
 
 
+  /**
+   * Oculta o muestra los tragos favoritos del usuario en la vista para móvil
+   */
   showFavorites(){
     this.favorites=!this.favorites;
   }
 
+  /**
+   * Navega a la lista de tragos
+   */
   goDrinks(){
     this.router.navigate(["drinks"]);
   }
