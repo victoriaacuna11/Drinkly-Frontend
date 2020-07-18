@@ -10,17 +10,34 @@ import { Router } from '@angular/router';
 })
 export class ListBarComponent implements OnInit {
   
+  /**
+   * Loader (maneja si la información ya se trajo o no de la DB)
+   */
   loading: Boolean = true;
+  /**
+   * Boolean que se encarga de informar si existe información que se está o no enviando a la DB.
+   */
   updating:Boolean=false;
+  /**
+   * Bares que se encuentran en la DB.
+   */
   bars: Bar[];
+  /**
+   * Boolean que maneja el responsive del sidebar.
+   */
   sidebar: Boolean;
+
   constructor(private service: BarService, private route: Router) { }
 
   ngOnInit() {
     this.getBars();
   }
 
-  getBars(){
+  /**
+   * Trae los bares que se encuentran en la DB.
+   * @returns {void}
+   */
+  getBars():void{
     this.service.getBars().subscribe((res:any) => {
       this.bars= [... res.data];
       this.loading=false;
@@ -28,7 +45,12 @@ export class ListBarComponent implements OnInit {
     })
   }
 
-  isAssociated(associate: Boolean){
+  /**
+   * Muestra en pantalla si el bar es socio o no.
+   * @param {Boolean} associate - boolean del bar que indica si está o no asociado.
+   * @returns {String}
+   */
+  isAssociated(associate: Boolean):String{
     if(associate){
       return 'Socio';
     } else {
@@ -36,7 +58,12 @@ export class ListBarComponent implements OnInit {
     }
   }
 
-  inhabilitate(bar: Bar){
+  /**
+   * Inhabilita/Habilita un bar.
+   * @param {Bar} bar -Bar que se va a deshabilitar.
+   * @returns {void}
+   */
+  inhabilitate(bar: Bar): void {
     this.updating=true;
     let newBar: Bar = bar;
     newBar.available=!bar.available;
@@ -45,17 +72,29 @@ export class ListBarComponent implements OnInit {
     })
   }
 
+  /**
+   * @ignore
+   */
   delete(id){
     this.service.deleteBar(id).subscribe(res => {
       this.getBars();
     })
   }
 
-  edit(id){
+  /**
+   * Navega a la ruta donde se puede editar un bar específico.
+   * @param {any} id - id del bar que se editará.
+   * @returns {void}
+   */
+  edit(id:any): void{
     this.route.navigate(['admin/bar/edit/', id]);
   }
 
-  create(){
+  /**
+   * Navega a la ruta donde se puede crear un bar.
+   * @returns {void}
+   */
+  create(): void{
     this.route.navigate(["admin/bar/add"]);
   }
 
@@ -65,7 +104,11 @@ export class ListBarComponent implements OnInit {
     }
   }
 
-  goBack(){
+  /**
+   * Navega al home de admin.
+   * @returns {void}
+   */
+  goBack():void{
     this.route.navigate(["admin"]);
   }
 

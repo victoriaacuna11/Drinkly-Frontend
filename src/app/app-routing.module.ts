@@ -37,7 +37,6 @@ import {EditZoneComponent} from './components/admin/zone/edit-zone/edit-zone.com
 import {ListZoneComponent} from './components/admin/zone/list-zone/list-zone.component';
 import {ListGameComponent} from './components/admin/game/list-game/list-game.component';
 import {EditGameComponent} from './components/admin/game/edit-game/edit-game.component';
-import {AddGameComponent} from './components/admin/game/add-game/add-game.component';
 import { ShowFilterComponent } from './components/drinks/show-filter/show-filter.component';
 import { ListAdComponent } from './components/admin/ad/list-ad/list-ad.component';
 import { AddAdComponent } from './components/admin/ad/add-ad/add-ad.component';
@@ -190,11 +189,6 @@ const routes: Routes = [
   {
     path: "admin/game",
     component: ListGameComponent,
-    canActivate: [AdminAuthGuard]
-  },
-  {
-    path: "admin/game/add",
-    component: AddGameComponent,
     canActivate: [AdminAuthGuard]
   },
   {

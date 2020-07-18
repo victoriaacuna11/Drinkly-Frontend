@@ -266,14 +266,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="17"
-                            class="link-to-prism">src/app/components/drinks/filter-child/filter-child.component.ts:17</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="20"
+                            class="link-to-prism">src/app/components/drinks/filter-child/filter-child.component.ts:20</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Inicializa el componente</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -305,14 +307,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="23"
-                            class="link-to-prism">src/app/components/drinks/filter-child/filter-child.component.ts:23</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="30"
+                            class="link-to-prism">src/app/components/drinks/filter-child/filter-child.component.ts:30</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>envia el ingredietne seleccionado al componente padre</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -322,6 +326,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -336,6 +341,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>inrgediente seleccionado</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -374,13 +383,20 @@ export class FilterChildComponent implements OnInit {
 
 
   constructor() { }
-
+/**
+ * Inicializa el componente
+ * 
+ */
   ngOnInit() {
 
 
     console.log(this.ingredients)
   }
 
+/**
+ * envia el ingredietne seleccionado al componente padre
+ * @param {any} object inrgediente seleccionado
+ */
   select(object:any){
 
     this.add.emit(object)

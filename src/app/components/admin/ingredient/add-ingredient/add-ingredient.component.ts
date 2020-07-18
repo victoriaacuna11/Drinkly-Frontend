@@ -13,11 +13,33 @@ import { AngularFireStorage } from "@angular/fire/storage";
 })
 export class AddIngredientComponent implements OnInit {
 
+  /**
+   * @ignore
+   */
   selectedFile: File = null;
+  /**
+   * Categorías de los ingredientes.
+   */
   categories: String[] = null;
+  /** Formulario para la creación del ingrediente.
+   * @type {FormGroup}
+   */
   form: FormGroup;
+  /**
+   * Guarda la imagen del ingrediente.
+   * @type {String}
+   * @default {null}
+   */
   main_image: String=null;
+  /**
+   * Maneja el responsive del sidebar.
+   * @type {Boolean}
+   */
   sidebar: Boolean;
+  /**
+   * Indica si se está enviando la información a la DB para crear el bar.
+   * @type {Boolean}
+   */
   updating:Boolean=false;
   
   constructor(
@@ -37,8 +59,11 @@ export class AddIngredientComponent implements OnInit {
     this.categories=this.categoryService.getCategories();
   }
 
-
-  addIngredient() {
+  /**
+   * Verifica el formulario y añade el ingrediente a la DB.
+   * @returns {void}
+   */
+  addIngredient():void {
     if(this.main_image!=null){
       this.updating=true;
       const ingredient: ingredient = {
@@ -60,15 +85,29 @@ export class AddIngredientComponent implements OnInit {
     
   }
 
-  goBack() {
+  /**
+   * Navega a la lista de ingredientes.
+   * @returns {void}
+   */
+  goBack():void {
     this.route.navigate(["admin/ingredient"]);
   }
 
-  uploadEnRes(event) {
+  /**
+   * Le permite al usuario subir una imagen desde un archivo de su coputadora.
+   * @param {any} event - evento donde el usuario selecciona la imagen.
+   * @returns {void}
+   */
+  uploadEnRes(event:any):void {
     this.main_image = event.thumbnail;
   }
 
-  changeImage(url) {
+  /**
+   * Elimina la iamgen de firebase y le permite al usuario subir otra.
+   * @param {any} url - link de la imagen guarda en firebase.
+   * @returns {any}
+   */
+  changeImage(url:any):any {
     return this.storage.storage
       .refFromURL(url)
       .delete()

@@ -14,15 +14,53 @@ import { AngularFireStorage } from "@angular/fire/storage";
 })
 export class AddBarComponent implements OnInit {
 
-  // mainImage: File = null;
+  /** Formulario para la creación del bar.
+   * @type {FormGroup}
+   */
   form: FormGroup;
+  /**
+   * Bar que se va a crear.
+   * @type {Bar}
+   */
   bar: Bar;
+  /**
+   * Zonas disponibles.
+   * @type {zone}
+   */
   zones: zone[];
+  /**
+   * Loader (indica si la data ya se trajo o no de la DB)
+   * @type {Boolean}
+   * @default {true}
+   */
   loading: Boolean = true;
+  /**
+   * Vector de las fotos del bar.
+   * @type  {String[]}
+   * @default {["null"]}
+   */
   photo: String[] = ["null"];
+  /**
+   * Guarda la imagen principal del bar.
+   * @type {String}
+   * @default {null}
+   */
   main_image: String = null;
+  /**
+   * Guarda los teléfonos del bar que serán enviados.
+   * @type {String[]}
+   * @default {[]}
+   */
   phone: String[] = [];
+  /**
+   * Maneja el responsive del sidebar.
+   * @type {Boolean}
+   */
   sidebar: Boolean;
+  /**
+   * Indica si se está enviando la información a la DB para crear el bar.
+   * @type {Boolean}
+   */
   updating:Boolean=false;
 
   constructor(
@@ -72,11 +110,21 @@ export class AddBarComponent implements OnInit {
     this.getZones();
   }
 
-  uploadEnRes(event) {
+  /**
+   * Le permite al usuario subir una imagen desde un archivo de su coputadora.
+   * @param {any} event - evento donde el usuario selecciona la imagen.
+   * @returns {void}
+   */
+  uploadEnRes(event:any) : void {
     this.main_image = event.thumbnail;
   }
 
-  changeImage(url) {
+  /**
+   * Elimina la iamgen de firebase y le permite al usuario subir otra.
+   * @param {any} url - link de la imagen guarda en firebase.
+   * @returns {any}
+   */
+  changeImage(url:any): any {
     return this.storage.storage
       .refFromURL(url)
       .delete()
@@ -85,14 +133,26 @@ export class AddBarComponent implements OnInit {
       });
   }
 
-  uploadPhoto(event, index) {
+  /**
+   * Le permite al usuario subir una foto para las varias que puede tener asociado el bar.
+   * @param {any} event -evento donde el usuario selecciona la imagen.
+   * @param {number} index -índice del vector que guarda las distintas fotos del bar.
+   * @returns {void}
+   */
+  uploadPhoto(event:any, index:number): void {
     const newURL = event.thumbnail;
     this.photo.push(newURL);
     this.photo.splice(index, 1);
     console.log(this.photo);
   }
 
-  deletePhoto(url, index) {
+  /**
+   * Le permite al usuario eliminar una foto y cambiarla por otra.
+   * @param {any} url -url de la imagen guardada.
+   * @param {number} index -índice del vector que guarda las distintas fotos del bar.
+   * @returns {void}
+   */
+  deletePhoto(url:any, index:number): void {
     if (this.photo.length == 1 && this.photo[0] != "null") {
       this.storage.storage
         .refFromURL(url)
@@ -117,19 +177,21 @@ export class AddBarComponent implements OnInit {
     }
   }
 
-  addPhoneGroup() {
+  /**
+   * Crea el form group para los datos del nuevo teléfono.
+   * @returns {any}
+   */
+  addPhoneGroup(): any {
     return this._builder.group({
       phone: ["", Validators.required],
     });
   }
 
-  // addPhotoGroup() {
-  //   return this._builder.group({
-  //     url: [null]
-  //   })
-  // }
-
-  addMenuGroup() {
+  /**
+   * Crea el form group para los datos del nuevo trago del menú.
+   * @returns {any}
+   */
+  addMenuGroup(): any {
     return this._builder.group({
       name: ["", Validators.required],
       price: [
@@ -140,6 +202,7 @@ export class AddBarComponent implements OnInit {
     });
   }
 
+  
   get PhoneArray() {
     return <FormArray>this.form.get("phone");
   }
@@ -148,33 +211,54 @@ export class AddBarComponent implements OnInit {
     return <FormArray>this.form.get("menu");
   }
 
-  // get PhotoArray() {
-  //   return <FormArray>this.form.get('photo');
-  // }
-
-  addPhone() {
+  
+  /**
+   * Le permite al usuario añadir un nuevo teléfono.
+   * @returns {void}
+   */
+  addPhone(): void {
     this.PhoneArray.push(this.addPhoneGroup());
   }
 
-  deletePhone(index) {
+  /**
+   * Le permite al usuario eliminar uno de los teléfonos añadidos.
+   * @param {number} index -index del vector de teléfonos.
+   * @returns {void}
+   */
+  deletePhone(index:number):void {
     this.PhoneArray.removeAt(index);
   }
 
-  addMenu() {
+  /**
+   * Le permite al usuario añadir un nuevo trago al menú.
+   * @returns {void}
+   */
+  addMenu(): void {
     this.MenuArray.push(this.addMenuGroup());
   }
 
-  deleteMenu(index) {
+  /**
+   * Le permite al usuario eliminar uno de los tragos añadidos al menú.
+   * @param {number} index -index del vector de teléfonos.
+   * @returns {void}
+   */
+  deleteMenu(index):void {
     this.MenuArray.removeAt(index);
   }
 
-  addPhoto() {
+  /**
+   * Le permite al usuario añadir una foto.
+   * @returns {void}
+   */
+  addPhoto():void {
     this.photo.push("null");
-    console.log(this.photo);
-    console.log(this.photo.length);
   }
 
-  getZones() {
+  /**
+   * Trae las zonas de la DB.
+   * @returns {void}
+   */
+  getZones(): void {
     this.zoneService.getZones().subscribe((res: any) => {
       this.zones = [...res.data];
       console.log(this.zones);
@@ -182,7 +266,11 @@ export class AddBarComponent implements OnInit {
     });
   }
 
-  createBar() {
+  /**
+   * Verifica el formulario y crea el bar en la DB.
+   * @returns {void}
+   */
+  createBar():void {
     let photos: String[] = [];
     this.photo.forEach((item) => {
       if (item != "null") {
@@ -230,10 +318,18 @@ export class AddBarComponent implements OnInit {
     }
   }
 
-  goBack() {
+  /**
+   * Navega a la lista de bares.
+   * @returns {void}
+   */
+  goBack(): void {
     this.route.navigate(["admin/bar"]);
   }
 
+  /**
+   * 
+   * @param $event 
+   */
   getMessage($event){
     if(screen.width>640){
       this.sidebar = $event;

@@ -6,6 +6,9 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./required-field.component.scss']
 })
 export class RequiredFieldComponent implements OnInit {
+  /**
+   * Lo que mostrará cuando se detecte que el campo no pasó las validaciones.
+   */
   @Input() text: String;
   constructor() { }
 

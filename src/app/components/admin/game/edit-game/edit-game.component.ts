@@ -12,11 +12,29 @@ import { AngularFireStorage } from '@angular/fire/storage';
 })
 export class EditGameComponent implements OnInit {
 
+  /**
+   * Juego que se va a edita.
+   */
   game: game;
+  /**
+   * Loader (maneja si la información ya se trajo o no de la DB)
+   */
   loading: Boolean=true;
+  /**
+   * Formulario de los datos del bar a editar.
+   */
   form: FormGroup;
+  /**
+   * link de la imagen principal del juego.
+   */
   main_image: String= null;
+  /**
+   * Boolean que maneja el responsive del sidebar.
+   */
   sidebar: Boolean;
+  /**
+   * Boolean que se encarga de informar si existe información que se está o no enviando a la DB.
+   */
   updating:Boolean=false;
   
   constructor(
@@ -35,17 +53,27 @@ export class EditGameComponent implements OnInit {
     });
   }
 
+
   ngOnInit() {
     this.getGame();
   }
 
-  addRuleGroup() {
+  /**
+   * Crea el form group para la nueva regla.
+   * @returns {any}
+   */
+  addRuleGroup():any {
     return this._builder.group({
       rule: ["", Validators.required],
     });
   }
-
-  addRuleGroupWithValue(rule) {
+  
+  /** 
+   * Crea el form group con los datos de las reglas
+   * @param {String} rule - Regla
+   * @returns {any}
+   */
+  addRuleGroupWithValue(rule:String):any {
     return this._builder.group({
       rule: [rule, Validators.required]
     })
@@ -55,19 +83,38 @@ export class EditGameComponent implements OnInit {
     return <FormArray>this.form.get("rules");
   }
 
+  /**
+   * Le permite al usuario añadir una nueva regla.
+   * @returns {void}
+   */
   addRule() {
     this.RulesArray.push(this.addRuleGroup());
   }
 
-  deleteRule(index) {
+  /**
+   * Le permite al usuario eliminar una de las reglas añadidas.
+   * @param {number} index -index del vector de reglas.
+   * @returns {void}
+   */
+  deleteRule(index:number) {
     this.RulesArray.removeAt(index);
   }
 
-  uploadEnRes(event) {
+  /**
+   * Le permite al usuario subir una imagen desde un archivo de su coputadora.
+   * @param {any} event - evento donde el usuario selecciona la imagen.
+   * @returns {void}
+   */
+  uploadEnRes(event:any):void {
     this.main_image = event.thumbnail;
   }
 
-  changeImage(url) {
+  /**
+   * Elimina la iamgen de firebase y le permite al usuario subir otra.
+   * @param {any} url - link de la imagen guarda en firebase.
+   * @returns {any}
+   */
+  changeImage(url:any):any {
     return this.storage.storage
       .refFromURL(url)
       .delete()
@@ -76,7 +123,11 @@ export class EditGameComponent implements OnInit {
       });
   }
 
-  getGame(){
+  /**
+   * Trae el juego que se quiere editar de la DB.
+   * @returns {void}
+   */
+  getGame():void{
     const id = this.routeSV.snapshot.paramMap.get("id");
     this.service.getGame(id).subscribe( (res:any) => {
       this.game = {...res.data};
@@ -96,7 +147,11 @@ export class EditGameComponent implements OnInit {
     })
   }
 
-  update(){
+  /**
+   * Verifica el formulario y edita el juego en la DB.
+   * @returns {void}
+   */
+  update():void{
 
     if(this.main_image!=null){
       this.updating=true;
@@ -122,7 +177,12 @@ export class EditGameComponent implements OnInit {
     }
   
   }
-  goBack() {
+
+  /**
+   * Navega a la lista de juegos.
+   * @returns {void}
+   */
+  goBack():void{
     if(this.main_image==null || this.main_image!=this.game.photo){
       const response = alert(
         "Ya borró la imagen que previamente tenía como ícono. Por favor seleccione una nueva y guarde el cambio."

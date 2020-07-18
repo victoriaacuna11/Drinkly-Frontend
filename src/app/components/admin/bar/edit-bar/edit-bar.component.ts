@@ -15,15 +15,46 @@ import { item } from 'src/app/models/itemMenu';
 })
 export class EditBarComponent implements OnInit {
 
+  /**
+   * Bar que se va a edita.
+   * @type {Bar}
+   */
   bar: Bar= new Bar();
+  /**
+   * Loader (maneja si la información ya se trajo o no de la DB)
+   */
   loading:Boolean=true;
+  /**
+   * Formulario de los datos del bar a editar.
+   */
   form: FormGroup;
+  /**
+   * Vector que guarda los links de las fotos del bar.
+   */
   pictures: String[]=[];
+  /**
+   * link de la imagen principal del bar.
+   */
   main_image: String;
+  /**
+   * Vector de los teléfonos del bar.
+   */
   phone: String[] = [];
+  /**
+   * Vector de las zonas disponibles.
+   */
   zones: zone[];
+  /**
+   * id del bar a editar.
+   */
   id: String;
+  /**
+   * Boolean que maneja el responsive del sidebar.
+   */
   sidebar: Boolean;
+  /**
+   * Boolean que se encarga de informar si existe información que se está o no enviando a la DB.
+   */
   updating:Boolean=false;
 
   constructor(private service: BarService, private zoneService:ZoneService, private route: Router, 
@@ -47,10 +78,14 @@ export class EditBarComponent implements OnInit {
 
   ngOnInit() {
     this.getZones();
-    
   }
 
-  getBar(id){
+  /**
+   * Se trae de la DB la información del bar que se quiere editar.
+   * @param {String} id - id del bar a editar.
+   * @returns {void}
+   */
+  getBar(id: String): void{
     this.service.getBar(id).subscribe((res:any) => {
       
       this.bar={...res.data};
@@ -105,7 +140,11 @@ export class EditBarComponent implements OnInit {
     })
   }
 
-  getZones(){
+  /**
+   * Se trae de la DB las zonas.
+   * @returns {void}
+   */
+  getZones(): void{
     const id = this.routeSV.snapshot.paramMap.get('id');
     this.zoneService.getZones().subscribe((res:any) => {
       this.zones=[...res.data];
@@ -117,27 +156,48 @@ export class EditBarComponent implements OnInit {
     return <FormArray>this.form.get('phone');
   }
 
-  addPhone() {
+  /**
+   * Le permite al usuario añadir un nuevo teléfono.
+   * @returns {void}
+   */
+  addPhone():void {
     this.PhoneArray.push(this.addPhoneGroup());
   }
 
-  addPhoneGroupWithValue(phone) {
+  /**
+   * Crea el form group para los datos de los teléfonos del bar que tiene asociados.
+   * @param {any} phone - el valor del teléfono del bar.
+   * @returns {any}
+   */
+  addPhoneGroupWithValue(phone:any):any {
     return this._builder.group({
       phone: [phone, Validators.required]
     })
   }
-
-  addPhoneGroup() {
+  /**
+   * Crea el form group para los datos del nuevo teléfono.
+   * @returns {any}
+   */
+  addPhoneGroup():any {
     return this._builder.group({
       phone: ['', Validators.required]
     })
   }
 
-  deletePhone(index) {
+  /**
+   * Le permite al usuario eliminar uno de los teléfonos añadidos.
+   * @param {number} index -index del vector de teléfonos.
+   * @returns {void}
+   */
+  deletePhone(index): void {
     this.PhoneArray.removeAt(index);
   }
 
-  addMenuGroup() {
+  /**
+   * Crea el form group para los datos del nuevo trago del menú.
+   * @returns {any}
+   */
+  addMenuGroup():any {
     return this._builder.group({
       name: ['', Validators.required],
       price: ['0,00', Validators.compose([Validators.required, Validators.min(0.01)])],
@@ -145,7 +205,14 @@ export class EditBarComponent implements OnInit {
     })
   }
 
-  addMenuGroupWithValue(name, price, description) {
+  /**
+   * Crea el form group con los datos de los tragos del menú.
+   * @param {String} name - Nombre del trago.
+   * @param {number} price - Precio del trago.
+   * @param {String} description -Descripción del trago.
+   * @returns {any}
+   */
+  addMenuGroupWithValue(name: String, price:number, description:String): any {
     return this._builder.group({
       name: [name, Validators.required],
       price: [price, Validators.compose([Validators.required, Validators.min(0.01)])],
@@ -157,36 +224,53 @@ export class EditBarComponent implements OnInit {
     return <FormArray>this.form.get('menu');
   }
 
-  addMenu() {
+  /**
+   * Le permite al usuario añadir un nuevo trago al menú.
+   * @returns {void}
+   */
+  addMenu():void {
     this.MenuArray.push(this.addMenuGroup());
   }
 
-  deleteMenu(index) {
+  /**
+   * Le permite al usuario eliminar uno de los tragos añadidos al menú.
+   * @param {number} index -index del vector de teléfonos.
+   * @returns {void}
+   */
+  deleteMenu(index): void {
     this.MenuArray.removeAt(index);
   }
 
-
-  changeImage(url) {
+  /**
+   * Elimina la iamgen de firebase y le permite al usuario subir otra.
+   * @param {any} url - link de la imagen guarda en firebase.
+   * @returns {any}
+   */
+  changeImage(url:any):any {
     return this.storage.storage.refFromURL(url).delete().then(res => {
       this.main_image = null;
     })
   }
 
-  addPhoto() {
+  /**
+   * Le permite al usuario añadir una foto.
+   * @returns {void}
+   */
+  addPhoto(): void {
     this.pictures.push('null');
-    console.log(this.bar.pictures);
-    // console.log(this.pictures);
-    // console.log(this.pictures.length);
   }
 
-  deletePhoto(url, index) {
-    console.log('delete');
+  /**
+   * Le permite al usuario eliminar una foto y cambiarla por otra.
+   * @param {any} url -url de la imagen guardada.
+   * @param {number} index -índice del vector que guarda las distintas fotos del bar.
+   * @returns {void}
+   */
+  deletePhoto(url:any, index:number):void {
+
     if (this.pictures.length == 1 && this.pictures[0] != 'null') {
-      console.log('1');
       this.storage.storage.refFromURL(url).delete().then(res => {
         this.pictures[index] = 'null';
-        console.log(this.pictures);
-
       });
     } else {
 
@@ -207,7 +291,11 @@ export class EditBarComponent implements OnInit {
 
   }
 
- update() {
+  /**
+   * Verifica el formulario y edita el bar en la DB.
+   * @returns {void}
+   */
+ update():void {
     let photos: String[] = [];
     this.pictures.forEach(item => {
       if (item != 'null') {
@@ -260,11 +348,14 @@ export class EditBarComponent implements OnInit {
     }
   }
 
-  goBack(){
+  /**
+   * Navega a la lista de bares.
+   * @returns {void}
+   */
+  goBack():void{
     console.log(this.pictures);
     console.log(this.bar.pictures);
-    
-    
+  
     if(this.main_image==null || this.main_image!=this.bar.main_image){
       const response = alert(
         "Ya borró la ícono anterior. Por favor, tiene que subir uno y guardar el cambio."
@@ -297,11 +388,22 @@ export class EditBarComponent implements OnInit {
     
   }
 
-  uploadEnRes(event) {
+  /**
+   * Le permite al usuario subir una imagen desde un archivo de su coputadora.
+   * @param {any} event - evento donde el usuario selecciona la imagen.
+   * @returns {void}
+   */
+  uploadEnRes(event:any): void {
     this.main_image = event.thumbnail;
   }
 
-  uploadPhoto(event, index) {
+  /**
+   * Le permite al usuario subir una foto para las varias que puede tener asociado el bar.
+   * @param {any} event -evento donde el usuario selecciona la imagen.
+   * @param {number} index -índice del vector que guarda las distintas fotos del bar.
+   * @returns {void}
+   */
+  uploadPhoto(event:any, index:number):void {
 
     const newURL = event.thumbnail;
     this.pictures.push(newURL);
