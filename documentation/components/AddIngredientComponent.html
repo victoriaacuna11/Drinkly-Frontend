@@ -432,21 +432,23 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>getMessage($event)</code>
+<code>getMessage($event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="119"
-                            class="link-to-prism">src/app/components/admin/ingredient/add-ingredient/add-ingredient.component.ts:119</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="124"
+                            class="link-to-prism">src/app/components/admin/ingredient/add-ingredient/add-ingredient.component.ts:124</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Muestra/Oculta el sidebar</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -454,18 +456,29 @@
                             <thead>
                                 <tr>
                                     <td>Name</td>
+                                    <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>$event</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
 
                                     <td>
                                         No
                                     </td>
 
 
+                                    <td>
+                                        <ul>
+<li>Evento que ocurre al hacer click para mostrar/ocultar el menú</li>
+</ul>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -957,7 +970,12 @@ export class AddIngredientComponent implements OnInit {
       });
   }
 
-  getMessage($event){
+  /**
+   * Muestra/Oculta el sidebar
+   * @param {any} $event - Evento que ocurre al hacer click para mostrar/ocultar el menú
+   * @returns {void}
+   */
+  getMessage($event:any):void{
     if(screen.width&gt;640){
       this.sidebar &#x3D; $event;
     }

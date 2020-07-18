@@ -396,21 +396,23 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>getMessage($event)</code>
+<code>getMessage($event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="92"
-                            class="link-to-prism">src/app/components/admin/zone/list-zone/list-zone.component.ts:92</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="97"
+                            class="link-to-prism">src/app/components/admin/zone/list-zone/list-zone.component.ts:97</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Muestra/Oculta el sidebar</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -418,18 +420,29 @@
                             <thead>
                                 <tr>
                                     <td>Name</td>
+                                    <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>$event</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
 
                                     <td>
                                         No
                                     </td>
 
 
+                                    <td>
+                                        <ul>
+<li>Evento que ocurre al hacer click para mostrar/ocultar el menú</li>
+</ul>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -515,8 +528,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="102"
-                            class="link-to-prism">src/app/components/admin/zone/list-zone/list-zone.component.ts:102</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="107"
+                            class="link-to-prism">src/app/components/admin/zone/list-zone/list-zone.component.ts:107</a></div>
                 </td>
             </tr>
 
@@ -902,7 +915,12 @@ export class ListZoneComponent implements OnInit {
     this.route.navigate([&quot;admin/zone/add&quot;]);
   }
 
-  getMessage($event){
+  /**
+   * Muestra/Oculta el sidebar
+   * @param {any} $event - Evento que ocurre al hacer click para mostrar/ocultar el menú
+   * @returns {void}
+   */
+  getMessage($event:any):void{
     if(screen.width&gt;640){
       this.sidebar &#x3D; $event;
     }
