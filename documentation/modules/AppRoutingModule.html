@@ -109,7 +109,6 @@ import {EditZoneComponent} from &#x27;./components/admin/zone/edit-zone/edit-zon
 import {ListZoneComponent} from &#x27;./components/admin/zone/list-zone/list-zone.component&#x27;;
 import {ListGameComponent} from &#x27;./components/admin/game/list-game/list-game.component&#x27;;
 import {EditGameComponent} from &#x27;./components/admin/game/edit-game/edit-game.component&#x27;;
-import {AddGameComponent} from &#x27;./components/admin/game/add-game/add-game.component&#x27;;
 import { ShowFilterComponent } from &#x27;./components/drinks/show-filter/show-filter.component&#x27;;
 import { ListAdComponent } from &#x27;./components/admin/ad/list-ad/list-ad.component&#x27;;
 import { AddAdComponent } from &#x27;./components/admin/ad/add-ad/add-ad.component&#x27;;
@@ -262,11 +261,6 @@ const routes: Routes &#x3D; [
   {
     path: &quot;admin/game&quot;,
     component: ListGameComponent,
-    canActivate: [AdminAuthGuard]
-  },
-  {
-    path: &quot;admin/game/add&quot;,
-    component: AddGameComponent,
     canActivate: [AdminAuthGuard]
   },
   {
