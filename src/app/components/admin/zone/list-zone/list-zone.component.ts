@@ -9,10 +9,26 @@ import { Router } from '@angular/router';
   styleUrls: ['./list-zone.component.scss']
 })
 export class ListZoneComponent implements OnInit {
+  /**
+   * Lista de las zonas que están en la DB
+   */
   zones: zone[];
+  /**
+   * Loader (indica si la data ya se trajo o no de la DB)
+   * @type {Boolean}
+   * @default {true}
+   */
   loading:Boolean=true;
+  /**
+   * Maneja el responsive del sidebar.
+   * @type {Boolean}
+   */
   sidebar: Boolean;
+  /**
+   * Boolean que se encarga de informar si existe información que se está o no enviando a la DB.
+   */
   updating:Boolean=false;
+
   constructor(
     private service: ZoneService,
     private route: Router,
@@ -22,7 +38,11 @@ export class ListZoneComponent implements OnInit {
     this.getZones();
   }
 
-  getZones(){
+  /**
+   * Se trae las zonas de la DB
+   * @returns {void}
+   */
+  getZones():void{
     this.service.getZones().subscribe((res:any) => {
       this.zones=[...res.data];
       this.loading=false;
@@ -30,13 +50,20 @@ export class ListZoneComponent implements OnInit {
     })
   }
 
-  delete(id) {
+  /**
+   * @ignore
+   */
+  delete(id:String):void {
     this.service.deleteZone(id).subscribe((res) => {
       this.getZones();
     });
   }
-
-  inhabilitate(zone:zone) {
+  /** 
+   * Habilita/Deshabilita una zona
+   * @param {zone} zone - zona a deshabilitar/habilitar.
+   * @returns {void} 
+   */
+  inhabilitate(zone:zone):void {
     this.updating=true;
     let newZone = zone;
     newZone.available=!zone.available;
@@ -45,12 +72,20 @@ export class ListZoneComponent implements OnInit {
     })
   }
 
-
-  edit(id) {
+  /**
+   * Navega a la ruta donde se puede editar una zona específica.
+   * @param {String} id - id de la zona que se editará.
+   * @returns {void}
+   */
+  edit(id:String):void {
     this.route.navigate(["admin/zone/edit/", id]);
   }
 
-  create(){
+  /**
+   * Navega a la ruta donde se puede crear una zona.
+   * @returns {void}
+   */
+  create():void{
     this.route.navigate(["admin/zone/add"]);
   }
 
@@ -60,7 +95,11 @@ export class ListZoneComponent implements OnInit {
     }
   }
 
-  goBack(){
+  /**
+   * Navega al home de admin.
+   * @returns {void}
+   */
+  goBack():void{
     this.route.navigate(["admin"]);
   }
 

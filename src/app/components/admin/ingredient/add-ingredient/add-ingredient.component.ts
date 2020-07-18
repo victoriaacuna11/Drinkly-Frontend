@@ -37,7 +37,7 @@ export class AddIngredientComponent implements OnInit {
    */
   sidebar: Boolean;
   /**
-   * Indica si se está enviando la información a la DB para crear el bar.
+   * Indica si se está enviando la información a la DB para crear el ingrediente.
    * @type {Boolean}
    */
   updating:Boolean=false;
