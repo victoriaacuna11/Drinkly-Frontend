@@ -77,10 +77,10 @@ export class ListIngredientComponent implements OnInit {
 
   /**
    * Habilita el ingredinte
-   * @param {number} id - id del ingrediente que se abilita.
+   * @param {String} id - id del ingrediente que se abilita.
    * @returns {void}
    */
-  habilitateIngredient(id:number):void {
+  habilitateIngredient(id:String):void {
     this.updating=true;
     this.service.getIngredient(id).subscribe((res: any) => {
       this.ingredientSelected = { ...res.data };

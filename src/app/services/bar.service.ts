@@ -51,10 +51,10 @@ export class BarService {
 
   /**
    * Hace el request a la api para actualizar el bar.
-   * @param {Bar} bar - bar con los datos actualizados.
+   * @param {any} bar - bar con los datos actualizados.
    * @returns {any}
    */
-  updateBar(bar:Bar):any{
+  updateBar(bar:any):any{
     console.log(bar);
     return this._http.put(this._url+'update/'+bar._id, bar);
   }
