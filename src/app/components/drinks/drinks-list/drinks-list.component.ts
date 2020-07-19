@@ -13,15 +13,31 @@ import { UserService} from 'src/app/services/user.service'
   styleUrls: ['./drinks-list.component.scss']
 })
 export class DrinksListComponent implements OnInit {
-
+/**
+ * Lista de los drinks traidos de la base de datos
+ */
   drinks: drink[]=[];
+  /**
+ * atributo que indica cuando se hayan traido todas las cosas de la base de datos
+ */
   loading: Boolean = true;
+  /**
+ * atributo que muestra y esconde el sidebar
+ */
   sidebar: Boolean;
+  /**
+ *  Lista de los drinks disponibles traidos de la base de datos
+ */
   drinksA: drink[] =[];
-  aux;
+  /**
+ *  @ignore
+ */
   filterPost: string = "qlqsa";
+  /**
+ * usuario que se encuentra loggeado en el momento
+ */
   user:user;
-  fav_img="Favorite"
+  
   
 
   constructor(private service: DrinkService, 

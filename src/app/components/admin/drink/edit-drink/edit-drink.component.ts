@@ -15,26 +15,78 @@ import { CategoriesService } from 'src/app/services/categories.service';
   styleUrls: ["./edit-drink.component.scss"],
 })
 export class EditDrinkComponent implements OnInit {
+  /**
+   * file para usar el servicio de firestorage
+   */
   selectedFile: File = null;
+  /**
+   * lista de las categorias para un usuario
+   */
   categories: String[] = ["User", "Bartender"];
+  /**
+   * lista de las categorias de los ingredientes
+   */
   categories_ing: String[] = [];
+  /**
+   * lista de los ingredientes disponibles traidos de la base de datos
+   */
   ingredient_arr: ingredient[] = [];
+  /**
+   * lista de los ingredientes traidos de la base de datos
+   */
   ingredient_arr_aux: ingredient[] = [];
+  /**
+   * ingredientes del trago que se editara
+   */
   drink_ingredients = [];
+  /**
+   * form que su usara para editar un trago
+   */
   form: FormGroup;
+  /**
+   * form que se utilizara para crear un ingrediente
+   */
   form_ing:FormGroup;
+  /**
+   * drink a ser editado
+   */
   drink: drink;
+  /**
+   * @ignore
+   */
   drink2: drink;
+  /**
+   * atributo que indica si se han cargado los datos traidos de la base de datos
+   */
   loading: boolean = true;
+  /**
+   * imagen del trago a editar
+   */
   main_image: String;
+  /**
+   * imagen del ingrediente a crear
+   */
   main_image_ing: String;
+  /**
+   *  lista de ingredientes que cumplen con lo que se escribe en el input de seleccionar ingrediente
+   */
   autocomplete:String[]=[];
-
+/**
+   * atributo que esconde y muestra la vista de crear un ingrediente
+   */
   createIngredient:Boolean=false;
+  /**
+   * atributo que nos indica si un drink se esta updating
+   */
   updating:Boolean=false;
+  /**
+   * atributo que nos indica si un drink se esta creando
+   */
   updatingIng:Boolean=false;
 
-
+/**
+   *  atributo que muestra y esconde la navbar
+   */
   sidebar:Boolean;
   
 
