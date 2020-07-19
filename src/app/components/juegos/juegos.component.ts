@@ -14,22 +14,55 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 })
 export class JuegosComponent implements OnInit {
 
+  /**
+   * Form para wue el usuario ingresa la cantidad de jugadores en trident
+   */
   form: FormGroup; 
+  /**
+   * Descripcion e instrucciones de los juegos
+   */
   juegos: game[]; 
+  /**
+   * Indica si ya se trajo la informacion de la base de datos
+   */
   loading: boolean = true;
+  /**
+   * Indica si el sidebar esta abierto
+   */
   sidebar: Boolean;
+  /**
+   * Indica si la seccion trident esta abierta
+   */
   tridentisOpen: boolean = false;
+  /**
+   * Indica si la seccion cultura chupistica esta abierta
+   */
   chupisisOpen: boolean = false;
+  /**
+   * Indica si la seccion de verdad o reto esta abierta
+   */
   vorisOpen: boolean = false;
 
+  /**
+   * Contiene los temas disponibles en cultura chupistica
+   */
   temas: string[]=['Peliculas','Famosos','Series','Animales','Marcas de Carro','Equipos de Futbol','Capitales','Marcas de Zapato'];
+  /**
+   * Contiene los retos disponibles en verdad o reto
+   */
   retos: string[]=['Escribele a tu ex y dile que lo extrañas', 
                   'Llama a tu crush',
                   'Monta una foto fea en tus stories'];
+  /**
+   * Contiene las verdades disponibles en verdad o reto
+   */
   verdades: string[]=['Has cometido un delito?', 
                     'Te gusta alguien en esta mesa?', 
                     'Que es lo mas cochino que has hecho en tu vida?',
                     'A quien matarias de tus exes?'];
+  /**
+   * Contiene las fichas de trident y un boolean que indica si ya salio en la partida
+   */
   fichas: Ficha[] = [
     {ficha:'0_0', listo:false},
     {ficha:'0_1', listo:false}, 
@@ -60,17 +93,50 @@ export class JuegosComponent implements OnInit {
     {ficha:'5_6', listo:false},
     {ficha:'6_6', listo:false},
   ]
+  /**
+   * Indica el ficha que salio en el random
+   */
   ficha: String;
+  /**
+   * Contiene el numero de jugadores que introdujo el usuario
+   */
   jugadores: number;
+  /**
+   * Indica el numero del jugaro que salio en el random para ser el trident
+   */
   trident: number;
+  /**
+   * Indica el numero de fichas que se han sacado para acabar el juego cuando las 28 hayan salido
+   */
   jugadas: number=0;
+  /**
+   * Indica si se esta jugando trident
+   */
   jugandoTrident: boolean=false;
+  /**
+   * Indica si se eligio el trident para empezar el juego
+   */
   jugando: boolean = false;
+  /**
+   * Indica si se acabo una partida
+   */
   juegoAcabado: boolean=false;
+  /**
+   * Indica si introdujeron jugadores para activar el boton de elegir trident
+   */
   hayJugadores: boolean = true;
 
+  /**
+   * Indica el tema que salio en el random para cultura chupistica
+   */
   elegido: string;
+  /**
+   * Indica el verdad que salio en el random
+   */
   verdad: string;
+  /**
+   * Indica el reto que salio en el random
+   */
   reto: string;
 
   constructor(private service: GameService, private route: Router, private _builder: FormBuilder, ) { 

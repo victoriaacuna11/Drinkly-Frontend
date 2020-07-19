@@ -19,12 +19,26 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class RecipeComponent implements OnInit {
   
+  /**
+   * Indica si ya se trajo la informacion de la base de datos
+   */
   loading: Boolean = true;
+  /**
+   * Indica si el sidebar esta abierto
+   */
   sidebar: Boolean;
+  /**
+   * Guarda la receta que se esta mostrando
+   */
   receta: drink;
+  /**
+   * Guarda los ingredientes de la receta que se muestra
+   */
   ingredients: ingredient[];
+  /**
+   * Guarda el usuario que esta viendo la receta
+   */
   user:user;
-  ingreAux: ingredient;
 
 
   constructor(private service: DrinkService, 

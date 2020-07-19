@@ -16,20 +16,57 @@ import { AdvertisementService } from 'src/app/services/advertisement.service';
 })
 export class HomeComponent implements OnInit {
 
+  /**
+   * Bares de la base de datos
+   */
   bars: Bar[];
+  /**
+   * Zonas de la base de datos
+   */
   zones:zone[];
+  /**
+   * Bares disponibles en la pagina
+   */
   barsAv: Bar[]=[];
+  /**
+   * Bares que se eligieron para mostrar en el home
+   */
   showBars: Bar[]=[];
+  /**
+   * Define la cantidad de estrellas que se mostraran amarillas segun el rating del bar
+   */
   stars: Boolean[]=[];
+  /**
+   * Tragos de la base de datos
+   */
   drinks: drink[]=[];
+  /**
+   * Tragos disponibles en la pagina
+   */
   drinksA: drink[] =[];  
+  /**
+   * Tragos que se eligieron para mostrar en el home
+   */
   showDrinks: drink[]=[];
+  /**
+   * Advertisements de la base de datos
+   */
   ads: advertisement[]=[];
+  /**
+   * Advertisements disponibles en la pagina
+   */
   adsA: advertisement[]=[];
-  eleg: number[];
+  /**
+   * Indica si se cargo todo de la base de datos
+   */
   loading: Boolean = true;
+  /**
+   * Indica si el sidebar esta abierto
+   */
   sidebar: Boolean;
-  aux;
+  /**
+ *  @ignore
+ */
   filterPost: string = "qlqsa";
 
   constructor(private service: DrinkService, private route: Router, private serviceB: BarService, private zoneService: ZoneService,

@@ -12,13 +12,37 @@ import { DrinkService } from 'src/app/services/drink.service';
 })
 export class AdminHomeComponent implements OnInit {
   //CAMBIAR A TRUE
+  /**
+   * Indica si se sigue trayendo informacion de la base de datos
+   */
   loading: Boolean = false;
+  /**
+   * Indica si el sidebar esta abierto o no
+   */
   sidebar: Boolean;
+  /**
+   * Donde se guarda la cantidad de usuarios activos en la pagina
+   */
   users:number;
+  /**
+   * Donde guarda la cantidad de recetas activas de la pagina
+   */
   recipes:number;
+  /**
+   * Donde se guarda la cantidad de bares activos de la pagina
+   */
   bars:number;
+  /**
+   * Indica si ya se obtuvo la cantidad de bares
+   */
   loadingBars:Boolean=true;
+  /**
+   * Indica si ya se obtuvo la cantidad de tragos
+   */
   loadingDrinks:Boolean=true;
+  /**
+   * Indica si ya se obtuvo la cantidad de usuarios
+   */
   loadingUsers:Boolean=true;
 
   constructor(private route: Router,
