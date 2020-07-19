@@ -26,6 +26,7 @@ html {
   -webkit-text-size-adjust: 100%; /* 2 */
 }
 .back_btn{
+  z-index: 20;
   position: fixed;
   bottom: 5rem;
   right: 1rem;
