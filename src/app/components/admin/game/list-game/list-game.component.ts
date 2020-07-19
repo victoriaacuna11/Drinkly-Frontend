@@ -67,10 +67,10 @@ export class ListGameComponent implements OnInit {
 
   /**
    * Navega a la ruta donde se puede editar un juego específico.
-   * @param {any} id - id del juego que se editará.
+   * @param {String} id - id del juego que se editará.
    * @returns {void}
    */
-  edit(id:any):void {
+  edit(id:String):void {
     this.route.navigate(["admin/game/edit/", id]);
   }
 

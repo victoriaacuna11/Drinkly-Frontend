@@ -265,7 +265,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>edit(id: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+<code>edit(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank">String</a>)</code>
                 </td>
             </tr>
 
@@ -298,7 +298,7 @@
                                 <tr>
                                     <td>id</td>
                                     <td>
-                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank" >String</a></code>
                                     </td>
 
                                     <td>
@@ -801,10 +801,10 @@ export class ListGameComponent implements OnInit {
 
   /**
    * Navega a la ruta donde se puede editar un juego específico.
-   * @param {any} id - id del juego que se editará.
+   * @param {String} id - id del juego que se editará.
    * @returns {void}
    */
-  edit(id:any):void {
+  edit(id:String):void {
     this.route.navigate([&quot;admin/game/edit/&quot;, id]);
   }
 

@@ -12,12 +12,34 @@ import { DrinkService } from 'src/app/services/drink.service';
 })
 export class DrinklyTeamComponent implements OnInit {
 
+  /**
+   * Maneja el responsive del sidebar.
+   * @type {Boolean}
+   */
   sidebar: Boolean;
+  /**
+   * Guarda la cantidad de usuarios disponibles en la página.
+   */
   users:number;
+  /**
+   * Guarda la cantidad de tragos disponibles en la página.
+   */
   recipes:number;
+  /**
+   * Guarda la cantidad de bares disponibles en la página.
+   */
   bars:number;
+  /**
+   * Loader de los bares.
+   */
   loadingBars:Boolean=true;
+  /**
+   * Loader de los tragos.
+   */
   loadingDrinks:Boolean=true;
+  /**
+   * Loader de los users.
+   */
   loadingUsers:Boolean=true;
 
 
@@ -35,21 +57,38 @@ export class DrinklyTeamComponent implements OnInit {
     this.getUsers();
   }
 
-  getMessage($event){
+  /**
+   * Muestra/Oculta el sidebar
+   * @param {any} $event - Evento que ocurre al hacer click para mostrar/ocultar el menú
+   * @returns {void}
+   */
+  getMessage($event:any):void{
     if(screen.width>640){
       this.sidebar = $event;
     }
   }
 
-  postBusiness(){
+  /**
+   * Navega a la publicación del negocio.
+   * @returns {void}
+   */
+  postBusiness():void{
     this.route.navigate(["post-your-business"]);
   }
 
-  goBack(){
+  /**
+   * Se regresa a la ruta previa.
+   * @returns {void}
+   */
+  goBack():void{
     this._location.back()
   }
 
-  getBars(){
+  /**
+   * Trae los bares de la DB.
+   * @returns {void}
+   */
+  getBars():void{
     this._barService.getBars().subscribe((res:any) => {
       let barAv = [];
       let bars = [...res.data];
@@ -63,7 +102,11 @@ export class DrinklyTeamComponent implements OnInit {
     } )
   }
 
-  getDrinks(){
+  /**
+   * Trae los tragos de la DB.
+   * @returns {void}
+   */
+  getDrinks():void{
     this._drinkService.getDrinks().subscribe((res:any) => {
       let available = [];
       let drinks = [...res.data];
@@ -77,7 +120,11 @@ export class DrinklyTeamComponent implements OnInit {
     } )
   }
 
-  getUsers(){
+  /**
+   * Trae los usuarios de la DB.
+   * @returns {void}
+   */
+  getUsers():void{
     this._userService.getUsers().subscribe((res:any) => {
       let available = [];
       let user = [...res.data];

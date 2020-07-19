@@ -12,11 +12,30 @@ import {Location} from '@angular/common';
 })
 export class PostBusinessComponent implements OnInit {
 
+  /**
+   * Maneja el responsive del sidebar.
+   * @type {Boolean}
+   */
   sidebar: Boolean;
+  /**
+   * Formulario para postear el negocio.
+   */
   form: FormGroup;
+  /**
+   * Usuario registrado.
+   */
   user: any;
+  /**
+   * Indica si ya se trajo o no la info de la DB.
+   */
   loading:Boolean=true;
+  /**
+   * Indica si se está o no enviando la publicación.
+   */
   sending:Boolean=false;
+  /**
+   * Indica si ya se envió la publicación.
+   */
   sent:Boolean=false;
   
   constructor(
@@ -41,22 +60,38 @@ export class PostBusinessComponent implements OnInit {
     })
   }
 
-  getMessage($event){
+  /**
+   * Muestra/Oculta el sidebar
+   * @param {any} $event - Evento que ocurre al hacer click para mostrar/ocultar el menú
+   * @returns {void}
+   */
+  getMessage($event:any):void{
     if(screen.width>640){
       this.sidebar = $event;
     }
   }
 
-  
-  goHome(){
+  /**
+   * Navega al home
+   * @returns {void}
+   */
+  goHome():void{
     this.route.navigate([""]);
   }
 
-  goBack(){
+  /**
+   * Regresa a la ruta anterior.
+   * @returns {void}
+   */
+  goBack():void{
     this._location.back()
   }
 
-  post(){
+  /**
+   * Verifica el form y publica la receta.
+   * @returns {void}
+   */
+  post():void{
     this.sending=true;
     let data = {
       name: this.form.value.name,

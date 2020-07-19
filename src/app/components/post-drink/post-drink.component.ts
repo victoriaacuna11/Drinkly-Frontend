@@ -12,11 +12,30 @@ import {Location} from '@angular/common';
 })
 export class PostDrinkComponent implements OnInit {
 
+  /**
+   * Maneja el responsive del sidebar.
+   * @type {Boolean}
+   */
   sidebar: Boolean;
+  /**
+   * Formulario para postear la receta.
+   */
   form: FormGroup;
+  /**
+   * Usuario registrado.
+   */
   user: any;
+  /**
+   * Indica si ya se trajo o no la info de la DB.
+   */
   loading:Boolean=true;
+  /**
+   * Indica si se está o no enviando la publicación.
+   */
   sending:Boolean=false;
+  /**
+   * Indica si ya se envió la publicación.
+   */
   sent:Boolean=false;
 
   constructor(
@@ -45,13 +64,22 @@ export class PostDrinkComponent implements OnInit {
     })
   }
 
-  getMessage($event){
+  /**
+   * Muestra/Oculta el sidebar
+   * @param {any} $event - Evento que ocurre al hacer click para mostrar/ocultar el menú
+   * @returns {void}
+   */
+  getMessage($event:any):void{
     if(screen.width>640){
       this.sidebar = $event;
     }
   }
 
-  addIngredientGroup() {
+  /**
+   * Crea el form group para añadir otro ingrediente.
+   * @returns {any}
+   */
+  addIngredientGroup():any {
     return this._builder.group({
       ingredient: ["", Validators.required],
     });
@@ -61,16 +89,28 @@ export class PostDrinkComponent implements OnInit {
     return <FormArray>this.form.get("ingredients");
   }
 
-  addIngredient() {
+  /**
+   * Le permite al usuario añadir otro ingrediente.
+   * @returns {void}
+   */
+  addIngredient():void {
     this.IngredientArray.push(this.addIngredientGroup());
   }
 
-  deleteIngredient(index) {
+  /**
+   * Le permite al usuario eliminar un ingrediente.
+   * @param {number} index - index del ingrediente.
+   * @returns {void}
+   */
+  deleteIngredient(index:number):void {
     this.IngredientArray.removeAt(index);
   }
 
-
-  postRecipe(){
+  /**
+   * Verifica el form y hace la publicación.
+   * @returns {void}
+   */
+  postRecipe():void{
     this.sending=true;
     console.log(this.form.value.recipe)
     let ingredients: String [] = [];
@@ -99,11 +139,19 @@ export class PostDrinkComponent implements OnInit {
     })
   }
 
-  goHome(){
+  /**
+   * Navega al home
+   * @returns {void}
+   */
+  goHome():void{
     this.route.navigate([""]);
   }
 
-  goBack(){
+  /**
+   * Regresa a la ruta anterior.
+   * @returns {void}
+   */
+  goBack():void{
     this._location.back()
   }
 

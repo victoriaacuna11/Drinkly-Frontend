@@ -83,10 +83,10 @@ export class ListBarComponent implements OnInit {
 
   /**
    * Navega a la ruta donde se puede editar un bar específico.
-   * @param {any} id - id del bar que se editará.
+   * @param {String} id - id del bar que se editará.
    * @returns {void}
    */
-  edit(id:any): void{
+  edit(id:String): void{
     this.route.navigate(['admin/bar/edit/', id]);
   }
 

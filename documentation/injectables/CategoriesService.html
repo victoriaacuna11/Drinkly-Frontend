@@ -115,7 +115,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/services/categories.service.ts:19</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/services/categories.service.ts:22</a></div>
                             </td>
                         </tr>
 
@@ -150,18 +150,25 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="22"
-                            class="link-to-prism">src/app/services/categories.service.ts:22</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="29"
+                            class="link-to-prism">src/app/services/categories.service.ts:29</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Trae las categorías de los ingredientes.</p>
+</div>
 
+                    <div>
+                    </div>
                     <div class="io-description">
-                        <b>Returns : </b>    <code>{}</code>
+                        <b>Returns : </b>    <code>String[]</code>
 
+                    </div>
+                    <div class="io-description">
+                        
                     </div>
                 </td>
             </tr>
@@ -209,10 +216,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/services/categories.service.ts:8</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/services/categories.service.ts:11</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Categorías de los ingredientes con las que trabaja la aplicación.</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -229,6 +242,9 @@
 })
 export class CategoriesService {
 
+  /**
+   * Categorías de los ingredientes con las que trabaja la aplicación.
+   */
   categories : String[] &#x3D; [
     &#x27;Amargos&#x27;,
     &#x27;Cervezas&#x27;, 
@@ -243,7 +259,11 @@ export class CategoriesService {
   ]
   constructor() { }
 
-  getCategories(){
+  /**
+   * Trae las categorías de los ingredientes.
+   * @returns {String[]}
+   */
+  getCategories(): String[]{
     return this.categories;
   }
 }
