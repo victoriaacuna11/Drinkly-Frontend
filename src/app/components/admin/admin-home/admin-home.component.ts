@@ -29,18 +29,31 @@ export class AdminHomeComponent implements OnInit {
 
   }
 
+  /**
+   * Inicializa el componente
+   */
   ngOnInit() {
     this.getBars();
     this.getDrinks();
     this.getUsers();
   }
 
+  /**
+   * Setea el atributo local que mueve el contenido cuando sale el sidebar
+   * @param {any} $event El evento que es pasado cuando el ícono del sidebar es clickeado
+   * @returns {void} 
+   */
   getMessage($event){
     if(screen.width>640){
       this.sidebar = $event;
     }
   }
 
+  /**
+     * Trae los bares de la base de datos y guarda la cantidad existente que se encuentra disponible
+     * para poder mostrarselo a l administrador
+     * @returns {void}
+     */
   getBars(){
     this._barService.getBars().subscribe((res:any) => {
       let barAv = [];
@@ -55,6 +68,11 @@ export class AdminHomeComponent implements OnInit {
     } )
   }
 
+  /**
+     * Trae los tragos de la base de datos y guarda la cantidad existente que se encuentra disponible
+     * para poder mostrarselo a l administrador
+     * @returns {void}
+     */
   getDrinks(){
     this._drinkService.getDrinks().subscribe((res:any) => {
       let available = [];
@@ -69,6 +87,11 @@ export class AdminHomeComponent implements OnInit {
     } )
   }
 
+  /**
+     * Trae los usuarios de la base de datos y guarda la cantidad existente que se encuentra disponible
+     * para poder mostrarselo a l administrador
+     * @returns {void}
+     */
   getUsers(){
     this._userService.getUsers().subscribe((res:any) => {
       let available = [];

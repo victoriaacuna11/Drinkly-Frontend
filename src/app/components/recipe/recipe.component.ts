@@ -35,23 +35,18 @@ export class RecipeComponent implements OnInit {
               private user_s:UserService,
               private auth_svc:AuthService) { }
 
+  /**
+   * Inicializa el componente
+   */
   ngOnInit() {
     this.getReceta();
   }
 
-  // getIngredients() {
-  //   var i: number;
-  //   for(i=0; i<this.receta.ingredients.length; i++){
-  //     this.service_ing.getIngredient(this.receta.ingredients[i]).subscribe( (r:any) => {
-  //       this.ingreAux = {...r.data};
-  //       this.receta.ingredients[i] = this.ingreAux.name;
-  //       console.log(this.receta.ingredients[i]);
-  //       console.log(this.load)
-  //     })
-  //   }
-  //   console.log(this.load)
-  // }
-
+  /**
+   * Obtiene el nombre de los ingredientes de la receta 
+   * @param {string} id El id del ingrediente del que se quiere obtener el nombre
+   * @returns {string} El nombre del ingrediente
+   */
   getIngredientName(id: String){
     let name = '';
     let found = false;
@@ -67,6 +62,10 @@ export class RecipeComponent implements OnInit {
     
   }
 
+  /**
+   * Obtiene los ingredientes de la base de datos
+   * @returns {void}
+   */
   getIngredients(){
     this.service_ing.getIngredients().subscribe((res:any) => {
       this.ingredients=[...res.data];
@@ -74,12 +73,21 @@ export class RecipeComponent implements OnInit {
       })
   }
 
+  /**
+   * Setea el atributo local que mueve el contenido cuando sale el sidebar
+   * @param {any} $event El evento que es pasado cuando el ícono del sidebar es clickeado
+   * @returns {void} 
+   */
   getMessage($event){
     if(screen.width>640){
       this.sidebar = $event;
     }
   }
 
+  /**
+   * Obtiene la receta de la base de datos en base al id de la ruta
+   * @returns {void}
+   */
   getReceta(){
     const id = this.rout.snapshot.paramMap.get('id');
     this.service.getDrink(id).subscribe( (r:any) => {
@@ -93,9 +101,18 @@ export class RecipeComponent implements OnInit {
     
   }
 
+  /**
+ * Navega al home
+ * 
+ */
   goBack(){
     this._location.back()
   }
+
+  /**
+ * Checkea si el trago esta en el array de favoritos del usuario
+ * @param {string} id id del card del trago que se checkeara
+ */
   is_fav(id:any){
     if(this.user.favorites.includes(id)){
       return true
@@ -103,6 +120,12 @@ export class RecipeComponent implements OnInit {
       return false
     }
   }
+
+  /**
+ * Añade el trago al array de favoritos del usuario
+ * @param {Event}  event evento para evitar que se progague la accion
+ * @param {any} drink drink que se añadira al array de favoritso del usuario
+ */
   fav(event:Event ,drink:any){
     event.stopPropagation();
     if(this.user.favorites.includes(drink)){
@@ -123,6 +146,11 @@ export class RecipeComponent implements OnInit {
 
     console.log(this.user)
   }
+
+  /**
+ * Actualiza al usuario usando el servicio con los nuevos favoritos
+ * 
+ */
   updateUser(){
 
     var user: user = {
@@ -143,6 +171,10 @@ export class RecipeComponent implements OnInit {
     });
   }
 
+  /**
+ * 
+ * Trae al usuario de la base de datos
+ */
   getProfile(){
     this.auth_svc.getProfile().subscribe(
       (profile:any)=>{

@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { game } from 'src/app/models/game';
 import { Ficha } from 'src/app/models/ficha';
 import { GameService } from 'src/app/services/game.service';
-import { Router } from '@angular/router';
+import { Router, Event } from '@angular/router';
 import { Variable } from '@angular/compiler/src/render3/r3_ast';
 import { FormGroup, FormBuilder, FormArray, Validators } from "@angular/forms";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -14,7 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 })
 export class JuegosComponent implements OnInit {
 
-  form: FormGroup;
+  form: FormGroup; 
   juegos: game[]; 
   loading: boolean = true;
   sidebar: Boolean;
@@ -79,11 +79,18 @@ export class JuegosComponent implements OnInit {
     })
   }
 
+  /**
+   * Inicializa el componente
+   */
   ngOnInit() {
     this.getGames();
   }
 
-
+  
+    /**
+     * Trae los juegos de la base de datos para mostrar las instrucciones y la descripcion
+     * @returns {void}
+     */
     getGames(){
     this.service.getGames().subscribe((g:any) => {
       this.juegos=[...g.data];
@@ -91,18 +98,40 @@ export class JuegosComponent implements OnInit {
     })
     }
 
+  /**
+   * 
+   * @param {any} $event El evento que es pasado cuando el botón de "filtrar por" es clickeado
+   * @returns {void}   
+   */
+
+    /**
+   * Elige el tema entre el array de temas para cultura chupistica
+   * @returns {void}   
+   */
   elegirTema() {
     this.elegido = this.temas[Math.floor(Math.random() * this.temas.length)]
   }
 
+    /**
+   * Elige una verdad entre el array de verdades para verdad o reto
+   * @returns {void}   
+   */
   elegirVerdad() {
     this.verdad = this.verdades[Math.floor(Math.random() * this.verdades.length)]
   }
 
+    /**
+   * Elige el reto entre el array de retos para verdad o reto
+   * @returns {void}   
+   */
   elegirReto() {
     this.reto = this.retos[Math.floor(Math.random() * this.retos.length)]
   }
 
+    /**
+   * Obtiene el numero de jugadores que introdujo el usuario y lo guarda
+   * @returns {void}   
+   */
   guardarJugadores() {
       this.jugadores = this.form.value.jug;
       console.log(this.jugadores);
@@ -118,10 +147,19 @@ export class JuegosComponent implements OnInit {
       
   }
 
+    /**
+   * Elige el numero del jugador que sera el trident a partir del numero de jugadores que introdujo el usuario para Trident
+   * @returns {void}   
+   */
   elegirTrident() {
     this.trident = Math.floor(Math.random() * (this.jugadores))+1;
   }
 
+    /**
+   * Elige una ficha entre el array de fichas y cambia su variable listo a verdadero para no tomarlo en cuenta 
+   * al sacar otra ficha en la misma partida
+   * @returns {void}   
+   */
   sacarFicha() {
     var aux: number;
     aux = Math.floor(Math.random() * this.fichas.length);
@@ -139,6 +177,11 @@ export class JuegosComponent implements OnInit {
     
   }
 
+    /**
+   * Desactiva todos los botones que se utilizan durante el juego, activa el boton para introducir jugarores, 
+   * cambia la variable listo de todas las fichas a false y define la cantidad de jugadores y numero de trident a 0
+   * @returns {void}   
+   */
   terminarPartida() {
     this.jugandoTrident = false;
     this.trident = 0;
@@ -153,6 +196,11 @@ export class JuegosComponent implements OnInit {
 
   }
 
+  /**
+   * Setea el atributo local que mueve el contenido cuando sale el sidebar
+   * @param {any} $event El evento que es pasado cuando el ícono del sidebar es clickeado
+   * @returns {void} 
+   */
   getMessage($event){
     if(screen.width>640){
       this.sidebar = $event;
