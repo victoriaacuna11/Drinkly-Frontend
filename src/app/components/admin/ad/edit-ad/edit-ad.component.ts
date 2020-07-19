@@ -10,11 +10,29 @@ import { AngularFireStorage } from '@angular/fire/storage';
   styleUrls: ['./edit-ad.component.scss']
 })
 export class EditAdComponent implements OnInit {
+  /**
+   * atributo que indica si se han cargado los datos traidos de la base de datos
+   */
   loading: Boolean = true;
+/**
+ * advertisement que se editara
+ */
   ad: advertisement;
+  /**
+   * form que se usara para la creacion del ad
+   */
   form: FormGroup;
+  /**
+   * imagen del advertisement
+   */
   main_image: String;
+/**
+   * Atributo que esconde y muestra el sidebar
+   */
   sidebar: Boolean;
+  /**
+   * atributo que indica si un elemento se esta updating
+   */
   updating:Boolean=false;
 
   constructor(

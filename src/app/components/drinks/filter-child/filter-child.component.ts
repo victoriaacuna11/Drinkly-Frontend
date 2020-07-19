@@ -7,8 +7,13 @@ import { Component, OnInit, Input, Output,EventEmitter } from '@angular/core';
 })
 export class FilterChildComponent implements OnInit {
 
-
+/**
+ * ingredientes que mostraremos en el componente
+ */
 @Input() ingredients:[]; 
+/**
+ * evento que emitimos al componente padre
+ */
 @Output() add:EventEmitter<any>= new EventEmitter<any>();
 
 

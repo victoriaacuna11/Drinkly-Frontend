@@ -9,44 +9,87 @@
     <div *ngIf="!loading">
     <div style="max-width: 90%"
     class="my-6 p-3 pb-6 mt-12 bg-cover  m-auto self-center  shadow">
-        <div class="md:flex flex-wrap self-center pt-8 px-8 sm:px-16 md:px-48">
-            <div class="drink_img"
-          style="  background-position: center;
-          background-repeat: no-repeat;
-          background-size: cover;
-          position: relative; "
-          [style.backgroundImage]="'url('+ receta.pictures +')'"
+        <div class="flex flex-wrap self-center pt-8 px-8 sm:px-16 md:px-48 ">
           
-          >
+            <div class="drink_img border-2 border-solid border-orange-400"
+                style="  background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                position: relative; "
+                [style.backgroundImage]="'url('+ receta.pictures +')'"
+                
+                >
 
-          <button (click)="fav($event, receta._id)" 
-          class="rounded-full w-12 h-12   rounded-full  opacity-75 bg-white m-2 hover:bg-orange-300 transition ease-in duration-300" >
-              <img  class="p-1" src="https://image.flaticon.com/icons/svg/1828/1828970.svg" alt="fav" *ngIf="!is_fav(receta._id)">
-              <img  class="p-1" src="https://image.flaticon.com/icons/svg/1828/1828614.svg" alt="no-fav" *ngIf="is_fav(receta._id)">
-          </button>
+                <button (click)="fav($event, receta._id)" 
+                class="rounded-full w-12 h-12   rounded-full  opacity-75 bg-white m-2 hover:bg-orange-300 transition ease-in duration-300" >
+                    <img  class="p-1" src="https://image.flaticon.com/icons/svg/1828/1828970.svg" alt="fav" *ngIf="!is_fav(receta._id)">
+                    <img  class="p-1" src="https://image.flaticon.com/icons/svg/1828/1828614.svg" alt="no-fav" *ngIf="is_fav(receta._id)">
+                </button>
 
             
-            <!-- CAMBIAR A ORANGE CON CLICK -->
           </div>
-            <div class="info pl-4 sm:pl-8 md:pl-16">
-                <div class="w-full text-3xl pt-4 sm:pt-4 sm:text-3xl md:text-5xl font-medium">{{receta.name}}</div>
-                <div class="text-normal sm:text-3xl md:text-3xl pt-4">Ingredientes</div>
-                <div class="px-4 py-4">
-                
-                    <div *ngFor="let x of receta.ingredients">
-                        <div class="font-light"> {{getIngredientName(x)}} </div>    
-                    </div>
+
+
+          <div class=" w-full content_md  flex flex-col items-center ">
+
+            <div class=" w-full content_md2  lg:w-8/12 flex flex-col items-center ">
+
+                <h1 class=" mb-6 pt-4 sm:pt-4 text-4xl md:text-5xl font-semibold text-center">{{receta.name}}</h1>
+
+                <div class="w-full   lg:w-8/12  bg-black flex flex-col items-center rounded p-4 mx-10 my-10">
+                  
+                <div class="w-full  bg-black text-white  p-6 rounded border-2 border-solid border-orange-500">
+                  <h2 class="text-medium text-3xl md:text-4xl lg:text-4xl  pb-6">Ingredientes</h2>
+                  <div *ngFor="let x of receta.ingredients " class="pb-1 ml-6">
+                    <div class="font-normal"> {{getIngredientName(x)}} </div>    
+                  </div>
                 </div>
-                
+
+              </div>
+
             </div>
+
+      </div>
+
+      
+
+           <!-- CAMBIAR A ORANGE CON CLICK 
+<div class=" w-full  lg:w-8/12 flex flex-col items-center ">
+
+            <div class=" w-full   lg:w-8/12 flex flex-col items-center ">
+
+                <h1 class=" mb-6 pt-4 sm:pt-4 text-4xl md:text-5xl font-semibold text-center">{{receta.name}}</h1>
+
+                <div class="w-full   lg:w-8/12  bg-black flex flex-col items-center rounded p-4 mx-10 my-10">
+                  
+                <div class="w-full  bg-black text-white  p-6 rounded border-2 border-solid border-orange-500">
+                  <h2 class="text-medium text-3xl md:text-4xl lg:text-4xl  pb-6">Ingredientes</h2>
+                  <div *ngFor="let x of receta.ingredients " class="pb-1 ml-6">
+                    <div class="font-normal"> {{getIngredientName(x)}} </div>    
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+      </div>
+
+            
+        -->
+
+        <div class="w-full  flex flex-col items-center  font-normal my-16">
+          <h1 class="text-3xl  lg:text-4xl text-center">"{{receta.description}}"</h1>
         </div>
-        <div class="px-8 sm:px-16 md:px-48">
-            <div class="font-light py-4">{{receta.description}}</div>
-            <div class="text-normal sm:text-3xl md:text-3xl pt-4">Receta</div>
-            <div class="font-light py-4" style="white-space: pre-line; white-space: pre-wrap;">{{receta.recipe}}</div>
+        <div class="px-4 sm:px-16 md:px-24">
+ 
+            <div class="font-medium text-3xl md:text-4xl lg:text-4xl  pt-4">Receta</div>
+            <div class="font-normal py-4 px-6" style="white-space: pre-line; white-space: pre-wrap;">{{receta.recipe}}</div>
         </div>
-        <div class="flex justify-end pt-16 px-8 md:px-32 py-4 font-light">
-            Fuente: {{receta.owner.name}}
+
+        <div class=" w-full flex justify-end  pt-24  py-12 font-light ">
+           <p class="text-white bg-orange-500 rounded-full px-4 py-2  "> Fuente: {{receta.owner.name}}</p>
+
         </div>
     </div>
     </div>

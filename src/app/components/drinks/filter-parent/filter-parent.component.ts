@@ -11,15 +11,45 @@ import { style } from '@angular/animations';
   styleUrls: ['./filter-parent.component.scss']
 })
 export class FilterParentComponent implements OnInit {
+   /**
+ * Lista de las categorias de los ingredientes
+ */
   categories;
+  /**
+ * atributo que indica si se han cargado los datos traidos de la base de datos
+ */
   loading=true
+  /**
+ * lista de los ingredientes por los que filtraremos
+ */
   filter=[];
+   /**
+ * lista de los ingredientes disponibles de la base de datos
+ */
   ingredients:ingredient[]=[];
+   /**
+ * lista de los ingredientes de la base de datos
+ */
   ingredientsA:ingredient[]=[];
+  /**
+ * lista de los ingredientes ya seleccionados en el proceso de filtrado
+ */
   ing_search=[];
+  /**
+ * lista de los ingredientes que contienen las cosas buscadas en el searchbar
+ */
   temp_i_s=[];
+  /**
+ * Lista de los ingredientes ordenados como los usaremos en el html
+ */
   list=[];
+  /**
+ * Atributo que esconde y muestra el sidebar
+ */
   sidebar: Boolean;
+  /**
+ * campo que guarda lso cambios de la busqueda de ingredientes
+ */
   search_bar=""
 
   constructor(private ing_service:IngredientService,private router:Router,private cat_service:CategoriesService) { }
