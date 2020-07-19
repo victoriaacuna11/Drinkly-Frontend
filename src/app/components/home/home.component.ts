@@ -16,25 +16,65 @@ import { AdvertisementService } from 'src/app/services/advertisement.service';
 })
 export class HomeComponent implements OnInit {
 
+  /**
+   * Bares de la base de datos
+   */
   bars: Bar[];
+  /**
+   * Zonas de la base de datos
+   */
   zones:zone[];
+  /**
+   * Bares disponibles en la pagina
+   */
   barsAv: Bar[]=[];
+  /**
+   * Bares que se eligieron para mostrar en el home
+   */
   showBars: Bar[]=[];
+  /**
+   * Define la cantidad de estrellas que se mostraran amarillas segun el rating del bar
+   */
   stars: Boolean[]=[];
+  /**
+   * Tragos de la base de datos
+   */
   drinks: drink[]=[];
+  /**
+   * Tragos disponibles en la pagina
+   */
   drinksA: drink[] =[];  
+  /**
+   * Tragos que se eligieron para mostrar en el home
+   */
   showDrinks: drink[]=[];
+  /**
+   * Advertisements de la base de datos
+   */
   ads: advertisement[]=[];
+  /**
+   * Advertisements disponibles en la pagina
+   */
   adsA: advertisement[]=[];
-  eleg: number[];
+  /**
+   * Indica si se cargo todo de la base de datos
+   */
   loading: Boolean = true;
+  /**
+   * Indica si el sidebar esta abierto
+   */
   sidebar: Boolean;
-  aux;
+  /**
+ *  @ignore
+ */
   filterPost: string = "qlqsa";
 
   constructor(private service: DrinkService, private route: Router, private serviceB: BarService, private zoneService: ZoneService,
               private serviceAd: AdvertisementService) { }
 
+  /**
+   * Inicializa el componente
+   */
   ngOnInit() {
     this.getDrinks();
     this.getZones();
@@ -42,6 +82,10 @@ export class HomeComponent implements OnInit {
   }
 
   @HostListener('window:scroll', [])
+  /**
+   * Cuando el usuario hace scroll, lo detecta y cambia el tamaño del navbar en conjunto con su contenido
+   * @returns {void}
+   */
 onWindowScroll() {
     const scrollOffset = window.pageYOffset;
 
@@ -61,12 +105,23 @@ onWindowScroll() {
     
 }
 
+  /**
+   * Setea el atributo local que mueve el contenido cuando sale el sidebar
+   * @param {any} $event El evento que es pasado cuando el ícono del sidebar es clickeado
+   * @returns {void} 
+   */
   getMessage($event){
     if(screen.width>640){
       this.sidebar = $event;
     } 
   }
 
+  /**
+   * Obtiene el rating del bar que se quiere mostrar en la ficha y se guarda en un vector de
+   * booleas para luego usar este para mostrar iconos de estrellas segun la cantidad de rating
+   * @param {Bar} bar Se pasa el Bar que se esta mostrando en la ficha de bares
+   * @returns {void} 
+   */
   getStars(bar: Bar){
     this.stars.length = 0;
     var i;
@@ -82,6 +137,10 @@ onWindowScroll() {
     }
   }
 
+  /**
+   * Se trae los advertisements de la base de datos para lego mostrarlos
+   * @returns {void}
+   */
   getAdvertisements() {
     this.serviceAd.getAds().subscribe((res:any) => {
       console.log(this.ads);
@@ -96,6 +155,11 @@ onWindowScroll() {
     })
   }
   
+  /**
+   * Trae las bebidas disponibles de la base de datos y los incluye en la variable drinksA
+   * luego llama a elegir los drinks que se van mostrar
+   * @returns {void}
+   */
   getDrinks() {
     this.service.getDrinks().subscribe((res: any) => {
       this.drinks = [...res.data];
@@ -110,6 +174,12 @@ onWindowScroll() {
     })
   }
 
+  /**
+   * Elige entre los elementos de un vector las 3 opciones que se mostraran en su seccion (bares o trahos)
+   * @param {any[]} vector Se pasa bares o bebidas disponibles
+   * @param {any[]} aux se pasa el array para guardar los bares o bebidas seleccionadas
+   * @returns {void} 
+   */
   elegir(vector = [], aux = []) {
     var num;
     for (var i = 0; i < 3; i++) {
@@ -121,6 +191,11 @@ onWindowScroll() {
     console.log(aux)
   }
 
+  /**
+   * Obtiene el nombre de la zona del bar que se quiere mostrar
+   * @param {any} id Se pasa el id de la zona del bar que se quiere mostrar
+   * @returns {string} nombre de la zona 
+   */
   getZone(id){
     let name = '';
     let found = false;
@@ -136,26 +211,53 @@ onWindowScroll() {
  
    }
 
+  /**
+   * Te dirige al detalle del bar seleccionado
+   * @param {any} id Se pasa el id del bar que se quiere ver detalle
+   * @returns {void}
+   */
   detailBar(id){
     this.route.navigate(['bar/', id]);
   }
 
+  /**
+   * Te dirige al detalle del trago seleccionado
+   * @param {any} id Se pasa el id del trago que se quiere ver detalle
+   * @returns {void}
+   */
   detailDrink(id){
     this.route.navigate(['drink/', id]);
   }
 
+  /**
+   * Te dirige a la seccion para enviar la receta de un trago
+   * @returns {void}
+   */
   addDrink(){
     this.route.navigate(['post-drink/']);
   }
 
+  /**
+   * Te dirige a la seccion para enviar tu bar a drinkly
+   * @returns {void}
+   */
   addAdvertisement(){
     this.route.navigate(["post-your-business"]);
   }
 
+  /**
+   * Te dirige al home
+   * @returns {void}
+   */
   home(){
     this.route.navigate([""]);
   }
 
+  /**
+   * Trae los bares disponibles de la base de datos y los incluye en la variable barsA
+   * luego llama a elegir los bares que se van mostrar
+   * @returns {void}
+   */
   getBars(){
     this.serviceB.getBars().subscribe((res:any) => {
       this.bars=[...res.data];
@@ -171,7 +273,10 @@ onWindowScroll() {
     })
   }
 
-
+  /**
+   * Trae las zonas disponibles de la base de datos
+   * @returns {void}
+   */
   getZones(){
     this.zoneService.getZones().subscribe((res:any) => {
       this.zones = [...res.data];

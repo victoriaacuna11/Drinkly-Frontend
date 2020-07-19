@@ -9,10 +9,26 @@ import { Router } from "@angular/router";
   styleUrls: ["./list-drink.component.scss"],
 })
 export class ListDrinkComponent implements OnInit {
+
+  /**
+   * atributo que indica si se han cargado los datos traidos de la base de datos
+   */
   loading: Boolean = true;
+  /**
+   * lista de drinks traidas de la base de datos
+   */
   drinks: drink[];
+  /**
+   * atributo que indica el drink en el cual se hara el update
+   */
   drinkSelected: drink;
+  /**
+   * atributo que muestra y esconde el sidebar 
+   */
   sidebar: Boolean;
+  /**
+   * atributo que muestra si se esta updating un trago
+   */
   updating:Boolean=false;
 
   constructor(private service: DrinkService, private route: Router) {}

@@ -17,7 +17,9 @@ import { user } from 'src/app/models/user';
   styleUrls: ['./show-filter.component.scss']
 })
 export class ShowFilterComponent implements OnInit {
-
+/**
+ * Atributo que esconde y muestra el sidebar
+ */
   sidebar: Boolean;
   constructor(
     private service: DrinkService,
@@ -30,22 +32,69 @@ export class ShowFilterComponent implements OnInit {
     private user_s:UserService
   ) { }
 
+/**
+ * lista de ingredientes por los que filtramos anteriormente
+ */
   filter_ing=[];
+/**
+ * lista de los ingredientes por los que filtraremos
+ */
   filter=[];
+  /**
+ * atributo auxiliar para hacer acciones necesarias(guardar los routing params)
+ */
   aux;
-  aux2;
+  /**
+ *  lista de los drinks de la base de datos
+ */
   drinks:drink[]=[];
+  /**
+ * lista de los drinks disponibles de la base de datos
+ */
   drinksA:drink[]=[];
+  /**
+ * lista de los ingredientes de la base de datos
+ */
   ingredients_aux:ingredient[]=[];
+  /**
+ * lista de los ingredientes disponibles de la base de datos
+ */
   ingredients:ingredient[]=[];
+  /**
+ * atributo para llenar el sistema de filtrado con los ingredientes ya seleccionados
+ */
   ing_filter:ingredient[]=[];
+  /**
+ * atributo que indica si se han cargado los datos traidos de la base de datos
+ */
   loading=true;
+  /**
+ *  atributo que revela/esconde la vista de filtrar nuevamente
+ */
   filter_again=false;
+  /**
+ * lista de los ingredientes ya seleccionados en el proceso de filtrado
+ */
   ing_search=[];
+  /**
+ * lista de los ingredientes que contienen las cosas buscadas en el searchbar
+ */
   temp_i_s=[];
+  /**
+ * Lista de los ingredientes ordenados como los usaremos en el html
+ */
   list=[];
+  /**
+ * campo que guarda lso cambios de la busqueda de ingredientes
+ */
   search_bar=""
+  /**
+ * Lista de las categorias de los ingredientes
+ */
   categories=[]
+  /**
+ * Usuario que esta loggeado en el momento
+ */
   user:user;
 /**
  * Inicializa el componete

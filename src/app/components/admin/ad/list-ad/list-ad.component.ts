@@ -9,10 +9,25 @@ import { Router } from '@angular/router';
   styleUrls: ['./list-ad.component.scss']
 })
 export class ListAdComponent implements OnInit {
+  /**
+   * atributo que indica si se han cargado los datos traidos de la base de datos
+   */
   loading=true;
+  /**
+   *  lista de advertisements traidas de la base de datps
+   */
   ads:advertisement[];
+  /**
+   * atributo que nos indica que ad se esta updating
+   */
   adSelected:advertisement;
+  /**
+   * Atributo que esconde y muestra el sidebar
+   */
   sidebar: Boolean;
+  /**
+   * atributo que indica si un elemento se esta updating
+   */
   updating:Boolean=false;
 
   constructor(private service: AdvertisementService, private route: Router) { }
