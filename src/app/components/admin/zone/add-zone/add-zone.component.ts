@@ -11,8 +11,19 @@ import { ZoneService } from 'src/app/services/zone.service';
 })
 export class AddZoneComponent implements OnInit {
 
+  /** Formulario para la creación de la zona.
+   * @type {FormGroup}
+   */
   form: FormGroup;
+  /**
+   * Maneja el responsive del sidebar.
+   * @type {Boolean}
+   */
   sidebar: Boolean;
+  /**
+   * Indica si se está enviando la información a la DB para crear la zona.
+   * @type {Boolean}
+   */
   updating:Boolean=false;
 
   constructor(
@@ -28,7 +39,11 @@ export class AddZoneComponent implements OnInit {
   ngOnInit() {
   }
 
-  add() {
+  /**
+   * Verifica el form y crea la zona en la DB.
+   * @returns {void}
+   */
+  add():void {
     this.updating=true;
     const zone: zone = {
       name: this.form.value.name,
@@ -41,11 +56,20 @@ export class AddZoneComponent implements OnInit {
     });
   }
 
-  goBack() {
+  /**
+   * Navega a la lista de zonas.
+   * @returns {void}
+   */
+  goBack():void {
     this.route.navigate(["admin/zone"]);
   }
 
-  getMessage($event){
+  /**
+   * Muestra/Oculta el sidebar
+   * @param {any} $event - Evento que ocurre al hacer click para mostrar/ocultar el menú
+   * @returns {void}
+   */
+  getMessage($event:any):void{
     if(screen.width>640){
       this.sidebar = $event;
     }

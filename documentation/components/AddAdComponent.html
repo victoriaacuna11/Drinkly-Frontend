@@ -302,14 +302,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="36"
-                            class="link-to-prism">src/app/components/admin/ad/add-ad/add-ad.component.ts:36</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="43"
+                            class="link-to-prism">src/app/components/admin/ad/add-ad/add-ad.component.ts:43</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Submit del form para crear un advertisement usanndo el servicio de los ads </p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -341,8 +343,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="80"
-                            class="link-to-prism">src/app/components/admin/ad/add-ad/add-ad.component.ts:80</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="90"
+                            class="link-to-prism">src/app/components/admin/ad/add-ad/add-ad.component.ts:90</a></div>
                 </td>
             </tr>
 
@@ -407,8 +409,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="89"
-                            class="link-to-prism">src/app/components/admin/ad/add-ad/add-ad.component.ts:89</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="99"
+                            class="link-to-prism">src/app/components/admin/ad/add-ad/add-ad.component.ts:99</a></div>
                 </td>
             </tr>
 
@@ -473,14 +475,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="72"
-                            class="link-to-prism">src/app/components/admin/ad/add-ad/add-ad.component.ts:72</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="82"
+                            class="link-to-prism">src/app/components/admin/ad/add-ad/add-ad.component.ts:82</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Navega a la vista anterior </p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -512,14 +516,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="33"
-                            class="link-to-prism">src/app/components/admin/ad/add-ad/add-ad.component.ts:33</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="36"
+                            class="link-to-prism">src/app/components/admin/ad/add-ad/add-ad.component.ts:36</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Inicializa el componente </p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -551,8 +557,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="76"
-                            class="link-to-prism">src/app/components/admin/ad/add-ad/add-ad.component.ts:76</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="86"
+                            class="link-to-prism">src/app/components/admin/ad/add-ad/add-ad.component.ts:86</a></div>
                 </td>
             </tr>
 
@@ -788,10 +794,17 @@ export class AddAdComponent implements OnInit {
       client: [&quot;&quot;, Validators.required],
     });
   }
-
+/**
+ * Inicializa el componente 
+ * 
+ */
   ngOnInit() {
   }
-  
+
+/**
+ * Submit del form para crear un advertisement usanndo el servicio de los ads 
+ * 
+ */
   addAd() {
     
     if(this.main_image!&#x3D;null){
@@ -827,7 +840,10 @@ export class AddAdComponent implements OnInit {
     }
     
   }
-
+/**
+ * Navega a la vista anterior 
+ * 
+ */
   goBack() {
     this.route.navigate([&quot;admin/ad&quot;]);
   }
@@ -886,7 +902,7 @@ export class AddAdComponent implements OnInit {
           &lt;div class&#x3D;&quot;md:w-full lg:w-1/5&quot;&gt;
             &lt;label
               class&#x3D;&quot;block text-black-500 font-bold lg:text-right mb-1 md:mb-0 pr-4&quot;
-              for&#x3D;&quot;inline-full-name&quot;
+              for&#x3D;&quot;name&quot;
             &gt;
               Nombre de la empresa
             &lt;/label&gt;
@@ -895,8 +911,8 @@ export class AddAdComponent implements OnInit {
             &lt;input
               formControlName&#x3D;&quot;client&quot;
               class&#x3D;&quot;bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500&quot;
-              id&#x3D;&quot;inline-full-name&quot;
               type&#x3D;&quot;text&quot;
+              id&#x3D;&quot;name&quot;
               placeholder&#x3D;&quot;Ej. Empresas Polar&quot;
             /&gt;
           &lt;/div&gt;
@@ -912,7 +928,7 @@ export class AddAdComponent implements OnInit {
               &lt;label
                 style&#x3D;&quot;font-family: &#x27;Open Sans&#x27;, sans-serif;&quot;
                 class&#x3D;&quot;block text-black-500 font-bold text-center mb-1 md:mb-0 pr-4&quot;
-                for&#x3D;&quot;inline-full-name&quot;
+                for&#x3D;&quot;title-galery&quot;
               &gt;
                 Galería
               &lt;/label&gt;
@@ -921,7 +937,7 @@ export class AddAdComponent implements OnInit {
               &lt;label
                 style&#x3D;&quot;font-family: &#x27;Open Sans&#x27;, sans-serif;&quot;
                 class&#x3D;&quot;block text-black-500 font-bold md:text-center mb-1 md:mb-0 pr-4&quot;
-                for&#x3D;&quot;inline-full-name&quot;
+                for&#x3D;&quot;descriptio-galery&quot;
               &gt;
                 Por favor, esperar a que aparezcan las fotos. Esto indicará que
                 fueron cargadas con éxito.
@@ -933,7 +949,7 @@ export class AddAdComponent implements OnInit {
             &lt;div class&#x3D;&quot;md:w-full lg:w-1/5&quot;&gt;
               &lt;label
                 class&#x3D;&quot;block text-black-500 font-bold lg:text-right mb-1 md:mb-0 pr-4&quot;
-                for&#x3D;&quot;inline-full-name&quot;
+                for&#x3D;&quot;main-image&quot;
               &gt;
                 Foto
               &lt;/label&gt;
@@ -960,7 +976,7 @@ export class AddAdComponent implements OnInit {
 
               &lt;div *ngIf&#x3D;&quot;this.main_image&quot; class&#x3D;&quot;width-full bg-grey-lighter&quot;&gt;
                 &lt;div class&#x3D;&quot;width-2/3 flex items-center justify-center&quot;&gt;
-                  &lt;img [src]&#x3D;&quot;this.main_image&quot; class&#x3D;&quot;h-24&quot; /&gt;
+                  &lt;img [src]&#x3D;&quot;this.main_image&quot; alt&#x3D;&quot;main-image&quot; class&#x3D;&quot;h-24&quot; /&gt;
               &lt;/div&gt;
               
                 &lt;div class&#x3D;&quot;pt-4 flex space-x-4 justify-end w-full&quot;&gt;
@@ -1038,8 +1054,8 @@ export class AddAdComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><app-test-bar (message)="getMessage($event)"></app-test-bar> <div [ngStyle]="{\'margin-left.rem\': !sidebar? \'0\': \'16\'}" class="move">  <app-admin-header></app-admin-header>  <div *ngIf="!updating">  <div  style="font-family: \'Open Sans\', sans-serif;">     <div      class="h-20 w-full flex justify-center items-center"      style="font-family: \'Open Sans\', sans-serif;"    >      <div>        <h2 class="text-4xl">CREA UNA PUBLICIDAD</h2>      </div>    </div>    <div class="w-full flex justify-center items-center h-full">      <form        [formGroup]="form"        class="w-2/3 md:w-2/4 content-center"        encType="multipart/form-data"      >            <div class="width-full">        <div class="lg:flex lg:items-center mb-6">          <div class="md:w-full lg:w-1/5">            <label              class="block text-black-500 font-bold lg:text-right mb-1 md:mb-0 pr-4"              for="inline-full-name"            >              Nombre de la empresa            </label>          </div>          <div class="md:w-full lg:w-4/5">            <input              formControlName="client"              class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"              id="inline-full-name"              type="text"              placeholder="Ej. Empresas Polar"            />          </div>        </div>        <app-required-field                [text]="\'Este campo es requerido.\'"                *ngIf="form.get(\'client\').invalid && form.get(\'client\').touched"            ></app-required-field>        </div>        <div class="width-full">            <div class="w-full">              <label                style="font-family: \'Open Sans\', sans-serif;"                class="block text-black-500 font-bold text-center mb-1 md:mb-0 pr-4"                for="inline-full-name"              >                Galería              </label>            </div>            <div class="w-full pb-4">              <label                style="font-family: \'Open Sans\', sans-serif;"                class="block text-black-500 font-bold md:text-center mb-1 md:mb-0 pr-4"                for="inline-full-name"              >                Por favor, esperar a que aparezcan las fotos. Esto indicará que                fueron cargadas con éxito.              </label>            </div>        </div>        <div class="lg:flex lg:items-center mb-6">            <div class="md:w-full lg:w-1/5">              <label                class="block text-black-500 font-bold lg:text-right mb-1 md:mb-0 pr-4"                for="inline-full-name"              >                Foto              </label>            </div>            <div class="md:w-full lg:w-4/5">              <div                *ngIf="!this.main_image"                class="flex items-center justify-center bg-grey-lighter"              >                <label                  class="w-full flex justify-center h-full items-center px-4 py-3 pr-8 bg-gray-200 rounded-lg shadow-lg tracking-wide border border-blue cursor-pointer hover:bg-orange-500 hover:text-white"                >                  <span class="mt-2 text-base leading-normal"                    >Selecciona un archivo</span                  >                  <lib-file-upload-firestorage                    storagePath="ingredient"                    (res)="uploadEnRes($event)"                    class="hidden"                  >                  </lib-file-upload-firestorage>                </label>              </div>              <div *ngIf="this.main_image" class="width-full bg-grey-lighter">                <div class="width-2/3 flex items-center justify-center">                  <img [src]="this.main_image" class="h-24" />              </div>                              <div class="pt-4 flex space-x-4 justify-end w-full">                  <button                    (click)="changeImage(this.main_image)"                    class="w-1/3 sm:w-1/4 shadow bg-gray-500 hover:bg-orange-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"                    type="button"                  >                    Cambiar                  </button>                </div>              </div>            </div>          </div>        <div class="md:flex md:items-center mb-6">          <div class="flex space-x-4 justify-center md:w-full">            <button              (click)="addAd()"              class="w-1/3 sm:w-1/4 shadow bg-green-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"              type="button"            >              Crear            </button>            <button              (click)="goBack()"              class="w-1/3 sm:w-1/4 shadow bg-orange-500 hover:bg-orange-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"              type="button"            >              Regresar            </button>          </div>        </div>      </form>      </div>    </div>    </div>    <div *ngIf="updating">    <app-uploading-loader [text]="\'Creando la publicidad...\'"></app-uploading-loader>  </div>    <app-footer></app-footer>  </div></div>'
-    var COMPONENTS = [{'name': 'AddAdComponent', 'selector': 'app-add-ad'},{'name': 'AddBarComponent', 'selector': 'app-add-bar'},{'name': 'AddDrinkComponent', 'selector': 'app-add-drink'},{'name': 'AddGameComponent', 'selector': 'app-add-game'},{'name': 'AddIngredientComponent', 'selector': 'app-add-ingredient'},{'name': 'AddZoneComponent', 'selector': 'app-add-zone'},{'name': 'AdminHeaderComponent', 'selector': 'app-admin-header'},{'name': 'AdminHomeComponent', 'selector': 'app-admin-home'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BarsListComponent', 'selector': 'app-bars-list'},{'name': 'DetailBarComponent', 'selector': 'app-detail-bar'},{'name': 'DrinklyTeamComponent', 'selector': 'app-drinkly-team'},{'name': 'DrinksFilterComponent', 'selector': 'app-drinks-filter'},{'name': 'DrinksListComponent', 'selector': 'app-drinks-list'},{'name': 'EditAdComponent', 'selector': 'app-edit-ad'},{'name': 'EditBarComponent', 'selector': 'app-edit-bar'},{'name': 'EditDrinkComponent', 'selector': 'app-edit-drink'},{'name': 'EditGameComponent', 'selector': 'app-edit-game'},{'name': 'EditIngredientComponent', 'selector': 'app-edit-ingredient'},{'name': 'EditUserComponent', 'selector': 'app-edit-user'},{'name': 'EditZoneComponent', 'selector': 'app-edit-zone'},{'name': 'FilterChildComponent', 'selector': 'app-filter-child'},{'name': 'FilterParentComponent', 'selector': 'app-filter-parent'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'JuegosComponent', 'selector': 'app-juegos'},{'name': 'ListAdComponent', 'selector': 'app-list-ad'},{'name': 'ListBarComponent', 'selector': 'app-list-bar'},{'name': 'ListDrinkComponent', 'selector': 'app-list-drink'},{'name': 'ListGameComponent', 'selector': 'app-list-game'},{'name': 'ListIngredientComponent', 'selector': 'app-list-ingredient'},{'name': 'ListUserComponent', 'selector': 'app-list-user'},{'name': 'ListZoneComponent', 'selector': 'app-list-zone'},{'name': 'LoaderComponent', 'selector': 'app-loader'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PostBusinessComponent', 'selector': 'app-post-business'},{'name': 'PostDrinkComponent', 'selector': 'app-post-drink'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RecipeComponent', 'selector': 'app-recipe'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'RequiredFieldComponent', 'selector': 'app-required-field'},{'name': 'ShowFilterComponent', 'selector': 'app-show-filter'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'TestBarComponent', 'selector': 'app-test-bar'},{'name': 'UploadingLoaderComponent', 'selector': 'app-uploading-loader'}];
+        var COMPONENT_TEMPLATE = '<div><app-test-bar (message)="getMessage($event)"></app-test-bar> <div [ngStyle]="{\'margin-left.rem\': !sidebar? \'0\': \'16\'}" class="move">  <app-admin-header></app-admin-header>  <div *ngIf="!updating">  <div  style="font-family: \'Open Sans\', sans-serif;">     <div      class="h-20 w-full flex justify-center items-center"      style="font-family: \'Open Sans\', sans-serif;"    >      <div>        <h2 class="text-4xl">CREA UNA PUBLICIDAD</h2>      </div>    </div>    <div class="w-full flex justify-center items-center h-full">      <form        [formGroup]="form"        class="w-2/3 md:w-2/4 content-center"        encType="multipart/form-data"      >            <div class="width-full">        <div class="lg:flex lg:items-center mb-6">          <div class="md:w-full lg:w-1/5">            <label              class="block text-black-500 font-bold lg:text-right mb-1 md:mb-0 pr-4"              for="name"            >              Nombre de la empresa            </label>          </div>          <div class="md:w-full lg:w-4/5">            <input              formControlName="client"              class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"              type="text"              id="name"              placeholder="Ej. Empresas Polar"            />          </div>        </div>        <app-required-field                [text]="\'Este campo es requerido.\'"                *ngIf="form.get(\'client\').invalid && form.get(\'client\').touched"            ></app-required-field>        </div>        <div class="width-full">            <div class="w-full">              <label                style="font-family: \'Open Sans\', sans-serif;"                class="block text-black-500 font-bold text-center mb-1 md:mb-0 pr-4"                for="title-galery"              >                Galería              </label>            </div>            <div class="w-full pb-4">              <label                style="font-family: \'Open Sans\', sans-serif;"                class="block text-black-500 font-bold md:text-center mb-1 md:mb-0 pr-4"                for="descriptio-galery"              >                Por favor, esperar a que aparezcan las fotos. Esto indicará que                fueron cargadas con éxito.              </label>            </div>        </div>        <div class="lg:flex lg:items-center mb-6">            <div class="md:w-full lg:w-1/5">              <label                class="block text-black-500 font-bold lg:text-right mb-1 md:mb-0 pr-4"                for="main-image"              >                Foto              </label>            </div>            <div class="md:w-full lg:w-4/5">              <div                *ngIf="!this.main_image"                class="flex items-center justify-center bg-grey-lighter"              >                <label                  class="w-full flex justify-center h-full items-center px-4 py-3 pr-8 bg-gray-200 rounded-lg shadow-lg tracking-wide border border-blue cursor-pointer hover:bg-orange-500 hover:text-white"                >                  <span class="mt-2 text-base leading-normal"                    >Selecciona un archivo</span                  >                  <lib-file-upload-firestorage                    storagePath="ingredient"                    (res)="uploadEnRes($event)"                    class="hidden"                  >                  </lib-file-upload-firestorage>                </label>              </div>              <div *ngIf="this.main_image" class="width-full bg-grey-lighter">                <div class="width-2/3 flex items-center justify-center">                  <img [src]="this.main_image" alt="main-image" class="h-24" />              </div>                              <div class="pt-4 flex space-x-4 justify-end w-full">                  <button                    (click)="changeImage(this.main_image)"                    class="w-1/3 sm:w-1/4 shadow bg-gray-500 hover:bg-orange-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"                    type="button"                  >                    Cambiar                  </button>                </div>              </div>            </div>          </div>        <div class="md:flex md:items-center mb-6">          <div class="flex space-x-4 justify-center md:w-full">            <button              (click)="addAd()"              class="w-1/3 sm:w-1/4 shadow bg-green-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"              type="button"            >              Crear            </button>            <button              (click)="goBack()"              class="w-1/3 sm:w-1/4 shadow bg-orange-500 hover:bg-orange-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"              type="button"            >              Regresar            </button>          </div>        </div>      </form>      </div>    </div>    </div>    <div *ngIf="updating">    <app-uploading-loader [text]="\'Creando la publicidad...\'"></app-uploading-loader>  </div>    <app-footer></app-footer>  </div></div>'
+    var COMPONENTS = [{'name': 'AddAdComponent', 'selector': 'app-add-ad'},{'name': 'AddBarComponent', 'selector': 'app-add-bar'},{'name': 'AddDrinkComponent', 'selector': 'app-add-drink'},{'name': 'AddIngredientComponent', 'selector': 'app-add-ingredient'},{'name': 'AddZoneComponent', 'selector': 'app-add-zone'},{'name': 'AdminHeaderComponent', 'selector': 'app-admin-header'},{'name': 'AdminHomeComponent', 'selector': 'app-admin-home'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BarsListComponent', 'selector': 'app-bars-list'},{'name': 'DetailBarComponent', 'selector': 'app-detail-bar'},{'name': 'DrinklyTeamComponent', 'selector': 'app-drinkly-team'},{'name': 'DrinksFilterComponent', 'selector': 'app-drinks-filter'},{'name': 'DrinksListComponent', 'selector': 'app-drinks-list'},{'name': 'EditAdComponent', 'selector': 'app-edit-ad'},{'name': 'EditBarComponent', 'selector': 'app-edit-bar'},{'name': 'EditDrinkComponent', 'selector': 'app-edit-drink'},{'name': 'EditGameComponent', 'selector': 'app-edit-game'},{'name': 'EditIngredientComponent', 'selector': 'app-edit-ingredient'},{'name': 'EditUserComponent', 'selector': 'app-edit-user'},{'name': 'EditZoneComponent', 'selector': 'app-edit-zone'},{'name': 'FilterChildComponent', 'selector': 'app-filter-child'},{'name': 'FilterParentComponent', 'selector': 'app-filter-parent'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'JuegosComponent', 'selector': 'app-juegos'},{'name': 'ListAdComponent', 'selector': 'app-list-ad'},{'name': 'ListBarComponent', 'selector': 'app-list-bar'},{'name': 'ListDrinkComponent', 'selector': 'app-list-drink'},{'name': 'ListGameComponent', 'selector': 'app-list-game'},{'name': 'ListIngredientComponent', 'selector': 'app-list-ingredient'},{'name': 'ListUserComponent', 'selector': 'app-list-user'},{'name': 'ListZoneComponent', 'selector': 'app-list-zone'},{'name': 'LoaderComponent', 'selector': 'app-loader'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PostBusinessComponent', 'selector': 'app-post-business'},{'name': 'PostDrinkComponent', 'selector': 'app-post-drink'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RecipeComponent', 'selector': 'app-recipe'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'RequiredFieldComponent', 'selector': 'app-required-field'},{'name': 'ShowFilterComponent', 'selector': 'app-show-filter'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'TestBarComponent', 'selector': 'app-test-bar'},{'name': 'UploadingLoaderComponent', 'selector': 'app-uploading-loader'}];
     var DIRECTIVES = [{'name': 'AgeValidatorDirective', 'selector': '[isAdult]'},{'name': 'clickedOutDirective', 'selector': '[clickedOut]'},{'name': 'ExternalUrlDirective', 'selector': 'a[appExternalUrl]'},{'name': 'passwordValidator', 'selector': '[passwordValid]'}];
     var ACTUAL_COMPONENT = {'name': 'AddAdComponent'};
 </script>

@@ -43,7 +43,6 @@ import { EditUserComponent } from './components/profile-page/edit-user/edit-user
 import { AddZoneComponent } from './components/admin/zone/add-zone/add-zone.component';
 import { EditZoneComponent } from './components/admin/zone/edit-zone/edit-zone.component';
 import { ListZoneComponent } from './components/admin/zone/list-zone/list-zone.component';
-import { AddGameComponent } from './components/admin/game/add-game/add-game.component';
 import { EditGameComponent } from './components/admin/game/edit-game/edit-game.component';
 import { ListGameComponent } from './components/admin/game/list-game/list-game.component';
 import { ShowFilterComponent } from './components/drinks/show-filter/show-filter.component';
@@ -104,7 +103,6 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     AddZoneComponent,
     EditZoneComponent,
     ListZoneComponent,
-    AddGameComponent,
     EditGameComponent,
     ListGameComponent,
     ShowFilterComponent,

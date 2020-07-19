@@ -475,8 +475,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="48"
-                            class="link-to-prism">src/app/components/header/header.component.ts:48</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="57"
+                            class="link-to-prism">src/app/components/header/header.component.ts:57</a></div>
                 </td>
             </tr>
 
@@ -580,8 +580,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="54"
-                            class="link-to-prism">src/app/components/header/header.component.ts:54</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="63"
+                            class="link-to-prism">src/app/components/header/header.component.ts:63</a></div>
                 </td>
             </tr>
 
@@ -619,8 +619,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="60"
-                            class="link-to-prism">src/app/components/header/header.component.ts:60</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="69"
+                            class="link-to-prism">src/app/components/header/header.component.ts:69</a></div>
                 </td>
             </tr>
 
@@ -685,8 +685,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="36"
-                            class="link-to-prism">src/app/components/header/header.component.ts:36</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="39"
+                            class="link-to-prism">src/app/components/header/header.component.ts:39</a></div>
                 </td>
             </tr>
 
@@ -724,8 +724,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="40"
-                            class="link-to-prism">src/app/components/header/header.component.ts:40</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="46"
+                            class="link-to-prism">src/app/components/header/header.component.ts:46</a></div>
                 </td>
             </tr>
 
@@ -894,15 +894,24 @@ export class HeaderComponent implements OnInit {
   }
 
   makeChange(){
+    if(this.filteringOptions){
+      this.filteringOptions&#x3D;false;
+    }
     this.touched&#x3D;true;
     this.data.changeMsg((&lt;HTMLInputElement&gt;document.getElementById(&quot;search&quot;)).value) 
    }
 
    showDrop(){
+     if(this.filteringOptions){
+       this.filteringOptions&#x3D;false;
+     }
      this.touched &#x3D; !this.touched;
    }
 
    showDropForFilteringOp(){
+     if(this.touched){
+       this.touched&#x3D;false;
+     }
      this.filteringOptions &#x3D; !this.filteringOptions;
    }
 
@@ -940,23 +949,33 @@ export class HeaderComponent implements OnInit {
         <pre class="line-numbers"><code class="language-html">
 
 &lt;div class&#x3D;&quot;flex bg-black fixed top-0 w-full z-10&quot;&gt;
-  &lt;a href&#x3D;&quot;/home&quot;
+  &lt;div class&#x3D;&quot;ml-20 my-1&quot;&gt;
+  &lt;a routerLink&#x3D;&quot;/&quot; routerLinkActive&#x3D;&quot;active&quot;
     &gt;&lt;img
       src&#x3D;&quot;assets/images/Drinkly-2.png&quot;
       alt&#x3D;&quot;logo_drinkly&quot;
-      class&#x3D;&quot;object-scale-down h-16 mx-auto ml-8&quot;
-  /&gt;&lt;/a&gt;
+      class&#x3D;&quot;object-scale-down h-16 transition duration-500 ease-in-out transform  hover:scale-110&quot;
+  /&gt;&lt;/a&gt;  
+  &lt;/div&gt;
+  
 &lt;/div&gt;
 &lt;div
   class&#x3D;&quot;bg-gray-400 h-64 w-full flex items-center flex-col&quot;
   style&#x3D;&quot;
     background-image: url(assets/images/banner_drinkly.jpg);
     background-size: cover;
+    
   &quot;
 &gt;
 
   &lt;div class&#x3D;&quot;w-full flex justify-center items-center h-full&quot;&gt;
     &lt;div *ngIf&#x3D;&quot;hasSearchBar&quot; class&#x3D;&quot;pt-2 relative mx-auto text-black w-44&quot;&gt;
+      &lt;label
+                class&#x3D;&quot;text-sm opacity-0&quot;
+                for&#x3D;&quot;search&quot;
+              &gt;
+                Header
+      &lt;/label&gt;
       &lt;input
         autocomplete&#x3D;&quot;off&quot;
         style&#x3D;&quot;width: 25rem; font-size: 1.4rem;&quot;
@@ -970,11 +989,11 @@ export class HeaderComponent implements OnInit {
         (keydown.enter)&#x3D;&quot;pressEnter()&quot;
       /&gt;
       &lt;button
-        id&#x3D;&quot;search2&quot;
+      aria-label&#x3D;&quot;ShowFilter&quot;
         (click)&#x3D;&quot;showDropForFilteringOp()&quot;
         class&#x3D;&quot;absolute right-0 top-0 mt-4 mr-4 focus:outline-none&quot;
       &gt;
-      &lt;img *ngIf&#x3D;&quot;hasFilter&quot; class&#x3D;&quot;h-8 rounded cursor-pointer&quot; src&#x3D;&quot;assets/images/filtro.png&quot; alt&#x3D;&quot;filterimg&quot;&gt;
+      &lt;img id&#x3D;&quot;search2&quot; *ngIf&#x3D;&quot;hasFilter&quot; class&#x3D;&quot;h-8 rounded cursor-pointer&quot; src&#x3D;&quot;assets/images/filtro.png&quot; alt&#x3D;&quot;filterimg&quot;&gt;
       &lt;/button&gt;
 
       &lt;div clickedOut (clickOutside)&#x3D;&quot;showDrop()&quot; *ngIf&#x3D;&quot;touched&quot; class&#x3D;&quot;drop&quot;&gt;
@@ -983,7 +1002,7 @@ export class HeaderComponent implements OnInit {
         &lt;/div&gt;
       &lt;/div&gt;
 
-      &lt;div *ngIf&#x3D;&quot;filteringOptions&quot; class&#x3D;&quot;drop&quot;&gt;
+      &lt;div clickedOut (clickOutside)&#x3D;&quot;showDropForFilteringOp()&quot; *ngIf&#x3D;&quot;filteringOptions&quot; class&#x3D;&quot;drop&quot;&gt;
         &lt;div id&#x3D;&quot;coolB&quot; (click)&#x3D;&quot;sendChangedFilter(i)&quot; class&#x3D;&quot;d&quot; *ngFor&#x3D;&quot;let i of filterOp&quot;&gt;
           &lt;div class&#x3D;&quot;d2&quot;&gt;{{i}}&lt;/div&gt;
         &lt;/div&gt;
@@ -1077,8 +1096,8 @@ export class HeaderComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="flex bg-black fixed top-0 w-full z-10">  <a href="/home"    ><img      src="assets/images/Drinkly-2.png"      alt="logo_drinkly"      class="object-scale-down h-16 mx-auto ml-8"  /></a></div><div  class="bg-gray-400 h-64 w-full flex items-center flex-col"  style="    background-image: url(assets/images/banner_drinkly.jpg);    background-size: cover;  ">  <div class="w-full flex justify-center items-center h-full">    <div *ngIf="hasSearchBar" class="pt-2 relative mx-auto text-black w-44">      <input        autocomplete="off"        style="width: 25rem; font-size: 1.4rem;"        class="bg-white h-12 px-5 pr-20 rounded-full focus:outline-none"        type="text"        name="filterPost"        id="search"        placeholder="Busca por {{ searchBarContent }}"        [(ngModel)]="filterPost"        (ngModelChange)="makeChange()"        (keydown.enter)="pressEnter()"      />      <button        id="search2"        (click)="showDropForFilteringOp()"        class="absolute right-0 top-0 mt-4 mr-4 focus:outline-none"      >      <img *ngIf="hasFilter" class="h-8 rounded cursor-pointer" src="assets/images/filtro.png" alt="filterimg">      </button>      <div clickedOut (clickOutside)="showDrop()" *ngIf="touched" class="drop">        <div id="coolB" (click)="newMessage(i.name)"  class="d" *ngFor="let i of arr | filter: filterPost: isDefault">          <div class="d2">{{i.name}}</div>        </div>      </div>      <div *ngIf="filteringOptions" class="drop">        <div id="coolB" (click)="sendChangedFilter(i)" class="d" *ngFor="let i of filterOp">          <div class="d2">{{i}}</div>        </div>      </div>  </div></div> </div>'
-    var COMPONENTS = [{'name': 'AddAdComponent', 'selector': 'app-add-ad'},{'name': 'AddBarComponent', 'selector': 'app-add-bar'},{'name': 'AddDrinkComponent', 'selector': 'app-add-drink'},{'name': 'AddGameComponent', 'selector': 'app-add-game'},{'name': 'AddIngredientComponent', 'selector': 'app-add-ingredient'},{'name': 'AddZoneComponent', 'selector': 'app-add-zone'},{'name': 'AdminHeaderComponent', 'selector': 'app-admin-header'},{'name': 'AdminHomeComponent', 'selector': 'app-admin-home'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BarsListComponent', 'selector': 'app-bars-list'},{'name': 'DetailBarComponent', 'selector': 'app-detail-bar'},{'name': 'DrinklyTeamComponent', 'selector': 'app-drinkly-team'},{'name': 'DrinksFilterComponent', 'selector': 'app-drinks-filter'},{'name': 'DrinksListComponent', 'selector': 'app-drinks-list'},{'name': 'EditAdComponent', 'selector': 'app-edit-ad'},{'name': 'EditBarComponent', 'selector': 'app-edit-bar'},{'name': 'EditDrinkComponent', 'selector': 'app-edit-drink'},{'name': 'EditGameComponent', 'selector': 'app-edit-game'},{'name': 'EditIngredientComponent', 'selector': 'app-edit-ingredient'},{'name': 'EditUserComponent', 'selector': 'app-edit-user'},{'name': 'EditZoneComponent', 'selector': 'app-edit-zone'},{'name': 'FilterChildComponent', 'selector': 'app-filter-child'},{'name': 'FilterParentComponent', 'selector': 'app-filter-parent'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'JuegosComponent', 'selector': 'app-juegos'},{'name': 'ListAdComponent', 'selector': 'app-list-ad'},{'name': 'ListBarComponent', 'selector': 'app-list-bar'},{'name': 'ListDrinkComponent', 'selector': 'app-list-drink'},{'name': 'ListGameComponent', 'selector': 'app-list-game'},{'name': 'ListIngredientComponent', 'selector': 'app-list-ingredient'},{'name': 'ListUserComponent', 'selector': 'app-list-user'},{'name': 'ListZoneComponent', 'selector': 'app-list-zone'},{'name': 'LoaderComponent', 'selector': 'app-loader'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PostBusinessComponent', 'selector': 'app-post-business'},{'name': 'PostDrinkComponent', 'selector': 'app-post-drink'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RecipeComponent', 'selector': 'app-recipe'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'RequiredFieldComponent', 'selector': 'app-required-field'},{'name': 'ShowFilterComponent', 'selector': 'app-show-filter'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'TestBarComponent', 'selector': 'app-test-bar'},{'name': 'UploadingLoaderComponent', 'selector': 'app-uploading-loader'}];
+        var COMPONENT_TEMPLATE = '<div><div class="flex bg-black fixed top-0 w-full z-10">  <div class="ml-20 my-1">  <a routerLink="/" routerLinkActive="active"    ><img      src="assets/images/Drinkly-2.png"      alt="logo_drinkly"      class="object-scale-down h-16 transition duration-500 ease-in-out transform  hover:scale-110"  /></a>    </div>  </div><div  class="bg-gray-400 h-64 w-full flex items-center flex-col"  style="    background-image: url(assets/images/banner_drinkly.jpg);    background-size: cover;      ">  <div class="w-full flex justify-center items-center h-full">    <div *ngIf="hasSearchBar" class="pt-2 relative mx-auto text-black w-44">      <label                class="text-sm opacity-0"                for="search"              >                Header      </label>      <input        autocomplete="off"        style="width: 25rem; font-size: 1.4rem;"        class="bg-white h-12 px-5 pr-20 rounded-full focus:outline-none"        type="text"        name="filterPost"        id="search"        placeholder="Busca por {{ searchBarContent }}"        [(ngModel)]="filterPost"        (ngModelChange)="makeChange()"        (keydown.enter)="pressEnter()"      />      <button      aria-label="ShowFilter"        (click)="showDropForFilteringOp()"        class="absolute right-0 top-0 mt-4 mr-4 focus:outline-none"      >      <img id="search2" *ngIf="hasFilter" class="h-8 rounded cursor-pointer" src="assets/images/filtro.png" alt="filterimg">      </button>      <div clickedOut (clickOutside)="showDrop()" *ngIf="touched" class="drop">        <div id="coolB" (click)="newMessage(i.name)"  class="d" *ngFor="let i of arr | filter: filterPost: isDefault">          <div class="d2">{{i.name}}</div>        </div>      </div>      <div clickedOut (clickOutside)="showDropForFilteringOp()" *ngIf="filteringOptions" class="drop">        <div id="coolB" (click)="sendChangedFilter(i)" class="d" *ngFor="let i of filterOp">          <div class="d2">{{i}}</div>        </div>      </div>  </div></div> </div>'
+    var COMPONENTS = [{'name': 'AddAdComponent', 'selector': 'app-add-ad'},{'name': 'AddBarComponent', 'selector': 'app-add-bar'},{'name': 'AddDrinkComponent', 'selector': 'app-add-drink'},{'name': 'AddIngredientComponent', 'selector': 'app-add-ingredient'},{'name': 'AddZoneComponent', 'selector': 'app-add-zone'},{'name': 'AdminHeaderComponent', 'selector': 'app-admin-header'},{'name': 'AdminHomeComponent', 'selector': 'app-admin-home'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BarsListComponent', 'selector': 'app-bars-list'},{'name': 'DetailBarComponent', 'selector': 'app-detail-bar'},{'name': 'DrinklyTeamComponent', 'selector': 'app-drinkly-team'},{'name': 'DrinksFilterComponent', 'selector': 'app-drinks-filter'},{'name': 'DrinksListComponent', 'selector': 'app-drinks-list'},{'name': 'EditAdComponent', 'selector': 'app-edit-ad'},{'name': 'EditBarComponent', 'selector': 'app-edit-bar'},{'name': 'EditDrinkComponent', 'selector': 'app-edit-drink'},{'name': 'EditGameComponent', 'selector': 'app-edit-game'},{'name': 'EditIngredientComponent', 'selector': 'app-edit-ingredient'},{'name': 'EditUserComponent', 'selector': 'app-edit-user'},{'name': 'EditZoneComponent', 'selector': 'app-edit-zone'},{'name': 'FilterChildComponent', 'selector': 'app-filter-child'},{'name': 'FilterParentComponent', 'selector': 'app-filter-parent'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'JuegosComponent', 'selector': 'app-juegos'},{'name': 'ListAdComponent', 'selector': 'app-list-ad'},{'name': 'ListBarComponent', 'selector': 'app-list-bar'},{'name': 'ListDrinkComponent', 'selector': 'app-list-drink'},{'name': 'ListGameComponent', 'selector': 'app-list-game'},{'name': 'ListIngredientComponent', 'selector': 'app-list-ingredient'},{'name': 'ListUserComponent', 'selector': 'app-list-user'},{'name': 'ListZoneComponent', 'selector': 'app-list-zone'},{'name': 'LoaderComponent', 'selector': 'app-loader'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PostBusinessComponent', 'selector': 'app-post-business'},{'name': 'PostDrinkComponent', 'selector': 'app-post-drink'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RecipeComponent', 'selector': 'app-recipe'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'RequiredFieldComponent', 'selector': 'app-required-field'},{'name': 'ShowFilterComponent', 'selector': 'app-show-filter'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'TestBarComponent', 'selector': 'app-test-bar'},{'name': 'UploadingLoaderComponent', 'selector': 'app-uploading-loader'}];
     var DIRECTIVES = [{'name': 'AgeValidatorDirective', 'selector': '[isAdult]'},{'name': 'clickedOutDirective', 'selector': '[clickedOut]'},{'name': 'ExternalUrlDirective', 'selector': 'a[appExternalUrl]'},{'name': 'passwordValidator', 'selector': '[passwordValid]'}];
     var ACTUAL_COMPONENT = {'name': 'HeaderComponent'};
 </script>

@@ -6,6 +6,9 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./uploading-loader.component.scss']
 })
 export class UploadingLoaderComponent implements OnInit {
+  /**
+   * El texto que acompaña al loader.
+   */
   @Input() text;
   constructor() { }
 

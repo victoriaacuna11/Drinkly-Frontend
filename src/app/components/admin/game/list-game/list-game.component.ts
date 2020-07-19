@@ -10,8 +10,17 @@ import { Router } from '@angular/router';
 })
 export class ListGameComponent implements OnInit {
 
+  /**
+   * Juegos que se encuentran en la DB.
+   */
   games: game[];
+  /**
+   * Loader (maneja si la información ya se trajo o no de la DB)
+   */
   loading:Boolean=true;
+  /**
+   * Boolean que maneja el responsive del sidebar.
+   */
   sidebar: Boolean;
 
   constructor(
@@ -23,20 +32,32 @@ export class ListGameComponent implements OnInit {
     this.getGames();
   }
 
-  getGames(){
+  /**
+   * Trae los juegos que se encuentran en la DB.
+   * @returns {void}
+   */
+  getGames(): void{
     this.service.getGames().subscribe((res:any) => {
       this.games = [...res.data];
       this.loading=false;
     })
   }
 
+  /**
+   * @ignore
+   */
   delete(id) {
     this.service.deleteGame(id).subscribe((res) => {
       this.getGames();
     });
   }
 
-  inhabilitate(item:game) {
+  /**
+   * Inhabilita/Habilita un juego.
+   * @param {game} item -game que se va a deshabilitar.
+   * @returns {void}
+   */
+  inhabilitate(item:game):void {
     let newItem: game = item;
     newItem.available=!item.available;
     this.service.updateGame(newItem).subscribe(res => {
@@ -44,22 +65,38 @@ export class ListGameComponent implements OnInit {
     })
   }
 
-
-  edit(id) {
+  /**
+   * Navega a la ruta donde se puede editar un juego específico.
+   * @param {String} id - id del juego que se editará.
+   * @returns {void}
+   */
+  edit(id:String):void {
     this.route.navigate(["admin/game/edit/", id]);
   }
 
-  create(){
+  /**
+   * @ignore
+   */
+  create():void{
     this.route.navigate(["admin/game/add"]);
   }
 
-  getMessage($event){
+  /**
+   * Muestra/Oculta el sidebar
+   * @param {any} $event - Evento que ocurre al hacer click para mostrar/ocultar el menú
+   * @returns {void}
+   */
+  getMessage($event:any):void{
     if(screen.width>640){
       this.sidebar = $event;
     }
   }
 
-  goBack(){
+  /**
+   * Navega al home de admin.
+   * @returns {void}
+   */
+  goBack():void{
     this.route.navigate(["admin"]);
   }
 

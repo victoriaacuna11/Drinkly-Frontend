@@ -14,20 +14,24 @@
     </div>
 
     <div *ngIf="!loading" style="font-family: 'Open Sans', sans-serif;"> 
-        <div class="flex justify-center items-center">
-            <div class="w-2/4  pt-12 pb-12" style="font-family: 'Open Sans', sans-serif;">
+        
+        <div *ngIf="!sending && !sent" class="flex justify-center items-center">
+            <div class="w-3/5  pt-12 pb-12" style="font-family: 'Open Sans', sans-serif;">
                 <div class="flex justify-center">
-                    <h2 class="text-4xl text-center">¡PUBLICA TU RECETA!</h2>
+                    <h2 class="text-4xl text-center lg:text-6xl">¡PUBLICA TU RECETA!</h2>
                 </div>
-                <div class="flex justify-center text-center pt-4 text-lg">Comparte con nosotros la receta de ese trago que deja a todos
+                <!--
+                <div class="flex justify-center text-justify pt-4 text-lg">Comparte con nosotros la receta de ese trago que deja a todos
                     locos en las fiestas. Explica cada detalle como
                     si se
                     la estuvieras dando a tu pana que no sabe hacer ni un Cuba Libre</div>
-                <div class="text-2xl flex justify-center text-center p-2">
+                <div class="pt-8 text-2xl flex justify-center text-center p-2">
                     Gracias por compartir con Drinkly
                 </div>
+                -->
             </div>
         </div>
+        
         <div *ngIf="!sending && !sent" class="w-full min-h-full content-center">  
             <div class="w-full flex justify-center items-center h-full">
             <form

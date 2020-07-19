@@ -5,6 +5,9 @@ import { Injectable } from '@angular/core';
 })
 export class CategoriesService {
 
+  /**
+   * Categorías de los ingredientes con las que trabaja la aplicación.
+   */
   categories : String[] = [
     'Amargos',
     'Cervezas', 
@@ -19,7 +22,11 @@ export class CategoriesService {
   ]
   constructor() { }
 
-  getCategories(){
+  /**
+   * Trae las categorías de los ingredientes.
+   * @returns {String[]}
+   */
+  getCategories(): String[]{
     return this.categories;
   }
 }

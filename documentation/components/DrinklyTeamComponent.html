@@ -130,7 +130,25 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#bars">bars</a>
+                            </li>
+                            <li>
+                                <a href="#loadingBars">loadingBars</a>
+                            </li>
+                            <li>
+                                <a href="#loadingDrinks">loadingDrinks</a>
+                            </li>
+                            <li>
+                                <a href="#loadingUsers">loadingUsers</a>
+                            </li>
+                            <li>
+                                <a href="#recipes">recipes</a>
+                            </li>
+                            <li>
                                 <a href="#sidebar">sidebar</a>
+                            </li>
+                            <li>
+                                <a href="#users">users</a>
                             </li>
                         </ul>
                     </td>
@@ -145,7 +163,16 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#getBars">getBars</a>
+                            </li>
+                            <li>
+                                <a href="#getDrinks">getDrinks</a>
+                            </li>
+                            <li>
                                 <a href="#getMessage">getMessage</a>
+                            </li>
+                            <li>
+                                <a href="#getUsers">getUsers</a>
                             </li>
                             <li>
                                 <a href="#goBack">goBack</a>
@@ -174,12 +201,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(route: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, _location: <a href="https://angular.io/api/common/Location" target="_blank">Location</a>)</code>
+<code>constructor(route: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, _location: <a href="https://angular.io/api/common/Location" target="_blank">Location</a>, _userService: <a href="../injectables/UserService.html">UserService</a>, _barService: <a href="../injectables/BarService.html">BarService</a>, _drinkService: <a href="../injectables/DrinkService.html">DrinkService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/components/drinkly-team/drinkly-team.component.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/components/drinkly-team/drinkly-team.component.ts:43</a></div>
                             </td>
                         </tr>
 
@@ -220,6 +247,42 @@
                                                     </td>
                                                     
                                                 </tr>
+                                                <tr>
+                                                        <td>_userService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/UserService.html" target="_self" >UserService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_barService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/BarService.html" target="_self" >BarService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_drinkService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/DrinkService.html" target="_self" >DrinkService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
                                         </tbody>
                                     </table>
                             </div>
@@ -242,6 +305,98 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="getBars"></a>
+                    <span class="name">
+                        <b>
+                            getBars
+                        </b>
+                        <a href="#getBars"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getBars()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="91"
+                            class="link-to-prism">src/app/components/drinkly-team/drinkly-team.component.ts:91</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Trae los bares de la DB.</p>
+</div>
+
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getDrinks"></a>
+                    <span class="name">
+                        <b>
+                            getDrinks
+                        </b>
+                        <a href="#getDrinks"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getDrinks()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="109"
+                            class="link-to-prism">src/app/components/drinkly-team/drinkly-team.component.ts:109</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Trae los tragos de la DB.</p>
+</div>
+
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="getMessage"></a>
                     <span class="name">
                         <b>
@@ -253,21 +408,23 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>getMessage($event)</code>
+<code>getMessage($event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="22"
-                            class="link-to-prism">src/app/components/drinkly-team/drinkly-team.component.ts:22</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="65"
+                            class="link-to-prism">src/app/components/drinkly-team/drinkly-team.component.ts:65</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Muestra/Oculta el sidebar</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -275,22 +432,79 @@
                             <thead>
                                 <tr>
                                     <td>Name</td>
+                                    <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>$event</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
 
                                     <td>
                                         No
                                     </td>
 
 
+                                    <td>
+                                        <ul>
+<li>Evento que ocurre al hacer click para mostrar/ocultar el menú</li>
+</ul>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getUsers"></a>
+                    <span class="name">
+                        <b>
+                            getUsers
+                        </b>
+                        <a href="#getUsers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getUsers()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="127"
+                            class="link-to-prism">src/app/components/drinkly-team/drinkly-team.component.ts:127</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Trae los usuarios de la DB.</p>
+</div>
+
                     <div>
                     </div>
                     <div class="io-description">
@@ -326,18 +540,25 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="32"
-                            class="link-to-prism">src/app/components/drinkly-team/drinkly-team.component.ts:32</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="83"
+                            class="link-to-prism">src/app/components/drinkly-team/drinkly-team.component.ts:83</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Se regresa a la ruta previa.</p>
+</div>
 
+                    <div>
+                    </div>
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
+                    </div>
+                    <div class="io-description">
+                        
                     </div>
                 </td>
             </tr>
@@ -365,8 +586,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="19"
-                            class="link-to-prism">src/app/components/drinkly-team/drinkly-team.component.ts:19</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="54"
+                            class="link-to-prism">src/app/components/drinkly-team/drinkly-team.component.ts:54</a></div>
                 </td>
             </tr>
 
@@ -404,18 +625,25 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="28"
-                            class="link-to-prism">src/app/components/drinkly-team/drinkly-team.component.ts:28</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="75"
+                            class="link-to-prism">src/app/components/drinkly-team/drinkly-team.component.ts:75</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Navega a la publicación del negocio.</p>
+</div>
 
+                    <div>
+                    </div>
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
+                    </div>
+                    <div class="io-description">
+                        
                     </div>
                 </td>
             </tr>
@@ -427,6 +655,186 @@
         <h3 id="inputs">
             Properties
         </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="bars"></a>
+                        <span class="name">
+                            <b>
+                            bars</b>
+                            <a href="#bars"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/components/drinkly-team/drinkly-team.component.ts:31</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Guarda la cantidad de bares disponibles en la página.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="loadingBars"></a>
+                        <span class="name">
+                            <b>
+                            loadingBars</b>
+                            <a href="#loadingBars"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" target="_blank" >Boolean</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>true</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/components/drinkly-team/drinkly-team.component.ts:35</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Loader de los bares.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="loadingDrinks"></a>
+                        <span class="name">
+                            <b>
+                            loadingDrinks</b>
+                            <a href="#loadingDrinks"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" target="_blank" >Boolean</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>true</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/components/drinkly-team/drinkly-team.component.ts:39</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Loader de los tragos.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="loadingUsers"></a>
+                        <span class="name">
+                            <b>
+                            loadingUsers</b>
+                            <a href="#loadingUsers"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" target="_blank" >Boolean</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>true</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/components/drinkly-team/drinkly-team.component.ts:43</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Loader de los users.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="recipes"></a>
+                        <span class="name">
+                            <b>
+                            recipes</b>
+                            <a href="#recipes"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/components/drinkly-team/drinkly-team.component.ts:27</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Guarda la cantidad de tragos disponibles en la página.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
@@ -447,10 +855,49 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/components/drinkly-team/drinkly-team.component.ts:12</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/components/drinkly-team/drinkly-team.component.ts:19</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Maneja el responsive del sidebar.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="users"></a>
+                        <span class="name">
+                            <b>
+                            users</b>
+                            <a href="#users"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/components/drinkly-team/drinkly-team.component.ts:23</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Guarda la cantidad de usuarios disponibles en la página.</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -463,6 +910,9 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
 import { Router } from &#x27;@angular/router&#x27;;
 import {Location} from &#x27;@angular/common&#x27;;
+import { UserService } from &#x27;src/app/services/user.service&#x27;;
+import { BarService } from &#x27;src/app/services/bar.service&#x27;;
+import { DrinkService } from &#x27;src/app/services/drink.service&#x27;;
 
 @Component({
   selector: &#x27;app-drinkly-team&#x27;,
@@ -471,68 +921,321 @@ import {Location} from &#x27;@angular/common&#x27;;
 })
 export class DrinklyTeamComponent implements OnInit {
 
+  /**
+   * Maneja el responsive del sidebar.
+   * @type {Boolean}
+   */
   sidebar: Boolean;
+  /**
+   * Guarda la cantidad de usuarios disponibles en la página.
+   */
+  users:number;
+  /**
+   * Guarda la cantidad de tragos disponibles en la página.
+   */
+  recipes:number;
+  /**
+   * Guarda la cantidad de bares disponibles en la página.
+   */
+  bars:number;
+  /**
+   * Loader de los bares.
+   */
+  loadingBars:Boolean&#x3D;true;
+  /**
+   * Loader de los tragos.
+   */
+  loadingDrinks:Boolean&#x3D;true;
+  /**
+   * Loader de los users.
+   */
+  loadingUsers:Boolean&#x3D;true;
+
 
   constructor(
     private route: Router,
     private _location:Location,
+    private _userService: UserService,
+    private _barService: BarService,
+    private _drinkService: DrinkService,
   ) { }
 
   ngOnInit() {
+    this.getBars();
+    this.getDrinks();
+    this.getUsers();
   }
 
-  getMessage($event){
+  /**
+   * Muestra/Oculta el sidebar
+   * @param {any} $event - Evento que ocurre al hacer click para mostrar/ocultar el menú
+   * @returns {void}
+   */
+  getMessage($event:any):void{
     if(screen.width&gt;640){
       this.sidebar &#x3D; $event;
     }
   }
 
-  postBusiness(){
+  /**
+   * Navega a la publicación del negocio.
+   * @returns {void}
+   */
+  postBusiness():void{
     this.route.navigate([&quot;post-your-business&quot;]);
   }
 
-  goBack(){
+  /**
+   * Se regresa a la ruta previa.
+   * @returns {void}
+   */
+  goBack():void{
     this._location.back()
   }
+
+  /**
+   * Trae los bares de la DB.
+   * @returns {void}
+   */
+  getBars():void{
+    this._barService.getBars().subscribe((res:any) &#x3D;&gt; {
+      let barAv &#x3D; [];
+      let bars &#x3D; [...res.data];
+      bars.forEach(item &#x3D;&gt; {
+        if(item.available){
+          barAv.push(item);
+        }
+      })
+      this.bars&#x3D;barAv.length;
+      this.loadingBars&#x3D;false;
+    } )
+  }
+
+  /**
+   * Trae los tragos de la DB.
+   * @returns {void}
+   */
+  getDrinks():void{
+    this._drinkService.getDrinks().subscribe((res:any) &#x3D;&gt; {
+      let available &#x3D; [];
+      let drinks &#x3D; [...res.data];
+      drinks.forEach(item &#x3D;&gt; {
+        if(item.available){
+          available.push(item);
+        }
+      })
+      this.recipes&#x3D;available.length;
+      this.loadingDrinks&#x3D;false;
+    } )
+  }
+
+  /**
+   * Trae los usuarios de la DB.
+   * @returns {void}
+   */
+  getUsers():void{
+    this._userService.getUsers().subscribe((res:any) &#x3D;&gt; {
+      let available &#x3D; [];
+      let user &#x3D; [...res.data];
+      user.forEach(item &#x3D;&gt; {
+        if(item.available){
+          available.push(item);
+        }
+      })
+      this.users&#x3D;available.length;
+      this.loadingUsers&#x3D;false;
+    } )
+  }
+
+  
+  
+
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;app-test-bar (message)&#x3D;&quot;getMessage($event)&quot;&gt;&lt;/app-test-bar&gt;
-&lt;div [ngStyle]&#x3D;&quot;{&#x27;margin-left.rem&#x27;: !sidebar? &#x27;0&#x27;: &#x27;16&#x27;}&quot; class&#x3D;&quot;move&quot;&gt;
-    &lt;app-header&gt;&lt;/app-header&gt;
-   
-    &lt;div style&#x3D;&quot;font-family: &#x27;Open Sans&#x27;, sans-serif;&quot;&gt; 
-
-        &lt;div
-            class&#x3D;&quot;h-20 w-full flex justify-center items-center pt-12 pb-12&quot;
-            style&#x3D;&quot;font-family: &#x27;Open Sans&#x27;, sans-serif;&quot;
-        &gt;
-            &lt;div&gt;&lt;h2 class&#x3D;&quot;text-4xl&quot;&gt;¿QUIERES QUE PUBLIQUEMOS TU NEGOCIO?&lt;/h2&gt;&lt;/div&gt;
+&lt;div [ngStyle]&#x3D;&quot;{&#x27;margin-left.rem&#x27;: !sidebar? &#x27;0&#x27;: &#x27;16&#x27;}&quot; class&#x3D;&quot;move&quot; style&#x3D;&quot;min-height: 25vh; font-family: &#x27;Open Sans&#x27;, sans-serif;&quot;&gt;
+    
+    &lt;div *ngIf&#x3D;&quot;!loadingDrinks &amp;&amp; !loadingUsers &amp;&amp; !loadingBars&quot;&gt;
+    
+        &lt;!-- BARRA DEL MENÚ--&gt;
+        &lt;div class&#x3D;&quot;flex sticky top-0 bg-black w-full z-10&quot;&gt;
+            &lt;div class&#x3D;&quot;ml-20 my-1&quot;&gt;
+                &lt;a href&#x3D;&quot;/&quot;
+                  &gt;&lt;img
+                    src&#x3D;&quot;assets/images/Drinkly-2.png&quot;
+                    alt&#x3D;&quot;logo_drinkly&quot;
+                    class&#x3D;&quot;object-scale-down h-16 transition duration-500 ease-in-out transform  hover:scale-110&quot;
+                /&gt;&lt;/a&gt;  
+                &lt;/div&gt;
         &lt;/div&gt;
-
-        &lt;div class&#x3D;&quot;w-full flex justify-center items-center h-full&quot;&gt;
-            &lt;div
-                class&#x3D;&quot;w-2/3 md:w-2/4 content-center&quot;
-                encType&#x3D;&quot;multipart/form-data&quot;
-            &gt;
-                &lt;div class&#x3D;&quot;w-full flex space-x-4 justify-center&quot;&gt;
-                    &lt;button
-                    (click)&#x3D;&quot;postBusiness()&quot;
-                    class&#x3D;&quot;w-1/3 shadow bg-green-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded&quot;
-                    &gt;
-                        Formar parte
-                    &lt;/button&gt;
+        &lt;!-- BACKGROUND IMAGE--&gt;
+        &lt;div class&#x3D;&quot;w-full&quot; style&#x3D;&quot;font-family: &#x27;Open Sans&#x27;, sans-serif; min-height: 75vh; background-image: url(assets/images/about3.jpg);
+            background-size: cover;  background-position: center; 
+            &quot;&gt;
+            &lt;div id&#x3D;&quot;header-about&quot; class&#x3D;&quot;w-full h-full&quot; style&#x3D;&quot;font-family: &#x27;Open Sans&#x27;, sans-serif;
+                background-size: cover;  background-position: center; 
+                &quot;&gt;
+                &lt;div class&#x3D;&quot;w-full flex items-center content-center flex-wrap lg:pl-64 pl-12 sm:pl-24&quot; style&#x3D;&quot;min-height: 75vh;&quot;&gt;
+                    &lt;div class&#x3D;&quot;w-3/4 lg:w-1/3&quot;&gt;
+                        &lt;div class&#x3D;&quot;text-gray-400 text-2xl lg:text-4xl sm:text-3xl &quot;&gt;&lt;p&gt;ACERCA DE NOSOTROS&lt;/p&gt;&lt;/div&gt;
+                        &lt;div class&#x3D;&quot;text-white text-4xl lg:text-6xl sm:text-5xl&quot;&gt;&lt;p&gt;Impulsando el mundo de la coctelería&lt;/p&gt;&lt;/div&gt;
+                    &lt;/div&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
         &lt;/div&gt;
+        
+
+        
+        &lt;main&gt;
+        &lt;div class&#x3D;&quot;flex content-center flex-wrap justify-center items-center&quot; style&#x3D;&quot;min-height: 20vh; font-family: &#x27;Open Sans&#x27;, sans-serif;&quot;&gt;
+            &lt;div class&#x3D;&quot;text-gray-900 flex content-center flex-wrap justify-center border-gray-700 text-5xl sm:text-6xl w-1/3  border-b-2&quot;&gt;
+                &lt;p&gt;DRINKLY&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;w-full flex justify-center&quot;&gt;
+            &lt;div class&#x3D;&quot;text-center text-gray-800 lg:text-5xl sm:text-4xl text-2xl w-4/5 md:3/5 lg:w-1/2&quot;&gt;
+                &lt;p&gt;Drinkly ayuda e impulsa a los entusiastas de la coctelería a experimentar con nuevas recetas&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;pt-8 w-full flex justify-center&quot;&gt;
+            &lt;div class&#x3D;&quot;text-center text-gray-700 lg:text-3xl text-xl sm:text-2xl w-4/5 md:3/5 lg:w-1/2&quot; style&#x3D;&quot;font-family: &#x27;Roboto&#x27;, sans-serif;&quot;&gt;
+                &lt;p&gt;En nuestra plataforma podrás encontrar una enorme variedad de tragos que podrás preparar desde la comodidad de tu hogar. Te ofrecemos el paso a paso y los ingredientes que vas a necesitar para que puedas degustarla.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;/main&gt;
+
+        &lt;div class&#x3D;&quot;w-full flex justify-center&quot;&gt;
+            &lt;div class&#x3D;&quot;w-3/4 border-gray-300 border-b-2&quot; style&#x3D;&quot;min-height:32px&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;w-full flex justify-center&quot;&gt;
+            &lt;div class&#x3D;&quot;w-3/4&quot; style&#x3D;&quot;min-height:32px&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;w-full flex justify-center font-black&quot;&gt;
+            &lt;div class&#x3D;&quot;lg:w-3/4 w-4/5 flex flex-wrap justify-center items-center&quot;&gt;
+                &lt;div class&#x3D;&quot;w-1/3 flex justify-center items-center num-about&quot; &gt;
+                    {{this.users}}
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;w-1/3 flex justify-center items-center num-about&quot; &gt;
+                    {{this.recipes}}
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;w-1/3 flex justify-center items-center num-about&quot; &gt;
+                    {{this.bars}}
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;w-full flex justify-center&quot;&gt;
+            &lt;div class&#x3D;&quot;lg:w-3/4 w-4/5 flex flex-wrap justify-center items-center&quot;&gt;
+                &lt;div class&#x3D;&quot;w-1/3 text-center text-gray-700 text-2xl sm:text-3xl&quot; style&#x3D;&quot;min-height:10vh; font-family: &#x27;Roboto&#x27;, sans-serif;&quot;&gt;
+                    Usuarios registrados
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;w-1/3 text-center text-gray-700 text-2xl sm:text-3xl&quot; style&#x3D;&quot;min-height:10vh; font-family: &#x27;Roboto&#x27;, sans-serif;&quot;&gt;
+                    Recetas publicadas
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;w-1/3 text-center text-gray-700 text-2xl sm:text-3xl&quot; style&#x3D;&quot;min-height:10vh;font-family: &#x27;Roboto&#x27;, sans-serif;&quot;&gt;
+                    Bares asociados
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;w-full flex justify-center&quot;&gt;
+            &lt;div class&#x3D;&quot;w-3/4 border-gray-300 border-b-2&quot; id&#x3D;&quot;sep-div-about&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;w-full flex justify-center&quot;&gt;
+            &lt;div class&#x3D;&quot;w-3/4&quot; style&#x3D;&quot;min-height:32px&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;!--REDES SOCIALES--&gt;
+        &lt;div class&#x3D;&quot;pt-12 w-full flex justify-center&quot;&gt;
+            &lt;div class&#x3D;&quot;text-center text-gray-800 text-2xl sm:text-4xl lg:text-5xl w-3/4 md:w-1/2&quot;&gt;
+                &lt;p&gt;¡SÍGUENOS!&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;pt-8 w-full flex justify-center&quot;&gt;
+            &lt;div class&#x3D;&quot;w-4/5 md:w-3/4 flex flex-wrap justify-center items-center&quot;&gt;
+                &lt;div class&#x3D;&quot;w-1/3 flex justify-center items-center&quot; style&#x3D;&quot;font-size:10rem&quot;&gt;
+                &lt;a href&#x3D;&quot;https://twitter.com/drinklyofficial&quot; target&#x3D;&quot;_blank&quot; rel&#x3D;&quot;noopener&quot; class&#x3D;&quot;a_socialmedia&quot;&gt;
+                    &lt;img
+                        src&#x3D;&quot;assets/images/twitter1.png&quot;
+                        alt&#x3D;&quot;twitter&quot;
+                        class&#x3D;&quot;h-full cursor-pointer&quot;
+                    /&gt;
+                &lt;/a&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;w-1/3 flex justify-center items-center&quot; style&#x3D;&quot;font-size:10rem&quot;&gt;
+                &lt;a href&#x3D;&quot;https://www.facebook.com/Drinkly-102074918252515&quot; target&#x3D;&quot;_blank&quot; rel&#x3D;&quot;noopener&quot; class&#x3D;&quot;a_socialmedia&quot;&gt;
+                    &lt;img
+                        src&#x3D;&quot;assets/images/facebook1.png&quot;
+                        alt&#x3D;&quot;facebook&quot;
+                        class&#x3D;&quot;h-full cursor-pointer&quot;
+                        style&#x3D;&quot;width: auto&quot;
+                    /&gt;
+                &lt;/a&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;w-1/3 flex justify-center items-center&quot; style&#x3D;&quot;font-size:10rem&quot;&gt;
+                &lt;a href&#x3D;&quot;https://www.instagram.com/drinkly.official/&quot; target&#x3D;&quot;_blank&quot; rel&#x3D;&quot;noopener&quot; class&#x3D;&quot;a_socialmedia&quot;&gt;
+                    &lt;img
+                        src&#x3D;&quot;assets/images/insta1.png&quot;
+                        alt&#x3D;&quot;instagram&quot;
+                        class&#x3D;&quot;h-full cursor-pointer&quot;
+                    /&gt;
+                &lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt; 
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;w-full flex justify-center&quot;&gt;
+            &lt;div class&#x3D;&quot;w-3/4 border-gray-300 border-b-2&quot; style&#x3D;&quot;height:64px&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;w-full flex justify-center&quot;&gt;
+            &lt;div class&#x3D;&quot;w-3/4&quot;  style&#x3D;&quot;height:32px&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;!--ASOCIARSE--&gt;
+        &lt;div class&#x3D;&quot;pt-12 w-full flex justify-center&quot;&gt;
+            &lt;div class&#x3D;&quot;text-center text-gray-800 sm:text-4xl lg:text-5xl text-2xl w-4/5 lg:w-1/2&quot;&gt;
+                &lt;p&gt;¿QUIERES QUE PUBLIQUEMOS TU NEGOCIO?&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;pt-12 w-full flex justify-center&quot;&gt;
+            &lt;button
+                (click)&#x3D;&quot;postBusiness()&quot;
+                class&#x3D;&quot;w-1/3 lg:w-1/5 sm:w-1/4 shadow bg-orange-500 hover:bg-orange-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded&quot;
+                &gt;
+                SÍ
+            &lt;/button&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;w-full flex justify-center&quot;&gt;
+            &lt;div class&#x3D;&quot;w-3/4&quot; style&#x3D;&quot;height:12px&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;w-full flex justify-center pt-4&quot;&gt;
+            &lt;div class&#x3D;&quot;text-center text-gray-800 md:text-2xl sm:w-1/3 md:w-3/5 w-4/5 sm:text-xl text-lg &quot; style&#x3D;&quot;font-family: &#x27;Roboto&#x27;, sans-serif;&quot;&gt;
+                &lt;p&gt;Puedes comunicarte con nosotros a través de este enlace para cualquier otra inquietud también&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;w-full flex justify-center&quot;&gt;
+            &lt;div class&#x3D;&quot;w-3/4&quot; style&#x3D;&quot;height:48px&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+
+
 
     &lt;/div&gt;
 
-    &lt;button class&#x3D;&quot;back_btn&quot; (click)&#x3D;&quot;goBack()&quot;&gt;
-      &lt;img class&#x3D;&quot;p-3&quot; src&#x3D;&quot;assets/images/goback.png&quot; alt&#x3D;&quot;&quot; &gt;
-    &lt;/button&gt;
+    &lt;div *ngIf&#x3D;&quot;loadingBars || loadingDrinks || loadingUsers&quot;&gt;
+        &lt;app-header&gt;&lt;/app-header&gt;
+        &lt;app-loader&gt;&lt;/app-loader&gt;
+        &lt;app-footer&gt;&lt;/app-footer&gt;
+    &lt;/div&gt;
+    
 
     &lt;app-footer&gt;&lt;/app-footer&gt;
 
@@ -544,7 +1247,66 @@ export class DrinklyTeamComponent implements OnInit {
                 <p class="comment">
                     <code>./drinkly-team.component.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss"></code></pre>
+                <pre class="line-numbers"><code class="language-scss">@media screen and (max-width: 640px){
+    #header-about{
+        background-color:  #060c1c8a
+    }
+    .num-about{
+        font-size:4rem;
+    }
+    .a_socialmedia{
+        height:10vh;
+    }
+    #sep-div-about{
+        height:0px
+    }
+}
+
+@media screen and (min-width: 640px) and (max-width: 768px) {
+    #header-about{
+        background-color:  #060c1c8a
+    }
+    .num-about{
+        font-size:9rem;
+    }
+    .a_socialmedia{
+        height:12vh;
+    }
+    #sep-div-about{
+        height:0px
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    #header-about{
+        background-color:  #060c1c8a
+    }
+    .num-about{
+        font-size:9rem;
+    }
+    .a_socialmedia{
+        height:12vh;
+    }
+    #sep-div-about{
+        height:0px
+    }
+}
+
+@media screen and (min-width: 1024px){
+    #header-about{
+        background-color:  #060c1c00;
+    }
+    .num-about{
+        font-size:10rem;
+    }
+    .a_socialmedia{
+        height:20vh;
+    }
+    #sep-div-about{
+        height:32px;
+    }
+}
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -572,8 +1334,8 @@ export class DrinklyTeamComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><app-test-bar (message)="getMessage($event)"></app-test-bar><div [ngStyle]="{\'margin-left.rem\': !sidebar? \'0\': \'16\'}" class="move">    <app-header></app-header>       <div style="font-family: \'Open Sans\', sans-serif;">         <div            class="h-20 w-full flex justify-center items-center pt-12 pb-12"            style="font-family: \'Open Sans\', sans-serif;"        >            <div><h2 class="text-4xl">¿QUIERES QUE PUBLIQUEMOS TU NEGOCIO?</h2></div>        </div>        <div class="w-full flex justify-center items-center h-full">            <div                class="w-2/3 md:w-2/4 content-center"                encType="multipart/form-data"            >                <div class="w-full flex space-x-4 justify-center">                    <button                    (click)="postBusiness()"                    class="w-1/3 shadow bg-green-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"                    >                        Formar parte                    </button>                </div>            </div>        </div>    </div>    <button class="back_btn" (click)="goBack()">      <img class="p-3" src="assets/images/goback.png" alt="" >    </button>    <app-footer></app-footer></div></div>'
-    var COMPONENTS = [{'name': 'AddAdComponent', 'selector': 'app-add-ad'},{'name': 'AddBarComponent', 'selector': 'app-add-bar'},{'name': 'AddDrinkComponent', 'selector': 'app-add-drink'},{'name': 'AddGameComponent', 'selector': 'app-add-game'},{'name': 'AddIngredientComponent', 'selector': 'app-add-ingredient'},{'name': 'AddZoneComponent', 'selector': 'app-add-zone'},{'name': 'AdminHeaderComponent', 'selector': 'app-admin-header'},{'name': 'AdminHomeComponent', 'selector': 'app-admin-home'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BarsListComponent', 'selector': 'app-bars-list'},{'name': 'DetailBarComponent', 'selector': 'app-detail-bar'},{'name': 'DrinklyTeamComponent', 'selector': 'app-drinkly-team'},{'name': 'DrinksFilterComponent', 'selector': 'app-drinks-filter'},{'name': 'DrinksListComponent', 'selector': 'app-drinks-list'},{'name': 'EditAdComponent', 'selector': 'app-edit-ad'},{'name': 'EditBarComponent', 'selector': 'app-edit-bar'},{'name': 'EditDrinkComponent', 'selector': 'app-edit-drink'},{'name': 'EditGameComponent', 'selector': 'app-edit-game'},{'name': 'EditIngredientComponent', 'selector': 'app-edit-ingredient'},{'name': 'EditUserComponent', 'selector': 'app-edit-user'},{'name': 'EditZoneComponent', 'selector': 'app-edit-zone'},{'name': 'FilterChildComponent', 'selector': 'app-filter-child'},{'name': 'FilterParentComponent', 'selector': 'app-filter-parent'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'JuegosComponent', 'selector': 'app-juegos'},{'name': 'ListAdComponent', 'selector': 'app-list-ad'},{'name': 'ListBarComponent', 'selector': 'app-list-bar'},{'name': 'ListDrinkComponent', 'selector': 'app-list-drink'},{'name': 'ListGameComponent', 'selector': 'app-list-game'},{'name': 'ListIngredientComponent', 'selector': 'app-list-ingredient'},{'name': 'ListUserComponent', 'selector': 'app-list-user'},{'name': 'ListZoneComponent', 'selector': 'app-list-zone'},{'name': 'LoaderComponent', 'selector': 'app-loader'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PostBusinessComponent', 'selector': 'app-post-business'},{'name': 'PostDrinkComponent', 'selector': 'app-post-drink'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RecipeComponent', 'selector': 'app-recipe'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'RequiredFieldComponent', 'selector': 'app-required-field'},{'name': 'ShowFilterComponent', 'selector': 'app-show-filter'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'TestBarComponent', 'selector': 'app-test-bar'},{'name': 'UploadingLoaderComponent', 'selector': 'app-uploading-loader'}];
+        var COMPONENT_TEMPLATE = '<div><app-test-bar (message)="getMessage($event)"></app-test-bar><div [ngStyle]="{\'margin-left.rem\': !sidebar? \'0\': \'16\'}" class="move" style="min-height: 25vh; font-family: \'Open Sans\', sans-serif;">        <div *ngIf="!loadingDrinks && !loadingUsers && !loadingBars">            <!-- BARRA DEL MENÚ-->        <div class="flex sticky top-0 bg-black w-full z-10">            <div class="ml-20 my-1">                <a href="/"                  ><img                    src="assets/images/Drinkly-2.png"                    alt="logo_drinkly"                    class="object-scale-down h-16 transition duration-500 ease-in-out transform  hover:scale-110"                /></a>                  </div>        </div>        <!-- BACKGROUND IMAGE-->        <div class="w-full" style="font-family: \'Open Sans\', sans-serif; min-height: 75vh; background-image: url(assets/images/about3.jpg);            background-size: cover;  background-position: center;             ">            <div id="header-about" class="w-full h-full" style="font-family: \'Open Sans\', sans-serif;                background-size: cover;  background-position: center;                 ">                <div class="w-full flex items-center content-center flex-wrap lg:pl-64 pl-12 sm:pl-24" style="min-height: 75vh;">                    <div class="w-3/4 lg:w-1/3">                        <div class="text-gray-400 text-2xl lg:text-4xl sm:text-3xl "><p>ACERCA DE NOSOTROS</p></div>                        <div class="text-white text-4xl lg:text-6xl sm:text-5xl"><p>Impulsando el mundo de la coctelería</p></div>                    </div>                </div>            </div>        </div>                        <main>        <div class="flex content-center flex-wrap justify-center items-center" style="min-height: 20vh; font-family: \'Open Sans\', sans-serif;">            <div class="text-gray-900 flex content-center flex-wrap justify-center border-gray-700 text-5xl sm:text-6xl w-1/3  border-b-2">                <p>DRINKLY</p>            </div>        </div>        <div class="w-full flex justify-center">            <div class="text-center text-gray-800 lg:text-5xl sm:text-4xl text-2xl w-4/5 md:3/5 lg:w-1/2">                <p>Drinkly ayuda e impulsa a los entusiastas de la coctelería a experimentar con nuevas recetas</p>            </div>        </div>        <div class="pt-8 w-full flex justify-center">            <div class="text-center text-gray-700 lg:text-3xl text-xl sm:text-2xl w-4/5 md:3/5 lg:w-1/2" style="font-family: \'Roboto\', sans-serif;">                <p>En nuestra plataforma podrás encontrar una enorme variedad de tragos que podrás preparar desde la comodidad de tu hogar. Te ofrecemos el paso a paso y los ingredientes que vas a necesitar para que puedas degustarla.</p>            </div>        </div>        </main>        <div class="w-full flex justify-center">            <div class="w-3/4 border-gray-300 border-b-2" style="min-height:32px"></div>        </div>        <div class="w-full flex justify-center">            <div class="w-3/4" style="min-height:32px"></div>        </div>        <div class="w-full flex justify-center font-black">            <div class="lg:w-3/4 w-4/5 flex flex-wrap justify-center items-center">                <div class="w-1/3 flex justify-center items-center num-about" >                    {{this.users}}                </div>                <div class="w-1/3 flex justify-center items-center num-about" >                    {{this.recipes}}                </div>                <div class="w-1/3 flex justify-center items-center num-about" >                    {{this.bars}}                </div>            </div>        </div>        <div class="w-full flex justify-center">            <div class="lg:w-3/4 w-4/5 flex flex-wrap justify-center items-center">                <div class="w-1/3 text-center text-gray-700 text-2xl sm:text-3xl" style="min-height:10vh; font-family: \'Roboto\', sans-serif;">                    Usuarios registrados                </div>                <div class="w-1/3 text-center text-gray-700 text-2xl sm:text-3xl" style="min-height:10vh; font-family: \'Roboto\', sans-serif;">                    Recetas publicadas                </div>                <div class="w-1/3 text-center text-gray-700 text-2xl sm:text-3xl" style="min-height:10vh;font-family: \'Roboto\', sans-serif;">                    Bares asociados                </div>            </div>        </div>        <div class="w-full flex justify-center">            <div class="w-3/4 border-gray-300 border-b-2" id="sep-div-about"></div>        </div>        <div class="w-full flex justify-center">            <div class="w-3/4" style="min-height:32px"></div>        </div>        <!--REDES SOCIALES-->        <div class="pt-12 w-full flex justify-center">            <div class="text-center text-gray-800 text-2xl sm:text-4xl lg:text-5xl w-3/4 md:w-1/2">                <p>¡SÍGUENOS!</p>            </div>        </div>        <div class="pt-8 w-full flex justify-center">            <div class="w-4/5 md:w-3/4 flex flex-wrap justify-center items-center">                <div class="w-1/3 flex justify-center items-center" style="font-size:10rem">                <a href="https://twitter.com/drinklyofficial" target="_blank" rel="noopener" class="a_socialmedia">                    <img                        src="assets/images/twitter1.png"                        alt="twitter"                        class="h-full cursor-pointer"                    />                </a>                </div>                <div class="w-1/3 flex justify-center items-center" style="font-size:10rem">                <a href="https://www.facebook.com/Drinkly-102074918252515" target="_blank" rel="noopener" class="a_socialmedia">                    <img                        src="assets/images/facebook1.png"                        alt="facebook"                        class="h-full cursor-pointer"                        style="width: auto"                    />                </a>                </div>                <div class="w-1/3 flex justify-center items-center" style="font-size:10rem">                <a href="https://www.instagram.com/drinkly.official/" target="_blank" rel="noopener" class="a_socialmedia">                    <img                        src="assets/images/insta1.png"                        alt="instagram"                        class="h-full cursor-pointer"                    />                </a>                </div>            </div>         </div>        <div class="w-full flex justify-center">            <div class="w-3/4 border-gray-300 border-b-2" style="height:64px"></div>        </div>        <div class="w-full flex justify-center">            <div class="w-3/4"  style="height:32px"></div>        </div>        <!--ASOCIARSE-->        <div class="pt-12 w-full flex justify-center">            <div class="text-center text-gray-800 sm:text-4xl lg:text-5xl text-2xl w-4/5 lg:w-1/2">                <p>¿QUIERES QUE PUBLIQUEMOS TU NEGOCIO?</p>            </div>        </div>        <div class="pt-12 w-full flex justify-center">            <button                (click)="postBusiness()"                class="w-1/3 lg:w-1/5 sm:w-1/4 shadow bg-orange-500 hover:bg-orange-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"                >                SÍ            </button>        </div>        <div class="w-full flex justify-center">            <div class="w-3/4" style="height:12px"></div>        </div>        <div class="w-full flex justify-center pt-4">            <div class="text-center text-gray-800 md:text-2xl sm:w-1/3 md:w-3/5 w-4/5 sm:text-xl text-lg " style="font-family: \'Roboto\', sans-serif;">                <p>Puedes comunicarte con nosotros a través de este enlace para cualquier otra inquietud también</p>            </div>        </div>        <div class="w-full flex justify-center">            <div class="w-3/4" style="height:48px"></div>        </div>    </div>    <div *ngIf="loadingBars || loadingDrinks || loadingUsers">        <app-header></app-header>        <app-loader></app-loader>        <app-footer></app-footer>    </div>        <app-footer></app-footer></div></div>'
+    var COMPONENTS = [{'name': 'AddAdComponent', 'selector': 'app-add-ad'},{'name': 'AddBarComponent', 'selector': 'app-add-bar'},{'name': 'AddDrinkComponent', 'selector': 'app-add-drink'},{'name': 'AddIngredientComponent', 'selector': 'app-add-ingredient'},{'name': 'AddZoneComponent', 'selector': 'app-add-zone'},{'name': 'AdminHeaderComponent', 'selector': 'app-admin-header'},{'name': 'AdminHomeComponent', 'selector': 'app-admin-home'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BarsListComponent', 'selector': 'app-bars-list'},{'name': 'DetailBarComponent', 'selector': 'app-detail-bar'},{'name': 'DrinklyTeamComponent', 'selector': 'app-drinkly-team'},{'name': 'DrinksFilterComponent', 'selector': 'app-drinks-filter'},{'name': 'DrinksListComponent', 'selector': 'app-drinks-list'},{'name': 'EditAdComponent', 'selector': 'app-edit-ad'},{'name': 'EditBarComponent', 'selector': 'app-edit-bar'},{'name': 'EditDrinkComponent', 'selector': 'app-edit-drink'},{'name': 'EditGameComponent', 'selector': 'app-edit-game'},{'name': 'EditIngredientComponent', 'selector': 'app-edit-ingredient'},{'name': 'EditUserComponent', 'selector': 'app-edit-user'},{'name': 'EditZoneComponent', 'selector': 'app-edit-zone'},{'name': 'FilterChildComponent', 'selector': 'app-filter-child'},{'name': 'FilterParentComponent', 'selector': 'app-filter-parent'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'JuegosComponent', 'selector': 'app-juegos'},{'name': 'ListAdComponent', 'selector': 'app-list-ad'},{'name': 'ListBarComponent', 'selector': 'app-list-bar'},{'name': 'ListDrinkComponent', 'selector': 'app-list-drink'},{'name': 'ListGameComponent', 'selector': 'app-list-game'},{'name': 'ListIngredientComponent', 'selector': 'app-list-ingredient'},{'name': 'ListUserComponent', 'selector': 'app-list-user'},{'name': 'ListZoneComponent', 'selector': 'app-list-zone'},{'name': 'LoaderComponent', 'selector': 'app-loader'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PostBusinessComponent', 'selector': 'app-post-business'},{'name': 'PostDrinkComponent', 'selector': 'app-post-drink'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RecipeComponent', 'selector': 'app-recipe'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'RequiredFieldComponent', 'selector': 'app-required-field'},{'name': 'ShowFilterComponent', 'selector': 'app-show-filter'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'TestBarComponent', 'selector': 'app-test-bar'},{'name': 'UploadingLoaderComponent', 'selector': 'app-uploading-loader'}];
     var DIRECTIVES = [{'name': 'AgeValidatorDirective', 'selector': '[isAdult]'},{'name': 'clickedOutDirective', 'selector': '[clickedOut]'},{'name': 'ExternalUrlDirective', 'selector': 'a[appExternalUrl]'},{'name': 'passwordValidator', 'selector': '[passwordValid]'}];
     var ACTUAL_COMPONENT = {'name': 'DrinklyTeamComponent'};
 </script>

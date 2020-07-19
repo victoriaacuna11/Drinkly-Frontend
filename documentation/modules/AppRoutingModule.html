@@ -109,7 +109,6 @@ import {EditZoneComponent} from &#x27;./components/admin/zone/edit-zone/edit-zon
 import {ListZoneComponent} from &#x27;./components/admin/zone/list-zone/list-zone.component&#x27;;
 import {ListGameComponent} from &#x27;./components/admin/game/list-game/list-game.component&#x27;;
 import {EditGameComponent} from &#x27;./components/admin/game/edit-game/edit-game.component&#x27;;
-import {AddGameComponent} from &#x27;./components/admin/game/add-game/add-game.component&#x27;;
 import { ShowFilterComponent } from &#x27;./components/drinks/show-filter/show-filter.component&#x27;;
 import { ListAdComponent } from &#x27;./components/admin/ad/list-ad/list-ad.component&#x27;;
 import { AddAdComponent } from &#x27;./components/admin/ad/add-ad/add-ad.component&#x27;;
@@ -138,7 +137,8 @@ const routes: Routes &#x3D; [
   { 
     path: &quot;bar/:id&quot;, 
     component: DetailBarComponent, 
-    canActivate: [AuthGuard]},
+    canActivate: [AuthGuard]
+  },
   {
     path: &quot;drinks/filter&quot;,
     component: FilterParentComponent,
@@ -167,12 +167,17 @@ const routes: Routes &#x3D; [
   },
 
   { path: &quot;drink/:id&quot;, component: RecipeComponent,
-    canActivate: [AuthGuard]},
+    canActivate: [AuthGuard]
+  },
 
   { path: &quot;register&quot;, component: RegisterComponent },
   { path: &quot;login&quot;, component: LoginComponent },
-  { path: &quot;profile&quot;, component: ProfileComponent, canActivate: [AuthGuard] },
-  { path: &quot;edit-user/:id&quot;, component: EditUserComponent, canActivate: [AuthGuard] },
+  { path: &quot;profile&quot;, component: ProfileComponent, 
+  canActivate: [AuthGuard] 
+},
+  { path: &quot;edit-user/:id&quot;, component: EditUserComponent, 
+  canActivate: [AuthGuard] 
+},
   {
     path: &#x27;externalRedirect&#x27;,
     canActivate: [externalUrlProvider],
@@ -180,15 +185,17 @@ const routes: Routes &#x3D; [
     component: NotFoundComponent,
   },
   
-  { path: &quot;home&quot;, component: HomeComponent },
+  { path: &quot;&quot;, component: HomeComponent },
 
   { path: &quot;games&quot;, component: JuegosComponent,
-    canActivate: [AuthGuard]},
+    canActivate: [AuthGuard]
+  },
 
   // ADMIN&#x27;S ROUTES
   { path: &quot;admin&quot;, 
     component: AdminHomeComponent, 
-    canActivate: [AdminAuthGuard]},
+    canActivate: [AdminAuthGuard]
+  },
   {
     path: &quot;admin/ingredient/add&quot;,
     component: AddIngredientComponent,
@@ -254,11 +261,6 @@ const routes: Routes &#x3D; [
   {
     path: &quot;admin/game&quot;,
     component: ListGameComponent,
-    canActivate: [AdminAuthGuard]
-  },
-  {
-    path: &quot;admin/game/add&quot;,
-    component: AddGameComponent,
     canActivate: [AdminAuthGuard]
   },
   {

@@ -11,10 +11,29 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class EditZoneComponent implements OnInit {
 
+  /**
+   * Loader (indica si la data ya se trajo o no de la DB)
+   * @type {Boolean}
+   * @default {true}
+   */
   loading: Boolean = true;
+  /**
+   * Zona que se va a editar.
+   */
   zone: zone;
+  /** Formulario para la edición de la zona.
+   * @type {FormGroup}
+   */
   form: FormGroup;
+  /**
+   * Maneja el responsive del sidebar.
+   * @type {Boolean}
+   */
   sidebar: Boolean;
+  /**
+   * Indica si se está enviando la información a la DB para editar la zona.
+   * @type {Boolean}
+   */
   updating:Boolean=false;
 
   constructor(
@@ -32,7 +51,11 @@ export class EditZoneComponent implements OnInit {
     this.getZone();
   }
 
-  getZone(){
+  /**
+   * Se trae los datos de la zona a editar de la DB
+   * @returns {void}
+   */
+  getZone():void{
     const id = this.routeSV.snapshot.paramMap.get("id");
     this.service.getZone(id).subscribe( (res:any) => {
       this.zone = {...res.data};
@@ -44,7 +67,11 @@ export class EditZoneComponent implements OnInit {
     })
   }
 
-  edit(){
+  /**
+   * Verifica el formulario y edita la zona en la DB.
+   * @returns {void}
+   */
+  edit():void{
 
     this.updating=true;
     var zone: zone = {
@@ -58,11 +85,20 @@ export class EditZoneComponent implements OnInit {
     });
     
   }
-  goBack() {
+  /**
+   * Navega a la lista de zonas.
+   * @returns {void}
+   */
+  goBack():void {
     this.route.navigate(["admin/zone"]);
   }
 
-  getMessage($event){
+  /**
+   * Muestra/Oculta el sidebar
+   * @param {any} $event - Evento que ocurre al hacer click para mostrar/ocultar el menú
+   * @returns {void}
+   */
+  getMessage($event:any):void{
     if(screen.width>640){
       this.sidebar = $event;
     }

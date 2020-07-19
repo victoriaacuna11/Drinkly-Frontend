@@ -253,7 +253,8 @@ export class clickedOutDirective{
     @HostListener(&#x27;document:click&#x27;, [&#x27;$event.target&#x27;])
 
     public onClick(tgt){
-        if(tgt.id &#x3D;&#x3D;&#x3D; &quot;search&quot;){return;}
+        if(tgt.id &#x3D;&#x3D;&#x3D; &quot;search2&quot; || tgt.id&#x3D;&#x3D;&#x3D;&quot;search&quot;){return;}
+        console.log(&quot;target: &quot;+ tgt)
         const isClickedInside &#x3D; this._elementRef.nativeElement.contains(tgt);
         if(!isClickedInside){
             this.clickOutside.emit(null)
