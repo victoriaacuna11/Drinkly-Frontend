@@ -274,21 +274,23 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>getMessage($event)</code>
+<code>getMessage($event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="63"
-                            class="link-to-prism">src/app/components/login/login.component.ts:63</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="72"
+                            class="link-to-prism">src/app/components/login/login.component.ts:72</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Setea el atributo local que mueve el contenido cuando sale el sidebar</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -296,18 +298,27 @@
                             <thead>
                                 <tr>
                                     <td>Name</td>
+                                    <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>$event</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
 
                                     <td>
                                         No
                                     </td>
 
 
+                                    <td>
+                                        <p>El evento que es pasado cuando el ícono del sidebar es clickeado</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -386,14 +397,17 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="31"
-                            class="link-to-prism">src/app/components/login/login.component.ts:31</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="35"
+                            class="link-to-prism">src/app/components/login/login.component.ts:35</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Emplea los métodos del servicio para autenticar al usuario que quiere ingresar a la página, 
+navega al perfil si todo sale bien con el token de la sesión, o muestra el error si algo sale mal</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -585,6 +599,10 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {}
 
+  /**
+   * Emplea los métodos del servicio para autenticar al usuario que quiere ingresar a la página, 
+   * navega al perfil si todo sale bien con el token de la sesión, o muestra el error si algo sale mal
+   */
   onSubmit() {
     console.log(this.form.value.user_name);
 
@@ -617,7 +635,12 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  getMessage($event){
+    /**
+   * Setea el atributo local que mueve el contenido cuando sale el sidebar
+   * @param {any} $event El evento que es pasado cuando el ícono del sidebar es clickeado
+   * @returns {void} 
+   */
+  getMessage($event:any):void{
     if(screen.width&gt;640){
       this.sidebar &#x3D; $event;
     }

@@ -187,7 +187,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/components/drinks/filter-child/filter-child.component.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/components/drinks/filter-child/filter-child.component.ts:17</a></div>
                             </td>
                         </tr>
 
@@ -207,9 +207,15 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/components/drinks/filter-child/filter-child.component.ts:11</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/components/drinks/filter-child/filter-child.component.ts:13</a></div>
                             </td>
                         </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>ingredientes que mostraremos en el componente</p>
+</div>
+                    </td>
+                </tr>
             </tbody>
         </table>
 </section>
@@ -231,9 +237,15 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/components/drinks/filter-child/filter-child.component.ts:12</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/components/drinks/filter-child/filter-child.component.ts:17</a></div>
                             </td>
                         </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>evento que emitimos al componente padre</p>
+</div>
+                    </td>
+                </tr>
             </tbody>
         </table>
 </section>
@@ -266,8 +278,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="20"
-                            class="link-to-prism">src/app/components/drinks/filter-child/filter-child.component.ts:20</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="25"
+                            class="link-to-prism">src/app/components/drinks/filter-child/filter-child.component.ts:25</a></div>
                 </td>
             </tr>
 
@@ -307,8 +319,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="30"
-                            class="link-to-prism">src/app/components/drinks/filter-child/filter-child.component.ts:30</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="35"
+                            class="link-to-prism">src/app/components/drinks/filter-child/filter-child.component.ts:35</a></div>
                 </td>
             </tr>
 
@@ -377,8 +389,13 @@
 })
 export class FilterChildComponent implements OnInit {
 
-
+/**
+ * ingredientes que mostraremos en el componente
+ */
 @Input() ingredients:[]; 
+/**
+ * evento que emitimos al componente padre
+ */
 @Output() add:EventEmitter&lt;any&gt;&#x3D; new EventEmitter&lt;any&gt;();
 
 

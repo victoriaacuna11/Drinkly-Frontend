@@ -205,21 +205,23 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>getMessage($event)</code>
+<code>getMessage($event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="17"
-                            class="link-to-prism">src/app/components/not-found/not-found.component.ts:17</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="22"
+                            class="link-to-prism">src/app/components/not-found/not-found.component.ts:22</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Setea el atributo local que mueve el contenido cuando sale el sidebar</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -227,18 +229,27 @@
                             <thead>
                                 <tr>
                                     <td>Name</td>
+                                    <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>$event</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
 
                                     <td>
                                         No
                                     </td>
 
 
+                                    <td>
+                                        <p>El evento que es pasado cuando el ícono del sidebar es clickeado</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -350,7 +361,12 @@ export class NotFoundComponent implements OnInit {
   ngOnInit() {
   }
 
-  getMessage($event){
+    /**
+   * Setea el atributo local que mueve el contenido cuando sale el sidebar
+   * @param {any} $event El evento que es pasado cuando el ícono del sidebar es clickeado
+   * @returns {void} 
+   */
+  getMessage($event:any):void{
     if(screen.width&gt;640){
       this.sidebar &#x3D; $event;
     }
@@ -366,24 +382,29 @@ export class NotFoundComponent implements OnInit {
 &lt;div [ngStyle]&#x3D;&quot;{&#x27;margin-left.rem&#x27;: !sidebar? &#x27;0&#x27;: &#x27;16&#x27;}&quot; class&#x3D;&quot;move&quot;&gt;
 
   &lt;div class&#x3D;&quot;flex bg-black&quot;&gt;
-    &lt;a href&#x3D;&quot;/bars&quot;&gt;&lt;img src&#x3D;&quot;assets/images/Drinkly-2.png&quot; alt&#x3D;&quot;logo_drinkly&quot;
-        class&#x3D;&quot;object-scale-down h-16 mx-auto ml-8&quot; /&gt;&lt;/a&gt;
+    &lt;div class&#x3D;&quot;ml-20 my-1&quot;&gt;
+      &lt;a href&#x3D;&quot;/&quot;
+        &gt;&lt;img
+          src&#x3D;&quot;assets/images/Drinkly-2.png&quot;
+          alt&#x3D;&quot;logo_drinkly&quot;
+          class&#x3D;&quot;object-scale-down h-16 transition duration-500 ease-in-out transform  hover:scale-110&quot;
+      /&gt;&lt;/a&gt;  
+      &lt;/div&gt;
   &lt;/div&gt;
             &lt;div
               style&#x3D;&quot;background-image: url(&#x27;assets/images/404bg.jpg&#x27;);&quot;
-              class&#x3D;&quot;my-6 pt-24 pb-64 mt-48 bg-cover bg-blue-700 m-auto max-w-5xl self-center flex items-center rounded-lg shadow&quot;
+              class&#x3D;&quot;my-6 pt-24 pb-64 mt-32 bg-cover bg-blue-700 m-auto max-w-5xl self-center flex items-center rounded-lg shadow&quot;
             &gt;
               &lt;div
-                class&#x3D;&quot;p-10 ml-20 shadow-2xl rounded-lg items-center&quot;
-                style&#x3D;&quot;background-color: white;&quot;
+                class&#x3D;&quot;p-10 ml-20 rounded-lg items-center&quot;
               &gt;
-                &lt;h1 class&#x3D;&quot;font-serif subpixel-antialiased text-xl text-black&quot;&gt;
+                &lt;h1 class&#x3D;&quot;font-serif subpixel-antialiased text-xl text-transparent&quot;&gt;
                   &lt;h1 class&#x3D;&quot;text-4xl&quot;&gt;Error 404:&lt;/h1&gt;
                   Ups! Parece que esta ruta no existe...
                 &lt;/h1&gt;
                 &lt;button
                   [routerLink]&#x3D;&quot;&#x27;/home&#x27;&quot;
-                  class&#x3D;&quot;ml-20 mt-5 font-serif subpixel-antialiased text-xl bg-orange-500 hover:bg-orange-600 text-black px-2 rounded-md&quot;
+                  class&#x3D;&quot;ml-48 mt-40 bg-orange-500 hover:bg-orange-700 text-white font-normal py-2 px-4 rounded&quot;
                 &gt;
                   Volver al inicio
                 &lt;/button&gt;
@@ -426,7 +447,7 @@ export class NotFoundComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><app-test-bar (message)="getMessage($event)"></app-test-bar> <div [ngStyle]="{\'margin-left.rem\': !sidebar? \'0\': \'16\'}" class="move">  <div class="flex bg-black">    <a href="/bars"><img src="assets/images/Drinkly-2.png" alt="logo_drinkly"        class="object-scale-down h-16 mx-auto ml-8" /></a>  </div>            <div              style="background-image: url(\'assets/images/404bg.jpg\');"              class="my-6 pt-24 pb-64 mt-48 bg-cover bg-blue-700 m-auto max-w-5xl self-center flex items-center rounded-lg shadow"            >              <div                class="p-10 ml-20 shadow-2xl rounded-lg items-center"                style="background-color: white;"              >                <h1 class="font-serif subpixel-antialiased text-xl text-black">                  <h1 class="text-4xl">Error 404:</h1>                  Ups! Parece que esta ruta no existe...                </h1>                <button                  [routerLink]="\'/home\'"                  class="ml-20 mt-5 font-serif subpixel-antialiased text-xl bg-orange-500 hover:bg-orange-600 text-black px-2 rounded-md"                >                  Volver al inicio                </button>              </div>            </div>              <app-footer></app-footer></div></div>'
+        var COMPONENT_TEMPLATE = '<div><app-test-bar (message)="getMessage($event)"></app-test-bar> <div [ngStyle]="{\'margin-left.rem\': !sidebar? \'0\': \'16\'}" class="move">  <div class="flex bg-black">    <div class="ml-20 my-1">      <a href="/"        ><img          src="assets/images/Drinkly-2.png"          alt="logo_drinkly"          class="object-scale-down h-16 transition duration-500 ease-in-out transform  hover:scale-110"      /></a>        </div>  </div>            <div              style="background-image: url(\'assets/images/404bg.jpg\');"              class="my-6 pt-24 pb-64 mt-32 bg-cover bg-blue-700 m-auto max-w-5xl self-center flex items-center rounded-lg shadow"            >              <div                class="p-10 ml-20 rounded-lg items-center"              >                <h1 class="font-serif subpixel-antialiased text-xl text-transparent">                  <h1 class="text-4xl">Error 404:</h1>                  Ups! Parece que esta ruta no existe...                </h1>                <button                  [routerLink]="\'/home\'"                  class="ml-48 mt-40 bg-orange-500 hover:bg-orange-700 text-white font-normal py-2 px-4 rounded"                >                  Volver al inicio                </button>              </div>            </div>              <app-footer></app-footer></div></div>'
     var COMPONENTS = [{'name': 'AddAdComponent', 'selector': 'app-add-ad'},{'name': 'AddBarComponent', 'selector': 'app-add-bar'},{'name': 'AddDrinkComponent', 'selector': 'app-add-drink'},{'name': 'AddIngredientComponent', 'selector': 'app-add-ingredient'},{'name': 'AddZoneComponent', 'selector': 'app-add-zone'},{'name': 'AdminHeaderComponent', 'selector': 'app-admin-header'},{'name': 'AdminHomeComponent', 'selector': 'app-admin-home'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BarsListComponent', 'selector': 'app-bars-list'},{'name': 'DetailBarComponent', 'selector': 'app-detail-bar'},{'name': 'DrinklyTeamComponent', 'selector': 'app-drinkly-team'},{'name': 'DrinksFilterComponent', 'selector': 'app-drinks-filter'},{'name': 'DrinksListComponent', 'selector': 'app-drinks-list'},{'name': 'EditAdComponent', 'selector': 'app-edit-ad'},{'name': 'EditBarComponent', 'selector': 'app-edit-bar'},{'name': 'EditDrinkComponent', 'selector': 'app-edit-drink'},{'name': 'EditGameComponent', 'selector': 'app-edit-game'},{'name': 'EditIngredientComponent', 'selector': 'app-edit-ingredient'},{'name': 'EditUserComponent', 'selector': 'app-edit-user'},{'name': 'EditZoneComponent', 'selector': 'app-edit-zone'},{'name': 'FilterChildComponent', 'selector': 'app-filter-child'},{'name': 'FilterParentComponent', 'selector': 'app-filter-parent'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'JuegosComponent', 'selector': 'app-juegos'},{'name': 'ListAdComponent', 'selector': 'app-list-ad'},{'name': 'ListBarComponent', 'selector': 'app-list-bar'},{'name': 'ListDrinkComponent', 'selector': 'app-list-drink'},{'name': 'ListGameComponent', 'selector': 'app-list-game'},{'name': 'ListIngredientComponent', 'selector': 'app-list-ingredient'},{'name': 'ListUserComponent', 'selector': 'app-list-user'},{'name': 'ListZoneComponent', 'selector': 'app-list-zone'},{'name': 'LoaderComponent', 'selector': 'app-loader'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PostBusinessComponent', 'selector': 'app-post-business'},{'name': 'PostDrinkComponent', 'selector': 'app-post-drink'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RecipeComponent', 'selector': 'app-recipe'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'RequiredFieldComponent', 'selector': 'app-required-field'},{'name': 'ShowFilterComponent', 'selector': 'app-show-filter'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'TestBarComponent', 'selector': 'app-test-bar'},{'name': 'UploadingLoaderComponent', 'selector': 'app-uploading-loader'}];
     var DIRECTIVES = [{'name': 'AgeValidatorDirective', 'selector': '[isAdult]'},{'name': 'clickedOutDirective', 'selector': '[clickedOut]'},{'name': 'ExternalUrlDirective', 'selector': 'a[appExternalUrl]'},{'name': 'passwordValidator', 'selector': '[passwordValid]'}];
     var ACTUAL_COMPONENT = {'name': 'NotFoundComponent'};

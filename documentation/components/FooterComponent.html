@@ -241,15 +241,16 @@ export class FooterComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">  &lt;div 
-   class&#x3D;&quot;h-25 flex items-center absolute bottom-0 z-10 pr-8&quot;&gt;
+        <pre class="line-numbers"><code class="language-html">  &lt;div&gt;
+    &lt;div 
+   class&#x3D;&quot;h-25 flex items-center absolute bottom-0 z-10 pr-8 pl-4 sm:pl-8 md:pl-16 pb-0&quot;&gt;
     &lt;div class&#x3D;&quot; bottom-0 flex-initial&quot;&gt;
       &lt;img src&#x3D;&quot;assets/images/Drinkly-1.png&quot; alt&#x3D;&quot;drinkly&quot; class&#x3D;&quot;h-20 sm:h-32 md:h-32 w-auto&quot;/&gt;
     &lt;/div&gt;
   
-    &lt;div style&#x3D;&quot;bottom: 1rem;&quot; class&#x3D;&quot;text-xs sm:text-lg md:text-lg flex-1&quot;&gt;
+    &lt;div style&#x3D;&quot;bottom: 1rem;&quot; class&#x3D;&quot;text-xs sm:text-lg md:text-lg flex-1 pl-2 sm:pl-8 md:pl-16&quot;&gt;
       &lt;p&gt;drinkly.official@gmail.com&lt;/p&gt;
-      &lt;p&gt;Blah blah&lt;/p&gt;
+      &lt;p&gt;La Castella, Torre Luxor, piso 6&lt;/p&gt;
       &lt;p&gt;Caracas, Venezuela&lt;/p&gt;
     &lt;/div&gt;
   &lt;/div&gt;
@@ -258,7 +259,7 @@ export class FooterComponent implements OnInit {
   
   
   &lt;div
-  class&#x3D;&quot;w-48 sm:w-64 h-25 flex items-center absolute bottom-0 right-0&quot;
+  class&#x3D;&quot;z-10 w-48 sm:w-64 h-25 flex items-center absolute bottom-0 right-0 pb-0 pr-4 sm:pr-8 md:pr-8&quot;
   &gt;
     &lt;div class&#x3D;&quot;flex flex-row space-x-10 mb-6 mt-6 sm:mt-10 sm:mb-10 h-8 sm:h-12&quot;&gt;
       &lt;a href&#x3D;&quot;https://twitter.com/drinklyofficial&quot; rel&#x3D;&quot;noopener&quot; target&#x3D;&quot;_blank&quot;&gt;
@@ -283,7 +284,9 @@ export class FooterComponent implements OnInit {
       /&gt;
       &lt;/a&gt;
     &lt;/div&gt;
+  &lt;/div&gt;  
   &lt;/div&gt;
+
 
 </code></pre>
     </div>
@@ -320,7 +323,7 @@ export class FooterComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div>  <div    class="h-25 flex items-center absolute bottom-0 z-10 pr-8">    <div class=" bottom-0 flex-initial">      <img src="assets/images/Drinkly-1.png" alt="drinkly" class="h-20 sm:h-32 md:h-32 w-auto"/>    </div>      <div style="bottom: 1rem;" class="text-xs sm:text-lg md:text-lg flex-1">      <p>drinkly.official@gmail.com</p>      <p>Blah blah</p>      <p>Caracas, Venezuela</p>    </div>  </div>      <div  class="w-48 sm:w-64 h-25 flex items-center absolute bottom-0 right-0"  >    <div class="flex flex-row space-x-10 mb-6 mt-6 sm:mt-10 sm:mb-10 h-8 sm:h-12">      <a href="https://twitter.com/drinklyofficial" rel="noopener" target="_blank">      <img        src="assets/images/twitter2.png"        alt="twitter"        class="h-full cursor-pointer"      />      </a>      <a href="https://www.facebook.com/Drinkly-102074918252515" rel="noopener" target="_blank">      <img        src="assets/images/facebook2.png"        alt="facebook"        class="h-full cursor-pointer"      />      </a>      <a href="https://www.instagram.com/drinkly.official/" rel="noopener" target="_blank">      <img        src="assets/images/insta2.png"        alt="instagram"        class="h-full cursor-pointer"      />      </a>    </div>  </div></div>'
+        var COMPONENT_TEMPLATE = '<div>  <div>    <div    class="h-25 flex items-center absolute bottom-0 z-10 pr-8 pl-4 sm:pl-8 md:pl-16 pb-0">    <div class=" bottom-0 flex-initial">      <img src="assets/images/Drinkly-1.png" alt="drinkly" class="h-20 sm:h-32 md:h-32 w-auto"/>    </div>      <div style="bottom: 1rem;" class="text-xs sm:text-lg md:text-lg flex-1 pl-2 sm:pl-8 md:pl-16">      <p>drinkly.official@gmail.com</p>      <p>La Castella, Torre Luxor, piso 6</p>      <p>Caracas, Venezuela</p>    </div>  </div>      <div  class="z-10 w-48 sm:w-64 h-25 flex items-center absolute bottom-0 right-0 pb-0 pr-4 sm:pr-8 md:pr-8"  >    <div class="flex flex-row space-x-10 mb-6 mt-6 sm:mt-10 sm:mb-10 h-8 sm:h-12">      <a href="https://twitter.com/drinklyofficial" rel="noopener" target="_blank">      <img        src="assets/images/twitter2.png"        alt="twitter"        class="h-full cursor-pointer"      />      </a>      <a href="https://www.facebook.com/Drinkly-102074918252515" rel="noopener" target="_blank">      <img        src="assets/images/facebook2.png"        alt="facebook"        class="h-full cursor-pointer"      />      </a>      <a href="https://www.instagram.com/drinkly.official/" rel="noopener" target="_blank">      <img        src="assets/images/insta2.png"        alt="instagram"        class="h-full cursor-pointer"      />      </a>    </div>  </div>    </div></div>'
     var COMPONENTS = [{'name': 'AddAdComponent', 'selector': 'app-add-ad'},{'name': 'AddBarComponent', 'selector': 'app-add-bar'},{'name': 'AddDrinkComponent', 'selector': 'app-add-drink'},{'name': 'AddIngredientComponent', 'selector': 'app-add-ingredient'},{'name': 'AddZoneComponent', 'selector': 'app-add-zone'},{'name': 'AdminHeaderComponent', 'selector': 'app-admin-header'},{'name': 'AdminHomeComponent', 'selector': 'app-admin-home'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BarsListComponent', 'selector': 'app-bars-list'},{'name': 'DetailBarComponent', 'selector': 'app-detail-bar'},{'name': 'DrinklyTeamComponent', 'selector': 'app-drinkly-team'},{'name': 'DrinksFilterComponent', 'selector': 'app-drinks-filter'},{'name': 'DrinksListComponent', 'selector': 'app-drinks-list'},{'name': 'EditAdComponent', 'selector': 'app-edit-ad'},{'name': 'EditBarComponent', 'selector': 'app-edit-bar'},{'name': 'EditDrinkComponent', 'selector': 'app-edit-drink'},{'name': 'EditGameComponent', 'selector': 'app-edit-game'},{'name': 'EditIngredientComponent', 'selector': 'app-edit-ingredient'},{'name': 'EditUserComponent', 'selector': 'app-edit-user'},{'name': 'EditZoneComponent', 'selector': 'app-edit-zone'},{'name': 'FilterChildComponent', 'selector': 'app-filter-child'},{'name': 'FilterParentComponent', 'selector': 'app-filter-parent'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'JuegosComponent', 'selector': 'app-juegos'},{'name': 'ListAdComponent', 'selector': 'app-list-ad'},{'name': 'ListBarComponent', 'selector': 'app-list-bar'},{'name': 'ListDrinkComponent', 'selector': 'app-list-drink'},{'name': 'ListGameComponent', 'selector': 'app-list-game'},{'name': 'ListIngredientComponent', 'selector': 'app-list-ingredient'},{'name': 'ListUserComponent', 'selector': 'app-list-user'},{'name': 'ListZoneComponent', 'selector': 'app-list-zone'},{'name': 'LoaderComponent', 'selector': 'app-loader'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PostBusinessComponent', 'selector': 'app-post-business'},{'name': 'PostDrinkComponent', 'selector': 'app-post-drink'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RecipeComponent', 'selector': 'app-recipe'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'RequiredFieldComponent', 'selector': 'app-required-field'},{'name': 'ShowFilterComponent', 'selector': 'app-show-filter'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'TestBarComponent', 'selector': 'app-test-bar'},{'name': 'UploadingLoaderComponent', 'selector': 'app-uploading-loader'}];
     var DIRECTIVES = [{'name': 'AgeValidatorDirective', 'selector': '[isAdult]'},{'name': 'clickedOutDirective', 'selector': '[clickedOut]'},{'name': 'ExternalUrlDirective', 'selector': 'a[appExternalUrl]'},{'name': 'passwordValidator', 'selector': '[passwordValid]'}];
     var ACTUAL_COMPONENT = {'name': 'FooterComponent'};

@@ -181,17 +181,25 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="9"
-                            class="link-to-prism">src/app/guards/auth.guard.ts:9</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="13"
+                            class="link-to-prism">src/app/guards/auth.guard.ts:13</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Guard que restringe acceso a una ruta si no hay un usuario logueado</p>
+</div>
 
+                    <div>
+                    </div>
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>true si está logueado y false si no </p>
 
                     </div>
                 </td>
@@ -211,7 +219,11 @@ import { Injectable } from &quot;@angular/core&quot;;
 export class AuthGuard implements CanActivate {
   constructor(private auth_svc: AuthService, private router: Router) {}
 
-  canActivate() {
+  /**
+   * Guard que restringe acceso a una ruta si no hay un usuario logueado
+   * @returns {boolean} true si está logueado y false si no 
+   */
+  canActivate(): boolean {
     if (this.auth_svc.loggedIn()) {
       return true;
     } else {

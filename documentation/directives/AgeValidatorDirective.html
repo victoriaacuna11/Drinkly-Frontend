@@ -149,14 +149,17 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="11"
-                            class="link-to-prism">src/app/Directives/isAdult.directive.ts:11</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="18"
+                            class="link-to-prism">src/app/Directives/isAdult.directive.ts:18</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Valida que la fecha que se le pasa corresponde a una persona mayor de edad. Usado en los validators del componente
+register</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -166,6 +169,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -180,6 +184,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>el input que contiene la fecha en el form</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -191,7 +199,8 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>si es mayor de edad</p>
+
                     </div>
                 </td>
             </tr>
@@ -214,6 +223,13 @@ import { NG_VALIDATORS, Validator, ValidationErrors, AbstractControl } from &#x2
 })
 export class AgeValidatorDirective implements Validator {
 
+    /**
+     * Valida que la fecha que se le pasa corresponde a una persona mayor de edad. Usado en los validators del componente
+     * register
+     * @param {AbstractControl} control el input que contiene la fecha en el form
+     * @returns {null} si es mayor de edad
+     * @returns {[key: string] : any} el error si es menor de edad
+     */
     validate(control: AbstractControl): {[key: string] : any} | null {
         let aux &#x3D; new Date(control.value);
         console.log(aux);

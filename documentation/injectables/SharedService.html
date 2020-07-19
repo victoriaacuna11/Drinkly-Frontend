@@ -154,14 +154,18 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="14"
-                            class="link-to-prism">src/app/services/shared.service.ts:14</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="20"
+                            class="link-to-prism">src/app/services/shared.service.ts:20</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Cambia el mensaje al cual los componentes del header, lista de bares y lista de tragos están suscritos. Este mensaje
+es lo que se escribe en el input buscador, y se implementó de esta manera para que el filtro realizara los cambios
+instantáneamente en ambos componentes cada vez que el mensaje cambia</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -171,6 +175,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -185,6 +190,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>el nuevo mensaje</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -280,6 +289,12 @@ export class SharedService {
 
   constructor() { }
 
+  /**
+   * Cambia el mensaje al cual los componentes del header, lista de bares y lista de tragos están suscritos. Este mensaje
+   * es lo que se escribe en el input buscador, y se implementó de esta manera para que el filtro realizara los cambios
+   * instantáneamente en ambos componentes cada vez que el mensaje cambia
+   * @param {string} m el nuevo mensaje
+   */
   changeMsg(m: string){
     this.messageSource.next(m)
   }

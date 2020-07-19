@@ -301,21 +301,23 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>getMessage($event)</code>
+<code>getMessage($event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="104"
-                            class="link-to-prism">src/app/components/register/register.component.ts:104</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="113"
+                            class="link-to-prism">src/app/components/register/register.component.ts:113</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Setea el atributo local que mueve el contenido cuando sale el sidebar</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -323,18 +325,27 @@
                             <thead>
                                 <tr>
                                     <td>Name</td>
+                                    <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>$event</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
 
                                     <td>
                                         No
                                     </td>
 
 
+                                    <td>
+                                        <p>El evento que es pasado cuando el ícono del sidebar es clickeado</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -413,14 +424,17 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="60"
-                            class="link-to-prism">src/app/components/register/register.component.ts:60</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="64"
+                            class="link-to-prism">src/app/components/register/register.component.ts:64</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Toma los datos del form validado y emplea el método para registrar un nuevo usuario en la base de datos.
+Si todo sale bien lo registra y lo lleva directo al perfil, si no te muestra el error</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -894,6 +908,10 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {}
 
+  /**
+   * Toma los datos del form validado y emplea el método para registrar un nuevo usuario en la base de datos.
+   * Si todo sale bien lo registra y lo lleva directo al perfil, si no te muestra el error
+   */
   onSubmit() {
     let date &#x3D; new Date(this.x).toLocaleString(undefined, this.options);
     let vari &#x3D; date.split(&quot;/&quot;);
@@ -938,7 +956,12 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  getMessage($event){
+  /**
+   * Setea el atributo local que mueve el contenido cuando sale el sidebar
+   * @param {any} $event El evento que es pasado cuando el ícono del sidebar es clickeado
+   * @returns {void} 
+   */
+  getMessage($event: any): void{
     if(screen.width&gt;640){
       this.sidebar &#x3D; $event;
     }

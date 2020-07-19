@@ -195,12 +195,20 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="11"
-                            class="link-to-prism">src/app/Directives/external-url.directive.ts:11</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="16"
+                            class="link-to-prism">src/app/Directives/external-url.directive.ts:16</a></div>
                 </td>
             </tr>
 
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Escucha el evento del click, toma el href del elemento que contiene esta directiva (cuando es clickeado),
+y navega a ese url. Usado para la navegación a otras páginas</p>
+</div>
+
+                </td>
+            </tr>
         </tbody>
     </table>
 </section>
@@ -220,6 +228,11 @@ import { Router } from &#x27;@angular/router&#x27;;
 export class ExternalUrlDirective {
     constructor(private el: ElementRef, private router: Router) {}
 
+    /**
+     * Escucha el evento del click, toma el href del elemento que contiene esta directiva (cuando es clickeado),
+     * y navega a ese url. Usado para la navegación a otras páginas
+     * @param {Event} event el evento de click
+     */
     @HostListener(&#x27;click&#x27;, [&#x27;$event&#x27;])
     clicked(event: Event) {
         const url &#x3D; this.el.nativeElement.href;

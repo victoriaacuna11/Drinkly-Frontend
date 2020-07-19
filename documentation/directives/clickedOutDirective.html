@@ -213,19 +213,27 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>document:click(tgt)</code>
+<code>document:click(tgt: HTMLElement)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="17"
-                            class="link-to-prism">src/app/Directives/dropdown.directive.ts:17</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="20"
+                            class="link-to-prism">src/app/Directives/dropdown.directive.ts:20</a></div>
                 </td>
             </tr>
 
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Escucha el evento del click, para que cuando se despliegue la lista de filtros, si se hace click en cualquier
+elemento de la página que no sea esa lista, se oculte la lista</p>
+</div>
+
+                </td>
+            </tr>
         </tbody>
     </table>
 </section>
@@ -243,16 +251,19 @@
     selector: &#x27;[clickedOut]&#x27;,
 })
 export class clickedOutDirective{
-
+    
     @Output() public clickOutside &#x3D; new EventEmitter();
 
-    constructor(private _elementRef: ElementRef){
+    constructor(private _elementRef: ElementRef){}
 
-    }
-
+    /**
+     * Escucha el evento del click, para que cuando se despliegue la lista de filtros, si se hace click en cualquier
+     * elemento de la página que no sea esa lista, se oculte la lista
+     * @param {HTMLElement} tgt Cualquier elemento de la página sobre el cual se hace click  
+     */
     @HostListener(&#x27;document:click&#x27;, [&#x27;$event.target&#x27;])
 
-    public onClick(tgt){
+    public onClick(tgt: HTMLElement){
         if(tgt.id &#x3D;&#x3D;&#x3D; &quot;search2&quot; || tgt.id&#x3D;&#x3D;&#x3D;&quot;search&quot;){return;}
         console.log(&quot;target: &quot;+ tgt)
         const isClickedInside &#x3D; this._elementRef.nativeElement.contains(tgt);

@@ -184,17 +184,25 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="9"
-                            class="link-to-prism">src/app/guards/adminAuth.guard.ts:9</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="13"
+                            class="link-to-prism">src/app/guards/adminAuth.guard.ts:13</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Guard que restringe acceso a una ruta si el usuario logueado no es administrador</p>
+</div>
 
+                    <div>
+                    </div>
                     <div class="io-description">
                         <b>Returns : </b>    <code>{}</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>true si es admin, false si no</p>
 
                     </div>
                 </td>
@@ -214,6 +222,10 @@ import { Injectable } from &quot;@angular/core&quot;;
 export class AdminAuthGuard implements CanActivate {
   constructor(private auth_svc: AuthService, private router: Router) {}
 
+  /**
+   * Guard que restringe acceso a una ruta si el usuario logueado no es administrador
+   * @returns {boolean} true si es admin, false si no
+   */
   async canActivate() {
 
     if(this.auth_svc.loggedIn()){

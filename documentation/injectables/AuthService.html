@@ -114,9 +114,6 @@
                                 <a href="#getProfile">getProfile</a>
                             </li>
                             <li>
-                                <a href="#isAdministrator">isAdministrator</a>
-                            </li>
-                            <li>
                                 <a href="#loadToken">loadToken</a>
                             </li>
                             <li>
@@ -154,7 +151,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/services/auth.service.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/services/auth.service.ts:14</a></div>
                             </td>
                         </tr>
 
@@ -212,21 +209,24 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>authenticateUser(user)</code>
+<code>authenticateUser(user: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="32"
-                            class="link-to-prism">src/app/services/auth.service.ts:32</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="40"
+                            class="link-to-prism">src/app/services/auth.service.ts:40</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Lleva a la ruta de autenticación en el backend, en donde verifica si el usuario está en la base de datos y la contraseña
+es correcta. Se usa en el componente de login</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -234,18 +234,27 @@
                             <thead>
                                 <tr>
                                     <td>Name</td>
+                                    <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>user</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
 
                                     <td>
                                         No
                                     </td>
 
 
+                                    <td>
+                                        <p>el usuario a autenticar</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -253,11 +262,13 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>    <code>Observable&lt;object&gt;</code>
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>La respuesta, que puede ser de éxito con el token y su tiempo de expiración, 
+o de fracaso con un mensaje de error</p>
+
                     </div>
                 </td>
             </tr>
@@ -285,17 +296,26 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="59"
-                            class="link-to-prism">src/app/services/auth.service.ts:59</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="71"
+                            class="link-to-prism">src/app/services/auth.service.ts:71</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Lleva a la ruta del backend que me indica si un usuario es administrador, usado para los guards. Esta ruta está protegida y 
+solo traerá la información si se le pasa el token correcto</p>
+</div>
 
+                    <div>
+                    </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>    <code>Observable&lt;object&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>La respuesta, que trae un true si es administrador y un false si no</p>
 
                     </div>
                 </td>
@@ -324,17 +344,26 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="72"
-                            class="link-to-prism">src/app/services/auth.service.ts:72</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="86"
+                            class="link-to-prism">src/app/services/auth.service.ts:86</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Lleva a la ruta del backend que me proporciona la contraseña de un usuario. Esta ruta está protegida y 
+solo traerá la información si se le pasa el token correcto</p>
+</div>
 
+                    <div>
+                    </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>    <code>Observable&lt;string&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>La respuesta, que trae la contraseña encriptada del usuario</p>
 
                     </div>
                 </td>
@@ -363,56 +392,26 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="44"
-                            class="link-to-prism">src/app/services/auth.service.ts:44</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="55"
+                            class="link-to-prism">src/app/services/auth.service.ts:55</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Lleva a la ruta profile en el backend, que me trae el perfil del usuario que está logueado. Esta ruta está protegida y 
+solo traerá la información si se le pasa el token correcto</p>
+</div>
 
+                    <div>
+                    </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>    <code>Observable&lt;object&gt;</code>
 
                     </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="isAdministrator"></a>
-                    <span class="name">
-                        <b>
-                            isAdministrator
-                        </b>
-                        <a href="#isAdministrator"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>isAdministrator()</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="122"
-                            class="link-to-prism">src/app/services/auth.service.ts:122</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                        <p>La respuesta, que es el usuario</p>
 
                     </div>
                 </td>
@@ -441,17 +440,25 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="101"
-                            class="link-to-prism">src/app/services/auth.service.ts:101</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="122"
+                            class="link-to-prism">src/app/services/auth.service.ts:122</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Recibo el token de local storage y lo asigno a la variable local</p>
+</div>
 
+                    <div>
+                    </div>
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>el token</p>
 
                     </div>
                 </td>
@@ -480,17 +487,25 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="109"
-                            class="link-to-prism">src/app/services/auth.service.ts:109</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="133"
+                            class="link-to-prism">src/app/services/auth.service.ts:133</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Revisa si un usuario está logueado y su sesión no ha expirado</p>
+</div>
 
+                    <div>
+                    </div>
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>true si está logueado, false si no</p>
 
                     </div>
                 </td>
@@ -519,14 +534,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="94"
-                            class="link-to-prism">src/app/services/auth.service.ts:94</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="112"
+                            class="link-to-prism">src/app/services/auth.service.ts:112</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Borra lo que hay en local storage y las variables locales</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -551,21 +568,23 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>registerUser(user)</code>
+<code>registerUser(user: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="19"
-                            class="link-to-prism">src/app/services/auth.service.ts:19</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="25"
+                            class="link-to-prism">src/app/services/auth.service.ts:25</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Lleva a la ruta de registro en el backend para registrar a un nuevo usuario en la base de datos.</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -573,18 +592,27 @@
                             <thead>
                                 <tr>
                                     <td>Name</td>
+                                    <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>user</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
 
                                     <td>
                                         No
                                     </td>
 
 
+                                    <td>
+                                        <p>el usuario a ser registrado</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -592,11 +620,13 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>    <code>Observable&lt;Object&gt;</code>
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>La respuesta, que puede ser de éxito con el token y su tiempo de expiración, 
+o de fracaso con un mensaje de error</p>
+
                     </div>
                 </td>
             </tr>
@@ -617,21 +647,23 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>storeData(token, expiresIn)</code>
+<code>storeData(token: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, expiresIn: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="85"
-                            class="link-to-prism">src/app/services/auth.service.ts:85</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="103"
+                            class="link-to-prism">src/app/services/auth.service.ts:103</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Guarda el token y el tiempo de expiración de la sesión en local storage, una vez que el login o register fue exitoso</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -639,27 +671,43 @@
                             <thead>
                                 <tr>
                                     <td>Name</td>
+                                    <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>token</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
 
                                     <td>
                                         No
                                     </td>
 
 
+                                    <td>
+                                        <p>el token que se crea al registrarse/loguearse</p>
+
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>expiresIn</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
 
                                     <td>
                                         No
                                     </td>
 
 
+                                    <td>
+                                        <p>el tiempo de expiración</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -708,7 +756,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/services/auth.service.ts:13</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/services/auth.service.ts:14</a></div>
                             </td>
                         </tr>
 
@@ -740,7 +788,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/services/auth.service.ts:12</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/services/auth.service.ts:13</a></div>
                             </td>
                         </tr>
 
@@ -767,7 +815,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/services/auth.service.ts:9</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/services/auth.service.ts:10</a></div>
                             </td>
                         </tr>
 
@@ -794,7 +842,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/services/auth.service.ts:11</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/services/auth.service.ts:12</a></div>
                             </td>
                         </tr>
 
@@ -821,7 +869,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/services/auth.service.ts:10</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/services/auth.service.ts:11</a></div>
                             </td>
                         </tr>
 
@@ -834,7 +882,8 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpClient, HttpHeaders } from &quot;@angular/common/http&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Observable } from &#x27;rxjs&#x27;;
+import { HttpClient, HttpHeaders } from &quot;@angular/common/http&quot;;
 import { Injectable } from &quot;@angular/core&quot;;
 import { JwtHelperService } from &quot;@auth0/angular-jwt&quot;;
 
@@ -851,98 +900,121 @@ export class AuthService {
 
   constructor(private http: HttpClient) {}
 
-  //Registra un usuario. Sencillo.
-  registerUser(user) {
+  /**
+   * Lleva a la ruta de registro en el backend para registrar a un nuevo usuario en la base de datos.
+   * @param {any} user el usuario a ser registrado
+   * @returns {Observable&lt;Object&gt;} La respuesta, que puede ser de éxito con el token y su tiempo de expiración, 
+   * o de fracaso con un mensaje de error
+   */
+  registerUser(user: any):Observable&lt;Object&gt; {
     let headers: HttpHeaders &#x3D; new HttpHeaders();
     headers &#x3D; headers.append(&quot;Content-Type&quot;, &quot;application/json&quot;);
-    // return this.http.post(&quot;http://localhost:5000/api/user/register&quot;, user, {
-    //   headers: headers,
-    // });
     return this.http.post(this._url+&#x27;register&#x27;, user, {
       headers: headers,
     })
   }
 
-  //Se usa en el login, este lleva a la ruta de autenticación en el backend en donde se encuentra toda la lógica de comparar
-  //las contraseñas encriptadas
-  authenticateUser(user) {
+  /**
+   * Lleva a la ruta de autenticación en el backend, en donde verifica si el usuario está en la base de datos y la contraseña
+   * es correcta. Se usa en el componente de login
+   * @param {any} user el usuario a autenticar
+   * @returns {Observable&lt;Object&gt;} La respuesta, que puede ser de éxito con el token y su tiempo de expiración, 
+   * o de fracaso con un mensaje de error
+   */
+  authenticateUser(user: any): Observable&lt;object&gt; {
     let headers: HttpHeaders &#x3D; new HttpHeaders();
     headers &#x3D; headers.append(&quot;Content-Type&quot;, &quot;application/json&quot;);
-    // return this.http.post(&quot;http://localhost:5000/api/user/authenticate&quot;, user, {
-    //   headers: headers,
-    // });
     return this.http.post(this._url+&#x27;authenticate&#x27;, user, {
       headers: headers,
     })
   }
 
   //esto me trae el perfil que saco de la ruta profile, que está protegida y solo se puede acceder con el token.
-  getProfile() {
+
+  /**
+   * Lleva a la ruta profile en el backend, que me trae el perfil del usuario que está logueado. Esta ruta está protegida y 
+   * solo traerá la información si se le pasa el token correcto
+   * @returns {Observable&lt;Object&gt;} La respuesta, que es el usuario
+   */
+  getProfile(): Observable&lt;object&gt; {
     let headers: HttpHeaders &#x3D; new HttpHeaders();
     this.loadToken();
     headers &#x3D; headers.append(&quot;Authorization&quot;, this.authToken);
     headers &#x3D; headers.append(&quot;Content-Type&quot;, &quot;application/json&quot;);
-    // return this.http.get(&quot;http://localhost:5000/api/user/profile&quot;, {
-    //   headers: headers,
-    // });
     return this.http.get(this._url+&#x27;profile&#x27;, {
       headers: headers,
-    })
-    
+    })   
   }
 
-  //esto me trae el valor que saco de la ruta isAdmin, que está protegida y solo se puede acceder con el token.
-  getAdmin() {
+
+  /**
+   * Lleva a la ruta del backend que me indica si un usuario es administrador, usado para los guards. Esta ruta está protegida y 
+   * solo traerá la información si se le pasa el token correcto
+   * @returns {Observable&lt;Object&gt;} La respuesta, que trae un true si es administrador y un false si no
+   */
+  getAdmin(): Observable&lt;object&gt; {
     let headers: HttpHeaders &#x3D; new HttpHeaders();
     this.loadToken();
     headers &#x3D; headers.append(&quot;Authorization&quot;, this.authToken);
     headers &#x3D; headers.append(&quot;Content-Type&quot;, &quot;application/json&quot;);
-    // return this.http.get(&quot;http://localhost:5000/api/user/isAdmin&quot;, {
-    //   headers: headers,
-    // });
     return this.http.get(this._url+&#x27;isAdmin&#x27;, {
       headers: headers,
     })
   }
 
-  getPassword(){
+  /**
+   * Lleva a la ruta del backend que me proporciona la contraseña de un usuario. Esta ruta está protegida y 
+   * solo traerá la información si se le pasa el token correcto
+   * @returns {Observable&lt;string&gt;} La respuesta, que trae la contraseña encriptada del usuario
+   */
+  getPassword(): Observable&lt;string&gt;{
     let headers: HttpHeaders &#x3D; new HttpHeaders();
     this.loadToken();
     headers &#x3D; headers.append(&quot;Authorization&quot;, this.authToken);
-    // return this.http.get(&quot;http://localhost:5000/api/user/updateP&quot;, {
-    //   headers: headers, responseType: &#x27;text&#x27;
-    // });
     return this.http.get(this._url + &#x27;updateP&#x27;, {
       headers: headers, responseType: &#x27;text&#x27;
     });
   }
 
   //si el login fue exitoso, esta función guarda el usuario y su token en local storage
-  storeData(token, expiresIn) {
+
+  /**
+   * Guarda el token y el tiempo de expiración de la sesión en local storage, una vez que el login o register fue exitoso
+   * @param {string} token el token que se crea al registrarse/loguearse
+   * @param {string} expiresIn el tiempo de expiración
+   * @returns {void}
+   */
+  storeData(token: string, expiresIn: string): void {
     localStorage.setItem(&quot;id_token&quot;, token);
     localStorage.setItem(&quot;expiresIn&quot;, expiresIn);
-    //localStorage.setItem(&quot;user&quot;, JSON.stringify(user));
     this.authToken &#x3D; token;
-    //this.user &#x3D; user;
   }
 
-  //Borra lo que hay en local storage y nuestras variables
+  /**
+   * Borra lo que hay en local storage y las variables locales
+   */
   logout() {
     this.authToken &#x3D; null;
     this.user &#x3D; null;
     localStorage.clear();
   }
 
-  //Me da el token que está en local storage
-  loadToken() {
+  /**
+   * Recibo el token de local storage y lo asigno a la variable local
+   * @returns {any} el token
+   */
+  loadToken(): any {
     if (!this.authToken) {
       this.authToken &#x3D; localStorage.getItem(&quot;id_token&quot;);
     }
     return this.authToken;
   }
 
-  //Ver si está loggeado y su sesión no ha expirado
-  loggedIn() {
+  /**
+   * Revisa si un usuario está logueado y su sesión no ha expirado
+   * @returns {boolean} true si está logueado, false si no
+   */
+  loggedIn(): boolean {
     if (localStorage.id_token &#x3D;&#x3D; undefined) {
       console.log(&quot;Hello&quot;);
       return false;
@@ -954,7 +1026,9 @@ export class AuthService {
     }
   }
 
-  //ver si es administrador
+  /**
+   * @ignore
+   */
   isAdministrator() {
     this.getAdmin().subscribe(
       (isAdmin) &#x3D;&gt; {

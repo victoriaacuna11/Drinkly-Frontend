@@ -104,14 +104,17 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="14"
-                            class="link-to-prism">src/app/pipes/filter.pipe.ts:14</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="22"
+                            class="link-to-prism">src/app/pipes/filter.pipe.ts:22</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Método del pipe que modifica el array que se muestra en las listas de bares y tragos, para mostrar solo aquellos
+que coinciden con lo escrito en el input buscador</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -121,6 +124,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -135,6 +139,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>todos los elementos del array a filtrar</p>
+
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>arg</td>
@@ -147,6 +155,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>el string escrito en el input, que se compara con value</p>
+
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>defaultFilt</td>
@@ -159,6 +171,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>indica si se está filtrando por nombre o por zona</p>
+
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>zones</td>
@@ -171,6 +187,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>todas las zonas de la base de datos</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -182,7 +202,8 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>el array de tragos o bares que hacen coincidencia con lo escrito en el input</p>
+
                     </div>
                 </td>
             </tr>
@@ -203,15 +224,19 @@ import { Pipe, PipeTransform } from &#x27;@angular/core&#x27;;
 export class FilterPipe implements PipeTransform {
 
 
-  constructor(private svc: ZoneService){
+  constructor(private svc: ZoneService){}
 
-  }
 
+  /**
+   * Método del pipe que modifica el array que se muestra en las listas de bares y tragos, para mostrar solo aquellos
+   * que coinciden con lo escrito en el input buscador
+   * @param {any} value todos los elementos del array a filtrar
+   * @param {string} arg el string escrito en el input, que se compara con value
+   * @param {boolean} defaultFilt indica si se está filtrando por nombre o por zona
+   * @param {any} zones todas las zonas de la base de datos
+   * @returns {Array.&lt;any&gt;} el array de tragos o bares que hacen coincidencia con lo escrito en el input
+   */
   transform(value: any, arg: string, defaultFilt?:Boolean, zones?:any): any {
-    // console.log(arg)
-    // console.log(zones)
-    // console.log(value)
-    // console.log(&quot;es filtro por default: &quot;+defaultFilt)
 
     const resultPosts &#x3D; [];
     if(defaultFilt){
