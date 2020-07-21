@@ -130,8 +130,7 @@ export class EditBarComponent implements OnInit {
       this.bar.menu.forEach(item => {
 
         this.MenuArray.push(this.addMenuGroupWithValue(item.name, item.price, item.description));
-        console.log(item);
-        console.log(item.name);
+        
       })
       this.PhoneArray.removeAt(0);
       this.MenuArray.removeAt(0);
@@ -275,13 +274,10 @@ export class EditBarComponent implements OnInit {
     } else {
 
       if (this.pictures.length == 1 && this.pictures[0] == 'null') {
-        console.log('No se puede eliminar');
       } else {
-        console.log('2');
         if (this.pictures[index] != 'null') {
           this.storage.storage.refFromURL(url).delete().then(res => {
-            console.log(this.pictures);
-            console.log('hi');
+           
           })
         }
         this.pictures.splice(index, 1);
@@ -353,8 +349,7 @@ export class EditBarComponent implements OnInit {
    * @returns {void}
    */
   goBack():void{
-    console.log(this.pictures);
-    console.log(this.bar.pictures);
+   
   
     if(this.main_image==null || this.main_image!=this.bar.main_image){
       const response = alert(
@@ -408,7 +403,6 @@ export class EditBarComponent implements OnInit {
     const newURL = event.thumbnail;
     this.pictures.push(newURL);
     this.pictures.splice(index, 1);
-    console.log(this.bar.pictures);
 
     ;
   }

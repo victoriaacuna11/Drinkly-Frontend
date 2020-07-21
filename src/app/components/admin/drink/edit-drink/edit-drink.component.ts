@@ -121,7 +121,6 @@ export class EditDrinkComponent implements OnInit {
  * 
  */
   ngOnInit() {
-    console.log('prueba')
     this.getDrink();
     this.categories_ing=this.categoryService.getCategories();
 
@@ -134,11 +133,9 @@ export class EditDrinkComponent implements OnInit {
     
     const id = this.routeSV.snapshot.paramMap.get("id");
 
-    //console.log(id);
 
     this.drink_service.getDrink(id).subscribe((res: any) => {
       this.drink = { ...res.data };
-      console.log(this.drink);
       //GET INGREDIENTS
       this.ing_service.getIngredients().subscribe((res: any) => {
         this.ingredient_arr_aux = [...res.data];
@@ -154,11 +151,9 @@ export class EditDrinkComponent implements OnInit {
         for (let index = 0; index < this.ingredient_arr.length; index++) {
           this.autocomplete.push(this.ingredient_arr[index].name)
         }
-        console.log(this.autocomplete)
 
         this.drink_ingredients = this.drink.ingredients;
 
-      console.log(this.drink);
       this.main_image=this.drink.pictures
 
       this.form = this._builder.group({
@@ -178,25 +173,19 @@ export class EditDrinkComponent implements OnInit {
 
       this.drink.ingredients.forEach(item => {
 
-        console.log(item)
         let ingr:String="";
-        console.log(this.ingredient_arr)
         for (let x = 0; x < this.ingredient_arr.length; x++) {
-          console.log(item===this.ingredient_arr[x]._id)
           if(item===this.ingredient_arr[x]._id){
             ingr=this.ingredient_arr[x].name
           }
         }
-        console.log(ingr)
         this.IngArray.push(this.addIngGroupWithValue(ingr));
 
       });
 
-      //console.log(this.drink.ingredients)
 
       //this.form.controls['owner_rol'].setValue(this.drink.owner.category, {onlySelf: true});
 
-      console.log(this.drink);
       //Mierda de los checkbox
       this.loading = false;
       });
@@ -248,7 +237,6 @@ export class EditDrinkComponent implements OnInit {
       }
     }
 
-    console.log(this.drink_ingredients);
   }
 /**
  * @ignore
@@ -275,7 +263,6 @@ export class EditDrinkComponent implements OnInit {
     for (let index = 0; index < this.ingredient_arr.length; index++) {
       aux_name.push(this.ingredient_arr[index].name)
     }
-    console.log(aux_name)
       for (let r = 0; r < this.form.value.ingredients.length; r++) {    
         if(!aux_name.includes(this.form.value.ingredients[r].ingredients)){
           valid=false
@@ -292,11 +279,9 @@ export class EditDrinkComponent implements OnInit {
 
     let ing:String[]=[];
             this.form.value.ingredients.forEach((item) => {
-              console.log(item.ingredients)
               for (let index = 0; index < this.ingredient_arr.length; index++) {
                 if(item.ingredients==this.ingredient_arr[index].name){
                   ing.push(this.ingredient_arr[index]._id)
-                  console.log(ing)
                 }
                 
               }
@@ -317,7 +302,6 @@ export class EditDrinkComponent implements OnInit {
         available: this.drink.available,
         views: 0,
     };
-    console.log(d);
     ;
 
     if (this.main_image != null) {
@@ -332,7 +316,6 @@ export class EditDrinkComponent implements OnInit {
       }else{
 
       this.updating=true;
-      console.log(d);
       this.drink_service.updateDrink(d).subscribe((res) => {
         this.route.navigate(["admin/drink"]);
       });
@@ -518,7 +501,6 @@ export class EditDrinkComponent implements OnInit {
         _id: "",
         available: true,
       };
-      console.log(ing)
       this.ing_service.createIngredient(ing).subscribe((res) => {
         this.getIngredients2()
         this.form_ing= this._builder.group({
@@ -563,8 +545,7 @@ export class EditDrinkComponent implements OnInit {
  */
   addNewIng(){
     this.createIngredient=true;
-    console.log(this.createIngredient);
-    console.log(this.loading);
+ 
   }
 /**
  * 

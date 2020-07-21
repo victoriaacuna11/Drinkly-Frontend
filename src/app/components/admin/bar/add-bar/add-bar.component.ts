@@ -143,7 +143,6 @@ export class AddBarComponent implements OnInit {
     const newURL = event.thumbnail;
     this.photo.push(newURL);
     this.photo.splice(index, 1);
-    console.log(this.photo);
   }
 
   /**
@@ -159,16 +158,13 @@ export class AddBarComponent implements OnInit {
         .delete()
         .then((res) => {
           this.photo[index] = "null";
-          console.log(this.photo);
         });
     } else {
       if (this.photo.length == 1 && this.photo[0] == "null") {
-        console.log("No se puede eliminar");
       } else {
 
         if (this.photo[index] != 'null') {
           this.storage.storage.refFromURL(url).delete().then(res => {
-            console.log(this.photo);
           })
           
         }
@@ -261,7 +257,6 @@ export class AddBarComponent implements OnInit {
   getZones(): void {
     this.zoneService.getZones().subscribe((res: any) => {
       this.zones = [...res.data];
-      console.log(this.zones);
       this.loading = false;
     });
   }

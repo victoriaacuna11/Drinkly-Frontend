@@ -106,7 +106,6 @@ export class ShowFilterComponent implements OnInit {
     this.getFilteredDrinks();
     
 
-    //console.log(this.filter_ing)
   }
 /**
  * Trae los drinks filtrados de la base de datos
@@ -122,7 +121,6 @@ export class ShowFilterComponent implements OnInit {
       
       this.getProfile();
       this.filter_ing=this.aux.split(',')
-     // console.log(this.drinks)
     });
     
   }
@@ -151,7 +149,6 @@ export class ShowFilterComponent implements OnInit {
 
     }
 
-    console.log(this.user)
   }
 /**
  * Checkea si el trago esta en el array de favoritos del usuario
@@ -183,7 +180,6 @@ export class ShowFilterComponent implements OnInit {
       favorites: this.user.favorites,
     };
 
-    console.log(user);
     this.user_s.updateUser(user).subscribe((res:any) => {
     });
   }
@@ -195,7 +191,6 @@ export class ShowFilterComponent implements OnInit {
     this.auth_svc.getProfile().subscribe(
       (profile:any)=>{
         this.user=profile.user;
-        console.log(this.user)
         this.loading = false;
       },
       (err)=>{
@@ -228,7 +223,6 @@ export class ShowFilterComponent implements OnInit {
   getIngredients() {
     this.ing_service.getIngredients().subscribe((res: any) => {
       this.ingredients_aux = [...res.data];
-      //console.log(this.ingredients);
       this.ingredients_aux.forEach(i =>{
         if(i.available){
           this.ingredients.push(i);
@@ -296,7 +290,6 @@ export class ShowFilterComponent implements OnInit {
         this.ing_filter.push(i)
       }
     })
-      //console.log(this.ing_filter)
   }
 
 
@@ -319,17 +312,14 @@ export class ShowFilterComponent implements OnInit {
         }
       }
     }
-    console.log(this.filter);
     object.style=!object.style
 
     //sacar de otro filtro
 
     for (let x = 0; x < this.list.length; x++) {
         if(this.list[x].category==object.category){
-          //console.log(object.category)
           for (let y = 0; y < this.list[x].ing.length; y++) {
             if(this.list[x].ing[y].id==object.id){
-              //console.log(object.name)
               this.list[x].ing[y].style=object.style
               y=this.list[x].ing.length
             }
@@ -355,7 +345,6 @@ export class ShowFilterComponent implements OnInit {
       }
     }
 
-    console.log(this.filter);
 
     //sacar del otro filtro
 
@@ -398,7 +387,6 @@ export class ShowFilterComponent implements OnInit {
         }      
     }
 
-    console.log(this.filter)
 
   }
   
@@ -447,8 +435,7 @@ export class ShowFilterComponent implements OnInit {
       }
       this.list.push(obj)
     }
-   // console.log('esta es la lista')
-    //console.log(this.list)
+   
   }
 /**
  * Checkea si la categoria tiene ingredientes en ella

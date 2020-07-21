@@ -27,7 +27,6 @@ export class SidebarComponent implements OnInit {
 
   getOut() {
     this.auth_svc.logout();
-    console.log("Cerraste sesión");
     this.router.navigateByUrl("/login");
   }
 }

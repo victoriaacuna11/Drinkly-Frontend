@@ -88,7 +88,6 @@ export class BarsListComponent implements OnInit {
           this.barsAv.push(item);
         }
       })
-      console.log(this.barsAv)
       this.getStars()
       this.loading=false;
     })
@@ -111,7 +110,7 @@ export class BarsListComponent implements OnInit {
    * @returns {void}   
    */
   receiveFilt($event:any):void{
-    console.log("en la lista: " + $event)
+    //console.log("en la lista: " + $event)
     if($event==="zonas"){
       this.defaultFilt = true;
     }else 
@@ -157,7 +156,6 @@ export class BarsListComponent implements OnInit {
       this.stars.push(aux_stars)
       
     })
-    console.log(this.stars)
     
   }
   

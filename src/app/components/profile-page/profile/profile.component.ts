@@ -56,7 +56,6 @@ export class ProfileComponent implements OnInit {
    */
   getOut() {
     this.auth_svc.logout();
-    console.log("Cerraste sesión");
     this.router.navigateByUrl("/login");
   }
 
@@ -103,14 +102,12 @@ export class ProfileComponent implements OnInit {
     
     this.service.getDrinks().subscribe((res: any) => {
       this.drinks = [...res.data];
-      console.log(this.drinks);
       this.drinks.forEach(i => {
         if(i.available && this.user.favorites.includes(i._id)){
           this.drinksA.push(i);
         }
       })
       this.userLoading = false;
-      console.log(this.drinksA)
       
     })
   }
@@ -141,7 +138,6 @@ export class ProfileComponent implements OnInit {
 
     }
 
-    console.log(this.user)
   }
   is_fav(id:any){
     if(this.user.favorites.includes(id)){
@@ -165,7 +161,6 @@ export class ProfileComponent implements OnInit {
       favorites: this.user.favorites,
     };
 
-    console.log(user);
     this.user_sv.updateUser(user).subscribe((res:any) => {
     });
   }
@@ -175,7 +170,6 @@ export class ProfileComponent implements OnInit {
    */
   chooseQuote(){
     this.randomQuote = this.quotes[Math.floor(Math.random() * this.quotes.length)];
-    console.log(this.randomQuote);
   }
 
 

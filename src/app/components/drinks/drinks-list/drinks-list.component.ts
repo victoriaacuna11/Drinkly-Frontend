@@ -85,7 +85,6 @@ export class DrinksListComponent implements OnInit {
 
     }
 
-    console.log(this.user)
   }
 /**
  * Checkea si el trago esta en el array de favoritos del usuario
@@ -117,7 +116,6 @@ export class DrinksListComponent implements OnInit {
       favorites: this.user.favorites,
     };
 
-    console.log(user);
     this.user_s.updateUser(user).subscribe((res:any) => {
     });
   }
@@ -129,7 +127,6 @@ export class DrinksListComponent implements OnInit {
     this.auth_svc.getProfile().subscribe(
       (profile:any)=>{
         this.user=profile.user;
-        console.log(this.user)
         this.loading = false;
       },
       (err)=>{
@@ -149,7 +146,6 @@ export class DrinksListComponent implements OnInit {
     
     this.service.getDrinks().subscribe((res: any) => {
       this.drinks = [...res.data];
-      console.log(this.drinks);
       this.drinks.forEach(i => {
         if(i.available){
           this.drinksA.push(i);

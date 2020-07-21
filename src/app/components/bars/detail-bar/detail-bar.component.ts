@@ -52,7 +52,6 @@ export class DetailBarComponent implements OnInit {
         this.stars.push(aux)
       }
     }
-    console.log(this.stars)
     this.loading = false;
   }
 
@@ -64,7 +63,6 @@ export class DetailBarComponent implements OnInit {
     const id = this.routeSV.snapshot.paramMap.get('id');
     this.svc.getBar(id).subscribe( (b:any) => {
       this.bar = {...b.data};
-      console.log(this.bar);
       this.images = this.bar.pictures;
       this.getZone(this.bar.zone);
     })

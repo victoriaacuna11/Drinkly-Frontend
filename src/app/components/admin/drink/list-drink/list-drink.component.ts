@@ -48,7 +48,6 @@ export class ListDrinkComponent implements OnInit {
       this.drinks = [...res.data];
       this.loading = false;
       this.updating=false;
-      console.log(this.drinks)
     });
   }
 /**

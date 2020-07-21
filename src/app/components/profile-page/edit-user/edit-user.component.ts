@@ -91,13 +91,11 @@ export class EditUserComponent implements OnInit {
       birthday: this.user.birthday,
       favorites: this.user.favorites,
     };
-    console.log(user);
 
     if (true) {
-      console.log(user);
       this.service.updateUser(user).subscribe((res:any) => {
         if(res.success){
-          console.log(res);
+          //console.log(res);
           this.route.navigate(["profile"]);
         }else{
           this.err='';
@@ -135,7 +133,6 @@ export class EditUserComponent implements OnInit {
       birthday: this.user.birthday,
       favorites: this.user.favorites,
     };
-    console.log(user);
 
     if (true) {
       this.service.updateUser(user).subscribe((res) => {
@@ -166,9 +163,7 @@ export class EditUserComponent implements OnInit {
    */
   async doChangeP(){
     let x = await this.auth_svc.getPassword().toPromise();
-    console.log("yuju " + x);
     if(bcrypt.compareSync(this.formP.value.o_password, x)){
-      console.log("Hola")
       this.editUserPassword();
     }else{
       var element = document.getElementById("al");

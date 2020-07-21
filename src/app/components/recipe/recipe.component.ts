@@ -107,9 +107,6 @@ export class RecipeComponent implements OnInit {
     this.service.getDrink(id).subscribe( (r:any) => {
       this.receta = {...r.data};
       // this.getIngredients();
-      console.log('Drink...');
-      console.log(this.receta);
-      console.log(this.receta.ingredients.length)
       this.getIngredients();
     })
     
@@ -158,7 +155,6 @@ export class RecipeComponent implements OnInit {
 
     }
 
-    console.log(this.user)
   }
 
   /**
@@ -180,7 +176,6 @@ export class RecipeComponent implements OnInit {
       favorites: this.user.favorites,
     };
 
-    console.log(user);
     this.user_s.updateUser(user).subscribe((res:any) => {
     });
   }
@@ -193,7 +188,6 @@ export class RecipeComponent implements OnInit {
     this.auth_svc.getProfile().subscribe(
       (profile:any)=>{
         this.user=profile.user;
-        console.log(this.user)
         this.loading = false;
       },
       (err)=>{

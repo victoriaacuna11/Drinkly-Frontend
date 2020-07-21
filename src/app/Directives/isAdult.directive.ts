@@ -17,7 +17,6 @@ export class AgeValidatorDirective implements Validator {
      */
     validate(control: AbstractControl): {[key: string] : any} | null {
         let aux = new Date(control.value);
-        console.log(aux);
         var dif_ms = Date.now() - aux.getTime();
         var age_dt = new Date(dif_ms);
         var final_age = Math.abs(age_dt.getUTCFullYear() - 1970);

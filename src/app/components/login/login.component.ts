@@ -33,24 +33,20 @@ export class LoginComponent implements OnInit {
    * navega al perfil si todo sale bien con el token de la sesión, o muestra el error si algo sale mal
    */
   onSubmit() {
-    console.log(this.form.value.user_name);
 
     const c_user = {
       user_name: this.form.value.user_name,
       password: this.form.value.password,
     };
-    console.log('AAAH')
     this.auth_svc.authenticateUser(c_user).subscribe((data) => {
       this.dataRegister = data;
-      console.log('hi')
-      console.log(this.dataRegister);
+     
       if (this.dataRegister.success && this.dataRegister.user.available) {
         this.auth_svc.storeData(
           this.dataRegister.token,
           //this.dataRegister.user,
           this.dataRegister.expiresIn
         );
-        console.log("Bienvenido!");
         this.router.navigate(["profile"]);
       } else {
         var element = document.getElementById("al");

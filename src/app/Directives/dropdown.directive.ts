@@ -19,7 +19,7 @@ export class clickedOutDirective{
 
     public onClick(tgt: HTMLElement){
         if(tgt.id === "search2" || tgt.id==="search"){return;}
-        console.log("target: "+ tgt)
+        //console.log("target: "+ tgt)
         const isClickedInside = this._elementRef.nativeElement.contains(tgt);
         if(!isClickedInside){
             this.clickOutside.emit(null)

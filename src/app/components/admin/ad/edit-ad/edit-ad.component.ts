@@ -86,13 +86,11 @@ export class EditAdComponent implements OnInit {
       _id: this.ad._id,
       available: true,
     };
-    console.log(adver);
-    console.log(this.ad.promo_img);
+    
 
     if (this.main_image != null) {
       if(!this.form.invalid){
         this.updating=true;
-        console.log(adver);
         this.service.updateAd(adver).subscribe((res) => {
           this.route.navigate(["admin/ad"]);
         });

@@ -45,7 +45,6 @@ export class ListIngredientComponent implements OnInit {
       this.loading = false;
       this.updating=false;
     });
-    console.log(this.ingredients);
   }
 
   /**

@@ -64,7 +64,6 @@ export class FilterParentComponent implements OnInit {
 //HAY QUE AÑADIRLE LA PROPIEDAD DE STYLE A CADA UNO DE LOS INGREDIENTES
 //EL CHECK DE SI EXISTE SE DEBERIA HACER ACA EN VERDAD
     this.categories=this.cat_service.getCategories()
-    console.log(this.categories)
     this.getIngredients()
 
     
@@ -84,17 +83,14 @@ export class FilterParentComponent implements OnInit {
         }
       }
     }
-    console.log(this.filter);
     object.style=!object.style
 
     //sacar de otro filtro
 
     for (let x = 0; x < this.list.length; x++) {
         if(this.list[x].category==object.category){
-          console.log(object.category)
           for (let y = 0; y < this.list[x].ing.length; y++) {
             if(this.list[x].ing[y].id==object.id){
-              console.log(object.name)
               this.list[x].ing[y].style=object.style
               y=this.list[x].ing.length
             }
@@ -120,7 +116,6 @@ export class FilterParentComponent implements OnInit {
       }
     }
 
-    console.log(this.filter);
 
     //sacar del otro filtro
 
@@ -163,7 +158,6 @@ export class FilterParentComponent implements OnInit {
         }      
     }
 
-    console.log(this.filter)
 
   }
 /**
@@ -177,7 +171,6 @@ export class FilterParentComponent implements OnInit {
           this.ingredients.push(i)
         }
       })
-      console.log(this.ingredients);
       this.organizeIngredients()
       this.addStyleIng()
       this.loading = false;
@@ -229,7 +222,6 @@ export class FilterParentComponent implements OnInit {
       }
       this.list.push(obj)
     }
-    console.log(this.list)
   }
 /**
  * Checkea si la categoria tiene ingredientes en ella

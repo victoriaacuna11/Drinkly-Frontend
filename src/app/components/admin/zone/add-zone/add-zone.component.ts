@@ -50,7 +50,6 @@ export class AddZoneComponent implements OnInit {
       available: true,
       _id: ""
     };
-    console.log(zone);
     this.service.postZone(zone).subscribe((res) => {
       this.route.navigate(["admin/zone"]);
     });

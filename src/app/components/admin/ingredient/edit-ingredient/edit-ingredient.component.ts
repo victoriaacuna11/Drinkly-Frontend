@@ -95,12 +95,10 @@ export class EditIngredientComponent implements OnInit {
       _id: this.ingredient._id,
       available: true,
     };
-    console.log(ingredient);
-    console.log(this.ingredient.photo);
+    
 
     if (this.main_image != null) {
       this.updating=true;
-      console.log(ingredient);
       this.service.updateIngredient(ingredient).subscribe((res) => {
         this.route.navigate(["admin/ingredient"]);
       });

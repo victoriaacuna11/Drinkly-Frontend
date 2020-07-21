@@ -143,7 +143,6 @@ onWindowScroll() {
    */
   getAdvertisements() {
     this.serviceAd.getAds().subscribe((res:any) => {
-      console.log(this.ads);
       this.ads = [...res.data]
       
       this.ads.forEach(i => {
@@ -163,7 +162,6 @@ onWindowScroll() {
   getDrinks() {
     this.service.getDrinks().subscribe((res: any) => {
       this.drinks = [...res.data];
-      console.log(this.drinks);
       this.drinks.forEach(i => {
         if(i.available){
           this.drinksA.push(i);
@@ -188,7 +186,6 @@ onWindowScroll() {
       aux.push(rand);
       vector.splice(num,1)
     }
-    console.log(aux)
   }
 
   /**
@@ -268,7 +265,6 @@ onWindowScroll() {
         }
       })
       this.elegir(this.barsAv, this.showBars)
-      console.log(this.barsAv)
       // this.loading=false;
     })
   }

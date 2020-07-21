@@ -72,7 +72,6 @@ export class HeaderComponent implements OnInit {
    * @returns {void}
    */
    newMessage(i:string):void{
-     console.log(i)
      this.data.changeMsg(i)
      this.touched=false;
    }
@@ -92,7 +91,6 @@ export class HeaderComponent implements OnInit {
     */
    sendChangedFilter(i: string){
     this.filteringOptions = !this.filteringOptions;
-    console.log(i);
      this.filt.emit(i);
    }
 

@@ -25,7 +25,6 @@ export class FilterChildComponent implements OnInit {
   ngOnInit() {
 
 
-    console.log(this.ingredients)
   }
 
 /**

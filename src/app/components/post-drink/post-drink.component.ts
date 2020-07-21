@@ -112,7 +112,6 @@ export class PostDrinkComponent implements OnInit {
    */
   postRecipe():void{
     this.sending=true;
-    console.log(this.form.value.recipe)
     let ingredients: String [] = [];
     this.form.value.ingredients.forEach(element => {
       ingredients.push(element.ingredient);
@@ -131,7 +130,6 @@ export class PostDrinkComponent implements OnInit {
       ingredients: ingredients,
       message: message,
     }
-    console.log(data);
     this.service.postRecipe(data).subscribe(res => {
       this.service.sendEmailUser(data).subscribe(res => {
         this.sent=true;

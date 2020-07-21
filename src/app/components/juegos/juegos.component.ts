@@ -200,7 +200,6 @@ export class JuegosComponent implements OnInit {
    */
   guardarJugadores() {
       this.jugadores = this.form.value.jug;
-      console.log(this.jugadores);
       if(this.jugadores){
         this.hayJugadores = true;
         this.elegirTrident();  

@@ -79,7 +79,6 @@ export class RegisterComponent implements OnInit {
       isAdmin: false,
     };
 
-    console.log(user);
 
     this.auth_svc.registerUser(user).subscribe((data) => {
       this.dataRegister = data;
@@ -88,14 +87,12 @@ export class RegisterComponent implements OnInit {
           this.dataRegister.token,
           this.dataRegister.expiresIn
         );
-        console.log("Te acabas de registrar.");
         this.router.navigate(["/profile"]);
       } else {
         this.err='';
         for(let i of this.dataRegister.msg) {
           this.err += i + "\n";
         }
-        console.log(this.err)       
         var element = document.getElementById("al");
         element.style.display = "block";
         setTimeout(function() {

@@ -73,7 +73,6 @@ export class AddIngredientComponent implements OnInit {
         _id: "",
         available: true,
       };
-      console.log(ingredient);
       this.service.createIngredient(ingredient).subscribe((res) => {
         this.route.navigate(["admin/ingredient"]);
       });

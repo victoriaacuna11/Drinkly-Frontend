@@ -68,7 +68,6 @@ export class AddAdComponent implements OnInit {
           _id: "",
           available: true,
         };
-        console.log(ad);
         this.service.createAd(ad).subscribe((res) => {
           this.route.navigate(["admin/ad"]);
         });

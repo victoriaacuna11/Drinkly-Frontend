@@ -28,7 +28,6 @@ export class ListUserComponent implements OnInit {
       this.loading = false;
       this.updating=false;
     });
-    console.log(this.users);
   }
 
   deleteUser(id) {

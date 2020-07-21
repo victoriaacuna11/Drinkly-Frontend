@@ -216,7 +216,6 @@ export class AddDrinkComponent implements OnInit {
       for (let index = 0; index < this.ingredient_arr.length; index++) {
         this.autocomplete.push(this.ingredient_arr[index].name)
       }
-      console.log(this.autocomplete)
 
       this.autocompleteaux = this.control.valueChanges
         .pipe(
@@ -250,7 +249,6 @@ export class AddDrinkComponent implements OnInit {
     for (let index = 0; index < this.ingredient_arr.length; index++) {
       aux_name.push(this.ingredient_arr[index].name)
     }
-    console.log(aux_name)
       for (let r = 0; r < this.form.value.ingredients.length; r++) {    
         if(!aux_name.includes(this.form.value.ingredients[r].ingredients)){
           valid=false
@@ -265,7 +263,6 @@ export class AddDrinkComponent implements OnInit {
  * 
  */
   addDrink() {
-    // console.log(this.selectedFile);
     if(this.main_image!=null){
 
           if(this.form.invalid){
@@ -281,11 +278,9 @@ export class AddDrinkComponent implements OnInit {
             this.updating=true;
             let ing:String[]=[];
             this.form.value.ingredients.forEach((item) => {
-              console.log(item.ingredients)
               for (let index = 0; index < this.ingredient_arr.length; index++) {
                 if(item.ingredients==this.ingredient_arr[index].name){
                   ing.push(this.ingredient_arr[index]._id)
-                  console.log(ing)
                 }
                 
               }
@@ -306,7 +301,6 @@ export class AddDrinkComponent implements OnInit {
               views: 0,
             };
 
-            console.log(this.drink_created);
             this.service.createDrink(this.drink_created).subscribe((res) => {
               this.route.navigate(["admin/drink"]);
             });
@@ -441,7 +435,6 @@ export class AddDrinkComponent implements OnInit {
         _id: "",
         available: true,
       };
-      console.log(ing)
       this.service_ing.createIngredient(ing).subscribe((res) => {
         this.getIngredients()
         this.form_ing= this._builder.group({

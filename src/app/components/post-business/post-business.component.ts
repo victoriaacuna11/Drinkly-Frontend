@@ -102,7 +102,6 @@ export class PostBusinessComponent implements OnInit {
       useremail: this.user.email,
       user_fname: this.user.f_name,
     }
-    console.log(data);
     this.service.postBusiness(data).subscribe(res => {
       this.service.sendEmailUserBusiness(data).subscribe(res => {
         this.sent=true;
